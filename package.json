@@ -1,0 +1,58 @@
+{
+  "name": "gatsby-theme-catalyst-core",
+  "description": "Core catalyst theme for GatsbyJS designed to be used as a starting point in site development.",
+  "version": "0.0.1",
+  "author": "Eric Howey <ehowey@gmail.com>",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby-image": "^2.1.2",
+    "gatsby-plugin-compile-es6-packages": "^1.1.0",
+    "gatsby-plugin-offline": "^2.1.1",
+    "gatsby-plugin-page-creator": "^2.0.13",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.1.3",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-typography": "^2.2.13",
+    "gatsby-source-filesystem": "^2.0.38",
+    "gatsby-transformer-sharp": "^2.1.21",
+    "prop-types": "^15.7.2",
+    "react-helmet": "^5.2.1",
+    "react-typography": "^0.16.19",
+    "styled-components": "^4.2.1",
+    "typography": "^0.16.19",
+    "typography-theme-lawton": "^0.16.19"
+  },
+  "devDependencies": {
+    "gatsby": "^2.8.2",
+    "prettier": "^1.17.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.8.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "keywords": [
+    "gatsby-theme",
+    "gatsby",
+    "gatsbyjs"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
+  }
+}
