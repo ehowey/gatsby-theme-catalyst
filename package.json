@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-core",
   "description": "Core catalyst theme for GatsbyJS designed to be used as a starting point in site development.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Eric Howey <ehowey@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -50,9 +50,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst-core"
   },
   "bugs": {
-    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst-core/issues"
   }
 }
