@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Theme from './theme';
-import Header from './Header';
+import Header from './header';
 import Footer from './footer';
 
 const SiteContainer = styled.div`

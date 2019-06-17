@@ -11,7 +11,7 @@ import {
   NavList,
   NavListItem,
   NavLink,
-} from './style';
+} from './header-style';
 
 class siteHeader extends Component {
 

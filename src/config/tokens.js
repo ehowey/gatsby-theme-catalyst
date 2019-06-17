@@ -1,6 +1,6 @@
 export default {
     color: {
-        primary: 'hotpink',
+        primary: '#cccccc',
         secondary: '#333333',
         textBlack: '#000000',
         textWhite: '#ffffff',
