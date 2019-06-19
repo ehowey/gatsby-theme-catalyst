@@ -5,16 +5,8 @@ module.exports = {
     author: `Eric Howey`,
     menuLinks:[
               {
-                name:'Page 1',
-                link:'/page-1'
-              },
-              {
-                name:'Page 2',
-                link:'/page-2'
-              },
-              {
-                name:'Page 3',
-                link:'/page-3'
+                name:'Home',
+                link:'/'
               }
             ]
   },
