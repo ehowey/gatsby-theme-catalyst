@@ -46,7 +46,7 @@ const siteBranding = () => {
         }
         `}
         render={data => (
-            <Branding mobileMenuOpen={mobileMenuOpen}>
+            <Branding>
                 <Logo fixed={data.brandingLogo.childImageSharp.fixed} alt="Logo"/>
                 <Title>
                     <TitleLink to="/">

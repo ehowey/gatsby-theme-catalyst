@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
-import { StaticQuery, graphql, Link } from "gatsby";
+import styled from 'styled-components';
+import { StaticQuery, graphql, Link } from "gatsby"
 
 //Nav Styles - Start
 const Nav = styled.nav`
@@ -59,10 +59,10 @@ font-size: 100%;
 `
 //Nav Styles - End
 
-const siteNav = () => {
+const siteNav = (props) => {
 
     return (
-        <StaticQuery
+      <StaticQuery
         query={graphql`
         query {
           site {
@@ -76,19 +76,20 @@ const siteNav = () => {
         }
         `}
         render={data => (
-            <Nav>
-                <NavList mobileMenuOpen={mobileMenuOpen}>
-                    {data.site.siteMetadata.menuLinks.map(link => (
-                    <NavListItem key={link.name}>
-                    <NavLink to={link.link}>
-                        {link.name}
-                    </NavLink>
-                    </NavListItem>
-                    ))}
-                </NavList>
-            </Nav>
-        )}/>
-    )
-}
+        <Nav>
+          <NavList mobileMenuOpen={props.open}>
+            {data.site.siteMetadata.menuLinks.map(link => (
+            <NavListItem key={link.name}>
+              <NavLink to={link.link}>
+                {link.name}
+              </NavLink>
+            </NavListItem>
+            ))}
+          </NavList>
+      </Nav>
+    )}
+    />
+    );
+  }
 
-export default siteNav
+export default siteNav;
