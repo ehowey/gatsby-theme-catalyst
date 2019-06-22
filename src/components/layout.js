@@ -15,10 +15,10 @@ const SiteMain = styled.div`
 `
 
 const SiteContent = styled.div`
-  margin: 2rem 1rem;
+  margin: 0 auto;
   
   @media (min-width: ${props => props.theme.screen.tablet}) {
-    margin: 2rem auto;
+    margin: 0 auto;
     max-width: ${props => props.theme.options.contentWidth};
     }
 `
