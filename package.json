@@ -22,7 +22,7 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.1",
-    "typography": "^0.16.19",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "gatsby": "^2.10.0",
