@@ -1,10 +1,32 @@
 import Typography from "typography"
-import lawtonTheme from "typography-theme-lawton"
 
-lawtonTheme.baseFontSize = '20px'
+const typography = new Typography({
+    baseFontSize: "20px",
+    baseLineHeight: 1.666,
+    headerFontFamily: [
+        "-apple-system",
+        "system-ui",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol"
+    ],
+    bodyFontFamily: [
+        "-apple-system",
+        "system-ui",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol"
+    ],
+  })
 
-const typography = new Typography(lawtonTheme)
-
-// Export helper functions
-export const { scale, rhythm, options } = typography
 export default typography

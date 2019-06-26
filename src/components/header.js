@@ -35,9 +35,10 @@ class siteHeader extends Component {
 	const Header = styled.header`
 	display: grid;
 	grid-template-columns: auto 1fr;
+	grid-template-rows: 60px;
 	z-index: 1000;
 	width: 100%;
-	padding: 1rem 0;
+	padding: 0.5rem 0;
 	background-color: ${props => props.theme.color.primary};
 	`
 	//Header Styles - End
