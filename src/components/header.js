@@ -35,11 +35,12 @@ class siteHeader extends Component {
 	const Header = styled.header`
 	display: grid;
 	grid-template-columns: auto 1fr;
-	grid-template-rows: 60px;
 	z-index: 1000;
 	width: 100%;
 	padding: 0.5rem 0;
 	background-color: ${props => props.theme.color.primary};
+	position: ${props => props.theme.options.headerPosition};
+	top: 0;
 	`
 	//Header Styles - End
 

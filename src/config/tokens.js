@@ -6,7 +6,8 @@ export default {
         textWhite: '#ffffff',
      },
      options: {
-        contentWidth: '720px'
+        contentWidth: '720px',
+        headerPosition: 'static'
      },
      screen: {
         tablet: '768px',
