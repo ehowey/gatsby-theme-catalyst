@@ -36,10 +36,10 @@ class siteHeader extends Component {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	z-index: 1000;
+	position: ${props => props.theme.options.headerPosition};
 	width: 100%;
 	padding: 0.5rem 0;
 	background-color: ${props => props.theme.color.primary};
-	position: ${props => props.theme.options.headerPosition};
 	top: 0;
 	`
 	//Header Styles - End
