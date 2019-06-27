@@ -12,6 +12,12 @@ margin-left: 1rem;
 
 const Logo = styled(Img)`
 margin-right: 0.5rem;
+height: 40px;
+width: 40px;
+@media (min-width: ${props => props.theme.screen.tablet}) {
+height: 60px;
+width: 60px;
+}
 
 ${({ mobileMenuOpen }) =>
 		mobileMenuOpen &&
@@ -22,7 +28,13 @@ ${({ mobileMenuOpen }) =>
 
 const Title = styled.h1`
 margin: 0;
-font-size: 1.75rem;
+font-size: 1.25rem;
+@media (min-width: ${props => props.theme.screen.tablet}) {
+  font-size: 1.5rem;
+}
+@media (min-width: ${props => props.theme.screen.laptop}) {
+  font-size: 1.75rem;
+}
 `
 
 const TitleLink = styled(Link)`
@@ -50,8 +62,8 @@ const siteBranding = (props) => {
           }
           brandingLogo: file(relativePath: { eq: "images/logo.png" }) {
             childImageSharp {
-              fixed(height:60) {
-                ...GatsbyImageSharpFixed_withWebp
+              fluid(maxHeight:100) {
+                ...GatsbyImageSharpFluid_withWebp
                   }
             }
           }
@@ -59,7 +71,7 @@ const siteBranding = (props) => {
         `}
         render={data => (
             <Branding>
-                <Logo fixed={data.brandingLogo.childImageSharp.fixed} alt="Logo" mobileMenuOpen={props.open}/>
+                <Logo fluid={data.brandingLogo.childImageSharp.fluid} alt="Logo" mobileMenuOpen={props.open}/>
                 <Title>
                     <TitleLink to="/" mobileMenuOpen={props.open}>
                     {data.site.siteMetadata.title}
