@@ -12,6 +12,12 @@ margin-left: 1rem;
 
 const Logo = styled(Img)`
 margin-right: 0.5rem;
+
+${({ mobileMenuOpen }) =>
+		mobileMenuOpen &&
+		`
+		filter: invert(1);
+		`};
 `
 
 const Title = styled.h1`
@@ -22,10 +28,16 @@ font-size: 1.75rem;
 const TitleLink = styled(Link)`
 color: #000000;
 text-decoration: none;
+
+    ${({ mobileMenuOpen }) =>
+		mobileMenuOpen &&
+		`
+		color: white;
+		`};
 `
 //Branding Styles - End
 
-const siteBranding = () => {
+const siteBranding = (props) => {
 
     return (
         <StaticQuery
@@ -47,9 +59,9 @@ const siteBranding = () => {
         `}
         render={data => (
             <Branding>
-                <Logo fixed={data.brandingLogo.childImageSharp.fixed} alt="Logo"/>
+                <Logo fixed={data.brandingLogo.childImageSharp.fixed} alt="Logo" mobileMenuOpen={props.open}/>
                 <Title>
-                    <TitleLink to="/">
+                    <TitleLink to="/" mobileMenuOpen={props.open}>
                     {data.site.siteMetadata.title}
                     </TitleLink>
                 </Title>

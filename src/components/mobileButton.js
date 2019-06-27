@@ -51,6 +51,8 @@ span:nth-child(3) {
 ${({ mobileMenuOpen }) =>
   mobileMenuOpen &&
   `
+  color: white;
+  
   span:nth-child(1) {
 	  -webkit-transform: translateY(5px) rotate(45deg);
 	  transform: translateY(5px) rotate(45deg);

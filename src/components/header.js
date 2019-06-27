@@ -41,12 +41,18 @@ class siteHeader extends Component {
 	padding: 0.5rem 0;
 	background-color: ${props => props.theme.color.primary};
 	top: 0;
-	`
+
+		${({ mobileMenuOpen }) =>
+		mobileMenuOpen &&
+		`
+		background-color: grey;
+		`};
+	`;
 	//Header Styles - End
 
 	return (
-	  <Header>
-		<Branding />
+	  <Header mobileMenuOpen={this.state.mobileMenuOpen}>
+		<Branding open={this.state.mobileMenuOpen}/>
 		<MobileButton action={this.toggleMobileMenu} open={this.state.mobileMenuOpen}/>
 		<Nav action={this.closeMobileMenu} open={this.state.mobileMenuOpen}/>
 	</Header>

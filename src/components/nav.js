@@ -6,12 +6,15 @@ import { StaticQuery, graphql, Link } from "gatsby"
 const Nav = styled.nav`
 grid-column: 1 / -1;
 grid-row: 2 / 3;
-justify-self: end;
+justify-self: start;
 align-self: center;
+margin-left: 1rem;
 
 @media (min-width: ${props => props.theme.screen.tablet}) {
 grid-column: 2 / 3;
 grid-row: 1 / 2;
+justify-self: end;
+margin-left: 0;
 }
 `;
 
@@ -29,9 +32,9 @@ flex-direction: row;
 ${({ mobileMenuOpen }) =>
   mobileMenuOpen &&
   `
-    margin-right: 1rem;
     display: flex;
     flex-direction: column;
+    padding-bottom: 1rem;
 
     > ${NavListItem} {
       margin: 0;
@@ -48,6 +51,12 @@ const NavLink = styled(Link)`
 color: ${props => props.theme.color.textBlack};
 padding: 1rem 0.5rem;
 text-decoration: none;
+
+${({ mobileMenuOpen }) =>
+  mobileMenuOpen &&
+  `
+    color: white;
+  `};
 
 @media (min-width: ${props => props.theme.screen.tablet}) {
 font-size: 90%;
@@ -80,7 +89,7 @@ const siteNav = (props) => {
           <NavList mobileMenuOpen={props.open}>
             {data.site.siteMetadata.menuLinks.map(link => (
             <NavListItem key={link.name}>
-              <NavLink to={link.link}>
+              <NavLink to={link.link} mobileMenuOpen={props.open}>
                 {link.name}
               </NavLink>
             </NavListItem>
