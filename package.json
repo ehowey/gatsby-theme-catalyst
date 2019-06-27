@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-core",
   "description": "Core catalyst theme for GatsbyJS designed to be used as a starting point in site development.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Eric Howey <ehowey@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.0.20",
