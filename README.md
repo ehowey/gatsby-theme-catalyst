@@ -2,7 +2,7 @@
 
 **Currently a work in progress - please be aware that there are rapid breaking changes at this point in the development. Not currerntly recommended for use.**
 
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. I built this to meet my own needs and imagine that others would also have similar needs. You can imagine these themes and starters as a set of building blocks that are stacked on top of each other to create the finished product. 
+The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. I built this to meet my own needs and imagine that others would also have similar needs. 
 
 ## Catalyst Themes and Starters
 
@@ -13,19 +13,70 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 ## Installation and Use
 
-The easiest way to begin using these themes is with one of the unstyled starters, e.g. [Gatsby-Starter-Catalyst-Basic](https://github.com/ehowey/gatsby-starter-catalyst-basic). These starters have the themes already setup as dependencies and will work "out of the box" following the normal starter [installation instructions](https://www.gatsbyjs.org/docs/starters/).  The themes are not designed to be modified themselves but rather the starters can be modified to shadow components and extend base theme styling and functionality. See the [GatsbyJS documentaiton about working with themes](https://www.gatsbyjs.org/docs/themes/) for additional information on shadow components and theme usage.
+### Quick Start
 
-The themes themselves are published on npm and can be installed independently using `yard add gatsby-theme-catalyst-core` or `npm install gatsby-theme-catalyst-core`.  If you are using these themes in a development environment without a starter (or creating your own starter based on the themes) you might want to read [this blog post about Yarn workspaces](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/#reach-skip-nav).
+1.  **Create a Gatsby site.**
 
-## Philosophy
+    Use the Gatsby CLI to create a new site, specifying a catalyst based starter, the themes will be included by deafult in the dependencies.
 
-I created this series of themes to simplify my design and development workflow. My background is in working with Wordpress and I have always preferred to start with minimally styled boilerplate themes, e.g. [WP-Rig](https://github.com/wprig/wprig) and building forward from this basic starting point. Less is more.
+    ```sh
+    # create a new Gatsby site using the blog starter
+    gatsby new my-catalyst-starter https://github.com/ehowey/gatsby-starter-catalyst-basic
+    ```
 
-What I love about themes is that I could create a "core" theme which is basic and unstyled and then layer complexity on top of this base theme as needed.  Think lego bricks or building blocks.  The idea is that the core theme serves as a base on top of which further, more specialized, content can be progressively added.  The vision is that the "themes" stay relatively clean and unstyled with basic starters associated with them.  The use of [themes from styled components](https://www.styled-components.com/docs/advanced) in combination with starters allows styling to be easily extended and modified to meet your final design goals.
+1.  **Start developing.**
+
+    Navigate into your new site’s directory and start it up.
+
+    ```sh
+    cd my-catalyst-starter/
+    gatsby develop
+    ```
+
+1.  **Open the source code and start editing!**
+
+    Your site is now running at `http://localhost:8000`!
+
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+
+    Open the `my-catalyst-starter` directory in your code editor of choice and edit `src/pages/index.mdx`. Save your changes and the browser will update in real time!
+    
+You can read more about [using starters in the official documentation.](https://www.gatsbyjs.org/docs/starters/)
+
+### Custom Starter Development Using Catalyst Themes and Yarn Workspaces
+
+For more advanced users who want to dig into the guts of the themes and create their own starters the easiest way to do this is via [Yarn workspaces](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/). You will also want to read through the [themes documentation.](https://www.gatsbyjs.org/docs/themes/)  
+
+## Philosophy - Less is More
+
+**Simple Base Theme**
+`gatsby-theme-catalyst-core` was designed and built to be as simple and unstyled as possible. Think of this as the foundation of a home.
+
+**Building 'blocks' to extend the base theme**
+Using a series of progressively more styled and complex child-themes to add on to the core catalyst theme. Think of these as rooms that get added on to the house. These child-themes are focused on extending function and as design-agnostic as possible.
+
+**Complementary Starter Sites**
+The starter sites provide a "quick start" for site development including the themes as dependencies. You pick your house and rooms now it is up to you to add in the paint, furniture, and finishing touches.  This is where most, or all, of the styling and design should be done.  These starter sites will give some basic styling using shadow components however the goal is for these starter sites to tie together the Catalyst themes in a usable way giving you a "blank slate" on which you can build the final site.
+
+## Component Shadowing
+
+Gatsby themes, and starter sites that use theme, allow for component shadowing.  This means that components from the original core theme can be replaced or modified in the site without changing the core files! This gives you amazing power as an end-user to create fully custom projects without having to worry about affecting the core files. Please read the [following blog post which explains how to do this in detail.](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
+
+## Design Tokens and Theme Provider
+
+A fundamental feature of all Catalyst sites and themes is the use of the [ThemeProvider](https://www.styled-components.com/docs/advanced) functionality from Styled Components.  This allows for design tokens to be set and used across the themes and starter sites by way of component shadowing the theme for styled components. This file is always located in the following location:
+
+    .
+    ├── src
+      ├── gatsby-theme-catalyst-core
+        ├── config
+          ├── theme.js
+          
+You can easily modify this file to change design tokens or even add new ones in to use specifically on your project.  I have tried to use as clear and specific a set of naming conventions in this file.
 
 ## Opinionated Choices
 
-I made a number of development decisions to speed up my workflow and simplify the road to a finished website. There are lots of different ways of accomplishing some of these things however from my research these seemed like the "best" tools for my own needs.
+I made a number of development decisions to speed up my workflow and simplify the road to the finish line. There are lots of different ways of accomplishing some of these things however from my research these seemed like the "best" tools for my own needs.
 
 ### Styled Components
 
