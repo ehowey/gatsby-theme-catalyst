@@ -20,7 +20,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
     Use the Gatsby CLI to create a new site, specifying a catalyst based starter, the themes will be included by deafult in the dependencies.
 
     ```sh
-    # create a new Gatsby site using the blog starter
+    # create a new Gatsby site using the a catalyst starter site
     gatsby new my-catalyst-starter https://github.com/ehowey/gatsby-starter-catalyst-basic
     ```
 
