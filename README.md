@@ -1,4 +1,4 @@
-# \[WIP\]Gatsby Theme Catalyst Core
+# \[WIP\] Gatsby Theme Catalyst Core
 
 **Currently a work in progress - please be aware that there are rapid breaking changes at this point in the development. Not currerntly recommended for use.**
 
@@ -19,6 +19,22 @@ The themes themselves are published on npm and can be installed independently us
 
 ## Philosophy
 
-I created this series of themes to simplify my design and development workflow. My background is in working with Wordpress and I have always preferred to start with minimally styled boilerplate themes, e.g. [Underscores](https://underscores.me/) and building forward from this basic starting point. Less is more.
+I created this series of themes to simplify my design and development workflow. My background is in working with Wordpress and I have always preferred to start with minimally styled boilerplate themes, e.g. [WP-Rig](https://github.com/wprig/wprig) and building forward from this basic starting point. Less is more.
 
-What I loved about themes however is that I could create a "core" theme which is basic and unstyled and then layer complexity on top of this base theme as needed.  Think lego bricks or building blocks.  The idea is that the core theme serves as a base on top of which further, more styled, content can be progressively added.  The vision is that the "themes" themselves stay relatively clean and unstyled with basic starters associated with them.  The use of [themes from styled components](https://www.styled-components.com/docs/advanced) in combination with starters allows the styling to be easily extended and modified
+What I love about themes is that I could create a "core" theme which is basic and unstyled and then layer complexity on top of this base theme as needed.  Think lego bricks or building blocks.  The idea is that the core theme serves as a base on top of which further, more specialized, content can be progressively added.  The vision is that the "themes" stay relatively clean and unstyled with basic starters associated with them.  The use of [themes from styled components](https://www.styled-components.com/docs/advanced) in combination with starters allows styling to be easily extended and modified to meet your final design goals.
+
+## Opinionated Choices
+
+I made a number of development decisions to speed up my workflow and simplify the road to a finished website. There are lots of different ways of accomplishing some of these things however from my research these seemed like the "best" tools for my own needs.
+
+### Styled Components
+
+I come from a background primarily in CSS/HTML, my javascript skills are admittedly somewhat basic. I can get by but it isn't always pretty. Styled compnents allowed for a simple way of including CSS-in-JS while retaining the fornmatting I was familiar with. The other main factor I was attracted to was the ability to create a "theme" (think design tokens) for the sites which simplified the process of changing colors, spacing, etc. This theme is then passed down to starters which can modify and extend this to meet their needs. Styled Components has a mature ecosystem and it is realtively easy to find answers to common design pain-points when working with styled components.
+
+[Read the styled components docs](https://www.styled-components.com/docs)
+
+### Typography.js
+
+Again, like styled components, I appreciated the simplicity and maturity of this resource. Likesie the configuration file is passed down to child themes and starters which can then modify and extend this to meet their own design needs.  The default setting is use of a system font stack for both headers and body text.
+
+[Read the typography.js docs](https://kyleamathews.github.io/typography.js/)
