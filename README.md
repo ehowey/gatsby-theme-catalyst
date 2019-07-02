@@ -35,6 +35,12 @@ I come from a background primarily in CSS/HTML, my javascript skills are admitte
 
 ### Typography.js
 
-Again, like styled components, I appreciated the simplicity and maturity of this resource. Likesie the configuration file is passed down to child themes and starters which can then modify and extend this to meet their own design needs.  The default setting is use of a system font stack for both headers and body text.
+Again, like styled components, I appreciated the simplicity and maturity of this resource. Likesie the configuration file is passed down to child themes and startehttps://mdxjs.com/)rs which can then modify and extend this to meet their own design needs.  The default setting is use of a system font stack for both headers and body text.
 
 [Read the typography.js docs](https://kyleamathews.github.io/typography.js/)
+
+### MDX Files
+
+MDX files offer a number of improvements and simplifications for GatsbyJS site development and in my opinion are a no-brainer in place of standard markdown files. I also appreciate that the fallback can be to simply write normal markdown or javascript files, having access to MDX in your website development workflow is progressive enhancement and does not break any backwards compatability with normal markdown and javascript files.
+
+[Read the MDX docs](https://mdxjs.com/)
