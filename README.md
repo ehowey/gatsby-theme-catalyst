@@ -63,7 +63,9 @@ The starter sites provide a "quick start" for site development including the the
 
 ## Component Shadowing
 
-Gatsby themes, and starter sites that use theme, allow for component shadowing.  This means that components from the original core theme can be replaced or modified in the site without changing the core files! This gives you amazing power as an end-user to create fully custom projects without having to worry about affecting the core files. Please read the [following blog post which explains how to do this in detail.](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
+[Read about component shadowing in detail.](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
+
+Gatsby themes, and starter sites that use theme, allow for component shadowing.  This means that components from the original core theme can be replaced or modified in the site without changing the core files! This gives you amazing power as an end-user to create fully custom projects without having to worry about affecting the core files. 
 
 ## Styled Components, Theme Provider, and Design Tokens
 
@@ -95,9 +97,9 @@ Again, like styled components, I appreciated the simplicity and maturity of this
 
 ## MDX Files
 
-MDX files offer a number of improvements and simplifications for GatsbyJS site development and in my opinion are a no-brainer in place of standard markdown files. I also appreciate that the fallback can be to simply write normal markdown or javascript files, having access to MDX in your website development workflow is progressive enhancement and does not break any backwards compatability with normal markdown and javascript files.
-
 [Read the MDX docs](https://mdxjs.com/)
+
+MDX files offer a number of improvements and simplifications for GatsbyJS site development and in my opinion are a no-brainer in place of standard markdown files. I also appreciate that the fallback can be to simply write normal markdown or javascript files, having access to MDX in your website development workflow is a progressive enhancement and does not break any backwards compatability with normal markdown and javascript files.
 
 ## Next Steps
 
