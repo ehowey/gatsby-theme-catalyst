@@ -103,4 +103,4 @@ MDX files offer a number of improvements and simplifications for GatsbyJS site d
 
 ## Next Steps
 
-This is a passion project for me.  I would love any additional feedback, suggestions and pull requests.  I can be contacted via email at: [mailto:eric@erichowey.dev]
+This is a passion project for me.  I would love any additional feedback, suggestions and pull requests.  I can be contacted via email at: <eric@erichowey.dev>
