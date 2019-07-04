@@ -42,11 +42,5 @@ module.exports = {
         pathToConfigModule: `${__dirname}/src/config/typography`,
       },
     },
-    {
-      resolve: "gatsby-plugin-compile-es6-packages",
-      options: {
-        modules: ["gatsby-theme-catalyst-core"],
-      },
-    }
   ],
 }
