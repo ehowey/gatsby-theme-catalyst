@@ -4,6 +4,7 @@
   "version": "0.0.10",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
+    "@emotion/core": "^10.0.14",
     "@mdx-js/mdx": "^1.0.20",
     "@mdx-js/react": "^1.0.20",
     "babel-plugin-styled-components": "^1.10.0",
@@ -14,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-sharp": "^2.2.1",
     "gatsby-plugin-styled-components": "^3.1.0",
+    "gatsby-plugin-theme-ui": "^0.2.5",
     "gatsby-plugin-typography": "^2.3.0",
     "gatsby-source-filesystem": "^2.1.0",
     "gatsby-transformer-sharp": "^2.2.0",
@@ -21,6 +23,7 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.1",
+    "theme-ui": "^0.2.5",
     "typography": "^0.16.19"
   },
   "devDependencies": {
