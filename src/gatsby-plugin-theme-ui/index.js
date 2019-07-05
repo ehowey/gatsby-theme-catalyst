@@ -5,43 +5,63 @@
  */
 export default {
   colors: {
-    text: "#232129",
+    primary: "#3273dc",
+    secondary: "#0c66a1",
+    muted: "#f5f5f5",
+    text: "#333",
     background: "#fff",
-    primary: "#639",
   },
   fonts: {
-    default:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    text: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    heading: "inherit",
+    monospace: "Menlo, monospace"
   },
-  fontSizes: [16, 18, 20, 22, 27, 36],
+  fontSizes: [
+    "0.75rem",
+    "0.875rem",
+    "1rem",
+    "1.25rem",
+    "1.5rem",
+    "1.75rem",
+    "2rem",
+    "2.5rem",
+    "3rem" 
+  ],
+  fontWeights: {
+    text: "400",
+    heading: "700",
+    bold: "700"
+  },
   lineHeights: {
-    text: "1.45",
-    heading: "1.1",
+    text: "1.5",
+    heading: "1.125",
   },
+  spaces: [
+    "0rem",
+    "0.5rem",
+    "1rem",
+    "1.5rem",
+    "2rem",
+    "2.5rem",
+    "3rem"
+  ],
   sizes: {
-    container: 650,
+    container: 720,
+  },
+  breakpoints: [
+    '48em', '64em'
+  ],
+  catalystOptions: {
+    headerPosition: "static"
   },
   styles: {
     Layout: {
       backgroundColor: "background",
       color: "text",
-      fontFamily: "default",
-      fontSize: 1,
+      fontFamily: "text",
+      fontWeight: "text",
       lineHeight: "text",
-    },
-    Header: {
-      backgroundColor: "primary",
-      color: "background",
-      fontWeight: "bold",
-      margin: 0,
-      span: {
-        display: "block",
-        fontSize: 3,
-        margin: "0 auto",
-        maxWidth: "container",
-        padding: 3,
-        width: "90vw",
-      },
+      fontSize: 1
     },
     Main: {
       margin: "0 auto",
@@ -57,6 +77,7 @@ export default {
       color: "text",
       fontSize: 5,
       lineHeight: "heading",
+      fontweight: "heading"
     },
   },
 }

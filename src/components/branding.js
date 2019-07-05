@@ -36,7 +36,7 @@ const siteBranding = (props) => {
                 }}/>
                 <h1 sx={{
                     margin: '0',
-                    fontSize: '2rem'
+                    fontSize: [6, 7, 8]
                 }}>
                     <Link to="/" {...props} sx={{
                         color: '#000000',

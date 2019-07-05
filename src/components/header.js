@@ -35,10 +35,10 @@ class siteHeader extends Component {
 	  <div sx={{
 		display: 'grid',
 		gridTemplateColumns: 'auto 1fr',
-		position: 'static',
+		position: theme => theme.catalystOptions.headerPosition,
 		width: '100%',
 		padding: '0.5rem 0',
-		backgroundColor: this.state.mobileMenuOpen ? 'hotpink' : 'red'
+		backgroundColor: this.state.mobileMenuOpen ? 'primary' : 'secondary'
 	  }}>
 		<Branding open={this.state.mobileMenuOpen}/>
 		<MobileButton action={this.toggleMobileMenu} open={this.state.mobileMenuOpen}/>

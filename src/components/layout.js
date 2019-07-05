@@ -1,24 +1,19 @@
 import React from "react"
+import { css, Global } from "@emotion/core"
 import { Layout, Main, Container, Footer } from "theme-ui"
-import { graphql, useStaticQuery } from "gatsby"
 import Header from './header'
 
 const siteLayout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <Layout>
-      <Header>
-        <span>{data.site.siteMetadata.title}</span>
-      </Header>
+      <Global
+        styles={css`
+          body {
+            margin: 0;
+          }
+        `}
+      />
+      <Header />
       <Main>
         <Container>{children}</Container>
       </Main>
