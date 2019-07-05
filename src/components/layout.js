@@ -1,42 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
-import Theme from '../config/theme';
-import Header from './header';
-import Footer from './footer';
+import React from "react"
+import { Layout, Main, Container, Footer } from "theme-ui"
+import { graphql, useStaticQuery } from "gatsby"
+import Header from './header'
 
-const SiteContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`
-
-const SiteMain = styled.div`
-  flex-grow: 1;
-`
-
-const SiteContent = styled.div`
-  margin: 0 auto;
-  
-  @media (min-width: ${props => props.theme.screen.tablet}) {
-    margin: 0 auto;
-    max-width: ${props => props.theme.options.contentWidth};
+const siteLayout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
     }
-`
+  `)
 
-const Layout = (props) => {
-    return (
-      <Theme>
-          <SiteContainer>         
-              <SiteMain>
-                  <Header />
-                  <SiteContent>
-                      {props.children}
-                  </SiteContent> 
-              </SiteMain>
-              <Footer />
-          </SiteContainer>
-      </Theme>
-    )
+  return (
+    <Layout>
+      <Header>
+        <span>{data.site.siteMetadata.title}</span>
+      </Header>
+      <Main>
+        <Container>{children}</Container>
+      </Main>
+      <Footer>
+        <h2>Here is the footer</h2>
+      </Footer>
+    </Layout>
+  )
 }
 
-export default Layout
+export default siteLayout

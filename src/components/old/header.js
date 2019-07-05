@@ -1,8 +1,7 @@
-/** @jsx jsx */
-import { Component } from 'react'
-import { jsx } from 'theme-ui'
-import Branding from './branding'
-import Nav from './nav'
+import React, { Component } from 'react';
+import styled from "styled-components";
+import Branding from './branding';
+import Nav from './nav';
 import MobileButton from './mobileButton'
 
 
@@ -31,19 +30,32 @@ class siteHeader extends Component {
   };
 
   render() {
+
+	//Header Styles - Start - Sets dynamic grid to control layout for header area
+	const Header = styled.header`
+	display: grid;
+	grid-template-columns: auto 1fr;
+	z-index: 1000;
+	position: ${props => props.theme.options.headerPosition};
+	width: 100%;
+	padding: 0.5rem 0;
+	background-color: ${props => props.theme.color.primary};
+	top: 0;
+
+		${({ mobileMenuOpen }) =>
+		mobileMenuOpen &&
+		`
+		background-color: grey;
+		`};
+	`;
+	//Header Styles - End
+
 	return (
-	  <div sx={{
-		display: 'grid',
-		gridTemplateColumns: 'auto 1fr',
-		position: 'static',
-		width: '100%',
-		padding: '0.5rem 0',
-		backgroundColor: this.state.mobileMenuOpen ? 'hotpink' : 'red'
-	  }}>
+	  <Header mobileMenuOpen={this.state.mobileMenuOpen}>
 		<Branding open={this.state.mobileMenuOpen}/>
 		<MobileButton action={this.toggleMobileMenu} open={this.state.mobileMenuOpen}/>
 		<Nav action={this.closeMobileMenu} open={this.state.mobileMenuOpen}/>
-	</div>
+	</Header>
 	);
   }
 }

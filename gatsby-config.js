@@ -11,20 +11,21 @@ module.exports = {
             ]
   },
   plugins: [
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: [`.md`, `.mdx`],
+        defaultLayouts: {
+          default: require.resolve(`./src/components/layout`),
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
         path: `src/`,
-      },
-    },
-    {
-      resolve: `gatsby-mdx`,
-      options: {
-        defaultLayouts: {
-          default: require.resolve(`./src/components/layout.js`),
-        },
       },
     },
     {
@@ -35,12 +36,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `${__dirname}/src/config/typography`,
-      },
-    },
+    `gatsby-plugin-theme-ui`,
   ],
 }
