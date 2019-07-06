@@ -31,8 +31,8 @@ const siteBranding = (props) => {
             }}>
                 <Img fluid={data.brandingLogo.childImageSharp.fluid} alt="Logo" {...props} sx={{
                     marginRight: '0.5rem',
-                    height: '40px',
-                    width: '40px'
+                    height: ['40px', '60px', null],
+                    width: ['40px', '60px', null]
                 }}/>
                 <h1 sx={{
                     margin: '0',

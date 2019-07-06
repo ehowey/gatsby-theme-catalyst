@@ -9,7 +9,7 @@ const siteMobileButton = (props) => {
 			alignSelf: 'center',
 			color: '#4a4a4a',
 			cursor: 'pointer',
-			display: 'block',
+			display: ['block', 'none', null],
 			height: '2rem',
 			position: 'relative',
 			width: '2rem',
