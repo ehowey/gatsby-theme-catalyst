@@ -5,7 +5,6 @@ import Branding from './branding'
 import Nav from './nav'
 import MobileButton from './mobileButton'
 
-
 class siteHeader extends Component {
 	constructor(props) {
         super(props)
@@ -32,13 +31,14 @@ class siteHeader extends Component {
 
   render() {
 	return (
-	  <div sx={{
+	  <div
+	  sx={{
 		display: 'grid',
 		gridTemplateColumns: 'auto 1fr',
 		position: theme => theme.catalystOptions.headerPosition,
-		width: '100%',
+		color: this.state.mobileMenuOpen ? 'header.textOpen' : 'header.text',
+		backgroundColor: this.state.mobileMenuOpen ? 'header.backgroundOpen' : 'header.background',
 		padding: '0.5rem 0',
-		backgroundColor: this.state.mobileMenuOpen ? 'primary' : 'secondary'
 	  }}>
 		<Branding open={this.state.mobileMenuOpen}/>
 		<MobileButton action={this.toggleMobileMenu} open={this.state.mobileMenuOpen}/>

@@ -8,8 +8,15 @@ export default {
     primary: "#3273dc",
     secondary: "#0c66a1",
     muted: "#f5f5f5",
-    text: "#333",
-    background: "#fff",
+    text: "#333333",
+    background: "#ffffff",
+
+    header: {
+      background: "#cccccc",
+      backgroundOpen: '#333333',
+      text: '#333333',
+      textOpen: '#ffffff'
+    }
   },
   fonts: {
     text: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',

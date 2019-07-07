@@ -19,29 +19,39 @@ const siteNav = (props) => {
       }
       `}
       render={data => (
-      <nav sx={{
+      <nav
+      {...props}
+      sx={{
         gridColumn: ['1 / -1', '2 / 3', null],
         gridRow: ['2 / 3', '1 / 2', null],
-        justifySelf: ['start', 'end', null],
+        justifySelf: ['center', 'end', null],
         alignSelf: 'center',
-        marginLeft: ['1rem', 0, null]
+        height: [props.open && 'calc(100vh - 60px)', 'auto', null],
+        marginTop: ['1rem', 0, null],
       }}>
-        <ul {...props} sx={{
+        <ul
+        {...props}
+        sx={{
           display: [props.open ? 'flex' : 'none', 'flex', null],
+          flexDirection: ['column', 'row', null],
           listStyle: 'none',
           margin: '0',
           padding: '0',
-          flexDirection: ['column', 'row', null]
         }}>
           {data.site.siteMetadata.menuLinks.map(link => (
-          <li key={link.name} sx={{
+          <li key={link.name}
+          sx={{
             margin: ['0 0.75em', '0', null],
             padding: '0.5em'
           }}>
-            <Link to={link.link} {...props} sx={{
-              padding: '1rem 0.5rem',
+            <Link to={link.link}
+            {...props}
+            sx={{
+              color: props.open ? 'header.textOpen' : 'header.text',
+              fontSize: [4, 3, null],
               textDecoration: 'none',
-              color: '#000'
+              textTransform: 'uppercase',
+              padding: '1rem 0.5rem',
             }}>
               {link.name}
             </Link>
