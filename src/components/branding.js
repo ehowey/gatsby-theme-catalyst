@@ -42,7 +42,7 @@ const siteBranding = props => {
           <h1
             sx={{
               margin: "0",
-              fontSize: [6, 7, 8],
+              fontSize: [4, 5, 6],
             }}
           >
             <Link

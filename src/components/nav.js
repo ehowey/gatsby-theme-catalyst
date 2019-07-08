@@ -25,8 +25,8 @@ const siteNav = props => {
             gridRow: ["2 / 3", "1 / 2", null],
             justifySelf: ["center", "end", null],
             alignSelf: "center",
-            height: [props.open && "calc(100vh - 60px)", "auto", null],
-            marginTop: ["1rem", 0, null],
+            height: [props.open ? "calc(100vh - 60px)" : 0, "auto", null],
+            marginTop: [props.open ? "1rem": 0, 0, null],
           }}
         >
           <ul
@@ -54,7 +54,6 @@ const siteNav = props => {
                     color: props.open ? "header.textOpen" : "header.text",
                     fontSize: [4, 3, null],
                     textDecoration: "none",
-                    textTransform: "uppercase",
                     padding: "1rem 0.5rem",
                   }}
                 >
