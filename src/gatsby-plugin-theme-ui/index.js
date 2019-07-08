@@ -13,16 +13,15 @@ export default {
 
     header: {
       background: "#cccccc",
-      backgroundOpen: "#333333",
-      text: "#333333",
-      textOpen: "#ffffff",
-    },
+      backgroundOpen: '#333333',
+      text: '#333333',
+      textOpen: '#ffffff'
+    }
   },
   fonts: {
-    text:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    text: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     heading: "inherit",
-    monospace: "Menlo, monospace",
+    monospace: "Menlo, monospace"
   },
   fontSizes: [
     "0.75rem",
@@ -33,24 +32,34 @@ export default {
     "1.75rem",
     "2rem",
     "2.5rem",
-    "3rem",
+    "3rem" 
   ],
   fontWeights: {
     text: "400",
     heading: "700",
-    bold: "700",
+    bold: "700"
   },
   lineHeights: {
     text: "1.5",
     heading: "1.125",
   },
-  spaces: ["0rem", "0.5rem", "1rem", "1.5rem", "2rem", "2.5rem", "3rem"],
+  spaces: [
+    "0rem",
+    "0.5rem",
+    "1rem",
+    "1.5rem",
+    "2rem",
+    "2.5rem",
+    "3rem"
+  ],
   sizes: {
     container: 720,
   },
-  breakpoints: ["48em", "64em"],
+  breakpoints: [
+    '48em', '64em'
+  ],
   catalystOptions: {
-    headerPosition: "static",
+    headerPosition: "static"
   },
   styles: {
     Layout: {
@@ -59,7 +68,7 @@ export default {
       fontFamily: "text",
       fontWeight: "text",
       lineHeight: "text",
-      fontSize: 1,
+      fontSize: 1
     },
     Main: {
       margin: "0 auto",
@@ -75,7 +84,7 @@ export default {
       color: "text",
       fontSize: 5,
       lineHeight: "heading",
-      fontweight: "heading",
+      fontweight: "heading"
     },
   },
 }

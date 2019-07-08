@@ -35,11 +35,9 @@ class siteHeader extends Component {
         sx={{
           display: "grid",
           gridTemplateColumns: "auto 1fr",
-          position: theme => theme.catalystOptions.headerPosition,
+          position: theme => theme.headerPosition,
           color: this.state.mobileMenuOpen ? "header.textOpen" : "header.text",
-          backgroundColor: this.state.mobileMenuOpen
-            ? "header.backgroundOpen"
-            : "header.background",
+          backgroundColor: this.state.mobileMenuOpen ? "header.backgroundOpen" : "header.background",
           padding: "0.5rem 0",
         }}
       >
