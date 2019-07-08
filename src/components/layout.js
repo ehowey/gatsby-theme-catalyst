@@ -1,7 +1,7 @@
 import React from "react"
 import { css, Global } from "@emotion/core"
 import { Layout, Main, Container, Footer } from "theme-ui"
-import Header from './header'
+import Header from "./header"
 
 const siteLayout = ({ children }) => {
   return (
