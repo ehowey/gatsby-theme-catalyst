@@ -1,5 +1,6 @@
 # \[WIP\] Gatsby Theme Catalyst Core - Smarter, Faster, Easier
 
+
 **Currently a work in progress - please be aware that there are rapid breaking changes at this point in the development. Not currerntly recommended for use.**
 
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The guiding philosophy is to build websites smarter, faster, and easier.

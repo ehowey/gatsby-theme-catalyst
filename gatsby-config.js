@@ -11,6 +11,26 @@ module.exports = {
             ]
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.md`, `.mdx`],
+        defaultLayouts: {
+          default: require.resolve(`./src/components/layout`),
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1380,
+              linkImagesToOriginal: false,
+            },
+          },
+          { resolve: `gatsby-remark-copy-linked-files` },
+          { resolve: `gatsby-remark-smartypants` },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -19,28 +39,9 @@ module.exports = {
         path: `src/`,
       },
     },
-    {
-      resolve: `gatsby-mdx`,
-      options: {
-        defaultLayouts: {
-          default: require.resolve(`./src/components/layout.js`),
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/src/pages`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `${__dirname}/src/config/typography`,
-      },
-    },
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-offline`,
   ],
 }

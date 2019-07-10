@@ -1,84 +1,62 @@
-import React from 'react';
-import styled from 'styled-components';
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
-//Mobile Button Styles - Start - Hamburger Button, based on styles from Bulma.io
-const MobileButton = styled.button`
-grid-column: 2 / 3;
-grid-row: 1 / 2;
-align-self: center;
-color: #4a4a4a;
-cursor: pointer;
-display: block;
-height: 2rem;
-position: relative;
-width: 2rem;
-margin-left: auto;
-background-color: transparent;
-border: none;
+const Span = props => (
+  <span
+    sx={{
+      backgroundColor: "currentColor",
+      display: "block",
+      height: "1px",
+      left: "calc(50% - 8px)",
+      position: "absolute",
+      transformOrigin: "center",
+      transitionDuration: "86ms",
+      transitionProperty: "background-color, opacity, transform",
+      transitionTimingFunction: "ease-out",
+      width: "16px",
 
-@media (min-width: ${props => props.theme.screen.tablet}) {
-  display: none;
+      ":nth-of-type(1)": {
+        top: "calc(50% - 6px)",
+        transform: props.open && "translateY(5px) rotate(45deg)",
+      },
+      ":nth-of-type(2)": {
+        top: "calc(50% - 1px)",
+        opacity: props.open && "0",
+      },
+      ":nth-of-type(3)": {
+        top: "calc(50% + 4px)",
+        transform: props.open && "translateY(-5px) rotate(-45deg)",
+      },
+    }}
+  ></span>
+)
+
+const siteMobileButton = props => {
+  return (
+    <button
+      aria-label="Menu"
+      onClick={props.action}
+      {...props}
+      sx={{
+        gridColumn: "2 / 3",
+        gridRow: "1 / 2",
+        alignSelf: "center",
+        color: props.open ? "header.textOpen" : "header.text",
+        cursor: "pointer",
+        display: ["block", "none", null],
+        height: "2rem",
+        position: "relative",
+        width: "2rem",
+        marginLeft: "auto",
+        backgroundColor: "transparent",
+        border: "none",
+      }}
+    >
+      <Span {...props} />
+      <Span {...props} />
+      <Span {...props} />
+    </button>
+  )
 }
 
-span {
-	background-color: currentColor;
-	display: block;
-	height: 1px;
-	left: calc(50% - 8px);
-	position: absolute;
-	-webkit-transform-origin: center;
-			transform-origin: center;
-	transition-duration: 86ms;
-	transition-property: background-color, opacity, -webkit-transform;
-	transition-property: background-color, opacity, transform;
-	transition-property: background-color, opacity, transform, -webkit-transform;
-	transition-timing-function: ease-out;
-	width: 16px;
-}
-
-span:nth-child(1) {
-	top: calc(50% - 6px);
-}
-
-span:nth-child(2) {
-	top: calc(50% - 1px);
-}
-
-span:nth-child(3) {
-	top: calc(50% + 4px);
-}
-
-${({ mobileMenuOpen }) =>
-  mobileMenuOpen &&
-  `
-  color: white;
-  
-  span:nth-child(1) {
-	  -webkit-transform: translateY(5px) rotate(45deg);
-	  transform: translateY(5px) rotate(45deg);
-  }
-
-  span:nth-child(2) {
-  opacity: 0;
-  }
-
-  span:nth-child(3) {
-	  -webkit-transform: translateY(-5px) rotate(-45deg);
-	  transform: translateY(-5px) rotate(-45deg);
-  }
-  `}
-
-`;
-//Mobile Button Styles - End
-
-const siteMobileButton = (props) => {
-	return (
-		<MobileButton onClick={props.action} mobileMenuOpen={props.open}>
-            <span></span>
-            <span></span>
-            <span></span>
-        </MobileButton>
-	)
-}
-
-export default siteMobileButton;
+export default siteMobileButton
