@@ -1,4 +1,4 @@
-# \[WIP\] Gatsby Theme Catalyst Core
+# \[WIP\] Gatsby Theme Catalyst Core - Faster, Smarter, Easier
 
 **Currently a work in progress - please be aware that there are rapid breaking changes at this point in the development. Not currerntly recommended for use.**
 
