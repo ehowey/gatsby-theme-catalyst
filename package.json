@@ -19,6 +19,7 @@
     "gatsby-remark-smartypants": "^2.1.0",
     "gatsby-source-filesystem": "^2.1.0",
     "gatsby-transformer-sharp": "^2.2.0",
+    "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
     "theme-ui": "^0.2.5"
