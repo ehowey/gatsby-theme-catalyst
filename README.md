@@ -1,5 +1,6 @@
-# \[WIP\] Gatsby Theme Catalyst Core - Smarter, Faster, Easier
+# \[WIP\] Gatsby Theme Catalyst Core
 
+**Smarter, Faster, Easier**
 
 **Currently a work in progress - please be aware that there are rapid breaking changes at this point in the development. Not currerntly recommended for use.**
 
@@ -68,33 +69,17 @@ The starter sites provide a "quick start" for site development including the the
 
 Gatsby themes, and starter sites that use theme, allow for component shadowing.  This means that components from the original core theme can be replaced or modified in the site without changing the core files! This gives you amazing power as an end-user to create fully custom projects without having to worry about affecting the core files. 
 
-## Styled Components, Theme Provider, and Design Tokens
+## Theme-UI and Emotion
 
-[Read the styled components docs](https://www.styled-components.com/docs)
+[Read the theme-ui docs](https://www.theme-ui.com)
 
-Styled components is used throughout as it allows for a simple way of including CSS-in-JS while retaining the formatting I was familiar with from standard CSS. Styled components was also chosen because it is a mature, well documented and robust eco-system. 
-
-A fundamental feature of all Catalyst sites and themes is the use of the [ThemeProvider](https://www.styled-components.com/docs/advanced) functionality from Styled Components.  This allows for design tokens to be set and used across the themes and starter sites by way of component shadowing the theme for styled components. This file is always located in the following location:
+Theme-UI is used throughout as this is the suggested best practice when building Gatsby themes. The power of Theme-UI lies in allowing easy changes to design tokens through the theme context. This allows for design tokens to be set and used across the themes and starter sites by way of component shadowing the base theme. This file is always located in the following location:
 
     .
     ├── src
-      ├── gatsby-theme-catalyst-core
-        ├── config
-          ├── theme.js
+      ├── gatsby-plugin-theme-ui
+        ├── index.js
           
-You can easily modify this file to change design tokens or even add new ones in to use specifically on your project.  I have tried to use as clear and specific a set of naming conventions in this file.
-
-## Typography.js
-
-[Read the typography.js docs](https://kyleamathews.github.io/typography.js/)
-
-Again, like styled components, I appreciated the simplicity and maturity of this resource. Likewise the configuration file is passed down to child themes and starters which can then be modified and extended this to meet your own design needs.  The default setting is use of a system font stack for both headers and body text.
-
-    .
-    ├── src
-      ├── gatsby-theme-catalyst-core
-        ├── config
-          ├── typography.js
 
 ## MDX Files
 
