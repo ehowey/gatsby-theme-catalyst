@@ -16,6 +16,11 @@ export default {
       backgroundOpen: '#333333',
       text: '#333333',
       textOpen: '#ffffff'
+    },
+
+    footer: {
+      background: "#333333",
+      text: "#ffffff"
     }
   },
   fonts: {
@@ -54,12 +59,13 @@ export default {
   ],
   sizes: {
     container: 720,
+    baseFontSize: "30px"
   },
   breakpoints: [
     '48em', '64em'
   ],
   catalystOptions: {
-    headerPosition: "static"
+    headerPosition: "static",
   },
   styles: {
     Layout: {
@@ -79,6 +85,11 @@ export default {
       padding: 0,
       paddingBottom: 3,
       paddingTop: 3,
+    },
+    Footer: {
+      px: 3,
+      color: "footer.text",
+      backgroundColor: "footer.background"
     },
     h1: {
       color: "text",
