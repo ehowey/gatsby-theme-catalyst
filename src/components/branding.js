@@ -1,12 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const siteBranding = props => {
-  return (
-    <StaticQuery
-      query={graphql`
+  const data = useStaticQuery(graphql`
         query {
           site {
             siteMetadata {
@@ -21,8 +19,8 @@ const siteBranding = props => {
             }
           }
         }
-      `}
-      render={data => (
+      `)
+      return(
         <div
           sx={{
             display: "flex",
@@ -57,9 +55,7 @@ const siteBranding = props => {
             </Link>
           </h1>
         </div>
-      )}
-    />
   )
-}
+            }
 
 export default siteBranding
