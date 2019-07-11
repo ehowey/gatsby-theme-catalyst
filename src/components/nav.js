@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const siteNav = props => {
-  return (
-    <StaticQuery
-      query={graphql`
+    const data = useStaticQuery(graphql`
         query {
           site {
             siteMetadata {
@@ -16,8 +14,8 @@ const siteNav = props => {
             }
           }
         }
-      `}
-      render={data => (
+      `)
+      return (
         <nav
           {...props}
           sx={{
@@ -63,8 +61,6 @@ const siteNav = props => {
             ))}
           </ul>
         </nav>
-      )}
-    />
   )
 }
 
