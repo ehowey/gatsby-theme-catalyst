@@ -30,7 +30,7 @@ const siteBranding = props => {
         >
           <Img
             fluid={data.brandingLogo.childImageSharp.fluid}
-            alt="Logo"
+            alt={data.site.siteMetadata.title}
             sx={{
               marginRight: "0.5rem",
               height: ["40px", "60px", null],

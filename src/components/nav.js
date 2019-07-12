@@ -26,6 +26,8 @@ const siteNav = props => {
             height: [props.open ? "calc(100vh - 60px)" : 0, "auto", null],
             marginTop: [props.open ? "1rem": 0, 0, null],
           }}
+          role="navigation"
+          aria-label="main-navigation"
         >
           <ul
             {...props}
@@ -36,6 +38,8 @@ const siteNav = props => {
               margin: "0",
               padding: "0",
             }}
+            aria-label="menu-bar"
+            role="menubar"
           >
             {data.site.siteMetadata.menuLinks.map(link => (
               <li
@@ -44,6 +48,7 @@ const siteNav = props => {
                   margin: ["0 0.75em", "0", null],
                   padding: "0.5em",
                 }}
+                role="none"
               >
                 <Link
                   to={link.link}
@@ -54,6 +59,7 @@ const siteNav = props => {
                     textDecoration: "none",
                     padding: "1rem 0.5rem",
                   }}
+                  role="menuitem"
                 >
                   {link.name}
                 </Link>
