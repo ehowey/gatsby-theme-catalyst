@@ -23,7 +23,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
     ```sh
     # create a new Gatsby site using the a catalyst starter site
-    gatsby new my-catalyst-starter https://github.com/ehowey/gatsby-starter-catalyst-basic
+    gatsby new my-catalyst-starter-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
     ```
 
 1.  **Start developing.**
@@ -31,7 +31,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd my-catalyst-starter/
+    cd my-catalyst-starter-basic/
     gatsby develop
     ```
 
