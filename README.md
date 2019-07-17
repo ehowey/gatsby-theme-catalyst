@@ -9,9 +9,9 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 ## Catalyst Themes and Starters
 
 * [Gatsby-Theme-Catalyst-Core](https://github.com/ehowey/gatsby-theme-catalyst-core)
+  * [Gatsby-Starter-Catalyst-Basic](https://github.com/ehowey/gatsby-starter-catalyst-basic) - implements the core theme in a starter site to make installation and customization easier.
 * [Gatsby-Theme-Catalyst-Onepage](https://github.com/ehowey/gatsby-theme-catalyst-onepage)
-* [Gatsby-Starter-Catalyst-Basic](https://github.com/ehowey/gatsby-starter-catalyst-basic)
-* [Gatsby-Starter-Catalyst-Onepage](https://github.com/ehowey/gatsby-starter-catalyst-onepage)
+  * [Gatsby-Starter-Catalyst-Onepage](https://github.com/ehowey/gatsby-starter-catalyst-onepage) - implements the onepage theme in a starter site to make installation and customization easier.
 
 ## Installation and Use
 
