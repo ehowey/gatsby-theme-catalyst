@@ -7,8 +7,7 @@ const siteMain = props => {
           sx={{
             flex: "1 1 auto",
             margin: "0 auto",
-            maxWidth: "container",
-            width: "90vw",
+            maxWidth: "container"
           }}
         >
           {props.children}

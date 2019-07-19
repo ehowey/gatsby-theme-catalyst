@@ -59,7 +59,6 @@ export default {
   ],
   sizes: {
     container: 720,
-    baseFontSize: "30px"
   },
   breakpoints: [
     '48em', '64em'
@@ -74,22 +73,7 @@ export default {
       fontFamily: "text",
       fontWeight: "text",
       lineHeight: "text",
-      fontSize: 1
-    },
-    Main: {
-      margin: "0 auto",
-      maxWidth: "container",
-      width: "90vw",
-    },
-    Container: {
-      padding: 0,
-      paddingBottom: 3,
-      paddingTop: 3,
-    },
-    Footer: {
-      px: 3,
-      color: "footer.text",
-      backgroundColor: "footer.background"
+      fontSize: 3
     },
     h1: {
       color: "text",
