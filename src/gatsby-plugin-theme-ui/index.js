@@ -58,7 +58,8 @@ export default {
     "3rem"
   ],
   sizes: {
-    container: 720,
+    maxContentWidth: 720, // Sets the container size on larger screens, e.g. tablets and laptops
+    ContentWidth: "90vw" // Sets the container width on smaller screens, results in a 5vw margin on the left and right
   },
   breakpoints: [
     '48em', '64em'
