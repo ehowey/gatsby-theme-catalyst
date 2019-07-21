@@ -13,7 +13,7 @@ const siteBranding = props => {
           }
           brandingLogo: file(relativePath: { eq: "images/logo.png" }) {
             childImageSharp {
-              fluid(maxHeight: 100) {
+              fluid(maxHeight: 300) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -29,18 +29,22 @@ const siteBranding = props => {
           }}
         >
           <Img
-            fluid={data.brandingLogo.childImageSharp.fluid}
-            alt={data.site.siteMetadata.title}
             sx={{
               marginRight: "0.5rem",
-              height: ["40px", "60px", null],
-              width: ["40px", "60px", null],
+              height: "100%",
+              width: "100%",
+              minHeight: "100%",
+              minWidth: "100%"
             }}
+            fluid={data.brandingLogo.childImageSharp.fluid}
+            alt={data.site.siteMetadata.title}
+            imgStyle={{ objectFit: 'contain' }}
           />
           <h1
             sx={{
               margin: "0",
               fontSize: [4, 5, 6],
+              whiteSpace: "nowrap"
             }}
           >
             <Link

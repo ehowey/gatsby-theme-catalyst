@@ -8,7 +8,7 @@ const siteMain = props => {
             flex: "1 1 auto",
             margin: "0 auto",
             maxWidth: "maxContentWidth",
-            width: "minContentWidth",
+            width: "ContentWidth",
           }}
         >
           {props.children}

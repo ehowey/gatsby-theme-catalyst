@@ -7,6 +7,7 @@ const siteHeader = props => {
         sx={{
           display: "grid",
           gridTemplateColumns: "auto 1fr",
+          gridTemplateRows: [theme => theme.sizes.headerHeight, theme => theme.sizes.headerHeightTablet, theme => theme.sizes.headerHeightLaptop],
           width: "100%",
           position: theme => theme.catalystOptions.headerPosition,
           color: props.open ? "header.textOpen" : "header.text",
