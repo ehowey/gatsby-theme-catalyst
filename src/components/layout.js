@@ -54,8 +54,8 @@ class siteLayout extends Component {
         />
         <Header open={this.state.mobileMenuOpen}>
           <Branding open={this.state.mobileMenuOpen} />
-          <MobileButton action={this.toggleMobileMenu} open={this.state.mobileMenuOpen} />
-          <Nav action={this.closeMobileMenu} open={this.state.mobileMenuOpen} />
+          <MobileButton action={(e) => {this.toggleMobileMenu(e)}} open={this.state.mobileMenuOpen} />
+          <Nav action={(e) => {this.closeMobileMenu(e)}} open={this.state.mobileMenuOpen} />
         </Header>
         <Main>
           <Container>{this.props.children}</Container>

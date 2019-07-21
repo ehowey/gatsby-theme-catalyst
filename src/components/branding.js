@@ -25,31 +25,31 @@ const siteBranding = props => {
           sx={{
             display: "flex",
             alignItems: "center",
-            marginLeft: "1rem",
+            ml: "1rem",
+            mr: "1rem"
           }}
         >
-          <Img
-            sx={{
-              marginRight: "0.5rem",
-              height: "100%",
-              width: "100%",
-              minHeight: "100%",
-              minWidth: "100%"
-            }}
-            fluid={data.brandingLogo.childImageSharp.fluid}
-            alt={data.site.siteMetadata.title}
-            imgStyle={{ objectFit: 'contain' }}
-          />
+          <Link
+            to="/"
+          >
+            <Img
+              sx={{
+                marginRight: "0.5rem",
+                width: [theme => theme.sizes.logoWidth, theme => theme.sizes.logoWidthTablet, theme => theme.sizes.logoWidthLaptop],
+              }}
+              fluid={data.brandingLogo.childImageSharp.fluid}
+              alt={data.site.siteMetadata.title}
+              imgStyle={{ objectFit: 'contain' }}
+            />
+          </Link>
           <h1
             sx={{
-              margin: "0",
               fontSize: [4, 5, 6],
-              whiteSpace: "nowrap"
+              flex: "0 0 auto"
             }}
           >
             <Link
               to="/"
-              {...props}
               sx={{
                 color: props.open ? "header.textOpen" : "header.text",
                 textDecoration: "none",

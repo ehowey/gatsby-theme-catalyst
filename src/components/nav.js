@@ -17,7 +17,6 @@ const siteNav = props => {
       `)
       return (
         <nav
-          {...props}
           sx={{
             gridColumn: ["1 / -1", "2 / 3", null],
             gridRow: ["2 / 3", "1 / 2", null],
@@ -30,7 +29,6 @@ const siteNav = props => {
           aria-label="main-navigation"
         >
           <ul
-            {...props}
             sx={{
               display: [props.open ? "flex" : "none", "flex", null],
               flexDirection: ["column", "row", null],
@@ -52,7 +50,6 @@ const siteNav = props => {
               >
                 <Link
                   to={link.link}
-                  {...props}
                   sx={{
                     color: props.open ? "header.textOpen" : "header.text",
                     fontSize: [4, 3, null],
