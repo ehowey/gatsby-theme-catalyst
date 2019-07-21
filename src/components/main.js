@@ -6,9 +6,9 @@ const siteMain = props => {
         <main
           sx={{
             flex: "1 1 auto",
-            margin: "0 auto",
+            margin: theme => theme.sizes.contentMargin,
             maxWidth: "maxContentWidth",
-            width: "ContentWidth",
+            width: "contentWidth",
           }}
         >
           {props.children}
