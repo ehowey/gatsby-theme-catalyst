@@ -35,6 +35,7 @@ const siteBranding = props => {
             <Img
               sx={{
                 marginRight: "0.5rem",
+                // Uses width because of weird bug with flex box and shrinking content we don't want shrunk
                 width: [theme => theme.sizes.logoWidth, theme => theme.sizes.logoWidthTablet, theme => theme.sizes.logoWidthLaptop],
               }}
               fluid={data.brandingLogo.childImageSharp.fluid}

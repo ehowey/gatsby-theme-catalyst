@@ -67,12 +67,12 @@ export default {
     logoWidth: "50px", // Logo width on small screens, height is auto
     logoWidthTablet: "60px", // Logo width on medium screens, height is auto
     logoWidthLaptop: "60px", // Logo width on large screens, height is auto
-    mainMarginTop: "0",
-    mainMarginTopTablet: "0",
-    mainMarginTopLaptop: "0",
+    mainMarginTop: "0", // Used for a fixed header in the onepage theme
+    mainMarginTopTablet: "0", // Used for a fixed header in the onepage theme
+    mainMarginTopLaptop: "0", // Used for a fixed header in the onepage theme
   },
   breakpoints: [
-    '768px', '1024px'
+    '768px', '1024px' // Must be in pixels for now, value is used in calculations, in future will convert rems/ems
   ],
   catalystOptions: {
     headerPosition: "static",
