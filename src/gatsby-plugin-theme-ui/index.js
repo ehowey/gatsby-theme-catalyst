@@ -60,7 +60,6 @@ export default {
   sizes: {
     maxContentWidth: 720, // Sets the container size on larger screens, e.g. tablets and laptops
     contentWidth: "90vw", // Sets the container width on smaller screens, results in a 5vw margin on the left and right
-    contentMargin: "0 auto", //Sets margin on the main container, allows for fixed header
     headerHeight: "60px", // Sets the height of the header on screens before the first breakpoint, 767px and below by default
     headerHeightTablet: "80px", // Sets the height of the header after the first breakpoint, 768px to 1023px by default
     headerHeightLaptop: "80px", // Sets the height of the header after the second breakpoint, 1024px and up by default

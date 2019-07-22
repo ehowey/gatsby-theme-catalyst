@@ -9,9 +9,6 @@ const siteContainer = props => {
             width: "100%",
             ml: "auto",
             mr: "auto",
-            padding: 0,
-            pb: 2,
-            pt: 2
           }}
         >
           {props.children}
