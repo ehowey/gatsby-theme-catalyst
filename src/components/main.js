@@ -6,7 +6,10 @@ const siteMain = props => {
         <main
           sx={{
             flex: "1 1 auto",
-            margin: theme => theme.sizes.contentMargin,
+            mt: [theme => theme.sizes.mainMarginTop, theme => theme.sizes.mainMarginTopTablet, theme => theme.sizes.mainMarginTopLaptop],
+            mr: "auto",
+            mb: 0,
+            ml: "auto",
             maxWidth: "maxContentWidth",
             width: "contentWidth",
           }}

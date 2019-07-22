@@ -66,10 +66,13 @@ export default {
     headerHeightLaptop: "80px", // Sets the height of the header after the second breakpoint, 1024px and up by default
     logoWidth: "50px", // Logo width on small screens, height is auto
     logoWidthTablet: "60px", // Logo width on medium screens, height is auto
-    logoWidthLaptop: "60px" // Logo width on large screens, height is auto
+    logoWidthLaptop: "60px", // Logo width on large screens, height is auto
+    mainMarginTop: "0",
+    mainMarginTopTablet: "0",
+    mainMarginTopLaptop: "0",
   },
   breakpoints: [
-    '48em', '64em'
+    '768px', '1024px'
   ],
   catalystOptions: {
     headerPosition: "static",

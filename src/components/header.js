@@ -12,7 +12,6 @@ const siteHeader = props => {
           position: theme => theme.catalystOptions.headerPosition,
           color: props.open ? "header.textOpen" : "header.text",
           backgroundColor: props.open ? "header.backgroundOpen" : "header.background",
-          padding: "0.5rem 0",
           zIndex: "1000"
         }}
       >
