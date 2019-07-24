@@ -85,11 +85,5 @@ export default {
       lineHeight: "text",
       fontSize: 3
     },
-    h1: {
-      color: "text",
-      fontSize: 5,
-      lineHeight: "heading",
-      fontweight: "heading"
-    },
   },
 }

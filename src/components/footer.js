@@ -27,7 +27,7 @@ const siteFooter = () => {
           }}
         >
           <p>© {new Date().getFullYear()}, {data.site.siteMetadata.author}</p>
-          <p><Social/></p>
+          <Social/>
         </footer>
     )
 }

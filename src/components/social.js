@@ -26,46 +26,46 @@ const siteSocial = () => {
           }}
           >
         {data.site.siteMetadata.socialLinks.map((platform) => {
-            platform.name = platform.name.toLowerCase();
-            if (platform.name === "twitter") {
+            let socialName = platform.name.toLowerCase()
+            if (socialName === "twitter") {
                 return (
-                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     <FaTwitter />
                 </a>
                 )
-            } else if (platform.name === "github") {
+            } else if (socialName === "github") {
                 return (
-                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     <FaGithub />
                 </a>
                 )
-            } else if (platform.name === "facebook") {
+            } else if (socialName === "facebook") {
                 return (
-                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     <FaFacebookF />
                 </a>
                 )
-            } else if (platform.name === "youtube") {
+            } else if (socialName === "youtube") {
                 return (
-                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     <FaYoutube />
                 </a>
                 )
-            } else if (platform.name === "instagram") {
+            } else if (socialName === "instagram") {
                 return (
-                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     <FaInstagram />
                 </a>
                 )
-            } else if (platform.name === "linkedin") {
+            } else if (socialName === "linkedin") {
                 return (
-                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     <FaLinkedinIn/>
                 </a>
                 )
             } else {
                 return (
-                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     {platform.name}
                 </a>
                 )
