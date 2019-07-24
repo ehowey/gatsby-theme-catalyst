@@ -2,13 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Catalyst Core`,
     description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
-    author: `Eric Howey`,
-    menuLinks:[
-              {
-                name:'Home',
-                link:'/'
-              }
-            ]
+    author: `Eric Howey`
   },
   plugins: [
     {

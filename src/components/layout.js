@@ -60,9 +60,7 @@ class siteLayout extends Component {
         <Main>
           <Container>{this.props.children}</Container>
         </Main>
-        <Footer>
-          <h2>Here is the footer</h2>
-        </Footer>
+        <Footer/>
       </Layout>
     )
   }
