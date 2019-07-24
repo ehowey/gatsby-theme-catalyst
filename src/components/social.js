@@ -1,7 +1,8 @@
 /**@jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import { FaTwitter, FaGithub, FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn } from "react-icons/fa"
+import { IconContext } from "react-icons"
+import { FaRegEnvelope, FaTwitter, FaGithub, FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn } from "react-icons/fa"
 
 const siteSocial = () => {
     const data = useStaticQuery(graphql`
@@ -17,20 +18,22 @@ const siteSocial = () => {
             }
           }
         `)
+    const {theme} = useThemeUI()
       return (
-          <div
-          sx={{
-              "a": {
-                  color: "white"
-              }
-          }}
-          >
+        <IconContext.Provider value={{ size: theme.sizes.icons }}>
         {data.site.siteMetadata.socialLinks.map((platform) => {
             let socialName = platform.name.toLowerCase()
             if (socialName === "twitter") {
                 return (
                 <a href={platform.url} target="_blank" rel="noopener noreferrer" key={platform.name}>
                     <FaTwitter />
+                </a>
+                )
+            } else if (socialName === "email" || socialName === "e-mail") {
+                let email = "mailto:" + platform.url
+                return (
+                <a href={email} rel="noopener noreferrer" key={platform.name}>
+                    <FaRegEnvelope />
                 </a>
                 )
             } else if (socialName === "github") {
@@ -71,7 +74,7 @@ const siteSocial = () => {
                 )
             }
         })}
-        </div>
+        </IconContext.Provider>
       )
     }
 

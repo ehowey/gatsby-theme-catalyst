@@ -9,7 +9,7 @@ const siteFooter = () => {
         query {
           site {
             siteMetadata {
-              author
+              title
               socialLinks {
                 name
                 url
@@ -24,10 +24,30 @@ const siteFooter = () => {
             color: "footer.text",
             backgroundColor: "footer.background",
             px: 3,
+            py: 3,
+
+            "a": {
+              color: "footer.links"
+          }
           }}
         >
-          <p>© {new Date().getFullYear()}, {data.site.siteMetadata.author}</p>
-          <Social/>
+          <p>© {new Date().getFullYear()} {data.site.siteMetadata.title}</p>
+          <div
+          sx={{
+            "a": {
+              color: "footer.icons",
+              mr: 3
+          },
+            "a:last-of-type": {
+              mr: 0
+            },
+            "a:hover": {
+              color: "primary"
+            }
+          }}
+          >
+            <Social/>
+          </div>
         </footer>
     )
 }

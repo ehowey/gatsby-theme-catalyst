@@ -20,7 +20,9 @@ export default {
 
     footer: {
       background: "#333333",
-      text: "#ffffff"
+      text: "#ffffff",
+      links: "#ffffff",
+      icons: "#ffffff"
     }
   },
   fonts: {
@@ -69,6 +71,7 @@ export default {
     mainMarginTop: "0", // Used for a fixed header in the onepage theme
     mainMarginTopTablet: "0", // Used for a fixed header in the onepage theme
     mainMarginTopLaptop: "0", // Used for a fixed header in the onepage theme
+    icons: "2rem" // Sets the icons size across the website, see npm package "react-icons" for more information
   },
   breakpoints: [
     '768px', '1024px' // Must be in pixels for now, value is used in calculations, in future will convert rems/ems
