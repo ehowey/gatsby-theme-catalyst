@@ -25,8 +25,8 @@ const siteBranding = props => {
           sx={{
             display: "flex",
             alignItems: "center",
-            ml: "1rem",
-            mr: "1rem"
+            ml: 2,
+            mr: 2
           }}
         >
           <Link
