@@ -77,7 +77,8 @@ export default {
     '768px', '1024px' // Must be in pixels for now, value is used in calculations, in future will convert rems/ems
   ],
   catalystOptions: {
-    headerPosition: "static",
+    headerPosition: "static", // Setting is used for onepage theme
+    invertLogo: "invert(1)" // Default css value is "none". Setting allows the logo to be inverted when the mobile menu is open. Works best with single color logos.
   },
   styles: {
     Layout: {

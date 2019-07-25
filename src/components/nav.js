@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 const siteNav = props => {
@@ -15,6 +15,12 @@ const siteNav = props => {
           }
         }
       `)
+      const {theme} = useThemeUI()
+      const headOpen = () => {
+        return (
+          window.innerHeight - parseInt(theme.sizes.headerHeight) + "px"
+        )
+      }
       return (
         <nav
           sx={{
@@ -22,7 +28,7 @@ const siteNav = props => {
             gridRow: ["2 / 3", "1 / 2", null],
             justifySelf: ["center", "end", null],
             alignSelf: "center",
-            height: [props.open ? "calc(100vh - 60px)" : 0, "auto", null],
+            height: [props.open ? headOpen(): 0, "auto", null],
             marginTop: [props.open ? "1rem": 0, 0, null],
           }}
           role="navigation"
@@ -53,8 +59,8 @@ const siteNav = props => {
                   sx={{
                     color: props.open ? "header.textOpen" : "header.text",
                     fontSize: [4, 3, null],
-                    textDecoration: "none",
-                    padding: "1rem 0.5rem",
+                    py: 2,
+                    px: 1
                   }}
                   role="menuitem"
                 >
