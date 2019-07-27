@@ -13,22 +13,23 @@ export default {
 
     header: {
       background: "#cccccc",
-      backgroundOpen: '#333333',
-      text: '#333333',
-      textOpen: '#ffffff'
+      backgroundOpen: "#333333",
+      text: "#333333",
+      textOpen: "#ffffff",
     },
 
     footer: {
       background: "#333333",
       text: "#ffffff",
       links: "#ffffff",
-      icons: "#ffffff"
-    }
+      icons: "#ffffff",
+    },
   },
   fonts: {
-    text: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    text:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     heading: "inherit",
-    monospace: "Menlo, monospace"
+    monospace: "Menlo, monospace",
   },
   fontSizes: [
     "0.75rem",
@@ -39,28 +40,20 @@ export default {
     "1.75rem",
     "2rem",
     "2.5rem",
-    "3rem" 
+    "3rem",
   ],
   fontWeights: {
     text: "400",
     heading: "700",
-    bold: "700"
+    bold: "700",
   },
   lineHeights: {
     text: "1.5",
     heading: "1.125",
   },
-  spaces: [
-    "0rem",
-    "0.5rem",
-    "1rem",
-    "1.5rem",
-    "2rem",
-    "2.5rem",
-    "3rem"
-  ],
+  spaces: ["0rem", "0.5rem", "1rem", "1.5rem", "2rem", "2.5rem", "3rem"],
   sizes: {
-    maxContentWidth: 720, // Sets the container size on larger screens, e.g. tablets and laptops
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
     contentWidth: "90vw", // Sets the container width on smaller screens, results in a 5vw margin on the left and right
     headerHeight: "60px", // Sets the height of the header on screens before the first breakpoint, 767px and below by default
     headerHeightTablet: "80px", // Sets the height of the header after the first breakpoint, 768px to 1023px by default
@@ -71,14 +64,15 @@ export default {
     mainMarginTop: "0", // Used for a fixed header in the onepage theme
     mainMarginTopTablet: "0", // Used for a fixed header in the onepage theme
     mainMarginTopLaptop: "0", // Used for a fixed header in the onepage theme
-    icons: "2rem" // Sets the icons size across the website, see npm package "react-icons" for more information
+    icons: "2rem", // Sets the icons size across the website, see npm package "react-icons" for more information
   },
   breakpoints: [
-    '768px', '1024px' // Must be in pixels for now, value is used in calculations, in future will convert rems/ems
+    "768px",
+    "1024px", // Must be in pixels for now, value is used in calculations, in future will convert rems/ems
   ],
   catalystOptions: {
     headerPosition: "static", // Setting is used for onepage theme
-    invertLogo: "invert(1)" // Default css value is "none". Setting allows the logo to be inverted when the mobile menu is open. Works best with single color logos.
+    invertLogo: "invert(1)", // Default css value is "none". Setting allows the logo to be inverted when the mobile menu is open. Works best with single color logos.
   },
   styles: {
     Layout: {
@@ -87,7 +81,7 @@ export default {
       fontFamily: "text",
       fontWeight: "text",
       lineHeight: "text",
-      fontSize: 3
+      fontSize: 3,
     },
   },
 }

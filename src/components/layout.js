@@ -42,7 +42,9 @@ class siteLayout extends Component {
               box-sizing: border-box;
             }
 
-            *, *:before, *:after {
+            *,
+            *:before,
+            *:after {
               box-sizing: inherit;
             }
 
@@ -54,13 +56,23 @@ class siteLayout extends Component {
         />
         <Header open={this.state.mobileMenuOpen}>
           <Branding open={this.state.mobileMenuOpen} />
-          <MobileButton action={(e) => {this.toggleMobileMenu(e)}} open={this.state.mobileMenuOpen} />
-          <Nav action={(e) => {this.closeMobileMenu(e)}} open={this.state.mobileMenuOpen} />
+          <MobileButton
+            action={e => {
+              this.toggleMobileMenu(e)
+            }}
+            open={this.state.mobileMenuOpen}
+          />
+          <Nav
+            action={e => {
+              this.closeMobileMenu(e)
+            }}
+            open={this.state.mobileMenuOpen}
+          />
         </Header>
         <Main>
           <Container>{this.props.children}</Container>
         </Main>
-        <Footer/>
+        <Footer />
       </Layout>
     )
   }

@@ -35,7 +35,9 @@ const siteMobileButton = props => {
   return (
     <button
       aria-label="Menu"
-      onClick={(e) => {props.action(e)}}
+      onClick={e => {
+        props.action(e)
+      }}
       sx={{
         gridColumn: "2 / 3",
         gridRow: "1 / 2",
