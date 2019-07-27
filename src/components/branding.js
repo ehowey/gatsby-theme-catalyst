@@ -29,7 +29,12 @@ const siteBranding = props => {
         mr: 2,
       }}
     >
-      <Link to="/">
+      <Link
+        sx={{
+          display: theme => theme.catalystOptions.displaySiteLogo,
+        }}
+        to="/"
+      >
         <Img
           sx={{
             // Uses width because of weird bug with flex box and shrinking content we don't want shrunk
@@ -52,16 +57,17 @@ const siteBranding = props => {
       </Link>
       <h1
         sx={{
+          display: theme => theme.catalystOptions.displaySiteTitle,
           fontSize: [4, 5, 6],
           flex: "0 0 auto",
         }}
       >
         <Link
-          to="/"
           sx={{
             color: props.open ? "header.textOpen" : "header.text",
             textDecoration: "none",
           }}
+          to="/"
         >
           {data.site.siteMetadata.title}
         </Link>

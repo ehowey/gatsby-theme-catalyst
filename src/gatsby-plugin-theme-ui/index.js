@@ -73,6 +73,8 @@ export default {
   catalystOptions: {
     headerPosition: "static", // Setting is used for onepage theme
     invertLogo: "invert(1)", // Default css value is "none". Setting allows the logo to be inverted when the mobile menu is open. Works best with single color logos.
+    displaySiteLogo: "block", //Default is "block", set to "none" to remove logo
+    displaySiteTitle: "block", //Default is "block", set to "none" to remove title
   },
   styles: {
     Layout: {

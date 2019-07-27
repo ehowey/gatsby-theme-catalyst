@@ -18,7 +18,7 @@ const siteHeader = props => {
         backgroundColor: props.open
           ? "header.backgroundOpen"
           : "header.background",
-        zIndex: "1000",
+        zIndex: "1000", //Ensure the header is overtop of any content under it, e.g. a photo
       }}
     >
       {props.children}

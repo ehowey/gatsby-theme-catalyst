@@ -27,6 +27,7 @@ class siteLayout extends Component {
     this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }))
   }
 
+  //This function is necessary for the onepage theme to ensure the menu closes without a page change.
   closeMobileMenu = () => {
     if (this.state.mobileMenuOpen) {
       this.setState({ mobileMenuOpen: false })
