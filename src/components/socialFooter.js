@@ -21,6 +21,7 @@ const siteSocial = () => {
           socialLinks {
             name
             url
+            location
           }
         }
       }
@@ -28,10 +29,14 @@ const siteSocial = () => {
   `)
   const { theme } = useThemeUI()
   return (
-    <IconContext.Provider value={{ size: theme.sizes.icons }}>
+    <IconContext.Provider value={{ size: theme.sizes.iconsFooter }}>
       {data.site.siteMetadata.socialLinks.map(platform => {
         let socialName = platform.name.toLowerCase()
-        if (socialName === "twitter") {
+        let socialLocation = platform.location.toLowerCase()
+        if (
+          socialName === "twitter" &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
           return (
             <a
               href={platform.url}
@@ -42,14 +47,20 @@ const siteSocial = () => {
               <FaTwitter />
             </a>
           )
-        } else if (socialName === "email" || socialName === "e-mail") {
+        } else if (
+          (socialName === "email" || socialName === "e-mail") &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
           let email = "mailto:" + platform.url
           return (
             <a href={email} rel="noopener noreferrer" key={platform.name}>
               <FaRegEnvelope />
             </a>
           )
-        } else if (socialName === "github") {
+        } else if (
+          socialName === "github" &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
           return (
             <a
               href={platform.url}
@@ -60,7 +71,10 @@ const siteSocial = () => {
               <FaGithub />
             </a>
           )
-        } else if (socialName === "facebook") {
+        } else if (
+          socialName === "facebook" &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
           return (
             <a
               href={platform.url}
@@ -71,7 +85,10 @@ const siteSocial = () => {
               <FaFacebookF />
             </a>
           )
-        } else if (socialName === "youtube") {
+        } else if (
+          socialName === "youtube" &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
           return (
             <a
               href={platform.url}
@@ -82,7 +99,10 @@ const siteSocial = () => {
               <FaYoutube />
             </a>
           )
-        } else if (socialName === "instagram") {
+        } else if (
+          socialName === "instagram" &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
           return (
             <a
               href={platform.url}
@@ -93,7 +113,10 @@ const siteSocial = () => {
               <FaInstagram />
             </a>
           )
-        } else if (socialName === "linkedin") {
+        } else if (
+          socialName === "linkedin" &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
           return (
             <a
               href={platform.url}
@@ -104,7 +127,7 @@ const siteSocial = () => {
               <FaLinkedinIn />
             </a>
           )
-        } else {
+        } else if (socialLocation === "footer" || socialLocation === "all") {
           return (
             <a
               href={platform.url}
@@ -115,6 +138,8 @@ const siteSocial = () => {
               {platform.name}
             </a>
           )
+        } else {
+          return null
         }
       })}
     </IconContext.Provider>

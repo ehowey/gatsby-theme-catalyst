@@ -17,6 +17,9 @@ export default {
       backgroundOpen: "#333333",
       text: "#333333",
       textOpen: "#ffffff",
+      icons: "#333333",
+      iconsHover: "primary",
+      iconsOpen: "#ffffff",
     },
 
     footer: {
@@ -65,7 +68,8 @@ export default {
     mainMarginTop: "0", // Used for a fixed header in the onepage theme
     mainMarginTopTablet: "0", // Used for a fixed header in the onepage theme
     mainMarginTopLaptop: "0", // Used for a fixed header in the onepage theme
-    icons: "2rem", // Sets the icons size across the website, see npm package "react-icons" for more information
+    iconsFooter: "2rem", // Sets the icons size for the footer
+    iconsHeader: "1.25rem", // Sets the icons size for the header
   },
   breakpoints: [
     "768px",

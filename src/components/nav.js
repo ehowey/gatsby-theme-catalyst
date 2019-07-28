@@ -1,8 +1,13 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import Social from "./socialHeader"
 
 const siteNav = props => {
+  const { theme } = useThemeUI()
+  const headOpen = () => {
+    return window.innerHeight - parseInt(theme.sizes.headerHeight) + "px"
+  }
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -15,10 +20,6 @@ const siteNav = props => {
       }
     }
   `)
-  const { theme } = useThemeUI()
-  const headOpen = () => {
-    return window.innerHeight - parseInt(theme.sizes.headerHeight) + "px"
-  }
   return (
     <nav
       sx={{
@@ -28,18 +29,44 @@ const siteNav = props => {
         alignSelf: "center",
         height: [props.open ? headOpen() : 0, "auto", null],
         mt: [props.open ? 2 : 0, 0, null],
+        display: "flex",
+        flexDirection: ["column", "row", null],
       }}
       role="navigation"
       aria-label="main-navigation"
     >
+      <div
+        sx={{
+          display: [props.open ? "flex" : "none", "flex", null],
+          mr: ["auto", 3, null],
+          ml: "auto",
+          mt: "0.25rem",
+          mb: [3, 0, null],
+
+          a: {
+            color: props.open ? "header.iconsOpen" : "header.icons",
+            mr: [3, 2, null],
+            height: theme => theme.sizes.iconsHeader,
+            textDecoration: "none",
+          },
+          "a:last-of-type": {
+            mr: 0,
+          },
+          "a:hover": {
+            color: "header.iconsHover",
+          },
+        }}
+      >
+        <Social />
+      </div>
       <ul
         sx={{
           display: [props.open ? "flex" : "none", "flex", null],
           flexDirection: ["column", "row", null],
           textAlign: ["center", "left", null],
           listStyle: "none",
-          margin: "0",
-          padding: "0",
+          m: 0,
+          p: 0,
         }}
         aria-label="menu-bar"
         role="menubar"

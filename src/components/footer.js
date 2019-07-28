@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import Social from "./social"
+import Social from "./socialFooter"
 
 const siteFooter = () => {
   const data = useStaticQuery(graphql`
@@ -30,9 +30,6 @@ const siteFooter = () => {
         },
       }}
     >
-      <p>
-        © {new Date().getFullYear()} {data.site.siteMetadata.title}
-      </p>
       <div
         sx={{
           a: {
@@ -49,6 +46,9 @@ const siteFooter = () => {
       >
         <Social />
       </div>
+      <p sx={{ m: 0 }}>
+        © {new Date().getFullYear()} {data.site.siteMetadata.title}
+      </p>
     </footer>
   )
 }
