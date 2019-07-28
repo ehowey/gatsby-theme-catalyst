@@ -18,7 +18,7 @@ export default {
       text: "#333333",
       textOpen: "#ffffff",
       icons: "#333333",
-      iconsHover: "primary",
+      iconsHover: "#3273dc",
       iconsOpen: "#ffffff",
     },
 
