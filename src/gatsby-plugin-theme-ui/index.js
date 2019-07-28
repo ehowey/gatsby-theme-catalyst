@@ -9,6 +9,7 @@ export default {
     secondary: "#0c66a1",
     muted: "#f5f5f5",
     text: "#333333",
+    textWhite: "#ffffff",
     background: "#ffffff",
 
     header: {
@@ -84,6 +85,9 @@ export default {
       fontWeight: "text",
       lineHeight: "text",
       fontSize: 3,
+    },
+    a: {
+      color: "primary", //Sets the default link color
     },
   },
 }

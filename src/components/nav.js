@@ -28,6 +28,7 @@ const siteNav = props => {
         alignSelf: "center",
         height: [props.open ? headOpen() : 0, "auto", null],
         mt: [props.open ? 2 : 0, 0, null],
+        mr: [0, 3, null],
       }}
       role="navigation"
       aria-label="main-navigation"
@@ -47,8 +48,8 @@ const siteNav = props => {
           <li
             key={link.name}
             sx={{
-              margin: ["0 0.75em", "0", null],
-              padding: "0.5em",
+              my: [2, 0, null],
+              mx: 1,
             }}
             role="none"
           >
@@ -56,9 +57,31 @@ const siteNav = props => {
               to={link.link}
               sx={{
                 color: props.open ? "header.textOpen" : "header.text",
-                fontSize: [4, 3, null],
+                textDecoration: "none",
                 py: 2,
                 px: 1,
+                mr: [0, 3, null],
+                cursor: "pointer",
+                position: "relative",
+
+                "::after": {
+                  position: "absolute",
+                  top: "100%",
+                  left: "0",
+                  width: "100%",
+                  height: "1px",
+                  backgroundColor: "secondary",
+                  content: "''",
+                  opacity: "0",
+                  transition: "height 0.3s, opacity 0.3s, transform 0.3s",
+                  transform: "translateY(-10px)",
+                },
+
+                ":hover::after, :focus::after": {
+                  height: "5px",
+                  opacity: "1",
+                  transform: "translateY(0px)",
+                },
               }}
               role="menuitem"
             >
