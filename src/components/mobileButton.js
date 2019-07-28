@@ -7,25 +7,25 @@ const Span = props => (
       backgroundColor: "currentColor",
       display: "block",
       height: "1px",
-      left: "calc(50% - 8px)",
+      left: "calc(50% - 10px)",
       position: "absolute",
       transformOrigin: "center",
       transitionDuration: "86ms",
       transitionProperty: "background-color, opacity, transform",
       transitionTimingFunction: "ease-out",
-      width: "16px",
+      width: "20px",
 
       ":nth-of-type(1)": {
-        top: "calc(50% - 6px)",
-        transform: props.open && "translateY(5px) rotate(45deg)",
+        top: "calc(50% - 8px)",
+        transform: props.open && "translateY(7px) rotate(45deg)",
       },
       ":nth-of-type(2)": {
         top: "calc(50% - 1px)",
         opacity: props.open && "0",
       },
       ":nth-of-type(3)": {
-        top: "calc(50% + 4px)",
-        transform: props.open && "translateY(-5px) rotate(-45deg)",
+        top: "calc(50% + 6px)",
+        transform: props.open && "translateY(-7px) rotate(-45deg)",
       },
     }}
   ></span>
