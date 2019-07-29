@@ -1,17 +1,17 @@
-# \[WIP\] Gatsby Theme Catalyst Core
+# Gatsby Theme Catalyst Core
 
-**Smarter, Faster, Easier**
-
-**Currently a work in progress - please be aware that there are rapid breaking changes at this point in the development. Not currerntly recommended for use.**
-
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The guiding philosophy is to build websites smarter, faster, and easier.
+The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. I built this to make freelancing easier for myself and assume others might benefit too. This project is early in its development life cycle.
 
 ## Catalyst Themes and Starters
 
 * [Gatsby-Theme-Catalyst-Core](https://github.com/ehowey/gatsby-theme-catalyst-core)
-  * [Gatsby-Starter-Catalyst-Basic](https://github.com/ehowey/gatsby-starter-catalyst-basic) - implements the core theme in a starter site to make installation and customization easier.
-* [Gatsby-Theme-Catalyst-Onepage](https://github.com/ehowey/gatsby-theme-catalyst-onepage)
-  * [Gatsby-Starter-Catalyst-Onepage](https://github.com/ehowey/gatsby-starter-catalyst-onepage) - implements the onepage theme in a starter site to make installation and customization easier.
+*This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies. Uses theme-ui under the hood for styling changes and MDX for pages.*
+  * [Gatsby-Theme-Catalyst-Onepage](https://github.com/ehowey/gatsby-theme-catalyst-onepage)
+  *Child theme of the core theme. Allows for a single page website with anchor links and smooth scrolling in lieu of a traditional nav menu which would link to different pages*
+  * [Gatsby-Starter-Catalyst-Core](https://github.com/ehowey/gatsby-starter-catalyst-core)
+  *Starter for the core theme to make installation and customization easier*
+  * [Gatsby-Starter-Catalyst-Onepage](https://github.com/ehowey/gatsby-starter-catalyst-onepage)
+  *Starter for the onepage theme to make installation and customization easier*
 
 ## Installation and Use
 
@@ -19,11 +19,11 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying a catalyst based starter, the themes will be included by deafult in the dependencies.
+    Use the Gatsby CLI to create a new site, specifying a catalyst based starter, the themes will be included by default in the dependencies.
 
     ```sh
     # create a new Gatsby site using the a catalyst starter site
-    gatsby new my-catalyst-starter-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
+    gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-catalyst-core
     ```
 
 1.  **Start developing.**
@@ -31,7 +31,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd my-catalyst-starter-basic/
+    cd my-catalyst-starter-core/
     gatsby develop
     ```
 
@@ -45,29 +45,27 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
     
 You can read more about [using starters in the official documentation.](https://www.gatsbyjs.org/docs/starters/)
 
-### Custom Starter Development Using Catalyst Themes and Yarn Workspaces
-
 For more advanced users who want to dig into the guts of the themes and create their own starters the easiest way to do this is via [Yarn workspaces](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/). You will also want to read through the [themes documentation.](https://www.gatsbyjs.org/docs/themes/)  
 
 ## Philosophy - Less is More
 
-**Simple Base Theme**
+**Simple Core Theme**
 
-`gatsby-theme-catalyst-core` was designed and built to be as simple and unstyled as possible. Think of this as the foundation of a home.
+`gatsby-theme-catalyst-core` was designed and built to be as simple and unstyled as possible. A barebones starting point which can be easily maintained in the future to manage dependencies on client sites.
 
-**Building 'blocks' to extend the base theme**
+**Child themes to extend the core theme**
 
-Using a series of progressively more styled and complex child-themes to add on to the core catalyst theme. Think of these as rooms that get added on to the house. These child-themes are focused on extending function and as design-agnostic as possible.
+These child-themes are focused on extending function and remain as design-agnostic as possible. Again this makes longterm maintenance easier for client sites. It is my preference to begin new projects without too much styling that has to be undone.
 
 **Complementary Starter Sites**
 
-The starter sites provide a "quick start" for site development including the themes as dependencies. You pick your house and rooms now it is up to you to add in the paint, furniture, and finishing touches.  This is where most, or all, of the styling and design should be done.  These starter sites will give some basic styling using shadow components however the goal is for these starter sites to tie together the Catalyst themes in a usable way giving you a "blank slate" on which you can build the final site.
+The starter sites provide a "quick start" for site development using the themes as dependencies. Currently the starter sites only provide basic implementation of the themes. It is my vision however that in time there could be more styled and complex starters released which do not need as much customization. 
 
 ## Component Shadowing
 
 [Read about component shadowing in detail.](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
 
-Gatsby themes, and starter sites that use theme, allow for component shadowing.  This means that components from the original core theme can be replaced or modified in the site without changing the core files! This gives you amazing power as an end-user to create fully custom projects without having to worry about affecting the core files. 
+Gatsby themes, and starter sites that use theme, allow for component shadowing.  This means that components from the original core theme can be replaced or modified in the site without changing the core files! This gives you amazing power as an end-user to create fully custom projects without having to worry about affecting the theme files. Longterm maintainability is a big win here.
 
 ## Theme-UI and Emotion
 
@@ -80,6 +78,7 @@ Theme-UI is used throughout as this is the suggested best practice when building
       ├── gatsby-plugin-theme-ui
         ├── index.js
           
+There are many options available in the theme-ui file which are all documented with inline comments in the code explaining the functionality and potential values.
 
 ## MDX Files
 
