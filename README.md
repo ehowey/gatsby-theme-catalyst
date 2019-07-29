@@ -1,5 +1,11 @@
 # Gatsby Theme Catalyst Core
 
+**Blazing Start**
+```sh
+# create a new Gatsby site using the catalyst core starter site
+gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-catalyst-core
+```
+
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [theme-ui](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/). I started this project to make freelancing easier for myself and assume others might benefit too. This project is early in its development life cycle and follows semantic versioning, breaking changes will result in version bump, e.g. `v0.1.x -> v0.2.0`, non-breaking changes will be minor versions, e.g. `v0.1.11 -> v.0.1.12`.
 
 ## Catalyst Themes and Starters
@@ -18,7 +24,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
     Use the Gatsby CLI to create a new site, specifying a catalyst based starter, the themes will be included by default in the dependencies.
 
     ```sh
-    # create a new Gatsby site using the a catalyst starter site
+    # create a new Gatsby site using the catalyst core starter site
     gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-catalyst-core
     ```
 
