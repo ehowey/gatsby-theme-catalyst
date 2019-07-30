@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Catalyst Core`,
-    description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
+    description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed base theme.`,
     author: `Eric Howey`,
   },
   plugins: [
