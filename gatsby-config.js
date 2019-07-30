@@ -21,7 +21,12 @@ module.exports = {
               withWebp: true,
             },
           },
-          { resolve: `gatsby-remark-copy-linked-files` },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              destinationDir: `assets/images`,
+            },
+          },
           { resolve: `gatsby-remark-smartypants` },
         ],
         plugins: [`gatsby-remark-images`],
