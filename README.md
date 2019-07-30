@@ -27,6 +27,7 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 * [Gatsby Themes Docs](https://www.gatsbyjs.org/docs/themes/)
 * [Theme-UI Docs](https://theme-ui.com/)
 * [MDX Docs](https://mdxjs.com/)
+* [Component Shadowsing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
 
 ### Customizing the themes using Theme-UI and Emotion
 
