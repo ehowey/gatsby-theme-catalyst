@@ -18,11 +18,13 @@ module.exports = {
             options: {
               maxWidth: 1380,
               linkImagesToOriginal: false,
+              withWebp: true,
             },
           },
           { resolve: `gatsby-remark-copy-linked-files` },
           { resolve: `gatsby-remark-smartypants` },
         ],
+        plugins: [`gatsby-remark-images`],
       },
     },
     `gatsby-plugin-react-helmet`,
