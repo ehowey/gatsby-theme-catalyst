@@ -29,35 +29,27 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 * [MDX Docs](https://mdxjs.com/)
 * [Component Shadowsing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
 
-### Customizing the themes using Theme-UI and Emotion
+### Gatsby-Config
 
-Theme-UI is used throughout as this is the suggested best practice when building Gatsby themes. The power of Theme-UI lies in allowing easy changes to design tokens, such as colors, through the theme context. This allows for design tokens to be set and used across the themes and starter sites by way of component shadowing the base theme. 
+Some theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, site description, etc. The starter sites come with some pre-configured options in here.  Just replace the values with your settings.
 
-The theme-ui files have many inline code comments to explain various design tokens if their prupose is not immediately obvious. The full theme-ui file with all of the options from `gatsby-theme-catalyst-core` can be viewed in the theme directory here:
+The **social links** option is a bit unique. You can specify three different locations in the settings, `header`, `footer`, and `all` which a pretty self-explanatory.  Currently it will automatically fetch the correct logo for most major social menu providers as a fallback it will display a text link.
+
+### Customizing the themes using Theme-UI and Design Tokens
+
+[Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
+
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The theme-ui files have inline code comments to explain various design tokens if their purpose is not immediately obvious. The full theme-ui file with all of the options from `gatsby-theme-catalyst-core` can be viewed in the theme directory here:
 
 [gatsby-theme-catalyst-core/tree/master/src/gatsby-plugin-theme-ui](https://github.com/ehowey/gatsby-theme-catalyst-core/tree/master/src/gatsby-plugin-theme-ui)
 
-The file you should modify to [extend these settings by way of component shadowing](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/) is  always located in the following location in the starters:
+The file you should modify to set design tokens is  always located in the following location in the starters:
 
     .
     ├── src
       ├── gatsby-plugin-theme-ui
         ├── index.js
           
-
-## Component Shadowing
-
-[Read about component shadowing in detail.](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
-
-Gatsby themes, and starter sites that use theme, allow for component shadowing.  This means that components from the original core theme can be replaced or modified in the site without changing the core files! This gives you amazing power as an end-user to create fully custom projects without having to worry about affecting the theme files. Longterm maintainability is a big win here.
-
-## MDX Files
-
-[Read the MDX docs](https://mdxjs.com/)
-
-MDX files offer a number of improvements and simplifications for GatsbyJS site development and in my opinion are a no-brainer in place of standard markdown files. I also appreciate that the fallback can be to simply write normal markdown or javascript files, having access to MDX in your website development workflow is a progressive enhancement and does not break any backwards compatability with normal markdown and javascript files.
-
-
 ## Philosophy - Less is More
 
 **Simple Core Theme**
