@@ -87,11 +87,11 @@ import "typeface-raleway";
 
 export default merge(baseTheme, {
   //Updated theme options go here.
-fonts: {
-    text: "Raleway, sans-serif",
-    heading: "inherit",
-    monospace: "Menlo, monospace",
-  },
+  fonts: {
+      text: "Raleway, sans-serif",
+      heading: "inherit",
+      monospace: "Menlo, monospace",
+    },
 });
 ```
           
