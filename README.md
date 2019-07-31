@@ -20,7 +20,7 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
   * [Gatsby-Starter-Catalyst-Core](https://github.com/ehowey/gatsby-starter-catalyst-core): *Starter for the core theme to make installation and customization easier*
   * [Gatsby-Starter-Catalyst-Onepage](https://github.com/ehowey/gatsby-starter-catalyst-onepage): *Starter for the onepage theme to make installation and customization easier*
 
-## Documentation
+## Customizing the themes and starters
 
 **Essential Reading**:
 
@@ -31,24 +31,69 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 
 ### Gatsby-Config
 
-Some theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, site description, etc. The starter sites come with some pre-configured options in here.  Just replace the values with your settings.
+Some theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options in here you can modify.
 
-The **social links** option is a bit unique. You can specify three different locations in the settings, `header`, `footer`, and `all` which a pretty self-explanatory.  Currently it will automatically fetch the correct logo for most major social menu providers as a fallback it will display a text link.
+The **social links** option is a bit unique. You can specify three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately.  It will work with most major social platforms and has a fallback for displaying the text.
 
 ### Customizing the themes using Theme-UI and Design Tokens
 
 [Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
 
-Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The theme-ui files have inline code comments to explain various design tokens if their purpose is not immediately obvious. The full theme-ui file with all of the options from `gatsby-theme-catalyst-core` can be viewed in the theme directory here:
-
-[gatsby-theme-catalyst-core/tree/master/src/gatsby-plugin-theme-ui](https://github.com/ehowey/gatsby-theme-catalyst-core/tree/master/src/gatsby-plugin-theme-ui)
-
-The file you should modify to set design tokens is  always located in the following location in the starters:
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The file you should modify to set design tokens is always located in the following location in the starters:
 
     .
     ├── src
       ├── gatsby-plugin-theme-ui
         ├── index.js
+        
+ Try adding the code to the theme-ui and see what happens:
+ 
+ ```
+import merge from "deepmerge";
+import { baseTheme } from "gatsby-theme-catalyst-core";
+
+export default merge(baseTheme, {
+  //Updated theme options go here.
+    colors: {
+      primary: "tomato",
+      secondary: "crimson",
+
+    header: {
+      background: "tomato",
+      backgroundOpen: "crimson",
+    },
+
+    footer: {
+      background: "crimson",
+    },
+  },
+});
+```
+
+### Typography and changing fonts
+
+The deafult settings in the theme include a system font stack for both the body and headings. These themes do not use typography.js at this time, I may change this in the future.
+
+To add a custom font you need to first add the font as a dependency in your starter site, like this for Raleway:
+
+`yarn add typeface-raleway`
+
+Then at the top of your theme-ui file you will need to import the font and declare it, like this for Raleway:
+
+```
+import merge from "deepmerge";
+import { baseTheme } from "gatsby-theme-catalyst-core";
+import "typeface-raleway";
+
+export default merge(baseTheme, {
+  //Updated theme options go here.
+fonts: {
+    text: "Raleway, sans-serif",
+    heading: "inherit",
+    monospace: "Menlo, monospace",
+  },
+});
+```
           
 ## Philosophy - Less is More
 
