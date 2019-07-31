@@ -62,7 +62,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -92,7 +92,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -107,7 +107,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -122,7 +122,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -137,7 +137,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -152,7 +152,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -167,7 +167,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -182,7 +182,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -197,7 +197,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -212,7 +212,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -227,7 +227,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -242,7 +242,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -257,7 +257,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -272,7 +272,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -287,7 +287,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -302,7 +302,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -317,7 +317,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -332,7 +332,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -347,7 +347,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -362,7 +362,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -377,7 +377,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -392,7 +392,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -407,7 +407,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -422,7 +422,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -437,7 +437,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -452,7 +452,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -467,7 +467,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -482,7 +482,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -497,7 +497,7 @@ const siteSocial = () => {
         ) {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -509,7 +509,7 @@ const siteSocial = () => {
         } else if (socialLocation === "footer" || socialLocation === "all") {
           return (
             <a
-              href={platofrm.url}
+              href={platform.url}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"

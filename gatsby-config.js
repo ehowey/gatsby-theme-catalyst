@@ -3,6 +3,7 @@ module.exports = {
     title: `Catalyst Core`,
     description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed base theme.`,
     author: `Eric Howey`,
+    siteUrl: `https://www.example.com`,
   },
   plugins: [
     {
@@ -32,7 +33,6 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -40,6 +40,9 @@ module.exports = {
         path: `src/`,
       },
     },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-theme-ui`,
