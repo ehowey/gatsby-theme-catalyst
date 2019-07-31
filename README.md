@@ -46,7 +46,7 @@ Theme-UI based design tokens are used throughout the Catalyst series of themes a
       ├── gatsby-plugin-theme-ui
         ├── index.js
         
- Try adding the code to the theme-ui and see what happens:
+ Try adding this code to the theme-ui and see what happens:
  
  ```
 import merge from "deepmerge";
