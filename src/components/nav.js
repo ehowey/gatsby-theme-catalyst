@@ -102,7 +102,7 @@ const siteNav = props => {
           display: [props.open ? "flex" : "none", "flex", null],
           mr: ["auto", 3, null],
           ml: "auto",
-          mb: [3, 0, null],
+          mt: [3, 0, null],
 
           a: {
             color: props.open ? "header.iconsOpen" : "header.icons",
