@@ -27,7 +27,7 @@ const siteNav = props => {
       aria-label="main-navigation"
     >
       <NavLinks {...props} />
-      <SocialLinks>
+      <SocialLinks {...props}>
         <SocialHeaderIcons />
       </SocialLinks>
     </nav>
