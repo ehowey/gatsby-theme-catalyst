@@ -7,6 +7,10 @@ gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-cat
 ```
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
+**Demo**
+
+[https://gatsby-starter-catalyst-core.netlify.com/](https://gatsby-starter-catalyst-core.netlify.com/)
+
 ## Overview
 
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. 
