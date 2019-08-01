@@ -66,16 +66,13 @@ export default {
     logoWidth: "50px", // Logo width on small screens, height is auto
     logoWidthTablet: "60px", // Logo width on medium screens, height is auto
     logoWidthLaptop: "60px", // Logo width on large screens, height is auto
-    mainMarginTop: "0", // Used for a fixed header in the onepage theme
-    mainMarginTopTablet: "0", // Used for a fixed header in the onepage theme
-    mainMarginTopLaptop: "0", // Used for a fixed header in the onepage theme
+    mainMarginTop: "2rem", // Used for a dynamic spacing between nav menu and page content, also for fixed header in onepage theme
+    mainMarginTopTablet: "2rem", // Used for a dynamic spacing between nav menu and page content, also for fixed header in onepage theme
+    mainMarginTopLaptop: "2rem", // Used for a dynamic spacing between nav menu and page content, also for fixed header in onepage theme
     iconsFooter: "2rem", // Sets the icons size for the footer
     iconsHeader: "1.25rem", // Sets the icons size for the header
   },
-  breakpoints: [
-    "768px",
-    "1024px", // Must be in pixels for now, value is used in calculations, in future will convert rems/ems
-  ],
+  breakpoints: ["48em", "64em"],
   catalystOptions: {
     headerPosition: "static", // Setting is used for onepage theme
     invertLogo: "invert(1)", // Default css value is "none". Setting allows the logo to be inverted when the mobile menu is open. Works best with single color logos.

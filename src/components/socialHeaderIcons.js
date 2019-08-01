@@ -12,6 +12,7 @@ import {
   FaLinkedinIn,
   FaBehance,
   FaBitbucket,
+  FaCodepen,
   FaDribbble,
   Fa500Px,
   FaEtsy,
@@ -129,6 +130,21 @@ const siteSocial = () => {
               key={platform.name}
             >
               <FaBitbucket />
+            </a>
+          )
+        } else if (
+          socialName === "codepen" &&
+          (socialLocation === "header" || socialLocation === "all")
+        ) {
+          return (
+            <a
+              href={platform.url}
+              aria-label={platform.name}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={platform.name}
+            >
+              <FaCodepen />
             </a>
           )
         } else if (
