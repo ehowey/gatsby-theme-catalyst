@@ -8,6 +8,4 @@ export {
   default as SocialHeaderIcons,
 } from "./src/components/socialHeaderIcons"
 export { default as baseTheme } from "./src/gatsby-plugin-theme-ui"
-export {
-  default as ButtonInternal,
-} from "./src/components/blocks/buttonInternal"
+export { default as ButtonInternal } from "./src/design-system/buttonInternal"
