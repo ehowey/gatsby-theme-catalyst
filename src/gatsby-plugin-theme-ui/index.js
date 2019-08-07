@@ -29,6 +29,12 @@ export default {
       links: "#ffffff",
       icons: "#ffffff",
     },
+
+    button: {
+      background: "#3273dc",
+      hover: "#0c66a1",
+      text: "#ffffff",
+    },
   },
   fonts: {
     text:
