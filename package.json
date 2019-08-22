@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-catalyst-core",
-  "description": "Core catalyst theme for GatsbyJS designed to be used as an acellerated starting point in website development.",
+  "description": "Core catalyst theme for GatsbyJS designed to be used as an accelerated starting point in website development.",
   "version": "0.2.5",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
