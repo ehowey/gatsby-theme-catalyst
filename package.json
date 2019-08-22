@@ -1,11 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-core",
   "description": "Core catalyst theme for GatsbyJS designed to be used as an acellerated starting point in website development.",
-<<<<<<< HEAD
-  "version": "0.2.1",
-=======
   "version": "0.2.5",
->>>>>>> 93032260d92840c4849f4309aa011a232b35260a
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@emotion/core": "^10.0.16",
@@ -32,21 +28,13 @@
     "theme-ui": "^0.2.35"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "gatsby": "^2.13.52",
-=======
-    "gatsby": "^2.13.74",
->>>>>>> 93032260d92840c4849f4309aa011a232b35260a
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "peerDependencies": {
-<<<<<<< HEAD
     "gatsby": "^2.13.52",
-=======
-    "gatsby": "^2.13.74",
->>>>>>> 93032260d92840c4849f4309aa011a232b35260a
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
