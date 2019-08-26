@@ -41,6 +41,9 @@ export default {
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     heading: "inherit",
     monospace: "Menlo, monospace",
+    siteTitle: "inherit",
+    navLinks: "inherit",
+    alt: "inherit",
   },
   fontSizes: [
     "0.75rem",

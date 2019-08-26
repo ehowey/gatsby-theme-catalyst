@@ -47,6 +47,7 @@ const navLinks = props => {
               mr: [0, 3, null],
               cursor: "pointer",
               position: "relative",
+              fontFamily: "navLinks",
               fontWeight: "bold",
               letterSpacing: "1px",
 
