@@ -27,7 +27,7 @@ const siteLogo = props => {
     if (data.catalystConfig.invertSiteLogo) {
       return "invert(1)"
     } else {
-      return "invert(1)"
+      return "none"
     }
   }
 
