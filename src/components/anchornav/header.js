@@ -17,6 +17,7 @@ const siteHeader = props => {
         ],
         width: "100%",
         px: 3,
+        position: "fixed",
         color: props.open ? "header.textOpen" : "header.text",
         backgroundColor: props.open
           ? "header.backgroundOpen"

@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from "theme-ui";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import { Link as AnchorLink } from "react-scroll";
+import { jsx, useThemeUI } from "theme-ui"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link as AnchorLink } from "react-scroll"
 
 const navLinks = props => {
-  const { theme } = useThemeUI();
-  let navOffset = parseInt(theme.sizes.headerHeight);
+  const { theme } = useThemeUI()
+  let navOffset = parseInt(theme.sizes.headerHeight)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -17,25 +17,25 @@ const navLinks = props => {
         }
       }
     }
-  `);
+  `)
   if (typeof window !== "undefined") {
-    var is_root = window.location.pathname === "/"; //Equals true if we're at the root
+    var is_root = window.location.pathname === "/" //Equals true if we're at the root
   }
   if (typeof window !== "undefined") {
     let w = window,
       d = document,
       e = d.documentElement,
       g = d.getElementsByTagName("body")[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth;
-    var screenWidth = x;
+      x = w.innerWidth || e.clientWidth || g.clientWidth
+    var screenWidth = x
   }
   if (
     screenWidth >= parseInt(theme.breakpoints[0]) &&
     screenWidth <= parseInt(theme.breakpoints[1])
   ) {
-    navOffset = 2 * parseInt(theme.sizes.headerHeightTablet);
+    navOffset = 2 * parseInt(theme.sizes.headerHeightTablet)
   } else if (screenWidth >= parseInt(theme.breakpoints[1])) {
-    navOffset = parseInt(theme.sizes.headerHeightLaptop);
+    navOffset = parseInt(theme.sizes.headerHeightLaptop)
   }
   if (is_root) {
     return (
@@ -57,8 +57,8 @@ const navLinks = props => {
             backgroundColor: "secondary",
             content: "''",
             opacity: "1",
-            transform: "translateY(0px)"
-          }
+            transform: "translateY(0px)",
+          },
         }}
         aria-label="menu-bar"
         role="menubar"
@@ -67,7 +67,7 @@ const navLinks = props => {
           <li
             sx={{
               my: [2, 0, null],
-              mx: 1
+              mx: 1,
             }}
             key={link.name}
             role="none"
@@ -94,18 +94,18 @@ const navLinks = props => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)"
+                  transform: "translateY(-10px)",
                 },
 
                 ":hover::after, :focus::after": {
                   height: "5px",
                   opacity: "1",
-                  transform: "translateY(0px)"
-                }
+                  transform: "translateY(0px)",
+                },
               }}
               to={link.link.replace(/#/g, "").toLowerCase()}
               onClick={e => {
-                props.action(e);
+                props.close(e)
               }}
               role="menuitem"
               spy={true}
@@ -120,7 +120,7 @@ const navLinks = props => {
           </li>
         ))}
       </ul>
-    );
+    )
   } else {
     return (
       <ul
@@ -141,8 +141,8 @@ const navLinks = props => {
             backgroundColor: "secondary",
             content: "''",
             opacity: "1",
-            transform: "translateY(0px)"
-          }
+            transform: "translateY(0px)",
+          },
         }}
         aria-label="menu-bar"
         role="menubar"
@@ -151,7 +151,7 @@ const navLinks = props => {
           <li
             sx={{
               my: [2, 0, null],
-              mx: 1
+              mx: 1,
             }}
             key={link.name}
             role="none"
@@ -178,14 +178,14 @@ const navLinks = props => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)"
+                  transform: "translateY(-10px)",
                 },
 
                 ":hover::after, :focus::after": {
                   height: "5px",
                   opacity: "1",
-                  transform: "translateY(0px)"
-                }
+                  transform: "translateY(0px)",
+                },
               }}
               to={"/" + link.link}
               role="menuitem"
@@ -195,8 +195,8 @@ const navLinks = props => {
           </li>
         ))}
       </ul>
-    );
+    )
   }
-};
+}
 
-export default navLinks;
+export default navLinks

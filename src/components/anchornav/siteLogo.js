@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import { animateScroll as scroll } from "react-scroll"
 
 const siteLogo = props => {
   const data = useStaticQuery(graphql`
@@ -23,6 +24,7 @@ const siteLogo = props => {
       }
     }
   `)
+
   const invertLogo = () => {
     if (data.catalystConfig.invertSiteLogo) {
       return "invert(1)"
@@ -31,8 +33,27 @@ const siteLogo = props => {
     }
   }
 
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      if (is_root) {
+        scroll.scrollToTop()
+      } else {
+        window.location.href = "/"
+      }
+    }
+  }
+
+  if (typeof window !== "undefined") {
+    var is_root = window.location.pathname === "/" //Equals true if we're at the root
+  }
+
   return (
-    <Link to="/">
+    <div
+      sx={{
+        cursor: "pointer",
+      }}
+      onClick={scrollToTop}
+    >
       <Img
         sx={{
           // Uses width because of weird bug with flex box and shrinking content we don't want shrunk
@@ -48,7 +69,7 @@ const siteLogo = props => {
         alt={data.site.siteMetadata.title}
         imgStyle={{ objectFit: "contain" }}
       />
-    </Link>
+    </div>
   )
 }
 

@@ -7,7 +7,7 @@ const navLinks = props => {
     query {
       site {
         siteMetadata {
-          menuLinks {
+          pageLinks {
             name
             link
           }
@@ -28,7 +28,7 @@ const navLinks = props => {
       aria-label="menu-bar"
       role="menubar"
     >
-      {data.site.siteMetadata.menuLinks.map(link => (
+      {data.site.siteMetadata.pageLinks.map(link => (
         <li
           key={link.name}
           sx={{

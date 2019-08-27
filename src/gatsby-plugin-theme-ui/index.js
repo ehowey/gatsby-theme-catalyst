@@ -81,7 +81,7 @@ export default {
     iconsFooter: "2rem", // Sets the icons size for the footer
     iconsHeader: "1.25rem", // Sets the icons size for the header
   },
-  breakpoints: ["48em", "64em"],
+  breakpoints: ["768px", "1024px"], //Must use pixel units in anchornav
   styles: {
     root: {
       fontFamily: "body",
