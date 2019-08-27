@@ -22,8 +22,8 @@ const siteBranding = props => {
         mr: 2,
       }}
     >
-      {data.catalystConfig.displaySiteLogo ? <Logo /> : null}
-      {data.catalystConfig.displaySiteTitle ? <Title /> : null}
+      {data.catalystConfig.displaySiteLogo ? <Logo {...props} /> : null}
+      {data.catalystConfig.displaySiteTitle ? <Title {...props} /> : null}
     </div>
   )
 }

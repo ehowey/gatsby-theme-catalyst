@@ -15,7 +15,6 @@ const siteTitle = props => {
   return (
     <h1
       sx={{
-        display: theme => theme.catalystOptions.displaySiteTitle,
         fontFamily: "siteTitle",
         fontSize: [3, 5, 6],
         flex: "0 0 auto",

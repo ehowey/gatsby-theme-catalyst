@@ -41,8 +41,8 @@ export default {
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     heading: "inherit",
     monospace: "Menlo, monospace",
-    siteTitle: "inherit",
-    navLinks: "inherit",
+    siteTitle: "inherit", // Font for main site title
+    navLinks: "inherit", // Font for the nav menu links
     alt: "inherit",
   },
   fontSizes: [
@@ -82,12 +82,6 @@ export default {
     iconsHeader: "1.25rem", // Sets the icons size for the header
   },
   breakpoints: ["48em", "64em"],
-  catalystOptions: {
-    headerPosition: "static", // Setting is used for onepage theme
-    invertLogo: "invert(1)", // Default css value is "none". Setting allows the logo to be inverted when the mobile menu is open. Works best with single color logos.
-    displaySiteLogo: "block", //Default is "block", set to "none" to remove logo
-    displaySiteTitle: "block", //Default is "block", set to "none" to remove title
-  },
   styles: {
     root: {
       fontFamily: "body",

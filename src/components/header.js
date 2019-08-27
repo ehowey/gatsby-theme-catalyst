@@ -1,7 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useStaticQuery, graphql } from "gatsby"
 
 const siteHeader = props => {
+  const data = useStaticQuery(graphql`
+    query {
+      catalystConfig {
+        headerPosition
+      }
+    }
+  `)
   return (
     <header
       sx={{
@@ -14,7 +22,7 @@ const siteHeader = props => {
         ],
         width: "100%",
         px: 3,
-        position: theme => theme.catalystOptions.headerPosition,
+        position: data.catalystConfig.headerPosition,
         color: props.open ? "header.textOpen" : "header.text",
         backgroundColor: props.open
           ? "header.backgroundOpen"

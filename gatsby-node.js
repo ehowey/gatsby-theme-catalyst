@@ -5,17 +5,26 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`type CatalystConfig implements Node {
 displaySiteLogo: Boolean!
 displaySiteTitle: Boolean!
+invertSiteLogo: Boolean!
+headerPosition: String!
 }`)
 }
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { displaySiteLogo = true, displaySiteTitle = true }
+  {
+    displaySiteLogo = true,
+    displaySiteTitle = true,
+    invertSiteLogo = false,
+    headerPosition = "static",
+  }
 ) => {
   // create garden data from plugin config
   const catalystConfig = {
     displaySiteLogo,
     displaySiteTitle,
+    invertSiteLogo,
+    headerPosition,
   }
   createNode({
     ...catalystConfig,

@@ -11,6 +11,9 @@ const siteLogo = props => {
           title
         }
       }
+      catalystConfig {
+        invertSiteLogo
+      }
       brandingLogo: file(relativePath: { eq: "images/logo.png" }) {
         childImageSharp {
           fluid(maxHeight: 300) {
@@ -20,13 +23,16 @@ const siteLogo = props => {
       }
     }
   `)
+  const invertLogo = () => {
+    if (data.catalystConfig.invertSiteLogo) {
+      return "invert(1)"
+    } else {
+      return "invert(1)"
+    }
+  }
+
   return (
-    <Link
-      sx={{
-        display: theme => theme.catalystOptions.displaySiteLogo,
-      }}
-      to="/"
-    >
+    <Link to="/">
       <Img
         sx={{
           // Uses width because of weird bug with flex box and shrinking content we don't want shrunk
@@ -36,11 +42,7 @@ const siteLogo = props => {
             theme => theme.sizes.logoWidthLaptop,
           ],
           mr: 1,
-          filter: [
-            props.open ? theme => theme.catalystOptions.invertLogo : "none",
-            "none",
-            null,
-          ],
+          filter: [props.open ? invertLogo : "none", "none", null],
         }}
         fluid={data.brandingLogo.childImageSharp.fluid}
         alt={data.site.siteMetadata.title}
