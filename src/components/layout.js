@@ -5,9 +5,6 @@ import Header from "./header"
 import Main from "./main"
 import Container from "./container"
 import Footer from "./footer"
-import Branding from "./branding"
-import Nav from "./nav"
-import MobileButton from "./mobileButton"
 
 class siteLayout extends Component {
   constructor(props) {
@@ -33,7 +30,6 @@ class siteLayout extends Component {
       this.setState({ mobileMenuOpen: false })
     }
   }
-
   render() {
     return (
       <Layout>
@@ -55,21 +51,15 @@ class siteLayout extends Component {
             }
           `}
         />
-        <Header open={this.state.mobileMenuOpen}>
-          <Branding open={this.state.mobileMenuOpen} />
-          <MobileButton
-            action={e => {
-              this.toggleMobileMenu(e)
-            }}
-            open={this.state.mobileMenuOpen}
-          />
-          <Nav
-            action={e => {
-              this.closeMobileMenu(e)
-            }}
-            open={this.state.mobileMenuOpen}
-          />
-        </Header>
+        <Header
+          open={this.state.mobileMenuOpen}
+          toggle={e => {
+            this.toggleMobileMenu(e)
+          }}
+          close={e => {
+            this.closeMobileMenu(e)
+          }}
+        />
         <Main>
           <Container>{this.props.children}</Container>
         </Main>

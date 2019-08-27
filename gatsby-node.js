@@ -6,7 +6,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 displaySiteLogo: Boolean!
 displaySiteTitle: Boolean!
 invertSiteLogo: Boolean!
-headerPosition: String!
+headerType: String!
 }`)
 }
 
@@ -16,7 +16,7 @@ exports.sourceNodes = (
     displaySiteLogo = true,
     displaySiteTitle = true,
     invertSiteLogo = false,
-    headerPosition = "static",
+    headerType = "topnav",
   }
 ) => {
   // create garden data from plugin config
@@ -24,7 +24,7 @@ exports.sourceNodes = (
     displaySiteLogo,
     displaySiteTitle,
     invertSiteLogo,
-    headerPosition,
+    headerType,
   }
   createNode({
     ...catalystConfig,

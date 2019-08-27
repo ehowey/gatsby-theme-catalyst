@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import SocialFooterIcons from "./socialFooterIcons"
+import SocialFooterIcons from "./social/socialFooterIcons"
 
 const siteFooter = () => {
   const data = useStaticQuery(graphql`

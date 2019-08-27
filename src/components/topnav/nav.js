@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from "theme-ui"
 import NavLinks from "./navLinks"
-import SocialLinks from "./socialLinks"
-import SocialHeaderIcons from "./socialHeaderIcons"
+import SocialLinks from "../social/socialLinks"
+import SocialHeaderIcons from "../social/socialHeaderIcons"
 
 const siteNav = props => {
   const { theme } = useThemeUI()
