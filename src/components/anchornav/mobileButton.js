@@ -31,7 +31,7 @@ const Span = props => (
   ></span>
 )
 
-const siteMobileButton = props => {
+const SiteMobileButton = props => {
   return (
     <button
       aria-label="Menu"
@@ -60,4 +60,4 @@ const siteMobileButton = props => {
   )
 }
 
-export default siteMobileButton
+export default SiteMobileButton

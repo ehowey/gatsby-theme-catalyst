@@ -3,7 +3,7 @@ import { jsx, useThemeUI } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
 
-const navLinks = props => {
+const NavLinks = props => {
   const { theme } = useThemeUI()
   let navOffset = parseInt(theme.sizes.headerHeight)
   const data = useStaticQuery(graphql`
@@ -299,4 +299,4 @@ const navLinks = props => {
   }
 }
 
-export default navLinks
+export default NavLinks

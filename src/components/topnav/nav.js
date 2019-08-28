@@ -4,7 +4,7 @@ import NavLinks from "./navLinks"
 import SocialLinks from "../social/socialLinks"
 import SocialHeaderIcons from "../social/socialHeaderIcons"
 
-const siteNav = props => {
+const SiteNav = props => {
   const { theme } = useThemeUI()
   const headOpen = () => {
     if (typeof window !== "undefined") {
@@ -38,4 +38,4 @@ const siteNav = props => {
   )
 }
 
-export default siteNav
+export default SiteNav

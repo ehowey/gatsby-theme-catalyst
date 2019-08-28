@@ -36,7 +36,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa"
 
-const siteSocial = () => {
+const SiteSocialFooter = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -542,4 +542,4 @@ const siteSocial = () => {
   )
 }
 
-export default siteSocial
+export default SiteSocialFooter

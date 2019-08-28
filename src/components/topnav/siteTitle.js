@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-const siteTitle = props => {
+const SiteTitle = props => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -33,4 +33,4 @@ const siteTitle = props => {
   )
 }
 
-export default siteTitle
+export default SiteTitle

@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Logo from "./siteLogo"
 import Title from "./siteTitle"
 
-const siteBranding = props => {
+const SiteBranding = props => {
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
@@ -28,4 +28,4 @@ const siteBranding = props => {
   )
 }
 
-export default siteBranding
+export default SiteBranding

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const siteContainer = props => {
+const SiteContainer = props => {
   return (
     <div
       sx={{
@@ -15,4 +15,4 @@ const siteContainer = props => {
   )
 }
 
-export default siteContainer
+export default SiteContainer

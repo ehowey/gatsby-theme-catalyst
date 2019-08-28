@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-const navLinks = props => {
+const NavLinks = props => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -80,4 +80,4 @@ const navLinks = props => {
   )
 }
 
-export default navLinks
+export default NavLinks

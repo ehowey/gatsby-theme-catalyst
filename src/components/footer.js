@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import SocialFooterIcons from "./social/socialFooterIcons"
 
-const siteFooter = () => {
+const SiteFooter = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -53,4 +53,4 @@ const siteFooter = () => {
   )
 }
 
-export default siteFooter
+export default SiteFooter

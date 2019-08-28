@@ -5,7 +5,7 @@ import TopNavHeader from "./topnav/header"
 import AnchorNavHeader from "./anchornav/header"
 import BlendedNavHeader from "./blendednav/header"
 
-const siteHeader = props => {
+const SiteHeader = props => {
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
@@ -24,4 +24,4 @@ const siteHeader = props => {
   }
 }
 
-export default siteHeader
+export default SiteHeader

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const siteMain = props => {
+const SiteMain = props => {
   return (
     <main
       sx={{
@@ -23,4 +23,4 @@ const siteMain = props => {
   )
 }
 
-export default siteMain
+export default SiteMain

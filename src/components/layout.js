@@ -6,7 +6,7 @@ import Main from "./main"
 import Container from "./container"
 import Footer from "./footer"
 
-class siteLayout extends Component {
+class SiteLayout extends Component {
   constructor(props) {
     super(props)
 
@@ -69,4 +69,4 @@ class siteLayout extends Component {
   }
 }
 
-export default siteLayout
+export default SiteLayout

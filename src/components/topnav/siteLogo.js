@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-const siteLogo = props => {
+const SiteLogo = props => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -52,4 +52,4 @@ const siteLogo = props => {
   )
 }
 
-export default siteLogo
+export default SiteLogo

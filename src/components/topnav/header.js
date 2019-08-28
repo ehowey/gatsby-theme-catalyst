@@ -4,7 +4,7 @@ import Branding from "./branding"
 import Nav from "./nav"
 import MobileButton from "./mobileButton"
 
-const siteHeader = props => {
+const SiteHeader = props => {
   return (
     <header
       sx={{
@@ -31,4 +31,4 @@ const siteHeader = props => {
   )
 }
 
-export default siteHeader
+export default SiteHeader

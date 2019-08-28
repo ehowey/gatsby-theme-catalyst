@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
-const buttonInternal = props => {
+const ButtonInternal = props => {
   return (
     <Link
       sx={{
@@ -26,4 +26,4 @@ const buttonInternal = props => {
   )
 }
 
-export default buttonInternal
+export default ButtonInternal
