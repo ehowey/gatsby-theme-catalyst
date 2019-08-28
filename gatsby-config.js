@@ -2,6 +2,13 @@ module.exports = options => {
   return {
     plugins: [
       {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `src`,
+          path: `src/`,
+        },
+      },
+      {
         resolve: `gatsby-plugin-mdx`,
         options: {
           extensions: [`.md`, `.mdx`],
@@ -26,13 +33,6 @@ module.exports = options => {
             { resolve: `gatsby-remark-smartypants` },
           ],
           plugins: [`gatsby-remark-images`],
-        },
-      },
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `src`,
-          path: `src/`,
         },
       },
       `gatsby-plugin-sitemap`,
