@@ -20,9 +20,7 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 ## Catalyst Themes and Starters
 
 * [Gatsby-Theme-Catalyst-Core](https://github.com/ehowey/gatsby-theme-catalyst-core): *This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies. Uses theme-ui under the hood for styling changes and MDX for pages.*
-  * [Gatsby-Theme-Catalyst-Onepage](https://github.com/ehowey/gatsby-theme-catalyst-onepage): *Child theme of the core theme. Allows for a single page website with anchor links and smooth scrolling in lieu of a traditional nav menu which would link to different pages*
   * [Gatsby-Starter-Catalyst-Core](https://github.com/ehowey/gatsby-starter-catalyst-core): *Starter for the core theme to make installation and customization easier*
-  * [Gatsby-Starter-Catalyst-Onepage](https://github.com/ehowey/gatsby-starter-catalyst-onepage): *Starter for the onepage theme to make installation and customization easier*
 
 ## Customizing the themes and starters
 
@@ -37,7 +35,27 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 
 Some theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options in here you can modify.
 
-The **social links** option is a bit unique. You can specify three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately.  It will work with most major social platforms and has a fallback for displaying the text.
+**Theme Options**
+
+```
+   {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        displaySiteLogo: true,
+        displaySiteTitle: true,
+        invertLogo: true,
+        headerType: "topnav"
+      }
+    }
+ ```
+ -`displaySiteLogo`: Boolean, controls whether the logo is visible. Default is true.
+ -`displaySiteTitle`: Boolean, controls whether the title is visible. Default is true.
+ -`invertLogo`: Boolean, controls whether the logo color is inverted when the mobile nav menu is open, this was a personal preference thing for me, most people will not use this. Default is false.
+ -`headerType`: String, controls the type of nav menu displayed. Currently there is support for `topnav`, `anchornav` and `blendednav`.  The default is `topnav`.  More to follow on these headerTypes.
+
+**Social Links** 
+
+This option is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately.  It will work with most major social platforms and has a fallback for displaying the text.
 
 ### Customizing the themes using Theme-UI and Design Tokens
 
