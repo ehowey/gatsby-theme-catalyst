@@ -7,5 +7,5 @@ export {
 export {
   default as SocialHeaderIcons,
 } from "./src/components/social/socialHeaderIcons"
-export { default as baseTheme } from "./src/gatsby-plugin-theme-ui"
+export { default as BaseTheme } from "./src/gatsby-plugin-theme-ui"
 export { default as ButtonInternal } from "./src/design-system/buttonInternal"
