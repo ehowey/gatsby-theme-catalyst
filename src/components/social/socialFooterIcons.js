@@ -37,6 +37,7 @@ import {
 } from "react-icons/fa"
 
 const SiteSocialFooter = () => {
+  const { theme } = useThemeUI()
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -51,7 +52,6 @@ const SiteSocialFooter = () => {
       }
     }
   `)
-  const { theme } = useThemeUI()
   return (
     <IconContext.Provider value={{ size: theme.sizes.iconsFooter }}>
       {data.site.siteMetadata.socialLinks.map(platform => {
