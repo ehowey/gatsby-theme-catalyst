@@ -29,12 +29,6 @@ export default {
       links: "#ffffff",
       icons: "#ffffff",
     },
-
-    button: {
-      background: "#3273dc",
-      hover: "#0c66a1",
-      text: "#ffffff",
-    },
   },
   fonts: {
     text:
@@ -185,6 +179,26 @@ export default {
       code: {
         color: "inherit",
         p: 0,
+      },
+    },
+  },
+  variants: {
+    buttons: {
+      primary: {
+        backgroundColor: "primary",
+        color: "textWhite",
+      },
+      secondary: {
+        backgroundColor: "secondary",
+        color: "textWhite",
+      },
+      large: {
+        backgroundColor: "primary",
+        color: "textWhite",
+        textTransform: "uppercase",
+        fontSize: 4,
+        px: 4,
+        py: 3,
       },
     },
   },
