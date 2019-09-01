@@ -21,7 +21,7 @@
     "gatsby-remark-images": "^3.1.20",
     "gatsby-remark-smartypants": "^2.1.6",
     "gatsby-source-filesystem": "^2.1.19",
-    "gatsby-transformer-sharp": "^2.2.12",
+    "gatsby-transformer-sharp": "^2.2.13",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
