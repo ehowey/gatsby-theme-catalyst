@@ -18,6 +18,7 @@ const ButtonInternal = ({ variant = "primary", ...props }) => {
         py: 2,
         border: 0,
         borderRadius: 4,
+        transition: "all 0.3s ease 0s",
         variant: `variants.buttons.${variant}`,
         "::after": {
           content: '"\\00A0 \\2192"',
