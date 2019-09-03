@@ -5,7 +5,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@emotion/core": "^10.0.17",
-    "@mdx-js/mdx": "^1.4.0",
+    "@mdx-js/mdx": "^1.4.1",
     "@mdx-js/react": "^1.4.1",
     "deepmerge": "^4.0.0",
     "gatsby-image": "^2.2.16",
