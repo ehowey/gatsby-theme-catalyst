@@ -200,6 +200,11 @@ export default {
         px: 4,
         py: 3,
       },
+      small: {
+        backgroundColor: "primary",
+        color: "textWhite",
+        fontSize: 2,
+      },
     },
   },
 }
