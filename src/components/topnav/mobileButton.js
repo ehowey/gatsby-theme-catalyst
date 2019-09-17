@@ -35,9 +35,7 @@ const SiteMobileButton = props => {
   return (
     <button
       aria-label="Menu"
-      onClick={e => {
-        props.toggle(e)
-      }}
+      onClick={() => props.toggle(!props.open)}
       sx={{
         gridColumn: "2 / 3",
         gridRow: "1 / 2",

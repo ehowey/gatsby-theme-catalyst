@@ -108,9 +108,7 @@ const NavLinks = props => {
                 },
               }}
               to={link.link.replace(/#/g, "").toLowerCase()}
-              onClick={e => {
-                props.close(e)
-              }}
+              onClick={() => props.toggle(!props.open)}
               role="menuitem"
               spy={true}
               hashSpy={true}
