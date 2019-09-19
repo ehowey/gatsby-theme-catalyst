@@ -2,8 +2,11 @@
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { useContext } from "react"
+import { NavContext } from "../navContext"
 
 const SiteLogo = props => {
+  const [open] = useContext(NavContext)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -42,7 +45,7 @@ const SiteLogo = props => {
             theme => theme.sizes.logoWidthLaptop,
           ],
           mr: 1,
-          filter: [props.open ? invertLogo : "none", "none", null],
+          filter: [open ? invertLogo : "none", "none", null],
         }}
         fluid={data.brandingLogo.childImageSharp.fluid}
         alt={data.site.siteMetadata.title}

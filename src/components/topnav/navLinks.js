@@ -1,8 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { useContext } from "react"
+import { NavContext } from "../navContext"
 
 const NavLinks = props => {
+  const [open] = useContext(NavContext)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -18,7 +21,7 @@ const NavLinks = props => {
   return (
     <ul
       sx={{
-        display: [props.open ? "flex" : "none", "flex", null],
+        display: [open ? "flex" : "none", "flex", null],
         flexDirection: ["column", "row", null],
         textAlign: ["center", "left", null],
         listStyle: "none",
@@ -40,7 +43,7 @@ const NavLinks = props => {
           <Link
             to={link.link}
             sx={{
-              color: props.open ? "header.textOpen" : "header.text",
+              color: open ? "header.textOpen" : "header.text",
               textDecoration: "none",
               py: 2,
               px: 1,

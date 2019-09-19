@@ -5,6 +5,7 @@ import Header from "./header"
 import Main from "./main"
 import Container from "./container"
 import Footer from "./footer"
+import { NavProvider } from "./navContext"
 
 const SiteLayout = props => {
   const [open, setOpen] = useState(false)
@@ -28,7 +29,9 @@ const SiteLayout = props => {
           }
         `}
       />
-      <Header open={open} toggle={setOpen} />
+      <NavProvider>
+        <Header open={open} toggle={setOpen} />
+      </NavProvider>
       <Main>
         <Container>{props.children}</Container>
       </Main>

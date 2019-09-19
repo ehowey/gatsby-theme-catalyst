@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Logo from "./siteLogo"
 import Title from "./siteTitle"
 
-const SiteBranding = props => {
+const SiteBranding = () => {
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
@@ -22,8 +22,8 @@ const SiteBranding = props => {
         mr: 2,
       }}
     >
-      {data.catalystConfig.displaySiteLogo ? <Logo {...props} /> : null}
-      {data.catalystConfig.displaySiteTitle ? <Title {...props} /> : null}
+      {data.catalystConfig.displaySiteLogo ? <Logo /> : null}
+      {data.catalystConfig.displaySiteTitle ? <Title /> : null}
     </div>
   )
 }

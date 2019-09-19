@@ -1,5 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useContext } from "react"
+import { NavContext } from "../navContext"
 
 const Span = props => (
   <span
@@ -31,16 +33,17 @@ const Span = props => (
   ></span>
 )
 
-const SiteMobileButton = props => {
+const SiteMobileButton = () => {
+  const [open, setOpen] = useContext(NavContext)
   return (
     <button
       aria-label="Menu"
-      onClick={() => props.toggle(!props.open)}
+      onClick={() => setOpen(!open)}
       sx={{
         gridColumn: "2 / 3",
         gridRow: "1 / 2",
         alignSelf: "center",
-        color: props.open ? "header.textOpen" : "header.text",
+        color: open ? "header.textOpen" : "header.text",
         cursor: "pointer",
         display: ["block", "none", null],
         height: "3.5rem",
@@ -51,9 +54,9 @@ const SiteMobileButton = props => {
         border: "none",
       }}
     >
-      <Span {...props} />
-      <Span {...props} />
-      <Span {...props} />
+      <Span open={open} />
+      <Span open={open} />
+      <Span open={open} />
     </button>
   )
 }

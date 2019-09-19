@@ -1,8 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { useContext } from "react"
+import { NavContext } from "../navContext"
 
 const SiteTitle = props => {
+  const [open] = useContext(NavContext)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -22,7 +25,7 @@ const SiteTitle = props => {
     >
       <Link
         sx={{
-          color: props.open ? "header.textOpen" : "header.text",
+          color: open ? "header.textOpen" : "header.text",
           textDecoration: "none",
         }}
         to="/"

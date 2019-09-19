@@ -3,8 +3,11 @@ import { jsx } from "theme-ui"
 import Branding from "./branding"
 import Nav from "./nav"
 import MobileButton from "./mobileButton"
+import { useContext } from "react"
+import { NavContext } from "../navContext"
 
-const SiteHeader = props => {
+const SiteHeader = () => {
+  const [open] = useContext(NavContext)
   return (
     <header
       sx={{
@@ -17,16 +20,14 @@ const SiteHeader = props => {
         ],
         width: "100%",
         px: 3,
-        color: props.open ? "header.textOpen" : "header.text",
-        backgroundColor: props.open
-          ? "header.backgroundOpen"
-          : "header.background",
+        color: open ? "header.textOpen" : "header.text",
+        backgroundColor: open ? "header.backgroundOpen" : "header.background",
         zIndex: "50", //Ensure the header is overtop of any content under it, e.g. a photo
       }}
     >
-      <Branding {...props} />
-      <MobileButton {...props} />
-      <Nav {...props} />
+      <Branding />
+      <MobileButton />
+      <Nav />
     </header>
   )
 }

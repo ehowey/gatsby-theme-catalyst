@@ -3,8 +3,11 @@ import { jsx, useThemeUI } from "theme-ui"
 import NavLinks from "./navLinks"
 import SocialLinks from "../social/socialLinks"
 import SocialHeaderIcons from "../social/socialHeaderIcons"
+import { useContext } from "react"
+import { NavContext } from "../navContext"
 
-const SiteNav = props => {
+const SiteNav = () => {
+  const [open] = useContext(NavContext)
   const { theme } = useThemeUI()
   const headOpen = () => {
     if (typeof window !== "undefined") {
@@ -21,8 +24,8 @@ const SiteNav = props => {
         justifySelf: ["center", "start", "end"],
         alignItems: "center",
         justifyContent: ["flex-start", "space-between", "flex-start"],
-        height: [props.open ? headOpen() : 0, "headerHeightTablet", "auto"],
-        mt: [props.open ? 2 : 0, 0, null],
+        height: [open ? headOpen() : 0, "headerHeightTablet", "auto"],
+        mt: [open ? 2 : 0, 0, null],
         display: "flex",
         flexDirection: ["column", "row", null],
         width: ["auto", "100%", "auto"],
@@ -30,8 +33,8 @@ const SiteNav = props => {
       role="navigation"
       aria-label="main-navigation"
     >
-      <NavLinks {...props} />
-      <SocialLinks {...props}>
+      <NavLinks />
+      <SocialLinks>
         <SocialHeaderIcons />
       </SocialLinks>
     </nav>
