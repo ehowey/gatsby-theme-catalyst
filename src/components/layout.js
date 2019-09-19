@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { css, Global } from "@emotion/core"
 import { Layout } from "theme-ui"
 import Header from "./header"
@@ -8,7 +8,6 @@ import Footer from "./footer"
 import { NavProvider } from "./navContext"
 
 const SiteLayout = props => {
-  const [open, setOpen] = useState(false)
   return (
     <Layout>
       <Global
@@ -30,7 +29,7 @@ const SiteLayout = props => {
         `}
       />
       <NavProvider>
-        <Header open={open} toggle={setOpen} />
+        <Header />
       </NavProvider>
       <Main>
         <Container>{props.children}</Container>

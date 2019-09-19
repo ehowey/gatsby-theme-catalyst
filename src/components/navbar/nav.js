@@ -1,10 +1,32 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from "theme-ui"
-import NavLinks from "./navLinks"
+import { useStaticQuery, graphql } from "gatsby"
+import NavLinksDefault from "./navLinks-default"
+import NavLinksAnchor from "./navLinks-anchor"
+import NavLinksBlended from "./navLinks-blended"
 import SocialLinks from "../social/socialLinks"
 import SocialHeaderIcons from "../social/socialHeaderIcons"
 import { useContext } from "react"
 import { NavContext } from "../navContext"
+
+const NavLinks = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      catalystConfig {
+        headerType
+      }
+    }
+  `)
+  if (data.catalystConfig.headerType === "topnav") {
+    return <NavLinksDefault />
+  } else if (data.catalystConfig.headerType === "anchornav") {
+    return <NavLinksAnchor />
+  } else if (data.catalystConfig.headerType === "blendednav") {
+    return <NavLinksBlended />
+  } else {
+    return null
+  }
+}
 
 const SiteNav = () => {
   const [open] = useContext(NavContext)

@@ -2,8 +2,11 @@
 import { jsx, useThemeUI } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
+import { useContext } from "react"
+import { NavContext } from "../navContext"
 
 const NavLinks = props => {
+  const [open, setOpen] = useContext(NavContext)
   const { theme } = useThemeUI()
   let navOffset = parseInt(theme.sizes.headerHeight)
   const data = useStaticQuery(graphql`
@@ -41,7 +44,7 @@ const NavLinks = props => {
     return (
       <ul
         sx={{
-          display: [props.open ? "flex" : "none", "flex", null],
+          display: [open ? "flex" : "none", "flex", null],
           flexDirection: ["column", "row", null],
           textAlign: ["center", "left", null],
           listStyle: "none",
@@ -74,7 +77,7 @@ const NavLinks = props => {
           >
             <AnchorLink
               sx={{
-                color: props.open ? "header.textOpen" : "header.text",
+                color: open ? "header.textOpen" : "header.text",
                 textDecoration: "none",
                 py: 2,
                 px: 1,
@@ -104,7 +107,7 @@ const NavLinks = props => {
                 },
               }}
               to={link.link.replace(/#/g, "").toLowerCase()}
-              onClick={() => props.toggle(!props.open)}
+              onClick={() => setOpen(!open)}
               role="menuitem"
               spy={true}
               hashSpy={true}
@@ -123,7 +126,7 @@ const NavLinks = props => {
     return (
       <ul
         sx={{
-          display: [props.open ? "flex" : "none", "flex", null],
+          display: [open ? "flex" : "none", "flex", null],
           flexDirection: ["column", "row", null],
           textAlign: ["center", "left", null],
           listStyle: "none",
@@ -156,7 +159,7 @@ const NavLinks = props => {
           >
             <Link
               sx={{
-                color: props.open ? "header.textOpen" : "header.text",
+                color: open ? "header.textOpen" : "header.text",
                 textDecoration: "none",
                 py: 2,
                 px: 1,

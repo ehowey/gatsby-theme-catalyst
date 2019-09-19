@@ -7,10 +7,25 @@ import { useContext } from "react"
 import { NavContext } from "../navContext"
 
 const SiteHeader = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      catalystConfig {
+        headerType
+      }
+    }
+  `)
   const [open] = useContext(NavContext)
+  const headerPosition = () => {
+    if (data.catalystConfig.headerType === "anchornav") {
+      return "fixed"
+    } else {
+      return "static"
+    }
+  }
   return (
     <header
       sx={{
+        position: headerPosition,
         display: "grid",
         gridTemplateColumns: "auto 1fr",
         gridTemplateRows: [
