@@ -4,8 +4,9 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
 import { NavContext } from "../navContext"
+import { animateScroll as scroll } from "react-scroll"
 
-const SiteLogo = props => {
+const SiteLogo = () => {
   const [open] = useContext(NavContext)
   const data = useStaticQuery(graphql`
     query {
@@ -34,8 +35,33 @@ const SiteLogo = props => {
     }
   }
 
+  if (typeof window !== "undefined") {
+    var is_root = window.location.pathname === "/" //Equals true if we're at the root
+  }
+
+  const scrollToTop = () => {
+    scroll.scrollToTop()
+  }
+
+  const ImgLinkWrapper = props => {
+    if (is_root) {
+      return (
+        <div
+          sx={{
+            cursor: "pointer",
+          }}
+          onClick={scrollToTop}
+        >
+          {props.children}
+        </div>
+      )
+    } else {
+      return <Link to="/">{props.children}</Link>
+    }
+  }
+
   return (
-    <Link to="/">
+    <ImgLinkWrapper>
       <Img
         sx={{
           // Uses width because of weird bug with flex box and shrinking content we don't want shrunk
@@ -51,7 +77,7 @@ const SiteLogo = props => {
         alt={data.site.siteMetadata.title}
         imgStyle={{ objectFit: "contain" }}
       />
-    </Link>
+    </ImgLinkWrapper>
   )
 }
 
