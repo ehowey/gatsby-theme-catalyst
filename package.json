@@ -30,13 +30,13 @@
     "theme-ui": "^0.2.41"
   },
   "devDependencies": {
-    "gatsby": "^2.15.15",
+    "gatsby": "^2.15.20",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.15.15",
+    "gatsby": "^2.15.20",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
