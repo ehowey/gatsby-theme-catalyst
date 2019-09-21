@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
-import { NavContext } from "../navContext"
+import { NavContext } from "./navContext"
 import { animateScroll as scroll } from "react-scroll"
 
 const SiteTitle = () => {

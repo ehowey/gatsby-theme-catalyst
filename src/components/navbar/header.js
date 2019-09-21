@@ -4,7 +4,7 @@ import Branding from "./branding"
 import Nav from "./nav"
 import MobileButton from "./mobileButton"
 import { useContext } from "react"
-import { NavContext } from "../navContext"
+import { NavContext } from "./navContext"
 
 const SiteHeader = () => {
   const data = useStaticQuery(graphql`

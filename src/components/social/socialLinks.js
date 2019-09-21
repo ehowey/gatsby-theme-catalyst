@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { NavContext } from "../navContext"
+import { NavContext } from "../navbar/navContext"
 
 const SocialContainer = props => {
   const [open] = useContext(NavContext)

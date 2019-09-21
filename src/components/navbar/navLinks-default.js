@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { useContext } from "react"
-import { NavContext } from "../navContext"
+import { NavContext } from "./navContext"
 
 const NavLinks = props => {
   const [open] = useContext(NavContext)

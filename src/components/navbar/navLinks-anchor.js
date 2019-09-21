@@ -3,9 +3,9 @@ import { jsx, useThemeUI } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
 import { useContext } from "react"
-import { NavContext } from "../navContext"
+import { NavContext } from "./navContext"
 
-const NavLinks = props => {
+const NavLinks = () => {
   const [open, setOpen] = useContext(NavContext)
   const { theme } = useThemeUI()
   let navOffset = parseInt(theme.sizes.headerHeight)
@@ -107,7 +107,7 @@ const NavLinks = props => {
                 },
               }}
               to={link.link.replace(/#/g, "").toLowerCase()}
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpen(false)}
               role="menuitem"
               spy={true}
               hashSpy={true}

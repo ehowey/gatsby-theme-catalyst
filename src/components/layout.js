@@ -5,7 +5,7 @@ import Header from "./header"
 import Main from "./main"
 import Container from "./container"
 import Footer from "./footer"
-import { NavProvider } from "./navContext"
+import { NavProvider } from "./navbar/navContext"
 
 const SiteLayout = props => {
   return (

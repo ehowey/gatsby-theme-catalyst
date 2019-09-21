@@ -7,6 +7,7 @@ displaySiteLogo: Boolean!
 displaySiteTitle: Boolean!
 invertSiteLogo: Boolean!
 headerType: String!
+headerPosition: String!
 }`)
 }
 
@@ -16,7 +17,8 @@ exports.sourceNodes = (
     displaySiteLogo = true,
     displaySiteTitle = true,
     invertSiteLogo = false,
-    headerType = "topnav",
+    headerType = "default",
+    headerPosition = "static",
   }
 ) => {
   // create garden data from plugin config
@@ -25,6 +27,7 @@ exports.sourceNodes = (
     displaySiteTitle,
     invertSiteLogo,
     headerType,
+    headerPosition,
   }
   createNode({
     ...catalystConfig,

@@ -7,7 +7,7 @@ import NavLinksBlended from "./navLinks-blended"
 import SocialLinks from "../social/socialLinks"
 import SocialHeaderIcons from "../social/socialHeaderIcons"
 import { useContext } from "react"
-import { NavContext } from "../navContext"
+import { NavContext } from "./navContext"
 
 const NavLinks = () => {
   const data = useStaticQuery(graphql`
@@ -17,7 +17,7 @@ const NavLinks = () => {
       }
     }
   `)
-  if (data.catalystConfig.headerType === "topnav") {
+  if (data.catalystConfig.headerType === "default") {
     return <NavLinksDefault />
   } else if (data.catalystConfig.headerType === "anchornav") {
     return <NavLinksAnchor />

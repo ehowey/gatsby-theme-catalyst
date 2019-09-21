@@ -5,28 +5,21 @@ import Branding from "./navbar/branding"
 import Nav from "./navbar/nav"
 import MobileButton from "./navbar/mobileButton"
 import { useContext } from "react"
-import { NavContext } from "./navContext"
+import { NavContext } from "./navbar/navContext"
 
 const SiteHeader = () => {
   const [open] = useContext(NavContext)
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
-        headerType
+        headerPosition
       }
     }
   `)
-  const headerPosition = () => {
-    if (data.catalystConfig.headerType === "anchornav") {
-      return "fixed"
-    } else {
-      return "static"
-    }
-  }
   return (
     <header
       sx={{
-        position: headerPosition,
+        position: data.catalystConfig.headerPosition,
         display: "grid",
         gridTemplateColumns: "auto 1fr",
         gridTemplateRows: [
@@ -35,6 +28,7 @@ const SiteHeader = () => {
           theme => theme.sizes.headerHeightLaptop,
         ],
         width: "100%",
+        top: 0,
         px: 3,
         color: open ? "header.textOpen" : "header.text",
         backgroundColor: open ? "header.backgroundOpen" : "header.background",
@@ -49,31 +43,3 @@ const SiteHeader = () => {
 }
 
 export default SiteHeader
-
-// /** @jsx jsx */
-// import { jsx } from "theme-ui"
-// import { useStaticQuery, graphql } from "gatsby"
-// import TopNavHeader from "./topnav/header"
-// import AnchorNavHeader from "./anchornav/header"
-// import BlendedNavHeader from "./blendednav/header"
-
-// const SiteHeader = props => {
-//   const data = useStaticQuery(graphql`
-//     query {
-//       catalystConfig {
-//         headerType
-//       }
-//     }
-//   `)
-//   if (data.catalystConfig.headerType === "topnav") {
-//     return <TopNavHeader {...props} />
-//   } else if (data.catalystConfig.headerType === "anchornav") {
-//     return <AnchorNavHeader {...props} />
-//   } else if (data.catalystConfig.headerType === "blendednav") {
-//     return <BlendedNavHeader {...props} />
-//   } else {
-//     return null
-//   }
-// }
-
-// export default SiteHeader
