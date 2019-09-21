@@ -19,9 +19,9 @@ const NavLinks = () => {
   `)
   if (data.catalystConfig.headerType === "default") {
     return <NavLinksDefault />
-  } else if (data.catalystConfig.headerType === "anchornav") {
+  } else if (data.catalystConfig.headerType === "anchor") {
     return <NavLinksAnchor />
-  } else if (data.catalystConfig.headerType === "blendednav") {
+  } else if (data.catalystConfig.headerType === "blended") {
     return <NavLinksBlended />
   } else {
     return null
