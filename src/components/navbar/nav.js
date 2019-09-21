@@ -13,15 +13,15 @@ const NavLinks = () => {
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
-        headerType
+        navType
       }
     }
   `)
-  if (data.catalystConfig.headerType === "default") {
+  if (data.catalystConfig.navType === "default") {
     return <NavLinksDefault />
-  } else if (data.catalystConfig.headerType === "anchor") {
+  } else if (data.catalystConfig.navType === "anchor") {
     return <NavLinksAnchor />
-  } else if (data.catalystConfig.headerType === "blended") {
+  } else if (data.catalystConfig.navType === "blended") {
     return <NavLinksBlended />
   } else {
     return null

@@ -6,7 +6,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 displaySiteLogo: Boolean!
 displaySiteTitle: Boolean!
 invertSiteLogo: Boolean!
-headerType: String!
+navType: String!
 headerPosition: String!
 }`)
 }
@@ -17,7 +17,7 @@ exports.sourceNodes = (
     displaySiteLogo = true,
     displaySiteTitle = true,
     invertSiteLogo = false,
-    headerType = "default",
+    navType = "default",
     headerPosition = "static",
   }
 ) => {
@@ -26,7 +26,7 @@ exports.sourceNodes = (
     displaySiteLogo,
     displaySiteTitle,
     invertSiteLogo,
-    headerType,
+    navType,
     headerPosition,
   }
   createNode({

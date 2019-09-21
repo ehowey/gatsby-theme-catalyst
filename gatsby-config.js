@@ -1,3 +1,5 @@
+const remarkSlug = require("remark-slug")
+
 module.exports = options => {
   return {
     plugins: [
@@ -32,6 +34,7 @@ module.exports = options => {
             },
             { resolve: `gatsby-remark-smartypants` },
           ],
+          remarkPlugins: [remarkSlug],
           plugins: [`gatsby-remark-images`],
         },
       },
