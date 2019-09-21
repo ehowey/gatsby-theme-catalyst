@@ -82,53 +82,57 @@ This is a mixed menu with both anchor links and page links together. This is set
 
 [Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
 
-Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The file you should modify to set design tokens is always located in the following location in the starters:
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. A combination of straight exports and [deepmerge](https://www.npmjs.com/package/deepmerge) is used to manage the shadowing of design tokens. The files you should modify to set design tokens are always located in the following location in the starters:
 
     .
     ├── src
       ├── gatsby-plugin-theme-ui
-        ├── index.js
+        ├── breakpoints.js
+        ├── colors.js
+        ├── fonts.js
+        ├── fontSizes.js
+        ├── fontWeights.js
+        ├── lineHeights.js
+        ├── sizes.js
+        ├── spaces.js
+        ├── styles.js
+        ├── variants.js
 
-Try adding this code to the theme-ui and see what happens:
+Try adding this code to the `colors.js` file and see what happens:
 
 ```
-import merge from "deepmerge";
-import { baseTheme } from "gatsby-theme-catalyst-core";
+import merge from "deepmerge"
+import { BaseThemeColors } from "gatsby-theme-catalyst-core"
 
-export default merge(baseTheme, {
- //Updated theme options go here.
-   colors: {
-     primary: "tomato",
-     secondary: "crimson",
-
-   header: {
-     background: "tomato",
-     backgroundOpen: "crimson",
-   },
-
-   footer: {
-     background: "crimson",
-   },
- },
-});
+export default merge(BaseThemeColors, {
+  header: {
+    background: "red",
+    backgroundOpen: "pink",
+    text: "yellow",
+    textOpen: "white",
+    icons: "purple",
+    iconsHover: "green",
+    iconsOpen: "white",
+  },
+})
 ```
 
 ### Typography and changing fonts
 
-The deafult settings in the theme include a system font stack for both the body and headings. These themes do not use typography.js at this time, I may change this in the future.
+The default settings in the theme include a system font stack for both the body and headings. These themes do not use typography.js at this time.
 
 To add a custom font you need to first add the font as a dependency in your starter site, like this for Raleway:
 
 `yarn add typeface-raleway`
 
-Then at the top of your theme-ui file you will need to import the font and declare it, like this for Raleway:
+Then at the top of `src\gatsby-plugin-theme-ui\fonts.js` file you will need to import the font and declare it, like this for Raleway:
 
 ```
 import merge from "deepmerge";
-import { baseTheme } from "gatsby-theme-catalyst-core";
+import { BaseThemeFonts } from "gatsby-theme-catalyst-core";
 import "typeface-raleway";
 
-export default merge(baseTheme, {
+export default merge(BaseThemeFonts, {
   //Updated theme options go here.
   fonts: {
       text: "Raleway, sans-serif",
