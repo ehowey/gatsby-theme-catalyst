@@ -12,7 +12,7 @@ const SiteMain = props => {
           theme => theme.sizes.mainMarginTopLaptop,
         ],
         mr: "auto",
-        mb: 0,
+        mb: 5,
         ml: "auto",
         maxWidth: "maxContentWidth",
         width: "contentWidth",
