@@ -41,16 +41,16 @@ const SiteNav = () => {
   return (
     <nav
       sx={{
-        gridColumn: ["1 / -1", "1 / -1", "2 / 3"],
-        gridRow: ["2 / 3", "2 / 3", "1 / 2"],
-        justifySelf: ["center", "start", "end"],
+        gridColumn: ["1 / -1", "2 / 3", "2 / 3"],
+        gridRow: ["2 / 3", "1 / 2", "1 / 2"],
+        justifySelf: ["center", "end", "end"],
         alignItems: "center",
-        justifyContent: ["flex-start", "space-between", "flex-start"],
-        height: [open ? headOpen() : 0, "headerHeightTablet", "auto"],
+        justifyContent: "flex-start",
+        height: [open ? headOpen() : 0, "auto", "auto"],
         mt: [open ? 2 : 0, 0, null],
         display: "flex",
         flexDirection: ["column", "row", null],
-        width: ["auto", "100%", "auto"],
+        width: "auto",
       }}
       role="navigation"
       aria-label="main-navigation"
