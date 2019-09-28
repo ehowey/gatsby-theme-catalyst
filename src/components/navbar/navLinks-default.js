@@ -27,6 +27,17 @@ const NavLinks = props => {
         listStyle: "none",
         m: 0,
         p: 0,
+        ".active::after": {
+          position: "absolute",
+          top: "100%",
+          left: "0",
+          width: "100%",
+          height: "5px",
+          backgroundColor: "secondary",
+          content: "''",
+          opacity: "1",
+          transform: "translateY(0px)",
+        },
       }}
       aria-label="menu-bar"
       role="menubar"
@@ -42,6 +53,7 @@ const NavLinks = props => {
         >
           <Link
             to={link.link}
+            activeClassName="active"
             sx={{
               color: open ? "header.textOpen" : "header.text",
               textDecoration: "none",

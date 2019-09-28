@@ -14,10 +14,9 @@ export default {
   },
   a: {
     color: "primary", //Sets the default link color
-    textDecoration: "none",
+    transition: "all 0.3s ease 0s",
     ":hover": {
       color: "secondary",
-      textDecoration: "underline",
     },
   },
   h1: {
