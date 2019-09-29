@@ -18,6 +18,7 @@ const SiteHeader = () => {
   `)
   return (
     <header
+      id="header"
       sx={{
         position: data.catalystConfig.headerPosition,
         display: "grid",
