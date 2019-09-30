@@ -17,7 +17,6 @@ const SiteBranding = () => {
     <div
       sx={{
         display: "flex",
-        alignItems: "center",
         ml: 2,
         mr: 2,
       }}

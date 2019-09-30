@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from "theme-ui"
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import NavLinksDefault from "./navLinks-default"
 import NavLinksAnchor from "./navLinks-anchor"
@@ -30,27 +30,17 @@ const NavLinks = () => {
 
 const SiteNav = () => {
   const [open] = useContext(NavContext)
-  const { theme } = useThemeUI()
-  const headOpen = () => {
-    if (typeof window !== "undefined") {
-      return window.innerHeight - parseInt(theme.sizes.headerHeight) + "px"
-    } else {
-      return null
-    }
-  } //Used to calculate the height of the nav so it is exactly the height of the window
   return (
     <nav
       sx={{
         gridColumn: ["1 / -1", "2 / 3", "2 / 3"],
         gridRow: ["2 / 3", "1 / 2", "1 / 2"],
         justifySelf: ["center", "end", "end"],
+        alignSelf: ["start", "center", null],
         alignItems: "center",
-        justifyContent: "flex-start",
-        height: [open ? headOpen() : 0, "auto", "auto"],
         mt: [open ? 2 : 0, 0, null],
-        display: "flex",
+        display: [open ? "flex" : "none", "flex", null],
         flexDirection: ["column", "row", null],
-        width: "auto",
       }}
       role="navigation"
       aria-label="main-navigation"

@@ -28,12 +28,14 @@ const SiteHeader = () => {
           theme => theme.sizes.headerHeightTablet,
           theme => theme.sizes.headerHeightLaptop,
         ],
+        alignItems: "center",
+        height: open ? "100vh" : "auto",
         width: "100%",
         top: 0,
         px: 3,
         color: open ? "header.textOpen" : "header.text",
         backgroundColor: open ? "header.backgroundOpen" : "header.background",
-        zIndex: "50", //Ensure the header is overtop of any content under it, e.g. a photo
+        zIndex: "999", //Ensure the header is overtop of any content under it, e.g. a photo
       }}
     >
       <Branding />

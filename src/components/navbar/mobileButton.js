@@ -42,7 +42,7 @@ const SiteMobileButton = () => {
       sx={{
         gridColumn: "2 / 3",
         gridRow: "1 / 2",
-        alignSelf: "center",
+        // alignSelf: "center",
         color: open ? "header.textOpen" : "header.text",
         cursor: "pointer",
         display: ["block", "none", null],
