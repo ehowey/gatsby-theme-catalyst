@@ -7,7 +7,8 @@ import NavLinksBlended from "./navLinks-blended"
 import SocialLinks from "../social/socialLinks"
 import SocialHeaderIcons from "../social/socialHeaderIcons"
 import { useContext } from "react"
-import { NavContext } from "./navContext"
+import { NavContext } from "../contexts/navContext"
+import { MobileContext } from "../contexts/mobileContext"
 
 const NavLinks = () => {
   const data = useStaticQuery(graphql`
@@ -30,17 +31,18 @@ const NavLinks = () => {
 
 const SiteNav = () => {
   const [open] = useContext(NavContext)
+  const [mobile] = useContext(MobileContext)
   return (
     <nav
       sx={{
-        gridColumn: ["1 / -1", "2 / 3", "2 / 3"],
-        gridRow: ["2 / 3", "1 / 2", "1 / 2"],
-        justifySelf: ["center", "end", "end"],
-        alignSelf: ["start", "center", null],
+        gridColumn: mobile ? "1 / -1" : "2 / 3",
+        gridRow: mobile ? "2 / 3" : "1 / 2",
+        justifySelf: mobile ? "center" : "end",
+        alignSelf: mobile ? "start" : "center",
         alignItems: "center",
-        mt: [open ? 2 : 0, 0, null],
-        display: [open ? "flex" : "none", "flex", null],
-        flexDirection: ["column", "row", null],
+        mt: open ? 2 : 0,
+        display: mobile ? (open ? "flex" : "none") : "flex",
+        flexDirection: mobile ? "column" : "row",
       }}
       role="navigation"
       aria-label="main-navigation"

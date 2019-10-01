@@ -1,21 +1,35 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Branding from "./navbar/branding"
 import Nav from "./navbar/nav"
 import MobileButton from "./navbar/mobileButton"
-import { useContext } from "react"
-import { NavContext } from "./navbar/navContext"
+import { NavContext } from "./contexts/navContext"
+import { MobileContext } from "./contexts/mobileContext"
+import { useWindowSize } from "./contexts/windowSizeContext"
 
 const SiteHeader = () => {
   const [open] = useContext(NavContext)
+  //eslint-disable-next-line
+  const [mobile, setMobile] = useContext(MobileContext)
+  const { width } = useWindowSize()
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
         headerPosition
+        mobileMenuBreakpoint
       }
     }
   `)
+  const mobileBreakpoint = parseInt(data.catalystConfig.mobileMenuBreakpoint)
+
+  if (width < mobileBreakpoint) {
+    setMobile(true)
+  } else {
+    setMobile(false)
+  }
+
   return (
     <header
       id="header"

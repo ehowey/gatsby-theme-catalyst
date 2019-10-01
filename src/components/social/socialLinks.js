@@ -1,21 +1,24 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { NavContext } from "../navbar/navContext"
+import { NavContext } from "../contexts/navContext"
+import { MobileContext } from "../contexts/mobileContext"
 
 const SocialContainer = props => {
   const [open] = useContext(NavContext)
+  const [mobile] = useContext(MobileContext)
+
   return (
     <div
       sx={{
-        display: [open ? "flex" : "none", "flex", null],
-        mr: ["auto", 3, null],
+        display: "flex",
+        mr: mobile ? "auto" : 2,
         ml: "auto",
-        mt: [3, 0, null],
+        mt: mobile ? 2 : 0,
 
         a: {
           color: open ? "header.iconsOpen" : "header.icons",
-          mr: [3, 2, null],
+          mr: 2,
           height: theme => theme.sizes.iconsHeader,
           textDecoration: "none",
         },

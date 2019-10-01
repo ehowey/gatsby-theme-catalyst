@@ -6,6 +6,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 displaySiteLogo: Boolean!
 displaySiteTitle: Boolean!
 invertSiteLogo: Boolean!
+mobileMenuBreakpoint: String!
 navType: String!
 headerPosition: String!
 }`)
@@ -17,6 +18,7 @@ exports.sourceNodes = (
     displaySiteLogo = true,
     displaySiteTitle = true,
     invertSiteLogo = false,
+    mobileMenuBreakpoint = "768px",
     navType = "default",
     headerPosition = "static",
   }
@@ -26,6 +28,7 @@ exports.sourceNodes = (
     displaySiteLogo,
     displaySiteTitle,
     invertSiteLogo,
+    mobileMenuBreakpoint,
     navType,
     headerPosition,
   }

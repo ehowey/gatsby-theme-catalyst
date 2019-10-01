@@ -3,7 +3,7 @@ import { jsx, useThemeUI } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
 import { useContext } from "react"
-import { NavContext } from "./navContext"
+import { NavContext } from "../contexts/navContext"
 
 const NavLinks = () => {
   const [open, setOpen] = useContext(NavContext)
