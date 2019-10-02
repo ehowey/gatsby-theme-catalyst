@@ -22,6 +22,7 @@
     "gatsby-remark-smartypants": "^2.1.9",
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-sharp": "^2.2.16",
+    "lodash.debounce": "^4.0.8",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",

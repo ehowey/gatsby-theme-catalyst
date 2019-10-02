@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react"
+import debounce from "lodash.debounce"
 
 const WindowSizeContext = createContext(null)
 
@@ -14,9 +15,9 @@ export const WindowSizeProvider = ({ children }) => {
         height: window.innerHeight,
       })
     }
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("resize", debounce(handleResize, 300))
     return () => {
-      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("resize", debounce(handleResize, 300))
     }
   }, [])
   return (
