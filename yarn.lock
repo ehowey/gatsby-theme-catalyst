@@ -5496,10 +5496,10 @@ gatsby-cli@^2.7.49:
     ink "^2.3.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.10.tgz#f4309a8439e36b3e833c00b1903f381148df4c1b"
-  integrity sha512-AeOrwjF4LiAHAqvrUkAFtvZHkLpKtF2gnIS/nezHDzIMq0SaZLHbdQiJcesyzZ6CcerjLIDWbD6MqxrTt6KkhA==
+gatsby-core-utils@^1.0.10, gatsby-core-utils@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.12.tgz#72f38677b9894d701b55f12b0c443a72274ae1c6"
+  integrity sha512-Ryh0ILzG6zuYA88irnFQPKGe0NwEBh30FqAp7KNyYgsiOB41CSD0JfjIlFUgkU/gAoLlZKXyeFwbq3SVEBwNoA==
 
 gatsby-graphiql-explorer@^0.2.18:
   version "0.2.18"
@@ -5540,15 +5540,15 @@ gatsby-page-utils@^0.0.21:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-manifest@^2.2.18:
-  version "2.2.18"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.18.tgz#96bea26e35a8d74ebb74dff8c5c1ae85e7b0c556"
-  integrity sha512-velK1ApsQ/mEUABwmduMHVZISll4q9bJMtW1tOp+qbNUfJUFl2u4x6Ya36z8mxROX0mIKPAhYMAfhWq209rbcg==
+gatsby-plugin-manifest@^2.2.20:
+  version "2.2.20"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.20.tgz#67fa1d6335846097364c2eceece5a4bdc326706e"
+  integrity sha512-VWDLZgOrVxQkEk6zjbvRv6lKvvrzLh9n385WisDGiU6X0cp58cpHdqJSTOEanqxbLW+/DX1M29RHLznYriS7Iw==
   dependencies:
-    "@babel/runtime" "^7.6.0"
-    gatsby-core-utils "^1.0.10"
+    "@babel/runtime" "^7.6.2"
+    gatsby-core-utils "^1.0.12"
     semver "^5.7.1"
-    sharp "^0.23.0"
+    sharp "^0.23.1"
 
 gatsby-plugin-mdx@^1.0.43:
   version "1.0.43"
