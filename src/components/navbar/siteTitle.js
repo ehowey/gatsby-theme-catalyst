@@ -57,7 +57,7 @@ const SiteTitle = () => {
       <h1
         sx={{
           fontFamily: "siteTitle",
-          fontSize: [3, 5, 6],
+          fontSize: [4, 5, 6],
           flex: "0 0 auto",
           color: open ? "header.textOpen" : "header.text",
         }}
