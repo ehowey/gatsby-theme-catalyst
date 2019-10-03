@@ -4,9 +4,11 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
 import { useContext } from "react"
 import { NavContext } from "../contexts/navContext"
+import { MobileContext } from "../contexts/mobileContext"
 
 const NavLinks = () => {
   const [open, setOpen] = useContext(NavContext)
+  const [mobile] = useContext(MobileContext)
   const { theme } = useThemeUI()
   let navOffset = parseInt(theme.sizes.headerHeight)
   const data = useStaticQuery(graphql`
@@ -48,9 +50,9 @@ const NavLinks = () => {
     return (
       <ul
         sx={{
-          display: [open ? "flex" : "none", "flex", null],
-          flexDirection: ["column", "row", null],
-          textAlign: ["center", "left", null],
+          display: "flex",
+          flexDirection: mobile ? "column" : "row",
+          textAlign: mobile ? "center" : "left",
           listStyle: "none",
           m: 0,
           p: 0,
@@ -73,7 +75,8 @@ const NavLinks = () => {
         {data.site.siteMetadata.anchorLinks.map(link => (
           <li
             sx={{
-              my: [2, 0, null],
+              my: mobile ? 2 : 0,
+
               mx: 1,
             }}
             key={link.name}
@@ -85,7 +88,7 @@ const NavLinks = () => {
                 textDecoration: "none",
                 py: 2,
                 px: 1,
-                mr: [0, 3, null],
+                mr: mobile ? 0 : 3,
                 cursor: "pointer",
                 position: "relative",
                 fontWeight: "bold",
@@ -128,7 +131,8 @@ const NavLinks = () => {
           <li
             key={link.name}
             sx={{
-              my: [2, 0, null],
+              my: mobile ? 2 : 0,
+
               mx: 1,
             }}
             role="none"
@@ -140,7 +144,7 @@ const NavLinks = () => {
                 textDecoration: "none",
                 py: 2,
                 px: 1,
-                mr: [0, 3, null],
+                mr: mobile ? 0 : 3,
                 cursor: "pointer",
                 position: "relative",
                 fontFamily: "navLinks",
@@ -179,8 +183,8 @@ const NavLinks = () => {
       <ul
         sx={{
           display: [open ? "flex" : "none", "flex", null],
-          flexDirection: ["column", "row", null],
-          textAlign: ["center", "left", null],
+          flexDirection: mobile ? "column" : "row",
+          textAlign: mobile ? "center" : "left",
           listStyle: "none",
           m: 0,
           p: 0,
@@ -203,7 +207,8 @@ const NavLinks = () => {
         {data.site.siteMetadata.anchorLinks.map(link => (
           <li
             sx={{
-              my: [2, 0, null],
+              my: mobile ? 2 : 0,
+
               mx: 1,
             }}
             key={link.name}
@@ -215,7 +220,7 @@ const NavLinks = () => {
                 textDecoration: "none",
                 py: 2,
                 px: 1,
-                mr: [0, 3, null],
+                mr: mobile ? 0 : 3,
                 cursor: "pointer",
                 position: "relative",
                 fontWeight: "bold",
@@ -251,7 +256,8 @@ const NavLinks = () => {
           <li
             key={link.name}
             sx={{
-              my: [2, 0, null],
+              my: mobile ? 2 : 0,
+
               mx: 1,
             }}
             role="none"
@@ -263,7 +269,7 @@ const NavLinks = () => {
                 textDecoration: "none",
                 py: 2,
                 px: 1,
-                mr: [0, 3, null],
+                mr: mobile ? 0 : 3,
                 cursor: "pointer",
                 position: "relative",
                 fontFamily: "navLinks",

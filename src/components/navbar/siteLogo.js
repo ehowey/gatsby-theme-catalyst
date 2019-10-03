@@ -71,7 +71,7 @@ const SiteLogo = () => {
             theme => theme.sizes.logoWidthLaptop,
           ],
           mr: 1,
-          filter: [open ? invertLogo : "none", "none", null],
+          filter: open ? invertLogo : "none",
         }}
         fluid={data.brandingLogo.childImageSharp.fluid}
         alt={data.site.siteMetadata.title}

@@ -6,14 +6,9 @@ import Branding from "./navbar/branding"
 import Nav from "./navbar/nav"
 import MobileButton from "./navbar/mobileButton"
 import { NavContext } from "./contexts/navContext"
-import { MobileContext } from "./contexts/mobileContext"
-import { useWindowSize } from "./contexts/windowSizeContext"
 
 const SiteHeader = () => {
   const [open] = useContext(NavContext)
-  //eslint-disable-next-line
-  const [mobile, setMobile] = useContext(MobileContext)
-  const { width } = useWindowSize()
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
@@ -22,13 +17,6 @@ const SiteHeader = () => {
       }
     }
   `)
-  const mobileBreakpoint = parseInt(data.catalystConfig.mobileMenuBreakpoint)
-
-  if (width < mobileBreakpoint) {
-    setMobile(true)
-  } else {
-    setMobile(false)
-  }
 
   return (
     <header
