@@ -46,19 +46,21 @@ Some theme options are set via the `gatsby-config.js` file. Specifically the nav
         displaySiteLogo: true,
         displaySiteTitle: true,
         invertLogo: true,
+        mobileMenuBreakpoint: "1024px",
         navType: "default",
         headerPosition: "static",
       }
     }
 ```
 
-| Option             | Values                         | Description                                                        |
-| ------------------ | ------------------------------ | ------------------------------------------------------------------ |
-| `displaySiteLogo`  | true or false                  | Controls whether the logo is displayed                             |
-| `displaySiteTitle` | true or false                  | Controls whether the site title is displayed                       |
-| `invertLogo`       | true or false                  | Controls whether the logo is inverted when the mobile menu is open |
-| `navType`          | "default", "anchor", "blended" | Sets the navigation type, see below for details.                   |
-| `headerPosition`   | "static", "sticky" or "fixed"  | Controls CSS position value for the site header                    |
+| Option                 | Values                         | Description                                                                                               |
+| ---------------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| `displaySiteLogo`      | true or false                  | Controls whether the logo is displayed                                                                    |
+| `displaySiteTitle`     | true or false                  | Controls whether the site title is displayed                                                              |
+| `invertLogo`           | true or false                  | Controls whether the logo is inverted when the mobile menu is open                                        |
+| `navType`              | "default", "anchor", "blended" | Sets the navigation type, see below for details.                                                          |
+| `headerPosition`       | "static", "sticky" or "fixed"  | Controls CSS position value for the site header                                                           |
+| `mobileMenuBreakpoint` | String value, e.g. "1024px"    | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
 **Social Links**
 
