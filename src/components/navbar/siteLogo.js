@@ -18,7 +18,7 @@ const SiteLogo = () => {
       catalystConfig {
         invertSiteLogo
       }
-      brandingLogo: file(relativePath: { eq: "images/logo.png" }) {
+      brandingLogo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fluid(maxHeight: 300) {
             ...GatsbyImageSharpFluid_withWebp
