@@ -2,10 +2,10 @@
 import { jsx } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { useContext } from "react"
-import { NavContext } from "../contexts/navContext"
-import { MobileContext } from "../contexts/mobileContext"
+import { NavContext } from "../contexts/nav-context"
+import { MobileContext } from "../contexts/mobile-context"
 
-const NavLinks = () => {
+const NavLinksDefault = () => {
   const [open] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
   const data = useStaticQuery(graphql`
@@ -98,21 +98,4 @@ const NavLinks = () => {
   )
 }
 
-export default NavLinks
-
-// {link.subLinks != null &&
-//             link.subLinks.map(sublink => (
-//               <ul
-//                 sx={{
-//                   visibility: "hidden",
-//                   opacity: "0",
-//                   position: "absolute",
-//                   transition: "all 0.5s ease",
-//                   marginTop: "1rem",
-//                   left: "0",
-//                   display: "none",
-//                 }}
-//               >
-//                 <li>{sublink.name}</li>
-//               </ul>
-//             ))}
+export default NavLinksDefault

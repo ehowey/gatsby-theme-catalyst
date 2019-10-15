@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { NavContext } from "../contexts/navContext"
-import { MobileContext } from "../contexts/mobileContext"
+import { NavContext } from "../contexts/nav-context"
+import { MobileContext } from "../contexts/mobile-context"
 
-const SocialContainer = props => {
+const SocialWrapper = props => {
   const [open] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
 
@@ -35,4 +35,4 @@ const SocialContainer = props => {
   )
 }
 
-export default SocialContainer
+export default SocialWrapper

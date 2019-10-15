@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { useWindowSize } from "./windowSizeContext"
+import { useWindowSize } from "./windowsize-context"
 
 export const MobileContext = createContext()
 

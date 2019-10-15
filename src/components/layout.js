@@ -1,13 +1,13 @@
 import React from "react"
-import { css, Global } from "@emotion/core"
 import { Layout } from "theme-ui"
+import NormalizeCSS from "./normalize-css"
 import Header from "./header"
 import Main from "./main"
 import Container from "./container"
 import Footer from "./footer"
-import { NavProvider } from "./contexts/navContext"
-import { MobileProvider } from "./contexts/mobileContext"
-import { WindowSizeProvider } from "./contexts/windowSizeContext"
+import { NavProvider } from "./contexts/nav-context"
+import { MobileProvider } from "./contexts/mobile-context"
+import { WindowSizeProvider } from "./contexts/windowsize-context"
 
 const SiteLayout = props => {
   return (
@@ -15,27 +15,8 @@ const SiteLayout = props => {
       <MobileProvider>
         <NavProvider>
           <Layout>
-            <Global
-              styles={css`
-                html {
-                  box-sizing: border-box;
-                }
-
-                *,
-                *:before,
-                *:after {
-                  box-sizing: inherit;
-                }
-
-                body {
-                  margin: 0;
-                  padding: 0;
-                }
-              `}
-            />
-
+            <NormalizeCSS />
             <Header />
-
             <Main>
               <Container>{props.children}</Container>
             </Main>

@@ -3,10 +3,10 @@ import { jsx, useThemeUI } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
 import { useContext } from "react"
-import { NavContext } from "../contexts/navContext"
-import { MobileContext } from "../contexts/mobileContext"
+import { NavContext } from "../contexts/nav-context"
+import { MobileContext } from "../contexts/mobile-context"
 
-const NavLinks = () => {
+const NavLinksAnchor = () => {
   const [open, setOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
   const { theme } = useThemeUI()
@@ -202,4 +202,4 @@ const NavLinks = () => {
   }
 }
 
-export default NavLinks
+export default NavLinksAnchor

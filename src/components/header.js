@@ -3,9 +3,9 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Branding from "./navbar/branding"
-import Nav from "./navbar/nav"
-import MobileButton from "./navbar/mobileButton"
-import { NavContext } from "./contexts/navContext"
+import Nav from "./navbar/nav-layout"
+import MobileButton from "./navbar/mobile-button"
+import { NavContext } from "./contexts/nav-context"
 
 const SiteHeader = () => {
   const [open] = useContext(NavContext)

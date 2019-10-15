@@ -1,12 +1,11 @@
 export { default as Layout } from "./src/components/layout"
 export { default as SEO } from "./src/components/seo"
-export { default as SocialLinks } from "./src/components/social/socialLinks"
 export {
   default as SocialFooterIcons,
-} from "./src/components/social/socialFooterIcons"
+} from "./src/components/social/social-footer-icons"
 export {
   default as SocialHeaderIcons,
-} from "./src/components/social/socialHeaderIcons"
+} from "./src/components/social/social-header-icons"
 export {
   default as BaseThemeBreakpoints,
 } from "./src/gatsby-plugin-theme-ui/breakpoints"
@@ -29,4 +28,4 @@ export {
 } from "./src/gatsby-plugin-theme-ui/variants"
 export {
   default as ButtonInternal,
-} from "./src/components/design-system/buttonInternal"
+} from "./src/components/design-system/button-internal"
