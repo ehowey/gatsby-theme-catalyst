@@ -29,3 +29,4 @@ export {
 export {
   default as ButtonInternal,
 } from "./src/components/design-system/button-internal"
+export { default as Box } from "./src/components/design-system/box"

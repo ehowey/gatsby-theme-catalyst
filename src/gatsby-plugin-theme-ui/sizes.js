@@ -1,4 +1,5 @@
 export default {
+  maxPageWidth: "1440px",
   maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
   contentWidth: "90vw", // Sets the container width on smaller screens, results in a 5vw margin on the left and right
   headerHeight: "60px", // Sets the height of the header on screens before the first breakpoint, 767px and below by default

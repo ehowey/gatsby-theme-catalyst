@@ -1,16 +1,20 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from "theme-ui"
+import { useContext } from "react"
+import { jsx } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
-import { useContext } from "react"
 import { NavContext } from "../contexts/nav-context"
 import { MobileContext } from "../contexts/mobile-context"
+import { HeaderHeightContext } from "../contexts/header-height-context"
 
 const NavLinksAnchor = () => {
+  if (typeof window !== "undefined") {
+    var is_root = window.location.pathname === "/" //Equals true if we're at the root
+  }
   const [open, setOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
-  const { theme } = useThemeUI()
-  let navOffset = parseInt(theme.sizes.headerHeight)
+  const [headerHeight] = useContext(HeaderHeightContext)
+  console.log(headerHeight)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -23,25 +27,23 @@ const NavLinksAnchor = () => {
       }
     }
   `)
-  if (typeof window !== "undefined") {
-    var is_root = window.location.pathname === "/" //Equals true if we're at the root
-  }
-  if (typeof window !== "undefined") {
-    let w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName("body")[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth
-    var screenWidth = x
-  }
-  if (
-    screenWidth >= parseInt(theme.breakpoints[0]) &&
-    screenWidth <= parseInt(theme.breakpoints[1])
-  ) {
-    navOffset = 2 * parseInt(theme.sizes.headerHeightTablet)
-  } else if (screenWidth >= parseInt(theme.breakpoints[1])) {
-    navOffset = parseInt(theme.sizes.headerHeightLaptop)
-  }
+
+  // if (typeof window !== "undefined") {
+  //   let w = window,
+  //     d = document,
+  //     e = d.documentElement,
+  //     g = d.getElementsByTagName("body")[0],
+  //     x = w.innerWidth || e.clientWidth || g.clientWidth
+  //   var screenWidth = x
+  // }
+  // if (
+  //   screenWidth >= parseInt(theme.breakpoints[0]) &&
+  //   screenWidth <= parseInt(theme.breakpoints[1])
+  // ) {
+  //   navOffset = 2 * parseInt(theme.sizes.headerHeightTablet)
+  // } else if (screenWidth >= parseInt(theme.breakpoints[1])) {
+  //   navOffset = parseInt(theme.sizes.headerHeightLaptop)
+  // }
   if (is_root) {
     return (
       <ul
@@ -116,7 +118,7 @@ const NavLinksAnchor = () => {
               smooth={true}
               activeClass="active"
               duration={500}
-              offset={-Math.abs(navOffset)}
+              offset={-Math.abs(headerHeight)}
             >
               {link.name}
             </AnchorLink>

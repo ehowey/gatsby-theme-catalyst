@@ -1,14 +1,22 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useContext } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Branding from "./navbar/branding"
 import Nav from "./navbar/nav-layout"
 import MobileButton from "./navbar/mobile-button"
 import { NavContext } from "./contexts/nav-context"
+import { HeaderHeightContext } from "./contexts/header-height-context"
 
 const SiteHeader = () => {
   const [open] = useContext(NavContext)
+  // eslint-disable-next-line
+  const [headerHeight, setHeaderHeight] = useContext(HeaderHeightContext)
+  const header = useRef(null)
+
+  useEffect(() => {
+    setHeaderHeight(header.current.clientHeight)
+  }, [setHeaderHeight])
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
@@ -20,29 +28,33 @@ const SiteHeader = () => {
 
   return (
     <header
-      id="header"
+      ref={header}
       sx={{
         position: data.catalystConfig.headerPosition,
-        display: "grid",
-        gridTemplateColumns: "auto 1fr",
-        gridTemplateRows: [
-          theme => theme.sizes.headerHeight,
-          theme => theme.sizes.headerHeightTablet,
-          theme => theme.sizes.headerHeightLaptop,
-        ],
-        alignItems: "center",
-        height: open ? "100vh" : "auto",
-        width: "100%",
         top: 0,
-        px: 3,
+        width: "100%",
         color: open ? "header.textOpen" : "header.text",
         backgroundColor: open ? "header.backgroundOpen" : "header.background",
-        zIndex: "999", //Ensure the header is overtop of any content under it, e.g. a photo
+        zIndex: "999",
       }}
     >
-      <Branding />
-      <MobileButton />
-      <Nav />
+      <div
+        sx={{
+          maxWidth: "maxPageWidth",
+          width: "100%",
+          height: open ? "100vh" : "auto",
+          m: "0 auto",
+          px: 3,
+          display: "grid",
+          alignItems: open ? "start" : "center",
+          gridTemplateColumns: "auto 1fr",
+          gridTemplateRows: ["auto 1fr", "auto", null],
+        }}
+      >
+        <Branding />
+        <MobileButton />
+        <Nav />
+      </div>
     </header>
   )
 }
