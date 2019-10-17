@@ -2,9 +2,9 @@
 import { jsx } from "theme-ui"
 import { useContext, useEffect, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import HeaderLayout from "./header-layout"
 import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
-import MobileButton from "./navbar/nav-mobile-button"
 import { NavContext } from "../contexts/nav-context"
 import { HeaderHeightContext } from "../contexts/header-height-context"
 
@@ -36,23 +36,10 @@ const SiteHeader = () => {
         zIndex: "999",
       }}
     >
-      <div
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "auto 1fr",
-          gridTemplateRows: ["auto 1fr", "auto", null],
-          maxWidth: "maxPageWidth",
-          width: "100%",
-          height: open ? "100vh" : "auto",
-          m: "0 auto",
-          px: [2, 3, null],
-          py: [0, 2, null],
-        }}
-      >
+      <HeaderLayout>
         <Branding />
-        <MobileButton />
         <Nav />
-      </div>
+      </HeaderLayout>
     </header>
   )
 }

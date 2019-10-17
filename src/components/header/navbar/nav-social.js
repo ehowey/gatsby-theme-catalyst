@@ -3,8 +3,9 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "../../contexts/nav-context"
 import { MobileContext } from "../../contexts/mobile-context"
+import NavSocialIcons from "./nav-social-icons"
 
-const SocialWrapper = props => {
+const SocialWrapper = () => {
   const [open] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
 
@@ -30,7 +31,7 @@ const SocialWrapper = props => {
         },
       }}
     >
-      {props.children}
+      <NavSocialIcons />
     </div>
   )
 }
