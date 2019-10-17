@@ -60,6 +60,7 @@ const SiteTitle = () => {
           fontSize: [4, 5, 6],
           flex: "0 0 auto",
           color: open ? "header.textOpen" : "header.text",
+          m: 0,
         }}
       >
         {data.site.siteMetadata.title}

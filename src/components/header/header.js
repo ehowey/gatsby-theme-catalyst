@@ -2,11 +2,11 @@
 import { jsx } from "theme-ui"
 import { useContext, useEffect, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Branding from "./navbar/branding"
+import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
-import MobileButton from "./navbar/mobile-button"
-import { NavContext } from "./contexts/nav-context"
-import { HeaderHeightContext } from "./contexts/header-height-context"
+import MobileButton from "./navbar/nav-mobile-button"
+import { NavContext } from "../contexts/nav-context"
+import { HeaderHeightContext } from "../contexts/header-height-context"
 
 const SiteHeader = () => {
   // eslint-disable-next-line
@@ -38,15 +38,15 @@ const SiteHeader = () => {
     >
       <div
         sx={{
+          display: "grid",
+          gridTemplateColumns: "auto 1fr",
+          gridTemplateRows: ["auto 1fr", "auto", null],
           maxWidth: "maxPageWidth",
           width: "100%",
           height: open ? "100vh" : "auto",
           m: "0 auto",
-          px: 3,
-          display: "grid",
-          alignItems: open ? "start" : "center",
-          gridTemplateColumns: "auto 1fr",
-          gridTemplateRows: ["auto 1fr", "auto", null],
+          px: [2, 3, null],
+          py: [0, 2, null],
         }}
       >
         <Branding />

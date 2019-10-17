@@ -2,11 +2,11 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import NavLayout from "./nav-layout"
-import NavLinksDefault from "./navlinks-default"
-import NavLinksAnchor from "./navlinks-anchor"
-import NavLinksBlended from "./navlinks-blended"
-import SocialWrapper from "./social-wrapper"
-import SocialHeaderIcons from "../social/social-header-icons"
+import NavLinksDefault from "./nav-links-default"
+import NavLinksAnchor from "./nav-links-anchor"
+import NavLinksBlended from "./nav-links-blended"
+import SocialWrapper from "./nav-social-wrapper"
+import SocialHeaderIcons from "./nav-social-icons"
 
 const NavLinks = () => {
   const data = useStaticQuery(graphql`

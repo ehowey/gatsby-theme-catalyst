@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { NavContext } from "../contexts/nav-context"
-import { MobileContext } from "../contexts/mobile-context"
+import { NavContext } from "../../contexts/nav-context"
+import { MobileContext } from "../../contexts/mobile-context"
 
 const SocialWrapper = props => {
   const [open] = useContext(NavContext)

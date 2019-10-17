@@ -8,7 +8,6 @@ export const MobileProvider = props => {
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
-        headerPosition
         mobileMenuBreakpoint
       }
     }

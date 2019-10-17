@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout } from "theme-ui"
-import NormalizeCSS from "./normalize-css"
+import NormalizeCSS from "./utils/normalize-css"
 import Header from "./header"
 import Main from "./main"
 import Container from "./container"

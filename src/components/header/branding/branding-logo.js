@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
-import { NavContext } from "../contexts/nav-context"
+import { NavContext } from "../../contexts/nav-context"
 import { animateScroll as scroll } from "react-scroll"
 
 const SiteLogo = () => {
@@ -64,9 +64,13 @@ const SiteLogo = () => {
     <ImgLinkWrapper>
       <Img
         sx={{
-          // Uses width because of weird bug with flex box and shrinking content we don't want shrunk
+          height: [
+            theme => theme.sizes.logoHeightMobile,
+            theme => theme.sizes.logoHeightTablet,
+            theme => theme.sizes.logoHeightLaptop,
+          ],
           width: [
-            theme => theme.sizes.logoWidth,
+            theme => theme.sizes.logoWidthMobile,
             theme => theme.sizes.logoWidthTablet,
             theme => theme.sizes.logoWidthLaptop,
           ],

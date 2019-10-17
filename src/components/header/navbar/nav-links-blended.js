@@ -1,25 +1,24 @@
 /** @jsx jsx */
-import { useContext } from "react"
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Link as AnchorLink } from "react-scroll"
-import { NavContext } from "../contexts/nav-context"
-import { MobileContext } from "../contexts/mobile-context"
-import { HeaderHeightContext } from "../contexts/header-height-context"
+import { useContext } from "react"
+import { NavContext } from "../../contexts/nav-context"
+import { MobileContext } from "../../contexts/mobile-context"
 
-const NavLinksAnchor = () => {
-  if (typeof window !== "undefined") {
-    var is_root = window.location.pathname === "/" //Equals true if we're at the root
-  }
+const NavLinksBlended = () => {
   const [open, setOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
-  const [headerHeight] = useContext(HeaderHeightContext)
-  console.log(headerHeight)
-  const navOffset = -Math.abs(headerHeight + 16)
+  const { theme } = useThemeUI()
+  let navOffset = parseInt(theme.sizes.headerHeight)
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
+          pageLinks {
+            name
+            link
+          }
           anchorLinks {
             name
             link
@@ -28,7 +27,25 @@ const NavLinksAnchor = () => {
       }
     }
   `)
-
+  if (typeof window !== "undefined") {
+    var is_root = window.location.pathname === "/" //Equals true if we're at the root
+  }
+  if (typeof window !== "undefined") {
+    let w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName("body")[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth
+    var screenWidth = x
+  }
+  if (
+    screenWidth >= parseInt(theme.breakpoints[0]) &&
+    screenWidth <= parseInt(theme.breakpoints[1])
+  ) {
+    navOffset = 2 * parseInt(theme.sizes.headerHeightTablet)
+  } else if (screenWidth >= parseInt(theme.breakpoints[1])) {
+    navOffset = parseInt(theme.sizes.headerHeightLaptop)
+  }
   if (is_root) {
     return (
       <ul
@@ -59,6 +76,7 @@ const NavLinksAnchor = () => {
           <li
             sx={{
               my: mobile ? 2 : 0,
+
               mx: 1,
             }}
             key={link.name}
@@ -103,10 +121,59 @@ const NavLinksAnchor = () => {
               smooth={true}
               activeClass="active"
               duration={500}
-              offset={navOffset}
+              offset={-Math.abs(navOffset)}
             >
               {link.name}
             </AnchorLink>
+          </li>
+        ))}
+        {data.site.siteMetadata.pageLinks.map(link => (
+          <li
+            key={link.name}
+            sx={{
+              my: mobile ? 2 : 0,
+
+              mx: 1,
+            }}
+            role="none"
+          >
+            <Link
+              to={link.link}
+              sx={{
+                color: open ? "header.textOpen" : "header.text",
+                textDecoration: "none",
+                py: 2,
+                px: 1,
+                mr: mobile ? 0 : 3,
+                cursor: "pointer",
+                position: "relative",
+                fontFamily: "navLinks",
+                fontWeight: "bold",
+                letterSpacing: "1px",
+
+                "::after": {
+                  position: "absolute",
+                  top: "100%",
+                  left: "0",
+                  width: "100%",
+                  height: "1px",
+                  backgroundColor: "secondary",
+                  content: "''",
+                  opacity: "0",
+                  transition: "height 0.3s, opacity 0.3s, transform 0.3s",
+                  transform: "translateY(-10px)",
+                },
+
+                ":hover::after, :focus::after": {
+                  height: "5px",
+                  opacity: "1",
+                  transform: "translateY(0px)",
+                },
+              }}
+              role="menuitem"
+            >
+              {link.name}
+            </Link>
           </li>
         ))}
       </ul>
@@ -115,7 +182,7 @@ const NavLinksAnchor = () => {
     return (
       <ul
         sx={{
-          display: "flex",
+          display: [open ? "flex" : "none", "flex", null],
           flexDirection: mobile ? "column" : "row",
           textAlign: mobile ? "center" : "left",
           listStyle: "none",
@@ -141,6 +208,7 @@ const NavLinksAnchor = () => {
           <li
             sx={{
               my: mobile ? 2 : 0,
+
               mx: 1,
             }}
             key={link.name}
@@ -184,9 +252,58 @@ const NavLinksAnchor = () => {
             </Link>
           </li>
         ))}
+        {data.site.siteMetadata.pageLinks.map(link => (
+          <li
+            key={link.name}
+            sx={{
+              my: mobile ? 2 : 0,
+
+              mx: 1,
+            }}
+            role="none"
+          >
+            <Link
+              to={link.link}
+              sx={{
+                color: open ? "header.textOpen" : "header.text",
+                textDecoration: "none",
+                py: 2,
+                px: 1,
+                mr: mobile ? 0 : 3,
+                cursor: "pointer",
+                position: "relative",
+                fontFamily: "navLinks",
+                fontWeight: "bold",
+                letterSpacing: "1px",
+
+                "::after": {
+                  position: "absolute",
+                  top: "100%",
+                  left: "0",
+                  width: "100%",
+                  height: "1px",
+                  backgroundColor: "secondary",
+                  content: "''",
+                  opacity: "0",
+                  transition: "height 0.3s, opacity 0.3s, transform 0.3s",
+                  transform: "translateY(-10px)",
+                },
+
+                ":hover::after, :focus::after": {
+                  height: "5px",
+                  opacity: "1",
+                  transform: "translateY(0px)",
+                },
+              }}
+              role="menuitem"
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     )
   }
 }
 
-export default NavLinksAnchor
+export default NavLinksBlended
