@@ -1,4 +1,18 @@
 export default {
+  box: {
+    full: {
+      width: "100vw",
+      position: "relative",
+      left: "calc(-50vw + 50%)",
+    },
+    wide: {
+      width: ["100vw", "90vw", "80vw"],
+      position: "relative",
+      maxWidth: "maxPageWidth",
+      left: "50%",
+      transform: "translateX(-50%)",
+    },
+  },
   buttons: {
     primary: {
       backgroundColor: "primary",

@@ -1,27 +1,30 @@
 import React from "react"
 import { Layout } from "theme-ui"
-import NormalizeCSS from "./normalize-css"
-import Header from "./header"
+import NormalizeCSS from "./utils/normalize-css"
+import Header from "./header/header"
 import Main from "./main"
 import Container from "./container"
-import Footer from "./footer"
+import Footer from "./footer/footer"
 import { NavProvider } from "./contexts/nav-context"
 import { MobileProvider } from "./contexts/mobile-context"
 import { WindowSizeProvider } from "./contexts/windowsize-context"
+import { HeaderHeightProvider } from "./contexts/header-height-context"
 
 const SiteLayout = props => {
   return (
     <WindowSizeProvider>
       <MobileProvider>
         <NavProvider>
-          <Layout>
-            <NormalizeCSS />
-            <Header />
-            <Main>
-              <Container>{props.children}</Container>
-            </Main>
-            <Footer />
-          </Layout>
+          <HeaderHeightProvider>
+            <Layout>
+              <NormalizeCSS />
+              <Header />
+              <Main>
+                <Container>{props.children}</Container>
+              </Main>
+              <Footer />
+            </Layout>
+          </HeaderHeightProvider>
         </NavProvider>
       </MobileProvider>
     </WindowSizeProvider>

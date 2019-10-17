@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
-import { NavContext } from "../contexts/nav-context"
+import { NavContext } from "../../contexts/nav-context"
 import { animateScroll as scroll } from "react-scroll"
 
 const SiteTitle = () => {
@@ -60,6 +60,7 @@ const SiteTitle = () => {
           fontSize: [4, 5, 6],
           flex: "0 0 auto",
           color: open ? "header.textOpen" : "header.text",
+          m: 0,
         }}
       >
         {data.site.siteMetadata.title}

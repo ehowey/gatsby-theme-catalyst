@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import Logo from "./site-logo"
-import Title from "./site-title"
+import Logo from "./branding-logo"
+import Title from "./branding-title"
 
 const SiteBranding = () => {
   const data = useStaticQuery(graphql`

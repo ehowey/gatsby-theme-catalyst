@@ -8,14 +8,13 @@ export const MobileProvider = props => {
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
-        headerPosition
         mobileMenuBreakpoint
       }
     }
   `)
   const { width } = useWindowSize()
   const mobileBreakpoint = parseInt(data.catalystConfig.mobileMenuBreakpoint)
-  const [mobile, setMobile] = useState(false)
+  const [mobile, setMobile] = useState(true)
 
   useEffect(() => {
     if (width < mobileBreakpoint) {

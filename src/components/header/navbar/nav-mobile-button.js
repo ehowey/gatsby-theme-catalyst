@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { NavContext } from "../contexts/nav-context"
-import { MobileContext } from "../contexts/mobile-context"
+import { NavContext } from "../../contexts/nav-context"
+import { MobileContext } from "../../contexts/mobile-context"
 
 const Span = props => (
   <span
@@ -48,9 +48,9 @@ const SiteMobileButton = () => {
         color: open ? "header.textOpen" : "header.text",
         cursor: "pointer",
         display: mobile ? "block" : "none",
-        height: "3.5rem",
+        height: "3rem",
         position: "relative",
-        width: "3.5rem",
+        width: "3rem",
         marginLeft: "auto",
         backgroundColor: "transparent",
         border: "none",
