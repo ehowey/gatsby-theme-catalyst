@@ -16,7 +16,7 @@ const HeaderLayout = props => {
         width: "100%",
         height: open ? "100vh" : "auto",
         m: "0 auto",
-        px: [2, 3, null],
+        px: [1, 3, null],
         py: [1, 2, null],
       }}
     >
