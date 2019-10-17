@@ -3,20 +3,15 @@ import { jsx } from "theme-ui"
 import { useContext, useEffect, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Branding from "./navbar/branding"
-import Nav from "./navbar/nav-layout"
+import Nav from "./navbar/nav"
 import MobileButton from "./navbar/mobile-button"
 import { NavContext } from "./contexts/nav-context"
 import { HeaderHeightContext } from "./contexts/header-height-context"
 
 const SiteHeader = () => {
-  const [open] = useContext(NavContext)
   // eslint-disable-next-line
   const [headerHeight, setHeaderHeight] = useContext(HeaderHeightContext)
-  const header = useRef(null)
-
-  useEffect(() => {
-    setHeaderHeight(header.current.clientHeight)
-  }, [setHeaderHeight])
+  const [open] = useContext(NavContext)
   const data = useStaticQuery(graphql`
     query {
       catalystConfig {
@@ -25,10 +20,13 @@ const SiteHeader = () => {
       }
     }
   `)
-
+  const headerRef = useRef(null)
+  useEffect(() => {
+    setHeaderHeight(headerRef.current.clientHeight)
+  })
   return (
     <header
-      ref={header}
+      ref={headerRef}
       sx={{
         position: data.catalystConfig.headerPosition,
         top: 0,

@@ -15,6 +15,7 @@ const NavLinksAnchor = () => {
   const [mobile] = useContext(MobileContext)
   const [headerHeight] = useContext(HeaderHeightContext)
   console.log(headerHeight)
+  const navOffset = -Math.abs(headerHeight + 16)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -28,22 +29,6 @@ const NavLinksAnchor = () => {
     }
   `)
 
-  // if (typeof window !== "undefined") {
-  //   let w = window,
-  //     d = document,
-  //     e = d.documentElement,
-  //     g = d.getElementsByTagName("body")[0],
-  //     x = w.innerWidth || e.clientWidth || g.clientWidth
-  //   var screenWidth = x
-  // }
-  // if (
-  //   screenWidth >= parseInt(theme.breakpoints[0]) &&
-  //   screenWidth <= parseInt(theme.breakpoints[1])
-  // ) {
-  //   navOffset = 2 * parseInt(theme.sizes.headerHeightTablet)
-  // } else if (screenWidth >= parseInt(theme.breakpoints[1])) {
-  //   navOffset = parseInt(theme.sizes.headerHeightLaptop)
-  // }
   if (is_root) {
     return (
       <ul
@@ -118,7 +103,7 @@ const NavLinksAnchor = () => {
               smooth={true}
               activeClass="active"
               duration={500}
-              offset={-Math.abs(headerHeight)}
+              offset={navOffset}
             >
               {link.name}
             </AnchorLink>

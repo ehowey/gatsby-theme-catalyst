@@ -1,41 +1,31 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useStaticQuery, graphql } from "gatsby"
-import NavWrapper from "./nav-wrapper"
-import NavLinksDefault from "./navlinks-default"
-import NavLinksAnchor from "./navlinks-anchor"
-import NavLinksBlended from "./navlinks-blended"
-import SocialWrapper from "./social-wrapper"
-import SocialHeaderIcons from "../social/social-header-icons"
+import { useContext } from "react"
+import { NavContext } from "../contexts/nav-context"
+import { MobileContext } from "../contexts/mobile-context"
 
-const NavLinks = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      catalystConfig {
-        navType
-      }
-    }
-  `)
-  if (data.catalystConfig.navType === "default") {
-    return <NavLinksDefault />
-  } else if (data.catalystConfig.navType === "anchor") {
-    return <NavLinksAnchor />
-  } else if (data.catalystConfig.navType === "blended") {
-    return <NavLinksBlended />
-  } else {
-    return null
-  }
-}
+const NavLayout = props => {
+  const [open] = useContext(NavContext)
+  const [mobile] = useContext(MobileContext)
 
-const SiteNav = () => {
   return (
-    <NavWrapper>
-      <NavLinks />
-      <SocialWrapper>
-        <SocialHeaderIcons />
-      </SocialWrapper>
-    </NavWrapper>
+    <nav
+      sx={{
+        gridColumn: mobile ? "1 / -1" : "2 / 3",
+        gridRow: mobile ? "2 / 3" : "1 / 2",
+        justifySelf: mobile ? "center" : "end",
+        alignSelf: mobile ? "start" : "center",
+        alignItems: "center",
+        mt: open ? 2 : 0,
+        display: mobile ? (open ? "flex" : "none") : "flex",
+        flexDirection: mobile ? "column" : "row",
+      }}
+      role="navigation"
+      aria-label="main-navigation"
+    >
+      {props.children}
+    </nav>
   )
 }
 
-export default SiteNav
+export default NavLayout
