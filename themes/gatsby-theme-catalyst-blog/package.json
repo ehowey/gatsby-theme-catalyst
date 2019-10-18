@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-theme-catalyst-blog",
+  "description": "Child blog theme for gatsby-theme-catalyst-core. Based on gatsby-theme-blog-core.",
+  "version": "0.0.3",
+  "author": "Eric Howey <eric@erichowey.dev>",
+  "dependencies": {
+    "gatsby-theme-blog-core": "^1.1.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.15.36",
+    "prettier": "^1.18.2",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.15.36",
+    "gatsby-theme-catalyst-core": "^0.8.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst-blog"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst-blog/issues"
+  }
+}
