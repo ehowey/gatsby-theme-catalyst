@@ -24,7 +24,7 @@ gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-cat
 
 **Advanced Start**
 
-```
+```sh
 # Clone the main theme repository
 git clone https://github.com/ehowey/gatsby-theme-catalyst.git
 # Enter the theme directory
