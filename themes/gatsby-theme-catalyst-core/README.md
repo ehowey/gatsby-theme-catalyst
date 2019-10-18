@@ -1,9 +1,9 @@
-# [WIP] Gatsby Catalyst Themes
+# Gatsby Theme Catalyst Core
 
 **Blazing Start**
 
 ```sh
-# Create a new Gatsby site using the catalyst core starter site
+# create a new Gatsby site using the catalyst core starter site
 gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-catalyst-core
 ```
 
