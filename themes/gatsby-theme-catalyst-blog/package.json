@@ -7,13 +7,13 @@
     "gatsby-theme-blog-core": "^1.1.0"
   },
   "devDependencies": {
-    "gatsby": "^2.15.36",
+    "gatsby": "^2.16.4",
     "prettier": "^1.18.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.15.36",
+    "gatsby": "^2.16.4",
     "gatsby-theme-catalyst-core": "^0.8.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
