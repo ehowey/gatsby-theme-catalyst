@@ -1,5 +1,18 @@
 # [WIP] Gatsby Catalyst Themes
 
+## Overview
+
+The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters.
+
+These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
+
+**Catalyst Themes and Starters**
+
+- [Gatsby-Theme-Catalyst-Core](https://github.com/ehowey/gatsby-theme-catalyst-core): _This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies. Uses theme-ui under the hood for styling changes and MDX for pages._
+  - [Gatsby-Starter-Catalyst-Core](https://github.com/ehowey/gatsby-starter-catalyst-core): _Starter for the core theme to make installation and customization easier_
+
+## Getting started with Catalyst themes
+
 **Blazing Start**
 
 ```sh
@@ -9,20 +22,20 @@ gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-cat
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
-**Demo**
+**Advanced Start**
 
-[https://gatsby-starter-catalyst-core.netlify.com/](https://gatsby-starter-catalyst-core.netlify.com/)
+```
+# Clone the main theme repository
+git clone https://github.com/ehowey/gatsby-theme-catalyst.git
+# Enter the theme directory
+cd gatsby-theme-catalyst
+# Install dependencies and setup workspaces
+yarn
+# Use workspaces to launch a starter
+yarn workspace gatsby-starter-catalyst-core develop
+```
 
-## Overview
-
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters.
-
-These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
-
-## Catalyst Themes and Starters
-
-- [Gatsby-Theme-Catalyst-Core](https://github.com/ehowey/gatsby-theme-catalyst-core): _This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies. Uses theme-ui under the hood for styling changes and MDX for pages._
-  - [Gatsby-Starter-Catalyst-Core](https://github.com/ehowey/gatsby-starter-catalyst-core): _Starter for the core theme to make installation and customization easier_
+[Read this blog post on using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
 
 ## Customizing the themes and starters
 
