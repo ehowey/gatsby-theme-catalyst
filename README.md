@@ -27,7 +27,7 @@ Currently a WIP. Extends the core theme to add a basic blog implementation based
 
 **Helpful Reading**:
 
-- [Gatsby Themes Docs](https://www.gatsbyjs.org/docs/themes/)
+- [Gatsby Theme Docs](https://www.gatsbyjs.org/docs/themes/)
 - [Using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
 - [Theme-UI Docs](https://theme-ui.com/)
 - [MDX Docs](https://mdxjs.com/)
@@ -62,9 +62,29 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 | `headerPosition`       | "static", "sticky" or "fixed"  | Controls CSS position value for the site header                                                           |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px"    | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
-**Social Links**
+### Social Links
 
-This option is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
+This option in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
+
+```
+socialLinks: [
+      {
+        name: `Email`,
+        url: `eric@erichowey.dev`,
+        location: `footer`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Github`,
+        url: `https://www.github.com/ehowey`,
+        location: `all`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Twitter`,
+        url: `https://www.twitter.com/erchwy`,
+        location: `header`, //Options are "all", "header", "footer"
+      },
+    ],
+ ```
 
 ### Nav Types
 
