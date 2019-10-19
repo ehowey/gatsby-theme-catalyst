@@ -6,7 +6,7 @@
   "dependencies": {
     "gatsby": "^2.16.4",
     "gatsby-theme-catalyst-blog": "^0.0.4",
-    "gatsby-theme-catalyst-core": "^0.9.1",
+    "gatsby-theme-catalyst-core": "^0.9.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
