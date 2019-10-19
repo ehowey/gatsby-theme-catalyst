@@ -6,23 +6,13 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 
 **Catalyst Themes and Starters**
 
-- `gatsby-theme-catalyst-core`: This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies. Uses theme-ui under the hood for styling changes and MDX for pages.
-  - `gatsby-starter-catalyst-core`: Starter for the core theme to make installation and customization easier, `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-core`
-- `gatsby-theme-catalyst-blog` [WIP]: Extends the core theme to add basic blog functionality, based on `gatsby-theme-blog-core`.
-  - `gatsby-starter-catalyst-blog` [WIP]: Starter for the blog theme to make installation and customization easier, `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-blog`
+| Name  | Description | Quick Start |
+| ------------- | ------------- | --- |
+| Gatsby-Theme-Catalyst-Core  | This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies.  | N/A |
+| Gatsby-Starter-Catalyst-Core  | Starter for the core theme  | `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-core` |
+| Gatsby-Theme-Catalyst-Blog| Extends the core theme to add basic blog functionality using gatsby-theme-blog-core, currently a work in progress. | N/A |
+| Gatsby-Starter-Catalyst-Blog | Starter for the blog theme | `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-blog` |
   
-
-## Getting started with Catalyst themes
-
-**Blazing Start**
-
-```sh
-# Create a new Gatsby site using the catalyst core starter site
-gatsby new my-catalyst-starter-core https://github.com/ehowey/gatsby-starter-catalyst-core
-```
-
-[Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
-
 **Advanced Start**
 
 ```sh
@@ -35,6 +25,8 @@ yarn
 # Use workspaces to launch a starter
 yarn workspace gatsby-starter-catalyst-core develop
 ```
+
+[Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
 [Read this blog post on using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
 
