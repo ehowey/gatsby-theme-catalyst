@@ -31,7 +31,7 @@ Currently a WIP. Extends the core theme to add a basic blog implementation based
 - [Using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
 - [Theme-UI Docs](https://theme-ui.com/)
 - [MDX Docs](https://mdxjs.com/)
-- [Component Shadowsing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
+- [Component Shadowing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
 
 ### Modifying Gatsby-Config.JS
 
