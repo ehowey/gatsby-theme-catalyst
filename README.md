@@ -23,6 +23,10 @@ Currently a WIP. Extends the core theme to add a basic blog implementation based
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
+## Accessibility
+
+Accesibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics.  Currently this theme is scoring 100 in Google Lighthouse audit for accessibility.
+
 ## Customizing the themes and starters
 
 **Helpful Reading**:
