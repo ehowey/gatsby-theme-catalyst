@@ -164,6 +164,10 @@ export default merge(BaseThemeFonts, {
 });
 ```
 
+### Changing logo sizes
+
+A common change you will need to make is to the logo size.  The logo sizes are managed in the following location: `...src/gatsby-plugin-theme-ui/sizes.js`.  In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+
 ### Advanced development and contributing
 
 You can use this main repository to do advanced development work using yarn workspaces. Fork this repository. Clone a local copy of your fork and get to work! I would love to see what you make happen!
