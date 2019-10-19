@@ -6,8 +6,11 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 
 **Catalyst Themes and Starters**
 
-- [Gatsby-Theme-Catalyst-Core](https://github.com/ehowey/gatsby-theme-catalyst-core): _This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies. Uses theme-ui under the hood for styling changes and MDX for pages._
-  - [Gatsby-Starter-Catalyst-Core](https://github.com/ehowey/gatsby-starter-catalyst-core): _Starter for the core theme to make installation and customization easier_
+- `gatsby-theme-catalyst-core`: This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies. Uses theme-ui under the hood for styling changes and MDX for pages.
+  - `gatsby-starter-catalyst-core`: Starter for the core theme to make installation and customization easier, `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-core`
+- `gatsby-theme-catalyst-blog` [WIP]: Extends the core theme to add basic blog functionality, based on `gatsby-theme-blog-core`.
+  - `gatsby-starter-catalyst-blog` [WIP]: Starter for the blog theme to make installation and customization easier, `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-blog`
+  
 
 ## Getting started with Catalyst themes
 
