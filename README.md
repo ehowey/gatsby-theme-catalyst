@@ -4,42 +4,36 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
-**Catalyst Themes and Starters**
+**Gatsby-Theme-Catalyst-Core**
 
-| Name  | Description | Quick Start |
-| ------------- | ------------- | --- |
-| Gatsby-Theme-Catalyst-Core  | This acts as the core theme on which all other themes are based. It houses a basic, unstyled, site architecture along with most commonly needed dependencies.  | N/A |
-| Gatsby-Starter-Catalyst-Core  | Starter for the core theme  | `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-core` |
-| Gatsby-Theme-Catalyst-Blog| Extends the core theme to add basic blog functionality using gatsby-theme-blog-core, currently a work in progress. | N/A |
-| Gatsby-Starter-Catalyst-Blog | Starter for the blog theme | `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-blog` |
+This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a house.
+
+`gatsby new https://github.com/ehowey/gatsby-starter-catalyst-core`
+
+**Gatsby-Theme-Catalyst-Blog**
+
+Currently a WIP. Extends the core theme to add a basic blog implementation based on gatsby-theme-blog-core which is maintained by the GatsbyJS organization. Relies on markdown for content.
+
+`gatsby new https://github.com/ehowey/gatsby-starter-catalyst-blog`
+
   
-**Advanced Start**
 
-```sh
-# Clone the main theme repository
-git clone https://github.com/ehowey/gatsby-theme-catalyst.git
-# Enter the theme directory
-cd gatsby-theme-catalyst
-# Install dependencies and setup workspaces
-yarn
-# Use workspaces to launch a starter
-yarn workspace gatsby-starter-catalyst-core develop
-```
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
-[Read this blog post on using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
+
 
 ## Customizing the themes and starters
 
-**Essential Reading**:
+**Helpful Reading**:
 
 - [Gatsby Themes Docs](https://www.gatsbyjs.org/docs/themes/)
+- [Using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
 - [Theme-UI Docs](https://theme-ui.com/)
 - [MDX Docs](https://mdxjs.com/)
 - [Component Shadowsing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
 
-### Gatsby-Config
+### Modifying Gatsby-Config.JS
 
 Some theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options in here you can modify.
 
@@ -150,6 +144,10 @@ export default merge(BaseThemeFonts, {
 });
 ```
 
+### Advanced development and contributing
+
+You can use this main repository to do advanced development work using yarn workspaces. Fork this repository. Clone a local copy of your fork and get to work! I would love to see what you make happen!
+
 ## Philosophy - Less is More
 
 **Simple Core Theme**
@@ -164,6 +162,6 @@ These child-themes are focused on extending function and remain as design-agnost
 
 The starter sites provide a "quick start" for site development using the themes as dependencies. Currently the starter sites only provide basic implementation of the themes. It is my vision however that in time there could be more styled and complex starters released which do not need as much customization and include more rigid styling.
 
-## Next Steps
+## Next Steps and Contribution
 
 This is a passion project for me. I would love any additional feedback, suggestions and pull requests. I can be contacted via email at: <eric@erichowey.dev>
