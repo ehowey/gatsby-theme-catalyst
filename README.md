@@ -1,4 +1,9 @@
-# Gatsby Catalyst Themes
+<p align="center">
+    <img alt="Gatsby Catalyst Themes" src="https://www.erichowey.dev/images/catalyst-logo.png" width="100" />
+</p>
+<h1 align="center">
+  Gatsby Catalyst Themes
+</h1>
 
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters.
 
@@ -16,12 +21,7 @@ Currently a WIP. Extends the core theme to add a basic blog implementation based
 
 `gatsby new https://github.com/ehowey/gatsby-starter-catalyst-blog`
 
-  
-
-
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
-
-
 
 ## Customizing the themes and starters
 
@@ -35,9 +35,9 @@ Currently a WIP. Extends the core theme to add a basic blog implementation based
 
 ### Modifying Gatsby-Config.JS
 
-Some theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options in here you can modify.
+Theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options in here you can modify.
 
-**Theme Options**
+**Core Theme Options**
 
 ```
    {
