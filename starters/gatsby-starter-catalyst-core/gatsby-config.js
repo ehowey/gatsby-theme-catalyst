@@ -48,10 +48,10 @@ module.exports = {
       options: {
         displaySiteLogo: true,
         displaySiteTitle: true,
-        invertSiteLogo: true,
+        invertSiteLogo: false,
         mobileMenuBreakpoint: "768px",
-        navType: "anchor", // "default", "anchor", "blended"
-        headerPosition: "sticky", // "static" or "sticky" work best, "fixed" is possible
+        navType: "default", // "default", "anchor", "blended"
+        headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
       },
     },
     {

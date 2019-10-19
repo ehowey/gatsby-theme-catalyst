@@ -14,7 +14,6 @@ const NavLinksAnchor = () => {
   const [open, setOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
   const [headerHeight] = useContext(HeaderHeightContext)
-  console.log(headerHeight)
   const navOffset = -Math.abs(headerHeight + 16)
   const data = useStaticQuery(graphql`
     query {

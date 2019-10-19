@@ -1,17 +1,22 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "../contexts/nav-context"
 
 const HeaderLayout = props => {
   const [open] = useContext(NavContext)
+  const { theme } = useThemeUI()
 
   return (
     <div
       sx={{
         display: "grid",
         gridTemplateColumns: "auto 1fr",
-        gridTemplateRows: ["auto 1fr", "auto", null],
+        gridTemplateRows: [
+          theme.sizes.headerHeight + " 1fr",
+          theme.sizes.headerHeight,
+          theme.sizes.headerHeight,
+        ],
         maxWidth: "maxPageWidth",
         width: "100%",
         height: open ? "100vh" : "auto",

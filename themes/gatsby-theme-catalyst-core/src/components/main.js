@@ -8,7 +8,8 @@ const SiteMain = props => {
         flex: "1 1 auto",
         maxWidth: "maxContentWidth",
         width: "contentWidth",
-        my: 5,
+        mt: 3,
+        mb: 5,
         mx: "auto",
       }}
     >
