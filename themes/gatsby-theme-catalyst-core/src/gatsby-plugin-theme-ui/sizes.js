@@ -8,9 +8,6 @@ export default {
   logoHeightMobile: "40px", // Logo height on small screens
   logoHeightTablet: "50px", // Logo width on medium screens
   logoHeightLaptop: "60px", // Logo width on large screens
-  mainMarginTop: "2rem", // Used for a dynamic spacing between nav menu and page content, also for fixed header in onepage theme
-  mainMarginTopTablet: "2rem", // Used for a dynamic spacing between nav menu and page content, also for fixed header in onepage theme
-  mainMarginTopLaptop: "2rem", // Used for a dynamic spacing between nav menu and page content, also for fixed header in onepage theme
   iconsFooter: "2rem", // Sets the icons size for the footer
   iconsHeader: "1.25rem", // Sets the icons size for the header
 }
