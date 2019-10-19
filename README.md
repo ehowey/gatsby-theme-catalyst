@@ -59,7 +59,7 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 | `displaySiteTitle`     | true or false                  | Controls whether the site title is displayed                                                              |
 | `invertLogo`           | true or false                  | Controls whether the logo is inverted when the mobile menu is open                                        |
 | `navType`              | "default", "anchor", "blended" | Sets the navigation type, see below for details.                                                          |
-| `headerPosition`       | "static", "sticky" or "fixed"  | Controls CSS position value for the site header                                                           |
+| `headerPosition`       | "static" or "sticky"  | Controls CSS position value for the site header                                                           |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px"    | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
 ### Social Links
