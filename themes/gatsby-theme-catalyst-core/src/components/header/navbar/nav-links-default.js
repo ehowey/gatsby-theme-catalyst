@@ -35,7 +35,7 @@ const NavLinksDefault = () => {
           top: "100%",
           left: "0",
           width: "100%",
-          height: "5px",
+          height: "4px",
           backgroundColor: "secondary",
           content: "''",
           opacity: "1",
@@ -55,8 +55,6 @@ const NavLinksDefault = () => {
           role="none"
         >
           <Link
-            to={link.link}
-            activeClassName="active"
             sx={{
               color: open ? "header.textOpen" : "header.text",
               textDecoration: "none",
@@ -79,16 +77,18 @@ const NavLinksDefault = () => {
                 content: "''",
                 opacity: "0",
                 transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                transform: "translateY(-10px)",
+                transform: "translateY(-6px)",
               },
 
               ":hover::after, :focus::after": {
-                height: "5px",
+                height: "4px",
                 opacity: "1",
                 transform: "translateY(0px)",
               },
             }}
             role="menuitem"
+            to={link.link}
+            activeClassName="active"
           >
             {link.name}
           </Link>

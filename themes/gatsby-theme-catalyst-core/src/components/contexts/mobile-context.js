@@ -14,7 +14,7 @@ export const MobileProvider = props => {
   `)
   const { width } = useWindowSize()
   const mobileBreakpoint = parseInt(data.catalystConfig.mobileMenuBreakpoint)
-  const [mobile, setMobile] = useState(true)
+  const [mobile, setMobile] = useState(false)
 
   useEffect(() => {
     if (width < mobileBreakpoint) {

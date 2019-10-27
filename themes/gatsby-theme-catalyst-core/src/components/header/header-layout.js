@@ -20,6 +20,7 @@ const HeaderLayout = props => {
         maxWidth: "maxPageWidth",
         width: "100%",
         height: open ? "100vh" : "auto",
+        minHeight: ["50px", "80px", null],
         m: "0 auto",
         px: [1, 3, null],
         py: [1, 2, null],

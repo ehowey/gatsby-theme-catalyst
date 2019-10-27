@@ -6,8 +6,8 @@ module.exports = {
     siteUrl: `https://gatsby-starter-catalyst-blog.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
     pageLinks: [
       {
-        name: `Design System`,
-        link: `/design-system`,
+        name: `Page 1`,
+        link: `/page-1`,
       },
       {
         name: `Page 2`,

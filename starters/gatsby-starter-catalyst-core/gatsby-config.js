@@ -6,8 +6,8 @@ module.exports = {
     siteUrl: `https://gatsby-starter-catalyst-core.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
     pageLinks: [
       {
-        name: `Design System`,
-        link: `/design-system`,
+        name: `Page 1`,
+        link: `/page-1`,
       },
       {
         name: `Page 2`,
@@ -46,12 +46,12 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        displaySiteLogo: true,
+        displaySiteLogo: false,
         displaySiteTitle: true,
         invertSiteLogo: false,
         mobileMenuBreakpoint: "768px",
-        navType: "default", // "default", "anchor", "blended"
-        headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
+        navType: "blended", // "default", "anchor", "blended"
+        headerPosition: "sticky", // "static" or "sticky" work best, "fixed" is possible
       },
     },
     {

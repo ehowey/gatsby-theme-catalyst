@@ -47,7 +47,7 @@ const NavLinksBlended = () => {
             top: "100%",
             left: "0",
             width: "100%",
-            height: "5px",
+            height: "4px",
             backgroundColor: "secondary",
             content: "''",
             opacity: "1",
@@ -61,7 +61,6 @@ const NavLinksBlended = () => {
           <li
             sx={{
               my: mobile ? 2 : 0,
-
               mx: 1,
             }}
             key={link.name}
@@ -89,11 +88,11 @@ const NavLinksBlended = () => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)",
+                  transform: "translateY(-6px)",
                 },
 
                 ":hover::after, :focus::after": {
-                  height: "5px",
+                  height: "4px",
                   opacity: "1",
                   transform: "translateY(0px)",
                 },
@@ -117,13 +116,11 @@ const NavLinksBlended = () => {
             key={link.name}
             sx={{
               my: mobile ? 2 : 0,
-
               mx: 1,
             }}
             role="none"
           >
             <Link
-              to={link.link}
               sx={{
                 color: open ? "header.textOpen" : "header.text",
                 textDecoration: "none",
@@ -146,16 +143,18 @@ const NavLinksBlended = () => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)",
+                  transform: "translateY(-6px)",
                 },
 
                 ":hover::after, :focus::after": {
-                  height: "5px",
+                  height: "4px",
                   opacity: "1",
                   transform: "translateY(0px)",
                 },
               }}
+              to={link.link}
               role="menuitem"
+              activeClassName="active"
             >
               {link.name}
             </Link>
@@ -179,7 +178,7 @@ const NavLinksBlended = () => {
             top: "100%",
             left: "0",
             width: "100%",
-            height: "5px",
+            height: "4px",
             backgroundColor: "secondary",
             content: "''",
             opacity: "1",
@@ -221,17 +220,18 @@ const NavLinksBlended = () => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)",
+                  transform: "translateY(-6px)",
                 },
 
                 ":hover::after, :focus::after": {
-                  height: "5px",
+                  height: "4px",
                   opacity: "1",
                   transform: "translateY(0px)",
                 },
               }}
               to={"/" + link.link}
               role="menuitem"
+              activeClassName="active"
             >
               {link.name}
             </Link>
@@ -242,13 +242,11 @@ const NavLinksBlended = () => {
             key={link.name}
             sx={{
               my: mobile ? 2 : 0,
-
               mx: 1,
             }}
             role="none"
           >
             <Link
-              to={link.link}
               sx={{
                 color: open ? "header.textOpen" : "header.text",
                 textDecoration: "none",
@@ -271,16 +269,18 @@ const NavLinksBlended = () => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)",
+                  transform: "translateY(-6px)",
                 },
 
                 ":hover::after, :focus::after": {
-                  height: "5px",
+                  height: "4px",
                   opacity: "1",
                   transform: "translateY(0px)",
                 },
               }}
+              to={link.link}
               role="menuitem"
+              activeClassName="active"
             >
               {link.name}
             </Link>

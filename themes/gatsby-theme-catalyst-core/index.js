@@ -23,7 +23,3 @@ export { default as BaseThemeStyles } from "./src/gatsby-plugin-theme-ui/styles"
 export {
   default as BaseThemeVariants,
 } from "./src/gatsby-plugin-theme-ui/variants"
-export {
-  default as ButtonInternal,
-} from "./src/components/design-system/button-internal"
-export { default as Box } from "./src/components/design-system/box"

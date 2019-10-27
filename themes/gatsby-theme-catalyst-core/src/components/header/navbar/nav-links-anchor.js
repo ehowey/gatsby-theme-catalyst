@@ -44,7 +44,7 @@ const NavLinksAnchor = () => {
             top: "100%",
             left: "0",
             width: "100%",
-            height: "5px",
+            height: "4px",
             backgroundColor: "secondary",
             content: "''",
             opacity: "1",
@@ -85,11 +85,11 @@ const NavLinksAnchor = () => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)",
+                  transform: "translateY(-6px)",
                 },
 
                 ":hover::after, :focus::after": {
-                  height: "5px",
+                  height: "4px",
                   opacity: "1",
                   transform: "translateY(0px)",
                 },
@@ -120,13 +120,12 @@ const NavLinksAnchor = () => {
           listStyle: "none",
           m: 0,
           p: 0,
-
           ".active::after": {
             position: "absolute",
             top: "100%",
             left: "0",
             width: "100%",
-            height: "5px",
+            height: "4px",
             backgroundColor: "secondary",
             content: "''",
             opacity: "1",
@@ -156,7 +155,6 @@ const NavLinksAnchor = () => {
                 position: "relative",
                 fontWeight: "bold",
                 letterSpacing: "1px",
-
                 "::after": {
                   position: "absolute",
                   top: "100%",
@@ -167,11 +165,10 @@ const NavLinksAnchor = () => {
                   content: "''",
                   opacity: "0",
                   transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-                  transform: "translateY(-10px)",
+                  transform: "translateY(-6px)",
                 },
-
                 ":hover::after, :focus::after": {
-                  height: "5px",
+                  height: "4px",
                   opacity: "1",
                   transform: "translateY(0px)",
                 },
