@@ -4,7 +4,6 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { jsx, Styled } from "theme-ui"
 import { Layout, SEO } from "gatsby-theme-catalyst-core"
-import merge from "deepmerge"
 
 const Posts = ({ posts }) => {
   const data = useStaticQuery(graphql`
