@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        displaySiteLogo: false,
+        displaySiteLogo: true,
         displaySiteTitle: true,
         invertSiteLogo: false,
         mobileMenuBreakpoint: "768px",
