@@ -23,3 +23,13 @@ export { default as BaseThemeStyles } from "./src/gatsby-plugin-theme-ui/styles"
 export {
   default as BaseThemeVariants,
 } from "./src/gatsby-plugin-theme-ui/variants"
+export { default as NavContext } from "./src/components/contexts/nav-context"
+export {
+  default as MobileContext,
+} from "./src/components/contexts/mobile-context"
+export {
+  default as HeaderHeightContext,
+} from "./src/components/contexts/header-height-context"
+export {
+  default as WindowSizeContext,
+} from "./src/components/contexts/windowsize-context"
