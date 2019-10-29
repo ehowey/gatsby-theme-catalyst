@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useContext, useEffect, useRef } from "react"
+import { useContext, useCallback } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import HeaderLayout from "./header-layout"
 import Branding from "./branding/branding"
@@ -20,10 +20,16 @@ const SiteHeader = () => {
       }
     }
   `)
-  const headerRef = useRef(null)
-  useEffect(() => {
-    setHeaderHeight(headerRef.current.clientHeight)
-  })
+
+  const headerRef = useCallback(
+    node => {
+      if (node !== null) {
+        setHeaderHeight(node.getBoundingClientRect().height)
+      }
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
+
   return (
     <header
       ref={headerRef}

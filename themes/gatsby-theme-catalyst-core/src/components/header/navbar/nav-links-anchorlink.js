@@ -6,7 +6,7 @@ import { NavContext } from "../../contexts/nav-context"
 import { MobileContext } from "../../contexts/mobile-context"
 import { HeaderHeightContext } from "../../contexts/header-height-context"
 
-const NavMenuLinkInternal = props => {
+const NavMenuAnchorLink = props => {
   const [open, setOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
   const [headerHeight] = useContext(HeaderHeightContext)
@@ -18,7 +18,6 @@ const NavMenuLinkInternal = props => {
         my: mobile ? 2 : 0,
         mx: 1,
       }}
-      key={props.key}
       role="none"
     >
       <AnchorLink
@@ -68,4 +67,4 @@ const NavMenuLinkInternal = props => {
   )
 }
 
-export default NavMenuLinkInternal
+export default NavMenuAnchorLink

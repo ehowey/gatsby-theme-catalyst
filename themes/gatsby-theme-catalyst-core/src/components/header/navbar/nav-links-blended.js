@@ -31,10 +31,10 @@ const NavLinksBlended = () => {
     return (
       <NavMenuBar>
         {data.site.siteMetadata.anchorLinks.map(link => (
-          <NavMenuAnchorLink to={link.link} key={link.name} text={link.name} />
+          <NavMenuAnchorLink to={link.link} text={link.name} key={link.name} />
         ))}
         {data.site.siteMetadata.pageLinks.map(link => (
-          <NavMenuLink to={link.link} key={link.name} text={link.name} />
+          <NavMenuLink to={link.link} text={link.name} key={link.name} />
         ))}
       </NavMenuBar>
     )
@@ -42,14 +42,10 @@ const NavLinksBlended = () => {
     return (
       <NavMenuBar>
         {data.site.siteMetadata.anchorLinks.map(link => (
-          <NavMenuAnchorLink
-            to={"/" + link.link}
-            key={link.name}
-            text={link.name}
-          />
+          <NavMenuLink to={"/" + link.link} text={link.name} key={link.name} />
         ))}
         {data.site.siteMetadata.pageLinks.map(link => (
-          <NavMenuLink to={link.link} key={link.name} text={link.name} />
+          <NavMenuLink to={link.link} text={link.name} key={link.name} />
         ))}
       </NavMenuBar>
     )

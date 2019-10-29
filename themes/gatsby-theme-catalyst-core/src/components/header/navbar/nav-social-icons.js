@@ -53,7 +53,7 @@ const SiteSocialHeader = () => {
     }
   `)
   return (
-    <IconContext.Provider value={{ size: theme.sizes.iconsheader }}>
+    <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
       {data.site.siteMetadata.socialLinks.map(platform => {
         let socialName = platform.name.toLowerCase()
         let socialLocation = platform.location.toLowerCase()

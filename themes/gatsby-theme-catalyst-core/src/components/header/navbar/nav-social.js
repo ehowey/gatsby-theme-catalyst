@@ -20,7 +20,6 @@ const SocialWrapper = () => {
         a: {
           color: open ? "header.iconsOpen" : "header.icons",
           mr: 2,
-          height: theme => theme.sizes.iconsHeader,
           textDecoration: "none",
         },
         "a:last-of-type": {

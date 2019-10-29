@@ -15,7 +15,6 @@ const NavMenuLinkInternal = props => {
         mx: 1,
       }}
       role="none"
-      key={props.key}
     >
       <Link
         sx={{

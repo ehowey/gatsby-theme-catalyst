@@ -1,36 +1,37 @@
 import React, { createContext, useContext, useState, useEffect } from "react"
-import debounce from "lodash.debounce"
-
-let defaultHeight
-let defaultWidth
-
-if (typeof window !== `undefined`) {
-  defaultHeight = window.innerHeight
-  defaultWidth = window.innerWidth
-}
 
 const WindowSizeContext = createContext(null)
 
 export const WindowSizeProvider = ({ children }) => {
-  const [size, setSize] = useState({
-    width: defaultWidth,
-    height: defaultHeight,
-  })
-  useEffect(() => {
-    const handleResize = () => {
-      setSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
+  const isClient = typeof window === "object"
+
+  function getSize() {
+    return {
+      width: isClient ? window.innerWidth : undefined,
+      height: isClient ? window.innerHeight : undefined,
     }
-    window.addEventListener("resize", debounce(handleResize, 300))
-    return () => {
-      window.removeEventListener("resize", debounce(handleResize, 300))
-    }
-  }, [])
+  }
+
+  const [windowSize, setWindowSize] = useState(getSize)
+
+  useEffect(
+    () => {
+      if (!isClient) {
+        return false
+      }
+
+      const handleResize = () => {
+        setWindowSize(getSize())
+      }
+
+      window.addEventListener("resize", handleResize)
+      return () => window.removeEventListener("resize", handleResize)
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  ) // Empty array ensures that effect is only run on mount and unmount
 
   return (
-    <WindowSizeContext.Provider value={size}>
+    <WindowSizeContext.Provider value={windowSize}>
       {children}
     </WindowSizeContext.Provider>
   )

@@ -20,7 +20,7 @@ const NavLinksDefault = () => {
   return (
     <NavMenuBar>
       {data.site.siteMetadata.pageLinks.map(link => (
-        <NavMenuLink to={link.link} key={link.name} text={link.name} />
+        <NavMenuLink to={link.link} text={link.name} key={link.name} />
       ))}
     </NavMenuBar>
   )

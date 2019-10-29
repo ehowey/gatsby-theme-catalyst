@@ -27,7 +27,7 @@ const NavLinksAnchor = () => {
     return (
       <NavMenuBar>
         {data.site.siteMetadata.anchorLinks.map(link => (
-          <NavMenuAnchorLink to={link.link} key={link.name} text={link.name} />
+          <NavMenuAnchorLink to={link.link} text={link.name} key={link.name} />
         ))}
       </NavMenuBar>
     )
@@ -35,7 +35,7 @@ const NavLinksAnchor = () => {
     return (
       <NavMenuBar>
         {data.site.siteMetadata.anchorLinks.map(link => (
-          <NavMenuLink to={"/" + link.link} key={link.name} text={link.name} />
+          <NavMenuLink to={"/" + link.link} text={link.name} key={link.name} />
         ))}
       </NavMenuBar>
     )
