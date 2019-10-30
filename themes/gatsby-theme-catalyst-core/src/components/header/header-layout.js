@@ -10,6 +10,9 @@ const HeaderLayout = props => {
   return (
     <div
       sx={{
+        gridRow: "1 / -1",
+        gridColumn: "1 / -1",
+        alignSelf: "start",
         display: "grid",
         gridTemplateColumns: "auto 1fr",
         gridTemplateRows: [

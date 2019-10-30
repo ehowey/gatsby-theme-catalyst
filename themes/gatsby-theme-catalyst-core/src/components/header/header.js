@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import { useContext, useCallback } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import HeaderLayout from "./header-layout"
+import HeaderHero from "./header-hero"
 import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
 import { NavContext } from "../contexts/nav-context"
@@ -40,12 +41,14 @@ const SiteHeader = () => {
         color: open ? "header.textOpen" : "header.text",
         backgroundColor: open ? "header.backgroundOpen" : "header.background",
         zIndex: "999",
+        display: "grid",
       }}
     >
       <HeaderLayout>
         <Branding />
         <Nav />
       </HeaderLayout>
+      <HeaderHero />
     </header>
   )
 }
