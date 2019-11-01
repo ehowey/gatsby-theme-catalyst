@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { MobileContext } from "../../contexts/mobile-context"
+import { MobileContext } from "../../../contexts/mobile-context"
 
 const NavMenuBar = props => {
   const [mobile] = useContext(MobileContext)

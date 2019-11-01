@@ -6,17 +6,40 @@ module.exports = options => {
       {
         resolve: `gatsby-source-filesystem`,
         options: {
+          name: `home`,
+          path: `content/home`,
+        },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `pages`,
+          path: `content/pages`,
+        },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
           name: `images`,
-          path: `src/images`,
+          path: `content/assets`,
+        },
+      },
+      {
+        resolve: `gatsby-plugin-page-creator`,
+        options: {
+          path: `content/home`,
+        },
+      },
+      {
+        resolve: `gatsby-plugin-page-creator`,
+        options: {
+          path: `content/pages`,
         },
       },
       {
         resolve: `gatsby-plugin-mdx`,
         options: {
           extensions: [`.md`, `.mdx`],
-          defaultLayouts: {
-            default: require.resolve(`./src/components/layout`),
-          },
           gatsbyRemarkPlugins: [
             {
               resolve: `gatsby-remark-images`,

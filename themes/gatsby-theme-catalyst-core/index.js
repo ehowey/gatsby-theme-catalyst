@@ -1,4 +1,3 @@
-export { default as Layout } from "./src/components/layout"
 export { default as SEO } from "./src/components/utils/seo"
 export {
   default as FooterSocialIcons,
@@ -23,9 +22,7 @@ export { default as BaseThemeStyles } from "./src/gatsby-plugin-theme-ui/styles"
 export {
   default as BaseThemeVariants,
 } from "./src/gatsby-plugin-theme-ui/variants"
-export { NavContext } from "./src/components/contexts/nav-context"
-export { MobileContext } from "./src/components/contexts/mobile-context"
-export {
-  HeaderHeightContext,
-} from "./src/components/contexts/header-height-context"
-export { useWindowSize } from "./src/components/contexts/windowsize-context"
+export { NavContext } from "./src/contexts/nav-context"
+export { MobileContext } from "./src/contexts/mobile-context"
+export { HeaderHeightContext } from "./src/contexts/header-height-context"
+export { useWindowSize } from "./src/contexts/windowsize-context"

@@ -6,8 +6,8 @@ import HeaderLayout from "./header-layout"
 import HeaderHero from "./header-hero"
 import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
-import { NavContext } from "../contexts/nav-context"
-import { HeaderHeightContext } from "../contexts/header-height-context"
+import { NavContext } from "../../contexts/nav-context"
+import { HeaderHeightContext } from "../../contexts/header-height-context"
 
 const SiteHeader = () => {
   // eslint-disable-next-line
@@ -35,13 +35,12 @@ const SiteHeader = () => {
     <header
       ref={headerRef}
       sx={{
+        display: "grid",
         position: data.catalystConfig.headerPosition,
         top: 0,
         width: "100%",
         color: open ? "header.textOpen" : "header.text",
         backgroundColor: open ? "header.backgroundOpen" : "header.background",
-        zIndex: "999",
-        display: "grid",
       }}
     >
       <HeaderLayout>

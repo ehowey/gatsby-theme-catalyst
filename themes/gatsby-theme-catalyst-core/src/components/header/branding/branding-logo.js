@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
-import { NavContext } from "../../contexts/nav-context"
+import { NavContext } from "../../../contexts/nav-context"
 import { animateScroll as scroll } from "react-scroll"
 
 const SiteLogo = () => {

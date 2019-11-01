@@ -2,9 +2,9 @@
 import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { Link as AnchorLink } from "react-scroll"
-import { NavContext } from "../../contexts/nav-context"
-import { MobileContext } from "../../contexts/mobile-context"
-import { HeaderHeightContext } from "../../contexts/header-height-context"
+import { NavContext } from "../../../contexts/nav-context"
+import { MobileContext } from "../../../contexts/mobile-context"
+import { HeaderHeightContext } from "../../../contexts/header-height-context"
 
 const NavMenuAnchorLink = props => {
   const [open, setOpen] = useContext(NavContext)

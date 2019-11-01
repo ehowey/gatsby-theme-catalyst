@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from "theme-ui"
 import { useContext } from "react"
-import { NavContext } from "../contexts/nav-context"
+import { NavContext } from "../../contexts/nav-context"
 
 const HeaderLayout = props => {
   const [open] = useContext(NavContext)
@@ -27,6 +27,7 @@ const HeaderLayout = props => {
         m: "0 auto",
         px: [1, 3, null],
         py: [1, 2, null],
+        zIndex: "999", //Ensure the nav is always on top.
       }}
     >
       {props.children}

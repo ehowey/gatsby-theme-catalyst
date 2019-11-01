@@ -2,8 +2,8 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { useContext } from "react"
-import { MobileContext } from "../../contexts/mobile-context"
-import { NavContext } from "../../contexts/nav-context"
+import { MobileContext } from "../../../contexts/mobile-context"
+import { NavContext } from "../../../contexts/nav-context"
 
 const NavMenuLinkInternal = props => {
   const [mobile] = useContext(MobileContext)

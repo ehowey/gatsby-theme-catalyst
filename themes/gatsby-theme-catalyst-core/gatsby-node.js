@@ -3,13 +3,13 @@ var crypto = require("crypto")
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`type CatalystConfig implements Node {
-displaySiteLogo: Boolean!
-displaySiteTitle: Boolean!
-invertSiteLogo: Boolean!
-mobileMenuBreakpoint: String!
-navType: String!
-headerPosition: String!
-}`)
+    displaySiteLogo: Boolean!
+    displaySiteTitle: Boolean!
+    invertSiteLogo: Boolean!
+    mobileMenuBreakpoint: String!
+    navType: String!
+    headerPosition: String!
+  }`)
 }
 
 exports.sourceNodes = (

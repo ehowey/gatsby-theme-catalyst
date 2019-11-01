@@ -5,6 +5,8 @@
   Gatsby Catalyst Themes
 </h1>
 
+**Currently a WIP, rapid changes at this time**
+
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters.
 
 These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
@@ -25,7 +27,7 @@ Currently a WIP. Extends the core theme to add a basic blog implementation based
 
 ## Accessibility
 
-Accesibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics.  Currently this theme is scoring 100 in Google Lighthouse audit for accessibility.
+Accesibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics. Currently this theme is scoring 100 in Google Lighthouse audit for accessibility.
 
 ## Customizing the themes and starters
 
@@ -63,7 +65,7 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 | `displaySiteTitle`     | true or false                  | Controls whether the site title is displayed                                                              |
 | `invertLogo`           | true or false                  | Controls whether the logo is inverted when the mobile menu is open                                        |
 | `navType`              | "default", "anchor", "blended" | Sets the navigation type, see below for details.                                                          |
-| `headerPosition`       | "static" or "sticky"  | Controls CSS position value for the site header                                                           |
+| `headerPosition`       | "static" or "sticky"           | Controls CSS position value for the site header                                                           |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px"    | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
 ### Social Links
@@ -88,7 +90,7 @@ socialLinks: [
         location: `header`, //Options are "all", "header", "footer"
       },
     ],
- ```
+```
 
 ### Nav Types
 
@@ -170,7 +172,7 @@ export default merge(BaseThemeFonts, {
 
 ### Changing logo sizes
 
-A common change you will need to make is to the logo size.  The logo sizes are managed in the following location: `...src/gatsby-plugin-theme-ui/sizes.js`.  In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+A common change you will need to make is to the logo size. The logo sizes are managed in the following location: `...src/gatsby-plugin-theme-ui/sizes.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
 
 ### Advanced development and contributing
 
