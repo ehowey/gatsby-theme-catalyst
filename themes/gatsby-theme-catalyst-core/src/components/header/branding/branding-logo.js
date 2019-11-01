@@ -65,14 +65,18 @@ const SiteLogo = () => {
       <Img
         sx={{
           height: [
-            theme => theme.sizes.logoHeightMobile,
-            theme => theme.sizes.logoHeightTablet,
-            theme => theme.sizes.logoHeightLaptop,
+            theme => theme.sizes.logoHeightSmall,
+            null,
+            theme => theme.sizes.logoHeightMedium,
+            theme => theme.sizes.logoHeightLarge,
+            null,
           ],
           width: [
-            theme => theme.sizes.logoWidthMobile,
-            theme => theme.sizes.logoWidthTablet,
-            theme => theme.sizes.logoWidthLaptop,
+            theme => theme.sizes.logoWidthSmall,
+            null,
+            theme => theme.sizes.logoWidthMedium,
+            theme => theme.sizes.logoWidthLarge,
+            null,
           ],
           mr: 2,
           filter: open ? invertLogo : "none",

@@ -17,16 +17,18 @@ const HeaderLayout = props => {
         gridTemplateColumns: "auto 1fr",
         gridTemplateRows: [
           theme.sizes.headerHeight + " 1fr",
+          null,
           theme.sizes.headerHeight,
-          theme.sizes.headerHeight,
+          null,
+          null,
         ],
         maxWidth: "maxPageWidth",
         width: "100%",
         height: open ? "100vh" : "auto",
-        minHeight: ["50px", "80px", null],
+        minHeight: ["50px", null, "80px", null, null],
         m: "0 auto",
-        px: [1, 3, null],
-        py: [1, 2, null],
+        px: [1, null, 3, null, null],
+        py: [1, null, 2, null, null],
         zIndex: "999", //Ensure the nav is always on top.
       }}
     >
