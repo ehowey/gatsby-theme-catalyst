@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Layout } from "theme-ui"
 import NormalizeCSS from "./utils/normalize-css"
@@ -7,7 +7,6 @@ import Main from "./main"
 import Container from "./container"
 import Footer from "./footer/footer"
 import { MobileContext } from "../contexts/mobile-context"
-import { useWindowSize } from "../contexts/windowsize-context"
 
 const SiteLayout = props => {
   const data = useStaticQuery(graphql`
@@ -19,16 +18,22 @@ const SiteLayout = props => {
   `)
   // eslint-disable-next-line
   const [mobile, setMobile] = useContext(MobileContext)
-  const { width } = useWindowSize()
-  const mobileBreakpoint = parseInt(data.catalystConfig.mobileMenuBreakpoint)
+  const mobileBreakpoint = data.catalystConfig.mobileMenuBreakpoint
 
-  useEffect(() => {
-    if (width < mobileBreakpoint) {
-      setMobile(true)
+  const WidthChange = mq => {
+    if (typeof window !== "undefined" && mq.matches) {
+      return setMobile(false)
     } else {
-      setMobile(false)
+      return setMobile(true)
     }
-  }, [width, mobileBreakpoint, setMobile])
+  }
+
+  // media query event handler
+  if (matchMedia) {
+    const mq = window.matchMedia("(min-width:" + mobileBreakpoint + ")")
+    mq.addListener(WidthChange)
+    WidthChange(mq)
+  }
 
   return (
     <Layout>
