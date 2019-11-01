@@ -1,4 +1,4 @@
-//Implemention of normalize.css 8.0.1 for a standard css reset. Added in box-sizing: border-box.
+//Implemention of normalize.css 8.0.1 for a standard css reset. Added in box-sizing: border-box and overflow-x: hidden.
 import React from "react"
 import { css, Global } from "@emotion/core"
 
@@ -20,6 +20,7 @@ const Normalize = () => {
           line-height: 1.15; /* 1 */
           -webkit-text-size-adjust: 100%; /* 2 */
           box-sizing: border-box;
+          overflow-x: hidden;
         }
 
         *,
