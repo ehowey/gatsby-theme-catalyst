@@ -29,7 +29,7 @@ const SiteLayout = props => {
   }
 
   // media query event handler
-  if (matchMedia) {
+  if (typeof window !== "undefined" && matchMedia) {
     const mq = window.matchMedia("(min-width:" + mobileBreakpoint + ")")
     mq.addListener(WidthChange)
     WidthChange(mq)
