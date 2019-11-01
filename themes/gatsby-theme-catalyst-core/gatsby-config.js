@@ -6,13 +6,6 @@ module.exports = options => {
       {
         resolve: `gatsby-source-filesystem`,
         options: {
-          name: `home`,
-          path: `content/home`,
-        },
-      },
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
           name: `pages`,
           path: `content/pages`,
         },
@@ -22,12 +15,6 @@ module.exports = options => {
         options: {
           name: `images`,
           path: `content/assets`,
-        },
-      },
-      {
-        resolve: `gatsby-plugin-page-creator`,
-        options: {
-          path: `content/home`,
         },
       },
       {
