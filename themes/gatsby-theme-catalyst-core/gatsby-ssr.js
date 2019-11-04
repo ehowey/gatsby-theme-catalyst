@@ -4,13 +4,17 @@ import { MobileProvider } from "./src/contexts/mobile-context"
 import { WindowSizeProvider } from "./src/contexts/windowsize-context"
 import { HeaderHeightProvider } from "./src/contexts/header-height-context"
 import Layout from "./src/components/layout"
+import NormalizeCSS from "./src/utils/normalize-css"
 
 export const wrapRootElement = ({ element }) => {
   return (
     <WindowSizeProvider>
       <MobileProvider>
         <NavProvider>
-          <HeaderHeightProvider>{element}</HeaderHeightProvider>
+          <HeaderHeightProvider>
+            <NormalizeCSS />
+            {element}
+          </HeaderHeightProvider>
         </NavProvider>
       </MobileProvider>
     </WindowSizeProvider>

@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Layout } from "theme-ui"
-import NormalizeCSS from "./utils/normalize-css"
 import Header from "./header/header"
 import Main from "./main"
 import Container from "./container"
@@ -37,7 +36,6 @@ const SiteLayout = props => {
 
   return (
     <Layout>
-      <NormalizeCSS />
       <Header />
       <Main>
         <Container>{props.children}</Container>

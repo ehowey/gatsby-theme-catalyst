@@ -1,4 +1,4 @@
-export { default as SEO } from "./src/components/utils/seo"
+export { default as SEO } from "./src/utils/seo"
 export {
   default as FooterSocialIcons,
 } from "./src/components/footer/footer-social-icons"
