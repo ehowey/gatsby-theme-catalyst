@@ -25,4 +25,3 @@ export {
 export { NavContext } from "./src/contexts/nav-context"
 export { MobileContext } from "./src/contexts/mobile-context"
 export { HeaderHeightContext } from "./src/contexts/header-height-context"
-export { useWindowSize } from "./src/contexts/windowsize-context"
