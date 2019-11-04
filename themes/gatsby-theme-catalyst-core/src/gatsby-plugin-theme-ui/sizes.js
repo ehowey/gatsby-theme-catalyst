@@ -9,6 +9,6 @@ export default {
   logoHeightSmall: "40px", // Logo height on small screens, up to 768px
   logoHeightMedium: "50px", // Logo width on medium screens, 768px - 1024px
   logoHeightLarge: "60px", // Logo width on large screens, above 1024px
-  iconsFooter: "2rem", // Sets the icons size for the footer
-  iconsHeader: "1.25rem", // Sets the icons size for the header
+  iconsFooter: "32px", // Sets the icons size for the footer
+  iconsHeader: "20px", // Sets the icons size for the header
 }
