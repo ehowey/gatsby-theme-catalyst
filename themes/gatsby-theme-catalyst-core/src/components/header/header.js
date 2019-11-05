@@ -18,7 +18,6 @@ const SiteHeader = () => {
     query {
       catalystConfig {
         headerPosition
-        mobileMenuBreakpoint
       }
     }
   `)
@@ -41,7 +40,9 @@ const SiteHeader = () => {
         top: 0,
         width: "100%",
         color: isNavOpen ? "header.textOpen" : "header.text",
-        backgroundColor: isNavOpen ? "header.backgroundOpen" : "header.background",
+        backgroundColor: isNavOpen
+          ? "header.backgroundOpen"
+          : "header.background",
       }}
     >
       <HeaderLayout>
