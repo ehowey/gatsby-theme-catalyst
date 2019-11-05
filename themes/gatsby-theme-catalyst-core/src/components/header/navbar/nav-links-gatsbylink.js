@@ -7,7 +7,7 @@ import { NavContext } from "../../../contexts/nav-context"
 
 const NavMenuLinkInternal = props => {
   const [mobile] = useContext(MobileContext)
-  const [open, setOpen] = useContext(NavContext)
+  const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   return (
     <li
       sx={{
@@ -18,7 +18,7 @@ const NavMenuLinkInternal = props => {
     >
       <Link
         sx={{
-          color: open ? "header.textOpen" : "header.text",
+          color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           py: 2,
           px: 1,
@@ -50,7 +50,7 @@ const NavMenuLinkInternal = props => {
         role="menuitem"
         to={props.to}
         activeClassName="active"
-        onClick={() => setOpen(false)}
+        onClick={() => setIsNavOpen(false)}
       >
         {props.text}
       </Link>

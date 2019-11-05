@@ -4,7 +4,8 @@ import { useContext } from "react"
 import { NavContext } from "../../contexts/nav-context"
 
 const HeaderLayout = props => {
-  const [open] = useContext(NavContext)
+  const [isNavOpen] = useContext(NavContext)
+
   const { theme } = useThemeUI()
 
   return (
@@ -24,7 +25,7 @@ const HeaderLayout = props => {
         ],
         maxWidth: "maxPageWidth",
         width: "100%",
-        height: open ? "100vh" : "auto",
+        height: isNavOpen ? "100vh" : "auto",
         minHeight: ["50px", null, "80px", null, null],
         m: "0 auto",
         px: [1, null, 3, null, null],

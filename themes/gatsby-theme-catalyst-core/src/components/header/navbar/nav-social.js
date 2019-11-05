@@ -6,7 +6,7 @@ import { MobileContext } from "../../../contexts/mobile-context"
 import NavSocialIcons from "./nav-social-icons"
 
 const SocialWrapper = () => {
-  const [open] = useContext(NavContext)
+  const [isNavOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
 
   return (
@@ -18,7 +18,7 @@ const SocialWrapper = () => {
         mt: mobile ? 2 : 0,
 
         a: {
-          color: open ? "header.iconsOpen" : "header.icons",
+          color: isNavOpen ? "header.iconsOpen" : "header.icons",
           mr: 2,
           textDecoration: "none",
         },

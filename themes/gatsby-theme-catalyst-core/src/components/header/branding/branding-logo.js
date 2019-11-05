@@ -7,7 +7,8 @@ import { NavContext } from "../../../contexts/nav-context"
 import { animateScroll as scroll } from "react-scroll"
 
 const SiteLogo = () => {
-  const [open] = useContext(NavContext)
+  const [isNavOpen] = useContext(NavContext)
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -79,7 +80,7 @@ const SiteLogo = () => {
             null,
           ],
           mr: 2,
-          filter: open ? invertLogo : "none",
+          filter: isNavOpen ? invertLogo : "none",
         }}
         fluid={data.brandingLogo.childImageSharp.fluid}
         alt={data.site.siteMetadata.title}

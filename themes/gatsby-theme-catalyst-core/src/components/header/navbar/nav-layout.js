@@ -5,7 +5,8 @@ import { NavContext } from "../../../contexts/nav-context"
 import { MobileContext } from "../../../contexts/mobile-context"
 
 const NavLayout = props => {
-  const [open] = useContext(NavContext)
+  const [isNavOpen] = useContext(NavContext)
+
   const [mobile] = useContext(MobileContext)
 
   return (
@@ -16,8 +17,8 @@ const NavLayout = props => {
         justifySelf: mobile ? "center" : "end",
         alignSelf: mobile ? "start" : "center",
         alignItems: "center",
-        mt: open ? 2 : 0,
-        display: mobile ? (open ? "flex" : "none") : "flex",
+        mt: isNavOpen ? 2 : 0,
+        display: mobile ? (isNavOpen ? "flex" : "none") : "flex",
         flexDirection: mobile ? "column" : "row",
       }}
       role="navigation"

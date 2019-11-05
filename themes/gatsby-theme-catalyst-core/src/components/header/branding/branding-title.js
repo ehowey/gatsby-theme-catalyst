@@ -6,7 +6,8 @@ import { NavContext } from "../../../contexts/nav-context"
 import { animateScroll as scroll } from "react-scroll"
 
 const SiteTitle = () => {
-  const [open] = useContext(NavContext)
+  const [isNavOpen] = useContext(NavContext)
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -41,7 +42,7 @@ const SiteTitle = () => {
       return (
         <Link
           sx={{
-            color: open ? "header.textOpen" : "header.text",
+            color: isNavOpen ? "header.textOpen" : "header.text",
             textDecoration: "none",
           }}
           to="/"
@@ -59,7 +60,7 @@ const SiteTitle = () => {
           fontFamily: "siteTitle",
           fontSize: [4, 5, 6],
           flex: "0 0 auto",
-          color: open ? "header.textOpen" : "header.text",
+          color: isNavOpen ? "header.textOpen" : "header.text",
           m: 0,
         }}
       >

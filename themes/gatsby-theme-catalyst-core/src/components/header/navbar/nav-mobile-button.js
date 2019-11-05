@@ -35,17 +35,17 @@ const Span = props => (
 )
 
 const SiteMobileButton = () => {
-  const [open, setOpen] = useContext(NavContext)
+  const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
   return (
     <button
       aria-label="Menu"
-      onClick={() => setOpen(!open)}
+      onClick={() => setIsNavOpen(!isNavOpen)}
       sx={{
         gridColumn: "2 / 3",
         gridRow: "1 / 2",
         alignSelf: "center",
-        color: open ? "header.textOpen" : "header.text",
+        color: isNavOpen ? "header.textOpen" : "header.text",
         cursor: "pointer",
         display: mobile ? "block" : "none",
         height: "3rem",
@@ -56,9 +56,9 @@ const SiteMobileButton = () => {
         border: "none",
       }}
     >
-      <Span open={open} />
-      <Span open={open} />
-      <Span open={open} />
+      <Span open={isNavOpen} />
+      <Span open={isNavOpen} />
+      <Span open={isNavOpen} />
     </button>
   )
 }

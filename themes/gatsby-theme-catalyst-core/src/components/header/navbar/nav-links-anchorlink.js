@@ -7,7 +7,7 @@ import { MobileContext } from "../../../contexts/mobile-context"
 import { HeaderHeightContext } from "../../../contexts/header-height-context"
 
 const NavMenuAnchorLink = props => {
-  const [open, setOpen] = useContext(NavContext)
+  const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   const [mobile] = useContext(MobileContext)
   const [headerHeight] = useContext(HeaderHeightContext)
   const navOffset = -Math.abs(headerHeight + 16)
@@ -22,7 +22,7 @@ const NavMenuAnchorLink = props => {
     >
       <AnchorLink
         sx={{
-          color: open ? "header.textOpen" : "header.text",
+          color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           py: 2,
           px: 1,
@@ -52,7 +52,7 @@ const NavMenuAnchorLink = props => {
           },
         }}
         to={props.to.replace(/#/g, "").toLowerCase()}
-        onClick={() => setOpen(false)}
+        onClick={() => setIsNavOpen(false)}
         role="menuitem"
         spy={true}
         hashSpy={true}
