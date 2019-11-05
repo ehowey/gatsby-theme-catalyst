@@ -7,15 +7,15 @@ import NavSocialIcons from "./nav-social-icons"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
-  const [mobile] = useContext(MobileContext)
+  const [isMobile] = useContext(MobileContext)
 
   return (
     <div
       sx={{
         display: "flex",
-        mr: mobile ? "auto" : 2,
+        mr: isMobile ? "auto" : 2,
         ml: "auto",
-        mt: mobile ? 2 : 0,
+        mt: isMobile ? 2 : 0,
 
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",

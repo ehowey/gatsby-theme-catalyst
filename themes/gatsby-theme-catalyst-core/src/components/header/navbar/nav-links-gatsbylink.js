@@ -6,12 +6,12 @@ import { MobileContext } from "../../../contexts/mobile-context"
 import { NavContext } from "../../../contexts/nav-context"
 
 const NavMenuLinkInternal = props => {
-  const [mobile] = useContext(MobileContext)
+  const [isMobile] = useContext(MobileContext)
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   return (
     <li
       sx={{
-        my: mobile ? 2 : 0,
+        my: isMobile ? 2 : 0,
         mx: 1,
       }}
       role="none"
@@ -22,7 +22,7 @@ const NavMenuLinkInternal = props => {
           textDecoration: "none",
           py: 2,
           px: 1,
-          mr: mobile ? 0 : 2,
+          mr: isMobile ? 0 : 2,
           cursor: "pointer",
           position: "relative",
           fontFamily: "navLinks",

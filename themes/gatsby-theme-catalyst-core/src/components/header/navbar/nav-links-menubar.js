@@ -4,15 +4,15 @@ import { useContext } from "react"
 import { MobileContext } from "../../../contexts/mobile-context"
 
 const NavMenuBar = props => {
-  const [mobile] = useContext(MobileContext)
+  const [isMobile] = useContext(MobileContext)
 
   return (
     <ul
       sx={{
         display: "flex",
-        flexDirection: mobile ? "column" : "row",
+        flexDirection: isMobile ? "column" : "row",
         flexWrap: "wrap",
-        textAlign: mobile ? "center" : "left",
+        textAlign: isMobile ? "center" : "left",
         listStyle: "none",
         m: 0,
         p: 0,

@@ -36,7 +36,7 @@ const Span = props => (
 
 const SiteMobileButton = () => {
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
-  const [mobile] = useContext(MobileContext)
+  const [isMobile] = useContext(MobileContext)
   return (
     <button
       aria-label="Menu"
@@ -47,7 +47,7 @@ const SiteMobileButton = () => {
         alignSelf: "center",
         color: isNavOpen ? "header.textOpen" : "header.text",
         cursor: "pointer",
-        display: mobile ? "block" : "none",
+        display: isMobile ? "block" : "none",
         height: "3rem",
         position: "relative",
         width: "3rem",

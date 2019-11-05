@@ -6,20 +6,19 @@ import { MobileContext } from "../../../contexts/mobile-context"
 
 const NavLayout = props => {
   const [isNavOpen] = useContext(NavContext)
-
-  const [mobile] = useContext(MobileContext)
+  const [isMobile] = useContext(MobileContext)
 
   return (
     <nav
       sx={{
-        gridColumn: mobile ? "1 / -1" : "2 / 3",
-        gridRow: mobile ? "2 / 3" : "1 / 2",
-        justifySelf: mobile ? "center" : "end",
-        alignSelf: mobile ? "start" : "center",
+        gridColumn: isMobile ? "1 / -1" : "2 / 3",
+        gridRow: isMobile ? "2 / 3" : "1 / 2",
+        justifySelf: isMobile ? "center" : "end",
+        alignSelf: isMobile ? "start" : "center",
         alignItems: "center",
         mt: isNavOpen ? 2 : 0,
-        display: mobile ? (isNavOpen ? "flex" : "none") : "flex",
-        flexDirection: mobile ? "column" : "row",
+        display: isMobile ? (isNavOpen ? "flex" : "none") : "flex",
+        flexDirection: isMobile ? "column" : "row",
       }}
       role="navigation"
       aria-label="main-navigation"

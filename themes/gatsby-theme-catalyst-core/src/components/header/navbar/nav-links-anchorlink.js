@@ -8,14 +8,14 @@ import { HeaderHeightContext } from "../../../contexts/header-height-context"
 
 const NavMenuAnchorLink = props => {
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
-  const [mobile] = useContext(MobileContext)
+  const [isMobile] = useContext(MobileContext)
   const [headerHeight] = useContext(HeaderHeightContext)
   const navOffset = -Math.abs(headerHeight + 16)
 
   return (
     <li
       sx={{
-        my: mobile ? 2 : 0,
+        my: isMobile ? 2 : 0,
         mx: 1,
       }}
       role="none"
@@ -26,7 +26,7 @@ const NavMenuAnchorLink = props => {
           textDecoration: "none",
           py: 2,
           px: 1,
-          mr: mobile ? 0 : 3,
+          mr: isMobile ? 0 : 3,
           cursor: "pointer",
           position: "relative",
           fontWeight: "bold",

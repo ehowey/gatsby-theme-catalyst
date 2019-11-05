@@ -9,11 +9,11 @@ export const MobileProvider = props => {
   const getValue = () => {
     return !mq.matches
   }
-  const [mobile, setMobile] = useState(getValue)
+  const [isMobile, setIsMobile] = useState(getValue)
 
   useEffect(
     () => {
-      const handler = () => setMobile(getValue)
+      const handler = () => setIsMobile(getValue)
       mq.addListener(handler)
       return () => mq.removeListener(handler)
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -21,7 +21,7 @@ export const MobileProvider = props => {
   )
 
   return (
-    <MobileContext.Provider value={[mobile, setMobile]}>
+    <MobileContext.Provider value={[isMobile, setIsMobile]}>
       {props.children}
     </MobileContext.Provider>
   )
