@@ -5,19 +5,16 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
 import { NavContext } from "../../../contexts/nav-context"
 import { animateScroll as scroll } from "react-scroll"
+import { HomeContext } from "../../../contexts/home-context"
+import { useCatalystConfig } from "../../../utils/use-catalyst-config"
 
 const SiteLogo = () => {
-  const [isNavOpen] = useContext(NavContext)
-
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
         }
-      }
-      catalystConfig {
-        invertSiteLogo
       }
       brandingLogo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
@@ -28,30 +25,26 @@ const SiteLogo = () => {
       }
     }
   `)
+
+  const [isNavOpen] = useContext(NavContext)
+  const [isHome] = useContext(HomeContext)
+  const { invertSiteLogo } = useCatalystConfig()
   const invertLogo = () => {
-    if (data.catalystConfig.invertSiteLogo) {
+    if (invertSiteLogo) {
       return "invert(1)"
     } else {
       return "none"
     }
   }
 
-  if (typeof window !== "undefined") {
-    var is_root = window.location.pathname === "/" //Equals true if we're at the root
-  }
-
-  const scrollToTop = () => {
-    scroll.scrollToTop()
-  }
-
   const ImgLinkWrapper = props => {
-    if (is_root) {
+    if (isHome) {
       return (
         <div
           sx={{
             cursor: "pointer",
           }}
-          onClick={scrollToTop}
+          onClick={scroll.scrollToTop}
         >
           {props.children}
         </div>

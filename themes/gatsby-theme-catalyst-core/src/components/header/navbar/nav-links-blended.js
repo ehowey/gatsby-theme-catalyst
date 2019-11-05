@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import NavMenuBar from "./nav-links-menubar"
 import NavMenuLink from "./nav-links-gatsbylink"
 import NavMenuAnchorLink from "./nav-links-anchorlink"
+import { HomeContext } from "../../../contexts/home-context"
 
 const NavLinksBlended = () => {
   const data = useStaticQuery(graphql`
@@ -23,11 +25,9 @@ const NavLinksBlended = () => {
     }
   `)
 
-  if (typeof window !== "undefined") {
-    var is_root = window.location.pathname === "/" //Equals true if we're at the root
-  }
+  const [isHome] = useContext(HomeContext)
 
-  if (is_root) {
+  if (isHome) {
     return (
       <NavMenuBar>
         {data.site.siteMetadata.anchorLinks.map(link => (

@@ -3,6 +3,8 @@ var crypto = require("crypto")
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`type CatalystConfig implements Node {
+    contentPath: String!
+    assetPath: String!
     displaySiteLogo: Boolean!
     displaySiteTitle: Boolean!
     invertSiteLogo: Boolean!
@@ -15,6 +17,8 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.sourceNodes = (
   { actions: { createNode }, schema },
   {
+    contentPath = "content/pages",
+    assetPath = "content/assets",
     displaySiteLogo = true,
     displaySiteTitle = true,
     invertSiteLogo = false,
@@ -25,6 +29,8 @@ exports.sourceNodes = (
 ) => {
   // create garden data from plugin config
   const catalystConfig = {
+    contentPath,
+    assetPath,
     displaySiteLogo,
     displaySiteTitle,
     invertSiteLogo,

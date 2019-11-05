@@ -61,6 +61,8 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 
 | Option                 | Values                         | Description                                                                                               |
 | ---------------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| `contentPath`          | String                         | Defaults to "content/pages", determines where the pages are created from.                                 |
+| `assetPath`            | String                         | Defaults to "content/assets", determines where the page assets like images are located.                   |
 | `displaySiteLogo`      | true or false                  | Controls whether the logo is displayed                                                                    |
 | `displaySiteTitle`     | true or false                  | Controls whether the site title is displayed                                                              |
 | `invertLogo`           | true or false                  | Controls whether the logo is inverted when the mobile menu is open                                        |

@@ -4,10 +4,9 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
 import { NavContext } from "../../../contexts/nav-context"
 import { animateScroll as scroll } from "react-scroll"
+import { HomeContext } from "../../../contexts/home-context"
 
 const SiteTitle = () => {
-  const [isNavOpen] = useContext(NavContext)
-
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -18,22 +17,17 @@ const SiteTitle = () => {
     }
   `)
 
-  if (typeof window !== "undefined") {
-    var is_root = window.location.pathname === "/" //Equals true if we're at the root
-  }
-
-  const scrollToTop = () => {
-    scroll.scrollToTop()
-  }
+  const [isNavOpen] = useContext(NavContext)
+  const [isHome] = useContext(HomeContext)
 
   const TitleLinkWrapper = props => {
-    if (is_root) {
+    if (isHome) {
       return (
         <div
           sx={{
             cursor: "pointer",
           }}
-          onClick={scrollToTop}
+          onClick={scroll.scrollToTop}
         >
           {props.children}
         </div>
