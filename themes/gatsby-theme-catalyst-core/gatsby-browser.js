@@ -7,11 +7,9 @@ import NormalizeCSS from "./src/utils/normalize-css"
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <MobileProvider>
-      <NavProvider>
-        <HeaderHeightProvider>{element}</HeaderHeightProvider>
-      </NavProvider>
-    </MobileProvider>
+    <NavProvider>
+      <HeaderHeightProvider>{element}</HeaderHeightProvider>
+    </NavProvider>
   )
 }
 
@@ -19,9 +17,11 @@ export const wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get
   // including location, data, etc - you don't need to pass it
   return (
-    <Layout {...props}>
-      <NormalizeCSS />
-      {element}
-    </Layout>
+    <MobileProvider>
+      <Layout {...props}>
+        <NormalizeCSS />
+        {element}
+      </Layout>
+    </MobileProvider>
   )
 }
