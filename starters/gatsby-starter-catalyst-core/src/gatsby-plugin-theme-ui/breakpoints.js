@@ -1,4 +1,1 @@
-export default [
-  "768px",
-  "1024px", //Must use pixel units in anchornav
-]
+export default ["480px", "768px", "1024px", "1440px"]

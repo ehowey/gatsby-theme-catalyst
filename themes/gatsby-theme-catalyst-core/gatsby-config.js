@@ -7,20 +7,20 @@ module.exports = options => {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `pages`,
-          path: `content/pages`,
+          path: options.contentPath || `content/pages`,
         },
       },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `images`,
-          path: `content/assets`,
+          path: options.assetPath || `content/assets`,
         },
       },
       {
         resolve: `gatsby-plugin-page-creator`,
         options: {
-          path: `content/pages`,
+          path: options.contentPath || `content/pages`,
         },
       },
       {
@@ -31,7 +31,7 @@ module.exports = options => {
             {
               resolve: `gatsby-remark-images`,
               options: {
-                maxWidth: 1380,
+                maxWidth: 1440,
                 linkImagesToOriginal: false,
                 withWebp: true,
               },
@@ -39,7 +39,7 @@ module.exports = options => {
             {
               resolve: `gatsby-remark-copy-linked-files`,
               options: {
-                destinationDir: `assets/images`,
+                destinationDir: `content/assets`,
               },
             },
             { resolve: `gatsby-remark-smartypants` },
