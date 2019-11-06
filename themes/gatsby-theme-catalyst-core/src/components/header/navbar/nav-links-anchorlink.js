@@ -1,16 +1,25 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Link as AnchorLink } from "react-scroll"
 import { NavContext } from "../../../contexts/nav-context"
 import { MobileContext } from "../../../contexts/mobile-context"
-import { HeaderHeightContext } from "../../../contexts/header-height-context"
 
 const NavMenuAnchorLink = props => {
+  const isClient = typeof window === "object"
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   const [isMobile] = useContext(MobileContext)
-  const [headerHeight] = useContext(HeaderHeightContext)
+  const [headerHeight, setHeaderHeight] = useState(0)
   const navOffset = -Math.abs(headerHeight + 16)
+
+  //eslint-disable-next-line
+  useEffect(() => {
+    if (isClient) {
+      const header = document.getElementById("header")
+      const headerHeight = header.getBoundingClientRect().height
+      setHeaderHeight(headerHeight)
+    }
+  })
 
   return (
     <li

@@ -14,7 +14,6 @@ export const HomeProvider = props => {
     }
   })
 
-  console.log(isHome)
   return (
     <HomeContext.Provider value={[isHome, setIsHome]}>
       {props.children}
