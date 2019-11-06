@@ -63,8 +63,8 @@ module.exports = {
       options: {
         //These are the default paths provided
         basePath: `/blog`,
-        contentPath: `src/blog/posts`,
-        assetPath: `src/blog/assets`,
+        contentPath: `content/posts`,
+        assetPath: `content/assets`,
       },
     },
     {
@@ -76,7 +76,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `src/images/logo-512.png`, // This path is relative to the root of the site.
+        icon: `content/assets/logo-512.png`, // This path is relative to the root of the site.
       },
     },
   ],
