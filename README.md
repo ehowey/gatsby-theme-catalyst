@@ -2,7 +2,7 @@
     <img alt="Gatsby Catalyst Themes" src="https://www.erichowey.dev/images/catalyst-logo.png" width="100" />
 </p>
 <h1 align="center">
-  Gatsby Catalyst Themes
+  [WIP] Gatsby Catalyst Themes
 </h1>
 
 **Currently a WIP, rapid changes at this time**

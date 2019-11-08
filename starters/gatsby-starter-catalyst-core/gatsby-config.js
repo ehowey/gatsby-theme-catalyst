@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Catalyst Core`,
+    title: `Core`,
     description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
     author: `Eric Howey`,
     siteUrl: `https://gatsby-starter-catalyst-core.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file

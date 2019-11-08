@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Blog`,
-    description: `Speed up your Gatsby development workflow.`,
+    title: `Basic`,
+    description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
     author: `Eric Howey`,
-    siteUrl: `https://gatsby-starter-catalyst-blog.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
+    siteUrl: `https://gatsby-starter-catalyst-basic.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
     pageLinks: [
       {
         name: `Page 1`,
@@ -12,10 +12,6 @@ module.exports = {
       {
         name: `Page 2`,
         link: `/page-2`,
-      },
-      {
-        name: `Blog`,
-        link: `/blog`,
       },
     ],
     anchorLinks: [
@@ -52,21 +48,14 @@ module.exports = {
       options: {
         displaySiteLogo: true,
         displaySiteTitle: true,
-        invertSiteLogo: true,
+        invertSiteLogo: false,
         mobileMenuBreakpoint: "768px",
         navType: "default", // "default", "anchor", "blended"
         headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
       },
     },
-    {
-      resolve: `gatsby-theme-catalyst-blog`,
-      options: {
-        //These are the default paths provided
-        basePath: `/blog`,
-        contentPath: `content/posts`,
-        assetPath: `content/assets`,
-      },
-    },
+    `gatsby-theme-catalyst-header-basic`,
+    `gatsby-theme-catalyst-footer-basic`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -74,7 +63,7 @@ module.exports = {
         short_name: `catalyst`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#000000`,
+        theme_color: `#cccccc`,
         display: `minimal-ui`,
         icon: `content/assets/logo-512.png`, // This path is relative to the root of the site.
       },

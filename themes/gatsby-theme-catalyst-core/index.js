@@ -1,8 +1,5 @@
 export { default as SEO } from "./src/utils/seo"
 export {
-  default as FooterSocialIcons,
-} from "./src/components/footer/footer-social-icons"
-export {
   default as BaseThemeBreakpoints,
 } from "./src/gatsby-plugin-theme-ui/breakpoints"
 export { default as BaseThemeColors } from "./src/gatsby-plugin-theme-ui/colors"
@@ -26,3 +23,4 @@ export { NavContext } from "./src/contexts/nav-context"
 export { MobileContext } from "./src/contexts/mobile-context"
 export { HomeContext } from "./src/contexts/home-context"
 export { useCatalystConfig } from "./src/utils/use-catalyst-config"
+export { useSiteMetadata } from "./src/utils/use-site-metadata"
