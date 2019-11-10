@@ -2,7 +2,6 @@
 import { jsx } from "theme-ui"
 import { useContext } from "react"
 import HeaderLayout from "../../components/header-layout"
-import HeaderHero from "../../components/header-hero"
 import Branding from "../../components/branding/branding"
 import Nav from "../../components/navbar/nav"
 import { NavContext } from "gatsby-theme-catalyst-core"
@@ -30,7 +29,6 @@ const SiteHeader = () => {
         <Branding />
         <Nav />
       </HeaderLayout>
-      <HeaderHero />
     </header>
   )
 }

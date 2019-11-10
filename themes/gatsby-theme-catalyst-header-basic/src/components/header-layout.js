@@ -5,7 +5,6 @@ import { NavContext } from "gatsby-theme-catalyst-core"
 
 const HeaderLayout = props => {
   const [isNavOpen] = useContext(NavContext)
-
   const { theme } = useThemeUI()
 
   return (

@@ -1,21 +1,23 @@
-import React, { useState, createContext, useEffect } from "react"
+import React, { useState, createContext } from "react"
+import { Location } from "@reach/router"
 
 export const HomeContext = createContext()
 
 export const HomeProvider = props => {
-  const [isHome, setIsHome] = useState(null)
-  const isClient = typeof window === "object"
-  // eslint-disable-next-line
-  useEffect(() => {
-    if (isClient && window.location.pathname === "/") {
-      return setIsHome(true)
-    } else {
-      return setIsHome(false)
-    }
-  })
+  const [isHome, setIsHome] = useState(true)
 
   return (
     <HomeContext.Provider value={[isHome, setIsHome]}>
+      <Location>
+        {({ location }) => {
+          if (location.pathname === "/") {
+            setIsHome(true)
+          } else {
+            setIsHome(false)
+          }
+          console.log(isHome)
+        }}
+      </Location>
       {props.children}
     </HomeContext.Provider>
   )

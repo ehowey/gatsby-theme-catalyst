@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { MobileContext } from "gatsby-theme-catalyst-core"
-import NavSocialIcons from "./nav-social-icons"
+import { SocialHeader } from "gatsby-theme-catalyst-core"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
@@ -30,7 +30,7 @@ const SocialWrapper = () => {
         },
       }}
     >
-      <NavSocialIcons />
+      <SocialHeader />
     </div>
   )
 }

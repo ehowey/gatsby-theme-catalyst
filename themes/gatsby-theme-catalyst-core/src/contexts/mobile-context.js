@@ -23,6 +23,7 @@ export const MobileProvider = props => {
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
     [] // Empty array ensures effect is only run on mount and unmount
   )
+  console.log(isMobile)
   return (
     <MobileContext.Provider value={[isMobile, setIsMobile]}>
       {props.children}

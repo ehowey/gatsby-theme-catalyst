@@ -6,18 +6,20 @@ import Layout from "./src/components/layout"
 import NormalizeCSS from "./src/utils/normalize-css"
 
 export const wrapRootElement = ({ element }) => {
-  return <NavProvider>{element}</NavProvider>
+  return (
+    <HomeProvider>
+      <NavProvider>{element}</NavProvider>
+    </HomeProvider>
+  )
 }
 
 export const wrapPageElement = ({ element, props }) => {
   return (
-    <HomeProvider>
-      <MobileProvider>
-        <Layout {...props}>
-          <NormalizeCSS />
-          {element}
-        </Layout>
-      </MobileProvider>
-    </HomeProvider>
+    <MobileProvider>
+      <Layout {...props}>
+        <NormalizeCSS />
+        {element}
+      </Layout>
+    </MobileProvider>
   )
 }

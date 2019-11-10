@@ -11,6 +11,7 @@ const SiteMain = props => {
         mt: 3,
         mb: 5,
         mx: "auto",
+        variant: "variants.main",
       }}
     >
       {props.children}

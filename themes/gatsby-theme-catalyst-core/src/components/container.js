@@ -8,6 +8,7 @@ const SiteContainer = props => {
         width: "100%",
         ml: "auto",
         mr: "auto",
+        variant: "variants.container",
       }}
     >
       {props.children}
