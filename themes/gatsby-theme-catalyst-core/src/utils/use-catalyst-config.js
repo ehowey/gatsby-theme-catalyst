@@ -4,11 +4,14 @@ export const useCatalystConfig = () => {
     graphql`
       query {
         catalystConfig {
+          contentPath
+          assetPath
           displaySiteLogo
           displaySiteTitle
-          headerPosition
+          useHero
           invertSiteLogo
           mobileMenuBreakpoint
+          headerPosition
           anchorNavOffset
         }
       }

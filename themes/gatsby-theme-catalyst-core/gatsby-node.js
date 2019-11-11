@@ -7,6 +7,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     assetPath: String!
     displaySiteLogo: Boolean!
     displaySiteTitle: Boolean!
+    useHero: Boolean!
     invertSiteLogo: Boolean!
     mobileMenuBreakpoint: String!
     headerPosition: String!
@@ -21,6 +22,7 @@ exports.sourceNodes = (
     assetPath = "content/assets",
     displaySiteLogo = true,
     displaySiteTitle = true,
+    useHero = false,
     invertSiteLogo = false,
     mobileMenuBreakpoint = "768px",
     headerPosition = "static",
@@ -33,6 +35,7 @@ exports.sourceNodes = (
     assetPath,
     displaySiteLogo,
     displaySiteTitle,
+    useHero,
     invertSiteLogo,
     mobileMenuBreakpoint,
     headerPosition,

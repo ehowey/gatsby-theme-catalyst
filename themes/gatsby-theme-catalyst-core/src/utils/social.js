@@ -52,7 +52,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -65,7 +65,7 @@ export const SocialHeader = () => {
           (socialName === "email" || socialName === "e-mail") &&
           (socialLocation === "header" || socialLocation === "all")
         ) {
-          let email = "mailto:" + platform.url
+          let email = "mailto:" + platform.link
           return (
             <a
               href={email}
@@ -82,7 +82,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -97,7 +97,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -112,7 +112,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -127,7 +127,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -142,7 +142,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -157,7 +157,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -172,7 +172,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -187,7 +187,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -202,7 +202,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -217,7 +217,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -232,7 +232,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -247,7 +247,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -262,7 +262,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -277,7 +277,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -292,7 +292,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -307,7 +307,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -322,7 +322,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -337,7 +337,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -352,7 +352,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -367,7 +367,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -382,7 +382,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -397,7 +397,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -412,7 +412,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -427,7 +427,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -442,7 +442,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -457,7 +457,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -472,7 +472,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -487,7 +487,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -502,7 +502,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -517,7 +517,7 @@ export const SocialHeader = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -529,7 +529,7 @@ export const SocialHeader = () => {
         } else if (socialLocation === "header" || socialLocation === "all") {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -561,7 +561,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -574,7 +574,7 @@ export const SocialFooter = () => {
           (socialName === "email" || socialName === "e-mail") &&
           (socialLocation === "footer" || socialLocation === "all")
         ) {
-          let email = "mailto:" + platform.url
+          let email = "mailto:" + platform.link
           return (
             <a
               href={email}
@@ -591,7 +591,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -606,7 +606,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -621,7 +621,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -636,7 +636,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -651,7 +651,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -666,7 +666,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -681,7 +681,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -696,7 +696,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -711,7 +711,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -726,7 +726,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -741,7 +741,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -756,7 +756,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -771,7 +771,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -786,7 +786,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -801,7 +801,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -816,7 +816,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -831,7 +831,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -846,7 +846,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -861,7 +861,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -876,7 +876,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -891,7 +891,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -906,7 +906,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -921,7 +921,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -936,7 +936,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -951,7 +951,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -966,7 +966,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -981,7 +981,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -996,7 +996,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -1011,7 +1011,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -1026,7 +1026,7 @@ export const SocialFooter = () => {
         ) {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -1038,7 +1038,7 @@ export const SocialFooter = () => {
         } else if (socialLocation === "footer" || socialLocation === "all") {
           return (
             <a
-              href={platform.url}
+              href={platform.link}
               aria-label={platform.name}
               target="_blank"
               rel="noopener noreferrer"

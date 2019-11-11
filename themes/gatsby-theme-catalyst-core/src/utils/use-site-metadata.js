@@ -16,7 +16,7 @@ export const useSiteMetadata = () => {
             }
             socialLinks {
               name
-              url
+              link
               location
             }
           }

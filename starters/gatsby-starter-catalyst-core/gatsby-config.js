@@ -1,43 +1,40 @@
 module.exports = {
   siteMetadata: {
-    title: `Core`,
+    title: `Catalyst Core`,
     description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
     author: `Eric Howey`,
     siteUrl: `https://gatsby-starter-catalyst-core.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
-    pageLinks: [
+    menuLinks: [
       {
         name: `Page 1`,
         link: `/page-1`,
+        type: `internal`,
+      },
+      {
+        name: `Anchor 1`,
+        link: `#anchor-1`,
+        type: `anchor`,
       },
       {
         name: `Page 2`,
         link: `/page-2`,
-      },
-    ],
-    anchorLinks: [
-      {
-        name: `Anchor 1`,
-        link: `#anchor-1`,
-      },
-      {
-        name: `Anchor 2`,
-        link: `#anchor-2`,
+        type: `internal`,
       },
     ],
     socialLinks: [
       {
         name: `Email`,
-        url: `eric@erichowey.dev`,
+        link: `eric@erichowey.dev`,
         location: `footer`, //Options are "all", "header", "footer"
       },
       {
         name: `Github`,
-        url: `https://www.github.com/ehowey`,
+        link: `https://www.github.com/ehowey`,
         location: `all`, //Options are "all", "header", "footer"
       },
       {
         name: `Twitter`,
-        url: `https://www.twitter.com/erchwy`,
+        link: `https://www.twitter.com/erchwy`,
         location: `header`, //Options are "all", "header", "footer"
       },
     ],
@@ -50,7 +47,6 @@ module.exports = {
         displaySiteTitle: true,
         invertSiteLogo: false,
         mobileMenuBreakpoint: "768px",
-        navType: "default", // "default", "anchor", "blended"
         headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
       },
     },

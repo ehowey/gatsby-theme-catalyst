@@ -5,12 +5,14 @@ import Hero from "./hero"
 import Main from "./main"
 import Container from "./container"
 import Footer from "./footer"
+import { useCatalystConfig } from "../utils/use-catalyst-config"
 
 const SiteLayout = props => {
+  const { useHero } = useCatalystConfig()
   return (
     <Layout>
       <Header />
-      <Hero />
+      {useHero && <Hero />}
       <Main>
         <Container>{props.children}</Container>
       </Main>

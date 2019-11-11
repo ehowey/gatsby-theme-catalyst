@@ -28,7 +28,7 @@ const NavMenuAnchorLink = props => {
         textDecoration: "none",
         py: 2,
         px: 1,
-        mr: isMobile ? 0 : 3,
+        mr: isMobile ? 0 : 2,
         cursor: "pointer",
         position: "relative",
         fontWeight: "bold",

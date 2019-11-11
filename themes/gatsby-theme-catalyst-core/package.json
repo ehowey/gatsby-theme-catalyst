@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-core",
   "description": "Core catalyst theme for GatsbyJS designed to be used as an accelerated starting point in website development.",
-  "version": "0.12.2",
+  "version": "0.13.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -29,7 +29,6 @@
     "react-icons": "^3.8.0",
     "react-scroll": "^1.7.14",
     "remark-slug": "^5.1.2",
-    "smooth-scroll": "^16.1.0",
     "theme-ui": "^0.2.46"
   },
   "devDependencies": {
