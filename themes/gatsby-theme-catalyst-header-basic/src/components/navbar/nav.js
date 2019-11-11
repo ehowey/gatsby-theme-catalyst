@@ -1,43 +1,31 @@
 /** @jsx jsx */
-import { Fragment } from "react"
 import { jsx } from "theme-ui"
-import { useStaticQuery, graphql } from "gatsby"
-import NavLayout from "./nav-layout"
-import NavLinksDefault from "./nav-links-default"
-import NavLinksAnchor from "./nav-links-anchor"
-import NavLinksBlended from "./nav-links-blended"
-import NavSocialLinks from "./nav-social"
-import NavMobileButton from "./nav-mobile-button"
+import { useContext } from "react"
+import { NavContext } from "gatsby-theme-catalyst-core"
+import { MobileContext } from "gatsby-theme-catalyst-core"
 
-const NavLinks = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      catalystConfig {
-        navType
-      }
-    }
-  `)
-  if (data.catalystConfig.navType === "default") {
-    return <NavLinksDefault />
-  } else if (data.catalystConfig.navType === "anchor") {
-    return <NavLinksAnchor />
-  } else if (data.catalystConfig.navType === "blended") {
-    return <NavLinksBlended />
-  } else {
-    return null
-  }
-}
+const NavLayout = props => {
+  const [isNavOpen] = useContext(NavContext)
+  const [isMobile] = useContext(MobileContext)
 
-const SiteNav = () => {
   return (
-    <Fragment>
-      <NavLayout>
-        <NavLinks />
-        <NavSocialLinks />
-      </NavLayout>
-      <NavMobileButton />
-    </Fragment>
+    <nav
+      sx={{
+        gridColumn: isMobile ? "1 / -1" : "2 / 3",
+        gridRow: isMobile ? "2 / 3" : "1 / 2",
+        justifySelf: isMobile ? "center" : "end",
+        alignSelf: isMobile ? "start" : "center",
+        alignItems: "center",
+        mt: isNavOpen ? 2 : 0,
+        display: isMobile ? (isNavOpen ? "flex" : "none") : "flex",
+        flexDirection: isMobile ? "column" : "row",
+      }}
+      role="navigation"
+      aria-label="main-navigation"
+    >
+      {props.children}
+    </nav>
   )
 }
 
-export default SiteNav
+export default NavLayout

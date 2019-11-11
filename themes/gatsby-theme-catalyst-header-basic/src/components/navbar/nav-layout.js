@@ -1,31 +1,24 @@
 /** @jsx jsx */
+import { Fragment } from "react"
 import { jsx } from "theme-ui"
-import { useContext } from "react"
-import { NavContext } from "gatsby-theme-catalyst-core"
-import { MobileContext } from "gatsby-theme-catalyst-core"
+import Nav from "./nav"
+import NavUL from "./nav-ul"
+import NavLinks from "./nav-links"
+import NavSocialLinks from "./nav-social"
+import NavMobileButton from "./nav-mobile-button"
 
-const NavLayout = props => {
-  const [isNavOpen] = useContext(NavContext)
-  const [isMobile] = useContext(MobileContext)
-
+const SiteNav = () => {
   return (
-    <nav
-      sx={{
-        gridColumn: isMobile ? "1 / -1" : "2 / 3",
-        gridRow: isMobile ? "2 / 3" : "1 / 2",
-        justifySelf: isMobile ? "center" : "end",
-        alignSelf: isMobile ? "start" : "center",
-        alignItems: "center",
-        mt: isNavOpen ? 2 : 0,
-        display: isMobile ? (isNavOpen ? "flex" : "none") : "flex",
-        flexDirection: isMobile ? "column" : "row",
-      }}
-      role="navigation"
-      aria-label="main-navigation"
-    >
-      {props.children}
-    </nav>
+    <Fragment>
+      <Nav>
+        <NavUL>
+          <NavLinks />
+        </NavUL>
+        <NavSocialLinks />
+      </Nav>
+      <NavMobileButton />
+    </Fragment>
   )
 }
 
-export default NavLayout
+export default SiteNav

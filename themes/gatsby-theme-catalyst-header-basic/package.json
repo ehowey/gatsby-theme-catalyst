@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby-theme-catalyst-core": "^0.12.2"
+    "gatsby-theme-catalyst-core": "^0.12.2",
+    "smooth-scroll": "^16.1.0"
   },
   "devDependencies": {
     "gatsby": "^2.17.9",

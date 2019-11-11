@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import HeaderLayout from "../../components/header-layout"
 import Branding from "../../components/branding/branding"
-import Nav from "../../components/navbar/nav"
+import Nav from "../../components/navbar/nav-layout"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
@@ -22,6 +22,7 @@ const SiteHeader = () => {
         backgroundColor: isNavOpen
           ? "header.backgroundOpen"
           : "header.background",
+        zIndex: "888", // Ensure the header is always on top
       }}
       id="header"
     >
