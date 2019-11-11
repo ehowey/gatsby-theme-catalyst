@@ -10,7 +10,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     useHero: Boolean!
     invertSiteLogo: Boolean!
     mobileMenuBreakpoint: String!
-    headerPosition: String!
+    useStickyHeader: Boolean!
     anchorNavOffset: String!
   }`)
 }
@@ -25,7 +25,7 @@ exports.sourceNodes = (
     useHero = false,
     invertSiteLogo = false,
     mobileMenuBreakpoint = "768px",
-    headerPosition = "static",
+    useStickyHeader = false,
     anchorNavOffset = "0px",
   }
 ) => {
@@ -38,7 +38,7 @@ exports.sourceNodes = (
     useHero,
     invertSiteLogo,
     mobileMenuBreakpoint,
-    headerPosition,
+    useStickyHeader,
     anchorNavOffset,
   }
   createNode({

@@ -53,7 +53,7 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
         displaySiteTitle: true,
         invertLogo: true,
         mobileMenuBreakpoint: "1024px",
-        headerPosition: "static",
+        useStickyHeader: true,
         useHero: "true",
       }
     }
@@ -67,7 +67,7 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 | `displaySiteTitle`     | true or false               | Controls whether the site title is displayed                                                              |
 | `invertLogo`           | true or false               | Controls whether the logo is inverted when the mobile menu is open                                        |
 | `useHero`              | true or false               | Flag to include a hero component in the site.                                                             |
-| `headerPosition`       | "static" or "sticky"        | Controls CSS position value for the site header                                                           |
+| `useStickyHeader`      | true or false               | Controls whether the header is sticky or static                                                           |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px" | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
 ### Social Links

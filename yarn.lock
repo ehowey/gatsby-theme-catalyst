@@ -6038,20 +6038,6 @@ gatsby-theme-catalyst-core@^0.12.2:
     remark-slug "^5.1.2"
     theme-ui "^0.2.46"
 
-gatsby-theme-catalyst-footer-basic@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-footer-basic/-/gatsby-theme-catalyst-footer-basic-0.0.2.tgz#9feb93f1c9ec43b9d3d2761ad9e14c22dd29a534"
-  integrity sha512-oXQAZeiJc089zby3HG46XHLhygK5BzdVaHf0jG/v20n6JvYwMFmuQewupmbQSc93QSP01uZfsd3cwj0jICgu9A==
-  dependencies:
-    gatsby-theme-catalyst-core "^0.13.0"
-
-gatsby-theme-catalyst-header-basic@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-header-basic/-/gatsby-theme-catalyst-header-basic-0.0.2.tgz#a24673b307602cf750862607bb04ff5a1c6e4f9e"
-  integrity sha512-MH7+0fCgVw0KYoMrJxbGefMXmmvjvnsrgjwJ2jihXGDzDSRfi+pTjvbcZwWB5bkSE9L/s7ZnwszqDLBh2kOJCg==
-  dependencies:
-    gatsby-theme-catalyst-core "^0.13.0"
-
 gatsby-transformer-sharp@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.2.tgz#dbbff8116d568f01e342decefa3accdf36dc2d95"

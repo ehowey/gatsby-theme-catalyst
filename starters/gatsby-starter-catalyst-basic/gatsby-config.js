@@ -47,8 +47,8 @@ module.exports = {
         displaySiteTitle: true,
         invertSiteLogo: false,
         useHero: true,
+        useStickyHeader: true,
         mobileMenuBreakpoint: "768px",
-        headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
       },
     },
     `gatsby-theme-catalyst-header-basic`,

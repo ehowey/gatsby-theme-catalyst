@@ -9,13 +9,13 @@ import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { headerPosition } = useCatalystConfig()
+  const { useStickyHeader } = useCatalystConfig()
 
   return (
     <header
       sx={{
         display: "grid",
-        position: headerPosition,
+        position: useStickyHeader ? "sticky" : "static",
         top: 0,
         width: "100%",
         color: isNavOpen ? "header.textOpen" : "header.text",
