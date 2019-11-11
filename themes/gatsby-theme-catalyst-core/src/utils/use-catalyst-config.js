@@ -9,7 +9,7 @@ export const useCatalystConfig = () => {
           headerPosition
           invertSiteLogo
           mobileMenuBreakpoint
-          navType
+          anchorNavOffset
         }
       }
     `

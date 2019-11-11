@@ -52,7 +52,6 @@ module.exports = {
         displaySiteTitle: true,
         invertSiteLogo: false,
         mobileMenuBreakpoint: "768px",
-        navType: "default", // "default", "anchor", "blended"
         headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
       },
     },

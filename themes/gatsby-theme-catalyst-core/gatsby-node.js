@@ -9,8 +9,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     displaySiteTitle: Boolean!
     invertSiteLogo: Boolean!
     mobileMenuBreakpoint: String!
-    navType: String!
     headerPosition: String!
+    anchorNavOffset: String!
   }`)
 }
 
@@ -23,8 +23,8 @@ exports.sourceNodes = (
     displaySiteTitle = true,
     invertSiteLogo = false,
     mobileMenuBreakpoint = "768px",
-    navType = "default",
     headerPosition = "static",
+    anchorNavOffset = "0px",
   }
 ) => {
   // create garden data from plugin config
@@ -35,8 +35,8 @@ exports.sourceNodes = (
     displaySiteTitle,
     invertSiteLogo,
     mobileMenuBreakpoint,
-    navType,
     headerPosition,
+    anchorNavOffset,
   }
   createNode({
     ...catalystConfig,
