@@ -53,22 +53,22 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
         displaySiteTitle: true,
         invertLogo: true,
         mobileMenuBreakpoint: "1024px",
-        navType: "default",
         headerPosition: "static",
+        useHero: "true",
       }
     }
 ```
 
-| Option                 | Values                         | Description                                                                                               |
-| ---------------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| `contentPath`          | String                         | Defaults to "content/pages", determines where the pages are created from.                                 |
-| `assetPath`            | String                         | Defaults to "content/assets", determines where the page assets like images are located.                   |
-| `displaySiteLogo`      | true or false                  | Controls whether the logo is displayed                                                                    |
-| `displaySiteTitle`     | true or false                  | Controls whether the site title is displayed                                                              |
-| `invertLogo`           | true or false                  | Controls whether the logo is inverted when the mobile menu is open                                        |
-| `navType`              | "default", "anchor", "blended" | Sets the navigation type, see below for details.                                                          |
-| `headerPosition`       | "static" or "sticky"           | Controls CSS position value for the site header                                                           |
-| `mobileMenuBreakpoint` | String value, e.g. "1024px"    | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
+| Option                 | Values                      | Description                                                                                               |
+| ---------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `contentPath`          | String                      | Defaults to "content/pages", determines where the pages are created from.                                 |
+| `assetPath`            | String                      | Defaults to "content/assets", determines where the page assets like images are located.                   |
+| `displaySiteLogo`      | true or false               | Controls whether the logo is displayed                                                                    |
+| `displaySiteTitle`     | true or false               | Controls whether the site title is displayed                                                              |
+| `invertLogo`           | true or false               | Controls whether the logo is inverted when the mobile menu is open                                        |
+| `useHero`              | true or false               | Flag to include a hero component in the site.                                                             |
+| `headerPosition`       | "static" or "sticky"        | Controls CSS position value for the site header                                                           |
+| `mobileMenuBreakpoint` | String value, e.g. "1024px" | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
 ### Social Links
 
@@ -93,20 +93,6 @@ socialLinks: [
       },
     ],
 ```
-
-### Nav Types
-
-**Default**
-
-This is just a standard navigation bar which relies only on the `pageLinks` values from `gatsby-config.js`. Logo on the left, bar on the right.
-
-**Anchor**
-
-This is set up for single page sites. Works best if you also set `headerPosition: "sticky"` in `gatsby-config.js`. This menu bar only relies on values from the `anchorLinks` object. Uses [react-scroll](https://www.npmjs.com/package/react-scroll) under the hood to control the page navigation.
-
-**Blended**
-
-This is a mixed menu with both anchor links and page links together. This is set up to work for a site that is primarily single page but might have one or two page links in the menu bar. For instance a portfolio page that also wanted a seperate blog page alongside anchor links. Anchor links are on the left, page links on the right.
 
 ### Customizing the themes using Theme-UI and Design Tokens
 
