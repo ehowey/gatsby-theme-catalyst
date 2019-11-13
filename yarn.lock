@@ -805,21 +805,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3":
-  version "7.7.1"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.1.tgz#b223497bbfbcbbb38116673904debc71470ca528"
-  integrity sha512-SQ0sS7KUJDvgCI2cpZG0nJygO6002oTbhgSuw4WcocsnbxLwL5Q8I3fqbJdyBAc3uFrWZiR2JomseuxSuci3SQ==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.5.1":
-  version "7.6.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
-  integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.7.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
   version "7.7.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.2.tgz#111a78002a5c25fc8e3361bedc9529c696b85a6a"
   integrity sha512-JONRbXbTXc9WQE2mAZd1p0Z3DZ/6vaQIkgYMSTP3KjRCyd7rCZCcfhCyX+YjwcKxcZ82UrxbRD358bpExNgrjw==
@@ -5839,16 +5825,16 @@ gatsby-link@^2.2.22:
     "@types/reach__router" "^1.2.6"
     prop-types "^15.7.2"
 
-gatsby-page-utils@^0.0.28:
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.0.28.tgz#e3139727c596c2ec934ca4c7ea957aef0fc4c50a"
-  integrity sha512-Jk597HFWBWDStgs2Znj09uwXpVsNHi+UwCt+g+qsghXGieiWHR0Cs4shH32p/D2AS9KmCvSuJrNqAL1VamZAZw==
+gatsby-page-utils@^0.0.29:
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.0.29.tgz#16abd675226767bbf69223fc13f55af818453af4"
+  integrity sha512-tNQ7kFlNQLHBZfKWcBwPQN/0Umzm0dYL5rZ6GZzEhH2MXoUomSOBAsMe/tzx80N744GvZzoRGJ0W05yjoZmRYg==
   dependencies:
-    "@babel/runtime" "^7.6.3"
+    "@babel/runtime" "^7.7.2"
     bluebird "^3.7.1"
-    chokidar "3.2.3"
+    chokidar "3.3.0"
     fs-exists-cached "^1.0.0"
-    glob "^7.1.5"
+    glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
     slash "^3.0.0"
@@ -5958,16 +5944,16 @@ gatsby-plugin-offline@^3.0.18:
     slash "^3.0.0"
     workbox-build "^4.3.1"
 
-gatsby-plugin-page-creator@^2.1.28:
-  version "2.1.28"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.28.tgz#32deac5b848b7494b0f2091d193f62236f742702"
-  integrity sha512-EAKppjDIOvSHWnozQZq93KRXHZdDFH4hAunlrVWexGD1rxmV328506dk/LnU1EZr1FZMjPcnx4bfh3j2mVB3bw==
+gatsby-plugin-page-creator@^2.1.28, gatsby-plugin-page-creator@^2.1.29:
+  version "2.1.29"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.29.tgz#784c912170782f24ca8445cd0363124983fd2ae6"
+  integrity sha512-O/joCNIKO8E690cknTqYivdMDBozpX37LDi0DSnu9ngBz8ju/CCVtGFHFLyg52lc6f2vG//LFleyr+csvwDzJw==
   dependencies:
-    "@babel/runtime" "^7.6.3"
+    "@babel/runtime" "^7.7.2"
     bluebird "^3.7.1"
     fs-exists-cached "^1.0.0"
-    gatsby-page-utils "^0.0.28"
-    glob "^7.1.5"
+    gatsby-page-utils "^0.0.29"
+    glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
@@ -6518,10 +6504,10 @@ glob-to-regexp@^0.3.0:
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
   integrity sha1-jFoUlNIGbFcMw7/kSWF1rMTVAqs=
 
-glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.5:
-  version "7.1.5"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.5.tgz#6714c69bee20f3c3e64c4dd905553e532b40cdc0"
-  integrity sha512-J9dlskqUXK1OeTOYBEn5s8aMukWMwWfs+rPTn/jn50Ux4MNXVhubL1wu/j2t+H4NVI+cXEcCaYellqaPVGXNqQ==
+glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.5, glob@^7.1.6:
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
+  integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
