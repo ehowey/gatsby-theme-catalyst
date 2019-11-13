@@ -4,44 +4,37 @@ module.exports = {
     description: `Speed up your Gatsby development workflow.`,
     author: `Eric Howey`,
     siteUrl: `https://gatsby-starter-catalyst-blog.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
-    pageLinks: [
+    menuLinks: [
       {
         name: `Page 1`,
         link: `/page-1`,
+        type: `internal`,
       },
       {
         name: `Page 2`,
         link: `/page-2`,
+        type: `internal`,
       },
       {
         name: `Blog`,
         link: `/blog`,
-      },
-    ],
-    anchorLinks: [
-      {
-        name: `Anchor 1`,
-        link: `#anchor-1`,
-      },
-      {
-        name: `Anchor 2`,
-        link: `#anchor-2`,
+        type: `internal`,
       },
     ],
     socialLinks: [
       {
         name: `Email`,
-        url: `eric@erichowey.dev`,
+        link: `eric@erichowey.dev`,
         location: `footer`, //Options are "all", "header", "footer"
       },
       {
         name: `Github`,
-        url: `https://www.github.com/ehowey`,
+        link: `https://www.github.com/ehowey`,
         location: `all`, //Options are "all", "header", "footer"
       },
       {
         name: `Twitter`,
-        url: `https://www.twitter.com/erchwy`,
+        link: `https://www.twitter.com/erchwy`,
         location: `header`, //Options are "all", "header", "footer"
       },
     ],
@@ -49,14 +42,7 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        displaySiteLogo: true,
-        displaySiteTitle: true,
-        invertSiteLogo: true,
-        mobileMenuBreakpoint: "768px",
-        navType: "default", // "default", "anchor", "blended"
-        headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
-      },
+      options: {},
     },
     {
       resolve: `gatsby-theme-catalyst-blog`,
@@ -67,6 +53,8 @@ module.exports = {
         assetPath: `content/assets`,
       },
     },
+    `gatsby-theme-catalyst-header-basic`,
+    `gatsby-theme-catalyst-footer-basic`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

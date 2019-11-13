@@ -3,7 +3,7 @@ import { Fragment } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { jsx, Styled } from "theme-ui"
-import { Layout, SEO } from "gatsby-theme-catalyst-core"
+import { SEO } from "gatsby-theme-catalyst-core"
 
 const Posts = ({ posts }) => {
   const data = useStaticQuery(graphql`
@@ -30,7 +30,7 @@ const Posts = ({ posts }) => {
   `)
 
   return (
-    <Layout>
+    <Fragment>
       <SEO title="Blog" />
       <div sx={{ my: 5 }}>
         {posts.map(({ node }) => {
@@ -67,7 +67,7 @@ const Posts = ({ posts }) => {
           )
         })}
       </div>
-    </Layout>
+    </Fragment>
   )
 }
 
