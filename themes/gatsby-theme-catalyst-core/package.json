@@ -22,7 +22,7 @@
     "gatsby-remark-copy-linked-files": "^2.1.28",
     "gatsby-remark-images": "^3.1.29",
     "gatsby-remark-smartypants": "^2.1.14",
-    "gatsby-source-filesystem": "^2.1.35",
+    "gatsby-source-filesystem": "^2.1.36",
     "gatsby-transformer-sharp": "^2.3.2",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
