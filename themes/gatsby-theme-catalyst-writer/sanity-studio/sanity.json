@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "utcr8kb1",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "gatsby-theme-catalyst-writer"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    }
+  ]
+}

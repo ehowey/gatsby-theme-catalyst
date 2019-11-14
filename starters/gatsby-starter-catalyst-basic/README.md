@@ -11,7 +11,7 @@ gatsby new my-catalyst-starter-basic https://github.com/ehowey/gatsby-starter-ca
 
 **Demo**
 
-[https://gatsby-starter-catalyst-basic.netlify.com/](https://gatsby-starter-catalyst-core.netlify.com/)
+[https://gatsby-starter-catalyst-basic.netlify.com/](https://gatsby-starter-catalyst-writer.netlify.com/)
 
 **Documentation**
 
