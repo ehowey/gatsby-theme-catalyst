@@ -5,28 +5,15 @@ import { useStaticQuery, graphql } from "gatsby";
 const SelectedWork = () => {
   const data = useStaticQuery(graphql`
     query {
-      cat1: allSanityWork(
-        filter: {
-          include: { eq: true }
-          categories: { elemMatch: { order: { eq: 1 } } }
-        }
-        sort: { fields: date, order: DESC }
-      ) {
-        nodes {
-          title
-          id
-          link
-          publisher
-          categories {
+      categories: allSanityCategories(sort: { order: ASC, fields: order }) {
+        edges {
+          node {
             title
           }
         }
       }
-      cat2: allSanityWork(
-        filter: {
-          include: { eq: true }
-          categories: { elemMatch: { order: { eq: 2 } } }
-        }
+      allwork: allSanityWork(
+        filter: { include: { eq: true } }
         sort: { fields: date, order: DESC }
       ) {
         nodes {
@@ -34,23 +21,7 @@ const SelectedWork = () => {
           id
           link
           publisher
-          categories {
-            title
-          }
-        }
-      }
-      cat3: allSanityWork(
-        filter: {
-          include: { eq: true }
-          categories: { elemMatch: { order: { eq: 3 } } }
-        }
-        sort: { fields: date, order: DESC }
-      ) {
-        nodes {
-          title
-          id
-          link
-          publisher
+          date
           categories {
             title
           }
@@ -58,9 +29,9 @@ const SelectedWork = () => {
       }
     }
   `);
-  const cat1 = data.cat1.nodes;
-  const cat2 = data.cat2.nodes;
-  const cat3 = data.cat3.nodes;
+
+  const categories = data.categories.edges;
+  const writing = data.allwork.nodes;
 
   return (
     <div
@@ -70,75 +41,22 @@ const SelectedWork = () => {
         gridGap: "1rem"
       }}
     >
-      <div sx={{ mb: 4 }}>
-        <Styled.h3>Reported Features</Styled.h3>
-        <ul
-          sx={{
-            listStyle: "none",
-            m: 0,
-            p: 0
-          }}
-        >
-          {cat1.map(work => (
-            <li sx={{ mb: 3, ":last-of-type": { mb: 0 } }} key={work.id}>
-              <Styled.a
-                href={work.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {work.title}
-              </Styled.a>
-              &nbsp; &#8212; &nbsp;<i>{work.publisher}</i>
-            </li>
+      {categories.map(({ node }) => (
+        <div>
+          <p>{node.title}</p>
+          {writing.map(published => (
+            <div>
+              {published.categories
+                .filter(category => category.title === node.title)
+                .map(() => (
+                  <p>
+                    {published.title} - {published.date}
+                  </p>
+                ))}
+            </div>
           ))}
-        </ul>
-      </div>
-      <div sx={{ mb: 4 }}>
-        <Styled.h3>Personal Essays</Styled.h3>
-        <ul
-          sx={{
-            listStyle: "none",
-            m: 0,
-            p: 0
-          }}
-        >
-          {cat2.map(work => (
-            <li sx={{ mb: 3, ":last-of-type": { mb: 0 } }} key={work.id}>
-              <Styled.a
-                href={work.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {work.title}
-              </Styled.a>
-              &nbsp; &#8212; &nbsp;<i>{work.publisher}</i>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div sx={{ mb: 4 }}>
-        <Styled.h3>Profiles</Styled.h3>
-        <ul
-          sx={{
-            listStyle: "none",
-            m: 0,
-            p: 0
-          }}
-        >
-          {cat3.map(work => (
-            <li sx={{ mb: 3, ":last-of-type": { mb: 0 } }} key={work.id}>
-              <Styled.a
-                href={work.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {work.title}
-              </Styled.a>
-              &nbsp; &#8212; &nbsp;<i>{work.publisher}</i>
-            </li>
-          ))}
-        </ul>
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

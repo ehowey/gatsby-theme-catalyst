@@ -46,6 +46,8 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-writer`,
       options: {},
     },
+    `gatsby-theme-catalyst-header-basic`,
+    `gatsby-theme-catalyst-footer-basic`,
     {
       resolve: `gatsby-source-sanity`,
       options: {

@@ -19,6 +19,8 @@ const Hero = () => {
         <h1>Hero Section</h1>
       </div>
     );
+  } else {
+    return null;
   }
 };
 

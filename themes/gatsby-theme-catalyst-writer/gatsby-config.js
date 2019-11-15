@@ -1,13 +1,14 @@
-module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        useHero: true,
-        displaySiteLogo: false
+module.exports = options => {
+  return {
+    plugins: [
+      {
+        resolve: `gatsby-theme-catalyst-core`,
+        options: {
+          useHero: true,
+          displaySiteLogo: options.displaySiteLogo || false,
+          displaySiteTitle: options.displaySiteTitle || true
+        }
       }
-    },
-    `gatsby-theme-catalyst-header-basic`,
-    `gatsby-theme-catalyst-footer-basic`
-  ]
+    ]
+  };
 };
