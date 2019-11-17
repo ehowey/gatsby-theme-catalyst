@@ -15,7 +15,6 @@ export const HomeProvider = props => {
           } else {
             setIsHome(false)
           }
-          console.log(isHome)
         }}
       </Location>
       {props.children}

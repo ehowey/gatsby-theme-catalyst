@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Fragment } from "react";
 import { useContext } from "react";
 import { HomeContext } from "gatsby-theme-catalyst-core";
+import ButtonPrimary from "../../components/button-primary";
+import ButtonSecondary from "../../components/button-secondary";
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -42,6 +44,7 @@ const Hero = () => {
             flexDirection: ["column", null, "row", null, null],
             width: "100%",
             height: ["auto", null, "70vh", null, null],
+            minHeight: ["initial", null, "500px", null, null],
             backgroundColor: "accent",
             maxWidth: "maxPageWidth",
             mx: "auto",
@@ -65,99 +68,36 @@ const Hero = () => {
                   px: [3, null, 4, null, null]
                 }}
               >
-                <Styled.h1
+                <h1
                   sx={{
+                    fontFamily: "heading",
+                    fontWeight: "heading",
+                    lineHeight: "heading",
+                    fontSize: 6,
                     borderColor: "secondary",
                     borderTopWidth: "8px",
                     borderBottomWidth: "8px",
                     borderTopStyle: "dotted",
                     borderBottomStyle: "dotted",
-                    py: 3,
+                    m: 0,
+                    py: 4,
                     mt: 0,
                     mb: 4
                   }}
                 >
                   {content.heroTitle}
-                </Styled.h1>
+                </h1>
                 <Styled.p sx={{ mt: 0, mb: 4 }}>{content.heroText}</Styled.p>
                 <div
                   sx={{
                     display: "grid",
-                    gridTemplateColumns: "auto 1fr",
-                    gridTemplateRows: "auto",
-                    gridGap: ["1rem", null, null, "2rem", null]
+                    gridGap: [2, null, 4, null, null],
+                    gridTemplateColumns: "auto auto 1fr",
+                    justifyItems: "start"
                   }}
                 >
-                  <Link
-                    sx={{
-                      gridColumn: "1 / 2",
-                      justifySelf: "start",
-                      alignSelf: "center",
-                      appearance: "none",
-                      width: "auto",
-                      bg: "primary",
-                      color: "textWhite",
-                      display: "inline-block",
-                      textAlign: "center",
-                      lineHeight: "inherit",
-                      textDecoration: "none",
-                      fontSize: "85%",
-                      m: 0,
-                      px: "0.8rem",
-                      py: "0.5rem",
-                      borderColor: "primary",
-                      borderWidth: "2px",
-                      borderStyle: "solid",
-                      borderRadius: 4,
-                      letterSpacing: "1px",
-                      transition: "all 0.3s ease 0s",
-                      "::after": {
-                        content: '"\\00A0 \\2192"'
-                      },
-                      ":hover": {
-                        bg: "secondary",
-                        borderColor: "secondary"
-                      }
-                    }}
-                    to="/work"
-                  >
-                    Published Work
-                  </Link>
-                  <Link
-                    sx={{
-                      gridColumn: "2 / 3",
-                      justifySelf: "start",
-                      alignSelf: "center",
-                      appearance: "none",
-                      width: "auto",
-                      bg: "transparent",
-                      color: "primary",
-                      display: "inline-block",
-                      textAlign: "center",
-                      lineHeight: "inherit",
-                      textDecoration: "none",
-                      fontSize: "85%",
-                      m: 0,
-                      px: "0.8rem",
-                      py: "0.5rem",
-                      borderColor: "primary",
-                      borderWidth: "2px",
-                      borderStyle: "solid",
-                      borderRadius: 4,
-                      letterSpacing: "1px",
-                      transition: "all 0.3s ease 0s",
-                      "::after": {
-                        content: '"\\00A0 \\2192"'
-                      },
-                      ":hover": {
-                        borderColor: "secondary",
-                        color: "secondary"
-                      }
-                    }}
-                    to="/bio"
-                  >
-                    Bio
-                  </Link>
+                  <ButtonPrimary to="/work">Published Work</ButtonPrimary>
+                  <ButtonSecondary to="/bio">Bio</ButtonSecondary>
                 </div>
               </div>
             </Fragment>

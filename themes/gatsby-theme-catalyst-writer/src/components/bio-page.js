@@ -67,7 +67,7 @@ const BioPage = () => {
         fluid={data.sanityBioPage.topimage.asset.fluid}
         alt={data.sanityBioPage.topimage.alt}
       />
-      <h1>{data.sanityBioPage.title}</h1>
+      <Styled.h1>{data.sanityBioPage.title}</Styled.h1>
       <PortableText
         blocks={data.sanityBioPage._rawBody}
         serializers={serializers}
