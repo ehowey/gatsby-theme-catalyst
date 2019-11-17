@@ -33,7 +33,7 @@ const Hero = () => {
         sx={{
           width: "100%",
           backgroundColor: "accent",
-          mb: 3
+          mb: 4
         }}
       >
         <div

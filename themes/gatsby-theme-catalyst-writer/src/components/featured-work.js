@@ -35,8 +35,8 @@ const FeaturedWork = () => {
         width: "100vw",
         position: "relative",
         left: "calc(-50vw + 50%)",
-        mt: 2,
-        mb: 5,
+        mt: 4,
+        mb: 4,
         display: "grid"
       }}
     >
@@ -58,7 +58,7 @@ const FeaturedWork = () => {
               left: ["calc(-50vw + 50%)", "0", null, null, null],
               display: "flex",
               flexDirection: ["column", null, "row", null, null],
-              backgroundColor: "#f9f2e6",
+              backgroundColor: "accent",
               p: 3,
               mb: 4,
               borderRadius: 3
@@ -92,7 +92,6 @@ const FeaturedWork = () => {
               </p>
               <Styled.h3
                 sx={{
-                  fontStyle: "italic",
                   mt: 0
                 }}
               >
