@@ -4,6 +4,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import PortableText from "@sanity/block-content-to-react";
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
+import clientConfig from "./sanity/client-config";
+import serializers from "./sanity/serializers";
 
 const BioPage = () => {
   const data = useStaticQuery(graphql`
@@ -23,46 +25,11 @@ const BioPage = () => {
     }
   `);
 
-  const sanityConfig = { projectId: "utcr8kb1", dataset: "production" };
-
-  const serializers = {
-    types: {
-      figure({ node }) {
-        if (!node.asset) {
-          return;
-        }
-        const fluidProps = getFluidGatsbyImage(
-          node.asset._ref,
-          { maxWidth: 1440 },
-          sanityConfig
-        );
-        return (
-          <figure>
-            <Img
-              sx={{
-                maxHeight: "350px",
-                width: "100vw",
-                position: "relative",
-                left: "50%",
-                right: "50%",
-                marginLeft: "-50vw",
-                marginRight: "-50vw"
-              }}
-              fluid={fluidProps}
-              alt={node.alt}
-            />
-            {node.caption && <figcaption>{node.caption}</figcaption>}
-          </figure>
-        );
-      }
-    }
-  };
-
   return (
     <div>
       <Img
         sx={{
-          height: "200px"
+          height: ["150px", "200px", null, null, null]
         }}
         fluid={data.sanityBioPage.topimage.asset.fluid}
         alt={data.sanityBioPage.topimage.alt}
@@ -71,6 +38,7 @@ const BioPage = () => {
       <PortableText
         blocks={data.sanityBioPage._rawBody}
         serializers={serializers}
+        {...clientConfig.sanity}
       />
     </div>
   );
