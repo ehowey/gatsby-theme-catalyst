@@ -13,7 +13,6 @@ const SiteFooter = () => {
         backgroundColor: "footer.background",
         px: 3,
         py: 3,
-
         a: {
           color: "footer.links",
         },
@@ -21,23 +20,32 @@ const SiteFooter = () => {
     >
       <div
         sx={{
-          a: {
-            color: "footer.icons",
-            mr: 3,
-          },
-          "a:last-of-type": {
-            mr: 0,
-          },
-          "a:hover": {
-            color: "primary",
-          },
+          width: "100%",
+          maxWidth: "maxPageWidth",
+          mx: "auto",
+          my: 0,
         }}
       >
-        <SocialFooter />
+        <div
+          sx={{
+            a: {
+              color: "footer.icons",
+              mr: 3,
+            },
+            "a:last-of-type": {
+              mr: 0,
+            },
+            "a:hover": {
+              color: "primary",
+            },
+          }}
+        >
+          <SocialFooter />
+        </div>
+        <p sx={{ m: 0 }}>
+          © {new Date().getFullYear()} {title}
+        </p>
       </div>
-      <p sx={{ m: 0 }}>
-        © {new Date().getFullYear()} {title}
-      </p>
     </footer>
   )
 }

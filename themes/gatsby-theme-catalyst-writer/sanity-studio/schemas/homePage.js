@@ -20,12 +20,9 @@ export default {
       type: "boolean"
     },
     {
-      name: "heroImage",
       title: "Hero Image",
-      type: "image",
-      options: {
-        hotspot: true
-      }
+      name: "heroImage",
+      type: "figure"
     }
   ]
 };

@@ -13,6 +13,7 @@ import workPage from "./workPage";
 import bioPage from "./bioPage";
 import contactPage from "./contactPage";
 import blockContent from "./blockContent";
+import figure from "./figure";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,6 +31,7 @@ export default createSchema({
     workPage,
     bioPage,
     contactPage,
-    blockContent
+    blockContent,
+    figure
   ])
 });

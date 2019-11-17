@@ -11,10 +11,7 @@ export default {
     {
       name: "topimage",
       title: "Top Image",
-      type: "image",
-      options: {
-        hotspot: true
-      }
+      type: "figure"
     },
     {
       name: "body",

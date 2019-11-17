@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import PortableText from "@sanity/block-content-to-react";
-import urlBuilder from "@sanity/image-url";
+import { getFluidGatsbyImage } from "gatsby-source-sanity";
 
 const BioPage = () => {
   const data = useStaticQuery(graphql`
@@ -11,9 +11,10 @@ const BioPage = () => {
       sanityBioPage {
         _rawBody
         topimage {
+          alt
           asset {
-            fixed(width: 720, height: 200) {
-              ...GatsbySanityImageFixed
+            fluid(maxHeight: 200) {
+              ...GatsbySanityImageFluid
             }
           }
         }
@@ -22,32 +23,54 @@ const BioPage = () => {
     }
   `);
 
-  const urlFor = source =>
-    urlBuilder({ projectId: "utcr8kb1", dataset: "production" }).image(source);
+  const sanityConfig = { projectId: "utcr8kb1", dataset: "production" };
 
-  const serializer = {
+  const serializers = {
     types: {
-      image: props => (
-        <figure>
-          <img
-            src={urlFor(props.node.asset)
-              .width(600)
-              .url()}
-            alt={props.node.alt}
-          />
-          <figcaption>{props.node.caption}</figcaption>
-        </figure>
-      )
+      figure({ node }) {
+        if (!node.asset) {
+          return;
+        }
+        const fluidProps = getFluidGatsbyImage(
+          node.asset._ref,
+          { maxWidth: 1440 },
+          sanityConfig
+        );
+        return (
+          <figure>
+            <Img
+              sx={{
+                maxHeight: "350px",
+                width: "100vw",
+                position: "relative",
+                left: "50%",
+                right: "50%",
+                marginLeft: "-50vw",
+                marginRight: "-50vw"
+              }}
+              fluid={fluidProps}
+              alt={node.alt}
+            />
+            {node.caption && <figcaption>{node.caption}</figcaption>}
+          </figure>
+        );
+      }
     }
   };
 
   return (
     <div>
-      <Img fixed={data.sanityBioPage.topimage.asset.fixed} />
+      <Img
+        sx={{
+          height: "200px"
+        }}
+        fluid={data.sanityBioPage.topimage.asset.fluid}
+        alt={data.sanityBioPage.topimage.alt}
+      />
       <h1>{data.sanityBioPage.title}</h1>
       <PortableText
         blocks={data.sanityBioPage._rawBody}
-        serializers={serializer}
+        serializers={serializers}
       />
     </div>
   );
