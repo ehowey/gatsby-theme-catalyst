@@ -3,7 +3,6 @@ import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import PortableText from "@sanity/block-content-to-react";
-import { getFluidGatsbyImage } from "gatsby-source-sanity";
 import clientConfig from "./sanity/client-config";
 import serializers from "./sanity/serializers";
 

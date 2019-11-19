@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
+import { Fragment } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import WorkLi from "./work-list-item";
 
 const SelectedWork = () => {
   const data = useStaticQuery(graphql`
@@ -34,30 +36,33 @@ const SelectedWork = () => {
   const writing = data.allwork.nodes;
 
   return (
-    <div
-      sx={{
-        display: "grid",
-        gridTemplateColumns: "1fr",
-        gridGap: "1rem"
-      }}
-    >
+    <Fragment>
       {categories.map(({ node }) => (
-        <div>
-          <p>{node.title}</p>
-          {writing.map(published => (
-            <div>
-              {published.categories
+        <div sx={{ mb: 5 }}>
+          <Styled.h3>{node.title}</Styled.h3>
+          <ul
+            sx={{
+              listStyle: "none",
+              m: 0,
+              p: 0
+            }}
+          >
+            {writing.map(published =>
+              published.categories
                 .filter(category => category.title === node.title)
                 .map(() => (
-                  <p>
-                    {published.title} - {published.date}
-                  </p>
-                ))}
-            </div>
-          ))}
+                  <WorkLi
+                    title={published.title}
+                    link={published.link}
+                    publisher={published.publisher}
+                    date={published.date}
+                  />
+                ))
+            )}
+          </ul>
         </div>
       ))}
-    </div>
+    </Fragment>
   );
 };
 
