@@ -6,23 +6,28 @@ export default {
     {
       title: "Hero Title",
       name: "heroTitle",
-      type: "string"
+      type: "string",
     },
     {
       title: "Hero Text",
       name: "heroText",
       type: "text",
-      rows: 4
+      rows: 4,
     },
     {
       title: "Display text in Hero?",
       name: "displayHeroText",
-      type: "boolean"
+      type: "boolean",
     },
     {
       title: "Hero Image",
       name: "heroImage",
-      type: "figure"
-    }
-  ]
-};
+      type: "figure",
+    },
+    {
+      name: "contact",
+      title: "Contact Me Blurb",
+      type: "blockContent",
+    },
+  ],
+}

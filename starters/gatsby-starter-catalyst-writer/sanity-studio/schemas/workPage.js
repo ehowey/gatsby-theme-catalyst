@@ -4,14 +4,14 @@ export default {
   type: "document",
   fields: [
     {
-      title: "Title",
+      title: "Page Title",
       name: "title",
-      type: "string"
+      type: "string",
     },
     {
       name: "topimage",
       title: "Top Image",
-      type: "figure"
-    }
-  ]
-};
+      type: "figure",
+    },
+  ],
+}

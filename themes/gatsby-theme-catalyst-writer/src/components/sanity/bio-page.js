@@ -3,8 +3,8 @@ import { jsx, Styled } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import PortableText from "@sanity/block-content-to-react";
-import clientConfig from "./sanity/client-config";
-import serializers from "./sanity/serializers";
+import clientConfig from "./client-config";
+import serializers from "./serializers";
 
 const BioPage = () => {
   const data = useStaticQuery(graphql`
