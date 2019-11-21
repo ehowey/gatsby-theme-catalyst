@@ -7,10 +7,13 @@ import PortableText from "@sanity/block-content-to-react";
 import clientConfig from "./client-config";
 import serializers from "./serializers";
 
-const BioPage = () => {
+const ContactPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allSanityBioPage(sort: { fields: _updatedAt, order: DESC }, limit: 1) {
+      allSanityContactPage(
+        sort: { fields: _updatedAt, order: DESC }
+        limit: 1
+      ) {
         nodes {
           title
           _rawBody
@@ -27,7 +30,7 @@ const BioPage = () => {
     }
   `);
 
-  const pageData = data.allSanityBioPage.nodes;
+  const pageData = data.allSanityContactPage.nodes;
 
   return (
     <Fragment>
@@ -52,4 +55,4 @@ const BioPage = () => {
   );
 };
 
-export default BioPage;
+export default ContactPage;

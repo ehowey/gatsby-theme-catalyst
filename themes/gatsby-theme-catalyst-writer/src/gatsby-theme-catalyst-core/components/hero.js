@@ -11,7 +11,7 @@ import ButtonSecondary from "../../components/button-secondary";
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      allSanityHomePage(limit: 1) {
+      allSanityHomePage(sort: { fields: _updatedAt, order: DESC }, limit: 1) {
         nodes {
           id
           heroTitle

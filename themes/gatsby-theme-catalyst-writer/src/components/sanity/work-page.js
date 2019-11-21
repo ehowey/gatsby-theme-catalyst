@@ -3,17 +3,13 @@ import { jsx, Styled } from "theme-ui";
 import { Fragment } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import PortableText from "@sanity/block-content-to-react";
-import clientConfig from "./client-config";
-import serializers from "./serializers";
 
-const BioPage = () => {
+const WorkPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allSanityBioPage(sort: { fields: _updatedAt, order: DESC }, limit: 1) {
+      allSanityWorkPage(sort: { fields: _updatedAt, order: DESC }, limit: 1) {
         nodes {
           title
-          _rawBody
           topimage {
             alt
             asset {
@@ -27,7 +23,7 @@ const BioPage = () => {
     }
   `);
 
-  const pageData = data.allSanityBioPage.nodes;
+  const pageData = data.allSanityWorkPage.nodes;
 
   return (
     <Fragment>
@@ -41,15 +37,10 @@ const BioPage = () => {
             alt={page.topimage.alt}
           />
           <Styled.h1>{page.title}</Styled.h1>
-          <PortableText
-            blocks={page._rawBody}
-            serializers={serializers}
-            {...clientConfig.sanity}
-          />
         </Fragment>
       ))}
     </Fragment>
   );
 };
 
-export default BioPage;
+export default WorkPage;
