@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useStaticQuery, graphql } from "gatsby";
-import Card from "./work-card";
-import ButtonSecondary from "./button-secondary";
+import { jsx } from "theme-ui"
+import { useStaticQuery, graphql } from "gatsby"
+import Card from "./work-card"
+import ButtonSecondary from "./button-secondary"
 
 const FeaturedWork = () => {
   const data = useStaticQuery(graphql`
@@ -12,6 +12,7 @@ const FeaturedWork = () => {
         filter: { featured: { eq: true } }
       ) {
         nodes {
+          id
           title
           link
           publisher
@@ -27,13 +28,13 @@ const FeaturedWork = () => {
         }
       }
     }
-  `);
-  const writing = data.allSanityWork.nodes;
+  `)
+  const writing = data.allSanityWork.nodes
   return (
     <div
       sx={{
         mt: 4,
-        mb: 5
+        mb: 5,
       }}
     >
       {writing.map(published => (
@@ -44,11 +45,12 @@ const FeaturedWork = () => {
           publisher={published.publisher}
           date={published.date}
           excerpt={published.excerpt}
+          key={published.id}
         />
       ))}
       <ButtonSecondary to="/work">More Published Work</ButtonSecondary>
     </div>
-  );
-};
+  )
+}
 
-export default FeaturedWork;
+export default FeaturedWork
