@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from "theme-ui"
 
 const WorkLi = props => {
   return (
@@ -9,7 +9,7 @@ const WorkLi = props => {
       </a>
       &nbsp;&#8212;&nbsp; {props.publisher}, {props.date}
     </li>
-  );
-};
+  )
+}
 
-export default WorkLi;
+export default WorkLi

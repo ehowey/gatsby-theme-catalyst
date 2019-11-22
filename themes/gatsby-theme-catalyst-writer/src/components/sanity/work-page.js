@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import { Fragment } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { jsx, Styled } from "theme-ui"
+import { Fragment } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const WorkPage = () => {
   const data = useStaticQuery(graphql`
@@ -21,9 +21,9 @@ const WorkPage = () => {
         }
       }
     }
-  `);
+  `)
 
-  const pageData = data.allSanityWorkPage.nodes;
+  const pageData = data.allSanityWorkPage.nodes
 
   return (
     <Fragment>
@@ -31,7 +31,7 @@ const WorkPage = () => {
         <Fragment key={page.title}>
           <Img
             sx={{
-              height: ["150px", "200px", null, null, null]
+              height: ["150px", "200px", null, null, null],
             }}
             fluid={page.topimage.asset.fluid}
             alt={page.topimage.alt}
@@ -40,7 +40,7 @@ const WorkPage = () => {
         </Fragment>
       ))}
     </Fragment>
-  );
-};
+  )
+}
 
-export default WorkPage;
+export default WorkPage

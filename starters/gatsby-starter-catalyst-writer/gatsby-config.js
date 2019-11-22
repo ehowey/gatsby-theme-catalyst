@@ -44,7 +44,9 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-catalyst-writer`,
-      options: {},
+      options: {
+        sanityProjectID: process.env.SANITY_PROJECT_ID,
+      },
     },
     `gatsby-theme-catalyst-header-basic`,
     `gatsby-theme-catalyst-footer-basic`,

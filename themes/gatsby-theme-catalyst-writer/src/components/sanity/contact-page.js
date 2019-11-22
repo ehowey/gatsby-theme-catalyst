@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import { Fragment } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import PortableText from "@sanity/block-content-to-react";
-import clientConfig from "./client-config";
-import serializers from "./serializers";
+import { jsx, Styled } from "theme-ui"
+import { Fragment } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { useSanityConfig } from "./use-sanity-config"
+import Img from "gatsby-image"
+import PortableText from "@sanity/block-content-to-react"
+import serializers from "./serializers"
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
@@ -28,9 +28,10 @@ const ContactPage = () => {
         }
       }
     }
-  `);
+  `)
 
-  const pageData = data.allSanityContactPage.nodes;
+  const pageData = data.allSanityContactPage.nodes
+  const sanityConfig = useSanityConfig()
 
   return (
     <Fragment>
@@ -38,7 +39,7 @@ const ContactPage = () => {
         <Fragment key={page.title}>
           <Img
             sx={{
-              height: ["150px", "200px", null, null, null]
+              height: ["150px", "200px", null, null, null],
             }}
             fluid={page.topimage.asset.fluid}
             alt={page.topimage.alt}
@@ -47,12 +48,12 @@ const ContactPage = () => {
           <PortableText
             blocks={page._rawBody}
             serializers={serializers}
-            {...clientConfig.sanity}
+            {...sanityConfig}
           />
         </Fragment>
       ))}
     </Fragment>
-  );
-};
+  )
+}
 
-export default ContactPage;
+export default ContactPage

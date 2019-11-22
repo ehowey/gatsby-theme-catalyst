@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import Img from "gatsby-image";
+import { jsx, Styled } from "theme-ui"
+import Img from "gatsby-image"
 
 const Card = props => {
   return (
@@ -14,7 +14,7 @@ const Card = props => {
         backgroundColor: "accent",
         p: 3,
         mb: 4,
-        borderRadius: 3
+        borderRadius: 3,
       }}
       key={props.title}
     >
@@ -23,7 +23,7 @@ const Card = props => {
           mr: [0, null, 3, null, null],
           maxWidth: ["100%", null, "250px", null, null],
           maxHeight: ["250px", null, "100%", null, null],
-          flex: "1"
+          flex: "1",
         }}
         fluid={props.image}
         alt={props.title}
@@ -31,21 +31,21 @@ const Card = props => {
       <div
         sx={{
           mt: [3, null, 0, null, null],
-          flex: "2"
+          flex: "2",
         }}
       >
         <p
           sx={{
             fontSize: "60%",
             textTransform: "uppercase",
-            m: 0
+            m: 0,
           }}
         >
           {props.publisher} &middot; {props.date}
         </p>
         <Styled.h3
           sx={{
-            mt: 0
+            mt: 0,
           }}
         >
           <a
@@ -53,8 +53,8 @@ const Card = props => {
               color: "text",
               textDecoration: "none",
               ":hover": {
-                textDecoration: "underline"
-              }
+                textDecoration: "underline",
+              },
             }}
             href={props.link}
             target="_blank"
@@ -71,11 +71,11 @@ const Card = props => {
             fontWeight: "bold",
             fontSize: "90%",
             "::after": {
-              content: '"\\00A0 \\2192"'
+              content: '"\\00A0 \\2192"',
             },
             ":hover": {
-              textDecoration: "underline"
-            }
+              textDecoration: "underline",
+            },
           }}
           href={props.link}
           target="_blank"
@@ -85,7 +85,7 @@ const Card = props => {
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

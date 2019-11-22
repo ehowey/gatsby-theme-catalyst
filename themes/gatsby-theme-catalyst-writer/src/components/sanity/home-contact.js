@@ -2,8 +2,8 @@
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { useSanityConfig } from "./use-sanity-config"
 import PortableText from "@sanity/block-content-to-react"
-import clientConfig from "./client-config"
 import serializers from "./serializers"
 
 const HomeContact = () => {
@@ -19,6 +19,7 @@ const HomeContact = () => {
   `)
 
   const pageData = data.allSanityHomePage.nodes
+  const sanityConfig = useSanityConfig()
 
   return (
     <Fragment>
@@ -27,7 +28,7 @@ const HomeContact = () => {
           key={page.id}
           blocks={page._rawContact}
           serializers={serializers}
-          {...clientConfig.sanity}
+          {...sanityConfig}
         />
       ))}
     </Fragment>

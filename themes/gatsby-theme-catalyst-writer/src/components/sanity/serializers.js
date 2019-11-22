@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import Figure from "./figure";
-import FigureWide from "./figure-wide";
+import { jsx, Styled } from "theme-ui"
+import Figure from "./figure"
+import FigureWide from "./figure-wide"
 
 const serializers = {
   types: {
@@ -10,16 +10,16 @@ const serializers = {
     block(props) {
       switch (props.node.style) {
         case "h1":
-          return <Styled.h1>{props.children}</Styled.h1>;
+          return <Styled.h1>{props.children}</Styled.h1>
         case "h2":
-          return <Styled.h2>{props.children}</Styled.h2>;
+          return <Styled.h2>{props.children}</Styled.h2>
         case "blockquote":
-          return <Styled.blockquote>{props.children}</Styled.blockquote>;
+          return <Styled.blockquote>{props.children}</Styled.blockquote>
         default:
-          return <Styled.p>{props.children}</Styled.p>;
+          return <Styled.p>{props.children}</Styled.p>
       }
-    }
-  }
-};
+    },
+  },
+}
 
-export default serializers;
+export default serializers

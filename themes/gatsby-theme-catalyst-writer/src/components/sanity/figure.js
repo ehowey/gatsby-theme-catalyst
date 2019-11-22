@@ -1,19 +1,21 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import Img from "gatsby-image";
-import { getFluidGatsbyImage } from "gatsby-source-sanity";
-import clientConfig from "./client-config";
+import { jsx } from "theme-ui"
+import Img from "gatsby-image"
+import { getFluidGatsbyImage } from "gatsby-source-sanity"
+import { useSanityConfig } from "./use-sanity-config"
 
 export default ({ node }) => {
   if (!node.asset) {
-    return null;
+    return null
   }
+
+  const sanityConfig = useSanityConfig()
 
   const fluidProps = getFluidGatsbyImage(
     node.asset._ref,
     { maxWidth: 1440 },
-    clientConfig.sanity
-  );
+    sanityConfig
+  )
 
   return (
     <figure>
@@ -23,12 +25,12 @@ export default ({ node }) => {
           sx={{
             color: "grey",
             fontSize: 2,
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           {node.caption}
         </figcaption>
       )}
     </figure>
-  );
-};
+  )
+}

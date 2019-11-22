@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from "theme-ui"
 
 export default ({ node }) => {
   if (!node.asset) {
-    return null;
+    return null
   }
 
   return (
     <blockquote
       sx={{
-        color: "red"
+        color: "red",
       }}
     >
       {node.style.blockquote}
     </blockquote>
-  );
-};
+  )
+}

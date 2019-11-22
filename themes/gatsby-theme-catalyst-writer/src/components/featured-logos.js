@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { jsx } from "theme-ui"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const FeaturedLogos = () => {
   const data = useStaticQuery(graphql`
@@ -21,8 +21,8 @@ const FeaturedLogos = () => {
         }
       }
     }
-  `);
-  const logos = data.allSanityLogos.nodes;
+  `)
+  const logos = data.allSanityLogos.nodes
   return (
     <div
       sx={{
@@ -32,7 +32,7 @@ const FeaturedLogos = () => {
         gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
         alignItems: "center",
         justifyItems: "center",
-        gridGap: ["1rem", null, "2rem", null, null]
+        gridGap: ["1rem", null, "2rem", null, null],
       }}
     >
       {logos.map(logo => (
@@ -47,8 +47,8 @@ const FeaturedLogos = () => {
               transition: "all 0.3s ease 0s",
               ":hover": {
                 boxShadow: "0 2px 15px rgba(0,0,0,.1)",
-                transform: "translateY(-3px)"
-              }
+                transform: "translateY(-3px)",
+              },
             }}
             fixed={logo.logo.asset.fixed}
             alt={logo.altText}
@@ -56,7 +56,7 @@ const FeaturedLogos = () => {
         </a>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default FeaturedLogos;
+export default FeaturedLogos

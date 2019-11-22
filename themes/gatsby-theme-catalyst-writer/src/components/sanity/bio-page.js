@@ -2,9 +2,9 @@
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { useSanityConfig } from "./use-sanity-config"
 import Img from "gatsby-image"
 import PortableText from "@sanity/block-content-to-react"
-import clientConfig from "./client-config"
 import serializers from "./serializers"
 
 const BioPage = () => {
@@ -28,7 +28,7 @@ const BioPage = () => {
   `)
 
   const pageData = data.allSanityBioPage.nodes
-  console.log(process.env)
+  const sanityConfig = useSanityConfig()
 
   return (
     <Fragment>
@@ -45,7 +45,7 @@ const BioPage = () => {
           <PortableText
             blocks={page._rawBody}
             serializers={serializers}
-            {...clientConfig.sanity}
+            {...sanityConfig}
           />
         </Fragment>
       ))}

@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Link } from "gatsby";
+import { jsx } from "theme-ui"
+import { Link } from "gatsby"
 
 const ButtonSecondary = props => {
   return (
@@ -24,18 +24,18 @@ const ButtonSecondary = props => {
         letterSpacing: "1px",
         transition: "all 0.3s ease 0s",
         "::after": {
-          content: '"\\00A0 \\2192"'
+          content: '"\\00A0 \\2192"',
         },
         ":hover": {
           borderColor: "secondary",
-          color: "secondary"
-        }
+          color: "secondary",
+        },
       }}
       to={props.to}
     >
       {props.children}
     </Link>
-  );
-};
+  )
+}
 
-export default ButtonSecondary;
+export default ButtonSecondary

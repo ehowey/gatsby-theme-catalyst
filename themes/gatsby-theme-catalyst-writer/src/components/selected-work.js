@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import { Fragment } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import WorkLi from "./work-list-item";
+import { jsx, Styled } from "theme-ui"
+import { Fragment } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import WorkLi from "./work-list-item"
 
 const SelectedWork = () => {
   const data = useStaticQuery(graphql`
@@ -30,10 +30,10 @@ const SelectedWork = () => {
         }
       }
     }
-  `);
+  `)
 
-  const categories = data.categories.edges;
-  const writing = data.allwork.nodes;
+  const categories = data.categories.edges
+  const writing = data.allwork.nodes
 
   return (
     <Fragment>
@@ -44,7 +44,7 @@ const SelectedWork = () => {
             sx={{
               listStyle: "none",
               m: 0,
-              p: 0
+              p: 0,
             }}
           >
             {writing.map(published =>
@@ -63,7 +63,7 @@ const SelectedWork = () => {
         </div>
       ))}
     </Fragment>
-  );
-};
+  )
+}
 
-export default SelectedWork;
+export default SelectedWork
