@@ -1,21 +1,18 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { Fragment } from "react"
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import PageHeader from "./page-header"
 
 const WorkPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allSanityWorkPage(sort: { fields: _updatedAt, order: DESC }, limit: 1) {
-        nodes {
-          title
-          topimage {
-            alt
-            asset {
-              fluid(maxHeight: 200) {
-                ...GatsbySanityImageFluid
-              }
+      sanityWorkPage {
+        title
+        topimage {
+          alt
+          asset {
+            fluid(maxHeight: 200) {
+              ...GatsbySanityImageFluid
             }
           }
         }
@@ -23,23 +20,12 @@ const WorkPage = () => {
     }
   `)
 
-  const pageData = data.allSanityWorkPage.nodes
+  const topImage = data.sanityWorkPage.topimage.asset.fluid
+  const topImageAlt = data.sanityWorkPage.topimage.alt
+  const title = data.sanityWorkPage.title
 
   return (
-    <Fragment>
-      {pageData.map(page => (
-        <Fragment key={page.title}>
-          <Img
-            sx={{
-              height: ["150px", "200px", null, null, null],
-            }}
-            fluid={page.topimage.asset.fluid}
-            alt={page.topimage.alt}
-          />
-          <Styled.h1>{page.title}</Styled.h1>
-        </Fragment>
-      ))}
-    </Fragment>
+    <PageHeader topImage={topImage} topImageAlt={topImageAlt} title={title} />
   )
 }
 
