@@ -45,6 +45,7 @@ const SelectedWork = () => {
               listStyle: "none",
               m: 0,
               p: 0,
+              mt: 3,
             }}
           >
             {writing.map(published =>

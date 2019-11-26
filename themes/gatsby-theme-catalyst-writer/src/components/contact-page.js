@@ -2,10 +2,10 @@
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { useSanityConfig } from "./use-sanity-config"
+import { useSanityConfig } from "./sanity/use-sanity-config"
 import Img from "gatsby-image"
 import PortableText from "@sanity/block-content-to-react"
-import serializers from "./serializers"
+import serializers from "./sanity/serializers"
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
