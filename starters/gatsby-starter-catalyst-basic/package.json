@@ -4,9 +4,9 @@
   "version": "0.6.0",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby-theme-catalyst-core": "^0.13.2",
-    "gatsby-theme-catalyst-header-basic": "^0.0.4",
-    "gatsby-theme-catalyst-footer-basic": "^0.0.4",
+    "gatsby-theme-catalyst-core": "^0.13.3",
+    "gatsby-theme-catalyst-header-basic": "^0.0.5",
+    "gatsby-theme-catalyst-footer-basic": "^0.0.5",
     "gatsby": "^2.17.9",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"

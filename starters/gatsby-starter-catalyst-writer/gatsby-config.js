@@ -43,13 +43,21 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        useHero: true,
+        displaySiteLogo: false,
+        displaySiteTitle: true,
+      },
+    },
+    `gatsby-theme-catalyst-header-basic`,
+    `gatsby-theme-catalyst-footer-basic`,
+    {
       resolve: `gatsby-theme-catalyst-writer`,
       options: {
         sanityProjectID: process.env.SANITY_PROJECT_ID,
       },
     },
-    `gatsby-theme-catalyst-header-basic`,
-    `gatsby-theme-catalyst-footer-basic`,
     {
       resolve: `gatsby-source-sanity`,
       options: {
