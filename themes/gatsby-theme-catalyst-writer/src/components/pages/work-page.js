@@ -2,15 +2,15 @@
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import PageHeader from "./page-header"
-import SanityContent from "./sanity/sanity-content"
+import { SEO } from "gatsby-theme-catalyst-core"
+import PageHeader from "../page-header"
+import SelectedWork from "../selected-work"
 
-const BioQuery = () => {
+const WorkPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      sanityBioPage {
+      sanityWorkPage {
         title
-        _rawBody
         topimage {
           alt
           asset {
@@ -23,17 +23,17 @@ const BioQuery = () => {
     }
   `)
 
-  const topImage = data.sanityBioPage.topimage.asset.fluid
-  const topImageAlt = data.sanityBioPage.topimage.alt
-  const title = data.sanityBioPage.title
-  const body = data.sanityBioPage._rawBody
+  const topImage = data.sanityWorkPage.topimage.asset.fluid
+  const topImageAlt = data.sanityWorkPage.topimage.alt
+  const title = data.sanityWorkPage.title
 
   return (
     <Fragment>
+      <SEO title={title} />
       <PageHeader topImage={topImage} topImageAlt={topImageAlt} title={title} />
-      <SanityContent data={body} />
+      <SelectedWork />
     </Fragment>
   )
 }
 
-export default BioQuery
+export default WorkPage

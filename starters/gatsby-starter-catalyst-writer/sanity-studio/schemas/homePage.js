@@ -25,8 +25,23 @@ export default {
       type: "figure",
     },
     {
-      name: "contact",
-      title: "Contact Me Blurb",
+      title: "Logo Title",
+      name: "logoTitle",
+      type: "string",
+    },
+    {
+      title: "Featured Title",
+      name: "featuredTitle",
+      type: "string",
+    },
+    {
+      title: "Contact Title",
+      name: "contactTitle",
+      type: "string",
+    },
+    {
+      title: "Contact Text",
+      name: "contactText",
       type: "blockContent",
     },
   ],
