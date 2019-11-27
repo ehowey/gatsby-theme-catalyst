@@ -52,6 +52,7 @@ module.exports = options => {
       `gatsby-plugin-robots-txt`,
       `gatsby-plugin-react-helmet`,
       `gatsby-transformer-sharp`,
+      `gatsby-transformer-yaml`,
       `gatsby-plugin-sharp`,
       `gatsby-plugin-theme-ui`,
       `gatsby-plugin-offline`,
