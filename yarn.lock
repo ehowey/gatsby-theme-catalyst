@@ -6618,37 +6618,20 @@ gatsby-remark-copy-linked-files@^2.1.30:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-images@^3.1.30:
-  version "3.1.30"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.30.tgz#c71527d56ab941878d0b576f61192d17fdca881d"
-  integrity sha512-iednni/e2p55EaTz5HHEC7xd5u/1vpeYWuQkEa1uZglNdje8x+JS3/cXUFYE3/M9T/w+HXqk9WGtdPMUuoC9oA==
+gatsby-remark-images@^3.1.30, gatsby-remark-images@^3.1.34:
+  version "3.1.34"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.34.tgz#9394dc25f8c03ade6104639d7fb05e0c4b8d4d18"
+  integrity sha512-+3/4JLmi77fbxRl7PzwiDxx70orQvaC1It4gTQ4N81H3brszMeODcWihyZKUwvnYjMTWYgYdZSMsHbyjmloCgQ==
   dependencies:
-    "@babel/runtime" "^7.7.2"
+    "@babel/runtime" "^7.7.4"
     chalk "^2.4.2"
     cheerio "^1.0.0-rc.3"
+    gatsby-core-utils "^1.0.21"
     is-relative-url "^3.0.0"
     lodash "^4.17.15"
     mdast-util-definitions "^1.2.5"
     potrace "^2.1.2"
-    query-string "^6.8.3"
-    slash "^3.0.0"
-    unist-util-select "^1.5.0"
-    unist-util-visit-parents "^2.1.2"
-
-gatsby-remark-images@^3.1.31:
-  version "3.1.31"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.31.tgz#8c2fe37f8d0fd1a5612de085c7d96dfae22c6cb8"
-  integrity sha512-HWCRgGejHUnQM+fClkDO28NLDplS6ag1vA5jz4HKIWJD4cs33h+Oa9W12k2kul5gJ0y5/j9xEAYDT2zdbTSS3A==
-  dependencies:
-    "@babel/runtime" "^7.7.2"
-    chalk "^2.4.2"
-    cheerio "^1.0.0-rc.3"
-    is-relative-url "^3.0.0"
-    lodash "^4.17.15"
-    mdast-util-definitions "^1.2.5"
-    potrace "^2.1.2"
-    query-string "^6.8.3"
-    slash "^3.0.0"
+    query-string "^6.9.0"
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
@@ -9355,14 +9338,7 @@ mdast-util-compact@^1.0.0:
   dependencies:
     unist-util-visit "^1.1.0"
 
-mdast-util-definitions@^1.2.0:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/mdast-util-definitions/-/mdast-util-definitions-1.2.4.tgz#2b54ad4eecaff9d9fcb6bf6f9f6b68b232d77ca7"
-  integrity sha512-HfUArPog1j4Z78Xlzy9Q4aHLnrF/7fb57cooTHypyGoe2XFNbcx/kWZDoOz+ra8CkUzvg3+VHV434yqEd1DRmA==
-  dependencies:
-    unist-util-visit "^1.0.0"
-
-mdast-util-definitions@^1.2.5:
+mdast-util-definitions@^1.2.0, mdast-util-definitions@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/mdast-util-definitions/-/mdast-util-definitions-1.2.5.tgz#3fe622a4171c774ebd06f11e9f8af7ec53ea5c74"
   integrity sha512-CJXEdoLfiISCDc2JB6QLb79pYfI6+GcIH+W2ox9nMc7od0Pz+bovcHsiq29xAQY6ayqe/9CsK2VzkSJdg1pFYA==
@@ -11555,10 +11531,10 @@ query-string@^5.0.1:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-query-string@^6.8.3:
-  version "6.8.3"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.8.3.tgz#fd9fb7ffb068b79062b43383685611ee47777d4b"
-  integrity sha512-llcxWccnyaWlODe7A9hRjkvdCKamEKTh+wH8ITdTc3OhchaqUZteiSCX/2ablWHVrkVIe04dntnaZJ7BdyW0lQ==
+query-string@^6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.9.0.tgz#1c3b727c370cf00f177c99f328fda2108f8fa3dd"
+  integrity sha512-KG4bhCFYapExLsUHrFt+kQVEegF2agm4cpF/VNc6pZVthIfCc/GK8t8VyNIE3nyXG9DK3Tf2EGkxjR6/uRdYsA==
   dependencies:
     decode-uri-component "^0.2.0"
     split-on-first "^1.0.0"
