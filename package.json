@@ -3,5 +3,9 @@
   "workspaces": [
     "starters/*",
     "themes/*"
-  ]
+  ],
+  "name": "gatsby-theme-catalyst",
+  "devDependencies": {
+    "lerna": "^3.17.0"
+  }
 }

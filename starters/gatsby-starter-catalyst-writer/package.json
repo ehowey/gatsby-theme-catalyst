@@ -2,6 +2,7 @@
   "name": "gatsby-starter-catalyst-writer",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Writer",
   "version": "0.0.1",
+  "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby-theme-catalyst-core": "^0.13.3",
