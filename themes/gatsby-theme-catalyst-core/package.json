@@ -9,7 +9,7 @@
     "@mdx-js/react": "^1.5.1",
     "@theme-ui/components": "^0.2.49",
     "deepmerge": "^4.2.2",
-    "gatsby-image": "^2.2.33",
+    "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.30",
     "gatsby-plugin-mdx": "^1.0.58",
     "gatsby-plugin-offline": "^3.0.21",
