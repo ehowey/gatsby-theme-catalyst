@@ -18,6 +18,10 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./structure/deskStructure.js"
     }
   ]
 }
