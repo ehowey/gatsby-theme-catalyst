@@ -7,7 +7,7 @@
     "gatsby-theme-catalyst-core": "^0.13.3",
     "gatsby-theme-catalyst-header-basic": "^0.0.5",
     "gatsby-theme-catalyst-footer-basic": "^0.0.5",
-    "gatsby": "^2.17.9",
+    "gatsby": "^2.18.5",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },
