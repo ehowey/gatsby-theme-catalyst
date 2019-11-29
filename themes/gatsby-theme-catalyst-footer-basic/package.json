@@ -7,13 +7,13 @@
     "gatsby-theme-catalyst-core": "^0.13.3"
   },
   "devDependencies": {
-    "gatsby": "^2.17.9",
+    "gatsby": "^2.18.5",
     "prettier": "^1.18.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.17.9",
+    "gatsby": "^2.18.5",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },

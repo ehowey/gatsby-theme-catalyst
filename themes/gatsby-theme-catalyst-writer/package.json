@@ -6,7 +6,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.15",
-    "gatsby": "^2.17.9",
+    "gatsby": "^2.18.5",
     "gatsby-source-sanity": "^5.0.4",
     "gatsby-theme-catalyst-core": "^0.13.3",
     "gatsby-theme-catalyst-footer-basic": "^0.0.5",
