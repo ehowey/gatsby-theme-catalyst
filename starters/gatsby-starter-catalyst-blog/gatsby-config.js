@@ -8,17 +8,17 @@ module.exports = {
       {
         name: `Page 1`,
         link: `/page-1`,
-        type: `internal`,
+        type: `internal`, //internal or anchor
       },
       {
         name: `Page 2`,
         link: `/page-2`,
-        type: `internal`,
+        type: `internal`, //internal or anchor
       },
       {
         name: `Blog`,
         link: `/blog`,
-        type: `internal`,
+        type: `internal`, //internal or anchor
       },
     ],
     socialLinks: [

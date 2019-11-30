@@ -12,6 +12,130 @@ This set of themes, at least right now, is more developer friendly and requires 
 
 ## Install a starter
 
-`gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic`
+```
+gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
+cd catalyst-basic
+gatsby develop
+```
 
-##
+## Customize gatsby-config.js
+
+### siteMetaData
+
+Modify this to reflect the site you are working on, e.g. change the site title, author, etc. The `siteURL:` field is used during the build process for the sitemap and doesn't matter when you are in development. Just don't forget to change it. There are a few fields that are worth a longer explanation.
+
+**menuLinks**
+
+This is pretty standard Gatsby stuff except for the `type:` field. This field takes two values `internal` or `anchor`. These fields specify whether the link should use a normal `<Link>` component from Gatsby or an anchor link from [react-scroll](https://www.npmjs.com/package/react-scroll).
+
+It looks like this:
+
+```
+menuLinks: [
+      {
+        name: `Page 1`,
+        link: `/page-1`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Anchor 1`,
+        link: `#anchor-1`,
+        type: `anchor`, //internal or anchor
+      },
+    ],
+```
+
+**socialLinks**
+
+This option in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
+
+```
+socialLinks: [
+      {
+        name: `Email`,
+        link: `eric@erichowey.dev`,
+        location: `footer`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Github`,
+        link: `https://www.github.com/ehowey`,
+        location: `all`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Twitter`,
+        link: `https://www.twitter.com/erchwy`,
+        location: `header`, //Options are "all", "header", "footer"
+      },
+    ],
+```
+
+## Add some of your own content
+
+By default the content is located in `/content/pages/` and `/content/assets/`. [MDX](https://mdxjs.com/getting-started/gatsby) is used as the preferred content method. Go ahead and add some of your own content!
+
+### Customize the theme options and child themes
+
+`gatsby-theme-catalyst-core` takes a number of different options that help to easily determine some of the look and style of the theme. You can review all the [options in the docs here](/gatsby-theme-catalyst-core). There are preconfigured defaults so you don't necessarily need to specify any options for the theme. Right now there are only one basic header and one basic footer, this will change in the future but for now you can also include those.
+
+An example setup might look like this:
+
+```
+plugins: [
+    {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        displaySiteLogo: true,
+        displaySiteTitle: true,
+        invertSiteLogo: false,
+        useHero: true,
+        useStickyHeader: true,
+        mobileMenuBreakpoint: "768px",
+      },
+    },
+    `gatsby-theme-catalyst-header-basic`,
+    `gatsby-theme-catalyst-footer-basic`,
+  ],
+```
+
+### Customize the appearance
+
+[Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
+
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. A combination of straight exports and [deepmerge](https://www.npmjs.com/package/deepmerge) is used to manage the shadowing of design tokens. The files you should modify to set design tokens are always located in the following location in the starters:
+
+    .
+    ├── src
+      ├── gatsby-plugin-theme-ui
+        ├── breakpoints.js
+        ├── colors.js
+        ├── fonts.js
+        ├── fontSizes.js
+        ├── fontWeights.js
+        ├── lineHeights.js
+        ├── sizes.js
+        ├── spaces.js
+        ├── styles.js
+        ├── variants.js
+
+Try adding this code to the `colors.js` file and see what happens:
+
+```
+import merge from "deepmerge"
+import { BaseThemeColors } from "gatsby-theme-catalyst-core"
+
+export default merge(BaseThemeColors, {
+  header: {
+    background: "red",
+    backgroundOpen: "pink",
+    text: "yellow",
+    textOpen: "white",
+    icons: "purple",
+    iconsHover: "green",
+    iconsOpen: "white",
+  },
+})
+```
+
+## Get Building!
+
+Right now the Catalyst themes just provide a starting point, a foundation, on which you can build your own awesome and amazing thing.
