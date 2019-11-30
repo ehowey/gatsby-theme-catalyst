@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "gatsby-starter-documentation",
+  "version": "0.0.27",
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "now-build": "yarn build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gatsby": "^2.15.24",
+    "gatsby-theme-documentation": "^0.0.27",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
