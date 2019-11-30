@@ -12,7 +12,6 @@ export const useCatalystConfig = () => {
           invertSiteLogo
           mobileMenuBreakpoint
           useStickyHeader
-          anchorNavOffset
         }
       }
     `
