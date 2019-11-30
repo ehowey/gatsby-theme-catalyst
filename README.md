@@ -2,28 +2,26 @@
     <img alt="Gatsby Catalyst Themes" src="https://www.erichowey.dev/images/catalyst-logo.png" width="100" />
 </p>
 <h1 align="center">
-  [WIP] Gatsby Catalyst Themes
+  Gatsby Catalyst Themes
 </h1>
 
 **Currently a WIP, rapid changes at this time**
+
+# Gatsby Catalyst Themes
 
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters.
 
 These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
-**Gatsby-Theme-Catalyst-Core**
+[Read the full docs](https://catalyst.erichowey.dev/)
 
-This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a house.
-
-`gatsby new https://github.com/ehowey/gatsby-starter-catalyst-core`
-
-**Gatsby-Theme-Catalyst-Blog**
-
-Currently a WIP. Extends the core theme to add a basic blog implementation based on gatsby-theme-blog-core which is maintained by the GatsbyJS organization. Relies on markdown for content.
-
-`gatsby new https://github.com/ehowey/gatsby-starter-catalyst-blog`
-
-[Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
+| Theme                                                                     | Demo                                                                                  | Description                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [gatsby-theme-catalyst-core](/gatsby-theme-catalyst-core)                 | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
+| [gatsby-theme-catalyst-header-basic](/gatsby-theme-catalyst-header-basic) | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
+| [gatsby-theme-catalyst-footer-basic](/gatsby-theme-catalyst-footer-basic) | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a very basic footer to the core theme.                                                                                                                                                             |
+| [gatsby-theme-catalyst-blog](/gatsby-theme-catalyst-blog)                 | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | [WIP] This will eventually be a plug-and-play blog for any Catalyst based site.                                                                                                                              |
+| [gatsby-theme-catalyst-writer](/gatsby-theme-catalyst-writer)             | [gatsby-starter-catalyst-writer](https://gatsby-starter-catalyst-writer.netlify.com/) | This is the first complete site using the catalyst set of themes. Designed to be used by a freelance writer as their portfolio. Sanity is used as a CMS.                                                     |
 
 ## Accessibility
 
@@ -78,17 +76,17 @@ This option in gatsby-config is a bit unique. You can specify a social media pro
 socialLinks: [
       {
         name: `Email`,
-        url: `eric@erichowey.dev`,
+        link: `eric@erichowey.dev`,
         location: `footer`, //Options are "all", "header", "footer"
       },
       {
         name: `Github`,
-        url: `https://www.github.com/ehowey`,
+        link: `https://www.github.com/ehowey`,
         location: `all`, //Options are "all", "header", "footer"
       },
       {
         name: `Twitter`,
-        url: `https://www.twitter.com/erchwy`,
+        link: `https://www.twitter.com/erchwy`,
         location: `header`, //Options are "all", "header", "footer"
       },
     ],
