@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Catalyst Basic`,
     description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
+    keywords: [`keyword one`, `keyword two`, `keyword three`],
     author: `Eric Howey`,
     siteUrl: `https://gatsby-starter-catalyst-basic.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
     menuLinks: [
