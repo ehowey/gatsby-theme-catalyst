@@ -7,11 +7,11 @@
 
 **Currently a WIP, rapid changes at this time**
 
+[Read the full docs](https://catalyst.erichowey.dev/)
+
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of progressive themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters.
 
 These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
-
-[Read the full docs](https://catalyst.erichowey.dev/)
 
 | Theme                                | Demo                                                                                  | Description                                                                                                                                                                                                  |
 | ------------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -25,7 +25,9 @@ These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https:/
 
 Accesibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics. Currently this theme is scoring 100 in Google Lighthouse audit for accessibility.
 
-## Customizing the themes and starters
+## Getting Started
+
+This set of themes, at least right now, is developer friendly and requires a basic working knowledge of GatsbyJS and web development. I have tried to make it as easy as possible however I assume you have a basic knowledge of the command line, git, etc.
 
 **Helpful Reading**:
 
@@ -34,6 +36,14 @@ Accesibility is important to me. I have made every effort to address accessibili
 - [Theme-UI Docs](https://theme-ui.com/)
 - [MDX Docs](https://mdxjs.com/)
 - [Component Shadowing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
+
+### Using a gatsby-starter to implement the themes
+
+All of these themes are available on NPM but the easiest way to get started is via a gatsby-starter that includes the theme(s) already. Currently the following starters are available:
+
+**gatsby-starter-catalyst-core**: `gatsby new catalyst-core https://github.com/ehowey/gatsby-starter-catalyst-core`
+**gatsby-starter-catalyst-basic**: `gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic`
+**gatsby-starter-catalyst-writer**: `gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
 
 ### Modifying Gatsby-Config.JS
 
@@ -157,10 +167,6 @@ export default merge(BaseThemeFonts, {
 ### Changing logo sizes
 
 A common change you will need to make is to the logo size. The logo sizes are managed in the following location: `...src/gatsby-plugin-theme-ui/sizes.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
-
-### Advanced development and contributing
-
-You can use this main repository to do advanced development work using yarn workspaces. Fork this repository. Clone a local copy of your fork and get to work! I would love to see what you make happen!
 
 ## Philosophy - Less is More
 
