@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Catalyst Basic`,
-    description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
+    description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. Incorporates gatsby-theme-catalyst-core, gatsby-theme-catalyst-header-basic, and gatsby-theme-catalyst-footer-basic.`,
+    keywords: [`gatsby`, `theme`, `react`],
     author: `Eric Howey`,
-    siteUrl: `https://gatsby-starter-catalyst-basic.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
+    twitter: `@erchwy`,
+    siteUrl: `https://gatsby-starter-catalyst-basic.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
       {
         name: `Page 1`,

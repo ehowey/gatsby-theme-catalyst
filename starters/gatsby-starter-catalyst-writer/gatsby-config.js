@@ -3,9 +3,11 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Catalyst Writer`,
-    description: `Speed up your Gatsby development workflow. Designed as an opinionated and high speed starter.`,
+    description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. A theme for freelance writers using SANITY.io for the CMS.`,
+    keywords: [`writer`, `journalist`, `author`],
     author: `Eric Howey`,
-    siteUrl: `https://gatsby-starter-catalyst-writer.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file
+    twitter: `@erchwy`,
+    siteUrl: `https://gatsby-starter-catalyst-writer.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
       {
         name: `Work`,

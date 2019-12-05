@@ -1,78 +1,117 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useSiteMetadata } from "./use-site-metadata"
 
-function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
+const SEO = ({
+  description: propDescription,
+  lang,
+  meta,
+  keywords: propKeywords,
+  title: propTitle,
+  image: propImage,
+  isBlogPost,
+}) => {
+  const { title, description, keywords, twitter, siteUrl } = useSiteMetadata()
+  const data = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
+        seoImage: file(relativePath: { eq: "seo-default.png" }) {
+          childImageSharp {
+            resize(width: 512) {
+              src
+              width
+              height
+            }
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const seoTitle = propTitle || title
+  const seoDescription = propDescription || description
+  const seoKeywords = propKeywords || keywords
+  const seoImage = propImage || data.seoImage.childImageSharp.resize
+  const seoImageSrc = `${siteUrl}${seoImage.src}`
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={seoTitle}
+      titleTemplate={`%s | ${title}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: seoDescription,
         },
         {
+          name: `image`,
+          content: seoImageSrc,
+        },
+
+        //Open Graph
+        {
           property: `og:title`,
-          content: title,
+          content: seoTitle,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: seoDescription,
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: isBlogPost ? `article` : `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:image`,
+          content: seoImageSrc,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          property: `og:image:alt`,
+          content: seoTitle,
         },
+        { property: `og:image:width`, content: seoImage.width },
+        { property: `og:image:height`, content: seoImage.height },
+
+        // Twitter
         {
           name: `twitter:title`,
-          content: title,
+          content: seoTitle,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: seoDescription,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:creator`,
+          content: twitter,
+        },
+        {
+          name: `twitter:site`,
+          content: twitter,
+        },
+        {
+          name: `twitter:image`,
+          content: seoImageSrc,
+        },
+        {
+          name: `twitter:image:alt`,
+          content: seoTitle,
         },
       ]
         .concat(
-          keywords.length > 0
+          seoKeywords.length > 0
             ? {
                 name: `keywords`,
-                content: keywords.join(`, `),
+                content: seoKeywords.join(`, `),
               }
             : []
         )
@@ -84,7 +123,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
+  isBlogPost: false,
 }
 
 SEO.propTypes = {
@@ -93,6 +132,7 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  isBlogPost: PropTypes.bool,
 }
 
 export default SEO
