@@ -24,16 +24,6 @@ const SEO = ({
   const data = useStaticQuery(
     graphql`
       query {
-        # site {
-        #   siteMetadata {
-        #     title
-        #     description
-        #     keywords
-        #     author
-        #     siteUrl
-        #     twitter
-        #   }
-        # }
         seoImage: file(relativePath: { eq: "seo-default.png" }) {
           childImageSharp {
             resize(width: 512) {
