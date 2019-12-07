@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { Fragment } from "react";
-import { useContext } from "react";
-import { HomeContext } from "gatsby-theme-catalyst-core";
-import ButtonPrimary from "../../components/button-primary";
-import ButtonSecondary from "../../components/button-secondary";
+import { jsx, Styled } from "theme-ui"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { Fragment } from "react"
+import { useContext } from "react"
+import { HomeContext } from "gatsby-theme-catalyst-core"
+import ButtonPrimary from "../../components/button-primary"
+import ButtonSecondary from "../../components/button-secondary"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -26,16 +26,16 @@ const Hero = () => {
         }
       }
     }
-  `);
-  const [isHome] = useContext(HomeContext);
-  const hero = data.allSanityHomePage.nodes;
+  `)
+  const [isHome] = useContext(HomeContext)
+  const hero = data.allSanityHomePage.nodes
   if (isHome) {
     return (
       <div
         sx={{
           width: "100%",
           backgroundColor: "accent",
-          mb: 4
+          mb: 4,
         }}
       >
         <div
@@ -43,12 +43,12 @@ const Hero = () => {
             display: "flex",
             flexDirection: ["column", null, "row", null, null],
             width: "100%",
-            height: ["auto", null, "70vh", null, null],
+            height: ["auto", null, "auto", null, null],
             minHeight: ["initial", null, "500px", null, null],
             backgroundColor: "accent",
             maxWidth: "maxPageWidth",
             mx: "auto",
-            my: 0
+            my: 0,
           }}
         >
           {hero.map(content => (
@@ -56,7 +56,7 @@ const Hero = () => {
               <Img
                 sx={{
                   width: "100%",
-                  height: ["300px", null, "100%", null, null]
+                  height: ["300px", null, "auto", null, null],
                 }}
                 fluid={content.heroImage.asset.fluid}
                 alt={hero.title}
@@ -65,7 +65,7 @@ const Hero = () => {
                 sx={{
                   alignSelf: "center",
                   py: [5, null, 4, null, null],
-                  px: [3, null, 4, null, null]
+                  px: [3, null, 4, null, null],
                 }}
               >
                 <h1
@@ -82,7 +82,7 @@ const Hero = () => {
                     m: 0,
                     py: 4,
                     mt: 0,
-                    mb: 4
+                    mb: 4,
                   }}
                 >
                   {content.heroTitle}
@@ -91,9 +91,9 @@ const Hero = () => {
                 <div
                   sx={{
                     display: "grid",
-                    gridGap: [2, null, 4, null, null],
+                    gridGap: [2, 4, null, null, null],
                     gridTemplateColumns: "auto auto 1fr",
-                    justifyItems: "start"
+                    justifyItems: "start",
                   }}
                 >
                   <ButtonPrimary to="/work">Published Work</ButtonPrimary>
@@ -104,10 +104,10 @@ const Hero = () => {
           ))}
         </div>
       </div>
-    );
+    )
   } else {
-    return null;
+    return null
   }
-};
+}
 
-export default Hero;
+export default Hero
