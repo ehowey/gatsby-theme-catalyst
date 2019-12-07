@@ -171,6 +171,12 @@ export default merge(BaseTheme, {
 })
 ```
 
+### Custom hero component using component shadowing
+
+There is optional support for a custom hero component which is enabled by setting `useHero: true` in the core theme options. You can then access the hero component via component shadowing in this location for a starter: `src/gatsby-theme-catalyst-core/components/hero.js`. This section of the website comes below the header but before the content from MDX files and is only visible on the home page.
+
+For an example of this in action see [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/).
+
 ### icon.png
 
 There is also a file called icon.png that provides your icon for use in the progressive web app, web browsers and in other locations. This file should be square and at least 512x512px in dimensions.
