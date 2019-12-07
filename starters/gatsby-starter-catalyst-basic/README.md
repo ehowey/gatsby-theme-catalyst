@@ -1,10 +1,12 @@
 # Gatsby Starter Catalyst Basic
 
-**Blazing Start**
+Basic theme that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-basic`, and `gatsby-theme-catalyst-footer-basic`.
+
+**Catalyzing Start**
 
 ```sh
-# create a new Gatsby site using the catalyst core starter site
-gatsby new my-catalyst-starter-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
+# create a new Gatsby site using the catalyst basic starter site
+gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
 ```
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)

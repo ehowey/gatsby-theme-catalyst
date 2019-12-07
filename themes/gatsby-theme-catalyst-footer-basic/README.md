@@ -1,7 +1,8 @@
 # Gatsby Theme Catalyst Footer Basic
 
-Sibling theme for `gatsby-theme-catalyst-core` which adds a basic site footer.
+Sibling theme for `gatsby-theme-catalyst-core` which adds a basic site footer using latent component shadowing. Just a simple copyright, branding, and social links at this time.
 
-**Documentation**
+**Demos:**
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+- [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)
+- [https://www.erichowey.dev/](https://www.erichowey.dev/)

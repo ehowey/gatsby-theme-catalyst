@@ -45,12 +45,8 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        displaySiteLogo: true,
-        displaySiteTitle: true,
-        invertSiteLogo: false,
         useHero: true,
         useStickyHeader: true,
-        mobileMenuBreakpoint: "768px",
       },
     },
     `gatsby-theme-catalyst-header-basic`,
