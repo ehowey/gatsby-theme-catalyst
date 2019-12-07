@@ -29,6 +29,7 @@ import {
   FaSnapchatGhost,
   FaSoundcloud,
   FaSpotify,
+  FaStackOverflow,
   FaTumblr,
   FaWeibo,
   FaVimeoV,
@@ -419,6 +420,21 @@ export const SocialHeader = () => {
               key={platform.name}
             >
               <FaSpotify />
+            </a>
+          )
+        } else if (
+          (socialName === "stackoverflow" || socialName === "stack overflow") &&
+          (socialLocation === "header" || socialLocation === "all")
+        ) {
+          return (
+            <a
+              href={platform.link}
+              aria-label={platform.name}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={platform.name}
+            >
+              <FaStackOverflow />
             </a>
           )
         } else if (
@@ -928,6 +944,21 @@ export const SocialFooter = () => {
               key={platform.name}
             >
               <FaSpotify />
+            </a>
+          )
+        } else if (
+          (socialName === "stackoverflow" || socialName === "stack overflow") &&
+          (socialLocation === "footer" || socialLocation === "all")
+        ) {
+          return (
+            <a
+              href={platform.link}
+              aria-label={platform.name}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={platform.name}
+            >
+              <FaStackOverflow />
             </a>
           )
         } else if (
