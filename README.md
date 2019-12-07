@@ -104,73 +104,82 @@ socialLinks: [
 
 [Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
 
-Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. A combination of straight exports and [deepmerge](https://www.npmjs.com/package/deepmerge) is used to manage the shadowing of design tokens. The files you should modify to set design tokens are always located in the following location in the starters:
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. [Deepmerge](https://www.npmjs.com/package/deepmerge) is used to manage the shadowing of design tokens in the starters. The file you should modify to set design tokens is always located in the following location:
 
     .
     ├── src
       ├── gatsby-plugin-theme-ui
-        ├── breakpoints.js
-        ├── colors.js
-        ├── fonts.js
-        ├── fontSizes.js
-        ├── fontWeights.js
-        ├── lineHeights.js
-        ├── sizes.js
-        ├── spaces.js
-        ├── styles.js
-        ├── variants.js
+        ├── index.js
 
-Try adding this code to the `colors.js` file and see what happens:
+Try adding this code to the `index.js` file and see what happens:
 
 ```
 import merge from "deepmerge"
-import { BaseThemeColors } from "gatsby-theme-catalyst-core"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+import { baseColors } from "@theme-ui/preset-tailwind"
 
-export default merge(BaseThemeColors, {
-  header: {
-    background: "red",
-    backgroundOpen: "pink",
-    text: "yellow",
-    textOpen: "white",
-    icons: "purple",
-    iconsHover: "green",
-    iconsOpen: "white",
+export default merge(BaseTheme, {
+  colors: {
+    background: baseColors.pink[4],
   },
 })
 ```
 
 ### Typography and changing fonts
 
-The default settings in the theme include a system font stack for both the body and headings. These themes do not use typography.js at this time.
-
-To add a custom font you need to first add the font as a dependency in your starter site, like this for Raleway:
+To add a custom font you need to first add the font as a dependency in your starter site, for example:
 
 `yarn add typeface-raleway`
 
-Then at the top of `src\gatsby-plugin-theme-ui\fonts.js` file you will need to import the font and declare it, like this for Raleway:
+Then at the top of `src\gatsby-plugin-theme-ui\index.js` file you will need to import the font and declare it, like this for Raleway:
 
 ```
-import merge from "deepmerge";
-import { BaseThemeFonts } from "gatsby-theme-catalyst-core";
-import "typeface-raleway";
+import merge from "deepmerge"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+import "typeface-raleway"
 
-export default merge(BaseThemeFonts, {
-  //Updated theme options go here.
+export default merge(BaseTheme, {
   fonts: {
-      text: "Raleway, sans-serif",
-      heading: "inherit",
-      monospace: "Menlo, monospace",
-    },
-});
+    body: "Raleway, sans-serif",
+    heading: "inherit",
+  },
+})
 ```
 
 ### Changing logos and logo sizes
 
-A common change you will need to make is to the logo and logo size. 
+A common change you will need to make is to the logo and logo size.
 
-The logo is found by default in the `src/content/assets` folder under the names `logo.png` and `icon.png`.  The logo file is what is used on the website for branding.  The logo-512 file is used by the manifest for PWA support and is not displayed on the website.  Change these files to reflect your branding.
+The logo is found by default in the `src/content/assets` folder under the names `logo.png`. Change this file to reflect your branding.
 
-The logo sizes are managed in the following location: `...src/gatsby-plugin-theme-ui/sizes.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+The logo size is managed in the following location: `...src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+
+Try this in `...src/gatsby-plugin-theme-ui/index.js` for a big logo:
+
+```
+import merge from "deepmerge"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+
+export default merge(BaseTheme, {
+  sizes: {
+    headerHeight: "auto", // Provides fallback setting to control header height
+    logoWidthSmall: "100px", // Logo width on small screens, up to 768px
+    logoWidthMedium: "200px", // Logo width on medium screens, 768px - 1024px
+    logoWidthLarge: "300px", // Logo width on large screens, above 1024px
+    logoHeightSmall: "100px", // Logo height on small screens, up to 768px
+    logoHeightMedium: "200px", // Logo width on medium screens, 768px - 1024px
+    logoHeightLarge: "300px", // Logo width on large screens, above 1024px
+  },
+})
+```
+
+### icon.png
+
+There is also a file called icon.png that provides your icon for use in the progressive web app, web browsers and in other locations. This file should be square and at least 512x512px in dimensions.
+
+### seo-default.png
+
+This file is used as the default image in places like Twitter and Facebook. This file is best in a 2:1 aspect ratio, something like 1200x600px. See the [twitter card docs](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image) for more information.
 
 ## Philosophy - Less is More
 
