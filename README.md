@@ -168,7 +168,7 @@ export default merge(BaseThemeFonts, {
 
 A common change you will need to make is to the logo and logo size. 
 
-The logo is found by default in the `src/content/assets` folder under the names `logo.png` and `logo-512.png`.  The logo file is what is used on the website for branding.  The logo-512 file is used by the manifest for PWA support and is not displayed on the website.  Change these files to reflect your branding.
+The logo is found by default in the `src/content/assets` folder under the names `logo.png` and `icon.png`.  The logo file is what is used on the website for branding.  The logo-512 file is used by the manifest for PWA support and is not displayed on the website.  Change these files to reflect your branding.
 
 The logo sizes are managed in the following location: `...src/gatsby-plugin-theme-ui/sizes.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
 
