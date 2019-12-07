@@ -1,6 +1,6 @@
 # Getting Started
 
-This set of themes, at least right now, is more developer friendly and requires a basic working knowledge of GatsbyJS and web development in general. I have tried to make it as easy as possible however I assume you have some basic working knowledge of the command line, git, etc.
+This set of themes, at least right now, is developer friendly and requires a basic working knowledge of GatsbyJS and web development. I have tried to make it as easy as possible however I assume you have a basic knowledge of the command line, git, etc.
 
 **Helpful Reading**:
 
@@ -10,42 +10,48 @@ This set of themes, at least right now, is more developer friendly and requires 
 - [MDX Docs](https://mdxjs.com/)
 - [Component Shadowing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
 
-## Install a starter
+### Using a gatsby-starter to implement the themes
+
+All of these themes are available on NPM but the easiest way to get started is via a gatsby-starter that includes the theme(s) already. Currently the following starters are available:
+
+**gatsby-starter-catalyst-core**: `gatsby new catalyst-core https://github.com/ehowey/gatsby-starter-catalyst-core`
+
+**gatsby-starter-catalyst-basic**: `gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic`
+
+**gatsby-starter-catalyst-writer**: `gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
+
+### Modifying Gatsby-Config.JS
+
+Theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options in here you can modify.
+
+**Core Theme Options**
 
 ```
-gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
-cd catalyst-basic
-gatsby develop
+   {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        displaySiteLogo: true,
+        displaySiteTitle: true,
+        invertLogo: true,
+        mobileMenuBreakpoint: "1024px",
+        useStickyHeader: true,
+        useHero: "true",
+      }
+    }
 ```
 
-## Customize gatsby-config.js
+| Option                 | Values                      | Description                                                                                               |
+| ---------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `contentPath`          | String                      | Defaults to "content/pages", determines where the pages are created from.                                 |
+| `assetPath`            | String                      | Defaults to "content/assets", determines where the page assets like images are located.                   |
+| `displaySiteLogo`      | true or false               | Controls whether the logo is displayed                                                                    |
+| `displaySiteTitle`     | true or false               | Controls whether the site title is displayed                                                              |
+| `invertLogo`           | true or false               | Controls whether the logo is inverted when the mobile menu is open                                        |
+| `useHero`              | true or false               | Flag to include a hero component in the site.                                                             |
+| `useStickyHeader`      | true or false               | Controls whether the header is sticky or static                                                           |
+| `mobileMenuBreakpoint` | String value, e.g. "1024px" | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
-### siteMetaData
-
-Modify this to reflect the site you are working on, e.g. change the site title, author, etc. The `siteURL:` field is used during the build process for the sitemap and doesn't matter when you are in development. Just don't forget to change it. There are a few fields that are worth a longer explanation.
-
-**menuLinks**
-
-This is pretty standard Gatsby stuff except for the `type:` field. This field takes two values `internal` or `anchor`. These fields specify whether the link should use a normal `<Link>` component from Gatsby or an anchor link from [react-scroll](https://www.npmjs.com/package/react-scroll).
-
-It looks like this:
-
-```
-menuLinks: [
-      {
-        name: `Page 1`,
-        link: `/page-1`,
-        type: `internal`, //internal or anchor
-      },
-      {
-        name: `Anchor 1`,
-        link: `#anchor-1`,
-        type: `anchor`, //internal or anchor
-      },
-    ],
-```
-
-**socialLinks**
+### Social Links
 
 This option in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
 
@@ -69,80 +75,86 @@ socialLinks: [
     ],
 ```
 
-## Changing logos and logo sizes
-
-A common change you will need to make is to the logo and logo size to reflect your branding. 
-
-The logo is found by default in the `src/content/assets` folder under the names `logo.png` and `icon.png`.  The logo file is what is used on the website for branding.  The logo-512 file is used by the manifest for PWA support and is not displayed on the website.  Change these files to reflect your branding.
-
-The logo sizes are managed in the following location: `src/gatsby-plugin-theme-ui/sizes.js`. In most cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height for the navbar if needed.
-
-## Add some of your own content
-
-By default the content is located in `/content/pages/` and `/content/assets/`. [MDX](https://mdxjs.com/getting-started/gatsby) is used as the preferred content method. Go ahead and add some of your own content!
-
-### Customize the theme options and child themes
-
-`gatsby-theme-catalyst-core` takes a number of different options that help to easily determine some of the look and style of the theme. You can review all the [options in the docs here](/gatsby-theme-catalyst-core). There are preconfigured defaults so you don't necessarily need to specify any options for the theme. Right now there are only one basic header and one basic footer, this will change in the future but for now you can also include those.
-
-An example setup might look like this:
-
-```
-plugins: [
-    {
-      resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        displaySiteLogo: true,
-        displaySiteTitle: true,
-        invertSiteLogo: false,
-        useHero: true,
-        useStickyHeader: true,
-        mobileMenuBreakpoint: "768px",
-      },
-    },
-    `gatsby-theme-catalyst-header-basic`,
-    `gatsby-theme-catalyst-footer-basic`,
-  ],
-```
-
-### Customize the appearance
+### Customizing the themes using Theme-UI and Design Tokens
 
 [Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
 
-Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. A combination of straight exports and [deepmerge](https://www.npmjs.com/package/deepmerge) is used to manage the shadowing of design tokens. The files you should modify to set design tokens are always located in the following location in the starters:
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. [Deepmerge](https://www.npmjs.com/package/deepmerge) is used to manage the shadowing of design tokens in the starters. The file you should modify to set design tokens is always located in the following location:
 
     .
     ├── src
       ├── gatsby-plugin-theme-ui
-        ├── breakpoints.js
-        ├── colors.js
-        ├── fonts.js
-        ├── fontSizes.js
-        ├── fontWeights.js
-        ├── lineHeights.js
-        ├── sizes.js
-        ├── spaces.js
-        ├── styles.js
-        ├── variants.js
+        ├── index.js
 
-Try adding this code to the `colors.js` file and see what happens:
+Try adding this code to the `index.js` file and see what happens:
 
 ```
 import merge from "deepmerge"
-import { BaseThemeColors } from "gatsby-theme-catalyst-core"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+import { baseColors } from "@theme-ui/preset-tailwind"
 
-export default merge(BaseThemeColors, {
-  header: {
-    background: "red",
-    backgroundOpen: "pink",
-    text: "yellow",
-    textOpen: "white",
-    icons: "purple",
-    iconsHover: "green",
-    iconsOpen: "white",
+export default merge(BaseTheme, {
+  colors: {
+    background: baseColors.pink[4],
   },
 })
 ```
+
+### Typography and changing fonts
+
+To add a custom font you need to first add the font as a dependency in your starter site, for example:
+
+`yarn add typeface-raleway`
+
+Then at the top of `src\gatsby-plugin-theme-ui\index.js` file you will need to import the font and declare it, like this for Raleway:
+
+```
+import merge from "deepmerge"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+import "typeface-raleway"
+
+export default merge(BaseTheme, {
+  fonts: {
+    body: "Raleway, sans-serif",
+    heading: "inherit",
+  },
+})
+```
+
+### Changing logos and logo sizes
+
+A common change you will need to make is to the logo and logo size.
+
+The logo is found by default in the `src/content/assets` folder under the names `logo.png`. Change this file to reflect your branding.
+
+The logo size is managed in the following location: `...src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+
+Try this in `...src/gatsby-plugin-theme-ui/index.js` for a big logo:
+
+```
+import merge from "deepmerge"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+
+export default merge(BaseTheme, {
+  sizes: {
+    headerHeight: "auto", // Provides fallback setting to control header height
+    logoWidthSmall: "100px", // Logo width on small screens, up to 768px
+    logoWidthMedium: "200px", // Logo width on medium screens, 768px - 1024px
+    logoWidthLarge: "300px", // Logo width on large screens, above 1024px
+    logoHeightSmall: "100px", // Logo height on small screens, up to 768px
+    logoHeightMedium: "200px", // Logo width on medium screens, 768px - 1024px
+    logoHeightLarge: "300px", // Logo width on large screens, above 1024px
+  },
+})
+```
+
+### icon.png
+
+There is also a file called icon.png that provides your icon for use in the progressive web app, web browsers and in other locations. This file should be square and at least 512x512px in dimensions.
+
+### seo-default.png
+
+This file is used as the default image in places like Twitter and Facebook. This file is best in a 2:1 aspect ratio, something like 1200x600px. See the [twitter card docs](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image) for more information.
 
 ## Get Building!
 
