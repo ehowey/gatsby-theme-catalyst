@@ -3,9 +3,7 @@
   "description": "Sibling theme for gatsby-theme-catalyst-core to add basic header styles.",
   "version": "0.1.0",
   "author": "Eric Howey <eric@erichowey.dev>",
-  "dependencies": {
-    "gatsby-theme-catalyst-core": "^0.14.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "gatsby": "^2.18.5",
     "prettier": "^1.19.1",
@@ -15,7 +13,8 @@
   "peerDependencies": {
     "gatsby": "^2.18.5",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "gatsby-theme-catalyst-core": "^0.14.0"
   },
   "keywords": [
     "gatsby",
