@@ -1,5 +1,5 @@
 export { default as SEO } from "./src/utils/seo"
-export { default as BaseTheme } from "./src/gatsby-plugin-theme-ui/index"
+export { default as BaseTheme } from "./src/theme"
 export { NavContext } from "./src/contexts/nav-context"
 export { MobileContext } from "./src/contexts/mobile-context"
 export { HomeContext } from "./src/contexts/home-context"
