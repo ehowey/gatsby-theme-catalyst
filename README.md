@@ -102,26 +102,16 @@ socialLinks: [
 
 [Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
 
-Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. [Deepmerge](https://www.npmjs.com/package/deepmerge) is used to manage the shadowing of design tokens in the starters. The file you should modify to set design tokens is always located in the following location:
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The theme is based on the [tailwind presets](https://github.com/system-ui/theme-ui/tree/master/packages/preset-tailwind) as this provides a good base set of standard spacings, sizings, etc. You will also see a reference to colors like `baseColors.pink[5]` these basecolors can be found on the [TailwindCSS docs](https://tailwindcss.com/docs/customizing-colors/).
+
+The file you should modify to set design tokens is always located in the following location:
 
     .
     ├── src
-      ├── gatsby-plugin-theme-ui
-        ├── index.js
+      ├── gatsby-theme-catalyst-core
+        ├── theme.js
 
-Try adding this code to the `index.js` file and see what happens:
-
-```
-import merge from "deepmerge"
-import { BaseTheme } from "gatsby-theme-catalyst-core"
-import { baseColors } from "@theme-ui/preset-tailwind"
-
-export default merge(BaseTheme, {
-  colors: {
-    background: baseColors.pink[4],
-  },
-})
-```
+Try changing some colors in the file and see what happens!
 
 ### Typography and changing fonts
 
