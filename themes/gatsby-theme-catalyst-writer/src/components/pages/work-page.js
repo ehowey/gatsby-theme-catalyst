@@ -2,7 +2,6 @@
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { SEO } from "gatsby-theme-catalyst-core"
 import PageHeader from "../page-header"
 import SelectedWork from "../selected-work"
 
@@ -29,7 +28,6 @@ const WorkPage = () => {
 
   return (
     <Fragment>
-      <SEO title={title} />
       <PageHeader topImage={topImage} topImageAlt={topImageAlt} title={title} />
       <SelectedWork />
     </Fragment>

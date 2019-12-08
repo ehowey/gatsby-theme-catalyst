@@ -2,7 +2,6 @@
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { SEO } from "gatsby-theme-catalyst-core"
 import FeaturedLogos from "../featured-logos"
 import FeaturedWork from "../featured-work"
 import SanityContent from "../sanity/sanity-content"
@@ -28,7 +27,6 @@ const HomePage = () => {
 
   return (
     <Fragment>
-      <SEO title={title} />
       <Styled.h2>{logoTitle}</Styled.h2>
       <FeaturedLogos />
       <Styled.h2>{featuredTitle}</Styled.h2>
