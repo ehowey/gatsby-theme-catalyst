@@ -19,7 +19,6 @@ const HomePage = () => {
     }
   `)
 
-  const title = data.sanityHomePage.heroTitle
   const logoTitle = data.sanityHomePage.logoTitle
   const featuredTitle = data.sanityHomePage.featuredTitle
   const contactTitle = data.sanityHomePage.contactTitle
