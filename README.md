@@ -148,11 +148,11 @@ export default merge(BaseTheme, {
 
 A common change you will need to make is to the logo and logo size.
 
-The logo is found by default in the `src/content/assets` folder under the names `logo.png`. Change this file to reflect your branding.
+The logo is found by default in the `src/content/assets` folder under the names `catalyst-logo.png`. Change this file to reflect your branding. You can use other file extensions, e.g. .jpg but you cannot change the file name. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-logo.jpg` but not with `logo-main.jpg`.
 
-The logo size is managed in the following location: `...src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+The logo size is managed in the following location: `src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
 
-Try this in `...src/gatsby-plugin-theme-ui/index.js` for a big logo:
+Try this in `src/gatsby-plugin-theme-ui/index.js` for a big logo:
 
 ```
 import merge from "deepmerge"
@@ -177,9 +177,9 @@ There is optional support for a custom hero component which is enabled by settin
 
 For an example of this in action see [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/).
 
-### icon.png
+### catalyst-icon.png
 
-There is also a file called icon.png that provides your icon for use in the progressive web app, web browsers and in other locations. This file should be square and at least 512x512px in dimensions.
+There is also a file called `catalyst-icon.png` that provides your icon for use in the progressive web app, web browsers and in other locations. This file should be square and at least 512x512px in dimensions. You can use other file extensions, e.g. .jpg but you cannot change the file name.
 
 ### catalyst-social.png
 

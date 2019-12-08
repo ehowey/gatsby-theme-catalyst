@@ -16,7 +16,7 @@ const SiteLogo = () => {
           title
         }
       }
-      brandingLogo: file(relativePath: { eq: "logo.png" }) {
+      brandingLogo: file(name: { eq: "catalyst-logo" }) {
         childImageSharp {
           fluid(maxHeight: 300) {
             ...GatsbyImageSharpFluid_withWebp
