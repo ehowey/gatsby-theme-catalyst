@@ -181,9 +181,9 @@ For an example of this in action see [gatsby-starter-catalyst-basic](https://gat
 
 There is also a file called icon.png that provides your icon for use in the progressive web app, web browsers and in other locations. This file should be square and at least 512x512px in dimensions.
 
-### seo-default.png
+### catalyst-social.png
 
-This file is used as the default image in places like Twitter and Facebook. This file is best in a 2:1 aspect ratio, something like 1200x600px. See the [twitter card docs](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image) for more information.
+This file is used as the default image in places like Twitter and Facebook. This file is best in a 2:1 aspect ratio, something like 1200x600px. See the [twitter card docs](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image) for more information. You can use alternate image types such as .jpg if you want. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-social.jpg` but not with `social-image.jpg`.
 
 ## Philosophy - Less is More
 

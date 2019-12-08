@@ -17,9 +17,9 @@ const SEO = ({
   const data = useStaticQuery(
     graphql`
       query {
-        seoImage: file(relativePath: { eq: "seo-default.png" }) {
+        seoImage: file(name: { eq: "catalyst-social" }) {
           childImageSharp {
-            resize(width: 512) {
+            resize(width: 1024) {
               src
               width
               height
