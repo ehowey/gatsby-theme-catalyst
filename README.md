@@ -119,19 +119,19 @@ To add a custom font you need to first add the font as a dependency in your star
 
 `yarn add typeface-raleway`
 
-Then at the top of `src\gatsby-plugin-theme-ui\index.js` file you will need to import the font and declare it, like this for Raleway:
+Then at the top of `src\gatsby-theme-catalyst-core\theme.js` file you will need to import the font and declare it, like this for Raleway:
 
 ```
-import merge from "deepmerge"
-import { BaseTheme } from "gatsby-theme-catalyst-core"
+import { tailwind } from "@theme-ui/preset-tailwind"
 import "typeface-raleway"
 
-export default merge(BaseTheme, {
+export default {
+  ...tailwind,
   fonts: {
-    body: "Raleway, sans-serif",
-    heading: "inherit",
+    ...tailwind.fonts,
+    body: '"Raleway", sans-serif',
   },
-})
+}
 ```
 
 ### Changing logos and logo sizes
