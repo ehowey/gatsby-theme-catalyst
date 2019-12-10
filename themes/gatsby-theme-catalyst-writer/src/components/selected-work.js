@@ -23,7 +23,7 @@ const SelectedWork = () => {
           id
           link
           publisher
-          date
+          date(formatString: "MMMM YYYY")
           categories {
             title
           }

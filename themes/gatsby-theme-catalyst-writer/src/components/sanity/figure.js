@@ -18,8 +18,18 @@ export default ({ node }) => {
   )
 
   return (
-    <figure>
-      <Img fluid={fluidProps} alt={node.alt} />
+    <figure
+      sx={{
+        mx: 0,
+      }}
+    >
+      <Img
+        sx={{
+          minHeight: ["300px", "auto", null, null, null],
+        }}
+        fluid={fluidProps}
+        alt={node.alt}
+      />
       {node.caption && (
         <figcaption
           sx={{

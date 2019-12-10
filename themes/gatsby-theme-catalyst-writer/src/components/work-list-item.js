@@ -7,7 +7,7 @@ const WorkLi = props => {
       <Styled.a href={props.link} target="_blank" rel="noopener noreferrer">
         {props.title}
       </Styled.a>
-      &nbsp;&#8212;&nbsp; {props.publisher}, {props.date}
+      &nbsp;&#8212;&nbsp; <i>{props.publisher}</i>, {props.date}
     </li>
   )
 }

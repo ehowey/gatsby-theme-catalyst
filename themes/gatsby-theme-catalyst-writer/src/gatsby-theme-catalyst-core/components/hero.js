@@ -74,7 +74,7 @@ const Hero = () => {
                     fontWeight: "heading",
                     lineHeight: "heading",
                     fontSize: 6,
-                    borderColor: "secondary",
+                    borderColor: "primary",
                     borderTopWidth: "8px",
                     borderBottomWidth: "8px",
                     borderTopStyle: "dotted",
@@ -91,9 +91,15 @@ const Hero = () => {
                 <div
                   sx={{
                     display: "grid",
-                    gridGap: [2, 4, null, null, null],
-                    gridTemplateColumns: "auto auto 1fr",
-                    justifyItems: "start",
+                    gridGap: [3, 4, null, null, null],
+                    gridTemplateColumns: [
+                      "auto",
+                      "auto auto 1fr",
+                      null,
+                      null,
+                      null,
+                    ],
+                    justifyItems: ["stretch", "start", null, null, null],
                   }}
                 >
                   <ButtonPrimary to="/work">Published Work</ButtonPrimary>

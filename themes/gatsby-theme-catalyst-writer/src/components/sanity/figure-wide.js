@@ -18,16 +18,20 @@ export default ({ node }) => {
   )
 
   return (
-    <figure>
+    <figure
+      sx={{
+        mx: 0,
+      }}
+    >
       <Img
         sx={{
-          maxHeight: "350px",
-          width: "80vw",
+          maxHeight: "400px",
+          width: ["100vw", null, null, "85vw", "80vw"],
           position: "relative",
           left: "50%",
           right: "50%",
-          marginLeft: "-40vw",
-          marginRight: "-40vw",
+          marginLeft: ["-50vw", null, null, "-42.5vw", "-40vw"],
+          marginRight: ["-50vw", null, null, "-42.5vw", "-40vw"],
         }}
         fluid={fluidProps}
         alt={node.alt}

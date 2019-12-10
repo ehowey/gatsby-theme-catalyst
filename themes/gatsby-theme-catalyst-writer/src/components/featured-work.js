@@ -48,7 +48,14 @@ const FeaturedWork = () => {
           key={published.id}
         />
       ))}
-      <ButtonSecondary to="/work">More Published Work</ButtonSecondary>
+      <div
+        sx={{
+          display: "grid",
+          justifyItems: ["stretch", "start", null, null, null],
+        }}
+      >
+        <ButtonSecondary to="/work">More Published Work</ButtonSecondary>
+      </div>
     </div>
   )
 }

@@ -40,7 +40,7 @@ const NavMenuAnchorLink = props => {
           left: "0",
           width: "100%",
           height: "1px",
-          backgroundColor: "secondary",
+          backgroundColor: "primary",
           content: "''",
           opacity: "0",
           transition: "height 0.3s, opacity 0.3s, transform 0.3s",
