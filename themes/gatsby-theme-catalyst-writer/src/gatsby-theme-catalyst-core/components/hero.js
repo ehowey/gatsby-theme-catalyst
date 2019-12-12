@@ -1,18 +1,19 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { useContext } from "react"
 import { HomeContext } from "gatsby-theme-catalyst-core"
 import ButtonPrimary from "../../components/button-primary"
 import ButtonSecondary from "../../components/button-secondary"
+import SanityContent from "../../components/sanity/sanity-content"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
       sanityHomePage {
         heroTitle
-        heroText
+        _rawHeroText
         heroImage {
           asset {
             fluid(maxWidth: 1024) {
@@ -81,7 +82,9 @@ const Hero = () => {
             >
               {hero.heroTitle}
             </h1>
-            <Styled.p sx={{ mt: 0, mb: 4 }}>{hero.heroText}</Styled.p>
+            <div sx={{ mt: 0, mb: 4 }}>
+              <SanityContent data={hero._rawHeroText} />
+            </div>
             <div
               sx={{
                 display: "grid",

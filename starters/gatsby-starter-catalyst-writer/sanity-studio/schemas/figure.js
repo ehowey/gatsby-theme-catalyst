@@ -3,16 +3,17 @@ export default {
   title: "Image",
   type: "image",
   options: {
-    hotspot: true
+    hotspot: true,
   },
   fields: [
     {
       title: "Caption",
       name: "caption",
+      description: "Leave blank if you do not want a caption",
       type: "string",
       options: {
-        isHighlighted: true
-      }
+        isHighlighted: true,
+      },
     },
     {
       name: "alt",
@@ -22,14 +23,14 @@ export default {
         Rule.error("You have to fill out the alternative text.").required(),
       description: "Important for SEO and accessiblity.",
       options: {
-        isHighlighted: true
-      }
-    }
+        isHighlighted: true,
+      },
+    },
   ],
   preview: {
     select: {
       imageUrl: "asset.url",
-      title: "alt"
-    }
-  }
-};
+      title: "alt",
+    },
+  },
+}

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
+import { SEO } from "gatsby-theme-catalyst-core"
 import { useStaticQuery, graphql } from "gatsby"
 import PageHeader from "../page-header"
 import SanityContent from "../sanity/sanity-content"
@@ -10,6 +11,7 @@ const BioQuery = () => {
     query {
       sanityBioPage {
         title
+        seoTitle
         _rawBody
         topimage {
           alt
@@ -23,15 +25,17 @@ const BioQuery = () => {
     }
   `)
 
-  const topImage = data.sanityBioPage.topimage.asset.fluid
-  const topImageAlt = data.sanityBioPage.topimage.alt
-  const title = data.sanityBioPage.title
-  const body = data.sanityBioPage._rawBody
+  const result = data.sanityBioPage
 
   return (
     <Fragment>
-      <PageHeader topImage={topImage} topImageAlt={topImageAlt} title={title} />
-      <SanityContent data={body} />
+      <SEO title={result.seoTitle} />
+      <PageHeader
+        topImage={result.topimage.asset.fluid}
+        topImageAlt={result.topimage.alt}
+        title={result.title}
+      />
+      <SanityContent data={result._rawBody} />
     </Fragment>
   )
 }

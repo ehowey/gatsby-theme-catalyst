@@ -4,12 +4,14 @@ import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PageHeader from "../page-header"
 import SanityContent from "../sanity/sanity-content"
+import { SEO } from "gatsby-theme-catalyst-core"
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
     query {
       sanityContactPage {
         title
+        seoTitle
         _rawBody
         topimage {
           alt
@@ -23,15 +25,17 @@ const ContactPage = () => {
     }
   `)
 
-  const topImage = data.sanityContactPage.topimage.asset.fluid
-  const topImageAlt = data.sanityContactPage.topimage.alt
-  const title = data.sanityContactPage.title
-  const body = data.sanityContactPage._rawBody
+  const result = data.sanityContactPage
 
   return (
     <Fragment>
-      <PageHeader topImage={topImage} topImageAlt={topImageAlt} title={title} />
-      <SanityContent data={body} />
+      <SEO title={result.seoTitle} />
+      <PageHeader
+        topImage={result.topimage.asset.fluid}
+        topImageAlt={result.topimage.alt}
+        title={result.title}
+      />
+      <SanityContent data={result._rawBody} />
     </Fragment>
   )
 }

@@ -9,6 +9,13 @@ export default {
       type: "string",
     },
     {
+      title: "SEO Title",
+      description:
+        "The title used by search engines in the search results, likely the same as your page title.",
+      name: "seoTitle",
+      type: "string",
+    },
+    {
       name: "topimage",
       title: "Top Image",
       type: "figure",

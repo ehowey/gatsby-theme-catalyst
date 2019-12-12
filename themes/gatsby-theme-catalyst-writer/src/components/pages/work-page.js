@@ -4,11 +4,13 @@ import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PageHeader from "../page-header"
 import SelectedWork from "../selected-work"
+import { SEO } from "gatsby-theme-catalyst-core"
 
 const WorkPage = () => {
   const data = useStaticQuery(graphql`
     query {
       sanityWorkPage {
+        seoTitle
         title
         topimage {
           alt
@@ -22,13 +24,16 @@ const WorkPage = () => {
     }
   `)
 
-  const topImage = data.sanityWorkPage.topimage.asset.fluid
-  const topImageAlt = data.sanityWorkPage.topimage.alt
-  const title = data.sanityWorkPage.title
+  const result = data.sanityWorkPage
 
   return (
     <Fragment>
-      <PageHeader topImage={topImage} topImageAlt={topImageAlt} title={title} />
+      <SEO title={result.seoTitle} />
+      <PageHeader
+        topImage={result.topimage.asset.fluid}
+        topImageAlt={result.topimage.alt}
+        title={result.title}
+      />
       <SelectedWork />
     </Fragment>
   )

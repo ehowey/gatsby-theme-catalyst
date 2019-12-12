@@ -9,6 +9,7 @@ export default {
     {
       title: "Caption",
       name: "caption",
+      description: "Leave blank if you do not want a caption",
       type: "string",
       options: {
         isHighlighted: true,

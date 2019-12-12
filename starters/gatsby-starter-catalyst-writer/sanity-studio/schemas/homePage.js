@@ -9,15 +9,16 @@ export default {
       type: "string",
     },
     {
-      title: "Hero Text",
-      name: "heroText",
-      type: "text",
-      rows: 4,
+      title: "SEO Title",
+      description:
+        "The title used by search engines in the search results, likely the same as your page title.",
+      name: "seoTitle",
+      type: "string",
     },
     {
-      title: "Display text in Hero?",
-      name: "displayHeroText",
-      type: "boolean",
+      title: "Hero Text",
+      name: "heroText",
+      type: "blockContent",
     },
     {
       title: "Hero Image",
@@ -43,6 +44,11 @@ export default {
       title: "Contact Text",
       name: "contactText",
       type: "blockContent",
+    },
+    {
+      title: "Contact Image",
+      name: "contactImage",
+      type: "figure",
     },
   ],
 }
