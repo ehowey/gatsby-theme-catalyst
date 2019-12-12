@@ -38,6 +38,7 @@ const Card = props => {
           sx={{
             fontSize: "60%",
             textTransform: "uppercase",
+            letterSpacing: "wider",
             m: 0,
           }}
         >

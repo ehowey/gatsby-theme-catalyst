@@ -26,13 +26,13 @@ export default {
       type: "figure",
     },
     {
-      title: "Logo Title",
+      title: "Featured Logos Title",
       name: "logoTitle",
       type: "string",
     },
     {
-      title: "Featured Title",
-      name: "featuredTitle",
+      title: "Featured Work Title",
+      name: "workTitle",
       type: "string",
     },
     {
@@ -44,11 +44,6 @@ export default {
       title: "Contact Text",
       name: "contactText",
       type: "blockContent",
-    },
-    {
-      title: "Contact Image",
-      name: "contactImage",
-      type: "figure",
     },
   ],
 }

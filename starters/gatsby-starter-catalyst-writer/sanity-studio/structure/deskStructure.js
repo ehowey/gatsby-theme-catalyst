@@ -17,7 +17,27 @@ export default () =>
     .title("Content")
     .items([
       S.listItem()
-        .title("Site Pages")
+        .title("Published Work")
+        .child(
+          S.list()
+            .title("Published Work")
+            .items([
+              S.listItem()
+                .title("List of Work")
+                .schemaType("work")
+                .child(S.documentTypeList("work").title("List of Work")),
+              S.listItem()
+                .title("Categories")
+                .schemaType("categories")
+                .child(S.documentTypeList("categories").title("Categories")),
+              S.listItem()
+                .title("Publisher Logos")
+                .schemaType("logos")
+                .child(S.documentTypeList("logos").title("Publisher Logos")),
+            ])
+        ),
+      S.listItem()
+        .title("Website Pages")
         .child(
           S.list()
             .title("Pages")
@@ -54,38 +74,6 @@ export default () =>
                     .schemaType("contactPage")
                     .documentId("contactPage")
                 ),
-            ])
-        ),
-      // Make a new list item
-      S.listItem()
-        // Give it a title
-        .title("Published Work")
-        .child(
-          // Make a list in the second pane called Portfolio
-          S.list()
-            .title("Published Work")
-            .items([
-              // Add the first list item
-              S.listItem()
-                .title("List of Work")
-                // This automatically gives it properties from the project type
-                .schemaType("work")
-                // When you open this list item, list out the documents
-                // of the type “project"
-                .child(S.documentTypeList("work").title("List of Work")),
-              // Add a second list item
-              S.listItem()
-                .title("Categories")
-                .schemaType("categories")
-                // When you open this list item, list out the documents
-                // of the type category"
-                .child(S.documentTypeList("categories").title("Categories")),
-              S.listItem()
-                .title("Publisher Logos")
-                .schemaType("logos")
-                // When you open this list item, list out the documents
-                // of the type category"
-                .child(S.documentTypeList("logos").title("Publisher Logos")),
             ])
         ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),

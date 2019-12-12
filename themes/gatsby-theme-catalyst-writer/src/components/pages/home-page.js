@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import FeaturedLogos from "../featured-logos"
-import FeaturedWork from "../featured-work"
-import SanityContent from "../sanity/sanity-content"
+import HomeLogos from "../home-logos"
+import HomeWork from "../home-work"
+import HomeContact from "../home-contact"
 import { SEO } from "gatsby-theme-catalyst-core"
 
 const HomePage = () => {
@@ -12,11 +12,6 @@ const HomePage = () => {
     query {
       sanityHomePage {
         seoTitle
-        _rawContactText
-        contactTitle
-        heroTitle
-        featuredTitle
-        logoTitle
       }
     }
   `)
@@ -26,12 +21,9 @@ const HomePage = () => {
   return (
     <Fragment>
       <SEO title={result.seoTitle} />
-      <Styled.h2>{result.logoTitle}</Styled.h2>
-      <FeaturedLogos />
-      <Styled.h2>{result.featuredTitle}</Styled.h2>
-      <FeaturedWork />
-      <Styled.h2>{result.contactTitle}</Styled.h2>
-      <SanityContent data={result._rawContactText} />
+      <HomeLogos />
+      <HomeWork />
+      <HomeContact />
     </Fragment>
   )
 }
