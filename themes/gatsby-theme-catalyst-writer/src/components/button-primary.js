@@ -13,7 +13,7 @@ const ButtonPrimary = props => {
         textAlign: "center",
         lineHeight: "inherit",
         textDecoration: "none",
-        fontSize: 3,
+        fontSize: 2,
         m: 0,
         px: 2,
         py: 1,
