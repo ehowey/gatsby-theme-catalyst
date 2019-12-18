@@ -25,6 +25,17 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 - [www.erichowey.dev](https://www.erichowey.dev/) - Based on `gatsby-starter-catalyst-basic`
 - [www.briannasharpe.com](https://www.briannasharpe.com/) - Based on `gatsby-starter-catalyst-writer`
 
+## Docs Index
+
+- [List of all themes](#list-of-all-themes)
+- [Accessibility](#accessibility)
+- [Getting Started](#getting-started)
+- [Customizing the themes](#customizing-the-themes)
+- [Philosophy](#philosophy)
+- [Contribute](#next-steps-and-contribution)
+
+## List of all themes
+
 | Theme                                | Demo                                                                                  | Description                                                                                                                                                                                                  |
 | ------------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `gatsby-theme-catalyst-core`         | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
