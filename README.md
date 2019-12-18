@@ -11,10 +11,10 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 **Catalyzing Start:**
 
-```
+```shell
    # create a new Gatsby site using the basic starter
     gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic 
-   # change into your new director
+   # change into your new directory
     cd catalyst-basic
    # launch the site
     gatsby develop
