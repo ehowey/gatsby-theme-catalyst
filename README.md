@@ -131,7 +131,7 @@ socialLinks: [
     ],
 ```
 
-### Customizing the themes using Theme-UI, Variants, and Design Tokens
+### Theme-UI, variants, and design tokens
 
 [Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
 
@@ -149,7 +149,10 @@ Try changing some colors in the file and see what happens!
 Some major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file.  The following variants are available to use:
 
  - `variants.main`: Targets the <main> component in the site, useful for changing site margins/content size.
- - WIP
+ - `variants.container`: Targets the container <div> for the content, useful for changing site margins/content size.
+ - `variants.header`: Targets the root <header> component
+ - `variants.footer`: Targets the root <footer> component
+ - `variants.navLinkStyles`: Targets the container styles for the nav links in the header
     
 ### Typography and changing fonts
 
