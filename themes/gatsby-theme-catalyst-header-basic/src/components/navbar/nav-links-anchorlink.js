@@ -3,12 +3,10 @@ import { jsx } from "theme-ui"
 import { useContext, useState, useEffect } from "react"
 import { Link as AnchorLink } from "react-scroll"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { MobileContext } from "gatsby-theme-catalyst-core"
 
 const NavMenuAnchorLink = props => {
   const isClient = typeof window === "object"
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
-  const [isMobile] = useContext(MobileContext)
   const [headerHeight, setHeaderHeight] = useState(0)
   const navOffset = -Math.abs(headerHeight + 16)
 
@@ -20,7 +18,6 @@ const NavMenuAnchorLink = props => {
       setHeaderHeight(headerHeight)
     }
   })
-
   return (
     <AnchorLink
       to={props.to.replace(/#/g, "").toLowerCase()}

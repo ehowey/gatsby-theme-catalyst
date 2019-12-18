@@ -13,7 +13,7 @@ const NavMenuBar = props => {
       sx={{
         my: isMobile ? 2 : 0,
         mx: 1,
-
+        variant: "variants.navLinkStyles",
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
@@ -43,18 +43,17 @@ const NavMenuBar = props => {
             opacity: "1",
             transform: "translateY(0px)",
           },
-
-          active: {
-            position: "absolute",
-            top: "100%",
-            left: "0",
-            width: "100%",
-            height: "4px",
-            backgroundColor: "primary",
-            content: "''",
-            opacity: "1",
-            transform: "translateY(0px)",
-          },
+        },
+        ".active::after": {
+          position: "absolute",
+          top: "100%",
+          left: "0",
+          width: "100%",
+          height: "4px",
+          backgroundColor: "primary",
+          content: "''",
+          opacity: "1",
+          transform: "translateY(0px)",
         },
       }}
       role="none"
