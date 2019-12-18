@@ -79,11 +79,30 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 
 #### Menu Links
 
-WIP
+The `menuLinks` is fairly standard with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component, an anchor link, or a plain <a> tag. The options are `internal`, `anchor`, and `external`. You should be using Gatsby Link for internal navigation however `external` simply gives you a plain <a> tag and could be used if needed for some reason.
+
+**Example Config:**
+
+```
+menuLinks: [
+      {
+        name: `Page 1`,
+        link: `/page-1`,
+        type: `internal`, //internal, external or anchor
+      },
+      {
+        name: `Anchor 1`,
+        link: `#anchor-1`,
+        type: `anchor`, //internal, external or anchor
+      },
+]
+```
 
 #### Social Links
 
-This option in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
+The `socialLinks` in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
+
+**Example Config:**
 
 ```
 socialLinks: [
