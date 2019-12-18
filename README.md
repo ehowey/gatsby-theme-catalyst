@@ -9,6 +9,11 @@
 
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of integrated themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
+**Example sites built with Gatsby-Theme-Catalyst:**
+
+- [www.erichowey.dev](https://www.erichowey.dev/) - Based on `gatsby-starter-catalyst-basic`
+- [www.briannasharpe.com](https://www.briannasharpe.com/) - Based on `gatsby-starter-catalyst-writer`
+
 | Theme                                | Demo                                                                                  | Description                                                                                                                                                                                                  |
 | ------------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `gatsby-theme-catalyst-core`         | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
@@ -43,7 +48,9 @@ All of these themes are available on NPM but the easiest way to get started is v
 
 **gatsby-starter-catalyst-writer**: `gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
 
-## Catalyst-Core Theme Options
+## Customizing the themes
+
+### Catalyst-Core theme options
 
 There are a number of options for the core theme that act as flags to control various aspects of the site appearance and function. Try experimenting with some of these to get a feel for how it changes the site.
 
