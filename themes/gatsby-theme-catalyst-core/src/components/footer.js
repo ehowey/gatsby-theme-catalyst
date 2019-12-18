@@ -8,6 +8,7 @@ const SiteFooter = () => {
       sx={{
         bg: "#ddd",
         p: 3,
+        variant: "variants.footer",
       }}
       id="footer"
     >

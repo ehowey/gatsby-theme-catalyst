@@ -13,6 +13,7 @@ const SiteFooter = () => {
         backgroundColor: "footer.background",
         px: 3,
         py: 3,
+        variant: "variants.footer",
         a: {
           color: "footer.links",
         },
