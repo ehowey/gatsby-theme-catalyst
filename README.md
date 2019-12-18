@@ -1,13 +1,24 @@
 <p align="center">
-    <img alt="Gatsby Catalyst Themes" src="https://www.erichowey.dev/images/catalyst-logo.png" width="100" />
+    <img alt="Gatsby Theme Catalyst" src="https://www.erichowey.dev/images/catalyst-logo.png" width="100" />
 </p>
 <h1 align="center">
-  Gatsby Catalyst Themes
+  Gatsby Theme Catalyst
 </h1>
 
 **Currently a WIP, rapid changes at this time**
 
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of integrated themes and starters that can be used to accelerate web development. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
+The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of integrated themes and starters that can be used to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
+
+**Catalyzing Start:**
+
+```
+   # create a new Gatsby site using the basic starter
+    gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic 
+   # change into your new director
+    cd catalyst-basic
+   # launch the site
+    gatsby develop
+```
 
 **Example sites built with Gatsby-Theme-Catalyst:**
 
