@@ -79,7 +79,7 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 
 #### Menu Links
 
-The `menuLinks` is fairly standard with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component, an anchor link, or a plain <a> tag. The options are `internal`, `anchor`, and `external`. You should be using Gatsby Link for internal navigation however `external` simply gives you a plain <a> tag and could be used if needed for some reason.
+The `menuLinks` is fairly standard with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component or an anchor link using `react-scroll`. The options are `internal` or `anchor`.
 
 **Example Config:**
 
@@ -88,12 +88,12 @@ menuLinks: [
       {
         name: `Page 1`,
         link: `/page-1`,
-        type: `internal`, //internal, external or anchor
+        type: `internal`, //internal or anchor
       },
       {
         name: `Anchor 1`,
         link: `#anchor-1`,
-        type: `anchor`, //internal, external or anchor
+        type: `anchor`, //internal or anchor
       },
 ]
 ```
