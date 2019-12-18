@@ -1,21 +1,17 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { useContext } from "react"
-import { animateScroll as scroll } from "react-scroll"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { HomeContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import { useSiteMetadata } from "gatsby-theme-catalyst-core"
+import LinkWrapper from "./branding-link-wrapper"
 
 const SiteLogo = () => {
+  const { title } = useSiteMetadata()
   const data = useStaticQuery(graphql`
     query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
       brandingLogo: file(name: { eq: "catalyst-logo" }) {
         childImageSharp {
           fluid(maxHeight: 300) {
@@ -25,9 +21,7 @@ const SiteLogo = () => {
       }
     }
   `)
-
   const [isNavOpen] = useContext(NavContext)
-  const [isHome] = useContext(HomeContext)
   const { invertSiteLogo } = useCatalystConfig()
   const invertLogo = () => {
     if (invertSiteLogo) {
@@ -37,49 +31,32 @@ const SiteLogo = () => {
     }
   }
 
-  const ImgLinkWrapper = props => {
-    if (isHome) {
-      return (
-        <div
-          sx={{
-            cursor: "pointer",
-          }}
-          onClick={scroll.scrollToTop}
-        >
-          {props.children}
-        </div>
-      )
-    } else {
-      return <Link to="/">{props.children}</Link>
-    }
-  }
-
   return (
-    <ImgLinkWrapper>
+    <LinkWrapper>
       <Img
         sx={{
           height: [
-            theme => theme.sizes.logoHeightSmall,
-            null,
-            theme => theme.sizes.logoHeightMedium,
-            theme => theme.sizes.logoHeightLarge,
-            null,
+            theme => theme.sizes.logoHeightXS,
+            theme => theme.sizes.logoHeightS,
+            theme => theme.sizes.logoHeightM,
+            theme => theme.sizes.logoHeightL,
+            theme => theme.sizes.logoHeightXL,
           ],
           width: [
-            theme => theme.sizes.logoWidthSmall,
-            null,
-            theme => theme.sizes.logoWidthMedium,
-            theme => theme.sizes.logoWidthLarge,
-            null,
+            theme => theme.sizes.logoWidthXS,
+            theme => theme.sizes.logoWidthS,
+            theme => theme.sizes.logoWidthM,
+            theme => theme.sizes.logoWidthL,
+            theme => theme.sizes.logoWidthXL,
           ],
           mr: 2,
           filter: isNavOpen ? invertLogo : "none",
         }}
         fluid={data.brandingLogo.childImageSharp.fluid}
-        alt={data.site.siteMetadata.title}
+        alt={title}
         imgStyle={{ objectFit: "contain" }}
       />
-    </ImgLinkWrapper>
+    </LinkWrapper>
   )
 }
 

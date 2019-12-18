@@ -16,17 +16,6 @@ const NavMenuBar = props => {
         listStyle: "none",
         m: 0,
         p: 0,
-        ".active::after": {
-          position: "absolute",
-          top: "100%",
-          left: "0",
-          width: "100%",
-          height: "4px",
-          backgroundColor: "secondary",
-          content: "''",
-          opacity: "1",
-          transform: "translateY(0px)",
-        },
       }}
       aria-label="menu-bar"
       role="menubar"

@@ -1,18 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useStaticQuery, graphql } from "gatsby"
+import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import Logo from "./branding-logo"
 import Title from "./branding-title"
 
 const SiteBranding = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      catalystConfig {
-        displaySiteLogo
-        displaySiteTitle
-      }
-    }
-  `)
+  const { displaySiteLogo, displaySiteTitle } = useCatalystConfig()
+
   return (
     <div
       sx={{
@@ -22,8 +16,8 @@ const SiteBranding = () => {
         mr: 2,
       }}
     >
-      {data.catalystConfig.displaySiteLogo ? <Logo /> : null}
-      {data.catalystConfig.displaySiteTitle ? <Title /> : null}
+      {displaySiteLogo ? <Logo /> : null}
+      {displaySiteTitle ? <Title /> : null}
     </div>
   )
 }

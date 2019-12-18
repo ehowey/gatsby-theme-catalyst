@@ -1,66 +1,31 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useStaticQuery, graphql, Link } from "gatsby"
 import { useContext } from "react"
-import { animateScroll as scroll } from "react-scroll"
-import { HomeContext } from "gatsby-theme-catalyst-core"
+import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
+import LinkWrapper from "./branding-link-wrapper"
 
 const SiteTitle = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+  const { title } = useSiteMetadata()
   const [isNavOpen] = useContext(NavContext)
-  const [isHome] = useContext(HomeContext)
-
-  const TitleLinkWrapper = props => {
-    if (isHome) {
-      return (
-        <div
-          sx={{
-            cursor: "pointer",
-          }}
-          onClick={scroll.scrollToTop}
-        >
-          {props.children}
-        </div>
-      )
-    } else {
-      return (
-        <Link
-          sx={{
-            color: isNavOpen ? "header.textOpen" : "header.text",
-            textDecoration: "none",
-          }}
-          to="/"
-        >
-          {props.children}
-        </Link>
-      )
-    }
-  }
 
   return (
-    <TitleLinkWrapper>
-      <h1
+    <LinkWrapper>
+      <span
         sx={{
+          color: isNavOpen ? "header.textOpen" : "header.text",
+          textDecoration: "none",
           fontFamily: "siteTitle",
           fontSize: [4, 5, 6],
+          fontWeight: "bold",
           flex: "0 0 auto",
-          color: isNavOpen ? "header.textOpen" : "header.text",
           m: 0,
+          variant: "variants.siteTitle",
         }}
       >
-        {data.site.siteMetadata.title}
-      </h1>
-    </TitleLinkWrapper>
+        {title}
+      </span>
+    </LinkWrapper>
   )
 }
 
