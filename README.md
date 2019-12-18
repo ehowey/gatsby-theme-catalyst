@@ -58,7 +58,7 @@ There are a number of options for the core theme that act as flags to control va
 | `useStickyHeader`      | true or false               | Controls whether the header is sticky or static                                                           |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px" | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
-**Example Config:**
+Example Config:
 
 ```
    {
@@ -81,7 +81,7 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 
 The `menuLinks` is fairly standard with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component or an anchor link using `react-scroll`. The options are `internal` or `anchor`.
 
-**Example Config:**
+Example Config:
 
 ```
 menuLinks: [
@@ -102,7 +102,7 @@ menuLinks: [
 
 The `socialLinks` in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
 
-**Example Config:**
+Example Config:
 
 ```
 socialLinks: [
@@ -124,7 +124,7 @@ socialLinks: [
     ],
 ```
 
-### Customizing the themes using Theme-UI and Design Tokens
+### Customizing the themes using Theme-UI, Variants, and Design Tokens
 
 [Read about using theme-ui to customize a theme](https://www.gatsbyjs.org/blog/2019-07-03-customizing-styles-in-gatsby-themes-with-theme-ui/)
 
@@ -139,6 +139,11 @@ The file you should modify to set design tokens is always located in the followi
 
 Try changing some colors in the file and see what happens!
 
+Some major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file.  The following variants are available to use:
+
+ - `variants.main`: Targets the <main> component in the site, useful for changing site margins/content size.
+ - WIP
+    
 ### Typography and changing fonts
 
 To add a custom font you need to first add the font as a dependency in your starter site, for example:
