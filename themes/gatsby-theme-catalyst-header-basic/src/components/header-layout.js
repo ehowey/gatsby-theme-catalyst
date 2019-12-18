@@ -25,7 +25,7 @@ const HeaderLayout = props => {
         maxWidth: "maxPageWidth",
         width: "100%",
         height: isNavOpen ? "100vh" : "auto",
-        minHeight: ["50px", null, "80px", null, null],
+        minHeight: "50px",
         m: "0 auto",
         px: [1, null, 3, null, null],
         py: [1, null, 2, null, null],

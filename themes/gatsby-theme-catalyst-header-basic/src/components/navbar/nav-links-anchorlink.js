@@ -6,7 +6,7 @@ import { NavContext } from "gatsby-theme-catalyst-core"
 
 const NavMenuAnchorLink = props => {
   const isClient = typeof window === "object"
-  const [isNavOpen, setIsNavOpen] = useContext(NavContext)
+  const [isNavOpen, setIsNavOpen] = useContext(NavContext) // eslint-disable-line
   const [headerHeight, setHeaderHeight] = useState(0)
   const navOffset = -Math.abs(headerHeight + 16)
 

@@ -51,6 +51,7 @@ const SiteLogo = () => {
           ],
           mr: 2,
           filter: isNavOpen ? invertLogo : "none",
+          variant: "variants.siteLogo",
         }}
         fluid={data.brandingLogo.childImageSharp.fluid}
         alt={title}

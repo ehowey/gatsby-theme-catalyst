@@ -5,7 +5,7 @@ import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
 const NavMenuLinkInternal = props => {
-  const [isNavOpen, setIsNavOpen] = useContext(NavContext)
+  const [isNavOpen, setIsNavOpen] = useContext(NavContext) // eslint-disable-line
 
   return (
     <Link
