@@ -43,25 +43,9 @@ All of these themes are available on NPM but the easiest way to get started is v
 
 **gatsby-starter-catalyst-writer**: `gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
 
-### Modifying Gatsby-Config.JS
+## Catalyst-Core Theme Options
 
-Theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options in here you can modify.
-
-**Core Theme Options**
-
-```
-   {
-      resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        displaySiteLogo: true,
-        displaySiteTitle: true,
-        invertLogo: true,
-        mobileMenuBreakpoint: "1024px",
-        useStickyHeader: true,
-        useHero: "true",
-      }
-    }
-```
+There are a number of options for the core theme that act as flags to control various aspects of the site appearance and function. Try experimenting with some of these to get a feel for how it changes the site.
 
 | Option                 | Values                      | Description                                                                                               |
 | ---------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -74,7 +58,30 @@ Theme options are set via the `gatsby-config.js` file. Specifically the navigati
 | `useStickyHeader`      | true or false               | Controls whether the header is sticky or static                                                           |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px" | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
-### Social Links
+**Example Config:**
+
+```
+   {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        displaySiteTitle: false,
+        invertLogo: true,
+        mobileMenuBreakpoint: "1024px",
+        useStickyHeader: true,
+        useHero: "true",
+      }
+    }
+```
+
+### Modifying Gatsby-Config.JS
+
+Theme options are set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options you can modify. Most of these are fairly standard and where possible I Have included inline comments in the starters to help explain if needed. The `socialLinks` object and `menuLinks` object are a bit more complicated to support easier theme customization via the config file.
+
+#### Menu Links
+
+WIP
+
+#### Social Links
 
 This option in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
 
