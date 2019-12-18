@@ -1,11 +1,11 @@
 {
   "name": "gatsby-theme-catalyst-header-basic",
   "description": "Sibling theme for gatsby-theme-catalyst-core to add basic header styles.",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
     "gatsby": "^2.18.5",
-    "gatsby-theme-catalyst-core": "^0.15.0",
+    "gatsby-theme-catalyst-core": "^0.16.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
