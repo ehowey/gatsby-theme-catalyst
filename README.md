@@ -22,8 +22,8 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 **Example sites built with Gatsby-Theme-Catalyst:**
 
-- [www.erichowey.dev](https://www.erichowey.dev/) - Based on `gatsby-starter-catalyst-basic`
-- [www.briannasharpe.com](https://www.briannasharpe.com/) - Based on `gatsby-starter-catalyst-writer`
+- [www.erichowey.dev](https://www.erichowey.dev/) - Based on `gatsby-starter-catalyst-basic`, [Github Repo](https://github.com/ehowey/erichoweydev)
+- [www.briannasharpe.com](https://www.briannasharpe.com/) - Based on `gatsby-starter-catalyst-writer`, [Github Repo](https://github.com/ehowey/briannasharpe)
 
 ## Docs Index
 
