@@ -31,7 +31,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 - [Accessibility](#accessibility)
 - [Getting Started](#getting-started)
 - [Customizing the themes](#customizing-the-themes)
-- [Philosophy](#philosophy)
+- [Philosophy](#philosophy---less-is-more)
 - [Contribute](#next-steps-and-contribution)
 
 ## List of all themes
