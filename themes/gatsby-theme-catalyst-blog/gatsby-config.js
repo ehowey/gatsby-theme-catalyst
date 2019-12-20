@@ -1,16 +1,23 @@
-module.exports = options => {
+const withDefaults = require(`./src/utils/default-options`)
+
+module.exports = themeOptions => {
+  const options = withDefaults(themeOptions)
   return {
     plugins: [
       {
-        resolve: `gatsby-theme-blog-core`,
+        resolve: `gatsby-source-filesystem`,
         options: {
-          // basePath defaults to `/`
-          basePath: options.basePath || `/blog`,
-          contentPath: options.contentPath || `src/blog/posts`,
-          assetPath: options.assetPath || `src/blog/assets`,
-          mdx: false,
+          path: options.contentPath || `content/posts`,
+          name: options.contentPath || `content/posts`,
         },
       },
-    ],
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          path: options.assetPath || `content/assets`,
+          name: options.assetPath || `content/assets`,
+        },
+      },
+    ].filter(Boolean),
   }
 }
