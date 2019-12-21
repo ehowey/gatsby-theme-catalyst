@@ -1,11 +1,14 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
-import { SEO } from "gatsby-theme-catalyst-core"
+
+import { SEO, useSiteMetadata } from "gatsby-theme-catalyst-core"
+import PostListTitle from "./posts-list-title"
+import PostListImage from "./posts-list-image"
+import PostListMeta from "./posts-list-meta"
 
 const PostsList = ({ posts }) => {
+  const { author } = useSiteMetadata()
   return (
     <Fragment>
       <SEO title="Blog" />
@@ -14,25 +17,9 @@ const PostsList = ({ posts }) => {
           const title = node.title || node.slug
           return (
             <Fragment key={node.slug}>
-              <Img
-                sx={{
-                  height: "250px",
-                  mb: 3,
-                }}
-                fluid={node.featuredImage.childImageSharp.fluid}
-              />
-              <Styled.h2>
-                <Styled.a
-                  as={Link}
-                  to={node.slug}
-                  sx={{
-                    color: "text",
-                  }}
-                >
-                  {title}
-                </Styled.a>
-              </Styled.h2>
-              <Styled.p sx={{ m: 0, p: 0, fontSize: 2 }}>{node.date}</Styled.p>
+              <PostListImage image={node.featuredImage.childImageSharp.fluid} />
+              <PostListMeta date={node.date} author={author} />
+              <PostListTitle link={node.slug}>{title}</PostListTitle>
               <Styled.p>{node.excerpt}</Styled.p>
             </Fragment>
           )

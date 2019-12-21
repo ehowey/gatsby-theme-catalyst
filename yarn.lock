@@ -7160,11 +7160,6 @@ gatsby-telemetry@^1.1.40:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-catalyst-header-basic@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-header-basic/-/gatsby-theme-catalyst-header-basic-0.2.2.tgz#a76d8948fae5036384850062df4776b7053be907"
-  integrity sha512-KcO1lT5OTE6fJQlZATYrU6pwGlOI0DU95vGDNMAmaajbCqZK4G7Ee4nYpeO6CxBXCGLNyD4Zx6r0MJ8JeLM7BQ==
-
 gatsby-transformer-sharp@^2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.6.tgz#5747e40da295eb21f3187c38fec3ca5d363ee2a4"
