@@ -17,6 +17,7 @@ const PostListMeta = props => {
             textDecoration: "underline",
           },
         },
+        variant: "variants.postListMeta",
       }}
     >
       {props.children}

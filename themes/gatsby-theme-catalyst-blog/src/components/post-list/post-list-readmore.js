@@ -17,10 +17,10 @@ const Readmore = props => {
         ":hover": {
           textDecoration: "underline",
         },
+        variant: "variants.postListReadmore",
       }}
       as={Link}
       to={props.link}
-      variant="readmore"
     >
       {props.children}
     </Button>

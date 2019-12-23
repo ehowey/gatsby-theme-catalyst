@@ -7,9 +7,13 @@ const PostListTitle = props => {
     <Styled.h2
       sx={{
         mt: 0,
+        a: {
+          color: "text",
+        },
+        variant: "variants.postListTitle",
       }}
     >
-      <Styled.a sx={{ color: "text" }} as={Link} to={props.link}>
+      <Styled.a as={Link} to={props.link}>
         {props.children}
       </Styled.a>
     </Styled.h2>

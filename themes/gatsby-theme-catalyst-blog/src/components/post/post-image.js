@@ -8,8 +8,10 @@ const PostImage = props => {
       sx={{
         height: "200px",
         mb: 3,
+        variant: "variants.postImage",
       }}
       fluid={props.image}
+      alt={props.altText}
     />
   )
 }

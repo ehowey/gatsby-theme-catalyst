@@ -1,16 +1,21 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 const PostListImage = props => {
   return (
-    <Img
-      sx={{
-        height: "300px",
-        mb: 3,
-      }}
-      fluid={props.image}
-    />
+    <Link to={props.link}>
+      <Img
+        sx={{
+          height: "200px",
+          mb: 3,
+          variant: "variants.postListImage",
+        }}
+        fluid={props.image}
+        alt={props.altText}
+      />
+    </Link>
   )
 }
 
