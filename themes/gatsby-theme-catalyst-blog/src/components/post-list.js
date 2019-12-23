@@ -12,7 +12,6 @@ import PostListReadmore from "./post-list/post-list-readmore"
 const PostsList = ({ posts }) => {
   return (
     <PostListContainer>
-      {" "}
       <SEO title="Blog" />
       {posts.map(({ node }) => {
         const title = node.title || node.slug
