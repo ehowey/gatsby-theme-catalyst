@@ -51,6 +51,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       id: ID!
       title: String!
       author: String!
+      authorLink: String
       body: String!
       slug: String!
       date: Date! @dateformat
@@ -70,6 +71,9 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         },
         author: {
           type: `String!`,
+        },
+        authorLink: {
+          type: `String`,
         },
         slug: {
           type: `String!`,
@@ -144,6 +148,7 @@ exports.onCreateNode = async (
     const fieldData = {
       title: node.frontmatter.title,
       author: node.frontmatter.author,
+      authorLink: node.frontmatter.authorLink,
       tags: node.frontmatter.tags || [],
       slug,
       date: node.frontmatter.date,

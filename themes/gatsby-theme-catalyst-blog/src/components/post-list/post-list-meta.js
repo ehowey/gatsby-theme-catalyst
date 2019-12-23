@@ -10,6 +10,13 @@ const PostListMeta = props => {
         textTransform: "uppercase",
         letterSpacing: "wider",
         m: 0,
+        a: {
+          color: "darkgrey",
+          textDecoration: "none",
+          ":hover": {
+            textDecoration: "underline",
+          },
+        },
       }}
     >
       {props.children}

@@ -22,6 +22,7 @@ export const query = graphql`
       slug
       title
       author
+      authorLink
       tags
       keywords
       date(formatString: "MMMM DD, YYYY")

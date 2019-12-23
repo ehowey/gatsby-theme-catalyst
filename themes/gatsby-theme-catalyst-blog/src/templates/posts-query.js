@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostsList from "../components/posts-list"
+import PostList from "../components/post-list"
 
 export default ({ data }) => {
   const { allCatalystPost } = data
-  return <PostsList posts={allCatalystPost.edges} />
+  return <PostList posts={allCatalystPost.edges} />
 }
 
 export const query = graphql`
@@ -17,6 +17,7 @@ export const query = graphql`
           slug
           title
           author
+          authorLink
           date(formatString: "MMMM DD, YYYY")
           tags
           featuredImage {

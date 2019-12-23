@@ -25,7 +25,14 @@ const PostsList = ({ posts }) => {
           >
             <PostListImage image={node.featuredImage.childImageSharp.fluid} />
             <PostListMeta>
-              {node.author} &bull; {node.date}
+              <a
+                href={node.authorLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {node.author}
+              </a>{" "}
+              &bull; {node.date}
             </PostListMeta>
             <PostListTitle link={node.slug}>{title}</PostListTitle>
             <PostListExcerpt>{node.excerpt}</PostListExcerpt>
