@@ -10,12 +10,15 @@ const Readmore = props => {
         color: "text",
         fontWeight: "bold",
         bg: "transparent",
+        border: "none",
         px: 0,
         "::after": {
           content: '"\\00A0 \\2192"',
         },
         ":hover": {
           textDecoration: "underline",
+          bg: "transparent",
+          border: "none",
         },
         variant: "variants.postListReadmore",
       }}
