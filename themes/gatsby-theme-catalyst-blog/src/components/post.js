@@ -10,7 +10,11 @@ import PostFooter from "./post/post-footer"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Fragment>
-    <SEO title={post.title} description={post.excerpt} />
+    <SEO
+      title={post.title}
+      description={post.excerpt}
+      image={post.featuredImage.childImageSharp.seo}
+    />
     <PostImage image={post.featuredImage.childImageSharp.fluid} />
     <PostMeta>
       <a href={post.authorLink} target="_blank" rel="noopener noreferrer">

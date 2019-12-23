@@ -8,9 +8,9 @@ const PostFooter = ({ previous, next }) => (
     {(previous || next) && (
       <Flex
         sx={{
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          listStyle: "none",
           padding: 0,
         }}
         as="ul"
