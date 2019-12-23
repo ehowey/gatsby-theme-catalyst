@@ -53,7 +53,7 @@ module.exports = {
         basePath: `/blog`,
         contentPath: `content/posts`,
         assetPath: `content/assets`,
-        mdx: false,
+        excerptLength: `300`,
       },
     },
     `gatsby-theme-catalyst-header-basic`,

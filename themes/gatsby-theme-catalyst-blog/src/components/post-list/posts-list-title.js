@@ -4,8 +4,12 @@ import { Link } from "gatsby"
 
 const PostListTitle = props => {
   return (
-    <Styled.h2>
-      <Styled.a as={Link} to={props.link}>
+    <Styled.h2
+      sx={{
+        mt: 0,
+      }}
+    >
+      <Styled.a sx={{ color: "text" }} as={Link} to={props.link}>
         {props.children}
       </Styled.a>
     </Styled.h2>
