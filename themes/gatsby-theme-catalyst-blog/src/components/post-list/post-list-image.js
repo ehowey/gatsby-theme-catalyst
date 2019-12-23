@@ -6,7 +6,7 @@ const PostListImage = props => {
   return (
     <Img
       sx={{
-        height: "200px",
+        height: "300px",
         mb: 3,
       }}
       fluid={props.image}

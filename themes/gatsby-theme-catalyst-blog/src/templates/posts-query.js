@@ -16,6 +16,7 @@ export const query = graphql`
           excerpt
           slug
           title
+          author
           date(formatString: "MMMM DD, YYYY")
           tags
           featuredImage {

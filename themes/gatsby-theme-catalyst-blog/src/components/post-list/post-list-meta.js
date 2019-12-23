@@ -6,14 +6,13 @@ const PostListMeta = props => {
     <Styled.p
       sx={{
         color: "darkgrey",
-        m: 0,
-        p: 0,
         fontSize: 1,
         textTransform: "uppercase",
         letterSpacing: "wider",
+        m: 0,
       }}
     >
-      {props.author} &bull; {props.date}
+      {props.children}
     </Styled.p>
   )
 }
