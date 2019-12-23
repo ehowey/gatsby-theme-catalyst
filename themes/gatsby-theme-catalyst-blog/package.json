@@ -3,9 +3,7 @@
   "description": "Child blog theme for gatsby-theme-catalyst-core. Based on gatsby-theme-blog-core.",
   "version": "0.2.2",
   "author": "Eric Howey <eric@erichowey.dev>",
-  "dependencies": {
-    "gatsby-theme-blog-core": "^1.0.17"
-  },
+  "dependencies": {},
   "devDependencies": {
     "gatsby": "^2.18.5",
     "gatsby-theme-catalyst-core": "^0.16.0",
@@ -15,7 +13,7 @@
   },
   "peerDependencies": {
     "gatsby": "^2.18.5",
-    "gatsby-theme-catalyst-core": "^0.15.0",
+    "gatsby-theme-catalyst-core": "^0.16.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

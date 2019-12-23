@@ -43,6 +43,7 @@ module.exports = options => {
               },
             },
             { resolve: `gatsby-remark-smartypants` },
+            { resolve: `gatsby-remark-reading-time` },
           ],
           remarkPlugins: [remarkSlug],
           plugins: [`gatsby-remark-images`],

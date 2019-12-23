@@ -1,12 +1,20 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Styled, Flex } from "theme-ui"
 import { Link } from "gatsby"
-import { Styled, Flex } from "theme-ui"
 
 const PostFooter = ({ previous, next }) => (
   <div>
     <Styled.hr />
     {(previous || next) && (
-      <Flex as="ul">
+      <Flex
+        sx={{
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          listStyle: "none",
+          padding: 0,
+        }}
+        as="ul"
+      >
         <li>
           {previous && (
             <Styled.a as={Link} to={previous.slug} rel="prev">

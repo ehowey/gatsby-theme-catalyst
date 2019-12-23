@@ -86,4 +86,9 @@ export default {
       },
     },
   },
+  variants: {
+    main: {
+      my: 5,
+    },
+  },
 }

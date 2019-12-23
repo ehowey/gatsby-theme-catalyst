@@ -1,7 +1,6 @@
 // This is a placeholder for latent shadowing to better allow for the creation of a hero image/section in a child theme or starter.
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import { Button } from "@theme-ui/components"
 
 const HeaderHero = () => {
   return (
