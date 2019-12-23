@@ -24,6 +24,7 @@ const Readmore = props => {
       }}
       as={Link}
       to={props.link}
+      variant="readmore"
     >
       {props.children}
     </Button>
