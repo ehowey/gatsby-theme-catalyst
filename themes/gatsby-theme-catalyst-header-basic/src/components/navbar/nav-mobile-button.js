@@ -39,7 +39,7 @@ const SiteMobileButton = () => {
   const [isMobile] = useContext(MobileContext)
   return (
     <button
-      aria-label="Menu"
+      aria-label="Toggle Menu"
       onClick={() => setIsNavOpen(!isNavOpen)}
       sx={{
         gridColumn: "2 / 3",
