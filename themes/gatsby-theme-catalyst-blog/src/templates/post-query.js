@@ -28,7 +28,7 @@ export const query = graphql`
       date(formatString: "MMMM DD, YYYY")
       featuredImage {
         childImageSharp {
-          fluid(maxWidth: 1024) {
+          fluid(maxWidth: 1440) {
             ...GatsbyImageSharpFluid
           }
           seo: resize(width: 1024) {

@@ -7,9 +7,6 @@ const PostListTitle = props => {
     <Styled.h2
       sx={{
         mt: 0,
-        a: {
-          color: "text",
-        },
         variant: "variants.postListTitle",
       }}
     >
