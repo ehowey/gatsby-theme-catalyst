@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 
-const PostListTitle = props => {
+const PostListTitle = ({ link, children }) => {
   return (
     <Styled.h2
       sx={{
@@ -10,8 +10,8 @@ const PostListTitle = props => {
         variant: "variants.postListTitle",
       }}
     >
-      <Styled.a as={Link} to={props.link}>
-        {props.children}
+      <Styled.a as={Link} to={link}>
+        {children}
       </Styled.a>
     </Styled.h2>
   )

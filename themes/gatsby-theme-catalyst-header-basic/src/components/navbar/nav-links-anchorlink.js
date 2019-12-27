@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react"
 import { Link as AnchorLink } from "react-scroll"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
-const NavMenuAnchorLink = props => {
+const NavMenuAnchorLink = ({ to, text }) => {
   const isClient = typeof window === "object"
   const [isNavOpen, setIsNavOpen] = useContext(NavContext) // eslint-disable-line
   const [headerHeight, setHeaderHeight] = useState(0)
@@ -20,7 +20,7 @@ const NavMenuAnchorLink = props => {
   })
   return (
     <AnchorLink
-      to={props.to.replace(/#/g, "").toLowerCase()}
+      to={to.replace(/#/g, "").toLowerCase()}
       onClick={() => setIsNavOpen(false)}
       role="menuitem"
       spy={true}
@@ -30,7 +30,7 @@ const NavMenuAnchorLink = props => {
       duration={500}
       offset={navOffset}
     >
-      {props.text}
+      {text}
     </AnchorLink>
   )
 }

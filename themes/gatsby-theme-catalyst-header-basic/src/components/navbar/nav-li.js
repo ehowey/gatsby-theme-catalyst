@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
-const NavMenuBar = props => {
+const NavMenuBar = ({ children }) => {
   const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
@@ -58,7 +58,7 @@ const NavMenuBar = props => {
       }}
       role="none"
     >
-      {props.children}
+      {children}
     </li>
   )
 }

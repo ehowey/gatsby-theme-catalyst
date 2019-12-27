@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
-const ButtonPrimary = props => {
+const ButtonPrimary = ({ to, children }) => {
   return (
     <Link
       sx={{
@@ -31,9 +31,9 @@ const ButtonPrimary = props => {
           borderColor: "secondary",
         },
       }}
-      to={props.to}
+      to={to}
     >
-      {props.children}
+      {children}
     </Link>
   )
 }

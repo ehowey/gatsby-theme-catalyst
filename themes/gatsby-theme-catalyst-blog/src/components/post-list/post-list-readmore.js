@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { Button } from "@theme-ui/components"
 
-const Readmore = props => {
+const Readmore = ({ link, children }) => {
   return (
     <Button
       sx={{
@@ -23,10 +23,10 @@ const Readmore = props => {
         variant: "variants.postListReadmore",
       }}
       as={Link}
-      to={props.link}
+      to={link}
       variant="readmore"
     >
-      {props.children}
+      {children}
     </Button>
   )
 }

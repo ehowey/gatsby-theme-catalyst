@@ -3,7 +3,7 @@ import { Location } from "@reach/router"
 
 export const HomeContext = createContext()
 
-export const HomeProvider = props => {
+export const HomeProvider = ({ children }) => {
   const [isHome, setIsHome] = useState(true)
 
   return (
@@ -17,7 +17,7 @@ export const HomeProvider = props => {
           }
         }}
       </Location>
-      {props.children}
+      {children}
     </HomeContext.Provider>
   )
 }

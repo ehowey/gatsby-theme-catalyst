@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 
-const Span = props => (
+const Span = ({ open }) => (
   <span
     sx={{
       backgroundColor: "currentColor",
@@ -20,15 +20,15 @@ const Span = props => (
 
       ":nth-of-type(1)": {
         top: "calc(50% - 8px)",
-        transform: props.open && "translateY(7px) rotate(45deg)",
+        transform: open && "translateY(7px) rotate(45deg)",
       },
       ":nth-of-type(2)": {
         top: "calc(50% - 1px)",
-        opacity: props.open && "0",
+        opacity: open && "0",
       },
       ":nth-of-type(3)": {
         top: "calc(50% + 6px)",
-        transform: props.open && "translateY(-7px) rotate(-45deg)",
+        transform: open && "translateY(-7px) rotate(-45deg)",
       },
     }}
   ></span>

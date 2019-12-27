@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
 import Img from "gatsby-image"
 
-const PageHeader = props => {
+const PageHeader = ({ title, topImage, topImageAlt }) => {
   return (
     <Fragment>
       <Img
@@ -16,10 +16,10 @@ const PageHeader = props => {
           ml: ["-50vw", null, 0, null, null],
           mr: ["-50vw", null, 0, null, null],
         }}
-        fluid={props.topImage}
-        alt={props.topImageAlt}
+        fluid={topImage}
+        alt={topImageAlt}
       />
-      <Styled.h1>{props.title}</Styled.h1>
+      <Styled.h1>{title}</Styled.h1>
     </Fragment>
   )
 }

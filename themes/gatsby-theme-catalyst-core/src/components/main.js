@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const SiteMain = props => {
+const SiteMain = ({ children }) => {
   return (
     <main
       sx={{
@@ -14,7 +14,7 @@ const SiteMain = props => {
         variant: "variants.main",
       }}
     >
-      {props.children}
+      {children}
     </main>
   )
 }

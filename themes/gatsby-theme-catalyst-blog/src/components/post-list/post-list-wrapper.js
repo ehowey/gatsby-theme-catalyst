@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const PostListWrapper = props => {
+const PostListWrapper = ({ children }) => {
   return (
     <div
       sx={{
@@ -12,7 +12,7 @@ const PostListWrapper = props => {
         variant: "variants.postListWrapper",
       }}
     >
-      {props.children}
+      {children}
     </div>
   )
 }

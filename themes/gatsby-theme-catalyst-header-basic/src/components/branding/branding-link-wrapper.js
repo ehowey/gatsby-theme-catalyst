@@ -5,7 +5,7 @@ import { useContext } from "react"
 import { HomeContext } from "gatsby-theme-catalyst-core"
 import { animateScroll as scroll } from "react-scroll"
 
-const LinkWrapper = props => {
+const LinkWrapper = ({ children }) => {
   const [isHome] = useContext(HomeContext)
   if (isHome) {
     return (
@@ -15,13 +15,13 @@ const LinkWrapper = props => {
         }}
         onClick={scroll.scrollToTop}
       >
-        {props.children}
+        {children}
       </div>
     )
   } else {
     return (
       <Link to="/" sx={{ textDecoration: "none" }}>
-        {props.children}
+        {children}
       </Link>
     )
   }

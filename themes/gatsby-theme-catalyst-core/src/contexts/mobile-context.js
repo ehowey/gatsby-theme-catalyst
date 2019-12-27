@@ -3,7 +3,7 @@ import { useCatalystConfig } from "../utils/use-catalyst-config"
 
 export const MobileContext = createContext()
 
-export const MobileProvider = props => {
+export const MobileProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(true)
   const isClient = typeof window === "object"
   const { mobileMenuBreakpoint } = useCatalystConfig()
@@ -25,7 +25,7 @@ export const MobileProvider = props => {
   )
   return (
     <MobileContext.Provider value={[isMobile, setIsMobile]}>
-      {props.children}
+      {children}
     </MobileContext.Provider>
   )
 }

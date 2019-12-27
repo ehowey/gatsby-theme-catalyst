@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 
-const NavMenuBar = props => {
+const NavMenuBar = ({ children }) => {
   const [isMobile] = useContext(MobileContext)
 
   return (
@@ -20,7 +20,7 @@ const NavMenuBar = props => {
       aria-label="menu-bar"
       role="menubar"
     >
-      {props.children}
+      {children}
     </ul>
   )
 }

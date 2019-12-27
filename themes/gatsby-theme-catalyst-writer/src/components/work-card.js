@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import Img from "gatsby-image"
 
-const Card = props => {
+const Card = ({ title, image, publisher, date, link, excerpt }) => {
   return (
     <div
       sx={{
@@ -16,7 +16,7 @@ const Card = props => {
         mb: 4,
         borderRadius: 3,
       }}
-      key={props.title}
+      key={title}
     >
       <Img
         sx={{
@@ -25,8 +25,8 @@ const Card = props => {
           maxHeight: ["250px", null, "100%", null, null],
           flex: "1",
         }}
-        fluid={props.image}
-        alt={props.title}
+        fluid={image}
+        alt={title}
       />
       <div
         sx={{
@@ -42,7 +42,7 @@ const Card = props => {
             m: 0,
           }}
         >
-          {props.publisher} &middot; {props.date}
+          {publisher} &middot; {date}
         </p>
         <Styled.h3
           sx={{
@@ -57,14 +57,14 @@ const Card = props => {
                 textDecoration: "underline",
               },
             }}
-            href={props.link}
+            href={link}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {props.title}
+            {title}
           </a>
         </Styled.h3>
-        <p>{props.excerpt.substring(0, 300) + "..."}</p>
+        <p>{excerpt.substring(0, 300) + "..."}</p>
         <a
           sx={{
             color: "text",
@@ -78,7 +78,7 @@ const Card = props => {
               textDecoration: "underline",
             },
           }}
-          href={props.link}
+          href={link}
           target="_blank"
           rel="noopener noreferrer"
         >

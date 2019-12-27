@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const PostContainer = props => {
+const PostContainer = ({ children }) => {
   return (
     <div
       sx={{
         variant: "variants.postContainer",
       }}
     >
-      {props.children}
+      {children}
     </div>
   )
 }

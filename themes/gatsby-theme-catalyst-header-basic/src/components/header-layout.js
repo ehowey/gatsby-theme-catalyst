@@ -3,7 +3,7 @@ import { jsx, useThemeUI } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
-const HeaderLayout = props => {
+const HeaderLayout = ({ children }) => {
   const [isNavOpen] = useContext(NavContext)
   const { theme } = useThemeUI()
 
@@ -32,7 +32,7 @@ const HeaderLayout = props => {
         zIndex: "999", //Ensure the nav is always on top.
       }}
     >
-      {props.children}
+      {children}
     </div>
   )
 }

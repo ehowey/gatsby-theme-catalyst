@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 
-const PostListExcerpt = props => {
+const PostListExcerpt = ({ children }) => {
   return (
     <Styled.p
       sx={{
         variant: "variants.postListExcerpt",
       }}
     >
-      {props.children}
+      {children}
     </Styled.p>
   )
 }

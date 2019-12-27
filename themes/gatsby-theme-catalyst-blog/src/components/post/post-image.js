@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 
-const PostImage = props => {
+const PostImage = ({ image, altText }) => {
   return (
     <Img
       sx={{
@@ -10,8 +10,8 @@ const PostImage = props => {
         mb: 3,
         variant: "variants.postImage",
       }}
-      fluid={props.image}
-      alt={props.altText}
+      fluid={image}
+      alt={altText}
     />
   )
 }

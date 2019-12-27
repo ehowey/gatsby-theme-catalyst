@@ -3,17 +3,17 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-const PostListImage = props => {
+const PostListImage = ({ link, image, altText }) => {
   return (
-    <Link to={props.link}>
+    <Link to={link}>
       <Img
         sx={{
           height: "200px",
           mb: 3,
           variant: "variants.postListImage",
         }}
-        fluid={props.image}
-        alt={props.altText}
+        fluid={image}
+        alt={altText}
       />
     </Link>
   )

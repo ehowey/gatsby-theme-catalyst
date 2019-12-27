@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 
-const NavLayout = props => {
+const NavLayout = ({ children }) => {
   const [isNavOpen] = useContext(NavContext)
   const [isMobile] = useContext(MobileContext)
 
@@ -23,7 +23,7 @@ const NavLayout = props => {
       role="navigation"
       aria-label="main-navigation"
     >
-      {props.children}
+      {children}
     </nav>
   )
 }

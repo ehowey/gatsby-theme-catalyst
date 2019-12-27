@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 
-const PostMeta = props => {
+const PostMeta = ({ children }) => {
   return (
     <Styled.p
       sx={{
@@ -20,7 +20,7 @@ const PostMeta = props => {
         variant: "variants.postMeta",
       }}
     >
-      {props.children}
+      {children}
     </Styled.p>
   )
 }

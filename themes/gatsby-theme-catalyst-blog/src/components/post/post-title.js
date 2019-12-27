@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 
-const PostTitle = props => {
+const PostTitle = ({ children }) => {
   return (
     <Styled.h1
       sx={{
         variant: "variants.postTitle",
       }}
     >
-      {props.children}
+      {children}
     </Styled.h1>
   )
 }

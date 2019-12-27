@@ -4,14 +4,10 @@ import PortableText from "@sanity/block-content-to-react"
 import { useSanityConfig } from "./use-sanity-config"
 import serializers from "./serializers"
 
-const SanityContent = props => {
+const SanityContent = ({ data }) => {
   const sanityConfig = useSanityConfig()
   return (
-    <PortableText
-      blocks={props.data}
-      serializers={serializers}
-      {...sanityConfig}
-    />
+    <PortableText blocks={data} serializers={serializers} {...sanityConfig} />
   )
 }
 
