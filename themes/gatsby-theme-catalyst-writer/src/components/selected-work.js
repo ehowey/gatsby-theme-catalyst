@@ -10,6 +10,7 @@ const SelectedWork = () => {
       categories: allSanityCategories(sort: { order: ASC, fields: order }) {
         edges {
           node {
+            id
             title
           }
         }
@@ -38,7 +39,7 @@ const SelectedWork = () => {
   return (
     <Fragment>
       {categories.map(({ node }) => (
-        <div sx={{ mb: 5 }}>
+        <div sx={{ mb: 5 }} key={node.id}>
           <Styled.h3>{node.title}</Styled.h3>
           <ul
             sx={{
@@ -57,6 +58,7 @@ const SelectedWork = () => {
                     link={published.link}
                     publisher={published.publisher}
                     date={published.date}
+                    key={published.id}
                   />
                 ))
             )}

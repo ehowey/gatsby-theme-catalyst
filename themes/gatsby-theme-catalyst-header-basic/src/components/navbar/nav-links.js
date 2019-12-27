@@ -16,13 +16,13 @@ const NavLinksDefault = () => {
       {menuLinks.map(link => (
         <NavLI key={link.name}>
           {link.type === "internal" && (
-            <NavMenuLink to={link.link} text={link.name} />
+            <NavMenuLink link={link.link}>{link.name}</NavMenuLink>
           )}
           {isHome && link.type === "anchor" ? (
-            <NavMenuAnchorLink to={link.link} text={link.name} />
+            <NavMenuAnchorLink link={link.link}>{link.name}</NavMenuAnchorLink>
           ) : (
             link.type === "anchor" && (
-              <NavMenuLink to={"/" + link.link} text={link.name} />
+              <NavMenuLink link={"/" + link.link}>{link.name}</NavMenuLink>
             )
           )}
         </NavLI>
