@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
@@ -9,18 +8,7 @@ import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import LinkWrapper from "./branding-link-wrapper"
 
 const SiteLogo = () => {
-  const { title } = useSiteMetadata()
-  const data = useStaticQuery(graphql`
-    query {
-      brandingLogo: file(name: { eq: "catalyst-logo" }) {
-        childImageSharp {
-          fluid(maxHeight: 300) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
+  const { title, logo } = useSiteMetadata()
   const [isNavOpen] = useContext(NavContext)
   const { invertSiteLogo } = useCatalystConfig()
   const invertLogo = () => {
@@ -30,7 +18,6 @@ const SiteLogo = () => {
       return "none"
     }
   }
-
   return (
     <LinkWrapper>
       <Img
@@ -53,7 +40,7 @@ const SiteLogo = () => {
           filter: isNavOpen ? invertLogo : "none",
           variant: "variants.siteLogo",
         }}
-        fluid={data.brandingLogo.childImageSharp.fluid}
+        fluid={logo}
         alt={title}
         imgStyle={{ objectFit: "contain" }}
       />

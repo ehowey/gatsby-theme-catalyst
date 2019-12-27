@@ -1,8 +1,15 @@
 import { useStaticQuery, graphql } from "gatsby"
 export const useSiteMetadata = () => {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query SiteMetaData {
+        logo: file(name: { eq: "catalyst-logo" }) {
+          childImageSharp {
+            fluid(maxHeight: 300) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
         site {
           siteMetadata {
             title
@@ -26,5 +33,9 @@ export const useSiteMetadata = () => {
       }
     `
   )
-  return site.siteMetadata
+
+  const logo = data.logo.childImageSharp.fluid
+  const metaData = data.site.siteMetadata
+  const allData = { ...metaData, logo }
+  return allData
 }
