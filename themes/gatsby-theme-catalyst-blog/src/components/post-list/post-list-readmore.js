@@ -7,6 +7,7 @@ const Readmore = props => {
   return (
     <Button
       sx={{
+        color: "primary",
         fontWeight: "bold",
         bg: "transparent",
         border: "none",
