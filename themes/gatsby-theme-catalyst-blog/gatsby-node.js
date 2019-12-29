@@ -48,20 +48,6 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   const { excerptLength } = withDefaults(themeOptions)
   const { createTypes } = actions
 
-  createFieldExtension({
-    name: `defaultTrue`,
-    extend() {
-      return {
-        resolve(source, args, context, info) {
-          if (source[info.fieldName] == null) {
-            return true
-          }
-          return source[info.fieldName]
-        },
-      }
-    },
-  })
-
   createTypes(`interface CatalystPost @nodeInterface {
       id: ID!
       title: String!
@@ -73,7 +59,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       tags: [String]!
       keywords: [String]!
       excerpt: String!
-      draft: Boolean! @defaultTrue
+      draft: Boolean
       featuredImage: File! @fileByRelativePath 
   }`)
 
@@ -92,8 +78,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           type: `String`,
         },
         draft: {
-          type: `Boolean!`,
-          extensions: { defaultTrue: {} },
+          type: `Boolean`,
         },
         slug: {
           type: `String!`,
@@ -174,7 +159,7 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
       featuredImage: node.frontmatter.featuredImage,
-      draft: node.frontmatter.published,
+      draft: node.frontmatter.draft || true,
     }
 
     const mdxCatalystPostId = createNodeId(`${node.id} >>> MdxCatalystPost`)
