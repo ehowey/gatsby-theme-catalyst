@@ -9,7 +9,11 @@ export default ({ data }) => {
 
 export const query = graphql`
   query PostsQuery {
-    allCatalystPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+    allCatalystPost(
+      sort: { fields: [date, title], order: DESC }
+      limit: 1000
+      filter: { draft: { eq: false } }
+    ) {
       edges {
         node {
           id
