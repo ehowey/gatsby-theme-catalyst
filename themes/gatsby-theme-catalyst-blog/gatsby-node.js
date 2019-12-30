@@ -46,7 +46,22 @@ const mdxResolverPassthrough = fieldName => async (
 
 exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   const { excerptLength } = withDefaults(themeOptions)
-  const { createTypes } = actions
+  const { createTypes, createFieldExtension } = actions
+
+  createFieldExtension({
+    name: `defaultFalse`,
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          if (source[info.fieldName] == null) {
+            return false
+          }
+          return source[info.fieldName]
+        },
+      }
+    },
+  })
+
   createTypes(`interface CatalystPost @nodeInterface {
       id: ID!
       title: String!
@@ -58,6 +73,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       tags: [String]!
       keywords: [String]!
       excerpt: String!
+      draft: Boolean! @defaultFalse
       featuredImage: File! @fileByRelativePath 
   }`)
 
@@ -74,6 +90,10 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         },
         authorLink: {
           type: `String`,
+        },
+        draft: {
+          type: `Boolean!`,
+          extensions: { defaultFalse: {} },
         },
         slug: {
           type: `String!`,
@@ -154,6 +174,7 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
       featuredImage: node.frontmatter.featuredImage,
+      draft: node.frontmatter.draft,
     }
 
     const mdxCatalystPostId = createNodeId(`${node.id} >>> MdxCatalystPost`)
@@ -195,6 +216,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
           node {
             id
             slug
+            draft
           }
         }
       }
@@ -207,7 +229,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   // Create Posts and Post pages.
   const { allCatalystPost } = result.data
-  const posts = allCatalystPost.edges
+  const allPosts = allCatalystPost.edges
+  const posts = allPosts.filter(posts => posts.node.draft != true)
 
   // Create a page for each Post
   posts.forEach(({ node: post }, index) => {
