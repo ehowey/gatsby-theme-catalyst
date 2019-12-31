@@ -6,6 +6,7 @@
   ],
   "name": "gatsby-theme-catalyst",
   "devDependencies": {
+    "cypress": "^3.8.1",
     "lerna": "^3.17.0"
   }
 }
