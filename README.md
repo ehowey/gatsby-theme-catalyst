@@ -20,7 +20,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 **Example sites built with Gatsby-Theme-Catalyst:**
 
-- [www.erichowey.dev](https://www.erichowey.dev/) - Based on `gatsby-starter-catalyst-basic`, [Github Repo](https://github.com/ehowey/erichoweydev)
+- [www.erichowey.dev](https://www.erichowey.dev/) - Based on `gatsby-starter-catalyst-blog`, [Github Repo](https://github.com/ehowey/erichoweydev)
 - [www.briannasharpe.com](https://www.briannasharpe.com/) - Based on `gatsby-starter-catalyst-writer`, [Github Repo](https://github.com/ehowey/briannasharpe)
 
 ## Docs Index
@@ -39,7 +39,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
   - [Changing logos and logo sizes](#changing-logos-and-logo-sizes)
 
 - [Philosophy](#philosophy---less-is-more)
-- [Contribute](#next-steps-and-contribution)
+- [Acknowledgements and Contribution](#next-steps-and-contribution)
 
 ## List of all themes
 
@@ -272,3 +272,5 @@ The starter sites provide a "quick start" for site development using the themes 
 ## Next Steps and Contribution
 
 This is a passion project for me. I would love any additional feedback, suggestions and pull requests. I can be contacted via email at: <eric@erichowey.dev>
+
+I would like to acknowledge all of the help I have gotten in working on this project from people answering questions on the GatsbyJS issues, [Chris Biscardi's blog](https://www.christopherbiscardi.com/), and the work that [@4lpine](https://twitter.com/4lpine) and [@jxnblk](https://twitter.com/jxnblk) have done documenting Theme-ui so well.
