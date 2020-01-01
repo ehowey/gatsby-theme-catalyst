@@ -20,9 +20,40 @@ gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-wri
 
 ## Theme options
 
-WIP
+These theme options are used to properly access images and data from Sanity. I would recommend just setting these up in environment variables as you will need an environment variables file to store your access token anyways.
 
-## Walkthrough
+| Option          | Required? | Values | Description                                                                          |
+| --------------- | --------- | ------ | ------------------------------------------------------------------------------------ |
+| sanityDataset   | No        | String | Defaults to "production", change to reflect the dataset name you are using in Sanity |
+| sanityProjectID | Yes       | String | Sanity project ID                                                                    |
+
+Example config:
+
+```
+{
+  resolve: `gatsby-theme-catalyst-writer`,
+  options: {
+    sanityProjectID: process.env.SANITY_PROJECT_ID,
+    sanityDataset: process.env.SANITY_DATASET,
+  },
+},
+```
+
+**Environment Variable**
+
+You can read the [Gatsby docs about environment variables](https://www.gatsbyjs.org/docs/environment-variables/) which may be helpful.
+
+At the top of your gatsby-config.js file you will want the following, `require("dotenv").config()`
+
+Then in your site you can create a `.env` file in your main site directory with the following information. You do not want to commit this file to git as the token should remain private.
+
+```
+SANITY_PROJECT_ID = utcr8kb1
+SANITY_DATASET = production
+SANITY_TOKEN = skRE6nh0PRCFP4juyGzMC7gvlop (actual token is much longer)
+```
+
+## [WIP] Walkthrough
 
 Setting this up is a bit more involved of a process because of the tight integration of SANITY.io and the theme. The following steps should work, if you run into problems feel free to post an issue or contact me and I will try to help.
 
