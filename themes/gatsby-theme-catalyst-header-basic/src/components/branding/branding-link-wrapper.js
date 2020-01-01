@@ -14,6 +14,9 @@ const LinkWrapper = ({ children }) => {
           cursor: "pointer",
         }}
         onClick={scroll.scrollToTop}
+        onKeyPress={scroll.scrollToTop}
+        role="button"
+        tabIndex="0"
       >
         {children}
       </div>

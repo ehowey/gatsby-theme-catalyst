@@ -17,8 +17,6 @@ const NavMenuBar = ({ children }) => {
         m: 0,
         p: 0,
       }}
-      aria-label="menu-bar"
-      role="menubar"
     >
       {children}
     </ul>
