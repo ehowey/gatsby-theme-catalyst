@@ -32,7 +32,7 @@
     "react-icons": "^3.8.0",
     "react-scroll": "^1.7.14",
     "remark-slug": "^5.1.2",
-    "theme-ui": "^0.2.49"
+    "theme-ui": "^0.2.52"
   },
   "devDependencies": {
     "gatsby": "^2.18.17",
