@@ -71,13 +71,21 @@ This set of themes is developer focused and I assume you have a basic knowledge 
 
 All of these themes are available on NPM but the easiest way to get started is via a gatsby-starter that includes the theme(s) already. Currently the following starters are available:
 
-**gatsby-starter-catalyst-core**: `gatsby new catalyst-core https://github.com/ehowey/gatsby-starter-catalyst-core`
+**gatsby-starter-catalyst-core**:
 
-**gatsby-starter-catalyst-basic**: `gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic`
+`gatsby new catalyst-core https://github.com/ehowey/gatsby-starter-catalyst-core`
 
-**gatsby-starter-catalyst-blog**: `gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog`
+**gatsby-starter-catalyst-basic**:
 
-**gatsby-starter-catalyst-writer**: `gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
+`gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic`
+
+**gatsby-starter-catalyst-blog**:
+
+`gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog`
+
+**gatsby-starter-catalyst-writer**:
+
+`gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
 
 ## Customizing the themes
 
