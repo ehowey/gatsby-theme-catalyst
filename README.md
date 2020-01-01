@@ -35,6 +35,8 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
   - [Menu Links](#menu-links)
   - [Social Links](#social-links)
   - [Theme-ui, variants, and design tokens](#theme-ui-variants-and-design-tokens)
+  - [Typography and changing fonts](#typography-and-changing-fonts)
+  - [Changing logos and logo sizes](#changing-logos-and-logo-sizes)
 
 - [Philosophy](#philosophy---less-is-more)
 - [Contribute](#next-steps-and-contribution)
@@ -46,7 +48,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 | `gatsby-theme-catalyst-core`         | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
 | `gatsby-theme-catalyst-header-basic` | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
 | `gatsby-theme-catalyst-footer-basic` | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a very basic footer to the core theme.                                                                                                                                                             |
-| `[WIP]gatsby-theme-catalyst-blog`    | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | [WIP] This will eventually be a plug-and-play blog for any Catalyst based site.                                                                                                                              |
+| `gatsby-theme-catalyst-blog`         | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | This will eventually be a plug-and-play blog for any Catalyst based site.                                                                                                                                    |
 | `gatsby-theme-catalyst-writer`       | [gatsby-starter-catalyst-writer](https://gatsby-starter-catalyst-writer.netlify.com/) | This is the first complete site using the catalyst set of themes. Designed to be used by a freelance writer as their portfolio. Sanity is used as a CMS.                                                     |
 
 ## Accessibility
@@ -211,36 +213,37 @@ export default {
 
 A common change you will need to make is to the logo and logo size.
 
-The logo is found by default in the `src/content/assets` folder under the names `catalyst-logo.png`. Change this file to reflect your branding. You can use other file extensions, e.g. .jpg but you cannot change the file name. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-logo.jpg` but not with `logo-main.jpg`.
+The logo is found by default in the `src/content/assets` folder under the names `catalyst-site-logo.png`. Change this file to reflect your branding. You can use other file extensions, e.g. .jpg but you cannot change the file name. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-site-logo.jpg` but not with `logo-main.jpg`.
 
 The logo size is managed in the following location: `src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
 
-Try this in `src/gatsby-plugin-theme-ui/index.js` for a big logo:
+Try this in `src/gatsby-theme-catalyst-core/components/theme.js` for a big logo:
 
 ```
-import merge from "deepmerge"
-import { BaseTheme } from "gatsby-theme-catalyst-core"
-
-export default merge(BaseTheme, {
   sizes: {
+    ...tailwind.sizes,
+    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
+    contentWidth: "90vw", // Sets the container width on smaller screens, results in a 5vw margin on the left and right
     headerHeight: "auto", // Provides fallback setting to control header height
-    logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
-    logoWidthS: "50px", // Logo width on small screens, 480px - 768px
-    logoWidthM: "50px", // Logo width on medium screens, 768px - 1024px
-    logoWidthL: "60px", // Logo width on large screens, 1024px - 1440px
-    logoWidthXL: "60px", // Logo width on extra large screens, above 1440px
-    logoHeightXS: "40px", // Logo height on extra small screens, up to 480px
-    logoHeightS: "50px", // Logo height on small screens, 480px - 768px
-    logoHeightM: "50px", // Logo height on medium screens, 768px - 1024px
-    logoHeightL: "60px", // Logo height on large screens, 1024px - 1440px
-    logoHeightXL: "60px", // Logo height on extra large screens, above 1440px
+    logoWidthXS: "80px", // Logo width on extra small screens, up to 480px
+    logoWidthS: "150px", // Logo width on small screens, 480px - 768px
+    logoWidthM: "150px", // Logo width on medium screens, 768px - 1024px
+    logoWidthL: "260px", // Logo width on large screens, 1024px - 1440px
+    logoWidthXL: "260px", // Logo width on extra large screens, above 1440px
+    logoHeightXS: "80px", // Logo height on extra small screens, up to 480px
+    logoHeightS: "150px", // Logo height on small screens, 480px - 768px
+    logoHeightM: "150px", // Logo height on medium screens, 768px - 1024px
+    logoHeightL: "260px", // Logo height on large screens, 1024px - 1440px
+    logoHeightXL: "260px", // Logo height on extra large screens, above 1440px
+    iconsFooter: "32px", // Sets the icons size for the footer
+    iconsHeader: "20px", // Sets the icons size for the header
   },
-})
 ```
 
 ### Custom hero component using component shadowing
 
-There is optional support for a custom hero component which is enabled by setting `useHero: true` in the core theme options. You can then access the hero component via component shadowing in this location for a starter: `src/gatsby-theme-catalyst-core/components/hero.js`. This section of the website comes below the header but before the content from MDX files and is only visible on the home page.
+There is optional support for a custom hero component which is enabled by setting `useHero: true` in the core theme options. You can then access the hero component via component shadowing in this location for a starter: `src/gatsby-theme-catalyst-core/components/hero.js`. This section of the website comes below the header but before the content from MDX files.
 
 For an example of this in action see [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/).
 
