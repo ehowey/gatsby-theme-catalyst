@@ -60,7 +60,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#cccccc`,
         display: `minimal-ui`,
-        icon: `content/assets/catalyst-icon.png`, // This path is relative to the root of the site.
+        icon: `content/assets/catalyst-site-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],

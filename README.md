@@ -5,15 +5,13 @@
   Gatsby Theme Catalyst
 </h1>
 
-**Currently a WIP, rapid changes at this time**
-
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinoinated set of integrated themes and starters that can be used to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
+The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinionated set of integrated themes and starters that can be used to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
 **Catalyzing Start:**
 
 ```shell
    # create a new Gatsby site using the basic starter
-    gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic 
+    gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
    # change into your new directory
     cd catalyst-basic
    # launch the site
@@ -46,7 +44,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 ## Accessibility
 
-Accesibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics as I am sure there are things I missed. Currently this theme is scoring 100 in Google Lighthouse audit for accessibility.
+Accessibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics as I am sure there are things I missed. Currently this theme is scoring 100 in Google Lighthouse audit for accessibility.
 
 ## Getting Started
 
@@ -168,14 +166,14 @@ The file you should modify to set design tokens is always located in the followi
 
 Try changing some colors in the file and see what happens!
 
-Some major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file.  The following variants are available to use:
+Some major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file. The following variants are available to use:
 
- - `variants.main`: Targets the <main> component in the site, useful for changing site margins/content size.
- - `variants.container`: Targets the container <div> for the content, useful for changing site margins/content size.
- - `variants.header`: Targets the root <header> component
- - `variants.footer`: Targets the root <footer> component
- - `variants.navLinkStyles`: Targets the container styles for the nav links in the header
-    
+- `variants.main`: Targets the <main> component in the site, useful for changing site margins/content size.
+- `variants.container`: Targets the container <div> for the content, useful for changing site margins/content size.
+- `variants.header`: Targets the root <header> component
+- `variants.footer`: Targets the root <footer> component
+- `variants.navLinkStyles`: Targets the container styles for the nav links in the header
+
 ### Typography and changing fonts
 
 To add a custom font you need to first add the font as a dependency in your starter site, for example:
@@ -234,13 +232,13 @@ There is optional support for a custom hero component which is enabled by settin
 
 For an example of this in action see [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/).
 
-### catalyst-social.png
+### catalyst-site-social.png
 
 This file is used as the default image in places like Twitter and Facebook. This file is best in a 2:1 aspect ratio, something like 1200x600px. See the [twitter card docs](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image) for more information. You can use alternate image types such as .jpg if you want. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-social.jpg` but not with `social-image.jpg`.
 
-### catalyst-icon.png
+### catalyst-site-icon.png
 
-There is also a file called `catalyst-icon.png` that provides your icon for use `gatsby-plugin-manifest` to create icons for web, PWA, etc. This file should be square and at least 512x512px in dimensions.
+There is also a file called `catalyst-site-icon.png` that provides your icon for use `gatsby-plugin-manifest` to create icons for web, PWA, etc. This file should be square and at least 512x512px in dimensions.
 
 ## Philosophy - Less is More
 

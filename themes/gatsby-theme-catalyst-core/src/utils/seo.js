@@ -17,7 +17,7 @@ const SEO = ({
   const data = useStaticQuery(
     graphql`
       query {
-        seoImage: file(name: { eq: "catalyst-social" }) {
+        seoImage: file(name: { eq: "catalyst-site-social" }) {
           childImageSharp {
             resize(width: 1024) {
               src

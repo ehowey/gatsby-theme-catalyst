@@ -3,9 +3,9 @@ export const useSiteMetadata = () => {
   const data = useStaticQuery(
     graphql`
       query SiteMetaData {
-        logo: file(name: { eq: "catalyst-logo" }) {
+        logo: file(name: { eq: "catalyst-site-logo" }) {
           childImageSharp {
-            fluid(maxHeight: 300) {
+            fluid(maxHeight: 512) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
