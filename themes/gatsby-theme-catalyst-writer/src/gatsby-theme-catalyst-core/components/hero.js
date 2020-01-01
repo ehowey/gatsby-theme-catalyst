@@ -34,6 +34,8 @@ const Hero = () => {
           backgroundColor: "accent",
           mb: 4,
         }}
+        role="complementary"
+        aria-label="Hero Section"
       >
         <div
           sx={{
