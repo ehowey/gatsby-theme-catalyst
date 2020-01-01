@@ -22,7 +22,6 @@ const NavMenuAnchorLink = ({ link, children }) => {
     <AnchorLink
       to={link.replace(/#/g, "").toLowerCase()}
       onClick={() => setIsNavOpen(false)}
-      role="menuitem"
       spy={true}
       hashSpy={true}
       smooth={true}

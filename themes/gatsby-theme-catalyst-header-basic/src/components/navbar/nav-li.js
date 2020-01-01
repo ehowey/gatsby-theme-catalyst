@@ -56,7 +56,6 @@ const NavMenuBar = ({ children }) => {
           transform: "translateY(0px)",
         },
       }}
-      role="none"
     >
       {children}
     </li>

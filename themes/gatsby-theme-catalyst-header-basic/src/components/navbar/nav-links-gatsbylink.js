@@ -9,7 +9,6 @@ const NavMenuLinkInternal = ({ link, children }) => {
 
   return (
     <Link
-      role="menuitem"
       to={link}
       activeClassName="active"
       onClick={() => setIsNavOpen(false)}
