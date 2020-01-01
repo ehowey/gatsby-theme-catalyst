@@ -3,7 +3,6 @@
 import { jsx, Styled } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Button } from "@theme-ui/components"
 
 const HeaderHero = () => {
   const data = useStaticQuery(graphql`
@@ -25,7 +24,7 @@ const HeaderHero = () => {
     }
   `)
   return (
-    <section
+    <div
       sx={{
         display: "grid",
         justifyItems: "center",
@@ -33,6 +32,8 @@ const HeaderHero = () => {
         bg: "palegreen",
         px: 3,
       }}
+      role="complementary"
+      aria-label="Hero Section"
     >
       <div
         sx={{
@@ -41,6 +42,7 @@ const HeaderHero = () => {
         }}
       >
         <Styled.h1
+          as="p"
           sx={{
             textAlign: "center",
           }}
@@ -82,7 +84,7 @@ const HeaderHero = () => {
           `src/gatsby-theme-catalyst-core/components/hero.js`.
         </Styled.p>
       </div>
-    </section>
+    </div>
   )
 }
 

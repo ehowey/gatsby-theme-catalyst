@@ -2,6 +2,28 @@ const remarkSlug = require("remark-slug")
 
 module.exports = options => {
   return {
+    siteMetadata: {
+      title: `Placeholder title`,
+      description: `Placeholder description`,
+      keywords: [`gatsby`],
+      author: `Placeholder author`,
+      twitter: `Placeholder twitter`,
+      siteUrl: `https://www.gatsbyjs.org`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
+      menuLinks: [
+        {
+          name: `Placeholder Menu Link`,
+          link: `/`,
+          type: `internal`, //internal or anchor
+        },
+      ],
+      socialLinks: [
+        {
+          name: `Placeholder social link`,
+          link: `https://www.gatsbyjs.org`,
+          location: `all`, //Options are "all", "header", "footer"
+        },
+      ],
+    },
     plugins: [
       {
         resolve: `gatsby-source-filesystem`,

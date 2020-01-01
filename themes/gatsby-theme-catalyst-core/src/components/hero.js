@@ -4,23 +4,24 @@ import { jsx, Styled } from "theme-ui"
 
 const HeaderHero = () => {
   return (
-    <section
+    <div
       sx={{
         display: "grid",
         justifyItems: "center",
         alignItems: "center",
         bg: "palegreen",
-        p: 5,
-        textAlign: "center",
+        p: 3,
       }}
+      role="complementary"
+      aria-label="Hero Section"
     >
-      <Styled.h1>Hero Area</Styled.h1>
+      <Styled.h1 as="p">Hero Area</Styled.h1>
       <Styled.p>
         Hero area for some latent shadowing in sub-themes and sites.
         <br />
         Toggled via "useHero" setting.
       </Styled.p>
-    </section>
+    </div>
   )
 }
 

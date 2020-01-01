@@ -1,11 +1,22 @@
 # Gatsby Theme Catalyst Writer
 
+This is a full-featured theme that ties together the core theme, header and footer themes and then uses this as a basis to create a complete website. The theme relies on data from [SANITY.io](https://www.sanity.io/) and includes a customized content studio for the CMS.
+
+**Additional Documentation**
+
+[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+
 **Demos:**
 
 - [gatsby-starter-catalyst-writer](https://gatsby-starter-catalyst-writer.netlify.com/)
 - [www.briannasharpe.com](https://www.briannasharpe.com)
 
-This is a full-featured theme that ties together the core theme, header and footer themes and then uses this as a basis to create a complete website. The theme relies on data from [SANITY.io](https://www.sanity.io/) and includes a customized content studio for the CMS.
+**Catalyzing Start**
+
+```sh
+# create a new Gatsby site using the catalyst writer starter site
+gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer
+```
 
 ## Theme options
 

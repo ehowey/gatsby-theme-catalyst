@@ -90,11 +90,11 @@ export default {
       fontFamily: "monospace",
       backgroundColor: "muted",
       p: 1,
-      fontSize: 2,
+      fontSize: 1,
     },
     pre: {
       fontFamily: "monospace",
-      fontSize: 2,
+      fontSize: 1,
       overflowX: "auto",
       bg: "muted",
       p: 3,
