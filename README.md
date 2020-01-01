@@ -29,6 +29,13 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 - [Accessibility](#accessibility)
 - [Getting Started](#getting-started)
 - [Customizing the themes](#customizing-the-themes)
+
+  - [Theme options](#theme-options)
+  - [Modifying gatsby-config.js](#modifying-gatsby-configjs)
+  - [Menu Links](#menu-links)
+  - [Social Links](#social-links)
+  - [Theme-ui, variants, and design tokens](#theme-ui-variants-and-design-tokens)
+
 - [Philosophy](#philosophy---less-is-more)
 - [Contribute](#next-steps-and-contribution)
 
@@ -44,7 +51,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 ## Accessibility
 
-Accessibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics as I am sure there are things I missed. Currently this theme is scoring 100 in Google Lighthouse audit for accessibility.
+Accessibility is important to me. I have made every effort to address accessibility issues in these themes and starters but would love additional feedback and help with more advanced accessibility topics as I am sure there are things I missed. Currently this theme is scoring 100 in Google Lighthouse audit for accessibility and passing tests using cypress-axe.
 
 ## Getting Started
 
@@ -66,13 +73,17 @@ All of these themes are available on NPM but the easiest way to get started is v
 
 **gatsby-starter-catalyst-basic**: `gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic`
 
+**gatsby-starter-catalyst-blog**: `gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog`
+
 **gatsby-starter-catalyst-writer**: `gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
 
 ## Customizing the themes
 
-### Catalyst-Core theme options
+### Theme options
 
-There are a number of options for the core theme that act as flags to control various aspects of the site appearance and function. Try experimenting with some of these to get a feel for how it changes the site.
+There are a number of options for the core theme, blog theme, and writer theme that act as flags to control various aspects of the site appearance and function. Try experimenting with some of these to get a feel for how it changes the site.
+
+**Core theme:**
 
 | Option                 | Values                      | Description                                                                                               |
 | ---------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -85,20 +96,21 @@ There are a number of options for the core theme that act as flags to control va
 | `useStickyHeader`      | true or false               | Controls whether the header is sticky or static                                                           |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px" | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
-Example Config:
+**Blog theme:**
 
-```
-   {
-      resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        displaySiteTitle: false,
-        invertLogo: true,
-        mobileMenuBreakpoint: "1024px",
-        useStickyHeader: true,
-        useHero: "true",
-      }
-    }
-```
+| Option          | Values | Description                                                                             |
+| --------------- | ------ | --------------------------------------------------------------------------------------- |
+| `contentPath`   | String | Defaults to "content/posts", determines where the posts are created from.               |
+| `assetPath`     | String | Defaults to "content/assets", determines where the post assets like images are located. |
+| `basePath`      | String | Defaults to "/blog", determines the page location for the post list.                    |
+| `excerptLength` | String | Defaults to "140", determines the length of the excerpt use for post summaries.         |
+
+**Writer theme:**
+
+| Option          | Values | Description                                                                          |
+| --------------- | ------ | ------------------------------------------------------------------------------------ |
+| sanityDataset   | String | Defaults to "production", change to reflect the dataset name you are using in Sanity |
+| sanityProjectID | String | Required, Sanity project ID                                                          |
 
 ### Modifying Gatsby-Config.JS
 

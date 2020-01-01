@@ -22,10 +22,10 @@ gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-wri
 
 These theme options are used to properly access images and data from Sanity. I would recommend just setting these up in environment variables as you will need an environment variables file to store your access token anyways.
 
-| Option          | Required? | Values | Description                                                                          |
-| --------------- | --------- | ------ | ------------------------------------------------------------------------------------ |
-| sanityDataset   | No        | String | Defaults to "production", change to reflect the dataset name you are using in Sanity |
-| sanityProjectID | Yes       | String | Sanity project ID                                                                    |
+| Option          | Values | Description                                                                          |
+| --------------- | ------ | ------------------------------------------------------------------------------------ |
+| sanityDataset   | String | Defaults to "production", change to reflect the dataset name you are using in Sanity |
+| sanityProjectID | String | Required, Sanity project ID                                                          |
 
 Example config:
 
