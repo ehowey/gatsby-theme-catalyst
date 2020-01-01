@@ -5,14 +5,12 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
     "gatsby": "^2.18.17",
-    "gatsby-theme-catalyst-core": "^0.17.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "peerDependencies": {
     "gatsby": "^2.18.17",
-    "gatsby-theme-catalyst-core": "^0.16.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
