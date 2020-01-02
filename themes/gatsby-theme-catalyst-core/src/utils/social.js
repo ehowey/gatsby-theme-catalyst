@@ -2,6 +2,7 @@
 import { jsx, useThemeUI } from "theme-ui"
 import { IconContext } from "react-icons"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
+import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import {
   FaRegEnvelope,
   FaTwitter,
@@ -41,7 +42,10 @@ import {
 export const SocialHeader = () => {
   const { theme } = useThemeUI()
   const { socialLinks } = useSiteMetadata()
-
+  const {useSocialLinks} = useCatalystConfig()
+  if(useSocialLinks === false) {
+    return null
+  }
   return (
     <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
       {socialLinks.map(platform => {
@@ -565,7 +569,11 @@ export const SocialHeader = () => {
 export const SocialFooter = () => {
   const { theme } = useThemeUI()
   const { socialLinks } = useSiteMetadata()
-
+  const {useSocialLinks} = useCatalystConfig()
+  if(useSocialLinks === false) {
+    return null
+  }
+  
   return (
     <IconContext.Provider value={{ size: theme.sizes.iconsFooter }}>
       {socialLinks.map(platform => {
