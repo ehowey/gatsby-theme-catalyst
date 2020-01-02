@@ -95,16 +95,17 @@ There are a number of options for the core theme, blog theme, and writer theme t
 
 **Core theme:**
 
-| Option                 | Values                      | Description                                                                                               |
-| ---------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `contentPath`          | String                      | Defaults to "content/pages", determines where the pages are created from.                                 |
-| `assetPath`            | String                      | Defaults to "content/assets", determines where the page assets like images are located.                   |
-| `displaySiteLogo`      | true or false               | Controls whether the logo is displayed                                                                    |
-| `displaySiteTitle`     | true or false               | Controls whether the site title is displayed                                                              |
-| `invertLogo`           | true or false               | Controls whether the logo is inverted when the mobile menu is open                                        |
-| `useHero`              | true or false               | Flag to include a hero component in the site.                                                             |
-| `useStickyHeader`      | true or false               | Controls whether the header is sticky or static                                                           |
-| `mobileMenuBreakpoint` | String value, e.g. "1024px" | Sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
+| Option                 | Values                      | Description                                                                                                                    |
+| ---------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `contentPath`          | String                      | Defaults to "content/pages", determines where the pages are created from.                                                      |
+| `assetPath`            | String                      | Defaults to "content/assets", determines where the page assets like images are located.                                        |
+| `displaySiteLogo`      | true or false               | Defaults to true, controls whether the logo is displayed                                                                       |
+| `displaySiteTitle`     | true or false               | Defaults to true, controls whether the site title is displayed                                                                 |
+| `invertLogo`           | true or false               | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
+| `useHero`              | true or false               | Defaults to false, flag to include a hero component in the site                                                                |
+| `useStickyHeader`      | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
+| `useSocialLinks`       | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
+| `mobileMenuBreakpoint` | String value, e.g. "1024px" | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
 **Blog theme:**
 

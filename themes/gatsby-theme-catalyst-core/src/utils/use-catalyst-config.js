@@ -12,6 +12,7 @@ export const useCatalystConfig = () => {
           invertSiteLogo
           mobileMenuBreakpoint
           useStickyHeader
+          useSocialLinks
         }
       }
     `
