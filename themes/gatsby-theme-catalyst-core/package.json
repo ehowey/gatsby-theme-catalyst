@@ -5,7 +5,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@emotion/core": "^10.0.22",
-    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/mdx": "^1.5.3",
     "@mdx-js/react": "^1.5.3",
     "@theme-ui/components": "^0.2.50",
     "@theme-ui/preset-tailwind": "^0.2.42",
