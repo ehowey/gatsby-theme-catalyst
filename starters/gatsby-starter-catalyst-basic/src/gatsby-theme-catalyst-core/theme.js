@@ -29,6 +29,12 @@ export default {
       links: baseColors.gray[1],
       icons: baseColors.gray[1],
     },
+    modes: {
+      dark: {
+        text: "#fff",
+        background: "#000",
+      },
+    },
   },
   sizes: {
     ...tailwind.sizes,

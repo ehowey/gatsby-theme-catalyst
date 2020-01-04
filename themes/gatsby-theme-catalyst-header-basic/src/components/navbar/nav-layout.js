@@ -6,6 +6,7 @@ import NavUL from "./nav-ul"
 import NavLinks from "./nav-links"
 import NavSocialLinks from "./nav-social"
 import NavMobileButton from "./nav-mobile-button"
+import NavColorButton from "./nav-color-button"
 
 const SiteNav = () => {
   return (
@@ -15,6 +16,7 @@ const SiteNav = () => {
           <NavLinks />
         </NavUL>
         <NavSocialLinks />
+        <NavColorButton />
       </Nav>
       <NavMobileButton />
     </Fragment>
