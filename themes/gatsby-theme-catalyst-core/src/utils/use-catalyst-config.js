@@ -13,6 +13,7 @@ export const useCatalystConfig = () => {
           mobileMenuBreakpoint
           useStickyHeader
           useSocialLinks
+          useColorMode
         }
       }
     `

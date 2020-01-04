@@ -50,6 +50,7 @@ module.exports = {
         useHero: true,
         displaySiteLogo: false,
         displaySiteTitle: true,
+        useColorMode: false,
       },
     },
     `gatsby-theme-catalyst-header-basic`,

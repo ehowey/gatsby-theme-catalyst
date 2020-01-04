@@ -12,6 +12,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     mobileMenuBreakpoint: String!
     useStickyHeader: Boolean!
     useSocialLinks: Boolean!
+    useColorMode: Boolean!
   }`)
 }
 
@@ -27,6 +28,7 @@ exports.sourceNodes = (
     mobileMenuBreakpoint = "768px",
     useStickyHeader = false,
     useSocialLinks = true,
+    useColorMode = true,
   }
 ) => {
   // create garden data from plugin config
@@ -40,6 +42,7 @@ exports.sourceNodes = (
     mobileMenuBreakpoint,
     useStickyHeader,
     useSocialLinks,
+    useColorMode,
   }
   createNode({
     ...catalystConfig,
