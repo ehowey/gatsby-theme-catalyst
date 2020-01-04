@@ -3,6 +3,7 @@
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 
 export default {
+  useColorSchemeMediaQuery: true,
   ...tailwind,
   breakpoints: ["480px", "768px", "1024px", "1440px"],
   fonts: {
@@ -28,6 +29,12 @@ export default {
       text: baseColors.gray[1],
       links: baseColors.gray[1],
       icons: baseColors.gray[1],
+    },
+    modes: {
+      dark: {
+        text: "#fff",
+        background: "#000",
+      },
     },
   },
   sizes: {
