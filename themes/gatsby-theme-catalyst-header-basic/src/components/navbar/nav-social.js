@@ -16,14 +16,16 @@ const SocialWrapper = () => {
     <div
       sx={{
         display: "flex",
+        alignItems: "center",
         mr: isMobile ? "auto" : 2,
         ml: "auto",
         mt: isMobile ? 2 : 0,
-
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",
-          mr: 2,
+          mr: isNavOpen ? 3 : 2,
           textDecoration: "none",
+          display: "grid",
+          placeItems: "center",
         },
         "a:last-of-type": {
           mr: 0,
