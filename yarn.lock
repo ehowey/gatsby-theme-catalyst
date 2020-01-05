@@ -2409,6 +2409,13 @@
   resolved "https://registry.yarnpkg.com/@theme-ui/preset-tailwind/-/preset-tailwind-0.2.42.tgz#00e009827da2ffea628fa5b89002cd8cb6db805f"
   integrity sha512-giQQ0xoGB2btWvLlg9GQSyRiQ6vGCpVF+uf5OxU5TJt2DGyuYckxvlG3za93o80cxHnVlm5YyO2sLNzXyQSi0w==
 
+"@theme-ui/prism@^0.2.50":
+  version "0.2.50"
+  resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.2.50.tgz#0f1dafb7d71248ba26f90cddc643b414dd9f4378"
+  integrity sha512-FD9UtROhol8limL2XtQPfnTUfUJETUC37wYW6dSIfVCDR4l0CSbqYS+niQAqVGcuD0wtL1pbkvb/qDtUg94Ebw==
+  dependencies:
+    prism-react-renderer "^1.0.2"
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -12729,6 +12736,11 @@ pretty-format@^24.3.0, pretty-format@^24.9.0:
     ansi-regex "^4.0.0"
     ansi-styles "^3.2.0"
     react-is "^16.8.4"
+
+prism-react-renderer@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.0.2.tgz#3bb9a6a42f76fc049b03266298c7068fdd4b7ea9"
+  integrity sha512-0++pJyRfu4v2OxI/Us/5RLui9ESDkTiLkVCtKuPZYdpB8UQWJpnJQhPrWab053XtsKW3oM0sD69uJ6N9exm1Ag==
 
 private@^0.1.6:
   version "0.1.8"
