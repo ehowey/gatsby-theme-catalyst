@@ -138,18 +138,15 @@ markup source code. Rather than forming normal paragraphs, the lines
 of a code block are interpreted literally. Markdown wraps a code block
 in both `<pre>` and `<code>` tags.
 
-To produce a code block in Markdown, simply indent every line of the
-block by at least 4 spaces or 1 tab.
+```jsx
+import Prism from "@theme-ui/prism"
 
-This is a normal paragraph:
-
-    This is a code block.
-
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
+const components = {
+  pre: props => props.children,
+  code: Prism,
+}
+export default components
+```
 
 A code block continues until it reaches a line that is not indented
 (or the end of the article).

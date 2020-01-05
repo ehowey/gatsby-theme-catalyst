@@ -1,6 +1,7 @@
 // See https://theme-ui.com/ for more info and also https://www.gatsbyjs.org/docs/theme-ui/
 // Try changing some of the colors below to see what happens.
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
+import github from "@theme-ui/prism/presets/github"
 
 export default {
   useColorSchemeMediaQuery: true,
@@ -73,24 +74,14 @@ export default {
       borderColor: "primary",
     },
     inlineCode: {
-      fontFamily: "monospace",
-      backgroundColor: "muted",
-      p: 1,
+      ...github,
       fontSize: 1,
+      p: 1,
     },
     pre: {
-      fontFamily: "monospace",
+      ...github,
       fontSize: 1,
-      overflowX: "auto",
-      bg: "muted",
       p: 3,
-      border: "1px solid",
-      borderColor: "grey",
-      borderRadius: "0.25rem",
-      code: {
-        color: "inherit",
-        p: 0,
-      },
     },
   },
 }

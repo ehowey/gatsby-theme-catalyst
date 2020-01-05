@@ -9,6 +9,7 @@
     "@mdx-js/react": "^1.5.3",
     "@theme-ui/components": "^0.2.50",
     "@theme-ui/preset-tailwind": "^0.2.42",
+    "@theme-ui/prism": "^0.2.50",
     "deepmerge": "^4.2.2",
     "gatsby-image": "^2.2.37",
     "gatsby-plugin-manifest": "^2.2.34",
