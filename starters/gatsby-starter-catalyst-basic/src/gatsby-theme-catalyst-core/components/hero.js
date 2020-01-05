@@ -29,7 +29,7 @@ const HeaderHero = () => {
         display: "grid",
         justifyItems: "center",
         alignItems: "center",
-        bg: "palegreen",
+        bg: "#00ebc7",
         px: 3,
       }}
       role="complementary"
@@ -47,7 +47,7 @@ const HeaderHero = () => {
             textAlign: "center",
           }}
         >
-          Gatsby-Theme-Catalyst
+          Gatsby Theme Catalyst
         </Styled.h1>
         <div
           sx={{
