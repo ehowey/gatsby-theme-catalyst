@@ -1,12 +1,12 @@
 {
   "name": "gatsby-starter-catalyst-writer",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Writer",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.18.17",
-    "gatsby-theme-catalyst-core": "^0.18.4",
+    "gatsby-theme-catalyst-core": "^0.18.5",
     "gatsby-theme-catalyst-footer-basic": "^0.3.0",
     "gatsby-theme-catalyst-header-basic": "^0.5.2",
     "gatsby-theme-catalyst-writer": "^0.4.1",
