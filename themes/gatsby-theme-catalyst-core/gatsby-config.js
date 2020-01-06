@@ -56,7 +56,7 @@ module.exports = options => {
                 maxWidth: 1440,
                 linkImagesToOriginal: false,
                 withWebp: true,
-                backgroundColor: "transparent",
+                backgroundColor: `transparent`,
               },
             },
             {
@@ -76,7 +76,7 @@ module.exports = options => {
                 maxWidth: 1440,
                 linkImagesToOriginal: false,
                 withWebp: true,
-                backgroundColor: "transparent",
+                backgroundColor: `transparent`,
               },
             },
           ],
