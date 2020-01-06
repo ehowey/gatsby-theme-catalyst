@@ -56,7 +56,7 @@ module.exports = options => {
                 maxWidth: 1440,
                 linkImagesToOriginal: false,
                 withWebp: true,
-                backgroundColor: `transparent`,
+                backgroundColor: "transparent",
               },
             },
             {
@@ -69,7 +69,17 @@ module.exports = options => {
             { resolve: `gatsby-remark-reading-time` },
           ],
           remarkPlugins: [remarkSlug],
-          plugins: [`gatsby-remark-images`],
+          plugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 1440,
+                linkImagesToOriginal: false,
+                withWebp: true,
+                backgroundColor: "transparent",
+              },
+            },
+          ],
         },
       },
       `gatsby-plugin-sitemap`,
