@@ -44,9 +44,7 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        useHero: true,
-      },
+      options: {},
     },
     {
       resolve: `gatsby-plugin-manifest`,
