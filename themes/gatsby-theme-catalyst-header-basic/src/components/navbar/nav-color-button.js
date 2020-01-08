@@ -1,17 +1,21 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from "theme-ui"
+import { jsx, useColorMode, useThemeUI } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { IconButton } from "@theme-ui/components"
 import { FiSun, FiMoon } from "react-icons/fi"
+import { IconContext } from "react-icons"
 
 const ColorModeButton = () => {
   const [colorMode, setColorMode] = useColorMode()
   const [isNavOpen] = useContext(NavContext)
+  const { theme } = useThemeUI()
 
   return (
     <IconButton
       sx={{
+        display: "grid",
+        placeItems: "center",
         cursor: "pointer",
         color: isNavOpen ? "header.iconsOpen" : "header.icons",
         width: "auto",
@@ -28,7 +32,9 @@ const ColorModeButton = () => {
         setColorMode(colorMode === "default" ? "dark" : "default")
       }}
     >
-      {colorMode === "default" ? <FiSun /> : <FiMoon />}
+      <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
+        {colorMode === "default" ? <FiMoon /> : <FiSun />}
+      </IconContext.Provider>
     </IconButton>
   )
 }
