@@ -44,13 +44,7 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        displaySiteLogo: true,
-        displaySiteTitle: true,
-        invertSiteLogo: false,
-        mobileMenuBreakpoint: "768px",
-        headerPosition: "static", // "static" or "sticky" work best, "fixed" is possible
-      },
+      options: {},
     },
     {
       resolve: `gatsby-plugin-manifest`,

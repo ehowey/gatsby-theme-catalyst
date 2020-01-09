@@ -1,13 +1,23 @@
 //Delete this or modify it to make you own hero compoment.  You can also just remove it enitrely by setting useHero to false in the theme options contained in gatsby-config.js file.
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, useColorMode } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
+import { useContext } from "react"
+import { HomeContext } from "gatsby-theme-catalyst-core"
 import Img from "gatsby-image"
+import { Button } from "@theme-ui/components"
 
 const HeaderHero = () => {
   const data = useStaticQuery(graphql`
     query {
       gatsby: file(relativePath: { eq: "gatsby-logo.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 200) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      gatsbyWhite: file(relativePath: { eq: "gatsby-logo-white.png" }) {
         childImageSharp {
           fluid(maxHeight: 200) {
             ...GatsbyImageSharpFluid_withWebp
@@ -21,71 +31,100 @@ const HeaderHero = () => {
           }
         }
       }
+      mdxWhite: file(relativePath: { eq: "mdx-logo-white.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 200) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `)
-  return (
-    <div
-      sx={{
-        display: "grid",
-        justifyItems: "center",
-        alignItems: "center",
-        bg: "palegreen",
-        px: 3,
-      }}
-      role="complementary"
-      aria-label="Hero Section"
-    >
+  const [isHome] = useContext(HomeContext)
+  const [mode] = useColorMode()
+  const isDark = mode === "dark"
+
+  if (isHome) {
+    return (
       <div
         sx={{
-          maxWidth: "maxContentWidth",
-          margin: "0 auto",
+          bg: "accent",
+          px: 3,
         }}
+        role="complementary"
+        aria-label="Hero Section"
       >
-        <Styled.h1
-          as="p"
-          sx={{
-            textAlign: "center",
-          }}
-        >
-          Gatsby-Theme-Catalyst
-        </Styled.h1>
         <div
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            py: 2,
+            maxWidth: "maxContentWidth",
+            mx: "auto",
+            my: 5,
           }}
         >
-          <Img
+          <Styled.h1 as="p">Gatsby Theme Catalyst</Styled.h1>
+          <div
             sx={{
-              height: "60px",
-              width: "60px",
+              display: "grid",
+              gridTemplateColumns: "60px auto 100px auto auto",
+              gridTemplateRows: "auto",
+              gridGap: 3,
+              placeItems: "center",
+              justifyContent: "start",
+              py: 3,
             }}
-            fluid={data.gatsby.childImageSharp.fluid}
-            alt="Gatsby"
-          />
-          <Styled.h2 as="p">+</Styled.h2>
-          <Img
+          >
+            <Img
+              sx={{
+                width: "100%",
+              }}
+              fluid={
+                isDark
+                  ? data.gatsbyWhite.childImageSharp.fluid
+                  : data.gatsby.childImageSharp.fluid
+              }
+              alt="Gatsby"
+            />
+            <Styled.h2 as="p" sx={{ color: "primary" }}>
+              +
+            </Styled.h2>
+            <Img
+              sx={{
+                width: "100%",
+              }}
+              fluid={
+                isDark
+                  ? data.mdxWhite.childImageSharp.fluid
+                  : data.mdx.childImageSharp.fluid
+              }
+              alt="MDX"
+            />
+            <Styled.h2 as="p" sx={{ color: "primary" }}>
+              +
+            </Styled.h2>
+            <Styled.h2 as="p">Theme-UI</Styled.h2>
+          </div>
+          <Button as="a" href="https://github.com/ehowey/gatsby-theme-catalyst">
+            Documentation
+          </Button>
+          <Styled.p
             sx={{
-              height: "100px",
-              width: "100px",
+              color: "text",
+              fontSize: 1,
+              mt: 4,
+              opacity: "0.8",
             }}
-            fluid={data.mdx.childImageSharp.fluid}
-            alt="MDX"
-          />
-          <Styled.h2 as="p">+</Styled.h2>
-          <Styled.h2 as="p">Theme-UI</Styled.h2>
+          >
+            Hero area toggled via "useHero" setting in{" "}
+            <code>gatsby-theme-catalyst-core</code>.<br />
+            Edit this in{" "}
+            <code>src/gatsby-theme-catalyst-core/components/hero.js</code>.
+          </Styled.p>
         </div>
-        <Styled.p>
-          Hero area toggled via "useHero" setting in
-          `gatsby-theme-catalyst-core`. Edit this in
-          `src/gatsby-theme-catalyst-core/components/hero.js`.
-        </Styled.p>
       </div>
-    </div>
-  )
+    )
+  } else {
+    return null
+  }
 }
 
 export default HeaderHero

@@ -105,6 +105,7 @@ There are a number of options for the core theme, blog theme, and writer theme t
 | `useHero`              | true or false               | Defaults to false, flag to include a hero component in the site                                                                |
 | `useStickyHeader`      | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
 | `useSocialLinks`       | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
+| `useColorMode`         | true or false               | Defaults to true, controls whether the dark mode toggle is available.                                                          |
 | `mobileMenuBreakpoint` | String value, e.g. "1024px" | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
 
 **Blog theme:**

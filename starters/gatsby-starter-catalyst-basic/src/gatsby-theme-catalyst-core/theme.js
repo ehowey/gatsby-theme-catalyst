@@ -1,7 +1,7 @@
 // See https://theme-ui.com/ for more info and also https://www.gatsbyjs.org/docs/theme-ui/
 // Try changing some of the colors below to see what happens.
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
-import github from "@theme-ui/prism/presets/github"
+import prism from "@theme-ui/prism/presets/night-owl"
 
 export default {
   useColorSchemeMediaQuery: true,
@@ -15,26 +15,52 @@ export default {
   },
   colors: {
     ...tailwind.colors,
-    textWhite: baseColors.gray[1],
+
+    text: baseColors.gray[8],
+    background: baseColors.gray[1], //Try "#954264",
+    primary: baseColors.blue[7],
+    secondary: baseColors.orange[7],
+    accent: baseColors.orange[2],
+    muted: baseColors.gray[2],
+
     header: {
-      background: baseColors.gray[4],
-      backgroundOpen: baseColors.gray[8],
+      background: baseColors.gray[2],
+      backgroundOpen: baseColors.blue[2],
       text: baseColors.gray[8],
-      textOpen: baseColors.gray[1],
-      icons: baseColors.gray[8],
+      textOpen: baseColors.gray[8],
+      icons: baseColors.gray[6],
       iconsHover: baseColors.blue[7],
-      iconsOpen: baseColors.gray[1],
+      iconsOpen: baseColors.gray[8],
     },
+
     footer: {
-      background: baseColors.gray[8],
-      text: baseColors.gray[1],
-      links: baseColors.gray[1],
-      icons: baseColors.gray[1],
+      background: baseColors.gray[2],
+      text: baseColors.gray[8],
+      links: baseColors.gray[8],
+      icons: baseColors.gray[8],
     },
+    // You can delete dark mode by removing the "mode" object and setting useColorMode to false in gatsby-theme-catalyst-core
     modes: {
       dark: {
-        text: "#fff",
-        background: "#000",
+        text: baseColors.gray[1],
+        background: baseColors.gray[9],
+        accent: baseColors.gray[8],
+        muted: baseColors.gray[8],
+        header: {
+          text: baseColors.gray[1],
+          textOpen: baseColors.gray[1],
+          background: "#232946",
+          backgroundOpen: baseColors.gray[8],
+          icons: baseColors.gray[1],
+          iconsHover: baseColors.blue[2],
+          iconsOpen: baseColors.gray[1],
+        },
+        footer: {
+          background: "#232946",
+          text: baseColors.gray[1],
+          links: baseColors.gray[1],
+          icons: baseColors.gray[1],
+        },
       },
     },
   },
@@ -74,12 +100,13 @@ export default {
       borderColor: "primary",
     },
     inlineCode: {
-      ...github,
+      color: "text",
+      bg: "muted",
       fontSize: 1,
       p: 1,
     },
     pre: {
-      ...github,
+      ...prism,
       fontSize: 1,
       p: 3,
     },
