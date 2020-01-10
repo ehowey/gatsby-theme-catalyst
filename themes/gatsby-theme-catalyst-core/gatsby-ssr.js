@@ -9,21 +9,21 @@ import NormalizeCSS from "./src/utils/normalize-css"
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <HomeProvider>
-      <NavProvider>
-        <MDXProvider components={{ SEO }}>{element}</MDXProvider>
-      </NavProvider>
-    </HomeProvider>
+    <MobileProvider>
+      <HomeProvider>
+        <NavProvider>
+          <MDXProvider components={{ SEO }}>{element}</MDXProvider>
+        </NavProvider>
+      </HomeProvider>
+    </MobileProvider>
   )
 }
 
 export const wrapPageElement = ({ element, props }) => {
   return (
-    <MobileProvider>
-      <Layout {...props}>
-        <NormalizeCSS />
-        {element}
-      </Layout>
-    </MobileProvider>
+    <Layout {...props}>
+      <NormalizeCSS />
+      {element}
+    </Layout>
   )
 }
