@@ -15,7 +15,6 @@ This acts as a core theme on which all other themes are based. It houses a basic
 | `displaySiteLogo`      | true or false               | Defaults to true, controls whether the logo is displayed                                                                       |
 | `displaySiteTitle`     | true or false               | Defaults to true, controls whether the site title is displayed                                                                 |
 | `invertLogo`           | true or false               | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
-| `useHero`              | true or false               | Defaults to false, flag to include a hero component in the site                                                                |
 | `useStickyHeader`      | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
 | `useSocialLinks`       | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
 | `useColorMode`         | true or false               | Defaults to true, controls whether the dark mode toggle is available.                                                          |

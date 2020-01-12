@@ -47,9 +47,17 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        useHero: true,
+        //Default options are:
+        // contentPath: `content/pages`,
+        // assetPath: `content/assets`,
+        // displaySiteLogo: true,
+        // displaySiteTitle: true,
+        // invertLogo: false,
+        // useStickyHeader: false,
+        // useSocialLinks: true,
+        // useColorMode: true,
+        // mobileMenuBreakpoint: `768px`,
         displaySiteLogo: false,
-        displaySiteTitle: true,
         useColorMode: false,
       },
     },
