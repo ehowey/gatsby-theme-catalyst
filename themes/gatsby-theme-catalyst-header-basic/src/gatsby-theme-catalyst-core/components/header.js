@@ -1,37 +1,41 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-import { useContext } from "react"
-import HeaderLayout from "../../components/header-layout"
-import Branding from "../../components/branding/branding"
-import Nav from "../../components/navbar/nav-layout"
-import { NavContext } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import Header from "../../components/header"
 
-const SiteHeader = () => {
-  const [isNavOpen] = useContext(NavContext)
-  const { useStickyHeader } = useCatalystConfig()
+export default Header
 
-  return (
-    <header
-      sx={{
-        display: "grid",
-        position: useStickyHeader ? "sticky" : "static",
-        top: 0,
-        width: "100%",
-        color: isNavOpen ? "header.textOpen" : "header.text",
-        backgroundColor: isNavOpen
-          ? "header.backgroundOpen"
-          : "header.background",
-        zIndex: "888", // Ensure the header is always on top
-      }}
-      id="header"
-    >
-      <HeaderLayout>
-        <Branding />
-        <Nav />
-      </HeaderLayout>
-    </header>
-  )
-}
+// /** @jsx jsx */
+// import { jsx } from "theme-ui"
+// import { useContext } from "react"
+// import HeaderLayout from "../../components/header-layout"
+// import Branding from "../../components/branding/branding"
+// import Nav from "../../components/navbar/nav-layout"
+// import { NavContext } from "gatsby-theme-catalyst-core"
+// import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
-export default SiteHeader
+// const SiteHeader = () => {
+//   const [isNavOpen] = useContext(NavContext)
+//   const { useStickyHeader } = useCatalystConfig()
+
+//   return (
+//     <header
+//       sx={{
+//         display: "grid",
+//         position: useStickyHeader ? "sticky" : "static",
+//         top: 0,
+//         width: "100%",
+//         color: isNavOpen ? "header.textOpen" : "header.text",
+//         backgroundColor: isNavOpen
+//           ? "header.backgroundOpen"
+//           : "header.background",
+//         zIndex: "888", // Ensure the header is always on top
+//       }}
+//       id="header"
+//     >
+//       <HeaderLayout>
+//         <Branding />
+//         <Nav />
+//       </HeaderLayout>
+//     </header>
+//   )
+// }
+
+// export default SiteHeader
