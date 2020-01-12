@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import HomeHero from "../home-hero"
 import HomeLogos from "../home-logos"
 import HomeWork from "../home-work"
 import HomeContact from "../home-contact"
@@ -21,6 +22,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <SEO title={result.seoTitle} />
+      <HomeHero />
       <HomeLogos />
       <HomeWork />
       <HomeContact />

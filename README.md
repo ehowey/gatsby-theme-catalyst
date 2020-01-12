@@ -102,7 +102,6 @@ There are a number of options for the core theme, blog theme, and writer theme t
 | `displaySiteLogo`      | true or false               | Defaults to true, controls whether the logo is displayed                                                                       |
 | `displaySiteTitle`     | true or false               | Defaults to true, controls whether the site title is displayed                                                                 |
 | `invertLogo`           | true or false               | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
-| `useHero`              | true or false               | Defaults to false, flag to include a hero component in the site                                                                |
 | `useStickyHeader`      | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
 | `useSocialLinks`       | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
 | `useColorMode`         | true or false               | Defaults to true, controls whether the dark mode toggle is available.                                                          |
@@ -264,6 +263,10 @@ This file is used as the default image in places like Twitter and Facebook. This
 ### catalyst-site-icon.png
 
 There is also a file called `catalyst-site-icon.png` that provides your icon for use `gatsby-plugin-manifest` to create icons for web, PWA, etc. This file should be square and at least 512x512px in dimensions.
+
+### Depreciating useHero flag and latent hero component
+
+After some testing and experimenting with how the hero sections were being implemented I have depreciated this flag. The feature will be removed entirely in v1.0. If you were using this flag and the previous implementation via shadowing `src/gatsby-theme-catalyst-core/components/hero.js` you should move this hero section to a component in your site. You may need to tweak your css and div structure depending on how your hero section was created. You can see an example of a correct hero component in `gatsby-starter-catalyst-basic/src/components/hero.js`.
 
 ## Philosophy - Less is More
 

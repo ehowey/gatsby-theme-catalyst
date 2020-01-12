@@ -2,11 +2,9 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { useContext } from "react"
-import { HomeContext } from "gatsby-theme-catalyst-core"
-import ButtonPrimary from "../../components/button-primary"
-import ButtonSecondary from "../../components/button-secondary"
-import SanityContent from "../../components/sanity/sanity-content"
+import ButtonPrimary from "./button-primary"
+import ButtonSecondary from "./button-secondary"
+import SanityContent from "./sanity/sanity-content"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -24,10 +22,16 @@ const Hero = () => {
       }
     }
   `)
-  const [isHome] = useContext(HomeContext)
   const hero = data.sanityHomePage
-  if (isHome) {
-    return (
+  return (
+    <section
+      sx={{
+        width: "100vw",
+        position: "relative",
+        left: "calc(-50vw + 50%)",
+        mt: -3,
+      }}
+    >
       <div
         sx={{
           width: "100%",
@@ -107,10 +111,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    )
-  } else {
-    return null
-  }
+    </section>
+  )
 }
 
 export default Hero

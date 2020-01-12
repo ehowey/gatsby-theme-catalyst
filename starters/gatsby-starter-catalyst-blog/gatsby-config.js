@@ -44,7 +44,18 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-catalyst-core`,
-      options: {},
+      options: {
+        //Default options are:
+        // contentPath: `content/pages`,
+        // assetPath: `content/assets`,
+        // displaySiteLogo: true,
+        // displaySiteTitle: true,
+        // invertLogo: false,
+        // useStickyHeader: false,
+        // useSocialLinks: true,
+        // useColorMode: true,
+        // mobileMenuBreakpoint: `768px`,
+      },
     },
     {
       resolve: `gatsby-theme-catalyst-blog`,
