@@ -14,7 +14,6 @@ const NavMenuBar = ({ children }) => {
         my: isMobile ? 2 : 0,
         mx: 1,
         fontFamily: "navLinks",
-        variant: "variants.navLinkStyles",
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
@@ -56,6 +55,7 @@ const NavMenuBar = ({ children }) => {
           opacity: "1",
           transform: "translateY(0px)",
         },
+        variant: "variants.navLinkStyles",
       }}
     >
       {children}
