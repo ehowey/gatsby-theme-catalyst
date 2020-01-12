@@ -13,6 +13,7 @@ const NavMenuBar = ({ children }) => {
       sx={{
         my: isMobile ? 2 : 0,
         mx: 1,
+        fontFamily: "navLinks",
         variant: "variants.navLinkStyles",
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
