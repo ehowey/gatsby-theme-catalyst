@@ -16,7 +16,7 @@ const SiteTitle = () => {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           fontFamily: "siteTitle",
-          fontSize: [4, 5, 6],
+          fontSize: [4, 5, null, 6, null],
           fontWeight: "bold",
           flex: "0 0 auto",
           m: 0,
