@@ -250,12 +250,6 @@ Try this in `src/gatsby-theme-catalyst-core/components/theme.js` for a big logo:
   },
 ```
 
-### Custom hero component using component shadowing
-
-There is optional support for a custom hero component which is enabled by setting `useHero: true` in the core theme options. You can then access the hero component via component shadowing in this location for a starter: `src/gatsby-theme-catalyst-core/components/hero.js`. This section of the website comes below the header but before the content from MDX files.
-
-For an example of this in action see [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/).
-
 ### catalyst-site-social.png
 
 This file is used as the default image in places like Twitter and Facebook. This file is best in a 2:1 aspect ratio, something like 1200x600px. See the [twitter card docs](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image) for more information. You can use alternate image types such as .jpg if you want. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-social.jpg` but not with `social-image.jpg`.
