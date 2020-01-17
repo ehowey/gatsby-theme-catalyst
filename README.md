@@ -61,6 +61,7 @@ This set of themes is developer focused and I assume you have a basic knowledge 
 
 **Helpful Reading**:
 
+- [An Introduction to Gatsby Theme Catalyst](https://www.erichowey.dev/writing/introduction-to-gatsby-theme-catalyst/)
 - [Gatsby Theme Docs](https://www.gatsbyjs.org/docs/themes/)
 - [Using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
 - [Theme-UI Docs](https://theme-ui.com/)
