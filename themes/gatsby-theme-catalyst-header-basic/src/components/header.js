@@ -22,6 +22,7 @@ const SiteHeader = () => {
         backgroundColor: isNavOpen
           ? "header.backgroundOpen"
           : "header.background",
+        gridArea: "header",
         zIndex: "888", // Ensure the header is always on top
       }}
       id="header"

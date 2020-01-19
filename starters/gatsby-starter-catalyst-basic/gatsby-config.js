@@ -58,7 +58,7 @@ module.exports = {
         useStickyHeader: true,
       },
     },
-    `gatsby-theme-catalyst-header-left`,
+    `gatsby-theme-catalyst-header-basic`,
     `gatsby-theme-catalyst-footer-basic`,
     {
       resolve: `gatsby-plugin-manifest`,

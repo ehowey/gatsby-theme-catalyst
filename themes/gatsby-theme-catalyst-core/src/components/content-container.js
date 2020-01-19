@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const SiteContainer = ({ children }) => {
+const ContentContainer = ({ children }) => {
   return (
     <div
       sx={{
         width: "100%",
         ml: "auto",
         mr: "auto",
-        variant: "variants.container",
+        variant: "variants.contentContainer",
       }}
     >
       {children}
@@ -16,4 +16,4 @@ const SiteContainer = ({ children }) => {
   )
 }
 
-export default SiteContainer
+export default ContentContainer

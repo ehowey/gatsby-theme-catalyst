@@ -1,23 +1,24 @@
-import React from "react"
-import { Layout } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
+import Normalize from "../utils/normalize-css"
 import Header from "./header"
-import Hero from "./hero"
 import Main from "./main"
-import Container from "./container"
+import SiteContainer from "./site-container"
+import ContentContainer from "./content-container"
 import Footer from "./footer"
-import { useCatalystConfig } from "../utils/use-catalyst-config"
 
 const SiteLayout = ({ children }) => {
-  const { useHero } = useCatalystConfig()
   return (
-    <Layout>
-      <Header />
-      {useHero && <Hero />}
-      <Main>
-        <Container>{children}</Container>
-      </Main>
-      <Footer />
-    </Layout>
+    <Styled.root>
+      <Normalize />
+      <SiteContainer>
+        <Header />
+        <Main>
+          <ContentContainer>{children}</ContentContainer>
+        </Main>
+        <Footer />
+      </SiteContainer>
+    </Styled.root>
   )
 }
 

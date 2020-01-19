@@ -8,6 +8,7 @@ const SiteFooter = () => {
       sx={{
         bg: "#ddd",
         p: 3,
+        gridArea: "footer",
         variant: "variants.footer",
       }}
       id="footer"

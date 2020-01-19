@@ -5,12 +5,12 @@ const SiteMain = ({ children }) => {
   return (
     <main
       sx={{
-        flex: "1 1 auto",
         maxWidth: "maxContentWidth",
         width: "contentWidth",
         mt: 3,
         mb: 5,
         mx: "auto",
+        gridArea: "main",
         variant: "variants.main",
       }}
     >
