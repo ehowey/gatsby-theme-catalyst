@@ -4,7 +4,6 @@ import Normalize from "../utils/normalize-css"
 import Header from "./header"
 import Main from "./main"
 import SiteContainer from "./site-container"
-import ContentContainer from "./content-container"
 import Footer from "./footer"
 
 const SiteLayout = ({ children }) => {
@@ -13,9 +12,7 @@ const SiteLayout = ({ children }) => {
       <Normalize />
       <SiteContainer>
         <Header />
-        <Main>
-          <ContentContainer>{children}</ContentContainer>
-        </Main>
+        <Main>{children}</Main>
         <Footer />
       </SiteContainer>
     </Styled.root>
