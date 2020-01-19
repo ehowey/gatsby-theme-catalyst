@@ -11,14 +11,10 @@ const NavLayout = ({ children }) => {
   return (
     <nav
       sx={{
-        gridColumn: isMobile ? "1 / -1" : "2 / 3",
-        gridRow: isMobile ? "2 / 3" : "1 / 2",
-        justifySelf: isMobile ? "center" : "end",
-        alignSelf: isMobile ? "start" : "center",
-        alignItems: "center",
-        mt: isNavOpen ? 2 : 0,
-        display: isMobile ? (isNavOpen ? "flex" : "none") : "flex",
-        flexDirection: isMobile ? "column" : "row",
+        gridColumn: "1 / 1",
+        gridRow: " 2 / 3",
+        display: "flex",
+        flexDirection: "column",
       }}
       role="navigation"
       aria-label="main-navigation"

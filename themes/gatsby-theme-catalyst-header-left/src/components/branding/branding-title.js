@@ -14,10 +14,8 @@ const SiteTitle = () => {
       <span
         sx={{
           color: isNavOpen ? "header.textOpen" : "header.text",
-          textDecoration: "none",
           fontFamily: "siteTitle",
-          fontSize: [4, 5, null, 6, null],
-          fontWeight: "bold",
+          whiteSpace: "nowrap",
           flex: "0 0 auto",
           m: 0,
           variant: "variants.siteTitle",

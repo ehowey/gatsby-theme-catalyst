@@ -11,9 +11,8 @@ const SiteBranding = () => {
     <div
       sx={{
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
-        ml: 2,
-        mr: 2,
       }}
     >
       {displaySiteLogo ? <Logo /> : null}

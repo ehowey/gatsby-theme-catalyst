@@ -10,9 +10,7 @@ const NavMenuBar = ({ children }) => {
     <ul
       sx={{
         display: "flex",
-        flexDirection: isMobile ? "column" : "row",
-        flexWrap: "wrap",
-        textAlign: isMobile ? "center" : "left",
+        flexDirection: "column",
         listStyle: "none",
         m: 0,
         p: 0,

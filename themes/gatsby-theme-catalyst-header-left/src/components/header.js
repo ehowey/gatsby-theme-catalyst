@@ -8,13 +8,29 @@ import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
+  const [isNavOpen] = useContext(NavContext)
+  const { useStickyHeader } = useCatalystConfig()
   return (
     <header
       sx={{
-        float: "left",
+        display: "grid",
+        position: useStickyHeader ? "sticky" : "static",
+        top: 0,
+        width: "100%",
+        height: "100vh",
+        color: isNavOpen ? "header.textOpen" : "header.text",
+        backgroundColor: isNavOpen
+          ? "header.backgroundOpen"
+          : "header.background",
+        gridArea: "header",
+        zIndex: "888", // Ensure the header is always on top
       }}
+      id="header"
     >
-      <h1>Left Header</h1>
+      <HeaderLayout>
+        <Branding />
+        <Nav />
+      </HeaderLayout>
     </header>
   )
 }

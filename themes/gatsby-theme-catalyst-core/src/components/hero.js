@@ -44,9 +44,9 @@ const HeaderHero = () => {
   return (
     <div
       sx={{
-        width: "100vw",
-        position: "relative",
-        left: "calc(-50vw + 50%)",
+        // width: "100vw",
+        // position: "relative",
+        // left: "calc(-50vw + 50%)",
         bg: "accent",
         p: 3,
         mt: -3, // Pulls hero up due to the preset margins on the <main> component.

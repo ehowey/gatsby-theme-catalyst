@@ -5,7 +5,7 @@ import { NavContext } from "gatsby-theme-catalyst-core"
 
 const HeaderLayout = ({ children }) => {
   const [isNavOpen] = useContext(NavContext)
-  const { theme } = useThemeUI()
+  // const { theme } = useThemeUI()
 
   return (
     <div
@@ -14,21 +14,9 @@ const HeaderLayout = ({ children }) => {
         gridColumn: "1 / -1",
         alignSelf: "start",
         display: "grid",
-        gridTemplateColumns: "auto 1fr",
-        gridTemplateRows: [
-          theme.sizes.headerHeight + " 1fr",
-          null,
-          theme.sizes.headerHeight,
-          null,
-          null,
-        ],
-        maxWidth: "maxPageWidth",
-        width: "100%",
-        height: isNavOpen ? "100vh" : "auto",
-        minHeight: "50px",
-        m: "0 auto",
-        px: [1, null, 3, null, null],
-        py: [1, null, 2, null, null],
+        gridTemplateColumns: "1fr",
+        gridTemplateRows: "auto auto",
+        p: 3,
         zIndex: "999", //Ensure the nav is always on top.
       }}
     >
