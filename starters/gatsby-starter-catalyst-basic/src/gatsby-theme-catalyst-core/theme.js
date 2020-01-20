@@ -1,7 +1,7 @@
 // See https://theme-ui.com/ for more info and also https://www.gatsbyjs.org/docs/theme-ui/
 // Try changing some of the colors below to see what happens.
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
-import prism from "@theme-ui/prism/presets/night-owl"
+import prism from "@theme-ui/prism/presets/oceanic-next"
 
 export default {
   useColorSchemeMediaQuery: true,
@@ -15,7 +15,6 @@ export default {
   },
   colors: {
     ...tailwind.colors,
-
     text: baseColors.gray[8],
     background: baseColors.gray[1], //Try "#954264",
     primary: baseColors.blue[7],
@@ -39,7 +38,7 @@ export default {
       links: baseColors.gray[8],
       icons: baseColors.gray[8],
     },
-    // You can delete dark mode by removing the "mode" object and setting useColorMode to false in gatsby-theme-catalyst-core
+    // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
     modes: {
       dark: {
         text: baseColors.gray[1],
