@@ -67,8 +67,8 @@ module.exports = {
         excerptLength: `300`,
       },
     },
-    `gatsby-theme-catalyst-header-basic`,
-    `gatsby-theme-catalyst-footer-basic`,
+    `gatsby-theme-catalyst-header-top`,
+    `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

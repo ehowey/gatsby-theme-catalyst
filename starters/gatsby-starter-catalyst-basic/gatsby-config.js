@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Catalyst Basic`,
-    description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. Incorporates gatsby-theme-catalyst-core, gatsby-theme-catalyst-header-basic, and gatsby-theme-catalyst-footer-basic.`,
+    description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. Incorporates gatsby-theme-catalyst-core, gatsby-theme-catalyst-header-top, and gatsby-theme-catalyst-footer.`,
     keywords: [`gatsby`, `theme`, `react`],
     author: `Eric Howey`,
     twitter: `@erchwy`,
@@ -59,7 +59,7 @@ module.exports = {
       },
     },
     `gatsby-theme-catalyst-header-left`,
-    `gatsby-theme-catalyst-footer-basic`,
+    `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
