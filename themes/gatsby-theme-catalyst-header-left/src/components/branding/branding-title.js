@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { useContext } from "react"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
@@ -11,7 +11,8 @@ const SiteTitle = () => {
 
   return (
     <LinkWrapper>
-      <span
+      <Styled.h1
+        as="span"
         sx={{
           color: isNavOpen ? "header.textOpen" : "header.text",
           fontFamily: "siteTitle",
@@ -22,7 +23,7 @@ const SiteTitle = () => {
         }}
       >
         {title}
-      </span>
+      </Styled.h1>
     </LinkWrapper>
   )
 }

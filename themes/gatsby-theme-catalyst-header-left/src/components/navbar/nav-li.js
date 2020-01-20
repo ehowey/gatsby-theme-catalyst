@@ -23,36 +23,32 @@ const NavMenuBar = ({ children }) => {
           position: "relative",
           fontWeight: "bold",
           letterSpacing: "1px",
+          transition: "all 0.3s ease",
 
-          "::after": {
-            position: "absolute",
-            top: "100%",
+          "::before": {
             left: "0",
+            bottom: "0",
             width: "100%",
-            height: "1px",
+            height: "2px",
             backgroundColor: "primary",
+            transform: "scaleX(0)",
             content: "''",
-            opacity: "0",
-            transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-            transform: "translateY(-6px)",
+            position: "absolute",
+            transition: "transform .3s ease",
           },
-
-          ":hover::after, :focus::after": {
-            height: "4px",
-            opacity: "1",
-            transform: "translateY(0px)",
+          ":hover::before": {
+            transform: "scaleX(1)",
           },
         },
-        ".active::after": {
-          position: "absolute",
-          top: "100%",
+        ".active::before": {
           left: "0",
+          bottom: "0",
           width: "100%",
-          height: "4px",
+          height: "2px",
           backgroundColor: "primary",
           content: "''",
-          opacity: "1",
-          transform: "translateY(0px)",
+          position: "absolute",
+          transform: "scaleX(1)",
         },
         variant: "variants.navLinkStyles",
       }}

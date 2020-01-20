@@ -15,10 +15,11 @@ const SocialWrapper = () => {
   return (
     <div
       sx={{
+        mt: 3,
         display: "flex",
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",
-          mr: isNavOpen ? 3 : 2,
+          mr: 2,
           textDecoration: "none",
           display: "grid",
           placeItems: "center",

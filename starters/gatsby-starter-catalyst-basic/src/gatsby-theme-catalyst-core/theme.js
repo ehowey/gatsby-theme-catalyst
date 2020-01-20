@@ -112,8 +112,8 @@ export default {
   },
   variants: {
     siteTitle: {
-      fontSize: [4, 5, null, 6, null],
-      fontWeight: "bold",
+      // fontSize: [4, 5, null, 6, null],
+      // fontWeight: "bold",
     },
   },
 }
