@@ -29,7 +29,6 @@ const HeaderLayout = ({ children }) => {
         m: "0 auto",
         px: [1, null, 3, null, null],
         py: [1, null, 2, null, null],
-        zIndex: "999", //Ensure the nav is always on top.
       }}
     >
       {children}

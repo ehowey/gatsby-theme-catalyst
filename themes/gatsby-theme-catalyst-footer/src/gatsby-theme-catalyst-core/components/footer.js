@@ -22,6 +22,8 @@ const SiteFooter = () => {
     >
       <div
         sx={{
+          display: "grid",
+          placeItems: "center",
           width: "100%",
           maxWidth: "maxPageWidth",
           mx: "auto",

@@ -2,14 +2,12 @@
 import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { MobileContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import { SocialHeader } from "gatsby-theme-catalyst-core"
 import NavColorButton from "./nav-color-button"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
-  const [isMobile] = useContext(MobileContext)
   const { useColorMode } = useCatalystConfig()
 
   return (

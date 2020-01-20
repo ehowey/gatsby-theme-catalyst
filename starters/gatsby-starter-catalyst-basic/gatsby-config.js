@@ -55,7 +55,7 @@ module.exports = {
         // useSocialLinks: true,
         // useColorMode: true,
         // mobileMenuBreakpoint: `768px`,
-        useStickyHeader: true,
+        // useStickyHeader: true,
       },
     },
     `gatsby-theme-catalyst-header-left`,

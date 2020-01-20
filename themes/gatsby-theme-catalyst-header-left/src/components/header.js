@@ -19,7 +19,13 @@ const SiteHeader = () => {
         position: useStickyHeader ? "sticky" : "static",
         top: 0,
         width: "100%",
-        height: isMobile ? "auto" : "100vh",
+        height: useStickyHeader
+          ? isMobile
+            ? "auto"
+            : "100vh"
+          : isMobile
+          ? "auto"
+          : "100%",
         color: isNavOpen ? "header.textOpen" : "header.text",
         backgroundColor: isNavOpen
           ? "header.backgroundOpen"
