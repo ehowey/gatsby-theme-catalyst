@@ -84,7 +84,7 @@ export default {
   },
   styles: {
     ...tailwind.styles,
-    Layout: {
+    root: {
       backgroundColor: "background",
       color: "text",
       fontFamily: "body",
@@ -112,8 +112,7 @@ export default {
   },
   variants: {
     siteTitle: {
-      // fontSize: [4, 5, null, 6, null],
-      // fontWeight: "bold",
+      fontSize: [4, null, null, 5, null],
     },
   },
 }
