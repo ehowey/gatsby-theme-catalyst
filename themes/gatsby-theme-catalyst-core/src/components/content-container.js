@@ -6,10 +6,10 @@ const ContentContainer = ({ children }) => {
     <div
       sx={{
         maxWidth: "maxContentWidth",
-        width: "contentWidth",
         mt: 3,
         mb: 5,
         mx: "auto",
+        px: 3,
         variant: "variants.contentContainer",
       }}
     >

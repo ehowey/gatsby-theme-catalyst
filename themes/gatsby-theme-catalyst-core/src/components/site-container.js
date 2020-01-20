@@ -7,8 +7,8 @@ const SiteContainer = ({ children }) => {
       sx={{
         minHeight: "100vh",
         display: "grid",
-        gridTemplateColumns: "1fr",
-        gridTemplateRows: "auto 1fr auto",
+        gridTemplateColumns: "minmax(0, 1fr)",
+        gridTemplateRows: "auto minmax(0, 1fr) auto",
         gridTemplateAreas: `
         "header" 
         "main"

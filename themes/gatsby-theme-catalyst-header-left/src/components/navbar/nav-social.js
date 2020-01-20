@@ -16,10 +16,6 @@ const SocialWrapper = () => {
     <div
       sx={{
         display: "flex",
-        alignItems: "center",
-        mr: isMobile ? "auto" : 2,
-        ml: "auto",
-        mt: isMobile ? 2 : 0,
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",
           mr: isNavOpen ? 3 : 2,

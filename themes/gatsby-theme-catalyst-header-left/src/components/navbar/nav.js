@@ -11,6 +11,7 @@ const NavLayout = ({ children }) => {
   return (
     <nav
       sx={{
+        mt: 3,
         gridColumn: "1 / 1",
         gridRow: " 2 / 3",
         display: "flex",

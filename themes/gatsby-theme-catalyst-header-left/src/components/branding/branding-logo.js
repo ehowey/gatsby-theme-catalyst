@@ -36,7 +36,6 @@ const SiteLogo = () => {
             theme => theme.sizes.logoWidthL,
             theme => theme.sizes.logoWidthXL,
           ],
-          mr: 2,
           filter: isNavOpen ? invertLogo : "none",
           variant: "variants.siteLogo",
         }}

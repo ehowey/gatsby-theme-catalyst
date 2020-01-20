@@ -7,10 +7,10 @@ const SiteContainer = ({ children }) => {
       sx={{
         minHeight: "100vh",
         display: "grid",
-        gridTemplateColumns: "auto 1fr",
-        gridTemplateRows: "1fr auto",
+        gridTemplateColumns: "auto minmax(0, 1fr)",
+        gridTemplateRows: "minmax(0, 1fr) auto",
         gridTemplateAreas: `
-        "header main" 
+        "header main"
         "header footer"
         `,
         variant: "variants.siteContainer",
