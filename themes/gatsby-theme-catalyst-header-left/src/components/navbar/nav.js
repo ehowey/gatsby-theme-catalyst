@@ -12,9 +12,9 @@ const NavLayout = ({ children }) => {
     <nav
       sx={{
         mt: 3,
-        gridColumn: "1 / 1",
-        gridRow: " 2 / 3",
-        display: "flex",
+        gridColumn: isMobile ? "1 / -1" : "1 / 1",
+        gridRow: "2 / 3",
+        display: isNavOpen ? "flex" : isMobile ? "none" : "flex",
         flexDirection: "column",
       }}
       role="navigation"

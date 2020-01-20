@@ -5,10 +5,12 @@ import HeaderLayout from "./header-layout"
 import Branding from "./branding/branding"
 import Nav from "./navbar/nav-layout"
 import { NavContext } from "gatsby-theme-catalyst-core"
+import { MobileContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
+  const [isMobile] = useContext(MobileContext)
   const { useStickyHeader } = useCatalystConfig()
   return (
     <header
@@ -17,7 +19,7 @@ const SiteHeader = () => {
         position: useStickyHeader ? "sticky" : "static",
         top: 0,
         width: "100%",
-        height: "100vh",
+        height: isMobile ? "auto" : "100vh",
         color: isNavOpen ? "header.textOpen" : "header.text",
         backgroundColor: isNavOpen
           ? "header.backgroundOpen"
