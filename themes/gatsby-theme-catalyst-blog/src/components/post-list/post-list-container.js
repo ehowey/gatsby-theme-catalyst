@@ -5,6 +5,7 @@ const PostListContainer = ({ children }) => {
   return (
     <div
       sx={{
+        my: 5,
         variant: "variants.postListContainer",
       }}
     >

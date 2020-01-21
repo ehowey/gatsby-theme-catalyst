@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - Layout is provided by gatsby-plugin-mdx now instead of wrapPageElemet
 - Getting ready for theme-ui v0.3, removed `{ Layout }` import
 - Added displaySiteTitleMobile, displaySiteLogoMobile, isHeaderSideLeft config options, see docs
+- Removed `contentWidth` setting, this was a confusing double setting. Use `maxContentWidth` instead.
 
 ## catalyst-footer v0.1.0
 
