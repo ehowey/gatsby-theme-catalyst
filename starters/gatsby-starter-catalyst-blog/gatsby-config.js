@@ -50,25 +50,28 @@ module.exports = {
         // assetPath: `content/assets`,
         // displaySiteLogo: true,
         // displaySiteTitle: true,
+        // displaySiteLogoMobile: true,
+        // displaySiteTitleMobile: true,
         // invertLogo: false,
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
         // mobileMenuBreakpoint: `768px`,
+        // isHeaderSideLeft: true,
       },
     },
     {
       resolve: `gatsby-theme-catalyst-blog`,
       options: {
-        //These are the default paths provided
-        basePath: `/blog`,
-        contentPath: `content/posts`,
-        assetPath: `content/assets`,
-        excerptLength: `300`,
+        // Default options are:
+        // basePath: `/blog`,
+        // contentPath: `content/posts`,
+        // assetPath: `content/assets`,
+        // excerptLength: `140`,
       },
     },
-    `gatsby-theme-catalyst-header-basic`,
-    `gatsby-theme-catalyst-footer-basic`,
+    `gatsby-theme-catalyst-header-top`,
+    `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

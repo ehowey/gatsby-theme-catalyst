@@ -1,6 +1,6 @@
 # Gatsby Starter Catalyst Basic
 
-Basic theme that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-basic`, and `gatsby-theme-catalyst-footer-basic`.
+Basic theme that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-top`, and `gatsby-theme-catalyst-footer`.
 
 **Catalyzing Start**
 

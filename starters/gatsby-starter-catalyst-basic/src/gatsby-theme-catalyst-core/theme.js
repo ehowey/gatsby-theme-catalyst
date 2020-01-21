@@ -1,7 +1,7 @@
 // See https://theme-ui.com/ for more info and also https://www.gatsbyjs.org/docs/theme-ui/
 // Try changing some of the colors below to see what happens.
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
-import prism from "@theme-ui/prism/presets/night-owl"
+import prism from "@theme-ui/prism/presets/oceanic-next"
 
 export default {
   useColorSchemeMediaQuery: true,
@@ -15,7 +15,6 @@ export default {
   },
   colors: {
     ...tailwind.colors,
-
     text: baseColors.gray[8],
     background: baseColors.gray[1], //Try "#954264",
     primary: baseColors.blue[7],
@@ -39,7 +38,7 @@ export default {
       links: baseColors.gray[8],
       icons: baseColors.gray[8],
     },
-    // You can delete dark mode by removing the "mode" object and setting useColorMode to false in gatsby-theme-catalyst-core
+    // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
     modes: {
       dark: {
         text: baseColors.gray[1],
@@ -68,7 +67,6 @@ export default {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
     maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
-    contentWidth: "90vw", // Sets the container width on smaller screens, results in a 5vw margin on the left and right
     headerHeight: "auto", // Provides fallback setting to control header height
     logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
     logoWidthS: "50px", // Logo width on small screens, 480px - 768px
@@ -85,7 +83,7 @@ export default {
   },
   styles: {
     ...tailwind.styles,
-    Layout: {
+    root: {
       backgroundColor: "background",
       color: "text",
       fontFamily: "body",
@@ -109,6 +107,11 @@ export default {
       ...prism,
       fontSize: 1,
       p: 3,
+    },
+  },
+  variants: {
+    siteTitle: {
+      fontSize: [4, null, null, 5, null],
     },
   },
 }

@@ -37,7 +37,6 @@ export default {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
     maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
-    contentWidth: "90vw", // Sets the container width on smaller screens, results in a 5vw margin on the left and right
     headerHeight: "auto", // Provides fallback setting to control header height
     logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
     logoWidthS: "50px", // Logo width on small screens, 480px - 768px
@@ -54,7 +53,7 @@ export default {
   },
   styles: {
     ...tailwind.styles,
-    Layout: {
+    root: {
       backgroundColor: "background",
       color: "text",
       fontFamily: "body",
@@ -110,6 +109,12 @@ export default {
   variants: {
     main: {
       mt: [0, null, 3, null, null], // Modified spacing from core theme
+    },
+    siteTitle: {
+      fontSize: [4, null, null, 5, null],
+      "::after": {
+        display: "none",
+      },
     },
   },
 }

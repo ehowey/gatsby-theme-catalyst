@@ -1,5 +1,6 @@
 export { default as SEO } from "./src/utils/seo"
 export { default as BaseTheme } from "./src/theme"
+export { default as Layout } from "./src/components/layout"
 export { NavContext } from "./src/contexts/nav-context"
 export { MobileContext } from "./src/contexts/mobile-context"
 export { HomeContext } from "./src/contexts/home-context"

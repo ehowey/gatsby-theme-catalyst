@@ -8,6 +8,7 @@ const SiteHeader = () => {
       sx={{
         bg: "#ddd",
         p: 3,
+        gridArea: "header",
         variant: "variants.header",
       }}
       id="header"

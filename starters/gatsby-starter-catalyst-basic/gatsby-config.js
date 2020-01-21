@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Catalyst Basic`,
-    description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. Incorporates gatsby-theme-catalyst-core, gatsby-theme-catalyst-header-basic, and gatsby-theme-catalyst-footer-basic.`,
+    description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. Incorporates gatsby-theme-catalyst-core, gatsby-theme-catalyst-header-top, and gatsby-theme-catalyst-footer.`,
     keywords: [`gatsby`, `theme`, `react`],
     author: `Eric Howey`,
     twitter: `@erchwy`,
@@ -50,16 +50,18 @@ module.exports = {
         // assetPath: `content/assets`,
         // displaySiteLogo: true,
         // displaySiteTitle: true,
+        // displaySiteLogoMobile: true,
+        // displaySiteTitleMobile: true,
         // invertLogo: false,
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
         // mobileMenuBreakpoint: `768px`,
-        useStickyHeader: true,
+        // isHeaderSideLeft: true,
       },
     },
-    `gatsby-theme-catalyst-header-basic`,
-    `gatsby-theme-catalyst-footer-basic`,
+    `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
+    `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
