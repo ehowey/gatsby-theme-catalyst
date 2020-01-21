@@ -38,18 +38,20 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
   - [Typography and changing fonts](#typography-and-changing-fonts)
   - [Changing logos and logo sizes](#changing-logos-and-logo-sizes)
 
+- [Migrating](#migrating)
 - [Philosophy](#philosophy---less-is-more)
 - [Acknowledgements and Contribution](#next-steps-and-contribution)
 
 ## List of all themes
 
-| Theme                                | Demo                                                                                  | Description                                                                                                                                                                                                  |
-| ------------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `gatsby-theme-catalyst-core`         | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
-| `gatsby-theme-catalyst-header-top` | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
-| `gatsby-theme-catalyst-footer` | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a very basic footer to the core theme.                                                                                                                                                             |
-| `gatsby-theme-catalyst-blog`         | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | This provides a basic plug-and-play blog for any Catalyst based site.                                                                                                                                        |
-| `gatsby-theme-catalyst-writer`       | [gatsby-starter-catalyst-writer](https://gatsby-starter-catalyst-writer.netlify.com/) | This is the first complete site using the catalyst set of themes. Designed to be used by a freelance writer as their portfolio. Sanity is used as a CMS.                                                     |
+| Theme                               | Demo                                                                                  | Description                                                                                                                                                                                                  |
+| ----------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `gatsby-theme-catalyst-core`        | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
+| `gatsby-theme-catalyst-header-top`  | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
+| `gatsby-theme-catalyst-header-side` | N/A                                                                                   | This adds a sidebar style header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo is stacked on top, then title, then nav.                                |
+| `gatsby-theme-catalyst-footer`      | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a very basic footer to the core theme.                                                                                                                                                             |
+| `gatsby-theme-catalyst-blog`        | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | This provides a basic plug-and-play blog for any Catalyst based site.                                                                                                                                        |
+| `gatsby-theme-catalyst-writer`      | [gatsby-starter-catalyst-writer](https://gatsby-starter-catalyst-writer.netlify.com/) | This is the first complete site using the catalyst set of themes. Designed to be used by a freelance writer as their portfolio. Sanity is used as a CMS.                                                     |
 
 ## Accessibility
 
@@ -96,17 +98,20 @@ There are a number of options for the core theme, blog theme, and writer theme t
 
 **Core theme:**
 
-| Option                 | Values                      | Description                                                                                                                    |
-| ---------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `contentPath`          | String                      | Defaults to "content/pages", determines where the pages are created from.                                                      |
-| `assetPath`            | String                      | Defaults to "content/assets", determines where the page assets like images are located.                                        |
-| `displaySiteLogo`      | true or false               | Defaults to true, controls whether the logo is displayed                                                                       |
-| `displaySiteTitle`     | true or false               | Defaults to true, controls whether the site title is displayed                                                                 |
-| `invertLogo`           | true or false               | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
-| `useStickyHeader`      | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
-| `useSocialLinks`       | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
-| `useColorMode`         | true or false               | Defaults to true, controls whether the dark mode toggle is available.                                                          |
-| `mobileMenuBreakpoint` | String value, e.g. "1024px" | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
+| Option                   | Values                      | Description                                                                                                                    |
+| ------------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `contentPath`            | String                      | Defaults to "content/pages", determines where the pages are created from.                                                      |
+| `assetPath`              | String                      | Defaults to "content/assets", determines where the page assets like images are located.                                        |
+| `displaySiteLogo`        | true or false               | Defaults to true, controls whether the logo is displayed                                                                       |
+| `displaySiteLogoMobile`  | true or false               | Defaults to true, controls whether the logo is displayed at the mobile breakpoint                                              |
+| `displaySiteTitle`       | true or false               | Defaults to true, controls whether the site title is displayed                                                                 |
+| `displaySiteTitleMobile` | true or false               | Defaults to true, controls whether the site title is displayed at the mobile breakpoint                                        |
+| `invertLogo`             | true or false               | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
+| `useStickyHeader`        | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
+| `useSocialLinks`         | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
+| `useColorMode`           | true or false               | Defaults to true, controls whether the dark mode toggle is available.                                                          |
+| `mobileMenuBreakpoint`   | String value, e.g. "1024px" | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
+| `isHeaderSideLeft`       | true or false               | Defaults to true, only effects `gatsby-theme-catalyst-header-side, controls whether the header is on the left or right         |
 
 **Blog theme:**
 
@@ -234,7 +239,6 @@ Try this in `src/gatsby-theme-catalyst-core/components/theme.js` for a big logo:
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
     maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
-    contentWidth: "90vw", // Sets the container width on smaller screens, results in a 5vw margin on the left and right
     headerHeight: "auto", // Provides fallback setting to control header height
     logoWidthXS: "80px", // Logo width on extra small screens, up to 480px
     logoWidthS: "150px", // Logo width on small screens, 480px - 768px
@@ -259,9 +263,17 @@ This file is used as the default image in places like Twitter and Facebook. This
 
 There is also a file called `catalyst-site-icon.png` that provides your icon for use `gatsby-plugin-manifest` to create icons for web, PWA, etc. This file should be square and at least 512x512px in dimensions.
 
-### Depreciating useHero flag and latent hero component
+## Migrating
 
-After some testing and experimenting with how the hero sections were being implemented I have depreciated this flag. The feature will be removed entirely in v1.0. If you were using this flag and the previous implementation via shadowing `src/gatsby-theme-catalyst-core/components/hero.js` you should move this hero section to a component in your site. You may need to tweak your css and div structure depending on how your hero section was created. You can see an example of a correct hero component in `gatsby-starter-catalyst-basic/src/components/hero.js`.
+The first place to start is by checking the changelog file. Beginning at release v0.20.0 I have started tracking major changes in there. Other major breaking changes will be commented on here.
+
+**gatsby-theme-catalyst-header-basic -> gatsby-theme-catalyst-header-top**
+
+I renamed this theme to better reflect what it is. The only change you should need to make is in your gatsby-config.js file and package.json.
+
+**gatsby-theme-catalyst-footer-basic -> gatsby-theme-catalyst-footer**
+
+I renamed this theme to better reflect what it is. The only change you should need to make is in your gatsby-config.js file and package.json.
 
 ## Philosophy - Less is More
 
