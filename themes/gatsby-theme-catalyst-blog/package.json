@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-blog",
   "description": "Child blog theme for gatsby-theme-catalyst-core. Based on gatsby-theme-blog-core.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
     "gatsby": "^2.18.17",
