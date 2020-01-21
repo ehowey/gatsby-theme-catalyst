@@ -1,6 +1,6 @@
-# Gatsby Theme Catalyst Header Basic
+# Gatsby Theme Catalyst Header Side
 
-Sibling theme for `gatsby-theme-catalyst-core` which adds a basic site header using latent component shadowing. Branding on the left, navigation on the right. Theme options are set set via `gatsby-theme-catalyst-core`, for example setting `displaySiteTitle: false` will only show the logo for branding.
+Sibling theme for `gatsby-theme-catalyst-core` which adds a sidebar header using latent component shadowing. Theme options are set set via `gatsby-theme-catalyst-core`, for example setting `isHeaderSideLeft: false` will switch the sidebar to the right hand side.
 
 **Additional Documentation**
 
