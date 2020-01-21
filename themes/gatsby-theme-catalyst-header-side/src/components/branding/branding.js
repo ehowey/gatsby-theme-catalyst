@@ -7,7 +7,12 @@ import Title from "./branding-title"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 
 const SiteBranding = () => {
-  const { displaySiteLogo, displaySiteTitle } = useCatalystConfig()
+  const {
+    displaySiteLogo,
+    displaySiteTitle,
+    displaySiteTitleMobile,
+    displaySiteLogoMobile,
+  } = useCatalystConfig()
   const [isMobile] = useContext(MobileContext)
 
   return (
@@ -21,8 +26,12 @@ const SiteBranding = () => {
         justifyContent: "center",
       }}
     >
-      {displaySiteLogo ? <Logo /> : null}
-      {displaySiteTitle ? <Title /> : null}
+      {isMobile
+        ? displaySiteLogoMobile && <Logo />
+        : displaySiteLogo && <Logo />}
+      {isMobile
+        ? displaySiteTitleMobile && <Title />
+        : displaySiteTitle && <Title />}
     </div>
   )
 }

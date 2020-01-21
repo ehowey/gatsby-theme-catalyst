@@ -7,12 +7,15 @@ exports.createSchemaCustomization = ({ actions }) => {
     assetPath: String!
     displaySiteLogo: Boolean!
     displaySiteTitle: Boolean!
+    displaySiteLogoMobile: Boolean!
+    displaySiteTitleMobile: Boolean!
     useHero: Boolean!
     invertSiteLogo: Boolean!
     mobileMenuBreakpoint: String!
     useStickyHeader: Boolean!
     useSocialLinks: Boolean!
     useColorMode: Boolean!
+    isHeaderSideLeft: Boolean!
   }`)
 }
 
@@ -23,12 +26,15 @@ exports.sourceNodes = (
     assetPath = "content/assets",
     displaySiteLogo = true,
     displaySiteTitle = true,
+    displaySiteLogoMobile = true,
+    displaySiteTitleMobile = true,
     useHero = false,
     invertSiteLogo = false,
     mobileMenuBreakpoint = "768px",
     useStickyHeader = false,
     useSocialLinks = true,
     useColorMode = true,
+    isHeaderSideLeft = true,
   }
 ) => {
   // create garden data from plugin config
@@ -37,12 +43,15 @@ exports.sourceNodes = (
     assetPath,
     displaySiteLogo,
     displaySiteTitle,
+    displaySiteLogoMobile,
+    displaySiteTitleMobile,
     useHero,
     invertSiteLogo,
     mobileMenuBreakpoint,
     useStickyHeader,
     useSocialLinks,
     useColorMode,
+    isHeaderSideLeft,
   }
   createNode({
     ...catalystConfig,

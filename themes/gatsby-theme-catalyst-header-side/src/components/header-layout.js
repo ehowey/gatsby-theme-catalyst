@@ -2,9 +2,11 @@
 import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
+import { NavContext } from "gatsby-theme-catalyst-core"
 
 const HeaderLayout = ({ children }) => {
   const [isMobile] = useContext(MobileContext)
+  const [isNavOpen] = useContext(NavContext)
 
   return (
     <div
@@ -15,7 +17,8 @@ const HeaderLayout = ({ children }) => {
         display: "grid",
         gridTemplateColumns: isMobile ? "60px auto 60px" : "1fr",
         gridTemplateRows: isMobile ? "auto" : "auto auto",
-        p: 3,
+        p: isMobile ? 1 : 3,
+        pb: isNavOpen ? 4 : 0,
       }}
     >
       {children}

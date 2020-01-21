@@ -8,12 +8,15 @@ export const useCatalystConfig = () => {
           assetPath
           displaySiteLogo
           displaySiteTitle
+          displaySiteLogoMobile
+          displaySiteTitleMobile
           useHero
           invertSiteLogo
           mobileMenuBreakpoint
           useStickyHeader
           useSocialLinks
           useColorMode
+          isHeaderSideLeft
         }
       }
     `
