@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Box } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Img from "gatsby-image"
 
 const Card = ({ title, image, publisher, date, link, excerpt }) => {
