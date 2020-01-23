@@ -29,17 +29,15 @@ const Hero = () => {
         width: "100vw",
         position: "relative",
         left: "calc(-50vw + 50%)",
-        mt: -4,
+        mt: -3,
+        mb: 5,
       }}
     >
       <div
         sx={{
           width: "100%",
           backgroundColor: "accent",
-          mb: 4,
         }}
-        role="complementary"
-        aria-label="Hero Section"
       >
         <div
           sx={{

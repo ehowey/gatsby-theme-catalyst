@@ -15,6 +15,7 @@ const PageHeader = ({ title, topImage, topImageAlt }) => {
           right: ["50%", null, "auto", null, null],
           ml: ["-50vw", null, 0, null, null],
           mr: ["-50vw", null, 0, null, null],
+          mt: 5,
         }}
         fluid={topImage}
         alt={topImageAlt}

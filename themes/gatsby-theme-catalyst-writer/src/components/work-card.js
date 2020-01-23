@@ -1,20 +1,20 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Box } from "theme-ui"
 import Img from "gatsby-image"
 
 const Card = ({ title, image, publisher, date, link, excerpt }) => {
   return (
     <div
       sx={{
+        display: "flex",
         width: ["100vw", "auto", null, null, null],
         position: ["relative", "static", null, null, null],
-        left: ["calc(-50vw + 50%)", "0", null, null, null],
-        display: "flex",
-        flexDirection: ["column", null, "row", null, null],
+        left: ["calc(-50vw + 50%)", "auto", null, null, null],
         backgroundColor: "accent",
         p: 3,
         mb: 4,
         borderRadius: 3,
+        flexDirection: ["column", "column", "row", null, null],
       }}
       key={title}
     >

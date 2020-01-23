@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Button } from "theme-ui"
 import { Link } from "gatsby"
-import { Button } from "@theme-ui/components"
 
 const Readmore = ({ link, children }) => {
   return (

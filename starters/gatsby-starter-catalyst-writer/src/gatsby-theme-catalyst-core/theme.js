@@ -107,9 +107,6 @@ export default {
     },
   },
   variants: {
-    main: {
-      mt: [0, null, 3, null, null], // Modified spacing from core theme
-    },
     siteTitle: {
       fontSize: [4, null, null, 5, null],
       "::after": {

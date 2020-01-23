@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, useColorMode, useThemeUI } from "theme-ui"
+import { jsx, useColorMode, useThemeUI, IconButton } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { IconButton } from "@theme-ui/components"
 import { FiSun, FiMoon } from "react-icons/fi"
 import { IconContext } from "react-icons"
 

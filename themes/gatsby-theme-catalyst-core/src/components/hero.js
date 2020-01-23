@@ -1,9 +1,8 @@
 //Delete this or modify it to make you own hero compoment.  You can also just remove it enitrely by setting useHero to false in the theme options contained in gatsby-config.js file.
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from "theme-ui"
+import { jsx, Styled, useColorMode, Button } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Button } from "@theme-ui/components"
 
 const HeaderHero = () => {
   const data = useStaticQuery(graphql`
