@@ -10,6 +10,22 @@ export const useSiteMetadata = () => {
             }
           }
         }
+        seoImage: file(name: { eq: "catalyst-site-social" }) {
+          childImageSharp {
+            resize(width: 1024) {
+              src
+              width
+              height
+            }
+          }
+        }
+        allSanityMenuLink {
+          nodes {
+            link
+            name
+            type
+          }
+        }
         allSanitySocialLink {
           nodes {
             link
@@ -30,25 +46,10 @@ export const useSiteMetadata = () => {
   )
 
   const logo = data.logo.childImageSharp.fluid
+  const seoImage = data.seoImage.childImageSharp.resize
   const metaData = data.sanitySiteSettings
   const socialLinks = data.allSanitySocialLink.nodes
-  const menuLinks = [
-    {
-      link: "/work",
-      name: "Work",
-      type: "internal",
-    },
-    {
-      link: "/bio",
-      name: "Bio",
-      type: "internal",
-    },
-    {
-      link: "/contact",
-      name: "Contact",
-      type: "internal",
-    },
-  ]
-  const allData = { ...metaData, menuLinks, socialLinks, logo }
+  const menuLinks = data.allSanityMenuLink.nodes
+  const allData = { ...metaData, menuLinks, socialLinks, logo, seoImage }
   return allData
 }

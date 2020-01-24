@@ -7,7 +7,7 @@ export default {
       title: "Social Media Provider",
       name: "name",
       description:
-        "The name of the social media provider, e.g. Facebook or Instagram",
+        "The name of the social media provider, e.g. Facebook or Instagram, email or e-mail also works.",
       type: "string",
     },
     {
@@ -15,6 +15,11 @@ export default {
       name: "link",
       descrption: "The full link to your social media page or profile",
       type: "url",
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ["https", "http", "mailto", "tel"],
+        }),
     },
     {
       title: "Link location",
