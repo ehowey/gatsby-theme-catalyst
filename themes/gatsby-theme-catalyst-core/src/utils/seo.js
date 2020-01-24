@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "./use-site-metadata"
 
 const SEO = ({
@@ -13,28 +12,19 @@ const SEO = ({
   image: propImage,
   isBlogPost,
 }) => {
-  const { title, description, keywords, twitter, siteUrl } = useSiteMetadata()
-  const data = useStaticQuery(
-    graphql`
-      query {
-        seoImage: file(name: { eq: "catalyst-site-social" }) {
-          childImageSharp {
-            resize(width: 1024) {
-              src
-              width
-              height
-            }
-          }
-        }
-      }
-    `
-  )
-
+  const {
+    title,
+    description,
+    keywords,
+    twitter,
+    siteUrl,
+    seoImage,
+  } = useSiteMetadata()
   const seoTitle = propTitle || title
   const seoDescription = propDescription || description
   const seoKeywords = propKeywords || keywords
-  const seoImage = propImage || data.seoImage.childImageSharp.resize
-  const seoImageSrc = `${siteUrl}${seoImage.src}`
+  const seoImg = propImage || seoImage
+  const seoImgSrc = `${siteUrl}${seoImg.src}`
 
   return (
     <Helmet
@@ -50,7 +40,7 @@ const SEO = ({
         },
         {
           name: `image`,
-          content: seoImageSrc,
+          content: seoImgSrc,
         },
 
         //Open Graph
@@ -68,7 +58,7 @@ const SEO = ({
         },
         {
           property: `og:image`,
-          content: seoImageSrc,
+          content: seoImgSrc,
         },
         {
           property: `og:image:alt`,
@@ -100,7 +90,7 @@ const SEO = ({
         },
         {
           name: `twitter:image`,
-          content: seoImageSrc,
+          content: seoImgSrc,
         },
         {
           name: `twitter:image:alt`,

@@ -10,6 +10,15 @@ export const useSiteMetadata = () => {
             }
           }
         }
+        seoImage: file(name: { eq: "catalyst-site-social" }) {
+          childImageSharp {
+            resize(width: 1024) {
+              src
+              width
+              height
+            }
+          }
+        }
         site {
           siteMetadata {
             title
@@ -35,7 +44,8 @@ export const useSiteMetadata = () => {
   )
 
   const logo = data.logo.childImageSharp.fluid
+  const seoImage = data.seoImage.childImageSharp.resize
   const metaData = data.site.siteMetadata
-  const allData = { ...metaData, logo }
+  const allData = { ...metaData, logo, seoImage }
   return allData
 }
