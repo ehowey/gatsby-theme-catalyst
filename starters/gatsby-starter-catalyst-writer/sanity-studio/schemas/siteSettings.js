@@ -11,7 +11,7 @@ export default {
     {
       name: "description",
       type: "text",
-      rows: "4",
+      rows: "3",
       title: "Description",
       description:
         "Describe your portfolio for search engines and social media.",
@@ -20,7 +20,8 @@ export default {
       name: "keywords",
       type: "array",
       title: "Keywords",
-      description: "Add keywords that describes your portfolio.",
+      description:
+        "Add keywords for search engines that describes your portfolio.",
       of: [{ type: "string" }],
       options: {
         layout: "tags",
@@ -30,6 +31,11 @@ export default {
       name: "author",
       type: "string",
       title: "Author",
+    },
+    {
+      title: "Default Social Sharing Image",
+      name: "seoImage",
+      type: "figure",
     },
     {
       name: "twitter",

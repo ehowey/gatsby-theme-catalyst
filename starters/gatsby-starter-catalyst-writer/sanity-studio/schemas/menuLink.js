@@ -2,6 +2,8 @@ export default {
   title: "Menu Link",
   name: "menuLink",
   type: "document",
+  description:
+    "This theme automatically generates pages at /bio, /work, and /contact. You need to include at least these links.",
   fields: [
     {
       title: "Link name",
@@ -12,6 +14,11 @@ export default {
       title: "Link to",
       name: "link",
       type: "url",
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ["https", "http", "mailto", "tel"],
+        }),
     },
     {
       title: "Link type",
