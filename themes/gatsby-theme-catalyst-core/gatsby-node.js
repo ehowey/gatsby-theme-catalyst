@@ -16,6 +16,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     useSocialLinks: Boolean!
     useColorMode: Boolean!
     isHeaderSideLeft: Boolean!
+    footerContentLocation: String!
   }`)
 }
 
@@ -35,6 +36,7 @@ exports.sourceNodes = (
     useSocialLinks = true,
     useColorMode = true,
     isHeaderSideLeft = true,
+    footerContentLocation = "left",
   }
 ) => {
   // create garden data from plugin config
@@ -52,6 +54,7 @@ exports.sourceNodes = (
     useSocialLinks,
     useColorMode,
     isHeaderSideLeft,
+    footerContentLocation,
   }
   createNode({
     ...catalystConfig,

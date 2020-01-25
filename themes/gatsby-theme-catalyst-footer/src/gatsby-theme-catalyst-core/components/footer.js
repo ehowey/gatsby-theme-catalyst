@@ -1,16 +1,25 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useSiteMetadata } from "gatsby-theme-catalyst-core"
-import { SocialFooter } from "gatsby-theme-catalyst-core"
+import {
+  useSiteMetadata,
+  useCatalystConfig,
+  SocialFooter,
+} from "gatsby-theme-catalyst-core"
 
 const SiteFooter = () => {
   const { title } = useSiteMetadata()
+  const { footerContentLocation } = useCatalystConfig()
+  const isLeft = footerContentLocation === "left"
+  const isRight = footerContentLocation === "right"
+  const isCenter = footerContentLocation === "center"
 
   return (
     <footer
       sx={{
         color: "footer.text",
         backgroundColor: "footer.background",
+        textAlign:
+          (isLeft && "left") || (isRight && "right") || (isCenter && "center"),
         px: 3,
         py: 3,
         gridArea: "footer",
@@ -23,7 +32,9 @@ const SiteFooter = () => {
       <div
         sx={{
           display: "grid",
-          placeItems: "center",
+          alignContent: "center",
+          justifyContent:
+            (isLeft && "start") || (isRight && "end") || (isCenter && "center"),
           width: "100%",
           maxWidth: "maxPageWidth",
           mx: "auto",
