@@ -7,7 +7,6 @@ module.exports = options => {
       description: `Placeholder description`,
       keywords: [`gatsby`],
       author: `Placeholder author`,
-      twitter: `Placeholder twitter`,
       siteUrl: `https://www.gatsbyjs.org`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
       menuLinks: [
         {
