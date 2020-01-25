@@ -12,19 +12,12 @@ const SEO = ({
   image: propImage,
   isBlogPost,
 }) => {
-  const {
-    title,
-    description,
-    keywords,
-    twitter,
-    siteUrl,
-    seoImage,
-  } = useSiteMetadata()
+  const { title, description, keywords, twitter, seoImage } = useSiteMetadata()
   const seoTitle = propTitle || title
   const seoDescription = propDescription || description
   const seoKeywords = propKeywords || keywords
   const seoImg = propImage || seoImage
-  const seoImgSrc = `${siteUrl}${seoImg.src}`
+  const seoImgSrc = `${seoImg.src}`
 
   return (
     <Helmet

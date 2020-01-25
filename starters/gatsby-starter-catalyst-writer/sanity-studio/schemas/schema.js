@@ -15,6 +15,9 @@ import contactPage from "./contactPage"
 import blockContent from "./blockContent"
 import figure from "./figure"
 import figureWide from "./figureWide"
+import siteSettings from "./siteSettings"
+import menuLink from "./menuLink"
+import socialLink from "./socialLink"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,5 +38,8 @@ export default createSchema({
     blockContent,
     figure,
     figureWide,
+    siteSettings,
+    menuLink,
+    socialLink,
   ]),
 })
