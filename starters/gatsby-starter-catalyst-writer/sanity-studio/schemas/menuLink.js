@@ -25,7 +25,7 @@ export default {
       name: "type",
       type: "string",
       description:
-        "Links within your site should be internal, anchor links are more for single page sites",
+        "Links within your site should be internal, anchor links are for single page sites.",
       options: {
         list: [
           { title: "Internal", value: "internal" },

@@ -7,6 +7,7 @@ export default {
       name: "title",
       type: "string",
       title: "Title",
+      description: "Your website title, likely going to be your name.",
     },
     {
       name: "description",
@@ -31,11 +32,14 @@ export default {
       name: "author",
       type: "string",
       title: "Author",
+      description: "Your name, used in some social sharing situations.",
     },
     {
       title: "Default Social Sharing Image",
       name: "seoImage",
       type: "figure",
+      description:
+        "Used as a default sharing image for places like Twitter and Facebook when sharing a link to your website, an image of you is likely a good option.",
     },
     {
       name: "twitter",
