@@ -5,7 +5,13 @@ import Logo from "./branding-logo"
 import Title from "./branding-title"
 
 const SiteBranding = () => {
-  const { displaySiteLogo, displaySiteTitle } = useCatalystConfig()
+  const {
+    displaySiteLogo,
+    displaySiteTitle,
+    displaySiteTitleMobile,
+    displaySiteLogoMobile,
+  } = useCatalystConfig()
+  const [isMobile] = useContext(MobileContext)
 
   return (
     <div
@@ -16,8 +22,12 @@ const SiteBranding = () => {
         mr: 2,
       }}
     >
-      {displaySiteLogo ? <Logo /> : null}
-      {displaySiteTitle ? <Title /> : null}
+      {isMobile
+        ? displaySiteLogoMobile && <Logo />
+        : displaySiteLogo && <Logo />}
+      {isMobile
+        ? displaySiteTitleMobile && <Title />
+        : displaySiteTitle && <Title />}
     </div>
   )
 }
