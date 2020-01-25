@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useContext } from "react"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import Logo from "./branding-logo"
 import Title from "./branding-title"
+import { MobileContext } from "gatsby-theme-catalyst-core"
 
 const SiteBranding = () => {
   const {
