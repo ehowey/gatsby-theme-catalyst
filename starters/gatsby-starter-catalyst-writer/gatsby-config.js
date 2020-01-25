@@ -61,6 +61,7 @@ module.exports = {
         // mobileMenuBreakpoint: `768px`,
         // isHeaderSideLeft: true,
         displaySiteLogo: false,
+        displaySiteLogoMobile: false,
         useColorMode: false,
       },
     },
