@@ -17,6 +17,7 @@ export const useCatalystConfig = () => {
           useSocialLinks
           useColorMode
           isHeaderSideLeft
+          footerContentLocation
         }
       }
     `

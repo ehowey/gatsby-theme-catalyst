@@ -38,6 +38,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
   - [Typography and changing fonts](#typography-and-changing-fonts)
   - [Changing logos and logo sizes](#changing-logos-and-logo-sizes)
 
+- [SEO](#seo)
 - [Migrating](#migrating)
 - [Philosophy](#philosophy---less-is-more)
 - [Acknowledgements and Contribution](#next-steps-and-contribution)
@@ -98,20 +99,21 @@ There are a number of options for the core theme, blog theme, and writer theme t
 
 **Core theme:**
 
-| Option                   | Values                      | Description                                                                                                                    |
-| ------------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `contentPath`            | String                      | Defaults to "content/pages", determines where the pages are created from.                                                      |
-| `assetPath`              | String                      | Defaults to "content/assets", determines where the page assets like images are located.                                        |
-| `displaySiteLogo`        | true or false               | Defaults to true, controls whether the logo is displayed                                                                       |
-| `displaySiteLogoMobile`  | true or false               | Defaults to true, controls whether the logo is displayed at the mobile breakpoint                                              |
-| `displaySiteTitle`       | true or false               | Defaults to true, controls whether the site title is displayed                                                                 |
-| `displaySiteTitleMobile` | true or false               | Defaults to true, controls whether the site title is displayed at the mobile breakpoint                                        |
-| `invertLogo`             | true or false               | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
-| `useStickyHeader`        | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
-| `useSocialLinks`         | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
-| `useColorMode`           | true or false               | Defaults to true, controls whether the dark mode toggle is available.                                                          |
-| `mobileMenuBreakpoint`   | String value, e.g. "1024px" | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
-| `isHeaderSideLeft`       | true or false               | Defaults to true, only effects `gatsby-theme-catalyst-header-side, controls whether the header is on the left or right         |
+| Option                   | Values                                    | Description                                                                                                                    |
+| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                                                      |
+| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.                                        |
+| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                                                       |
+| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint                                              |
+| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                                                                 |
+| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint                                        |
+| `invertLogo`             | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
+| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                                                             |
+| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                                                       |
+| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                                                          |
+| `mobileMenuBreakpoint`   | String value, e.g. "1024px"               | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
+| `isHeaderSideLeft`       | true or false                             | Defaults to true, only effects `gatsby-theme-catalyst-header-side, controls whether the header is on the left or right         |
+| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                                                             |
 
 **Blog theme:**
 
@@ -262,6 +264,10 @@ This file is used as the default image in places like Twitter and Facebook. This
 ### catalyst-site-icon.png
 
 There is also a file called `catalyst-site-icon.png` that provides your icon for use `gatsby-plugin-manifest` to create icons for web, PWA, etc. This file should be square and at least 512x512px in dimensions.
+
+## SEO
+
+By default Gatsby provides excellent SEO out of the box. I have extended this with a custom SEO component that provides basic open graph and metadata tags. It also provides a default social sharing image based on `catalyst-site-social.png`. The blog theme has a "featuredImage" field in the frontmatter which replaces the default social image. It is also setup to share on Twitter and if a twitter profile is included in the `socialLinks` field in `gatsby-config.js` it automatically generates the correct metadata tags based on your profile.
 
 ## Migrating
 
