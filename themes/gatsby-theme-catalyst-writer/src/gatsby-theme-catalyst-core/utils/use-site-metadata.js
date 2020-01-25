@@ -29,7 +29,7 @@ export const useSiteMetadata = () => {
             }
           }
         }
-        allSanityMenuLink {
+        allSanityMenuLink(sort: { fields: order, order: ASC }) {
           nodes {
             link
             name

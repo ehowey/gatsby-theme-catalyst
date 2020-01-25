@@ -9,13 +9,14 @@ export default {
       title: "Link name",
       name: "name",
       type: "string",
+      validation: Rule => Rule.required(),
     },
     {
       title: "Link to",
       name: "link",
       type: "url",
       validation: Rule =>
-        Rule.uri({
+        Rule.required().uri({
           allowRelative: true,
           scheme: ["https", "http", "mailto", "tel"],
         }),
@@ -33,6 +34,25 @@ export default {
         ], // <-- predefined values
         layout: "radio", // <-- defaults to 'dropdown'
       },
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: "order",
+      title: "Order",
+      description:
+        "Use numbers to specify the order on the nav bar, left to right, top to bottom.",
+      type: "number",
+      validation: Rule =>
+        Rule.required()
+          .integer()
+          .positive(),
+    },
+  ],
+  orderings: [
+    {
+      title: "Web Order",
+      name: "webOrder",
+      by: [{ field: "order", direction: "asc" }],
     },
   ],
 }
