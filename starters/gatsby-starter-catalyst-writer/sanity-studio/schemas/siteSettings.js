@@ -35,6 +35,13 @@ export default {
       description: "Your name, used in some social sharing situations.",
     },
     {
+      title: "Logo",
+      name: "logo",
+      type: "figure",
+      description:
+        "By default the logo is not activated in this starter but could easily but used with the flags displaySiteLogo and displaySiteLogoMobile",
+    },
+    {
       title: "Default Social Sharing Image",
       name: "seoImage",
       type: "figure",

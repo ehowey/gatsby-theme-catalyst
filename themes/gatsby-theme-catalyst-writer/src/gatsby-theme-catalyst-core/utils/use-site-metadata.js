@@ -3,19 +3,29 @@ export const useSiteMetadata = () => {
   const data = useStaticQuery(
     graphql`
       query SanityMetaData {
-        logo: file(name: { eq: "catalyst-site-logo" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
+        sanitySiteSettings {
+          author
+          description
+          siteUrl
+          title
+          twitter
+          keywords
+          seoImage {
+            asset {
+              url
+              metadata {
+                dimensions {
+                  height
+                  width
+                }
+              }
             }
           }
-        }
-        seoImage: file(name: { eq: "catalyst-site-social" }) {
-          childImageSharp {
-            resize(width: 1024) {
-              src
-              width
-              height
+          logo {
+            asset {
+              fluid(maxWidth: 512) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
         }
@@ -33,20 +43,21 @@ export const useSiteMetadata = () => {
             name
           }
         }
-        sanitySiteSettings {
-          author
-          description
-          siteUrl
-          title
-          twitter
-          keywords
-        }
       }
     `
   )
 
-  const logo = data.logo.childImageSharp.fluid
-  const seoImage = data.seoImage.childImageSharp.resize
+  const logo = data.sanitySiteSettings.logo.asset.fluid
+  const seoImageSrc = data.sanitySiteSettings.seoImage.asset.url
+  const seoImageHeight =
+    data.sanitySiteSettings.seoImage.asset.metadata.dimensions.height
+  const seoImageWidth =
+    data.sanitySiteSettings.seoImage.asset.metadata.dimensions.width
+  const seoImage = {
+    src: seoImageSrc,
+    width: seoImageWidth,
+    height: seoImageHeight,
+  }
   const metaData = data.sanitySiteSettings
   const socialLinks = data.allSanitySocialLink.nodes
   const menuLinks = data.allSanityMenuLink.nodes
