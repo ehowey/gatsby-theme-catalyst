@@ -22,9 +22,9 @@ export default {
       backgroundOpen: baseColors.red[1],
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
-      icons: baseColors.gray[8],
+      icons: baseColors.gray[6],
       iconsHover: baseColors.red[8],
-      iconsOpen: baseColors.gray[8],
+      iconsOpen: baseColors.gray[6],
     },
     footer: {
       background: baseColors.gray[2],
