@@ -71,7 +71,6 @@ export const useSiteMetadata = () => {
         .toLowerCase()
         .replace("https://www.twitter.com/" && "https://twitter.com/", "@")
     : "Unknown"
-  console.log(twitterUsername)
   const allData = {
     ...metaData,
     menuLinks,
