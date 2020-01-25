@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        ///Default options are:
+        //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
         // displaySiteLogo: true,
@@ -58,7 +58,8 @@ module.exports = {
         // useSocialLinks: true,
         // useColorMode: true,
         // mobileMenuBreakpoint: `768px`,
-        // isHeaderSideLeft: true,
+        // isHeaderSideLeft: true, // Only effects gatsby-catalyst-header-top
+        //footerContentLocation: "left", // "left", "right", "center"
         displaySiteLogo: false,
         displaySiteLogoMobile: false,
         useColorMode: false,

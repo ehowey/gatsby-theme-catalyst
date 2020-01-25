@@ -51,7 +51,8 @@ module.exports = {
         // useSocialLinks: true,
         // useColorMode: true,
         // mobileMenuBreakpoint: `768px`,
-        // isHeaderSideLeft: true,
+        // isHeaderSideLeft: true, // Only effects gatsby-catalyst-header-top
+        //footerContentLocation: "left", // "left", "right", "center"
       },
     },
     `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`

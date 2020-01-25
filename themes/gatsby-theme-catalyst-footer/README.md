@@ -2,6 +2,8 @@
 
 Sibling theme for `gatsby-theme-catalyst-core` which adds a basic site footer using latent component shadowing. Just a simple copyright, branding, and social links at this time.
 
+Control the content location using the `footerContentLocation` option in `gatsby-theme-catalyst-core`. Defaults to left.
+
 **Additional Documentation**
 
 [Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
