@@ -4,7 +4,6 @@ module.exports = {
     description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. Incorporates gatsby-theme-catalyst-core, gatsby-theme-catalyst-header-top, and gatsby-theme-catalyst-footer.`,
     keywords: [`gatsby`, `theme`, `react`],
     author: `Eric Howey`,
-    twitter: `@erchwy`,
     siteUrl: `https://gatsby-starter-catalyst-basic.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
       {
@@ -33,11 +32,6 @@ module.exports = {
         name: `Github`,
         link: `https://www.github.com/ehowey`,
         location: `all`, //Options are "all", "header", "footer"
-      },
-      {
-        name: `Twitter`,
-        link: `https://www.twitter.com/erchwy`,
-        location: `header`, //Options are "all", "header", "footer"
       },
     ],
   },

@@ -25,7 +25,6 @@ export const useSiteMetadata = () => {
             description
             keywords
             author
-            twitter
             siteUrl
             menuLinks {
               name
@@ -46,6 +45,18 @@ export const useSiteMetadata = () => {
   const logo = data.logo.childImageSharp.fluid
   const seoImage = data.seoImage.childImageSharp.resize
   const metaData = data.site.siteMetadata
-  const allData = { ...metaData, logo, seoImage }
+  const twitterLink = data.site.siteMetadata.socialLinks
+    .filter(social => social.name.toLowerCase() === "twitter")
+    .map(social => {
+      return social.link
+    })
+  const twitterUsername = twitterLink.length
+    ? twitterLink[0]
+        .toString()
+        .toLowerCase()
+        .replace("https://www.twitter.com/" && "https://twitter.com/", "@")
+    : "Unknown"
+
+  const allData = { ...metaData, logo, seoImage, twitterUsername }
   return allData
 }

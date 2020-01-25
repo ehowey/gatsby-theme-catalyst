@@ -12,7 +12,13 @@ const SEO = ({
   image: propImage,
   isBlogPost,
 }) => {
-  const { title, description, keywords, twitter, seoImage } = useSiteMetadata()
+  const {
+    title,
+    description,
+    keywords,
+    twitterUsername,
+    seoImage,
+  } = useSiteMetadata()
   const seoTitle = propTitle || title
   const seoDescription = propDescription || description
   const seoKeywords = propKeywords || keywords
@@ -75,11 +81,11 @@ const SEO = ({
         },
         {
           name: `twitter:creator`,
-          content: twitter,
+          content: twitterUsername,
         },
         {
           name: `twitter:site`,
-          content: twitter,
+          content: twitterUsername,
         },
         {
           name: `twitter:image`,

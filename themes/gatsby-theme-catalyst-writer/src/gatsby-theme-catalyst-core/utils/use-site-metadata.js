@@ -8,7 +8,6 @@ export const useSiteMetadata = () => {
           description
           siteUrl
           title
-          twitter
           keywords
           seoImage {
             asset {
@@ -61,6 +60,24 @@ export const useSiteMetadata = () => {
   const metaData = data.sanitySiteSettings
   const socialLinks = data.allSanitySocialLink.nodes
   const menuLinks = data.allSanityMenuLink.nodes
-  const allData = { ...metaData, menuLinks, socialLinks, logo, seoImage }
+  const twitterLink = data.allSanitySocialLink.nodes
+    .filter(social => social.name.toLowerCase() === "twitter")
+    .map(social => {
+      return social.link
+    })
+  const twitterUsername = twitterLink.length
+    ? twitterLink[0]
+        .toString()
+        .toLowerCase()
+        .replace("https://www.twitter.com/" && "https://twitter.com/", "@")
+    : "Unknown"
+  const allData = {
+    ...metaData,
+    menuLinks,
+    socialLinks,
+    logo,
+    seoImage,
+    twitterUsername,
+  }
   return allData
 }

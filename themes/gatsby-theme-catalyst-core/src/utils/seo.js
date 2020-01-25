@@ -16,7 +16,7 @@ const SEO = ({
     title,
     description,
     keywords,
-    twitter,
+    twitterUsername,
     siteUrl,
     seoImage,
   } = useSiteMetadata()
@@ -82,11 +82,11 @@ const SEO = ({
         },
         {
           name: `twitter:creator`,
-          content: twitter,
+          content: twitterUsername,
         },
         {
           name: `twitter:site`,
-          content: twitter,
+          content: twitterUsername,
         },
         {
           name: `twitter:image`,

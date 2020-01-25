@@ -49,13 +49,6 @@ export default {
         "Used as a default sharing image for places like Twitter and Facebook when sharing a link to your website, an image of you is likely a good option.",
     },
     {
-      name: "twitter",
-      type: "string",
-      title: "Twitter username",
-      description:
-        "Include only the @name portion, e.g. @erchwy, used for creating Twitter social sharing cards",
-    },
-    {
       name: "siteUrl",
       type: "url",
       title: "Site URL",
