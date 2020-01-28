@@ -37,6 +37,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
   - [Theme-ui, variants, and design tokens](#theme-ui-variants-and-design-tokens)
   - [Typography and changing fonts](#typography-and-changing-fonts)
   - [Changing logos and logo sizes](#changing-logos-and-logo-sizes)
+  - [Context Providers](#context-providers)
 
 - [SEO](#seo)
 - [Migrating](#migrating)
@@ -197,13 +198,16 @@ The file you should modify to set design tokens is always located in the followi
 
 Try changing some colors in the file and see what happens!
 
-Some major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file. The following variants are available to use:
+Most major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file. The following variants are available to use:
 
-- `variants.main`: Targets the <main> component in the site, useful for changing site margins/content size.
-- `variants.container`: Targets the container <div> for the content, useful for changing site margins/content size.
+- `variants.siteContainer`: Targets the container <div> for the entire site content
+- `variants.main`: Targets the <main> component in the site, useful for changing spacing between <header>, <footer>, and <main> areas.
+- `variants.contentContainer`: Targets the container <div> for the content, useful for changing site margins/content size.
 - `variants.header`: Targets the root <header> component
 - `variants.footer`: Targets the root <footer> component
-- `variants.navLinkStyles`: Targets the container styles for the nav links in the header
+- `variants.siteLogo`: Targets the logo component
+- `variants.siteTitle`: Targets the root site title component, useful to change font size of the site title.
+- `variants.navLinkStyles`: Targets the container styles for the nav links in the header, useful to change the nav styles
 
 ### Typography and changing fonts
 
@@ -265,9 +269,46 @@ This file is used as the default image in places like Twitter and Facebook. This
 
 There is also a file called `catalyst-site-icon.png` that provides your icon for use `gatsby-plugin-manifest` to create icons for web, PWA, etc. This file should be square and at least 512x512px in dimensions.
 
+### Context providers
+
+There are three context providers that are globally available in the themes to manage component function or appearance based on state. These are `isHome`, `isMobile`, and `isNavOpen`.
+
+isHome: True if you are at the root of your site
+
+isMobile: True if the viewport width is smaller than the value set in `mobileBreakpoint` option via theme options
+
+isNavOpen: True if the mobile nav menu is open
+
+```js
+// Import useContext and the context
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { useContext } from "react"
+import { MobileContext } from "gatsby-theme-catalyst-core"
+
+const Example = () => {
+  // Access the context in your component
+  const [isMobile] = useContext(MobileContext)
+  // Conditionally change css or render components
+  return (
+    <div
+      sx={{
+        height: "200px",
+        width: "200px",
+        backgroundColor: isMobile ? "red" : "blue",
+      }}
+    >
+      {isMobile && <Component />}
+    </div>
+  )
+}
+
+export default Example
+```
+
 ## SEO
 
-By default Gatsby provides excellent SEO out of the box. I have extended this with a custom SEO component that provides basic open graph and metadata tags. It also provides a default social sharing image based on `catalyst-site-social.png`. The blog theme has a "featuredImage" field in the frontmatter which replaces the default social image. It is also setup to share on Twitter and if a twitter profile is included in the `socialLinks` field in `gatsby-config.js` it automatically generates the correct metadata tags based on your profile.
+By default Gatsby provides excellent SEO out of the box. I have extended this with a custom SEO component based on [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) that provides basic open graph and metadata tags. It also provides a default social sharing image based on `catalyst-site-social.png`. The blog theme has a "featuredImage" field in the frontmatter which replaces the default social image. If a twitter profile is included in the `socialLinks` field in `gatsby-config.js` it automatically generates the correct metadata tags based on your profile.
 
 ## Migrating
 
