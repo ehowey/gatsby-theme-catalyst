@@ -209,6 +209,16 @@ Most major areas of the site are preconfigured to use [variants](https://theme-u
 - `variants.siteTitle`: Targets the root site title component, useful to change font size of the site title.
 - `variants.navLinkStyles`: Targets the container styles for the nav links in the header, useful to change the nav styles
 
+Here is an example of changing the size of the site title using variants.
+
+```js
+variants: {
+    siteTitle: {
+      fontSize: [4, null, null, 5, null],
+    },
+  },
+```
+
 ### Typography and changing fonts
 
 To add a custom font you need to first add the font as a dependency in your starter site, for example:
