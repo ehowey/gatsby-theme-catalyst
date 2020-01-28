@@ -17,6 +17,8 @@ gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-wri
 
 **Documentation**
 
+[Getting started with gatsby-theme-catalyst-writer](https://www.erichowey.dev/writing/getting-started-with-gatsby-theme-catalyst-writer/)
+
 [Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
 
 ## About Gatsby Theme Catalyst
