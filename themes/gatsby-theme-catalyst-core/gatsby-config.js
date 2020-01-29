@@ -84,6 +84,7 @@ module.exports = options => {
           ],
         },
       },
+      `@pauliescanlon/gatsby-mdx-embed`,
       `gatsby-plugin-sitemap`,
       `gatsby-plugin-robots-txt`,
       `gatsby-plugin-react-helmet`,
