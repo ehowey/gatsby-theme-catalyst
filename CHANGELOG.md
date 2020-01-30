@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-core v0.22.0
+
+- Added support for [gatsby-mdx-embed](https://www.gatsbyjs.org/packages/@pauliescanlon/gatsby-mdx-embed/)
+
 ## catalyst-writer v0.7.0
 
 - Added in settings and metadata to SANITY.io schema, this allows all of those fields to be controlled via the SANITY studio instead of gatsby-config.js.  For example fields like `title`, `description`, the site logo, default social media image, etc.
