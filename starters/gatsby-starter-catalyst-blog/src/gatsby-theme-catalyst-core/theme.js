@@ -108,6 +108,27 @@ export default {
       fontSize: 1,
       p: 3,
     },
+    table: {
+      width: "100%",
+      my: 3,
+      borderCollapse: "collapse",
+    },
+    th: {
+      verticalAlign: "bottom",
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "muted",
+      backgroundColor: "muted",
+      padding: 2,
+      textAlign: "inherit",
+    },
+    td: {
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "muted",
+      verticalAlign: "top",
+      padding: 2,
+    },
   },
   variants: {
     siteTitle: {
