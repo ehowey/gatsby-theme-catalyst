@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="css-92rb9y-SiteHeader"
+  id="header"
+>
+  <p>
+    Header area for latent shadowing in sibling themes
+  </p>
+</header>
+`;
