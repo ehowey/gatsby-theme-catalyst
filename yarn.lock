@@ -7357,6 +7357,14 @@ gatsby-core-utils@^1.0.26:
     ci-info "2.0.0"
     node-object-hash "^2.0.0"
 
+gatsby-core-utils@^1.0.27:
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.27.tgz#d08270fc3de7ca48a1ae2f0931afb08c09647141"
+  integrity sha512-w75Sjby/XhYQexeDTAQoBI385BXMt79B+hT55JwQmtz1VJ4/gQMUENG2J5ABzPsN7rD1TueNcR9BpU5Ns7sgdw==
+  dependencies:
+    ci-info "2.0.0"
+    node-object-hash "^2.0.0"
+
 gatsby-cypress@^0.2.19:
   version "0.2.21"
   resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.2.21.tgz#e79eb377b3e4e7cf99e2bd61d061bed263c7d73a"
@@ -7389,16 +7397,16 @@ gatsby-link@^2.2.28:
     "@types/reach__router" "^1.2.6"
     prop-types "^15.7.2"
 
-gatsby-page-utils@^0.0.37:
-  version "0.0.37"
-  resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.0.37.tgz#6ebc47acc790574b7bfa1f628b36ea95f261cb89"
-  integrity sha512-kAeHm8yLYLelexOncfg/43TnbDcsfYIByP8IEeTDS7hJ+PLAxbwPTo8QvPX6sXi3F5PgpSwtqPEPGSqthRqJlw==
+gatsby-page-utils@^0.0.38:
+  version "0.0.38"
+  resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.0.38.tgz#a43d4b5e039b622364ca680caedddc8006469816"
+  integrity sha512-tM+ByO2BPRdgGkUWkqFbLz4q9Xy896xjdkDkR6weJdqAS5K8nux56UikeYG1WJJ0AUut0R8zlGukb0QUdm80Qw==
   dependencies:
     "@babel/runtime" "^7.7.6"
     bluebird "^3.7.2"
     chokidar "3.3.0"
     fs-exists-cached "^1.0.0"
-    gatsby-core-utils "^1.0.26"
+    gatsby-core-utils "^1.0.27"
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
@@ -7467,15 +7475,15 @@ gatsby-plugin-offline@^3.0.32:
     lodash "^4.17.15"
     workbox-build "^4.3.1"
 
-gatsby-plugin-page-creator@^2.1.38:
-  version "2.1.38"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.38.tgz#2c78d4baae296b0b3396cad689787a65c0a50585"
-  integrity sha512-N/aIxHbjaJzed6O527Zj9sdeW3YjLs4aN3yt+rx/K121yIH6gs5TMzPdSfFTxEeXEGw4ZZijJ70MBIlK0UNdkQ==
+gatsby-plugin-page-creator@^2.1.38, gatsby-plugin-page-creator@^2.1.39:
+  version "2.1.39"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.39.tgz#e01a8f59817bbc63afdab0c01d464fecb15d3cbf"
+  integrity sha512-tojv5cnt8pm5Cvks06Rypy8Ha/nONIIx+uEA1+iCsE2ekRm5ziiV5VqVSLrAxWwV2w0OgKDov+lMCco2xkdY4Q==
   dependencies:
     "@babel/runtime" "^7.7.6"
     bluebird "^3.7.2"
     fs-exists-cached "^1.0.0"
-    gatsby-page-utils "^0.0.37"
+    gatsby-page-utils "^0.0.38"
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
