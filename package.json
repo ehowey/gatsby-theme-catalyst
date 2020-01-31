@@ -32,6 +32,7 @@
     "test:basic": "start-server-and-test develop:basic http://localhost:8000 cy:open",
     "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open",
     "test:writer": "start-server-and-test develop:writer http://localhost:8000 cy:open",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "test:jest": "yarn jest --config ./jest/jest.config.js"
   }
 }
