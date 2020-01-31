@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer
+  className="css-o72uzv-SiteFooter"
+  id="footer"
+>
+  <p>
+    Footer area for latent shadowing in sibling themes
+  </p>
+</footer>
+`;
