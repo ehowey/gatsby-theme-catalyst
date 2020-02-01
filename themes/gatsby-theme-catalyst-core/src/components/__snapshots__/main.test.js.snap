@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main renders correctly 1`] = `
+<main
+  className="css-1spq66s-SiteMain"
+>
+  test
+</main>
+`;
