@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="css-155ux7s-SiteContainer"
+  >
+    <header
+      className="css-92rb9y-SiteHeader"
+      id="header"
+    >
+      <p>
+        Header area for latent shadowing in sibling themes
+      </p>
+    </header>
+    <main
+      className="css-1spq66s-SiteMain"
+    >
+      <div
+        className="css-1gjvup9-ContentContainer"
+      >
+        test
+      </div>
+    </main>
+    <footer
+      className="css-o72uzv-SiteFooter"
+      id="footer"
+    >
+      <p>
+        Footer area for latent shadowing in sibling themes
+      </p>
+    </footer>
+  </div>
+</div>
+`;

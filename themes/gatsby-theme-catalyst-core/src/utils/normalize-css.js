@@ -6,7 +6,7 @@ const Normalize = () => {
   return (
     <Global
       styles={css`
-        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+        // normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 
         /* Document
    ========================================================================== */
