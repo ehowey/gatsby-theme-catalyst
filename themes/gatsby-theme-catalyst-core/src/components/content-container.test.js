@@ -1,11 +1,16 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import SiteHeader from "./header"
+import ContentContainer from "./content-container"
 
-describe("Header", () => {
+describe("ContentContainer", () => {
+
+  const props = {
+    children: 'test'
+  }
+
   it("renders correctly", () => {
     const tree = renderer
-      .create(<SiteHeader />)
+      .create(<ContentContainer {...props} />)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
