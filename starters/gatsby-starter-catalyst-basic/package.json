@@ -1,15 +1,15 @@
 {
   "name": "gatsby-starter-catalyst-basic",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Core, Gatsby-Theme-Catalyst-header-top, Gatsby-Theme-Catalyst-footer",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.19.12",
-    "gatsby-theme-catalyst-core": "^0.22.1",
-    "gatsby-theme-catalyst-footer": "^0.2.1",
-    "gatsby-theme-catalyst-header-side": "^0.2.1",
-    "gatsby-theme-catalyst-header-top": "^0.2.1",
+    "gatsby-theme-catalyst-core": "^0.22.2",
+    "gatsby-theme-catalyst-footer": "^0.2.2",
+    "gatsby-theme-catalyst-header-side": "^0.2.2",
+    "gatsby-theme-catalyst-header-top": "^0.2.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
