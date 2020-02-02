@@ -2,6 +2,10 @@
 
 Basic theme that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-top`, and `gatsby-theme-catalyst-footer`.
 
+**Documentation**
+
+[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+
 **Catalyzing Start**
 
 ```sh
@@ -14,10 +18,6 @@ gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basi
 **Demo**
 
 [https://gatsby-starter-catalyst-basic.netlify.com/](https://gatsby-starter-catalyst-basic.netlify.com/)
-
-**Documentation**
-
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
 
 ## About Gatsby Theme Catalyst
 

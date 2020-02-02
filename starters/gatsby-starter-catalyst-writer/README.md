@@ -2,6 +2,12 @@
 
 This is a full-featured starter that ties together the core theme, header and footer themes and the writer theme to ceate a complete website. The theme relies on data from [SANITY.io](https://www.sanity.io/) and includes a customized content studio for the CMS.
 
+**Documentation**
+
+[Getting started with gatsby-theme-catalyst-writer](https://www.erichowey.dev/writing/getting-started-with-gatsby-theme-catalyst-writer/)
+
+[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+
 **Catalyzing Start**
 
 ```sh
@@ -14,12 +20,6 @@ gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-wri
 **Demo**
 
 [https://gatsby-starter-catalyst-writer.netlify.com/](https://gatsby-starter-catalyst-writer.netlify.com/)
-
-**Documentation**
-
-[Getting started with gatsby-theme-catalyst-writer](https://www.erichowey.dev/writing/getting-started-with-gatsby-theme-catalyst-writer/)
-
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
 
 ## About Gatsby Theme Catalyst
 

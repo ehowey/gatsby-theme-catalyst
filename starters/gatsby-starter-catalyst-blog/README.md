@@ -2,10 +2,6 @@
 
 This implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`. This provides a basic starting point for developing your own personal blog and portfolio site.
 
-**Demo**
-
-[https://gatsby-starter-catalyst-blog.netlify.com/](https://gatsby-starter-catalyst-blog.netlify.com/)
-
 **Documentation**
 
 [Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
@@ -18,6 +14,10 @@ gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog
 ```
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
+
+**Demo**
+
+[https://gatsby-starter-catalyst-blog.netlify.com/](https://gatsby-starter-catalyst-blog.netlify.com/)
 
 ## Blog theme options
 
