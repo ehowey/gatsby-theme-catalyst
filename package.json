@@ -6,7 +6,7 @@
   ],
   "name": "gatsby-theme-catalyst",
   "devDependencies": {
-    "@testing-library/cypress": "^5.0.2",
+    "@testing-library/cypress": "^5.1.2",
     "axe-core": "^3.4.1",
     "cypress": "^3.8.3",
     "cypress-axe": "^0.5.3",
