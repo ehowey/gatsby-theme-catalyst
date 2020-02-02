@@ -92,7 +92,8 @@ export default {
       p: 1,
     },
     pre: {
-      ...prism,
+      bg: "muted",
+      color: "text",
       fontSize: 1,
       p: 3,
     },
