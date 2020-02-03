@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-writer",
   "description": "Gatsby theme for a writer's portfolio website",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
