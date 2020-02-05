@@ -31,6 +31,7 @@ const SiteHeader = () => {
           ? "header.backgroundOpen"
           : "header.background",
         gridArea: "header",
+        overflowY: "scroll",
         zIndex: "888", // Ensure the header is always on top
       }}
       id="header"

@@ -21,7 +21,6 @@ export default {
     secondary: baseColors.orange[7],
     accent: baseColors.orange[2],
     muted: baseColors.gray[2],
-
     header: {
       background: baseColors.gray[2],
       backgroundOpen: baseColors.blue[2],
@@ -29,9 +28,8 @@ export default {
       textOpen: baseColors.gray[8],
       icons: baseColors.gray[6],
       iconsHover: baseColors.blue[7],
-      iconsOpen: baseColors.gray[8],
+      iconsOpen: baseColors.gray[6],
     },
-
     footer: {
       background: baseColors.gray[2],
       text: baseColors.gray[8],
@@ -52,7 +50,7 @@ export default {
           backgroundOpen: baseColors.gray[8],
           icons: baseColors.gray[1],
           iconsHover: baseColors.blue[2],
-          iconsOpen: baseColors.gray[1],
+          iconsOpen: baseColors.gray[5],
         },
         footer: {
           background: "#232946",
@@ -68,16 +66,16 @@ export default {
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
     maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
     headerHeight: "auto", // Provides fallback setting to control header height
-    logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
-    logoWidthS: "50px", // Logo width on small screens, 480px - 768px
-    logoWidthM: "50px", // Logo width on medium screens, 768px - 1024px
-    logoWidthL: "60px", // Logo width on large screens, 1024px - 1440px
-    logoWidthXL: "60px", // Logo width on extra large screens, above 1440px
-    logoHeightXS: "40px", // Logo height on extra small screens, up to 480px
-    logoHeightS: "50px", // Logo height on small screens, 480px - 768px
-    logoHeightM: "50px", // Logo height on medium screens, 768px - 1024px
-    logoHeightL: "60px", // Logo height on large screens, 1024px - 1440px
-    logoHeightXL: "60px", // Logo height on extra large screens, above 1440px
+    logoWidthXS: "140px", // Logo width on extra small screens, up to 480px
+    logoWidthS: "150px", // Logo width on small screens, 480px - 768px
+    logoWidthM: "150px", // Logo width on medium screens, 768px - 1024px
+    logoWidthL: "160px", // Logo width on large screens, 1024px - 1440px
+    logoWidthXL: "160px", // Logo width on extra large screens, above 1440px
+    logoHeightXS: "140px", // Logo height on extra small screens, up to 480px
+    logoHeightS: "150px", // Logo height on small screens, 480px - 768px
+    logoHeightM: "150px", // Logo height on medium screens, 768px - 1024px
+    logoHeightL: "160px", // Logo height on large screens, 1024px - 1440px
+    logoHeightXL: "160px", // Logo height on extra large screens, above 1440px
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "20px", // Sets the icons size for the header
   },
@@ -133,6 +131,11 @@ export default {
   variants: {
     siteTitle: {
       fontSize: [4, null, null, 5, null],
+    },
+    siteLogo: {
+      borderRadius: "9999em",
+      mb: 4,
+      boxShadow: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
     },
   },
 }

@@ -16,7 +16,7 @@ const NavMenuBar = ({ children }) => {
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
-          py: 2,
+          py: 1,
           px: 1,
           mr: isMobile ? 0 : 2,
           cursor: "pointer",
@@ -34,7 +34,7 @@ const NavMenuBar = ({ children }) => {
             transform: "scaleY(0)",
             content: "''",
             position: "absolute",
-            transition: "transform .3s ease",
+            transition: "transform .2s ease",
           },
           ":hover::before": {
             transform: "scaleY(1)",
