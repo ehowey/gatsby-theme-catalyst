@@ -10,3 +10,7 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v1
+        with:
+          build: yarn workspace gatsby-starter-catalyst-core develop
+          wait-on: "http://localhost:8000"
+          wait-on-timeout: 120
