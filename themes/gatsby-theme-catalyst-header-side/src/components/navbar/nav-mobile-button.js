@@ -42,7 +42,7 @@ const SiteMobileButton = () => {
       aria-label="Toggle Menu"
       onClick={() => setIsNavOpen(!isNavOpen)}
       sx={{
-        gridColumn: "1 / 2",
+        gridColumn: "3 / 4",
         gridRow: "1 / 2",
         alignSelf: "center",
         color: isNavOpen ? "header.textOpen" : "header.text",
