@@ -14,3 +14,4 @@ jobs:
           build: yarn workspace gatsby-starter-catalyst-core develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
+          working-directory: cypress/e2e
