@@ -2,43 +2,25 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: `Catalyst Writer`,
-    description: `Speed up your GatsbyJS development workflow. Designed as a set of opinionated and advanced themes and starters using MDX and Theme-UI. A theme for freelance writers using SANITY.io for the CMS.`,
-    keywords: [`writer`, `journalist`, `author`],
-    author: `Eric Howey`,
+    title: `Placeholder title`, // Sourced from SANITY
+    description: `Placeholder description`, // Sourced from SANITY
+    keywords: [`keyword 1`, `keyword 2`, `keyword 3`], // Sourced from SANITY
+    author: `Placeholder author`, // Sourced from SANITY
     siteUrl: `https://gatsby-starter-catalyst-writer.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
+      // Sourced from SANITY
       {
-        name: `Work`,
-        link: `/work`,
-        type: `internal`, //internal or anchor
-      },
-      {
-        name: `Bio`,
-        link: `/bio`,
-        type: `internal`, //internal or anchor
-      },
-      {
-        name: `Contact`,
-        link: `/contact`,
+        name: `Page 1`,
+        link: `/page-1`,
         type: `internal`, //internal or anchor
       },
     ],
     socialLinks: [
+      // Sourced from SANITY
       {
-        name: `Email`,
+        name: `Placeholder`,
         link: `eric@erichowey.dev`,
-        location: `footer`, //Options are "all", "header", "footer"
-      },
-      {
-        name: `Github`,
-        link: `https://www.github.com/ehowey`,
         location: `all`, //Options are "all", "header", "footer"
-      },
-      {
-        name: `Twitter`,
-        link: `https://www.twitter.com/erchwy`,
-        location: `header`, //Options are "all", "header", "footer"
       },
     ],
   },
