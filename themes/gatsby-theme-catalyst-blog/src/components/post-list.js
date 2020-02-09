@@ -8,34 +8,42 @@ import PostListImage from "./post-list/post-list-image"
 import PostListMeta from "./post-list/post-list-meta"
 import PostListExcerpt from "./post-list/post-list-excerpt"
 import PostListReadmore from "./post-list/post-list-readmore"
+import { FaRegClock } from "react-icons/fa"
 
 const PostsList = ({ posts }) => {
   return (
     <Layout>
       <PostListContainer>
         <SEO title="Blog" />
-        {posts.map(({ node }) => {
-          const title = node.title || node.slug
+        {posts.map(post => {
+          const title = post.title || post.slug
           return (
-            <PostListWrapper key={node.slug}>
+            <PostListWrapper key={post.slug}>
               <PostListImage
-                link={node.slug}
-                image={node.featuredImage.childImageSharp.fluid}
-                altText={node.title}
+                link={post.slug}
+                image={post.featuredImage.childImageSharp.fluid}
+                altText={post.title}
               />
               <PostListMeta>
                 <a
-                  href={node.authorLink}
+                  href={post.authorLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {node.author}
+                  {post.author}
                 </a>{" "}
-                &bull; {node.date}
+                &bull; {post.date} &bull;{" "}
+                <FaRegClock
+                  sx={{
+                    position: "relative",
+                    top: "0.125em",
+                  }}
+                />{" "}
+                {post.timeToRead} Min
               </PostListMeta>
-              <PostListTitle link={node.slug}>{title}</PostListTitle>
-              <PostListExcerpt>{node.excerpt}</PostListExcerpt>
-              <PostListReadmore link={node.slug}>Read more</PostListReadmore>
+              <PostListTitle link={post.slug}>{title}</PostListTitle>
+              <PostListExcerpt>{post.excerpt}</PostListExcerpt>
+              <PostListReadmore link={post.slug}>Read more</PostListReadmore>
             </PostListWrapper>
           )
         })}

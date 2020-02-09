@@ -25,6 +25,7 @@ export const query = graphql`
       authorLink
       tags
       keywords
+      timeToRead
       date(formatString: "MMMM DD, YYYY")
       featuredImage {
         childImageSharp {
