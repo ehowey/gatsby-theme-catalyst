@@ -8,9 +8,27 @@ jobs:
         uses: actions/checkout@v1
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Test Core Starter
         uses: cypress-io/github-action@v1
         with:
           start: yarn workspace gatsby-starter-catalyst-core develop
+          wait-on: "http://localhost:8000"
+          wait-on-timeout: 120
+      - name: Test Basic Starter
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn workspace gatsby-starter-catalyst-basic develop
+          wait-on: "http://localhost:8000"
+          wait-on-timeout: 120
+      - name: Test Blog Starter
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn workspace gatsby-starter-catalyst-blog develop
+          wait-on: "http://localhost:8000"
+          wait-on-timeout: 120
+      - name: Test Writer Starter
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn workspace gatsby-starter-catalyst-writer develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
