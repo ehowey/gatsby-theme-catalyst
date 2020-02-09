@@ -3,27 +3,32 @@ export const useSiteMetadata = () => {
   const data = useStaticQuery(
     graphql`
       query SanityMetaData {
-        sanitySiteSettings {
-          author
-          description
-          siteUrl
-          title
-          keywords
-          seoImage {
-            asset {
-              url
-              metadata {
-                dimensions {
-                  height
-                  width
+        allSanitySiteSettings(
+          limit: 1
+          sort: { fields: _updatedAt, order: DESC }
+        ) {
+          nodes {
+            author
+            description
+            siteUrl
+            title
+            keywords
+            seoImage {
+              asset {
+                url
+                metadata {
+                  dimensions {
+                    height
+                    width
+                  }
                 }
               }
             }
-          }
-          logo {
-            asset {
-              fluid(maxWidth: 512) {
-                ...GatsbySanityImageFluid
+            logo {
+              asset {
+                fluid(maxWidth: 512) {
+                  ...GatsbySanityImageFluid
+                }
               }
             }
           }
@@ -45,19 +50,17 @@ export const useSiteMetadata = () => {
       }
     `
   )
-
-  const logo = data.sanitySiteSettings.logo.asset.fluid
-  const seoImageSrc = data.sanitySiteSettings.seoImage.asset.url
-  const seoImageHeight =
-    data.sanitySiteSettings.seoImage.asset.metadata.dimensions.height
-  const seoImageWidth =
-    data.sanitySiteSettings.seoImage.asset.metadata.dimensions.width
+  const siteMetadata = data.allSanitySiteSettings.nodes[0]
+  const logo = siteMetadata.logo.asset.fluid
+  const seoImageSrc = siteMetadata.seoImage.asset.url
+  const seoImageHeight = siteMetadata.seoImage.asset.metadata.dimensions.height
+  const seoImageWidth = siteMetadata.seoImage.asset.metadata.dimensions.width
   const seoImage = {
     src: seoImageSrc,
     width: seoImageWidth,
     height: seoImageHeight,
   }
-  const metaData = data.sanitySiteSettings
+  const metaData = siteMetadata
   const socialLinks = data.allSanitySocialLink.nodes
   const menuLinks = data.allSanityMenuLink.nodes
   const twitterLink = data.allSanitySocialLink.nodes
