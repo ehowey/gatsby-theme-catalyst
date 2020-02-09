@@ -7,6 +7,7 @@ import PostTitle from "./post/post-title"
 import PostMeta from "./post/post-meta"
 import PostImage from "./post/post-image"
 import PostFooter from "./post/post-footer"
+import { FaRegClock } from "react-icons/fa"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
@@ -25,7 +26,14 @@ const Post = ({ data: { post }, previous, next }) => (
         <a href={post.authorLink} target="_blank" rel="noopener noreferrer">
           {post.author}
         </a>{" "}
-        &bull; {post.date}
+        &bull; {post.date} &bull;{" "}
+        <FaRegClock
+          sx={{
+            position: "relative",
+            top: "0.125em",
+          }}
+        />{" "}
+        {post.timeToRead} Min
       </PostMeta>
       <PostTitle>{post.title}</PostTitle>
       <MDXRenderer>{post.body}</MDXRenderer>

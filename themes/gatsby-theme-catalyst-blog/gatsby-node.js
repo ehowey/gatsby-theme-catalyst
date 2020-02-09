@@ -74,7 +74,8 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       keywords: [String]!
       excerpt: String!
       draft: Boolean! @defaultFalse
-      featuredImage: File! @fileByRelativePath 
+      featuredImage: File! @fileByRelativePath
+      timeToRead: Int!
   }`)
 
   createTypes(
@@ -118,6 +119,10 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         body: {
           type: `String!`,
           resolve: mdxResolverPassthrough(`body`),
+        },
+        timeToRead: {
+          type: `Int!`,
+          resolve: mdxResolverPassthrough(`timeToRead`),
         },
       },
       interfaces: [`Node`, `CatalystPost`],
