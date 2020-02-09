@@ -9,14 +9,16 @@ import { SEO } from "gatsby-theme-catalyst-core"
 const WorkPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      sanityWorkPage {
-        seoTitle
-        title
-        topimage {
-          alt
-          asset {
-            fluid(maxHeight: 200) {
-              ...GatsbySanityImageFluid
+      allSanityWorkPage(limit: 1, sort: { fields: _updatedAt, order: DESC }) {
+        nodes {
+          seoTitle
+          title
+          topimage {
+            alt
+            asset {
+              fluid(maxHeight: 200) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
         }
@@ -24,7 +26,7 @@ const WorkPage = () => {
     }
   `)
 
-  const result = data.sanityWorkPage
+  const result = data.allSanityWorkPage.nodes[0]
 
   return (
     <Fragment>

@@ -9,20 +9,22 @@ import SanityContent from "./sanity/sanity-content"
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      sanityHomePage {
-        heroTitle
-        _rawHeroText
-        heroImage {
-          asset {
-            fluid(maxWidth: 1024) {
-              ...GatsbySanityImageFluid
+      allSanityHomePage(limit: 1, sort: { fields: _updatedAt, order: DESC }) {
+        nodes {
+          heroTitle
+          _rawHeroText
+          heroImage {
+            asset {
+              fluid(maxWidth: 1024) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
         }
       }
     }
   `)
-  const hero = data.sanityHomePage
+  const hero = data.allSanityHomePage.nodes[0]
   return (
     <section
       sx={{
