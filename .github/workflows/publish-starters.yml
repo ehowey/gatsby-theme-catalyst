@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "starters/**"
 jobs:
   master:
     runs-on: ubuntu-latest
@@ -11,11 +13,11 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: "10.x"
       - name: publish:starters
         uses: johno/actions-push-subdirectories@master
         env:
-            API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: starters ehowey
