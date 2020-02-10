@@ -30,6 +30,11 @@ export const useSiteMetadata = () => {
               name
               link
               type
+              subMenu {
+                link
+                name
+                type
+              }
             }
             socialLinks {
               name

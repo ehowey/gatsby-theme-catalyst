@@ -72,3 +72,61 @@ exports.sourceNodes = (
     },
   })
 }
+
+// exports.createSchemaCustomization = ({ actions, schema }) => {
+//   const { createTypes } = actions
+//   const typeDefs = [
+//     "type Site implements Node { siteMetadata: SiteMetadata }",
+//     schema.buildObjectType({
+//       name: "SiteMetadata",
+//       fields: {
+//         menuLinks:
+//       },
+//     }),
+//   ]
+//   createTypes(typeDefs)
+// }
+
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  const typeDefs = [
+    "type Site implements Node { siteMetadata: SiteMetadata }",
+    schema.buildObjectType({
+      name: "SiteMetadata",
+      fields: {
+        menuLinks: "[JSON]",
+      },
+    }),
+    "type SiteMetadata implements Node { menuLinks: MenuLinks }",
+    schema.buildObjectType({
+      name: "MenuLinks",
+      fields: {
+        subMenu: {
+          type: "[JSON]",
+          resolve(source, args, context, info) {
+            // For a more generic solution, you could pick the field value from
+            // `source[info.fieldName]`
+            const { subMenu } = source
+            if (
+              source.subMenu == null ||
+              (Array.isArray(subMenu) && !subMenu.length)
+            ) {
+              return []
+            }
+            return subMenu
+          },
+        },
+      },
+    }),
+    "type MenuLinks implements Node { subMenu: SubMenu }",
+    schema.buildObjectType({
+      name: "SubMenu",
+      fields: {
+        name: "String",
+        link: "String",
+        type: "String",
+      },
+    }),
+  ]
+  createTypes(typeDefs)
+}

@@ -10,6 +10,18 @@ module.exports = {
         name: `Page 1`,
         link: `/page-1`,
         type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `Sub 1`,
+            link: `/sub-1`,
+            type: `internal`, //internal or anchor
+          },
+          {
+            name: `Sub 2`,
+            link: `/sub-2`,
+            type: `internal`, //internal or anchor
+          },
+        ],
       },
       {
         name: `Anchor 1`,
