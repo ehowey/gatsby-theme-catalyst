@@ -11,6 +11,10 @@ jobs:
       - name: Run Tests on Writer
         uses: cypress-io/github-action@v1
         with:
+          env:
+            SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+            SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+            SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
           start: yarn workspace gatsby-starter-catalyst-writer develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
