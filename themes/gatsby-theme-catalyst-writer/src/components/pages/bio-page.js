@@ -9,15 +9,17 @@ import SanityContent from "../sanity/sanity-content"
 const BioQuery = () => {
   const data = useStaticQuery(graphql`
     query {
-      sanityBioPage {
-        title
-        seoTitle
-        _rawBody
-        topimage {
-          alt
-          asset {
-            fluid(maxHeight: 200) {
-              ...GatsbySanityImageFluid
+      allSanityBioPage(limit: 1, sort: { fields: _updatedAt, order: DESC }) {
+        nodes {
+          title
+          seoTitle
+          _rawBody
+          topimage {
+            alt
+            asset {
+              fluid(maxHeight: 200) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
         }
@@ -25,7 +27,7 @@ const BioQuery = () => {
     }
   `)
 
-  const result = data.sanityBioPage
+  const result = data.allSanityBioPage.nodes[0]
 
   return (
     <Fragment>

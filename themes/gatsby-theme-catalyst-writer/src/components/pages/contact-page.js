@@ -9,15 +9,20 @@ import { SEO } from "gatsby-theme-catalyst-core"
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      sanityContactPage {
-        title
-        seoTitle
-        _rawBody
-        topimage {
-          alt
-          asset {
-            fluid(maxHeight: 200) {
-              ...GatsbySanityImageFluid
+      allSanityContactPage(
+        limit: 1
+        sort: { fields: _updatedAt, order: DESC }
+      ) {
+        nodes {
+          title
+          seoTitle
+          _rawBody
+          topimage {
+            alt
+            asset {
+              fluid(maxHeight: 200) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
         }
@@ -25,7 +30,7 @@ const ContactPage = () => {
     }
   `)
 
-  const result = data.sanityContactPage
+  const result = data.allSanityContactPage.nodes[0]
 
   return (
     <Fragment>

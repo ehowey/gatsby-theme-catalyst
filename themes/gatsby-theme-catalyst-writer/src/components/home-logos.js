@@ -7,8 +7,10 @@ import Img from "gatsby-image"
 const FeaturedLogos = () => {
   const data = useStaticQuery(graphql`
     query {
-      sanityHomePage {
-        logoTitle
+      allSanityHomePage(limit: 1, sort: { fields: _updatedAt, order: DESC }) {
+        nodes {
+          logoTitle
+        }
       }
       allSanityLogos(filter: { featured: { eq: true } }) {
         nodes {
@@ -27,7 +29,7 @@ const FeaturedLogos = () => {
     }
   `)
   const logos = data.allSanityLogos.nodes
-  const result = data.sanityHomePage
+  const result = data.allSanityHomePage.nodes[0]
 
   return (
     <Fragment>

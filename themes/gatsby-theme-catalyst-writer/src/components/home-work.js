@@ -8,8 +8,10 @@ import ButtonSecondary from "./button-secondary"
 const FeaturedWork = () => {
   const data = useStaticQuery(graphql`
     query {
-      sanityHomePage {
-        workTitle
+      allSanityHomePage(limit: 1, sort: { fields: _updatedAt, order: DESC }) {
+        nodes {
+          workTitle
+        }
       }
       allSanityWork(
         sort: { order: DESC, fields: date }
@@ -34,7 +36,7 @@ const FeaturedWork = () => {
     }
   `)
   const writing = data.allSanityWork.nodes
-  const result = data.sanityHomePage
+  const result = data.allSanityHomePage.nodes[0]
   return (
     <Fragment>
       <Styled.h2>{result.workTitle}</Styled.h2>
