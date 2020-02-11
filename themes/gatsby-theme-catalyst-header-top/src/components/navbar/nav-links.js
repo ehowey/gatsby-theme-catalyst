@@ -8,28 +8,8 @@ import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import { HomeContext } from "gatsby-theme-catalyst-core"
 
 const NavLinksDefault = () => {
-  // const { menuLinks } = useSiteMetadata()
+  const { menuLinks } = useSiteMetadata()
   const [isHome] = useContext(HomeContext)
-
-  const menuLinks = [
-    {
-      name: `Page 1`,
-      link: `/page-1`,
-      type: `internal`, //internal or anchor
-      subMenu: [
-        {
-          name: `Sub 1`,
-          link: `/sub-1`,
-          type: `internal`, //internal or anchor
-        },
-        {
-          name: `Sub 2`,
-          link: `/sub-2`,
-          type: `internal`, //internal or anchor
-        },
-      ],
-    },
-  ]
 
   return (
     <Fragment>

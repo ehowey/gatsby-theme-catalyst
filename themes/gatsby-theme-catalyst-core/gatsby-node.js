@@ -87,46 +87,39 @@ exports.sourceNodes = (
 //   createTypes(typeDefs)
 // }
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
-  const { createTypes } = actions
-  const typeDefs = [
-    "type Site implements Node { siteMetadata: SiteMetadata }",
-    schema.buildObjectType({
-      name: "SiteMetadata",
-      fields: {
-        menuLinks: "[JSON]",
-      },
-    }),
-    "type SiteMetadata implements Node { menuLinks: MenuLinks }",
-    schema.buildObjectType({
-      name: "MenuLinks",
-      fields: {
-        subMenu: {
-          type: "[JSON]",
-          resolve(source, args, context, info) {
-            // For a more generic solution, you could pick the field value from
-            // `source[info.fieldName]`
-            const { subMenu } = source
-            if (
-              source.subMenu == null ||
-              (Array.isArray(subMenu) && !subMenu.length)
-            ) {
-              return []
-            }
-            return subMenu
-          },
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createFieldExtension, createTypes } = actions
+  createFieldExtension({
+    name: `defaultArray`,
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          if (source[info.fieldName] == null) {
+            return []
+          }
+          return source[info.fieldName]
         },
-      },
-    }),
-    "type MenuLinks implements Node { subMenu: SubMenu }",
-    schema.buildObjectType({
-      name: "SubMenu",
-      fields: {
-        name: "String",
-        link: "String",
-        type: "String",
-      },
-    }),
-  ]
+      }
+    },
+  })
+  const typeDefs = `
+    type Site implements Node {
+      siteMetadata: SiteMetadata
+    }
+    type SiteMetadata {
+      menuLinks: [MenuLinks]
+    }
+    type MenuLinks {
+      name: String!
+      link: String!
+      type: String!
+      subMenu: [SubMenu] @defaultArray
+    }
+    type SubMenu {
+      name: String
+      link: String
+      type: String
+    }
+  `
   createTypes(typeDefs)
 }
