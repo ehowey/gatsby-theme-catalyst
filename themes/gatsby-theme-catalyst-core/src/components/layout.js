@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import PropTypes from "prop-types"
 import { jsx, Styled } from "theme-ui"
 import Normalize from "../utils/normalize-css"
 import SiteContainer from "./site-container"
@@ -27,3 +28,8 @@ const SiteLayout = ({ children }) => {
 }
 
 export default SiteLayout
+
+SiteLayout.propTypes = {
+  /** Children to render */
+  children: PropTypes.element,
+}

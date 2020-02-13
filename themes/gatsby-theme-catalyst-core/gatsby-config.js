@@ -93,6 +93,12 @@ module.exports = options => {
       `gatsby-plugin-sharp`,
       `gatsby-plugin-theme-ui`,
       `gatsby-plugin-offline`,
+      {
+        resolve: `@pauliescanlon/gatsby-plugin-prop-shop`,
+        options: {
+          source: [`${__dirname}/src/components`],
+        },
+      },
     ],
   }
 }
