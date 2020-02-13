@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const NavMenuBar = ({ children }) => {
+const NavUl = ({ children }) => {
   return (
     <ul
       sx={{
@@ -17,4 +17,4 @@ const NavMenuBar = ({ children }) => {
   )
 }
 
-export default NavMenuBar
+export default NavUl

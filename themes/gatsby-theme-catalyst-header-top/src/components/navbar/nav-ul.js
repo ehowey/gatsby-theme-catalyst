@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 
-const NavMenuBar = ({ children }) => {
+const NavUl = ({ children }) => {
   const [isMobile] = useContext(MobileContext)
 
   return (
@@ -23,4 +23,4 @@ const NavMenuBar = ({ children }) => {
   )
 }
 
-export default NavMenuBar
+export default NavUl

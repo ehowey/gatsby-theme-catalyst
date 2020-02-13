@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
-const NavMenuBar = ({ children }) => {
+const NavLi = ({ children }) => {
   const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
@@ -63,4 +63,4 @@ const NavMenuBar = ({ children }) => {
   )
 }
 
-export default NavMenuBar
+export default NavLi
