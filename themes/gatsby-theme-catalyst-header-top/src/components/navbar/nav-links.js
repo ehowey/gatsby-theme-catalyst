@@ -20,7 +20,7 @@ const NavLinksDefault = () => {
           {link.type === "internal" && (
             <div>
               <NavMenuLink link={link.link}>{link.name}</NavMenuLink>
-              {link.subMenu.length &&
+              {link.subMenu.length > 0 &&
                 link.subMenu.map(subLink => (
                   <NavUlDropdown>
                     <NavLiDropdown>{subLink.name}</NavLiDropdown>
