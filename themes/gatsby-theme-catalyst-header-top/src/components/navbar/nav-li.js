@@ -14,6 +14,7 @@ const NavLi = ({ children }) => {
         my: isMobile ? 2 : 0,
         mx: 1,
         fontFamily: "navLinks",
+
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",

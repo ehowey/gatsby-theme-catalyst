@@ -8,7 +8,23 @@ const NavLiDropdown = ({ children }) => {
   const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
-  return <li sx={{}}>{children}</li>
+  return (
+    <li
+      sx={
+        {
+          // display: "block",
+          // transitionDuration: "0.5s",
+          // clear: "both",
+          // width: "100%",
+          // ":hover": {
+          //   cursor: "pointer",
+          // },
+        }
+      }
+    >
+      {children}
+    </li>
+  )
 }
 
 export default NavLiDropdown

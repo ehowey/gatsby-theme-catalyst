@@ -18,7 +18,7 @@ const NavLinksDefault = () => {
       {menuLinks.map(link => (
         <NavLI key={link.name}>
           {link.type === "internal" && (
-            <div>
+            <Fragment>
               <NavMenuLink link={link.link}>{link.name}</NavMenuLink>
               {link.subMenu.length > 0 &&
                 link.subMenu.map(subLink => (
@@ -26,7 +26,7 @@ const NavLinksDefault = () => {
                     <NavLiDropdown>{subLink.name}</NavLiDropdown>
                   </NavUlDropdown>
                 ))}
-            </div>
+            </Fragment>
           )}
           {isHome && link.type === "anchor" ? (
             <NavMenuAnchorLink link={link.link}>{link.name}</NavMenuAnchorLink>
