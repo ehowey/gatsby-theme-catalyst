@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-writer v0.8.0
+
+- More robust queries for pages, should prevent an error that was occuring for pages in SANITY if multiples were created by accident
+
 ## catalyst-blog v0.8.0
 
 - Revised posts-list query using `nodes` instead of `edges->node`

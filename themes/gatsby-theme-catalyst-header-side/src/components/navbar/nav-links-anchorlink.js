@@ -23,7 +23,6 @@ const NavMenuAnchorLink = ({ link, children }) => {
       to={link.replace(/#/g, "").toLowerCase()}
       onClick={() => setIsNavOpen(false)}
       spy={true}
-      hashSpy={true}
       smooth={true}
       activeClass="active"
       duration={500}
