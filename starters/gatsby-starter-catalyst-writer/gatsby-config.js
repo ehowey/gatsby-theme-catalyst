@@ -52,17 +52,24 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-writer`,
       options: {
-        sanityProjectID: process.env.SANITY_PROJECT_ID,
+        // Example for an env variable
+        // sanityProjectID: process.env.SANITY_PROJECT_ID,
+        // sanityDataset: process.env.SANITY_DATASET
+        sanityProjectID: `utcr8kb1`,
+        sanityDataset: `production`,
       },
     },
     {
       resolve: `gatsby-source-sanity`,
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
-        token: process.env.SANITY_TOKEN,
+        // Example for an env variable
+        // projectId: process.env.SANITY_PROJECT_ID,
+        // dataset: process.env.SANITY_DATASET,
+        // token: process.env.SANITY_TOKEN,
+        // overlayDrafts: true, // Only works with a token and private dataset
+        projectId: `utcr8kb1`,
+        dataset: `production`,
         watchMode: true,
-        overlayDrafts: true,
       },
     },
     {
