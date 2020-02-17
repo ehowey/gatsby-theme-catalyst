@@ -1,10 +1,32 @@
-describe("Accessibility checks", () => {
+describe("Check light theme for a11Y", () => {
   beforeEach(() => {
     cy.visit("/")
+    cy.viewport(1440, 900)
+    cy.wait(1000)
     cy.injectAxe()
-    cy.wait(1500)
   })
-  it("Has no detectable a11y violations on load", () => {
+  it("Has no detectable a11y violations on light theme", () => {
+    cy.checkA11y()
+  })
+})
+describe("Check dark theme for a11y", () => {
+  beforeEach(() => {
+    cy.visit("/")
+    cy.viewport(1440, 900)
+    cy.wait(1000)
+    cy.get("header").then($nav => {
+      if ($nav.find('button[aria-label*="Toggle dark mode"]').length) {
+        return cy
+          .get('button[aria-label*="Toggle dark mode"]')
+          .click()
+          .click()
+      } else {
+        return "No dark mode"
+      }
+    })
+    cy.injectAxe()
+  })
+  it("Has no detectable a11y violations on dark theme", () => {
     cy.checkA11y()
   })
 })

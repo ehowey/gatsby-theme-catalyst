@@ -43,6 +43,7 @@ export default {
       dark: {
         text: baseColors.gray[1],
         background: baseColors.gray[9],
+        primary: "#458ad2",
         accent: baseColors.gray[8],
         muted: baseColors.gray[8],
         header: {
