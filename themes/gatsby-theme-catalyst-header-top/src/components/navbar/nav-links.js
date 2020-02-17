@@ -20,12 +20,13 @@ const NavLinksDefault = () => {
           {link.type === "internal" && (
             <Fragment>
               <NavMenuLink link={link.link}>{link.name}</NavMenuLink>
-              {link.subMenu.length > 0 &&
-                link.subMenu.map(subLink => (
-                  <NavUlDropdown>
+              {link.subMenu && link.subMenu.length > 0 ? (
+                <NavUlDropdown>
+                  {link.subMenu.map(subLink => (
                     <NavLiDropdown>{subLink.name}</NavLiDropdown>
-                  </NavUlDropdown>
-                ))}
+                  ))}
+                </NavUlDropdown>
+              ) : null}
             </Fragment>
           )}
           {isHome && link.type === "anchor" ? (

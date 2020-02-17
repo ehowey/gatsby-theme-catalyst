@@ -10,17 +10,13 @@ const NavLiDropdown = ({ children }) => {
 
   return (
     <li
-      sx={
-        {
-          // display: "block",
-          // transitionDuration: "0.5s",
-          // clear: "both",
-          // width: "100%",
-          // ":hover": {
-          //   cursor: "pointer",
-          // },
-        }
-      }
+      sx={{
+        display: "block",
+        mb: 3,
+        ":hover": {
+          cursor: "pointer",
+        },
+      }}
     >
       {children}
     </li>
