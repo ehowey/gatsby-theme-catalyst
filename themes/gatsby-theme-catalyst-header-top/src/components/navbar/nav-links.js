@@ -23,7 +23,11 @@ const NavLinksDefault = () => {
               {link.subMenu && link.subMenu.length > 0 ? (
                 <NavUlDropdown>
                   {link.subMenu.map(subLink => (
-                    <NavLiDropdown>{subLink.name}</NavLiDropdown>
+                    <NavLiDropdown key={link.name}>
+                      <NavMenuLink link={subLink.link}>
+                        {subLink.name}
+                      </NavMenuLink>
+                    </NavLiDropdown>
                   ))}
                 </NavUlDropdown>
               ) : null}
