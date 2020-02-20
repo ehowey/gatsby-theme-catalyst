@@ -1,5 +1,7 @@
 var crypto = require("crypto")
 
+//Schema generation for Catalust Config
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`type CatalystConfig implements Node {
@@ -73,19 +75,7 @@ exports.sourceNodes = (
   })
 }
 
-// exports.createSchemaCustomization = ({ actions, schema }) => {
-//   const { createTypes } = actions
-//   const typeDefs = [
-//     "type Site implements Node { siteMetadata: SiteMetadata }",
-//     schema.buildObjectType({
-//       name: "SiteMetadata",
-//       fields: {
-//         menuLinks:
-//       },
-//     }),
-//   ]
-//   createTypes(typeDefs)
-// }
+// Schema generation for subMenu array
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createFieldExtension, createTypes } = actions
