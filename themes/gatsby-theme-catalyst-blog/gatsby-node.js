@@ -75,7 +75,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       excerpt: String!
       draft: Boolean! @defaultFalse
       featuredImage: File! @fileByRelativePath
-      timeToRead: Int!
+      timeToRead: Int
   }`)
 
   createTypes(
@@ -121,7 +121,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           resolve: mdxResolverPassthrough(`body`),
         },
         timeToRead: {
-          type: `Int!`,
+          type: `Int`,
           resolve: mdxResolverPassthrough(`timeToRead`),
         },
       },
