@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
-const NavLi = ({ children }) => {
+const NavLi = ({ children, hasSubmenu }) => {
   const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
@@ -56,8 +56,14 @@ const NavLi = ({ children }) => {
           opacity: "1",
           transform: "translateY(0px)",
         },
+        ":hover > ul": {
+          visibility: "visible",
+          opacity: "1",
+          display: "block",
+        },
         variant: "variants.navLinkStyles",
       }}
+      aria-haspopup={hasSubmenu}
     >
       {children}
     </li>

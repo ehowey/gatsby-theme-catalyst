@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Fragment, useContext } from "react"
+import NavUL from "./nav-ul"
 import NavLI from "./nav-li"
 import NavUlDropdown from "./nav-ul-dropdown"
 import NavLiDropdown from "./nav-li-dropdown"
@@ -14,9 +15,12 @@ const NavLinksDefault = () => {
   const [isHome] = useContext(HomeContext)
 
   return (
-    <Fragment>
+    <NavUL>
       {menuLinks.map(link => (
-        <NavLI key={link.name}>
+        <NavLI
+          key={link.name}
+          hasSubmenu={link.subMenu && link.subMenu.length > 0 ? true : false}
+        >
           {link.type === "internal" && (
             <Fragment>
               <NavMenuLink link={link.link}>{link.name}</NavMenuLink>
@@ -42,7 +46,7 @@ const NavLinksDefault = () => {
           )}
         </NavLI>
       ))}
-    </Fragment>
+    </NavUL>
   )
 }
 

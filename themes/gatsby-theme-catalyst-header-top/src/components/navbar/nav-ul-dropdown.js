@@ -11,25 +11,26 @@ const NavUlDropdown = ({ children }) => {
   return (
     <ul
       sx={{
-        listStyle: "none",
+        position: "absolute",
         m: 0,
         p: 0,
+        listStyle: "none",
+        visibility: "hidden",
+        display: "none",
+        opacity: "0",
         backgroundColor: isNavOpen
           ? "header.backgroundOpen"
           : "header.background",
-        visibility: "hidden",
-        opacity: "0",
-        position: "absolute",
         transition: "all 0.5s ease",
-        marginTop: "1rem",
-        display: "none",
-
+        paddingTop: "1rem",
+        zIndex: "-1",
         ":hover": {
           visibility: "visible",
           opacity: "1",
           display: "block",
         },
       }}
+      aria-label="submenu"
     >
       {children}
     </ul>

@@ -16,11 +16,6 @@ const NavUl = ({ children }) => {
         listStyle: "none",
         m: 0,
         p: 0,
-        "li:hover > ul": {
-          visibility: "visible",
-          opacity: "1",
-          display: "block",
-        },
       }}
     >
       {children}

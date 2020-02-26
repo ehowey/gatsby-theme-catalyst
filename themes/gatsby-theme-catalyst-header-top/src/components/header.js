@@ -1,15 +1,16 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import { useContext } from "react"
-import HeaderLayout from "./header-layout"
 import Branding from "./branding/branding"
-import Nav from "./navbar/nav-layout"
+import Nav from "./navbar/nav"
+import MobileButton from "./navbar/nav-mobile-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
   const { useStickyHeader } = useCatalystConfig()
+  const { theme } = useThemeUI()
   return (
     <header
       sx={{
@@ -26,10 +27,33 @@ const SiteHeader = () => {
       }}
       id="header"
     >
-      <HeaderLayout>
+      <div
+        sx={{
+          gridRow: "1 / -1",
+          gridColumn: "1 / -1",
+          alignSelf: "start",
+          display: "grid",
+          gridTemplateColumns: "auto 1fr",
+          gridTemplateRows: [
+            theme.sizes.headerHeight + " 1fr",
+            null,
+            theme.sizes.headerHeight,
+            null,
+            null,
+          ],
+          maxWidth: "maxPageWidth",
+          width: "100%",
+          height: isNavOpen ? "100vh" : "auto",
+          minHeight: "50px",
+          m: "0 auto",
+          px: [1, null, 3, null, null],
+          py: [1, null, 2, null, null],
+        }}
+      >
         <Branding />
         <Nav />
-      </HeaderLayout>
+        <MobileButton />
+      </div>
     </header>
   )
 }
