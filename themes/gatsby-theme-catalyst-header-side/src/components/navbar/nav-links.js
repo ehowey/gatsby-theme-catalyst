@@ -7,7 +7,6 @@ import NavMenuLink from "./nav-links-gatsbylink"
 import NavMenuAnchorLink from "./nav-links-anchorlink"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import { HomeContext } from "gatsby-theme-catalyst-core"
-import NavUl from "../../../../gatsby-theme-catalyst-header-top/src/components/navbar/nav-ul"
 
 const NavLinksDefault = () => {
   const { menuLinks } = useSiteMetadata()

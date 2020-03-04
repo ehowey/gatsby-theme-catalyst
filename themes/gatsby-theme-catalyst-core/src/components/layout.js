@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
+import { SkipNavLink, SkipNavContent } from "@reach/skip-nav"
 import Normalize from "../utils/normalize-css"
 import SiteContainer from "./site-container"
 import Header from "./header"
@@ -15,8 +16,10 @@ const SiteLayout = ({ children }) => {
     <Styled.root>
       <Normalize />
       <SiteContainer>
+        <SkipNavLink />
         <Header />
         <Main>
+          <SkipNavContent />
           {useHero && <Hero />}
           <ContentContainer>{children}</ContentContainer>
         </Main>
