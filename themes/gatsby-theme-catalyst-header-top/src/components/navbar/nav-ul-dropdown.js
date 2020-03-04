@@ -11,19 +11,20 @@ const NavUlDropdown = ({ children }) => {
   return (
     <ul
       sx={{
-        position: "absolute",
+        position: isMobile && isNavOpen ? "static" : "absolute",
         m: 0,
         p: 0,
+        pt: isMobile && isNavOpen ? 1 : 3,
         listStyle: "none",
-        visibility: "hidden",
-        display: "none",
-        opacity: "0",
+        visibility: isMobile && isNavOpen ? "visible" : "hidden",
+        display: isMobile && isNavOpen ? "block" : "none",
+        opacity: isMobile && isNavOpen ? "1" : "0",
         backgroundColor: isNavOpen
           ? "header.backgroundOpen"
           : "header.background",
         transition: "all 0.5s ease",
-        paddingTop: "1rem",
-        zIndex: "-1",
+        zIndex: 1,
+        minWidth: "8rem",
         ":hover": {
           visibility: "visible",
           opacity: "1",

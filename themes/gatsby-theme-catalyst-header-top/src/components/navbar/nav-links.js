@@ -23,7 +23,14 @@ const NavLinksDefault = () => {
         >
           {link.type === "internal" && (
             <Fragment>
-              <NavMenuLink link={link.link}>{link.name}</NavMenuLink>
+              <NavMenuLink
+                link={link.link}
+                hasSubmenu={
+                  link.subMenu && link.subMenu.length > 0 ? true : false
+                }
+              >
+                {link.name}
+              </NavMenuLink>
               {link.subMenu && link.subMenu.length > 0 ? (
                 <NavUlDropdown>
                   {link.subMenu.map(subLink => (

@@ -12,9 +12,15 @@ const NavLiDropdown = ({ children }) => {
     <li
       sx={{
         display: "block",
-        mb: 3,
+        mb: isMobile && isNavOpen ? 1 : 3,
         ":hover": {
           cursor: "pointer",
+        },
+        a: {
+          fontSize: isMobile && isNavOpen ? 1 : 2,
+          ":hover": {
+            textDecoration: "none",
+          },
         },
       }}
     >

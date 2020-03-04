@@ -12,49 +12,30 @@ const NavLi = ({ children, hasSubmenu }) => {
     <li
       sx={{
         my: isMobile ? 2 : 0,
-        mx: 1,
+        mr: isMobile ? 0 : 3,
+        cursor: "pointer",
         fontFamily: "navLinks",
-
         a: {
-          color: isNavOpen ? "header.textOpen" : "header.text",
-          textDecoration: "none",
+          position: "relative",
           py: 2,
           px: 1,
-          mr: isMobile ? 0 : 2,
-          cursor: "pointer",
-          position: "relative",
+          color: isNavOpen ? "header.textOpen" : "header.text",
+          textDecoration: "none",
           fontWeight: "bold",
           letterSpacing: "1px",
-
-          "::after": {
-            position: "absolute",
-            top: "100%",
-            left: "0",
-            width: "100%",
-            height: "1px",
-            backgroundColor: "primary",
-            content: "''",
-            opacity: "0",
-            transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-            transform: "translateY(-6px)",
+          zIndex: 2,
+          ":hover": {
+            textDecoration: "underline",
+            color: "primary",
           },
-
-          ":hover::after, :focus::after": {
-            height: "4px",
+          ":hover > ul": {
+            visibility: "visible",
             opacity: "1",
-            transform: "translateY(0px)",
+            display: "block",
           },
         },
-        ".active::after": {
-          position: "absolute",
-          top: "100%",
-          left: "0",
-          width: "100%",
-          height: "4px",
-          backgroundColor: "primary",
-          content: "''",
-          opacity: "1",
-          transform: "translateY(0px)",
+        ".active": {
+          textDecoration: "underline",
         },
         ":hover > ul": {
           visibility: "visible",

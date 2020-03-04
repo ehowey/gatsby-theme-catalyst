@@ -22,8 +22,6 @@ const Nav = () => {
         display: isMobile ? (isNavOpen ? "flex" : "none") : "flex",
         flexDirection: isMobile ? "column" : "row",
       }}
-      role="navigation"
-      aria-label="main-navigation"
     >
       <NavLinks />
       <NavSocialLinks />
