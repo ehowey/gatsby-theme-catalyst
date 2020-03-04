@@ -21,6 +21,9 @@ const NavLiDropdown = ({ children }) => {
           "::after": {
             content: "none",
           },
+          ":hover::after": {
+            content: "none",
+          },
           ":hover, :focus": {
             color: "primary",
           },
