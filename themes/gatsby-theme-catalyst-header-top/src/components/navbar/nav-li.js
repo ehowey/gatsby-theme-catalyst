@@ -24,20 +24,44 @@ const NavLi = ({ children, hasSubmenu }) => {
           fontWeight: "bold",
           letterSpacing: "1px",
           zIndex: 2,
-          ":hover": {
-            textDecoration: "underline",
-            color: "primary",
+
+          "::after": {
+            position: "absolute",
+            top: "100%",
+            left: "0",
+            width: "100%",
+            height: "1px",
+            backgroundColor: "primary",
+            content: "''",
+            opacity: "0",
+            transition: "height 0.3s, opacity 0.3s, transform 0.3s",
+            transform: "translateY(-6px)",
           },
+
+          ":hover::after, :focus::after": {
+            height: "4px",
+            opacity: "1",
+            transform: "translateY(0px)",
+          },
+
           ":hover > ul": {
             visibility: "visible",
             opacity: "1",
             display: "block",
           },
         },
-        ".active": {
-          textDecoration: "underline",
+        ".active::after": {
+          position: "absolute",
+          top: "100%",
+          left: "0",
+          width: "100%",
+          height: "4px",
+          backgroundColor: "primary",
+          content: "''",
+          opacity: "1",
+          transform: "translateY(0px)",
         },
-        ":hover > ul": {
+        ":hover > ul, :focus-within > ul": {
           visibility: "visible",
           opacity: "1",
           display: "block",

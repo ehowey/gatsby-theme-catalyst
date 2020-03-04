@@ -18,9 +18,18 @@ const NavLiDropdown = ({ children }) => {
         },
         a: {
           fontSize: isMobile && isNavOpen ? 1 : 2,
-          ":hover": {
-            textDecoration: "none",
+          "::after": {
+            content: "none",
           },
+          ":hover, :focus": {
+            color: "primary",
+          },
+        },
+        ".active::after": {
+          content: "none",
+        },
+        ".active": {
+          color: "primary",
         },
       }}
     >

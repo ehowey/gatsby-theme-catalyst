@@ -41,6 +41,11 @@ module.exports = {
         location: `footer`, //Options are "all", "header", "footer"
       },
       {
+        name: `Twitter`,
+        link: `https://twitter.com/erchwy`,
+        location: `header`, //Options are "all", "header", "footer"
+      },
+      {
         name: `Github`,
         link: `https://www.github.com/ehowey`,
         location: `all`, //Options are "all", "header", "footer"
