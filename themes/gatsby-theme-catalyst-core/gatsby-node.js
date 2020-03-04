@@ -93,7 +93,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     },
   })
   const typeDefs = `
-    type Site implements Node {
+    type Site implements Node @infer {
       siteMetadata: SiteMetadata
     }
     type SiteMetadata {
