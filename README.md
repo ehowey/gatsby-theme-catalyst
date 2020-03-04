@@ -157,6 +157,32 @@ menuLinks: [
 ]
 ```
 
+You can also have a sub-menu or dropdown menu using `gatsby-theme-catalyst-header-top` and `internal` links only. You can see an example of this with `gatsby-starter-catalyst-basic`. Eventually this feature will be expanded to other themes. At present it is _not_ working with anchor links, I do not think there is enough of a use case for this at present.
+
+Example Config:
+
+```
+menuLinks: [
+      {
+        name: `Page 1`,
+        link: `/page-1`,
+        type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `Sub 1`,
+            link: `/sub-1`,
+            type: `internal`, //internal or anchor
+          },
+          {
+            name: `Sub 2`,
+            link: `/sub-2`,
+            type: `internal`, //internal or anchor
+          },
+        ],
+      },
+]
+```
+
 #### Social Links
 
 The `socialLinks` in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.

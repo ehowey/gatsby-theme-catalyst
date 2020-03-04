@@ -45,7 +45,7 @@ const SiteMobileButton = () => {
         gridColumn: "3 / 4",
         gridRow: "1 / 2",
         alignSelf: "center",
-        color: isNavOpen ? "header.textOpen" : "header.text",
+        color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
         cursor: "pointer",
         display: isMobile ? "block" : "none",
         height: "3rem",

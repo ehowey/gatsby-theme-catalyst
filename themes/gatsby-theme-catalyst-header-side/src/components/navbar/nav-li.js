@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
-const NavMenuBar = ({ children }) => {
+const NavLi = ({ children }) => {
   const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
@@ -14,11 +14,10 @@ const NavMenuBar = ({ children }) => {
         mb: 3,
         fontFamily: "navLinks",
         a: {
-          color: isNavOpen ? "header.textOpen" : "header.text",
+          color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           py: 1,
           px: 1,
-          mr: isMobile ? 0 : 2,
           cursor: "pointer",
           position: "relative",
           fontWeight: "bold",
@@ -58,4 +57,4 @@ const NavMenuBar = ({ children }) => {
   )
 }
 
-export default NavMenuBar
+export default NavLi

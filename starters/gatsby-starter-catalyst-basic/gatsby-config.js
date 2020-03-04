@@ -20,6 +20,18 @@ module.exports = {
         name: `Page 2`,
         link: `/page-2`,
         type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `Sub 1`,
+            link: `/sub-1`,
+            type: `internal`, //internal or anchor
+          },
+          {
+            name: `Sub 2`,
+            link: `/sub-2`,
+            type: `internal`, //internal or anchor
+          },
+        ],
       },
     ],
     socialLinks: [
@@ -27,6 +39,11 @@ module.exports = {
         name: `Email`,
         link: `eric@erichowey.dev`,
         location: `footer`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Twitter`,
+        link: `https://twitter.com/erchwy`,
+        location: `header`, //Options are "all", "header", "footer"
       },
       {
         name: `Github`,

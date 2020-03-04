@@ -3,8 +3,10 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { MobileContext } from "gatsby-theme-catalyst-core"
+import NavLinks from "./nav-links"
+import NavSocialLinks from "./nav-social"
 
-const NavLayout = ({ children }) => {
+const NavLayout = () => {
   const [isNavOpen] = useContext(NavContext)
   const [isMobile] = useContext(MobileContext)
 
@@ -14,7 +16,7 @@ const NavLayout = ({ children }) => {
         mt: 4,
         gridColumn: isMobile ? "1 / -1" : "1 / 1",
         gridRow: "2 / 3",
-        display: isNavOpen ? "flex" : isMobile ? "none" : "flex",
+        display: isMobile && isNavOpen ? "flex" : isMobile ? "none" : "flex",
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
@@ -22,7 +24,8 @@ const NavLayout = ({ children }) => {
       role="navigation"
       aria-label="main-navigation"
     >
-      {children}
+      <NavLinks />
+      <NavSocialLinks />
     </nav>
   )
 }

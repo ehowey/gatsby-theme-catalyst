@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
-const NavMenuBar = ({ children }) => {
+const NavLi = ({ children, hasSubmenu }) => {
   const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
@@ -12,18 +12,18 @@ const NavMenuBar = ({ children }) => {
     <li
       sx={{
         my: isMobile ? 2 : 0,
-        mx: 1,
+        mr: isMobile ? 0 : 3,
+        cursor: "pointer",
         fontFamily: "navLinks",
         a: {
-          color: isNavOpen ? "header.textOpen" : "header.text",
-          textDecoration: "none",
+          position: "relative",
           py: 2,
           px: 1,
-          mr: isMobile ? 0 : 2,
-          cursor: "pointer",
-          position: "relative",
+          color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
+          textDecoration: "none",
           fontWeight: "bold",
           letterSpacing: "1px",
+          zIndex: 2,
 
           "::after": {
             position: "absolute",
@@ -43,6 +43,12 @@ const NavMenuBar = ({ children }) => {
             opacity: "1",
             transform: "translateY(0px)",
           },
+
+          ":hover > ul": {
+            visibility: "visible",
+            opacity: "1",
+            display: "block",
+          },
         },
         ".active::after": {
           position: "absolute",
@@ -55,12 +61,18 @@ const NavMenuBar = ({ children }) => {
           opacity: "1",
           transform: "translateY(0px)",
         },
+        ":hover > ul, :focus-within > ul": {
+          visibility: "visible",
+          opacity: "1",
+          display: "block",
+        },
         variant: "variants.navLinkStyles",
       }}
+      aria-haspopup={hasSubmenu}
     >
       {children}
     </li>
   )
 }
 
-export default NavMenuBar
+export default NavLi
