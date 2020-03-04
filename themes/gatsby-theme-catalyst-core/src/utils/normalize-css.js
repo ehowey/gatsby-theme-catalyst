@@ -6,6 +6,33 @@ const Normalize = () => {
   return (
     <Global
       styles={css`
+        /* Skip Nav Styles */
+        :root {
+          --reach-skip-nav: 1;
+        }
+
+        [data-reach-skip-link] {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          width: 1px;
+          margin: -1px;
+          padding: 0;
+          overflow: hidden;
+          position: absolute;
+        }
+
+        [data-reach-skip-link]:focus {
+          padding: 1rem;
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          background: white;
+          z-index: 1000;
+          width: auto;
+          height: auto;
+          clip: auto;
+        }
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
         /* Document
