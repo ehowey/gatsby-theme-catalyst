@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 import { useContext } from "react"
+import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
@@ -10,6 +11,7 @@ import LinkWrapper from "./branding-link-wrapper"
 const SiteLogo = () => {
   const { title, logo } = useSiteMetadata()
   const [isNavOpen] = useContext(NavContext)
+  const [isMobile] = useContext(MobileContext)
   const { invertSiteLogo } = useCatalystConfig()
   const invertLogo = () => {
     if (invertSiteLogo) {
@@ -37,7 +39,7 @@ const SiteLogo = () => {
             theme => theme.sizes.logoWidthXL,
           ],
           mr: 2,
-          filter: isNavOpen ? invertLogo : "none",
+          filter: isMobile && isNavOpen ? invertLogo : "none",
           variant: "variants.siteLogo",
         }}
         fluid={logo}

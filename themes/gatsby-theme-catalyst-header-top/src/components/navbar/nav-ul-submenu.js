@@ -19,9 +19,8 @@ const NavUlDropdown = ({ children }) => {
         visibility: isMobile && isNavOpen ? "visible" : "hidden",
         display: isMobile && isNavOpen ? "block" : "none",
         opacity: isMobile && isNavOpen ? "1" : "0",
-        backgroundColor: isNavOpen
-          ? "header.backgroundOpen"
-          : "header.background",
+        backgroundColor:
+          isMobile && isNavOpen ? "header.backgroundOpen" : "header.background",
         transition: "all 0.5s ease",
         zIndex: 1,
         minWidth: "8rem",

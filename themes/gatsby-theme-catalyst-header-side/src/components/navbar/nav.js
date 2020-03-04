@@ -16,7 +16,7 @@ const NavLayout = () => {
         mt: 4,
         gridColumn: isMobile ? "1 / -1" : "1 / 1",
         gridRow: "2 / 3",
-        display: isNavOpen ? "flex" : isMobile ? "none" : "flex",
+        display: isMobile && isNavOpen ? "flex" : isMobile ? "none" : "flex",
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",

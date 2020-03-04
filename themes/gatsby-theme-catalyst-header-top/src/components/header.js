@@ -4,11 +4,13 @@ import { useContext } from "react"
 import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
 import MobileButton from "./navbar/nav-mobile-button"
+import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
+  const [isMobile] = useContext(MobileContext)
   const { useStickyHeader } = useCatalystConfig()
   const { theme } = useThemeUI()
   return (
@@ -18,10 +20,9 @@ const SiteHeader = () => {
         position: useStickyHeader ? "sticky" : "static",
         top: 0,
         width: "100%",
-        color: isNavOpen ? "header.textOpen" : "header.text",
-        backgroundColor: isNavOpen
-          ? "header.backgroundOpen"
-          : "header.background",
+        color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
+        backgroundColor:
+          isMobile && isNavOpen ? "header.backgroundOpen" : "header.background",
         gridArea: "header",
         zIndex: "888", // Ensure the header is always on top
       }}
@@ -43,7 +44,7 @@ const SiteHeader = () => {
           ],
           maxWidth: "maxPageWidth",
           width: "100%",
-          height: isNavOpen ? "100vh" : "auto",
+          height: isMobile && isNavOpen ? "100vh" : "auto",
           minHeight: "50px",
           m: "0 auto",
           px: [1, null, 3, null, null],

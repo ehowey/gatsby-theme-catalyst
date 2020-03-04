@@ -14,11 +14,10 @@ const NavLi = ({ children }) => {
         mb: 3,
         fontFamily: "navLinks",
         a: {
-          color: isNavOpen ? "header.textOpen" : "header.text",
+          color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           py: 1,
           px: 1,
-          mr: isMobile ? 0 : 2,
           cursor: "pointer",
           position: "relative",
           fontWeight: "bold",

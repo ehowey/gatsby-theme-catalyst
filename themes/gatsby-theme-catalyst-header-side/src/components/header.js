@@ -26,10 +26,9 @@ const SiteHeader = () => {
           : isMobile
           ? "auto"
           : "100%",
-        color: isNavOpen ? "header.textOpen" : "header.text",
-        backgroundColor: isNavOpen
-          ? "header.backgroundOpen"
-          : "header.background",
+        color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
+        backgroundColor:
+          isMobile && isNavOpen ? "header.backgroundOpen" : "header.background",
         gridArea: "header",
         overflowY: "scroll",
         zIndex: "888", // Ensure the header is always on top
@@ -45,7 +44,7 @@ const SiteHeader = () => {
           gridTemplateColumns: isMobile ? "60px auto 60px" : "1fr",
           gridTemplateRows: isMobile ? "auto" : "auto auto",
           p: isMobile ? 1 : 3,
-          pb: isNavOpen ? 4 : 0,
+          pb: isMobile && isNavOpen ? 4 : 0,
         }}
       >
         <Branding />

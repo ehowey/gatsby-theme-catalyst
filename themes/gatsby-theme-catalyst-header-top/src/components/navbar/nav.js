@@ -18,7 +18,7 @@ const Nav = () => {
         justifySelf: isMobile ? "center" : "end",
         alignSelf: isMobile ? "start" : "center",
         alignItems: "center",
-        mt: isNavOpen ? 2 : 0,
+        mt: isMobile && isNavOpen ? 2 : 0,
         display: isMobile ? (isNavOpen ? "flex" : "none") : "flex",
         flexDirection: isMobile ? "column" : "row",
       }}

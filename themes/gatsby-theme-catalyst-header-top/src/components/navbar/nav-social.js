@@ -21,8 +21,8 @@ const SocialWrapper = () => {
         ml: "auto",
         mt: isMobile ? 2 : 0,
         a: {
-          color: isNavOpen ? "header.iconsOpen" : "header.icons",
-          mr: isNavOpen ? 3 : 2,
+          color: isMobile && isNavOpen ? "header.iconsOpen" : "header.icons",
+          mr: isMobile && isNavOpen ? 3 : 2,
           textDecoration: "none",
           display: "grid",
           placeItems: "center",

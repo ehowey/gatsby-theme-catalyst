@@ -19,7 +19,7 @@ const NavLi = ({ children, hasSubmenu }) => {
           position: "relative",
           py: 2,
           px: 1,
-          color: isNavOpen ? "header.textOpen" : "header.text",
+          color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           fontWeight: "bold",
           letterSpacing: "1px",
