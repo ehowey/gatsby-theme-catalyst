@@ -2,9 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-core v0.24.0
+
+- Adds skip nav function based on [https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav](https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav)
+
+## catalyst-core v0.23.0
+
+Changes to allow support for sub-menus in `gatsby-node.js`
+
 ## catalyst-header-top v0.3.0
 
-Adds the ability to use sub-menus (dropdowns) on internal site links, see `gatsby-starter-catalyst-basic` for an example. There is an example config in the docs and in this starter.
+- Adds the ability to use sub-menus (dropdowns) on internal site links, see `gatsby-starter-catalyst-basic` for an example. There is an example config in the docs and in this starter.
 
 ## catalyst-writer v0.8.0
 
