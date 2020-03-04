@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-header-top v0.3.0
+
+Adds the ability to use sub-menus (dropdowns) on internal site links, see `gatsby-starter-catalyst-basic` for an example. There is an example config in the docs and in this starter.
+
 ## catalyst-writer v0.8.0
 
 - More robust queries for pages, should prevent an error that was occuring for pages in SANITY if multiples were created by accident
