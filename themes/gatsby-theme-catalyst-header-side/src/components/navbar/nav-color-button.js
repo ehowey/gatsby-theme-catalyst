@@ -11,6 +11,7 @@ const ColorModeButton = () => {
   const [isNavOpen] = useContext(NavContext)
   const [isMobile] = useContext(MobileContext)
   const { theme } = useThemeUI()
+  console.log(colorMode)
 
   return (
     <IconButton
@@ -30,11 +31,11 @@ const ColorModeButton = () => {
       }}
       aria-label="Toggle dark mode"
       onClick={e => {
-        setColorMode(colorMode === "default" ? "dark" : "default")
+        setColorMode(colorMode === "light" ? "dark" : "light")
       }}
     >
       <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
-        {colorMode === "default" ? <FiMoon /> : <FiSun />}
+        {colorMode === "light" ? <FiMoon /> : <FiSun />}
       </IconContext.Provider>
     </IconButton>
   )
