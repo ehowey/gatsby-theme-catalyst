@@ -1,25 +1,23 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
 const NavLi = ({ children, hasSubmenu }) => {
-  const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
   return (
     <li
       sx={{
-        my: isMobile ? 2 : 0,
-        mr: isMobile ? 0 : 3,
+        my: [2, null, 0, null, null],
+        mr: [0, null, 3, null, null],
         cursor: "pointer",
         fontFamily: "navLinks",
         a: {
           position: "relative",
           py: 2,
           px: 1,
-          color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
+          color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           fontWeight: "bold",
           letterSpacing: "1px",

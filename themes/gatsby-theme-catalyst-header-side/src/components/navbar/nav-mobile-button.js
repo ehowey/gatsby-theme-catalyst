@@ -2,7 +2,6 @@
 import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { MobileContext } from "gatsby-theme-catalyst-core"
 
 const Span = ({ open }) => (
   <span
@@ -36,7 +35,6 @@ const Span = ({ open }) => (
 
 const SiteMobileButton = () => {
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
-  const [isMobile] = useContext(MobileContext)
   return (
     <button
       aria-label="Toggle Menu"
@@ -45,9 +43,9 @@ const SiteMobileButton = () => {
         gridColumn: "3 / 4",
         gridRow: "1 / 2",
         alignSelf: "center",
-        color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
+        color: isNavOpen ? "header.textOpen" : "header.text",
         cursor: "pointer",
-        display: isMobile ? "block" : "none",
+        display: ["block", null, "none", null, null],
         height: "3rem",
         position: "relative",
         width: "3rem",

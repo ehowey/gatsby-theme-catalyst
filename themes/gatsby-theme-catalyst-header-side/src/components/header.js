@@ -5,7 +5,6 @@ import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
 import MobileButton from "./navbar/nav-mobile-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { MobileContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {

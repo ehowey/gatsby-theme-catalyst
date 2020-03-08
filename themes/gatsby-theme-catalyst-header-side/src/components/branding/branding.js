@@ -3,8 +3,12 @@ import { jsx } from "theme-ui"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import Logo from "./branding-logo"
 import Title from "./branding-title"
+import { useContext } from "react"
+import { MobileContext } from "gatsby-theme-catalyst-core"
 
 const SiteBranding = () => {
+  const [isMobile] = useContext(MobileContext)
+
   const {
     displaySiteLogo,
     displaySiteTitle,
