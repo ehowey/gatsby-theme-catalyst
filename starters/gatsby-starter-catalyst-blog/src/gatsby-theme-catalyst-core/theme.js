@@ -131,9 +131,6 @@ export default {
     },
   },
   variants: {
-    siteTitle: {
-      fontSize: [4, null, null, 5, null],
-    },
     siteLogo: {
       borderRadius: "9999em",
       mb: 4,

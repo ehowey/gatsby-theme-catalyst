@@ -132,9 +132,5 @@ export default {
       padding: 2,
     },
   },
-  variants: {
-    siteTitle: {
-      fontSize: [4, null, null, 5, null],
-    },
-  },
+  variants: {},
 }

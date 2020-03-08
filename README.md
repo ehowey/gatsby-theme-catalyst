@@ -113,7 +113,6 @@ There are a number of options for the core theme, blog theme, and writer theme t
 | `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                                                       |
 | `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                                                          |
 | `mobileMenuBreakpoint`   | String value, e.g. "1024px"               | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
-| `isHeaderSideLeft`       | true or false                             | Defaults to true, only effects `gatsby-theme-catalyst-header-side, controls whether the header is on the left or right         |
 | `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                                                             |
 
 **Blog theme:**

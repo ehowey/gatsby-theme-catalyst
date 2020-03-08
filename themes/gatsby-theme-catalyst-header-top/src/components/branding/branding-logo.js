@@ -8,12 +8,30 @@ import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import LinkWrapper from "./branding-link-wrapper"
 
 const SiteLogo = () => {
-  const { title, logo } = useSiteMetadata()
   const [isNavOpen] = useContext(NavContext)
-  const { invertSiteLogo } = useCatalystConfig()
+  const {
+    invertSiteLogo,
+    displaySiteLogo,
+    displaySiteLogoMobile,
+  } = useCatalystConfig()
+  const { title, logo } = useSiteMetadata()
   const invertLogo = () => {
     if (invertSiteLogo) {
       return "invert(1)"
+    } else {
+      return "none"
+    }
+  }
+  const displayLaptop = () => {
+    if (displaySiteLogo) {
+      return "block"
+    } else {
+      return "none"
+    }
+  }
+  const displayPhone = () => {
+    if (displaySiteLogoMobile) {
+      return "block"
     } else {
       return "none"
     }
@@ -22,6 +40,7 @@ const SiteLogo = () => {
     <LinkWrapper>
       <Img
         sx={{
+          display: [displayPhone, null, displayLaptop, null, null],
           height: [
             theme => theme.sizes.logoHeightXS,
             theme => theme.sizes.logoHeightS,

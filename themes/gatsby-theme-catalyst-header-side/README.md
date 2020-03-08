@@ -1,6 +1,6 @@
 # Gatsby Theme Catalyst Header Side
 
-Sibling theme for `gatsby-theme-catalyst-core` which adds a sidebar header using latent component shadowing. Theme options are set set via `gatsby-theme-catalyst-core`, for example setting `isHeaderSideLeft: false` will switch the sidebar to the right hand side.
+Sibling theme for `gatsby-theme-catalyst-core` which adds a sidebar header using latent component shadowing. Header is on the left.
 
 **Additional Documentation**
 
