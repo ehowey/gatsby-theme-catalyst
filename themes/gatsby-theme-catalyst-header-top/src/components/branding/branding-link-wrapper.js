@@ -17,6 +17,7 @@ const LinkWrapper = ({ children }) => {
         onKeyPress={scroll.scrollToTop}
         role="button"
         tabIndex="0"
+        aria-label="Scroll to top"
       >
         {children}
       </div>
