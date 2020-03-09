@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { MobileContext } from "gatsby-theme-catalyst-core"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
 const NavLi = ({ children }) => {
-  const [isMobile] = useContext(MobileContext)
   const [isNavOpen] = useContext(NavContext)
 
   return (
@@ -14,7 +12,7 @@ const NavLi = ({ children }) => {
         mb: 3,
         fontFamily: "navLinks",
         a: {
-          color: isMobile && isNavOpen ? "header.textOpen" : "header.text",
+          color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
           py: 1,
           px: 1,

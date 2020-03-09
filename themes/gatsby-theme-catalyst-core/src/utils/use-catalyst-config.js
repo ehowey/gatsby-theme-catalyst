@@ -16,7 +16,6 @@ export const useCatalystConfig = () => {
           useStickyHeader
           useSocialLinks
           useColorMode
-          isHeaderSideLeft
           footerContentLocation
         }
       }

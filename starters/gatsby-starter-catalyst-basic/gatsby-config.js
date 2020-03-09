@@ -68,7 +68,6 @@ module.exports = {
         // useSocialLinks: true,
         // useColorMode: true,
         // mobileMenuBreakpoint: `768px`,
-        // isHeaderSideLeft: true, // Only effects gatsby-catalyst-header-top
         //footerContentLocation: "left", // "left", "right", "center"
       },
     },

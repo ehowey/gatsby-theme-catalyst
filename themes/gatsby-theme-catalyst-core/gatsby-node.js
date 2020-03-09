@@ -17,7 +17,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     useStickyHeader: Boolean!
     useSocialLinks: Boolean!
     useColorMode: Boolean!
-    isHeaderSideLeft: Boolean!
     footerContentLocation: String!
   }`)
 }
@@ -37,7 +36,6 @@ exports.sourceNodes = (
     useStickyHeader = false,
     useSocialLinks = true,
     useColorMode = true,
-    isHeaderSideLeft = true,
     footerContentLocation = "left",
   }
 ) => {
@@ -55,7 +53,6 @@ exports.sourceNodes = (
     useStickyHeader,
     useSocialLinks,
     useColorMode,
-    isHeaderSideLeft,
     footerContentLocation,
   }
   createNode({
