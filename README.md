@@ -306,34 +306,32 @@ There is also a file called `catalyst-site-icon.png` that provides your icon for
 
 ### Context providers
 
-There are three context providers that are globally available in the themes to manage component function or appearance based on state. These are `isHome`, `isMobile`, and `isNavOpen`.
-
-isHome: True if you are at the root of your site
-
-isMobile: True if the viewport width is smaller than the value set in `mobileBreakpoint` option via theme options
+There are one context provider that is globally available in the themes to manage component function or appearance based on state. This is `isNavOpen`.
 
 isNavOpen: True if the mobile nav menu is open
+
+isMobile and isHome are depreciated and will be removed in v1.0. They were depreciated for performance reasons.
 
 ```js
 // Import useContext and the context
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import { MobileContext } from "gatsby-theme-catalyst-core"
+import { NavContext } from "gatsby-theme-catalyst-core"
 
 const Example = () => {
   // Access the context in your component
-  const [isMobile] = useContext(MobileContext)
+  const [isNavOpen] = useContext(NavContext)
   // Conditionally change css or render components
   return (
     <div
       sx={{
         height: "200px",
         width: "200px",
-        backgroundColor: isMobile ? "red" : "blue",
+        backgroundColor: isNavOpen ? "red" : "blue",
       }}
     >
-      {isMobile && <Component />}
+      {isNavOpen && <Component />}
     </div>
   )
 }

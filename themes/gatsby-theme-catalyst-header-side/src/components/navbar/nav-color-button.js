@@ -9,7 +9,6 @@ const ColorModeButton = () => {
   const [colorMode, setColorMode] = useColorMode()
   const [isNavOpen] = useContext(NavContext)
   const { theme } = useThemeUI()
-  console.log(colorMode)
 
   return (
     <IconButton

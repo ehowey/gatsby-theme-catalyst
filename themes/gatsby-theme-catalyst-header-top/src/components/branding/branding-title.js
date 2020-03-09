@@ -28,8 +28,6 @@ const SiteTitle = () => {
     }
   }
 
-  console.log(displayLaptop())
-
   return (
     <LinkWrapper>
       <Styled.h1
