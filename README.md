@@ -35,6 +35,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
   - [Menu Links](#menu-links)
   - [Social Links](#social-links)
   - [Theme-ui, variants, and design tokens](#theme-ui-variants-and-design-tokens)
+  - [Breakpoints](#breakpoints)
   - [Typography and changing fonts](#typography-and-changing-fonts)
   - [Changing logos and logo sizes](#changing-logos-and-logo-sizes)
   - [Context Providers](#context-providers)
@@ -100,20 +101,19 @@ There are a number of options for the core theme, blog theme, and writer theme t
 
 **Core theme:**
 
-| Option                   | Values                                    | Description                                                                                                                    |
-| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                                                      |
-| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.                                        |
-| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                                                       |
-| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint                                              |
-| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                                                                 |
-| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint                                        |
-| `invertLogo`             | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
-| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                                                             |
-| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                                                       |
-| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                                                          |
-| `mobileMenuBreakpoint`   | String value, e.g. "1024px"               | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
-| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                                                             |
+| Option                   | Values                                    | Description                                                                             |
+| ------------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------- |
+| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.               |
+| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located. |
+| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                |
+| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint       |
+| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                          |
+| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint |
+| `invertLogo`             | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open   |
+| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                      |
+| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                |
+| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                   |
+| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                      |
 
 **Blog theme:**
 
@@ -244,6 +244,33 @@ variants: {
   },
 ```
 
+### Breakpoints
+
+Breakpoints are set using Theme-UI theme file and default to 480px, 768px, 1024px, and 1440px. The mobile menu is enabled at the 2nd breakpoint, 768px, but you can change this by changing the second breakpoint.
+
+```js
+breakpoints: ["480px", "768px", "1024px", "1440px"],
+```
+
+The array notation is used to target different screen sizes based on the breakpoints set in the theme file. You can use `null`, to inherit the previous value.
+
+```jsx
+<h1
+  sx={{
+    // 0-479px: Red
+    // 480px - 767px: Blue
+    // 768px - 1023px: Yellow
+    // 1024px - 1439px: Yellow
+    // 1440px and up: Pink
+    color: ["red", "blue", "yellow", null, "pink"],
+  }}
+>
+  Breakpoints
+</h1>
+```
+
+[Read more about breakpoints in theme-ui](https://theme-ui.com/theming/#breakpoints)
+
 ### Typography and changing fonts
 
 To add a custom font you need to first add the font as a dependency in your starter site, for example:
@@ -306,11 +333,13 @@ There is also a file called `catalyst-site-icon.png` that provides your icon for
 
 ### Context providers
 
-There are one context provider that is globally available in the themes to manage component function or appearance based on state. This is `isNavOpen`.
+There are two context providers that are globally available in the themes to manage component function or appearance based on state. These are `isNavOpen` and `isHome`.
 
 isNavOpen: True if the mobile nav menu is open
 
-isMobile and isHome are depreciated and will be removed in v1.0. They were depreciated for performance reasons.
+isHome: True if you are on the homepage, this can cause a flash of unstyled content so use with caution.
+
+isMobile is depreciated and will be removed in v1.0. It was depreciated for performance reasons.
 
 ```js
 // Import useContext and the context
@@ -346,6 +375,10 @@ By default Gatsby provides excellent SEO out of the box. I have extended this wi
 ## Migrating
 
 The first place to start is by checking the changelog file. Beginning at release v0.20.0 I have started tracking major changes in there. Other major breaking changes will be commented on here.
+
+**Removal of isMobile Context and mobileMenuBreakpoint**
+
+These are depreciated and will stop working post v1.0. There was a perfomance issue with SSR and javascript that was causing a flash of unstyled content. I have reverted back to using normal media queries for changing to the mobile menu at the second breakpoint, 768px by default.
 
 **gatsby-theme-catalyst-header-basic -> gatsby-theme-catalyst-header-top**
 
