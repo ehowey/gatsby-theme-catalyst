@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-core v0.25.0, header-top v0.4.0, header-side v0.4.0
+
+Depreciated `isMobile` and `mobileMenuBreakpoint`. This is a non-breaking change now but will be fully removed come v1.0. The main problem was a flash of unstyled content due to javascript parsing after CSS and pageload. While it was a nice feature the performance hit was not worth it. Now the mobile menu shows on the second breakpoint, 768px by default. Docs were updated as well.
+
 ## catalyst-core v0.24.0
 
 - Adds skip nav function based on [https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav](https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav)
