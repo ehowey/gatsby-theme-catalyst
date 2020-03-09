@@ -8,17 +8,16 @@ This acts as a core theme on which all other themes are based. It houses a basic
 
 ## Theme Options
 
-| Option                 | Values                      | Description                                                                                                                    |
-| ---------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `contentPath`          | String                      | Defaults to "content/pages", determines where the pages are created from.                                                      |
-| `assetPath`            | String                      | Defaults to "content/assets", determines where the page assets like images are located.                                        |
-| `displaySiteLogo`      | true or false               | Defaults to true, controls whether the logo is displayed                                                                       |
-| `displaySiteTitle`     | true or false               | Defaults to true, controls whether the site title is displayed                                                                 |
-| `invertLogo`           | true or false               | Defaults to false, controls whether the logo is inverted when the mobile menu is open                                          |
-| `useStickyHeader`      | true or false               | Defaults to false, controls whether the header is sticky or static                                                             |
-| `useSocialLinks`       | true or false               | Defaults to true, controls whether the social links are displayed or not                                                       |
-| `useColorMode`         | true or false               | Defaults to true, controls whether the dark mode toggle is available.                                                          |
-| `mobileMenuBreakpoint` | String value, e.g. "1024px" | Defaults to "768px", sets the breakpoint for displaying the mobile menu, works independent of other breakpoints set in ThemeUI |
+| Option             | Values        | Description                                                                             |
+| ------------------ | ------------- | --------------------------------------------------------------------------------------- |
+| `contentPath`      | String        | Defaults to "content/pages", determines where the pages are created from.               |
+| `assetPath`        | String        | Defaults to "content/assets", determines where the page assets like images are located. |
+| `displaySiteLogo`  | true or false | Defaults to true, controls whether the logo is displayed                                |
+| `displaySiteTitle` | true or false | Defaults to true, controls whether the site title is displayed                          |
+| `invertLogo`       | true or false | Defaults to false, controls whether the logo is inverted when the mobile menu is open   |
+| `useStickyHeader`  | true or false | Defaults to false, controls whether the header is sticky or static                      |
+| `useSocialLinks`   | true or false | Defaults to true, controls whether the social links are displayed or not                |
+| `useColorMode`     | true or false | Defaults to true, controls whether the dark mode toggle is available.                   |
 
 Example Config:
 
@@ -29,7 +28,6 @@ Example Config:
         displaySiteLogo: true,
         displaySiteTitle: true,
         invertLogo: true,
-        mobileMenuBreakpoint: "1024px",
         useStickyHeader: true,
         useHero: "true",
       }

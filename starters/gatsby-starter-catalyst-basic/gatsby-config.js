@@ -67,7 +67,6 @@ module.exports = {
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
-        // mobileMenuBreakpoint: `768px`,
         //footerContentLocation: "left", // "left", "right", "center"
       },
     },
