@@ -7471,10 +7471,10 @@ gatsby-core-utils@^1.0.28, gatsby-core-utils@^1.0.31:
     configstore "^5.0.0"
     node-object-hash "^2.0.0"
 
-gatsby-cypress@^0.2.22:
-  version "0.2.22"
-  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.2.22.tgz#73ee8c7820603607423f5159b34b4100368d9225"
-  integrity sha512-TRPDYLCYPqgHfGNV/p5Fo+jkTjpce8OxGtl3TssGBvikBg60kSsc4dS6VJEHc6LEiNcVUTJ/5kVxEOSsemwuGw==
+gatsby-cypress@^0.2.23:
+  version "0.2.23"
+  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.2.23.tgz#52c18623f2fcc25b25442e64877c8f3fdaa327dc"
+  integrity sha512-pvaBer6ZmvXkBkgoPWkJ9v2KRRQUqn9KUJA4xSf6pWFdi2WTPHN/tWVTeNJusRVR8RTNohO48Y+BrmiXdIZ3oA==
   dependencies:
     "@babel/runtime" "^7.7.6"
 
