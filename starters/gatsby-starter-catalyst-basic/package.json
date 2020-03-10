@@ -10,7 +10,7 @@
     "gatsby-theme-catalyst-footer": "^0.2.2",
     "gatsby-theme-catalyst-header-side": "^0.4.0",
     "gatsby-theme-catalyst-header-top": "^0.4.0",
-    "react": "^16.12.0",
+    "react": "^16.13.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
