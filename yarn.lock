@@ -2230,18 +2230,18 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
-"@reach/skip-nav@^0.8.5":
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/@reach/skip-nav/-/skip-nav-0.8.5.tgz#2f336098478ca69a5dae557b2ad08255babf3c43"
-  integrity sha512-aYvft4TroNQjgXyhzwXP7l3ejQ6/3ImCMntDMsme3+DFbwAY/azLZhUsZfGbIFzE+nzR8fnIY70aKyaVo0bHgQ==
+"@reach/skip-nav@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/skip-nav/-/skip-nav-0.8.6.tgz#f8a1e3215b49d755c59299cb5f8b8ac9e7e389ca"
+  integrity sha512-s20YJgVCqCsx2PyWRHVSRX96FVaPDj71E6ODuoC93vowfqVsCn6k2UU+i7EBmtUxasUfEIhpIA+gY6hidU6Heg==
   dependencies:
-    "@reach/utils" "^0.8.5"
+    "@reach/utils" "^0.8.6"
     tslib "^1.10.0"
 
-"@reach/utils@^0.8.5":
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.8.5.tgz#6675d6f81054c8dce1b9d535280b0e3c5174fe7d"
-  integrity sha512-nc84exIqBa+EohJPBFjePQP88dBAP4l+tChxwWszzZ+R6tTtSgOg40WyQ5EjPYJFbltnbZIbASHefcEBrFxqng==
+"@reach/utils@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.8.6.tgz#41c7ac8b7699d0e663bda773398ae1c459679ee3"
+  integrity sha512-ec9Ea99LQhlBoMKsJ7n2GYD3u3a0IHDLcfbA50C6aDKnSFvVYSPkF2Iav3fQ07VGfe+FuNGi0iYi1qkE8uSmDw==
   dependencies:
     tslib "^1.10.0"
     warning "^4.0.3"
@@ -15706,15 +15706,10 @@ ts-pnp@^1.1.2:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.5.tgz#840e0739c89fce5f3abd9037bb091dbff16d9dec"
   integrity sha512-ti7OGMOUOzo66wLF3liskw6YQIaSsBgc4GOAlWRnIEj8htCxJUxskanMUoJOD6MDCRAXo36goXJZch+nOS0VMA==
 
-tslib@^1.10.0:
+tslib@^1.10.0, tslib@^1.6.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
-
-tslib@^1.6.0, tslib@^1.8.1, tslib@^1.9.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
-  integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 
 tsutils@^3.17.1:
   version "3.17.1"
