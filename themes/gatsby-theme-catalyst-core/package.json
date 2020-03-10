@@ -25,7 +25,7 @@
     "gatsby-remark-images": "^3.1.44",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-smartypants": "^2.1.22",
-    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-source-filesystem": "^2.1.51",
     "gatsby-transformer-sharp": "^2.3.18",
     "gatsby-transformer-yaml": "^2.2.24",
     "prop-types": "^15.7.2",
