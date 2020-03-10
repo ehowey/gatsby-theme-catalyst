@@ -1,12 +1,12 @@
 {
   "name": "gatsby-starter-catalyst-core",
   "description": "Gatsby Starter: A basic implementation of Gatsby-Theme-Catalyst-Core",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.19.35",
-    "gatsby-theme-catalyst-core": "^0.25.0",
+    "gatsby-theme-catalyst-core": "^0.25.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
