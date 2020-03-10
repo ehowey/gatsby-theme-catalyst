@@ -11,7 +11,7 @@
     "@theme-ui/preset-tailwind": "^0.3.0",
     "@theme-ui/prism": "^0.3.0",
     "deepmerge": "^4.2.2",
-    "gatsby-image": "^2.2.40",
+    "gatsby-image": "^2.2.43",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-mdx": "^1.0.75",
     "gatsby-plugin-offline": "^3.0.34",
