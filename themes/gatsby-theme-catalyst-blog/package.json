@@ -1,18 +1,18 @@
 {
   "name": "gatsby-theme-catalyst-blog",
   "description": "Child blog theme for gatsby-theme-catalyst-core. Based on gatsby-theme-blog-core.",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.19.35",
     "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.12",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gatsby": "^2.19.35",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "keywords": [
     "gatsby",

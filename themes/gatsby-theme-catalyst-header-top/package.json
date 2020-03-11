@@ -1,18 +1,18 @@
 {
   "name": "gatsby-theme-catalyst-header-top",
   "description": "Sibling theme for gatsby-theme-catalyst-core to add basic header styles.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.19.35",
     "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.12",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gatsby": "^2.19.35",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "keywords": [
     "gatsby",
