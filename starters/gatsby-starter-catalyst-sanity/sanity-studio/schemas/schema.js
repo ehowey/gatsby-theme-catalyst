@@ -11,6 +11,7 @@ import figureWide from "./figureWide"
 import siteSettings from "./siteSettings"
 import menuLink from "./menuLink"
 import socialLink from "./socialLink"
+import page from "./page"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -27,5 +28,6 @@ export default createSchema({
     siteSettings,
     menuLink,
     socialLink,
+    page,
   ]),
 })
