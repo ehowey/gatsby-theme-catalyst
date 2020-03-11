@@ -90,6 +90,7 @@ module.exports = options => {
       `gatsby-plugin-react-helmet`,
       `gatsby-transformer-sharp`,
       `gatsby-transformer-yaml`,
+      `gatsby-transformer-json`,
       `gatsby-plugin-sharp`,
       `gatsby-plugin-theme-ui`,
       `gatsby-plugin-offline`,
