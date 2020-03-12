@@ -26,7 +26,6 @@ jobs:
         with:
           # just perform install
           runTests: false
-      - run: yarn lint
       - name: Run Tests on Core
         uses: cypress-io/github-action@v1
         with:
