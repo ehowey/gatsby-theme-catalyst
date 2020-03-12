@@ -6,6 +6,7 @@ on:
     paths:
       - "starters/**"
       - "themes/**"
+      - ".github/**"
   pull_request:
     branches:
       - master
