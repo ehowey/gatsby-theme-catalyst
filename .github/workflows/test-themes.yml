@@ -21,6 +21,12 @@ jobs:
         uses: actions/checkout@v1
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+      - name: Install dependencies
+        uses: cypress-io/github-action@v1
+        with:
+          # just perform install
+          runTests: false
+      - run: yarn lint
       - name: Run Tests on Core
         uses: cypress-io/github-action@v1
         with:
