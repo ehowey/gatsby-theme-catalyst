@@ -51,7 +51,7 @@ module.exports = {
     `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
     `gatsby-theme-catalyst-footer`,
     {
-      resolve: `gatsby-theme-catalyst-sanity`,
+      resolve: `gatsby-theme-catalyst-sanity-core`,
       options: {
         // Example for an env variable
         // sanityProjectId: process.env.SANITY_PROJECT_ID,
