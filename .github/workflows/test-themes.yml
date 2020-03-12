@@ -29,18 +29,21 @@ jobs:
       - name: Run Tests on Core
         uses: cypress-io/github-action@v1
         with:
+          install: false
           start: yarn workspace gatsby-starter-catalyst-core develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
       - name: Run Tests on Basic
         uses: cypress-io/github-action@v1
         with:
+          install: false
           start: yarn workspace gatsby-starter-catalyst-basic develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
       - name: Run Tests on Blog
         uses: cypress-io/github-action@v1
         with:
+          install: false
           start: yarn workspace gatsby-starter-catalyst-blog develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
@@ -51,6 +54,7 @@ jobs:
           SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
           SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
         with:
+          install: false
           start: yarn workspace gatsby-starter-catalyst-writer develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
