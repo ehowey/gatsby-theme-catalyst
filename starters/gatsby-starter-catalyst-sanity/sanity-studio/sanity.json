@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "gatsby-theme-catalyst-writer"
+    "name": "gatsby-theme-catalyst-sanity"
   },
   "plugins": [
     "@sanity/base",

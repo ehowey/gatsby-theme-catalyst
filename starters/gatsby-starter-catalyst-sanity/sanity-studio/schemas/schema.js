@@ -12,6 +12,8 @@ import siteSettings from "./siteSettings"
 import menuLink from "./menuLink"
 import socialLink from "./socialLink"
 import page from "./page"
+import post from "./post"
+import project from "./project"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,5 +31,7 @@ export default createSchema({
     menuLink,
     socialLink,
     page,
+    post,
+    project,
   ]),
 })
