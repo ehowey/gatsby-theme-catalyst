@@ -73,6 +73,20 @@ async function createSanityPosts(graphql, actions, reporter, themeOptions) {
   })
 }
 
+// Create Posts Index Page
+async function createSanityPostsIndex(actions, reporter, themeOptions) {
+  const { createPage } = actions
+  const { postPath } = withDefaults(themeOptions)
+
+  reporter.info(`Creating posts index page: ${postPath}`)
+
+  createPage({
+    path: postPath,
+    component: require.resolve("./src/components/queries/posts-query.js"),
+    context: {},
+  })
+}
+
 // Create Projects
 async function createSanityProjects(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
@@ -119,6 +133,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   }
   if (useSanityPosts) {
     await createSanityPosts(graphql, actions, reporter, themeOptions)
+    await createSanityPostsIndex(actions, reporter, themeOptions)
   }
   if (useSanityProjects) {
     await createSanityProjects(graphql, actions, reporter, themeOptions)
