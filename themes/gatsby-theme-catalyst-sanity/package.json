@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-catalyst-sanity-core",
+  "name": "gatsby-theme-catalyst-sanity",
   "description": "Sibling theme for gatsby-theme-catalyst-core to add SANITY.io",
   "version": "0.0.1",
   "author": "Eric Howey <eric@erichowey.dev>",
@@ -8,15 +8,15 @@
     "gatsby-source-sanity": "^5.0.6"
   },
   "devDependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.19.35",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.12",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gatsby": "^2.19.35",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "keywords": [
     "gatsby",
