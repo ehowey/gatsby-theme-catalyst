@@ -19,7 +19,7 @@ async function createSanityWorkPage(actions, reporter) {
 
   createPage({
     path: "/work/",
-    component: require.resolve("./src/components/work-page/work-page"),
+    component: require.resolve("./src/components/work-page/work-query"),
     context: {},
   })
 }
