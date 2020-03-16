@@ -12,6 +12,14 @@ export const query = graphql`
       id
       title
       _rawBody
+      featuredImage {
+        alt
+        asset {
+          fluid(maxHeight: 200) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
   }
 `

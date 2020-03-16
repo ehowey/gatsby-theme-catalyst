@@ -11,7 +11,7 @@ const PageTemplate = ({ data }) => {
       <SEO title={result.title} />
       <PageHeader
         topImage={result.featuredImage.asset.fluid}
-        topImageAlt={result.topimage.alt}
+        topImageAlt={result.featuredImage.alt}
         title={result.title}
       />
       <SanityContent data={result._rawBody} />

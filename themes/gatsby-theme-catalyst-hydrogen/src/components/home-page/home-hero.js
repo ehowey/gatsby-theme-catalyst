@@ -67,6 +67,7 @@ const Hero = () => {
               alignSelf: "center",
               py: [5, null, 4, null, null],
               px: [3, null, 4, null, null],
+              minWidth: ["100%", null, "50vw", null, null],
             }}
           >
             <h1
