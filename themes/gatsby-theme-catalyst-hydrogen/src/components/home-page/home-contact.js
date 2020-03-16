@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import SanityContent from "./sanity/sanity-content"
+import { SanityContent } from "gatsby-theme-catalyst-sanity"
 
 const HomeContact = () => {
   const data = useStaticQuery(graphql`

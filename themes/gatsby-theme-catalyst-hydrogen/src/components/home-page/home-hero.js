@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import ButtonPrimary from "../button-primary"
 import ButtonSecondary from "../button-secondary"
-import SanityContent from "./sanity/sanity-content"
+import { SanityContent } from "gatsby-theme-catalyst-sanity"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`

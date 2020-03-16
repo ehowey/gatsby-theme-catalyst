@@ -6,7 +6,7 @@ async function createSanityHomePage(actions, reporter) {
 
   createPage({
     path: "/",
-    component: require.resolve("./src/components/home-page/home-page"),
+    component: require.resolve("./src/components/home-page/home-query"),
     context: {},
   })
 }

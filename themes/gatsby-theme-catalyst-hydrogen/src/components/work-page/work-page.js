@@ -5,7 +5,7 @@ import WorkList from "./work-list"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
 
-const WorkPage = () => {
+const WorkPage = ({ data }) => {
   const result = data.allSanityWorkPage.nodes[0]
   return (
     <Layout>

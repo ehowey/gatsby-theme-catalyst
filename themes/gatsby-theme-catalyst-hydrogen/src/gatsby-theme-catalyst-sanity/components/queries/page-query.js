@@ -7,19 +7,11 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query SanityPageQuery($id: String!) {
+  query SanityHydrogenPageQuery($id: String!) {
     sanityPage(id: { eq: $id }) {
       id
       title
       _rawBody
-      featuredImage {
-        alt
-        asset {
-          fluid(maxHeight: 200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
     }
   }
 `
