@@ -26,8 +26,8 @@ module.exports = options => {
       {
         resolve: `gatsby-theme-catalyst-sanity`,
         options: {
-          sanityProjectId: "mk3takg0",
-          sanityDataset: "production",
+          sanityProjectId: options.sanityProjectId,
+          sanityDataset: options.sanityDataset,
           sanityToken: options.sanityToken,
           sanityWatchMode: options.sanityWatchMode,
           sanityOverlayDrafts: options.sanityOverlayDrafts,
