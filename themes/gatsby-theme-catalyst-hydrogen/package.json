@@ -1,25 +1,27 @@
 {
-  "name": "gatsby-starter-catalyst-writer",
-  "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Writer",
-  "version": "0.10.1",
-  "private": true,
+  "name": "gatsby-theme-catalyst-hydrogen",
+  "description": "Gatsby theme for a writer's portfolio website. SANITY.io as the CMS.",
+  "version": "0.0.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby": "^2.19.35",
     "gatsby-theme-catalyst-core": "^0.25.1",
-    "gatsby-theme-catalyst-footer": "^0.2.3",
     "gatsby-theme-catalyst-header-top": "^0.4.1",
-    "gatsby-theme-catalyst-writer": "^0.8.1",
+    "gatsby-theme-catalyst-footer": "^0.2.3",
+    "gatsby-theme-catalyst-sanity": "*"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.19.35",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "gatsby": "^2.19.35",
+    "prettier": "^1.19.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "keywords": [
-    "gatsby",
-    "gatsby-starter",
-    "gatsby-plugin"
+    "gatsby"
   ],
   "license": "MIT",
   "scripts": {
@@ -33,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ehowey/gatsby-starter-catalyst-core"
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
   },
   "bugs": {
     "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
