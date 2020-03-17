@@ -2,9 +2,8 @@ var crypto = require("crypto")
 const withDefaults = require(`./src/utils/default-options`)
 
 // Create Pages
-async function createSanityPages(graphql, actions, reporter, themeOptions) {
+async function createSanityPages(graphql, actions, reporter) {
   const { createPage } = actions
-  const { pagePath } = withDefaults(themeOptions)
   const result = await graphql(`
     {
       allSanityPage(filter: { slug: { current: { ne: null } } }) {
@@ -25,7 +24,7 @@ async function createSanityPages(graphql, actions, reporter, themeOptions) {
   allPages.forEach(page => {
     const id = page.id
     const slug = page.slug.current
-    const path = `${pagePath}${slug}/`
+    const path = `${slug}`
 
     reporter.info(`Creating page: ${path}`)
 
@@ -61,7 +60,7 @@ async function createSanityPosts(graphql, actions, reporter, themeOptions) {
   allPosts.forEach(post => {
     const id = post.id
     const slug = post.slug.current
-    const path = `${postPath}${slug}/`
+    const path = `${postPath}/${slug}`
 
     reporter.info(`Creating post: ${path}`)
 
@@ -111,7 +110,7 @@ async function createSanityProjects(graphql, actions, reporter, themeOptions) {
   allProjects.forEach(project => {
     const id = project.id
     const slug = project.slug.current
-    const path = `${projectPath}${slug}/`
+    const path = `${projectPath}/${slug}`
 
     reporter.info(`Creating project: ${path}`)
 
@@ -129,7 +128,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     themeOptions
   )
   if (useSanityPages) {
-    await createSanityPages(graphql, actions, reporter, themeOptions)
+    await createSanityPages(graphql, actions, reporter)
   }
   if (useSanityPosts) {
     await createSanityPosts(graphql, actions, reporter, themeOptions)

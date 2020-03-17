@@ -3,8 +3,8 @@ module.exports = themeOptions => {
   const useSanityPosts = themeOptions.useSanityPosts || false
   const useSanityProjects = themeOptions.useSanityProjects || false
   const pagePath = themeOptions.pagePath || "/"
-  const postPath = themeOptions.postPath || "/blog/"
-  const projectPath = themeOptions.projectPath || "/projects/"
+  const postPath = themeOptions.postPath || "/posts"
+  const projectPath = themeOptions.projectPath || "/projects"
 
   return {
     useSanityPages,

@@ -10,17 +10,17 @@ const serializers = {
     block(props) {
       switch (props.node.style) {
         case "h1":
-          return <Styled.h1>{props.children}</Styled.h1>
+          return <Styled.h1 id={props.children}>{props.children}</Styled.h1>
         case "h2":
-          return <Styled.h2>{props.children}</Styled.h2>
+          return <Styled.h2 id={props.children}>{props.children}</Styled.h2>
         case "h3":
-          return <Styled.h3>{props.children}</Styled.h3>
+          return <Styled.h3 id={props.children}>{props.children}</Styled.h3>
         case "h4":
-          return <Styled.h4>{props.children}</Styled.h4>
+          return <Styled.h4 id={props.children}>{props.children}</Styled.h4>
         case "h5":
-          return <Styled.h5>{props.children}</Styled.h5>
+          return <Styled.h5 id={props.children}>{props.children}</Styled.h5>
         case "h6":
-          return <Styled.h6>{props.children}</Styled.h6>
+          return <Styled.h6 id={props.children}>{props.children}</Styled.h6>
         case "blockquote":
           return <Styled.blockquote>{props.children}</Styled.blockquote>
         default:

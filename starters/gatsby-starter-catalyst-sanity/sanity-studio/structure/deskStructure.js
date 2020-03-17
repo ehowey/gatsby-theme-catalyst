@@ -8,7 +8,15 @@ import {
 } from "react-icons/lib/md"
 
 const hiddenDocTypes = listItem =>
-  !["siteSettings", "menuLink", "socialLink"].includes(listItem.getId())
+  ![
+    "siteSettings",
+    "menuLink",
+    "socialLink",
+    "author",
+    "page",
+    "post",
+    "project",
+  ].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -48,5 +56,14 @@ export default () =>
         ),
       // Add a visual divider (optional)
       S.divider(),
+      S.listItem()
+        .title("Pages")
+        .child(S.documentTypeList("page").title("Pages")),
+      S.listItem()
+        .title("Posts")
+        .child(S.documentTypeList("post").title("Posts")),
+      S.listItem()
+        .title("Projects")
+        .child(S.documentTypeList("project").title("Projects")),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ])

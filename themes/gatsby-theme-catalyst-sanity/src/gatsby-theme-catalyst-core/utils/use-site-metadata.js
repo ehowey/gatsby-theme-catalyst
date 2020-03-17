@@ -82,5 +82,6 @@ export const useSiteMetadata = () => {
     seoImage,
     twitterUsername,
   }
+  console.log(menuLinks)
   return allData
 }
