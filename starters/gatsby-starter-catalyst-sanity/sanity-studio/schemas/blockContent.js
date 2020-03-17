@@ -12,6 +12,21 @@ export default {
   title: "Block Content",
   name: "blockContent",
   type: "array",
+  validation: Rule =>
+    Rule.custom(blocks => {
+      const emptyPaths = (blocks || [])
+        .filter(
+          block =>
+            block._type === "block" &&
+            block.children.every(
+              span => span._type === "span" && span.text.trim() === ""
+            )
+        )
+        .map((block, index) => [{ _key: block._key }] || [index])
+      return emptyPaths.length === 0
+        ? true
+        : { message: "Paragraph cannot be empty", paths: emptyPaths }
+    }),
   of: [
     {
       title: "Block",

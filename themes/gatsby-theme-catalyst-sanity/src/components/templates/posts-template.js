@@ -9,10 +9,10 @@ const PostsTemplate = ({ data }) => {
     <Layout>
       <SEO title="Blog" />
       {posts.map(post => (
-        <div>
+        <article>
           <Styled.h1>{post.title}</Styled.h1>
           <SanityContent data={post._rawBody} />
-        </div>
+        </article>
       ))}
     </Layout>
   )
