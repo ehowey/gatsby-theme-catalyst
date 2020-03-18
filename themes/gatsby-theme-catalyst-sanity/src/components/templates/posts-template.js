@@ -7,7 +7,7 @@ const PostsTemplate = ({ data }) => {
   const posts = data.allSanityPost.nodes
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Posts" />
       {posts.map(post => (
         <article>
           <Styled.h1>{post.title}</Styled.h1>

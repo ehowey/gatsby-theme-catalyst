@@ -122,6 +122,20 @@ async function createSanityProjects(graphql, actions, reporter, themeOptions) {
   })
 }
 
+// Create Projects Index Page
+async function createSanityProjectsIndex(actions, reporter, themeOptions) {
+  const { createPage } = actions
+  const { projectPath } = withDefaults(themeOptions)
+
+  reporter.info(`Creating projects index page: ${projectPath}`)
+
+  createPage({
+    path: projectPath,
+    component: require.resolve("./src/components/queries/projects-query.js"),
+    context: {},
+  })
+}
+
 // Conditionally create all the pages
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { useSanityPages, useSanityPosts, useSanityProjects } = withDefaults(
@@ -136,6 +150,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   }
   if (useSanityProjects) {
     await createSanityProjects(graphql, actions, reporter, themeOptions)
+    await createSanityProjectsIndex(actions, reporter, themeOptions)
   }
 }
 

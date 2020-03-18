@@ -20,7 +20,6 @@ const NavMenuAnchorLink = ({ link, children }) => {
       to={link
         .replace(/#/g, "")
         .toLowerCase()
-        .replace(/(^\s+|[^a-zA-Z0-9 ]+|\s+$)/g, "")
         .replace(/\s+/g, "-")}
       onClick={() => setIsNavOpen(false)}
       spy={true}

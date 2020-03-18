@@ -29,7 +29,6 @@ Example Config:
         displaySiteTitle: true,
         invertLogo: true,
         useStickyHeader: true,
-        useHero: "true",
       }
     }
 ```

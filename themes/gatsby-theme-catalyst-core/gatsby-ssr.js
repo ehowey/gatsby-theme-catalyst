@@ -1,6 +1,6 @@
 import React from "react"
-import { NavProvider } from "./src/contexts/nav-context"
-import { HomeProvider } from "./src/contexts/home-context"
+import { NavProvider } from "./src/utils/nav-context"
+import { HomeProvider } from "./src/utils/home-context"
 import { MDXProvider } from "@mdx-js/react"
 import SEO from "./src/utils/seo"
 

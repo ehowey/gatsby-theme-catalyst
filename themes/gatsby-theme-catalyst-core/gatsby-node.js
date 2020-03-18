@@ -11,7 +11,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     displaySiteTitle: Boolean!
     displaySiteLogoMobile: Boolean!
     displaySiteTitleMobile: Boolean!
-    useHero: Boolean!
     invertSiteLogo: Boolean!
     mobileMenuBreakpoint: String!
     useStickyHeader: Boolean!
@@ -30,7 +29,6 @@ exports.sourceNodes = (
     displaySiteTitle = true,
     displaySiteLogoMobile = true,
     displaySiteTitleMobile = true,
-    useHero = false,
     invertSiteLogo = false,
     mobileMenuBreakpoint = "768px",
     useStickyHeader = false,
@@ -47,7 +45,6 @@ exports.sourceNodes = (
     displaySiteTitle,
     displaySiteLogoMobile,
     displaySiteTitleMobile,
-    useHero,
     invertSiteLogo,
     mobileMenuBreakpoint,
     useStickyHeader,
