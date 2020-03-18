@@ -33,6 +33,7 @@
     "clean:basic": "yarn workspace gatsby-starter-catalyst-basic clean",
     "clean:blog": "yarn workspace gatsby-starter-catalyst-blog clean",
     "clean:writer": "yarn workspace gatsby-starter-catalyst-writer clean",
+    "clean:sanity": "yarn workspace gatsby-starter-catalyst-sanity clean",
     "test:core": "start-server-and-test develop:core http://localhost:8000 cy:open",
     "test:basic": "start-server-and-test develop:basic http://localhost:8000 cy:open",
     "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open",
