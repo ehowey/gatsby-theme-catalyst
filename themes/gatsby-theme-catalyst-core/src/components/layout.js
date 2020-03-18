@@ -19,6 +19,7 @@ const SiteLayout = ({ children }) => {
   const [isHome, setIsHome] = useContext(HomeContext)
   const location = useLocation()
   const home = location.pathname === "/"
+  //eslint-disable-next-line
   useEffect(() => {
     if (home) {
       setIsHome(true)

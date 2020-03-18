@@ -17,7 +17,11 @@ const NavMenuAnchorLink = ({ link, children }) => {
   })
   return (
     <AnchorLink
-      to={link.replace(/#/g, "").toLowerCase()}
+      to={link
+        .replace(/#/g, "")
+        .toLowerCase()
+        .replace(/(^\s+|[^a-zA-Z0-9 ]+|\s+$)/g, "")
+        .replace(/\s+/g, "-")}
       onClick={() => setIsNavOpen(false)}
       spy={true}
       smooth={true}
