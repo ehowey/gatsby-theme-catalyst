@@ -23,7 +23,7 @@ async function createSanityPages(graphql, actions, reporter) {
 
   allPages.forEach(page => {
     const id = page.id
-    const slug = page.slug.current
+    const slug = page.slug.current.replace(/\/*$/, `/`) //Ensure trailing slash
     const path = `${slug}`
 
     reporter.info(`Creating page: ${path}`)
@@ -40,6 +40,8 @@ async function createSanityPages(graphql, actions, reporter) {
 async function createSanityPosts(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
   const { postPath } = withDefaults(themeOptions)
+  const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
+
   const result = await graphql(`
     {
       allSanityPost(filter: { slug: { current: { ne: null } } }) {
@@ -59,8 +61,8 @@ async function createSanityPosts(graphql, actions, reporter, themeOptions) {
 
   allPosts.forEach(post => {
     const id = post.id
-    const slug = post.slug.current
-    const path = `${postPath}/${slug}`
+    const slug = post.slug.current.replace(/\/*$/, `/`) //Ensure trailing slash
+    const path = `${rootPath}${slug}`
 
     reporter.info(`Creating post: ${path}`)
 
@@ -73,15 +75,16 @@ async function createSanityPosts(graphql, actions, reporter, themeOptions) {
 }
 
 // Create Posts Index Page
-async function createSanityPostsIndex(actions, reporter, themeOptions) {
+async function createSanityPostList(actions, reporter, themeOptions) {
   const { createPage } = actions
   const { postPath } = withDefaults(themeOptions)
+  const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
-  reporter.info(`Creating posts index page: ${postPath}`)
+  reporter.info(`Creating posts index page: ${rootPath}`)
 
   createPage({
-    path: postPath,
-    component: require.resolve("./src/components/queries/posts-query.js"),
+    path: rootPath,
+    component: require.resolve("./src/components/queries/post-list-query.js"),
     context: {},
   })
 }
@@ -90,6 +93,7 @@ async function createSanityPostsIndex(actions, reporter, themeOptions) {
 async function createSanityProjects(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
   const { projectPath } = withDefaults(themeOptions)
+  const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
   const result = await graphql(`
     {
       allSanityProject(filter: { slug: { current: { ne: null } } }) {
@@ -109,8 +113,8 @@ async function createSanityProjects(graphql, actions, reporter, themeOptions) {
 
   allProjects.forEach(project => {
     const id = project.id
-    const slug = project.slug.current
-    const path = `${projectPath}/${slug}`
+    const slug = project.slug.current.replace(/\/*$/, `/`) // Ensure trailing slash
+    const path = `${rootPath}${slug}`
 
     reporter.info(`Creating project: ${path}`)
 
@@ -123,15 +127,18 @@ async function createSanityProjects(graphql, actions, reporter, themeOptions) {
 }
 
 // Create Projects Index Page
-async function createSanityProjectsIndex(actions, reporter, themeOptions) {
+async function createSanityProjectList(actions, reporter, themeOptions) {
   const { createPage } = actions
   const { projectPath } = withDefaults(themeOptions)
+  const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
-  reporter.info(`Creating projects index page: ${projectPath}`)
+  reporter.info(`Creating projects index page: ${rootPath}`)
 
   createPage({
-    path: projectPath,
-    component: require.resolve("./src/components/queries/projects-query.js"),
+    path: rootPath,
+    component: require.resolve(
+      "./src/components/queries/project-list-query.js"
+    ),
     context: {},
   })
 }
@@ -146,11 +153,11 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   }
   if (useSanityPosts) {
     await createSanityPosts(graphql, actions, reporter, themeOptions)
-    await createSanityPostsIndex(actions, reporter, themeOptions)
+    await createSanityPostList(actions, reporter, themeOptions)
   }
   if (useSanityProjects) {
     await createSanityProjects(graphql, actions, reporter, themeOptions)
-    await createSanityProjectsIndex(actions, reporter, themeOptions)
+    await createSanityProjectList(actions, reporter, themeOptions)
   }
 }
 
@@ -164,6 +171,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     sanityWatchMode: Boolean!
     sanityOverlayDrafts: Boolean!
     useSanityPages: Boolean!
+    useSanityPosts: Boolean!
+    useSanityProjects: Boolean!
+    postPath: String!
+    projectPath: String!
   }`)
 }
 
@@ -175,7 +186,11 @@ exports.sourceNodes = (
     sanityToken = null,
     sanityWatchMode = true,
     sanityOverlayDrafts = false,
-    useSanityPages = false,
+    useSanityPages = true,
+    useSanityPosts = true,
+    useSanityProjects = true,
+    postPath = "/posts",
+    projectPath = "/projects",
   }
 ) => {
   // create garden data from plugin config
@@ -186,6 +201,10 @@ exports.sourceNodes = (
     sanityWatchMode,
     sanityOverlayDrafts,
     useSanityPages,
+    useSanityPosts,
+    useSanityProjects,
+    postPath,
+    projectPath,
   }
   createNode({
     ...catalystSanityConfig,

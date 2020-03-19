@@ -13,7 +13,7 @@ import { HomeContext } from "gatsby-theme-catalyst-core"
 import { useContext } from "react"
 
 const SiteLayout = ({ children }) => {
-  const [isHome, setIsHome] = useContext(HomeContext)
+  const [isHome, setIsHome] = useContext(HomeContext) // eslint-disable-line
   const location = useLocation()
   const home = location.pathname === "/"
   useEffect(() => {
@@ -22,7 +22,7 @@ const SiteLayout = ({ children }) => {
     } else {
       setIsHome(false)
     }
-  }, [])
+  }, []) // eslint-disable-line
   return (
     <Styled.root>
       <Normalize />

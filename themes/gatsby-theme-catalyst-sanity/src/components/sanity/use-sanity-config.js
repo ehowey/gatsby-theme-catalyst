@@ -9,10 +9,15 @@ export const useSanityConfig = () => {
           sanityProjectId
           sanityToken
           useSanityPages
+          useSanityPosts
+          useSanityProjects
+          postPath
+          projectPath
         }
       }
     `
   )
+  console.log(catalystSanityConfig)
   return {
     catalystSanityConfig,
   }

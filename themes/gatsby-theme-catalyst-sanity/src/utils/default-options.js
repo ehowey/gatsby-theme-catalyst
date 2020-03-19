@@ -1,8 +1,7 @@
 module.exports = themeOptions => {
-  const useSanityPages = themeOptions.useSanityPages || false
-  const useSanityPosts = themeOptions.useSanityPosts || false
-  const useSanityProjects = themeOptions.useSanityProjects || false
-  const pagePath = themeOptions.pagePath || "/"
+  const useSanityPages = themeOptions.useSanityPages || true
+  const useSanityPosts = themeOptions.useSanityPosts || true
+  const useSanityProjects = themeOptions.useSanityProjects || true
   const postPath = themeOptions.postPath || "/posts"
   const projectPath = themeOptions.projectPath || "/projects"
 
@@ -10,7 +9,6 @@ module.exports = themeOptions => {
     useSanityPages,
     useSanityPosts,
     useSanityProjects,
-    pagePath,
     postPath,
     projectPath,
   }

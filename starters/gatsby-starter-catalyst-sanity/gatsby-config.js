@@ -59,9 +59,6 @@ module.exports = {
         // sanityToken: process.env.SANITY_TOKEN,
         // overlayDrafts: true, // Only works with a token and private dataset
         sanityProjectId: "22kiwqsd",
-        useSanityPages: true,
-        useSanityPosts: true,
-        useSanityProjects: true,
       },
     },
 

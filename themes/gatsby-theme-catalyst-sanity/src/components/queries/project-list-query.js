@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Projects from "../templates/projects-template"
+import ProjectList from "../templates/project-list-template"
 
 export default ({ data }) => {
-  return <Projects data={{ ...data }} />
+  return <ProjectList data={{ ...data }} />
 }
 
 export const query = graphql`
