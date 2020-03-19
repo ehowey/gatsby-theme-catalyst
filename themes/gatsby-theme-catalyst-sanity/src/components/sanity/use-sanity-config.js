@@ -1,5 +1,4 @@
 import { useStaticQuery, graphql } from "gatsby"
-
 export const useSanityConfig = () => {
   const { catalystSanityConfig } = useStaticQuery(
     graphql`
@@ -18,7 +17,5 @@ export const useSanityConfig = () => {
     `
   )
   console.log(catalystSanityConfig)
-  return {
-    catalystSanityConfig,
-  }
+  return catalystSanityConfig
 }

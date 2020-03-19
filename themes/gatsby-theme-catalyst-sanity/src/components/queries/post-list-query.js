@@ -8,7 +8,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query SanityPostsQuery {
-    allSanityPost {
+    allSanityPost(sort: { fields: [date, title], order: DESC }) {
       nodes {
         id
         slug {

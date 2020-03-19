@@ -16,12 +16,14 @@ const PostsTemplate = ({ data }) => {
       <SEO title="Posts" />
       <Styled.h1>Posts</Styled.h1>
       {posts.map(post => (
-        <article>
+        <article sx={{ my: 5 }}>
           <Img
             fluid={post.featuredImage.asset.fluid}
             alt={post.featuredImage.alt}
           />
-          <Styled.h2>{post.title}</Styled.h2>
+          <Link to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}>
+            <Styled.h2>{post.title}</Styled.h2>
+          </Link>
           <Styled.p>
             <Styled.a
               href={post.author.link}
