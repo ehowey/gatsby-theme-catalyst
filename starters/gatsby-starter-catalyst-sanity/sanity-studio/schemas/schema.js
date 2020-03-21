@@ -16,6 +16,7 @@ import page from "./page"
 import post from "./post"
 import project from "./project"
 import author from "./author"
+import subMenu from "./subMenu"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,5 +38,6 @@ export default createSchema({
     project,
     excerptBlockContent,
     author,
+    subMenu,
   ]),
 })

@@ -3,7 +3,7 @@ export default {
   name: "menuLink",
   type: "document",
   description:
-    "This theme automatically generates pages at /bio, /work, and /contact. You need to include at least these links.",
+    "This theme automatically generates pages at /work. You should include at least these links.",
   fields: [
     {
       title: "Link name",
@@ -46,6 +46,13 @@ export default {
         Rule.required()
           .integer()
           .positive(),
+    },
+    {
+      title: "Sub Menu (Drop-Down)",
+      name: "subMenu",
+      description: "Leave blank if you do not want a drop down menu.",
+      type: "array",
+      of: [{ type: "subMenu" }],
     },
   ],
   orderings: [

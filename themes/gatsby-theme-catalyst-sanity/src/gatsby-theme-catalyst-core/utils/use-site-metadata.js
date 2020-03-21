@@ -38,6 +38,11 @@ export const useSiteMetadata = () => {
             link
             name
             type
+            subMenu {
+              link
+              name
+              type
+            }
           }
         }
         allSanitySocialLink {
