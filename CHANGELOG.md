@@ -16,7 +16,7 @@ Changes to allow support for sub-menus in `gatsby-node.js`
 
 ## catalyst-header-top v0.3.0
 
-- Adds the ability to use sub-menus (dropdowns) on internal site links, see `gatsby-starter-catalyst-basic` for an example. There is an example config in the docs and in this starter.
+- Adds the ability to use sub-menus (dropdowns) on internal site links, see `gatsby-starter-catalyst` for an example. There is an example config in the docs and in this starter.
 
 ## catalyst-writer v0.8.0
 

@@ -8,7 +8,7 @@ Sibling theme for `gatsby-theme-catalyst-core` which adds a traditional site hea
 
 **Demos:**
 
-- [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)
+- [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)
 - [https://www.erichowey.dev/](https://www.erichowey.dev/)
 
 ## About Gatsby Theme Catalyst
