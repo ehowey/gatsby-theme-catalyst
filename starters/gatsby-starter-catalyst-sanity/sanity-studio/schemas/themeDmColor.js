@@ -1,7 +1,7 @@
 export default {
   name: "dmColor",
   title: "Dark Mode Colors",
-  type: "document",
+  type: "object",
   fields: [
     {
       name: "dmBackground",

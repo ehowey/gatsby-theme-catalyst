@@ -7,17 +7,41 @@ const SanityThemeUI = () => {
     graphql`
       query {
         sanityTheme {
-          bgcolor
+          lmColors {
+            lmBackground {
+              hex
+            }
+            lmText {
+              hex
+            }
+            lmPrimary {
+              hex
+            }
+            lmSecondary {
+              hex
+            }
+            lmAccent {
+              hex
+            }
+            lmMuted {
+              hex
+            }
+          }
         }
       }
     `
   )
+  const lmColor = sanityTheme.lmColors
   const theme = merge(BaseTheme, {
     colors: {
-      background: sanityTheme.bgcolor,
+      background: lmColor.lmBackground.hex,
+      text: lmColor.lmText.hex,
+      primary: lmColor.lmPrimary.hex,
+      secondary: lmColor.lmSecondary.hex,
+      accent: lmColor.lmAccent.hex,
+      muted: lmColor.lmMuted.hex,
     },
   })
-  console.log(theme)
   return theme
 }
 

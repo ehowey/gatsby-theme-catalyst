@@ -57,9 +57,14 @@ export default () =>
                 .icon(MdShare)
                 .child(S.documentTypeList("socialLink").title("Social Links")),
               S.listItem()
-                .title("Theme")
+                .title("Theme-UI")
                 .icon(MdDashboard)
-                .child(S.document().schemaType("theme").documentId("theme")),
+                .child(
+                  S.document()
+                    .schemaType("theme")
+                    .documentId("theme")
+                    .title("Theme-UI Theme")
+                ),
             ])
         ),
       // Add a visual divider (optional)

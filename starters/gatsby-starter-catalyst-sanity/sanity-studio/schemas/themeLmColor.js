@@ -1,7 +1,7 @@
 export default {
   name: "lmColor",
   title: "Light Mode Colors",
-  type: "document",
+  type: "object",
   fields: [
     {
       name: "lmBackground",
