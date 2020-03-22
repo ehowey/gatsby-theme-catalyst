@@ -12,7 +12,6 @@ const NavLi = ({ children, hasSubmenu }) => {
         my: [2, null, 0, null, null],
         mr: [0, null, 3, null, null],
         cursor: "pointer",
-        fontFamily: "navLinks",
         a: {
           position: "relative",
           py: 2,

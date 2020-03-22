@@ -1,51 +1,51 @@
 export default {
-  name: "dmColor",
-  title: "Dark Mode Colors",
+  name: "headerColors",
+  title: "Header Colors",
   type: "object",
   fields: [
     {
-      name: "dmBackground",
-      title: "Dark Mode Background Color",
+      name: "background",
+      title: "Background Color",
       type: "color",
       options: {
         disableAlpha: true,
       },
     },
     {
-      name: "dmText",
-      title: "Dark Mode Text Color",
+      name: "backgroundOpen",
+      title: "Background Open Color",
       type: "color",
       options: {
         disableAlpha: true,
       },
     },
     {
-      name: "dmPrimary",
-      title: "Dark Mode Primary Color",
+      name: "text",
+      title: "Text Color",
       type: "color",
       options: {
         disableAlpha: true,
       },
     },
     {
-      name: "dmSecondary",
-      title: "Dark Mode Secondary Color",
+      name: "textOpen",
+      title: "Text Open Color",
       type: "color",
       options: {
         disableAlpha: true,
       },
     },
     {
-      name: "dmAccent",
-      title: "Dark Mode Accent Color",
+      name: "icons",
+      title: "Icons Color",
       type: "color",
       options: {
         disableAlpha: true,
       },
     },
     {
-      name: "dmMuted",
-      title: "Dark Mode Muted Color",
+      name: "iconsOpen",
+      title: "Icons Open Color",
       type: "color",
       options: {
         disableAlpha: true,

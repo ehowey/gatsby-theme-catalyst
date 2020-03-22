@@ -10,7 +10,6 @@ const NavLi = ({ children }) => {
     <li
       sx={{
         mb: 3,
-        fontFamily: "navLinks",
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",

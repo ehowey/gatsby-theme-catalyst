@@ -8,7 +8,7 @@ export default {
       name: "lmColors",
       description:
         "Select and overide colors for light mode, this is also the default color mode if dark mode is disabled.",
-      type: "lmColor",
+      type: "themeColors",
       options: {
         collapsible: true,
         collapsed: true,
@@ -18,7 +18,7 @@ export default {
       title: "Dark Mode Colors",
       name: "dmColors",
       description: "Select and overide colors for dark mode.",
-      type: "dmColor",
+      type: "themeColors",
       options: {
         collapsible: true,
         collapsed: true,

@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import { merge } from "theme-ui"
+import { baseColors } from "@theme-ui/preset-tailwind"
 
 const SanityThemeUI = () => {
   const { sanityTheme } = useStaticQuery(
@@ -8,23 +9,57 @@ const SanityThemeUI = () => {
       query {
         sanityTheme {
           lmColors {
-            lmBackground {
+            background {
               hex
             }
-            lmText {
+            text {
               hex
             }
-            lmPrimary {
+            primary {
               hex
             }
-            lmSecondary {
+            secondary {
               hex
             }
-            lmAccent {
+            accent {
               hex
             }
-            lmMuted {
+            muted {
               hex
+            }
+            headerColors {
+              background {
+                hex
+              }
+              backgroundOpen {
+                hex
+              }
+              icons {
+                hex
+              }
+              iconsOpen {
+                hex
+              }
+              text {
+                hex
+              }
+              textOpen {
+                hex
+              }
+            }
+            footerColors {
+              background {
+                hex
+              }
+              icons {
+                hex
+              }
+              links {
+                hex
+              }
+              text {
+                hex
+              }
             }
           }
         }
@@ -32,16 +67,34 @@ const SanityThemeUI = () => {
     `
   )
   const lmColor = sanityTheme.lmColors
-  const theme = merge(BaseTheme, {
+  const themeFromSanity = {
     colors: {
-      background: lmColor.lmBackground.hex,
-      text: lmColor.lmText.hex,
-      primary: lmColor.lmPrimary.hex,
-      secondary: lmColor.lmSecondary.hex,
-      accent: lmColor.lmAccent.hex,
-      muted: lmColor.lmMuted.hex,
+      background:
+        lmColor.background == null
+          ? baseColors.gray[1]
+          : lmColor.background.hex,
+      text: lmColor.text.hex || baseColors.gray[8],
+      primary: lmColor.primary.hex || baseColors.blue[7],
+      secondary: lmColor.secondary.hex || baseColors.orange[7],
+      accent: lmColor.accent.hex || baseColors.orange[2],
+      muted: lmColor.muted.hex || baseColors.gray[2],
+      header: {
+        background: lmColor.headerColors.background.hex,
+        backgroundOpen: lmColor.headerColors.backgroundOpen.hex,
+        text: lmColor.headerColors.text.hex,
+        textOpen: lmColor.headerColors.textOpen.hex,
+        icons: lmColor.headerColors.icons.hex,
+        iconsOpen: lmColor.headerColors.iconsOpen.hex,
+      },
+      footer: {
+        background: lmColor.footerColors.background.hex,
+        text: lmColor.footerColors.text.hex,
+        links: lmColor.footerColors.links.hex,
+        icons: lmColor.footerColors.icons.hex,
+      },
     },
-  })
+  }
+  const theme = merge(BaseTheme, themeFromSanity)
   return theme
 }
 

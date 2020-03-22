@@ -10,29 +10,28 @@ export default {
   breakpoints: ["480px", "768px", "1024px", "1440px"],
   fonts: {
     ...tailwind.fonts,
-    siteTitle: "inherit", // Font for main site title
-    navLinks: "inherit", // Font for the nav menu links
-    alt: "inherit", //An alternate font style if needed.
+    body:
+      'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+    heading: "inherit",
+    monospace:
+      'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },
   colors: {
     ...tailwind.colors,
-    text: baseColors.gray[8],
     background: baseColors.gray[1], //Try "#954264",
+    text: baseColors.gray[8],
     primary: baseColors.blue[7],
     secondary: baseColors.orange[7],
     accent: baseColors.orange[2],
     muted: baseColors.gray[2],
-
     header: {
       background: baseColors.gray[2],
       backgroundOpen: baseColors.blue[2],
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
       icons: baseColors.gray[6],
-      iconsHover: baseColors.blue[7],
       iconsOpen: baseColors.gray[8],
     },
-
     footer: {
       background: baseColors.gray[2],
       text: baseColors.gray[8],
@@ -45,6 +44,7 @@ export default {
         text: baseColors.gray[1],
         background: baseColors.gray[9],
         primary: "#458ad2",
+        secondary: baseColors.orange[7],
         accent: baseColors.gray[8],
         muted: baseColors.gray[8],
         header: {
@@ -53,7 +53,6 @@ export default {
           background: "#232946",
           backgroundOpen: baseColors.gray[8],
           icons: baseColors.gray[1],
-          iconsHover: baseColors.blue[2],
           iconsOpen: baseColors.gray[1],
         },
         footer: {

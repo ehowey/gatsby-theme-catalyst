@@ -23,11 +23,11 @@ const ColorModeButton = () => {
         m: 0,
         ml: 2,
         ":hover": {
-          color: "header.iconsHover",
+          color: "primary",
         },
       }}
       aria-label="Toggle dark mode"
-      onClick={e => {
+      onClick={(e) => {
         setColorMode(colorMode === "light" ? "dark" : "light")
       }}
     >
