@@ -18,6 +18,8 @@ import project from "./project"
 import author from "./author"
 import subMenu from "./subMenu"
 import theme from "./theme"
+import themeDmColor from "./themeDmColor"
+import themeLmColor from "./themeLmColor"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -41,5 +43,7 @@ export default createSchema({
     author,
     subMenu,
     theme,
+    themeDmColor,
+    themeLmColor,
   ]),
 })

@@ -18,6 +18,8 @@ const hiddenDocTypes = (listItem) =>
     "post",
     "project",
     "theme",
+    "themeLmColor",
+    "themeDmColor",
   ].includes(listItem.getId())
 
 export default () =>

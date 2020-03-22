@@ -12,7 +12,6 @@ const SanityThemeUI = () => {
       }
     `
   )
-
   const theme = merge(BaseTheme, {
     colors: {
       background: sanityTheme.bgcolor,
