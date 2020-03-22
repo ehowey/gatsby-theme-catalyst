@@ -37,7 +37,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           install: false
-          start: yarn workspace gatsby-starter-catalyst-basic develop
+          start: yarn workspace gatsby-starter-catalyst develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
       - name: Run Tests on Blog

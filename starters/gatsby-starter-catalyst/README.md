@@ -1,6 +1,6 @@
-# Gatsby Starter Catalyst Basic
+# Gatsby Starter Catalyst
 
-Basic theme that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-top`, and `gatsby-theme-catalyst-footer`.
+Basic starter that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-top`, and `gatsby-theme-catalyst-footer`.
 
 **Documentation**
 
@@ -10,14 +10,14 @@ Basic theme that could be used as a barebones starting point for building a fini
 
 ```sh
 # create a new Gatsby site using the catalyst basic starter site
-gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
+gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
 ```
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
 **Demo**
 
-[https://gatsby-starter-catalyst-basic.netlify.com/](https://gatsby-starter-catalyst-basic.netlify.com/)
+[https://gatsby-starter-catalyst.netlify.com/](https://gatsby-starter-catalyst.netlify.com/)
 
 ## About Gatsby Theme Catalyst
 

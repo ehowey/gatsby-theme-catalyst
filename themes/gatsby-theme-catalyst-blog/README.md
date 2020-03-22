@@ -15,7 +15,7 @@ The main features added to this blog theme are:
 
 **Demos:**
 
-- [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)
+- [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)
 - [https://www.erichowey.dev/](https://www.erichowey.dev/)
 
 ## Theme options

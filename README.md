@@ -5,7 +5,7 @@
   Gatsby Theme Catalyst
 </h1>
 
-![Test Themes](https://github.com/ehowey/gatsby-theme-catalyst/workflows/Test%20Themes/badge.svg)  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) 
+![Test Themes](https://github.com/ehowey/gatsby-theme-catalyst/workflows/Test%20Themes/badge.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinionated set of integrated themes and starters that can be used as a boilerplate to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
@@ -13,9 +13,9 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 ```shell
    # create a new Gatsby site using the basic starter
-    gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic
+    gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
    # change into your new directory
-    cd catalyst-basic
+    cd catalyst
    # launch the site
     gatsby develop
 ```
@@ -52,9 +52,9 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 | Theme                               | Demo                                                                                  | Description                                                                                                                                                                                                  |
 | ----------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `gatsby-theme-catalyst-core`        | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
-| `gatsby-theme-catalyst-header-top`  | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
+| `gatsby-theme-catalyst-header-top`  | [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)               | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
 | `gatsby-theme-catalyst-header-side` | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | This adds a sidebar style header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo is stacked on top, then title, then nav.                                |
-| `gatsby-theme-catalyst-footer`      | [gatsby-starter-catalyst-basic](https://gatsby-starter-catalyst-basic.netlify.com/)   | This adds a very basic footer to the core theme.                                                                                                                                                             |
+| `gatsby-theme-catalyst-footer`      | [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)               | This adds a very basic footer to the core theme.                                                                                                                                                             |
 | `gatsby-theme-catalyst-blog`        | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | This provides a basic plug-and-play blog for any Catalyst based site.                                                                                                                                        |
 | `gatsby-theme-catalyst-writer`      | [gatsby-starter-catalyst-writer](https://gatsby-starter-catalyst-writer.netlify.com/) | This is the first complete site using the catalyst set of themes. Designed to be used by a freelance writer as their portfolio. Sanity is used as a CMS.                                                     |
 
@@ -83,9 +83,9 @@ All of these themes are available on NPM but the easiest way to get started is v
 
 `gatsby new catalyst-core https://github.com/ehowey/gatsby-starter-catalyst-core`
 
-**gatsby-starter-catalyst-basic**:
+**gatsby-starter-catalyst**:
 
-`gatsby new catalyst-basic https://github.com/ehowey/gatsby-starter-catalyst-basic`
+`gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst`
 
 **gatsby-starter-catalyst-blog**:
 
@@ -158,7 +158,7 @@ menuLinks: [
 ]
 ```
 
-You can also have a sub-menu or dropdown menu using `gatsby-theme-catalyst-header-top` and `internal` links only. You can see an example of this with `gatsby-starter-catalyst-basic`. Eventually this feature will be expanded to other themes. At present it is _not_ working with anchor links, I do not think there is enough of a use case for this at present.
+You can also have a sub-menu or dropdown menu using `gatsby-theme-catalyst-header-top` and `internal` links only. You can see an example of this with `gatsby-starter-catalyst`. Eventually this feature will be expanded to other themes. At present it is _not_ working with anchor links, I do not think there is enough of a use case for this at present.
 
 Example Config:
 

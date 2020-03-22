@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-catalyst-basic`,
+        name: `gatsby-starter-catalyst`,
         short_name: `catalyst`,
         start_url: `/`,
         background_color: `#ffffff`,
