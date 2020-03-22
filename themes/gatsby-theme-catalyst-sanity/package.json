@@ -8,14 +8,14 @@
     "gatsby-source-sanity": "^5.0.6"
   },
   "devDependencies": {
-    "gatsby": "^2.19.49",
-    "prettier": "^1.19.1",
-    "react": "^16.13.0",
+    "gatsby": "^2.20.2",
+    "prettier": "^2.0.1",
+    "react": "^16.13.1",
     "react-dom": "^16.13.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.49",
-    "react": "^16.13.0",
+    "gatsby": "^2.20.2",
+    "react": "^16.13.1",
     "react-dom": "^16.13.0"
   },
   "keywords": [
