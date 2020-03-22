@@ -5,9 +5,10 @@ import {
   MdList,
   MdInfo,
   MdPerson,
+  MdDashboard,
 } from "react-icons/lib/md"
 
-const hiddenDocTypes = listItem =>
+const hiddenDocTypes = (listItem) =>
   ![
     "siteSettings",
     "menuLink",
@@ -16,6 +17,7 @@ const hiddenDocTypes = listItem =>
     "page",
     "post",
     "project",
+    "theme",
   ].includes(listItem.getId())
 
 export default () =>
@@ -52,6 +54,10 @@ export default () =>
                 .title("Social Links")
                 .icon(MdShare)
                 .child(S.documentTypeList("socialLink").title("Social Links")),
+              S.listItem()
+                .title("Theme")
+                .icon(MdDashboard)
+                .child(S.document().schemaType("theme").documentId("theme")),
             ])
         ),
       // Add a visual divider (optional)

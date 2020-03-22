@@ -16,6 +16,5 @@ export const useSanityConfig = () => {
       }
     `
   )
-  console.log(catalystSanityConfig)
   return catalystSanityConfig
 }

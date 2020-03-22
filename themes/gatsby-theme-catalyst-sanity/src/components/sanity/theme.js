@@ -1,26 +1,29 @@
-// See https://theme-ui.com/ for more info and also https://www.gatsbyjs.org/docs/theme-ui/
-// Try changing some of the colors below to see what happens.
+import { useStaticQuery, graphql } from "gatsby"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+import { merge } from "theme-ui"
 
-export default {
-  colors: {
-    primary: "green",
-    secondary: "blue",
-    accent: "red",
-    background: "pink",
-    header: {
-      background: "orange",
-      backgroundOpen: baseColors.red[1],
-      text: baseColors.gray[8],
-      textOpen: baseColors.gray[8],
-      icons: baseColors.gray[6],
-      iconsHover: baseColors.red[8],
-      iconsOpen: baseColors.gray[6],
+const SanityThemeUI = () => {
+  const { sanityTheme } = useStaticQuery(
+    graphql`
+      query {
+        sanityTheme {
+          bgcolor
+        }
+      }
+    `
+  )
+
+  const theme = merge(BaseTheme, {
+    colors: {
+      background: sanityTheme.bgcolor,
     },
-    footer: {
-      background: baseColors.gray[2],
-      text: baseColors.gray[8],
-      links: baseColors.gray[8],
-      icons: baseColors.gray[8],
-    },
-  },
+  })
+  console.log(theme)
+  return theme
 }
+
+export default SanityThemeUI
+
+// export default {
+//   colors: { background: "pink" },
+// }
