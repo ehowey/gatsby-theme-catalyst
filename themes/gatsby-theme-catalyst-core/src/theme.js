@@ -41,8 +41,8 @@ export default {
     // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
     modes: {
       dark: {
-        text: baseColors.gray[1],
         background: baseColors.gray[9],
+        text: baseColors.gray[1],
         primary: "#458ad2",
         secondary: baseColors.orange[7],
         accent: baseColors.gray[8],
