@@ -4,20 +4,16 @@ export default {
   type: "document",
   fields: [
     {
-      title: "Light Mode Colors",
-      name: "lmColors",
-      description:
-        "Select and overide colors for light mode, this is also the default color mode if dark mode is disabled.",
-      type: "themeColors",
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
+      title: "Use Theme-UI From Sanity",
+      name: "useSanityThemeUI",
+      type: "boolean",
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: "Dark Mode Colors",
-      name: "dmColors",
-      description: "Select and overide colors for dark mode.",
+      title: "Colors",
+      name: "colors",
+      description:
+        "Select and overide colors for the default color mode. Dark mode is not supported with SANITY.io",
       type: "themeColors",
       options: {
         collapsible: true,

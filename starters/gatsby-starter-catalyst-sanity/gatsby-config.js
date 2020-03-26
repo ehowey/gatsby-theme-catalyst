@@ -46,6 +46,7 @@ module.exports = {
         // useSocialLinks: true,
         // useColorMode: true,
         //footerContentLocation: "left", // "left", "right", "center"
+        useColorMode: false, // Dark mode is not supported by SANITY when configuring the theme spec from SANITY.io
       },
     },
     `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`

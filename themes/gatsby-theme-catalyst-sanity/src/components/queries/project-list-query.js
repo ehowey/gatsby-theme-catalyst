@@ -10,6 +10,7 @@ export const query = graphql`
   query SanityProjectsQuery {
     allSanityProject {
       nodes {
+        id
         title
         _rawBody
       }

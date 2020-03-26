@@ -1,11 +1,11 @@
 {
-  "name": "briannasharpecom",
+  "name": "gatsby-starter-catalyst-sanity",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
   "author": "Eric Howey <ehowey@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
     "test": "sanity check"

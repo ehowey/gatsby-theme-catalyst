@@ -8,11 +8,11 @@ const ProjectsTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title="Projects" />
-      {projects.map(project => (
-        <article>
+      {projects.map((project) => (
+        <div key={project.id}>
           <Styled.h1>{project.title}</Styled.h1>
           <SanityContent data={project._rawBody} />
-        </article>
+        </div>
       ))}
     </Layout>
   )

@@ -15,8 +15,8 @@ const PostsTemplate = ({ data }) => {
     <Layout>
       <SEO title="Posts" />
       <Styled.h1>Posts</Styled.h1>
-      {posts.map(post => (
-        <article sx={{ my: 5 }}>
+      {posts.map((post) => (
+        <article sx={{ my: 5 }} key={post.id}>
           <Img
             fluid={post.featuredImage.asset.fluid}
             alt={post.featuredImage.alt}
