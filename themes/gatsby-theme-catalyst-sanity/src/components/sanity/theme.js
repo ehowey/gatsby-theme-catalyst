@@ -72,87 +72,101 @@ const SanityThemeUI = () => {
     `
   )
 
+  if (data.allSanityTheme.nodes[0] == null) {
+    return BaseTheme
+  }
+
   const sanityTheme = data.allSanityTheme.nodes[0]
 
   const themeFromSanity = {
     colors: {
       background:
-        sanityTheme.color == null || sanityTheme.color.background == null
+        sanityTheme.colors == null || sanityTheme.colors.background == null
           ? baseColors.gray[1]
-          : sanityTheme.color.background.hex,
+          : sanityTheme.colors.background.hex,
       text:
-        sanityTheme.color == null || sanityTheme.color.text == null
+        sanityTheme.colors == null || sanityTheme.colors.text == null
           ? baseColors.gray[8]
-          : sanityTheme.color.text.hex,
+          : sanityTheme.colors.text.hex,
       primary:
-        sanityTheme.color == null || sanityTheme.color.primary == null
+        sanityTheme.colors == null || sanityTheme.colors.primary == null
           ? baseColors.blue[7]
-          : sanityTheme.color.primary.hex,
+          : sanityTheme.colors.primary.hex,
       secondary:
-        sanityTheme.color == null || sanityTheme.color.secondary == null
+        sanityTheme.colors == null || sanityTheme.colors.secondary == null
           ? baseColors.orange[7]
-          : sanityTheme.color.secondary.hex,
+          : sanityTheme.colors.secondary.hex,
       accent:
-        sanityTheme.color == null || sanityTheme.color.accent == null
+        sanityTheme.colors == null || sanityTheme.colors.accent == null
           ? baseColors.orange[2]
-          : sanityTheme.color.accent.hex,
+          : sanityTheme.colors.accent.hex,
       muted:
-        sanityTheme.color == null || sanityTheme.color.muted == null
+        sanityTheme.colors == null || sanityTheme.colors.muted == null
           ? baseColors.gray[2]
-          : sanityTheme.color.muted.hex,
+          : sanityTheme.colors.muted.hex,
       header: {
         background:
-          sanityTheme.color == null ||
-          sanityTheme.color.headerColors.background == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.headerColors == null ||
+          sanityTheme.colors.headerColors.background == null
             ? baseColors.gray[2]
-            : sanityTheme.color.headerColors.background.hex,
+            : sanityTheme.colors.headerColors.background.hex,
         backgroundOpen:
-          sanityTheme.color == null ||
-          sanityTheme.color.headerColors.backgroundOpen == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.headerColors == null ||
+          sanityTheme.colors.headerColors.backgroundOpen == null
             ? baseColors.blue[2]
-            : sanityTheme.color.headerColors.backgroundOpen.hex,
+            : sanityTheme.colors.headerColors.backgroundOpen.hex,
         text:
-          sanityTheme.color == null ||
-          sanityTheme.color.headerColors.text == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.headerColors == null ||
+          sanityTheme.colors.headerColors.text == null
             ? baseColors.gray[8]
-            : sanityTheme.color.headerColors.text.hex,
+            : sanityTheme.colors.headerColors.text.hex,
         textOpen:
-          sanityTheme.color == null ||
-          sanityTheme.color.headerColors.textOpen == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.headerColors == null ||
+          sanityTheme.colors.headerColors.textOpen == null
             ? baseColors.gray[8]
-            : sanityTheme.color.headerColors.textOpen.hex,
+            : sanityTheme.colors.headerColors.textOpen.hex,
         icons:
-          sanityTheme.color == null ||
-          sanityTheme.color.headerColors.icons == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.headerColors == null ||
+          sanityTheme.colors.headerColors.icons == null
             ? baseColors.gray[6]
-            : sanityTheme.color.headerColors.icons.hex,
+            : sanityTheme.colors.headerColors.icons.hex,
         iconsOpen:
-          sanityTheme.color == null ||
-          sanityTheme.color.headerColors.iconsOpen == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.headerColors == null ||
+          sanityTheme.colors.headerColors.iconsOpen == null
             ? baseColors.gray[8]
-            : sanityTheme.color.headerColors.iconsOpen.hex,
+            : sanityTheme.colors.headerColors.iconsOpen.hex,
       },
       footer: {
         background:
-          sanityTheme.color == null ||
-          sanityTheme.color.footerColors.background == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.footerColors == null ||
+          sanityTheme.colors.footerColors.background == null
             ? baseColors.gray[2]
-            : sanityTheme.color.footerColors.background.hex,
+            : sanityTheme.colors.footerColors.background.hex,
         text:
-          sanityTheme.color == null ||
-          sanityTheme.color.footerColors.text == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.footerColors == null ||
+          sanityTheme.colors.footerColors.text == null
             ? baseColors.gray[8]
-            : sanityTheme.color.footerColors.text.hex,
+            : sanityTheme.colors.footerColors.text.hex,
         links:
-          sanityTheme.color == null ||
-          sanityTheme.color.footerColors.link == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.footerColors == null ||
+          sanityTheme.colors.footerColors.link == null
             ? baseColors.gray[8]
-            : sanityTheme.color.footerColors.links.hex,
+            : sanityTheme.colors.footerColors.links.hex,
         icons:
-          sanityTheme.color == null ||
-          sanityTheme.color.footerColors.icons == null
+          sanityTheme.colors == null ||
+          sanityTheme.colors.footerColors == null ||
+          sanityTheme.colors.footerColors.icons == null
             ? baseColors.gray[8]
-            : sanityTheme.color.footerColors.icons.hex,
+            : sanityTheme.colors.footerColors.icons.hex,
       },
     },
   }
