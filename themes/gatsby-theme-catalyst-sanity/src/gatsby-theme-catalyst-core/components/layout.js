@@ -24,12 +24,12 @@ const SiteLayout = ({ children }) => {
       setIsHome(false)
     }
   }, []) // eslint-disable-line
-  const x = sanityTheme()
-  console.log(x)
+  const theme = sanityTheme()
+  console.log(theme)
   return (
-    <ThemeProvider theme={x}>
-      <Styled.root>
-        <Normalize />
+    <Styled.root>
+      <Normalize />
+      <ThemeProvider theme={theme}>
         <SiteContainer>
           <SkipNavLink />
           <Header />
@@ -39,8 +39,8 @@ const SiteLayout = ({ children }) => {
           </Main>
           <Footer />
         </SiteContainer>
-      </Styled.root>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Styled.root>
   )
 }
 
