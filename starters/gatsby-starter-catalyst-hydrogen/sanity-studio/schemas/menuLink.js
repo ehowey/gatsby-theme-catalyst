@@ -3,20 +3,19 @@ export default {
   name: "menuLink",
   type: "document",
   description:
-    "This theme automatically generates pages at /bio, /work, and /contact. You need to include at least these links.",
+    "This theme automatically generates pages at /work. You should include at least these links.",
   fields: [
     {
       title: "Link name",
       name: "name",
       type: "string",
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Link to",
-      description: "E.g. /work",
       name: "link",
       type: "url",
-      validation: Rule =>
+      validation: (Rule) =>
         Rule.required().uri({
           allowRelative: true,
           scheme: ["https", "http", "mailto", "tel"],
@@ -35,7 +34,7 @@ export default {
         ], // <-- predefined values
         layout: "radio", // <-- defaults to 'dropdown'
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "order",
@@ -43,10 +42,14 @@ export default {
       description:
         "Use numbers to specify the order on the nav bar, left to right, top to bottom.",
       type: "number",
-      validation: Rule =>
-        Rule.required()
-          .integer()
-          .positive(),
+      validation: (Rule) => Rule.required().integer().positive(),
+    },
+    {
+      title: "Sub Menu (Drop-Down)",
+      name: "subMenu",
+      description: "Leave blank if you do not want a drop down menu.",
+      type: "array",
+      of: [{ type: "subMenu" }],
     },
   ],
   orderings: [

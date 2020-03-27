@@ -1,4 +1,4 @@
-module.exports = options => {
+module.exports = (options) => {
   return {
     plugins: [
       {
@@ -31,9 +31,11 @@ module.exports = options => {
           sanityToken: options.sanityToken,
           sanityWatchMode: options.sanityWatchMode,
           sanityOverlayDrafts: options.sanityOverlayDrafts,
-          useSanityPages: options.useSanityPages || true,
-          useSanityPosts: options.useSanityPages,
-          useSanityProjects: options.useSanityPages,
+          createSanityPages: options.createSanityPages || true,
+          createSanityPosts: options.createSanityPosts || false,
+          createSanityPostsList: options.createSanityPostsList || false,
+          createSanityProjects: options.createSanityProjects || false,
+          createSanityProjectsList: options.createSanityProjectsList || false,
           pagePath: options.pagePath,
           postPath: options.postPath,
           projectPath: options.projectPath,

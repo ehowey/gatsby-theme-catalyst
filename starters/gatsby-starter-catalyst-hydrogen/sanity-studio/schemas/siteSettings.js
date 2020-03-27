@@ -31,8 +31,7 @@ export default {
     {
       name: "author",
       type: "string",
-      title: "Author",
-      description: "Your name, used in some social sharing situations.",
+      title: "Site Author",
     },
     {
       title: "Logo",

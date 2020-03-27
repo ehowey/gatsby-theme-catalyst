@@ -7,6 +7,7 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
@@ -16,15 +17,37 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "date",
+      title: "Publication Date",
+      type: "date",
+      options: {
+        dateFormat: "MMMM Do, YYYY",
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Author",
+      name: "author",
+      type: "reference",
+      to: { type: "author" },
     },
     {
       name: "featuredImage",
       title: "Featured Image",
       type: "figure",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "excerpt",
+      title: "Post Excerpt",
+      type: "excerptBlockContent",
     },
     {
       name: "body",
-      title: "Body",
+      title: "Post Body",
       type: "blockContent",
     },
   ],

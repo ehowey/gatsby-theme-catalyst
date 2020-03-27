@@ -69,8 +69,8 @@ export const useSiteMetadata = () => {
   const socialLinks = data.allSanitySocialLink.nodes
   const menuLinks = data.allSanityMenuLink.nodes
   const twitterLink = data.allSanitySocialLink.nodes
-    .filter(social => social.name.toLowerCase() === "twitter")
-    .map(social => {
+    .filter((social) => social.name.toLowerCase() === "twitter")
+    .map((social) => {
       return social.link
     })
   const twitterUsername = twitterLink.length
