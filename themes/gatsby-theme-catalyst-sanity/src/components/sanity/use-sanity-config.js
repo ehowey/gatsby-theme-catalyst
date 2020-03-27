@@ -7,9 +7,11 @@ export const useSanityConfig = () => {
           sanityDataset
           sanityProjectId
           sanityToken
-          useSanityPages
-          useSanityPosts
-          useSanityProjects
+          createSanityPages
+          createSanityPosts
+          createSanityPostsList
+          createSanityProjects
+          createSanityProjectsList
           postPath
           projectPath
         }
