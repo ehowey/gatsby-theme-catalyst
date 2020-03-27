@@ -1,6 +1,6 @@
 const remarkSlug = require("remark-slug")
 
-module.exports = options => {
+module.exports = (options) => {
   return {
     siteMetadata: {
       title: `Placeholder title`,
@@ -13,13 +13,6 @@ module.exports = options => {
           name: `Placeholder Menu Link`,
           link: `/`,
           type: `internal`, //internal or anchor
-          subMenu: [
-            {
-              name: null,
-              link: null,
-              type: null,
-            },
-          ],
         },
       ],
       socialLinks: [

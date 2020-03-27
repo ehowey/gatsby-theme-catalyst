@@ -23,6 +23,7 @@ export default {
     primary: baseColors.blue[7],
     secondary: baseColors.orange[7],
     accent: baseColors.orange[2],
+    highlight: baseColors.orange[5],
     muted: baseColors.gray[2],
     header: {
       background: baseColors.gray[2],
@@ -66,7 +67,7 @@ export default {
   },
   sizes: {
     ...tailwind.sizes,
-    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
+    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
     maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
     headerHeight: "auto", // Provides fallback setting to control header height
     logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
@@ -91,6 +92,64 @@ export default {
       fontWeight: "body",
       lineHeight: "body",
       fontSize: 2,
+    },
+    a: {
+      color: "primary",
+      textDecoration: "none",
+      ":hover": {
+        textDecoration: "underline",
+      },
+    },
+    h1: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      m: 0,
+      mb: 1,
+      fontSize: 6,
+      mt: 4,
+    },
+    h2: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      m: 0,
+      mb: 1,
+      fontSize: 5,
+      mt: 4,
+    },
+    h3: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      m: 0,
+      mb: 1,
+      fontSize: 4,
+      mt: 3,
+    },
+    h4: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      m: 0,
+      mb: 1,
+      fontSize: 3,
+    },
+    h5: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      m: 0,
+      mb: 1,
+      fontSize: 2,
+    },
+    h6: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      m: 0,
+      mb: 2,
+      fontSize: 1,
     },
     blockquote: {
       bg: "muted",
