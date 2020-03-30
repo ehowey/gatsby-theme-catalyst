@@ -9,7 +9,7 @@ const ButtonPrimary = ({ to, children }) => {
         appearance: "none",
         width: "auto",
         bg: "primary",
-        color: "textWhite",
+        color: "white",
         textAlign: "center",
         lineHeight: "inherit",
         textDecoration: "none",

@@ -31,6 +31,9 @@ const SanityThemeUI = () => {
               muted {
                 hex
               }
+              highlight {
+                hex
+              }
               headerColors {
                 background {
                   hex
@@ -99,6 +102,10 @@ const SanityThemeUI = () => {
       accent:
         sanityTheme.colors == null || sanityTheme.colors.accent == null
           ? baseColors.orange[2]
+          : sanityTheme.colors.accent.hex,
+      highlight:
+        sanityTheme.colors == null || sanityTheme.colors.highlight == null
+          ? baseColors.orange[4]
           : sanityTheme.colors.accent.hex,
       muted:
         sanityTheme.colors == null || sanityTheme.colors.muted == null

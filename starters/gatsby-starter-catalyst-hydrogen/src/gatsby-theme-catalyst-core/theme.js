@@ -16,7 +16,6 @@ export default {
     primary: baseColors.red[8],
     secondary: baseColors.red[5],
     accent: baseColors.gray[2],
-    textWhite: baseColors.gray[1],
     header: {
       background: "transparent",
       backgroundOpen: baseColors.red[1],

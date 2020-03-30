@@ -44,6 +44,14 @@ export default {
       },
     },
     {
+      name: "highlight",
+      title: "Highlight Color",
+      type: "color",
+      options: {
+        disableAlpha: true,
+      },
+    },
+    {
       name: "muted",
       title: "Muted Color",
       type: "color",
