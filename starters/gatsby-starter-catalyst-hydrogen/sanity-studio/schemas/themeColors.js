@@ -29,7 +29,7 @@ export default {
     },
     {
       name: "secondary",
-      title: "Light Mode Secondary Color",
+      title: "Secondary Color",
       type: "color",
       options: {
         disableAlpha: true,
@@ -37,7 +37,7 @@ export default {
     },
     {
       name: "accent",
-      title: "Light Mode Accent Color",
+      title: "Accent Color",
       type: "color",
       options: {
         disableAlpha: true,
@@ -45,7 +45,7 @@ export default {
     },
     {
       name: "muted",
-      title: "Light Mode Muted Color",
+      title: "Muted Color",
       type: "color",
       options: {
         disableAlpha: true,
