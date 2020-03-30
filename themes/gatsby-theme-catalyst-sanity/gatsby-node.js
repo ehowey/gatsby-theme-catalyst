@@ -1,5 +1,4 @@
 var crypto = require("crypto")
-const withDefaults = require(`./src/utils/default-options`)
 
 // Create Pages
 async function createPages(graphql, actions, reporter) {
@@ -37,9 +36,9 @@ async function createPages(graphql, actions, reporter) {
 }
 
 // Create Posts
-async function createPosts(graphql, actions, reporter, themeOptions) {
+async function createPosts(graphql, actions, reporter, options) {
   const { createPage } = actions
-  const { postPath } = withDefaults(themeOptions)
+  const postPath = options.postPath || "/posts"
   const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   const result = await graphql(`
@@ -75,9 +74,9 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
 }
 
 // Create Posts List Page
-async function createPostsList(actions, reporter, themeOptions) {
+async function createPostsList(actions, reporter, options) {
   const { createPage } = actions
-  const { postPath } = withDefaults(themeOptions)
+  const postPath = options.postPath || "/posts"
   const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating posts list page: ${rootPath}`)
@@ -90,9 +89,9 @@ async function createPostsList(actions, reporter, themeOptions) {
 }
 
 // Create Projects
-async function createProjects(graphql, actions, reporter, themeOptions) {
+async function createProjects(graphql, actions, reporter, options) {
   const { createPage } = actions
-  const { projectPath } = withDefaults(themeOptions)
+  const projectPath = options.projectPath || "/projects"
   const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
   const result = await graphql(`
     {
@@ -127,9 +126,9 @@ async function createProjects(graphql, actions, reporter, themeOptions) {
 }
 
 // Create Projects List Page
-async function createProjectsList(actions, reporter, themeOptions) {
+async function createProjectsList(actions, reporter, options) {
   const { createPage } = actions
-  const { projectPath } = withDefaults(themeOptions)
+  const projectPath = options.projectPath || "/projects"
   const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating projects list page: ${rootPath}`)
@@ -144,28 +143,34 @@ async function createProjectsList(actions, reporter, themeOptions) {
 }
 
 // Conditionally create all the pages
-exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
-  const {
-    createSanityPages,
-    createSanityPosts,
-    createSanityPostsList,
-    createSanityProjects,
-    createSanityProjectsList,
-  } = withDefaults(themeOptions)
+exports.createPages = async ({ graphql, actions, reporter }, options) => {
+  const createSanityPages =
+    options.createSanityPages == null || options.createSanityPages === true
+  const createSanityPosts =
+    options.createSanityPosts == null || options.createSanityPosts === true
+  const createSanityPostsList =
+    options.createSanityPostsList == null ||
+    options.createSanityPostsList === true
+  const createSanityProjects =
+    options.createSanityProjects == null ||
+    options.createSanityProjects === true
+  const createSanityProjectsList =
+    options.createSanityProjectsList == null ||
+    options.createSanityProjectsList === true
   if (createSanityPages) {
     await createPages(graphql, actions, reporter)
   }
   if (createSanityPosts) {
-    await createPosts(graphql, actions, reporter, themeOptions)
+    await createPosts(graphql, actions, reporter, options)
   }
   if (createSanityPostsList) {
-    await createPostsList(actions, reporter, themeOptions)
+    await createPostsList(actions, reporter, options)
   }
   if (createSanityProjects) {
-    await createProjects(graphql, actions, reporter, themeOptions)
+    await createProjects(graphql, actions, reporter, options)
   }
   if (createSanityProjectsList) {
-    await createProjectsList(actions, reporter, themeOptions)
+    await createProjectsList(actions, reporter, options)
   }
 }
 

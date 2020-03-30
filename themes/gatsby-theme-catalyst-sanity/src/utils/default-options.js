@@ -1,11 +1,11 @@
-module.exports = (themeOptions) => {
-  const createSanityPages = themeOptions.createSanityPages || true
-  const createSanityPosts = themeOptions.createSanityPosts || true
-  const createSanityPostsList = themeOptions.createSanityPostsList || true
-  const createSanityProjects = themeOptions.createSanityProjects || true
-  const createSanityProjectsList = themeOptions.createSanityProjectsList || true
-  const postPath = themeOptions.postPath || "/posts"
-  const projectPath = themeOptions.projectPath || "/projects"
+module.exports = (options) => {
+  const createSanityPages = options.createSanityPages || true
+  const createSanityPosts = options.createSanityPosts || true
+  const createSanityPostsList = options.createSanityPostsList || true
+  const createSanityProjects = options.createSanityProjects || true
+  const createSanityProjectsList = options.createSanityProjectsList || true
+  const postPath = options.postPath || "/posts"
+  const projectPath = options.projectPath || "/projects"
 
   return {
     createSanityPages,
