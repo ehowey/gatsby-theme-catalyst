@@ -1,16 +1,21 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import SanityContent from "../sanity/sanity-content"
+import {
+  SanityContent,
+  SanityThemeProvider,
+} from "gatsby-theme-catalyst-sanity"
 
 const ProjectTemplate = ({ data }) => {
-  const project = data.sanityPost
+  const project = data.sanityProject
   return (
-    <Layout>
-      <SEO title={project.title} />
-      <Styled.h1>{project.title}</Styled.h1>
-      <SanityContent data={project._rawBody} />
-    </Layout>
+    <SanityThemeProvider>
+      <Layout>
+        <SEO title={project.title} />
+        <Styled.h1>{project.title}</Styled.h1>
+        <SanityContent data={project._rawBody} />
+      </Layout>
+    </SanityThemeProvider>
   )
 }
 
