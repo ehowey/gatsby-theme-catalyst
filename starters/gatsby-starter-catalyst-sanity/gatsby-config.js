@@ -44,7 +44,7 @@ module.exports = {
         // invertLogo: false,
         // useStickyHeader: false,
         // useSocialLinks: true,
-        // useColorMode: true,
+        // useColorMode: true, // Dark mode is not supported when configuring the theme from SANITY.io dashboard
         //footerContentLocation: "left", // "left", "right", "center"
         useColorMode: false, // Dark mode is not supported by SANITY when configuring the theme spec from SANITY.io
       },
@@ -60,6 +60,7 @@ module.exports = {
         // sanityToken: process.env.SANITY_TOKEN,
         // overlayDrafts: true, // Only works with a token and private dataset
         sanityProjectId: "22kiwqsd",
+        useSanityTheme: true,
       },
     },
 

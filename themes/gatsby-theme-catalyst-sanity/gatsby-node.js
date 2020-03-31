@@ -190,6 +190,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     createSanityProjectsList: Boolean!
     postPath: String!
     projectPath: String!
+    useSanityTheme: Boolean!
   }`)
 }
 
@@ -208,6 +209,7 @@ exports.sourceNodes = (
     createSanityProjectsList = true,
     postPath = "/posts",
     projectPath = "/projects",
+    useSanityTheme = false,
   }
 ) => {
   // create garden data from plugin config
@@ -224,6 +226,7 @@ exports.sourceNodes = (
     createSanityProjectsList,
     postPath,
     projectPath,
+    useSanityTheme,
   }
   createNode({
     ...catalystSanityConfig,

@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby"
-import { BaseTheme } from "gatsby-theme-catalyst-core"
+import sanityBaseTheme from "./sanity-base-theme"
 import { merge } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
 
-const SanityThemeUI = () => {
+export const useThemeFromSanity = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -76,7 +76,7 @@ const SanityThemeUI = () => {
   )
 
   if (data.allSanityTheme.nodes[0] == null) {
-    return BaseTheme
+    return sanityBaseTheme
   }
 
   const sanityTheme = data.allSanityTheme.nodes[0]
@@ -177,8 +177,6 @@ const SanityThemeUI = () => {
       },
     },
   }
-  const theme = merge(BaseTheme, themeFromSanity)
+  const theme = merge(sanityBaseTheme, themeFromSanity)
   return theme
 }
-
-export default SanityThemeUI

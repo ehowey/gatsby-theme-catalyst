@@ -14,6 +14,7 @@ export const useSanityConfig = () => {
           createSanityProjectsList
           postPath
           projectPath
+          useSanityTheme
         }
       }
     `
