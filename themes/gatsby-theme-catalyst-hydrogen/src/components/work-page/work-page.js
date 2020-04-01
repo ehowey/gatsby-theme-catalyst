@@ -1,14 +1,17 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from "theme-ui"
+import { jsx } from "theme-ui"
 import PageHeader from "../page-header"
 import WorkList from "./work-list"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import { SanityContent, sanityTheme } from "gatsby-theme-catalyst-sanity"
+import {
+  SanityContent,
+  SanityThemeProvider,
+} from "gatsby-theme-catalyst-sanity"
 
 const WorkPage = ({ data }) => {
   const result = data.allSanityWorkPage.nodes[0]
   return (
-    <ThemeProvider theme={sanityTheme}>
+    <SanityThemeProvider>
       <Layout>
         <SEO title={result.title} />
         <PageHeader
@@ -19,7 +22,7 @@ const WorkPage = ({ data }) => {
         <SanityContent data={result._rawBody} />
         <WorkList />
       </Layout>
-    </ThemeProvider>
+    </SanityThemeProvider>
   )
 }
 

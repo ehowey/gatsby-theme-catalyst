@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
+import { darken } from "@theme-ui/color"
 
 const ButtonPrimary = ({ to, children }) => {
   return (
@@ -27,8 +28,8 @@ const ButtonPrimary = ({ to, children }) => {
           content: '"\\00A0 \\2192"',
         },
         ":hover": {
-          bg: "secondary",
-          borderColor: "secondary",
+          bg: darken("primary", 0.1),
+          borderColor: darken("primary", 0.1),
         },
       }}
       to={to}

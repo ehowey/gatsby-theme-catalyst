@@ -1,13 +1,16 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from "theme-ui"
+import { jsx } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import PageHeader from "../../../components/page-header"
-import { SanityContent, sanityTheme } from "gatsby-theme-catalyst-sanity"
+import {
+  SanityContent,
+  SanityThemeProvider,
+} from "gatsby-theme-catalyst-sanity"
 
 const PageTemplate = ({ data }) => {
   const result = data.sanityPage
   return (
-    <ThemeProvider theme={sanityTheme}>
+    <SanityThemeProvider>
       <Layout>
         <SEO title={result.title} />
         <PageHeader
@@ -17,7 +20,7 @@ const PageTemplate = ({ data }) => {
         />
         <SanityContent data={result._rawBody} />
       </Layout>
-    </ThemeProvider>
+    </SanityThemeProvider>
   )
 }
 
