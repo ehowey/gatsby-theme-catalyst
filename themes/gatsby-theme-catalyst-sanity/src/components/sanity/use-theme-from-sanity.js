@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby"
-import sanityBaseTheme from "./sanity-base-theme"
+import { sanityBaseTheme } from "gatsby-theme-catalyst-sanity"
 import { merge } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
 
