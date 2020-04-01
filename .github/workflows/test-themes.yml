@@ -14,7 +14,7 @@ on:
       - "starters/**"
       - "themes/**"
 jobs:
-  cypress-run:
+  Test Core Theme:
     runs-on: ubuntu-16.04
     steps:
       - name: Checkout
@@ -33,6 +33,18 @@ jobs:
           start: yarn workspace gatsby-starter-catalyst-core develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
+  Test Basic Theme:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Install dependencies
+        uses: cypress-io/github-action@v1
+        with:
+          # just perform install
+          runTests: false
       - name: Run Tests on Basic
         uses: cypress-io/github-action@v1
         with:
@@ -40,21 +52,22 @@ jobs:
           start: yarn workspace gatsby-starter-catalyst develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
+  Test Blog Theme:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Install dependencies
+        uses: cypress-io/github-action@v1
+        with:
+          # just perform install
+          runTests: false
       - name: Run Tests on Blog
         uses: cypress-io/github-action@v1
         with:
           install: false
           start: yarn workspace gatsby-starter-catalyst-blog develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
-      - name: Run Tests on Writer
-        uses: cypress-io/github-action@v1
-        env:
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-          SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
-        with:
-          install: false
-          start: yarn workspace gatsby-starter-catalyst-writer develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
