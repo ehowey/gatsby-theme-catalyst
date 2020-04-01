@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        //Default options are:
+        // Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
         // displaySiteLogo: true,
@@ -58,7 +58,21 @@ module.exports = {
         // sanityProjectId: process.env.SANITY_PROJECT_ID,
         // sanityDataset: process.env.SANITY_DATASET,
         // sanityToken: process.env.SANITY_TOKEN,
-        // overlayDrafts: true, // Only works with a token and private dataset
+        //
+        // Default options are:
+        // sanityProjectId: "abc123" // Required
+        // sanityDataset: "production"
+        // sanityToken: null
+        // sanityWatchMode: true
+        // sanityOverlayDrafts: false // Token is required for this
+        // createSanityPages: true
+        // createSanityPosts: true
+        // createSanityPostsList: true
+        // createSanityProjects: true
+        // createSanityProjectsList: true
+        // postPath: "/posts"
+        // projectPath: "/projects"
+        // useSanityTheme: false // Experimental right now
         sanityProjectId: "22kiwqsd",
       },
     },

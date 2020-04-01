@@ -1,4 +1,5 @@
 const { createContentDigest } = require(`gatsby-core-utils`)
+const withDefaults = require(`./src/utils/default-options`)
 
 // Create Pages
 async function createPages(graphql, actions, reporter) {
@@ -38,7 +39,7 @@ async function createPages(graphql, actions, reporter) {
 // Create Posts
 async function createPosts(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
-  const postPath = themeOptions.postPath || "/posts"
+  const { postPath } = withDefaults(themeOptions)
   const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   const result = await graphql(`
@@ -76,7 +77,7 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
 // Create Posts List Page
 async function createPostsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const postPath = themeOptions.postPath || "/posts"
+  const { postPath } = withDefaults(themeOptions)
   const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating posts list page: ${rootPath}`)
@@ -91,7 +92,7 @@ async function createPostsList(actions, reporter, themeOptions) {
 // Create Projects
 async function createProjects(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
-  const projectPath = themeOptions.projectPath || "/projects"
+  const { projectPath } = withDefaults(themeOptions)
   const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
   const result = await graphql(`
     {
@@ -128,7 +129,7 @@ async function createProjects(graphql, actions, reporter, themeOptions) {
 // Create Projects List Page
 async function createProjectsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const projectPath = themeOptions.projectPath || "/projects"
+  const { projectPath } = withDefaults(themeOptions)
   const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating projects list page: ${rootPath}`)
@@ -144,21 +145,14 @@ async function createProjectsList(actions, reporter, themeOptions) {
 
 // Conditionally create all the pages
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
-  const createSanityPages =
-    themeOptions.createSanityPages == null ||
-    themeOptions.createSanityPages === true
-  const createSanityPosts =
-    themeOptions.createSanityPosts == null ||
-    themeOptions.createSanityPosts === true
-  const createSanityPostsList =
-    themeOptions.createSanityPostsList == null ||
-    themeOptions.createSanityPostsList === true
-  const createSanityProjects =
-    themeOptions.createSanityProjects == null ||
-    themeOptions.createSanityProjects === true
-  const createSanityProjectsList =
-    themeOptions.createSanityProjectsList == null ||
-    themeOptions.createSanityProjectsList === true
+  const {
+    createSanityPages,
+    createSanityPosts,
+    createSanityPostsList,
+    createSanityProjects,
+    createSanityProjectsList,
+  } = withDefaults(themeOptions)
+
   if (createSanityPages) {
     await createPages(graphql, actions, reporter)
   }
