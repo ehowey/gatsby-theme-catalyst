@@ -7,7 +7,7 @@
     "gatsby-theme-catalyst-core": "^0.25.1",
     "gatsby-theme-catalyst-header-top": "^0.4.1",
     "gatsby-theme-catalyst-footer": "^0.2.3",
-    "gatsby-theme-catalyst-sanity": "*"
+    "gatsby-theme-catalyst-sanity": "^0.0.1"
   },
   "peerDependencies": {
     "gatsby": "^2.20.2",

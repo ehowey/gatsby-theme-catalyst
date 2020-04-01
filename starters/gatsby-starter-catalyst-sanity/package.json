@@ -10,7 +10,7 @@
     "gatsby-theme-catalyst-footer": "^0.2.2",
     "gatsby-theme-catalyst-header-side": "^0.4.0",
     "gatsby-theme-catalyst-header-top": "^0.4.0",
-    "gatsby-theme-catalyst-sanity": "*",
+    "gatsby-theme-catalyst-sanity": "^0.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.0"
   },

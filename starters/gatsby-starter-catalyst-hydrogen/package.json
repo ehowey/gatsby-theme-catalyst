@@ -6,7 +6,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.20.2",
-    "gatsby-theme-catalyst-hydrogen": "*",
+    "gatsby-theme-catalyst-hydrogen": "^0.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.0"
   },
