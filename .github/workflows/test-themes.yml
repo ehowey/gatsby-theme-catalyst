@@ -14,7 +14,7 @@ on:
       - "starters/**"
       - "themes/**"
 jobs:
-  Test Core Theme:
+  test_core:
     runs-on: ubuntu-16.04
     steps:
       - name: Checkout
@@ -33,7 +33,7 @@ jobs:
           start: yarn workspace gatsby-starter-catalyst-core develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
-  Test Basic Theme:
+  test_basic:
     runs-on: ubuntu-16.04
     steps:
       - name: Checkout
@@ -52,7 +52,7 @@ jobs:
           start: yarn workspace gatsby-starter-catalyst develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
-  Test Blog Theme:
+  test_blog:
     runs-on: ubuntu-16.04
     steps:
       - name: Checkout
