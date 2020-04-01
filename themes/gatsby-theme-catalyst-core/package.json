@@ -11,7 +11,6 @@
     "@theme-ui/color": "^0.3.1",
     "@theme-ui/preset-tailwind": "^0.3.0",
     "@theme-ui/prism": "^0.3.0",
-    "deepmerge": "^4.2.2",
     "gatsby-background-image": "^0.10.2",
     "gatsby-image": "^2.3.0",
     "gatsby-plugin-manifest": "^2.3.1",
