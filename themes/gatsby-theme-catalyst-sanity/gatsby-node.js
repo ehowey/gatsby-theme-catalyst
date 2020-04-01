@@ -1,4 +1,4 @@
-var crypto = require("crypto")
+const { createContentDigest } = require(`gatsby-core-utils`)
 
 // Create Pages
 async function createPages(graphql, actions, reporter) {
@@ -36,9 +36,9 @@ async function createPages(graphql, actions, reporter) {
 }
 
 // Create Posts
-async function createPosts(graphql, actions, reporter, options) {
+async function createPosts(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
-  const postPath = options.postPath || "/posts"
+  const postPath = themeOptions.postPath || "/posts"
   const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   const result = await graphql(`
@@ -74,9 +74,9 @@ async function createPosts(graphql, actions, reporter, options) {
 }
 
 // Create Posts List Page
-async function createPostsList(actions, reporter, options) {
+async function createPostsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const postPath = options.postPath || "/posts"
+  const postPath = themeOptions.postPath || "/posts"
   const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating posts list page: ${rootPath}`)
@@ -89,9 +89,9 @@ async function createPostsList(actions, reporter, options) {
 }
 
 // Create Projects
-async function createProjects(graphql, actions, reporter, options) {
+async function createProjects(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
-  const projectPath = options.projectPath || "/projects"
+  const projectPath = themeOptions.projectPath || "/projects"
   const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
   const result = await graphql(`
     {
@@ -126,9 +126,9 @@ async function createProjects(graphql, actions, reporter, options) {
 }
 
 // Create Projects List Page
-async function createProjectsList(actions, reporter, options) {
+async function createProjectsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const projectPath = options.projectPath || "/projects"
+  const projectPath = themeOptions.projectPath || "/projects"
   const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating projects list page: ${rootPath}`)
@@ -143,34 +143,36 @@ async function createProjectsList(actions, reporter, options) {
 }
 
 // Conditionally create all the pages
-exports.createPages = async ({ graphql, actions, reporter }, options) => {
+exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const createSanityPages =
-    options.createSanityPages == null || options.createSanityPages === true
+    themeOptions.createSanityPages == null ||
+    themeOptions.createSanityPages === true
   const createSanityPosts =
-    options.createSanityPosts == null || options.createSanityPosts === true
+    themeOptions.createSanityPosts == null ||
+    themeOptions.createSanityPosts === true
   const createSanityPostsList =
-    options.createSanityPostsList == null ||
-    options.createSanityPostsList === true
+    themeOptions.createSanityPostsList == null ||
+    themeOptions.createSanityPostsList === true
   const createSanityProjects =
-    options.createSanityProjects == null ||
-    options.createSanityProjects === true
+    themeOptions.createSanityProjects == null ||
+    themeOptions.createSanityProjects === true
   const createSanityProjectsList =
-    options.createSanityProjectsList == null ||
-    options.createSanityProjectsList === true
+    themeOptions.createSanityProjectsList == null ||
+    themeOptions.createSanityProjectsList === true
   if (createSanityPages) {
     await createPages(graphql, actions, reporter)
   }
   if (createSanityPosts) {
-    await createPosts(graphql, actions, reporter, options)
+    await createPosts(graphql, actions, reporter, themeOptions)
   }
   if (createSanityPostsList) {
-    await createPostsList(actions, reporter, options)
+    await createPostsList(actions, reporter, themeOptions)
   }
   if (createSanityProjects) {
-    await createProjects(graphql, actions, reporter, options)
+    await createProjects(graphql, actions, reporter, themeOptions)
   }
   if (createSanityProjectsList) {
-    await createProjectsList(actions, reporter, options)
+    await createProjectsList(actions, reporter, themeOptions)
   }
 }
 
@@ -213,7 +215,7 @@ exports.sourceNodes = (
   }
 ) => {
   // create garden data from plugin config
-  const catalystSanityConfig = {
+  const catalystSanityConfigFieldData = {
     sanityProjectId,
     sanityDataset,
     sanityToken,
@@ -229,17 +231,14 @@ exports.sourceNodes = (
     useSanityTheme,
   }
   createNode({
-    ...catalystSanityConfig,
+    ...catalystSanityConfigFieldData,
     id: `gatsby-theme-catalyst-sanity-config`,
     parent: null,
     children: [],
     internal: {
       type: `CatalystSanityConfig`,
-      contentDigest: crypto
-        .createHash(`md5`)
-        .update(JSON.stringify(catalystSanityConfig))
-        .digest(`hex`),
-      content: JSON.stringify(catalystSanityConfig),
+      contentDigest: createContentDigest(catalystSanityConfigFieldData),
+      content: JSON.stringify(catalystSanityConfigFieldData),
       description: `Catalyst Sanity Config`,
     },
   })

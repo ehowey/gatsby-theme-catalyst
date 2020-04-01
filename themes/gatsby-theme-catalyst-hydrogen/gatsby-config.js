@@ -1,4 +1,4 @@
-module.exports = (options) => {
+module.exports = (themeOptions) => {
   return {
     plugins: [
       {
@@ -26,19 +26,19 @@ module.exports = (options) => {
       {
         resolve: `gatsby-theme-catalyst-sanity`,
         options: {
-          sanityProjectId: options.sanityProjectId,
-          sanityDataset: options.sanityDataset,
-          sanityToken: options.sanityToken,
-          sanityWatchMode: options.sanityWatchMode,
-          sanityOverlayDrafts: options.sanityOverlayDrafts,
-          createSanityPages: options.createSanityPages,
+          sanityProjectId: themeOptions.sanityProjectId,
+          sanityDataset: themeOptions.sanityDataset,
+          sanityToken: themeOptions.sanityToken,
+          sanityWatchMode: themeOptions.sanityWatchMode,
+          sanityOverlayDrafts: themeOptions.sanityOverlayDrafts,
+          createSanityPages: themeOptions.createSanityPages,
           createSanityPosts: false,
           createSanityPostsList: false,
           createSanityProjects: false,
           createSanityProjectsList: false,
-          pagePath: options.pagePath,
-          postPath: options.postPath,
-          projectPath: options.projectPath,
+          pagePath: themeOptions.pagePath,
+          postPath: themeOptions.postPath,
+          projectPath: themeOptions.projectPath,
         },
       },
     ],

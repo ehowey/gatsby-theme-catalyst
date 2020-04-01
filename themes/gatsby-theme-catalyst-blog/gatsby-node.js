@@ -4,8 +4,7 @@ const mkdirp = require(`mkdirp`)
 const crypto = require(`crypto`)
 const Debug = require(`debug`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const { urlResolve } = require(`gatsby-core-utils`)
-
+const { urlResolve, createContentDigest } = require(`gatsby-core-utils`)
 const debug = Debug(`gatsby-theme-blog-core`)
 const withDefaults = require(`./src/utils/default-options`)
 
@@ -19,7 +18,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
     path.join(program.directory, assetPath),
   ]
 
-  dirs.forEach(dir => {
+  dirs.forEach((dir) => {
     debug(`Initializing ${dir} directory`)
     if (!fs.existsSync(dir)) {
       mkdirp.sync(dir)
@@ -27,7 +26,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   })
 }
 
-const mdxResolverPassthrough = fieldName => async (
+const mdxResolverPassthrough = (fieldName) => async (
   source,
   args,
   context,
@@ -191,10 +190,7 @@ exports.onCreateNode = async (
       children: [],
       internal: {
         type: `MdxCatalystPost`,
-        contentDigest: crypto
-          .createHash(`md5`)
-          .update(JSON.stringify(fieldData))
-          .digest(`hex`),
+        contentDigest: createContentDigest(fieldData),
         content: JSON.stringify(fieldData),
         description: `Mdx implementation of the CatalystPost interface`,
       },
@@ -235,7 +231,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   // Create Posts and Post pages.
   const { allCatalystPost } = result.data
   const allPosts = allCatalystPost.edges
-  const posts = allPosts.filter(posts => posts.node.draft != true)
+  const posts = allPosts.filter((posts) => posts.node.draft != true)
 
   // Create a page for each Post
   posts.forEach(({ node: post }, index) => {
