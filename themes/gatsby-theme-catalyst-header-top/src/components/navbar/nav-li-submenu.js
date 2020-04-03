@@ -19,12 +19,15 @@ const NavLiDropdown = ({ children }) => {
           color: isNavOpen ? "header.textOpen" : "header.text",
           ":hover, :focus, :active": {
             textDecoration: "underline",
+            color: "primary",
             textDecorationThickness: "0.125em",
           },
           variant: "variants.navLinkSub",
         },
         ".active": {
           textDecoration: "underline",
+          textDecorationThickness: "0.125em",
+          color: "primary",
           variant: "variants.navLinkSubActive",
         },
       }}

@@ -39,6 +39,8 @@ const NavLi = ({ children, hasSubmenu }) => {
         },
         ".active": {
           textDecoration: "underline",
+          textDecorationThickness: "0.125em",
+          color: "primary",
           variant: "variants.navLinkActive",
         },
       }}
