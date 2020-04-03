@@ -10,7 +10,6 @@ const NavLi = ({ children }) => {
     <li
       sx={{
         mb: 3,
-        fontFamily: "navLinks",
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
@@ -21,33 +20,19 @@ const NavLi = ({ children }) => {
           fontWeight: "bold",
           letterSpacing: "1px",
           transition: "all 0.3s ease",
-
-          "::before": {
-            left: "-4px",
-            bottom: "0",
-            height: "100%",
-            width: "4px",
-            backgroundColor: "primary",
-            transform: "scaleY(0)",
-            content: "''",
-            position: "absolute",
-            transition: "transform .2s ease",
+          ":hover, :focus, :active": {
+            textDecoration: "underline",
+            textDecorationThickness: "0.125em",
+            color: "primary",
           },
-          ":hover::before": {
-            transform: "scaleY(1)",
-          },
+          variant: "variants.navLink",
         },
-        ".active::before": {
-          left: "-4px",
-          bottom: "0",
-          height: "100%",
-          width: "4px",
-          backgroundColor: "primary",
-          transform: "scaleY(1)",
-          content: "''",
-          position: "absolute",
+        ".active": {
+          textDecoration: "underline",
+          textDecorationThickness: "0.125em",
+          color: "primary",
+          variant: "variants.navLinkActive",
         },
-        variant: "variants.navLinkStyles",
       }}
     >
       {children}

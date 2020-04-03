@@ -16,21 +16,19 @@ const NavLiDropdown = ({ children }) => {
         },
         a: {
           fontSize: isNavOpen ? 1 : 2,
-          "::after": {
-            content: "none",
-          },
-          ":hover::after": {
-            content: "none",
-          },
-          ":hover, :focus": {
+          color: isNavOpen ? "header.textOpen" : "header.text",
+          ":hover, :focus, :active": {
+            textDecoration: "underline",
             color: "primary",
+            textDecorationThickness: "0.125em",
           },
-        },
-        ".active::after": {
-          content: "none",
+          variant: "variants.navLinkSub",
         },
         ".active": {
+          textDecoration: "underline",
+          textDecorationThickness: "0.125em",
           color: "primary",
+          variant: "variants.navLinkSubActive",
         },
       }}
     >

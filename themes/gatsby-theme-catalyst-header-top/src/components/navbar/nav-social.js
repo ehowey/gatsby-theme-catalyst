@@ -29,7 +29,7 @@ const SocialWrapper = () => {
           mr: 0,
         },
         "a:hover": {
-          color: "header.iconsHover",
+          color: "primary",
         },
       }}
     >

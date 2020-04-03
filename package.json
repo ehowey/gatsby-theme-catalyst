@@ -6,35 +6,33 @@
   ],
   "name": "gatsby-theme-catalyst",
   "devDependencies": {
-    "@testing-library/cypress": "^5.3.0",
-    "axe-core": "^3.5.2",
-    "cypress": "^3.8.3",
-    "cypress-axe": "^0.5.3",
-    "gatsby-cypress": "^0.2.23",
-    "lerna": "^3.20.1",
-    "start-server-and-test": "^1.10.9"
+    "@testing-library/cypress": "^6.0.0",
+    "axe-core": "^3.5.3",
+    "cypress": "^4.3.0",
+    "cypress-axe": "^0.8.1",
+    "gatsby-cypress": "^0.3.1",
+    "lerna": "^3.20.2",
+    "start-server-and-test": "^1.10.11"
   },
   "scripts": {
     "develop:core": "yarn workspace gatsby-starter-catalyst-core develop",
     "develop:basic": "yarn workspace gatsby-starter-catalyst develop",
     "develop:blog": "yarn workspace gatsby-starter-catalyst-blog develop",
-    "develop:writer": "yarn workspace gatsby-starter-catalyst-writer develop",
+    "develop:sanity": "yarn workspace gatsby-starter-catalyst-sanity develop",
+    "develop:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen develop",
     "build:core": "yarn workspace gatsby-starter-catalyst-core build",
     "build:basic": "yarn workspace gatsby-starter-catalyst build",
     "build:blog": "yarn workspace gatsby-starter-catalyst-blog build",
-    "build:writer": "yarn workspace gatsby-starter-catalyst-writer build",
     "serve:core": "yarn workspace gatsby-starter-catalyst-core serve",
     "serve:basic": "yarn workspace gatsby-starter-catalyst serve",
     "serve:blog": "yarn workspace gatsby-starter-catalyst-blog serve",
-    "serve:writer": "yarn workspace gatsby-starter-catalyst-writer serve",
     "clean:core": "yarn workspace gatsby-starter-catalyst-core clean",
     "clean:basic": "yarn workspace gatsby-starter-catalyst clean",
     "clean:blog": "yarn workspace gatsby-starter-catalyst-blog clean",
-    "clean:writer": "yarn workspace gatsby-starter-catalyst-writer clean",
+    "clean:sanity": "yarn workspace gatsby-starter-catalyst-sanity clean",
+    "clean:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen clean",
     "test:core": "start-server-and-test develop:core http://localhost:8000 cy:open",
     "test:basic": "start-server-and-test develop:basic http://localhost:8000 cy:open",
-    "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open",
-    "test:writer": "start-server-and-test develop:writer http://localhost:8000 cy:open",
-    "cy:open": "cypress open"
+    "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open"
   }
 }

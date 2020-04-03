@@ -1,4 +1,4 @@
-var crypto = require("crypto")
+const { createContentDigest } = require(`gatsby-core-utils`)
 
 //Schema generation for Catalust Config
 
@@ -11,7 +11,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     displaySiteTitle: Boolean!
     displaySiteLogoMobile: Boolean!
     displaySiteTitleMobile: Boolean!
-    useHero: Boolean!
     invertSiteLogo: Boolean!
     mobileMenuBreakpoint: String!
     useStickyHeader: Boolean!
@@ -30,7 +29,6 @@ exports.sourceNodes = (
     displaySiteTitle = true,
     displaySiteLogoMobile = true,
     displaySiteTitleMobile = true,
-    useHero = false,
     invertSiteLogo = false,
     mobileMenuBreakpoint = "768px",
     useStickyHeader = false,
@@ -40,14 +38,13 @@ exports.sourceNodes = (
   }
 ) => {
   // create garden data from plugin config
-  const catalystConfig = {
+  const catalystConfigFieldData = {
     contentPath,
     assetPath,
     displaySiteLogo,
     displaySiteTitle,
     displaySiteLogoMobile,
     displaySiteTitleMobile,
-    useHero,
     invertSiteLogo,
     mobileMenuBreakpoint,
     useStickyHeader,
@@ -56,17 +53,14 @@ exports.sourceNodes = (
     footerContentLocation,
   }
   createNode({
-    ...catalystConfig,
+    ...catalystConfigFieldData,
     id: `gatsby-theme-catalyst-config`,
     parent: null,
     children: [],
     internal: {
       type: `CatalystConfig`,
-      contentDigest: crypto
-        .createHash(`md5`)
-        .update(JSON.stringify(catalystConfig))
-        .digest(`hex`),
-      content: JSON.stringify(catalystConfig),
+      contentDigest: createContentDigest(catalystConfigFieldData),
+      content: JSON.stringify(catalystConfigFieldData),
       description: `Catalyst Config`,
     },
   })

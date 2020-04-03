@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-theme-catalyst-hydrogen",
+  "description": "Gatsby theme for a writer's portfolio website. SANITY.io as the CMS.",
+  "version": "0.0.1",
+  "author": "Eric Howey <eric@erichowey.dev>",
+  "dependencies": {
+    "gatsby-theme-catalyst-core": "^0.25.1",
+    "gatsby-theme-catalyst-header-top": "^0.4.1",
+    "gatsby-theme-catalyst-footer": "^0.2.3",
+    "gatsby-theme-catalyst-sanity": "^0.0.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.20.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.20.10",
+    "prettier": "^2.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
+  }
+}

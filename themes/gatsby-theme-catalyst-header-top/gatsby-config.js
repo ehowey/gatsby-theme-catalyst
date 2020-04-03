@@ -1,5 +1,1 @@
-module.exports = options => {
-  return {
-    plugins: [],
-  }
-}
+module.exports = {}

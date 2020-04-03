@@ -36,7 +36,6 @@ const SiteTitle = () => {
           display: [displayPhone, null, displayLaptop, null, null],
           fontSize: [4, null, null, 5, null],
           color: isNavOpen ? "header.textOpen" : "header.text",
-          fontFamily: "siteTitle",
           whiteSpace: "nowrap",
           flex: "0 0 auto",
           m: 0,

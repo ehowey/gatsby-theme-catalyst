@@ -1,6 +1,6 @@
 const remarkSlug = require("remark-slug")
 
-module.exports = options => {
+module.exports = (themeOptions) => {
   return {
     siteMetadata: {
       title: `Placeholder title`,
@@ -28,20 +28,20 @@ module.exports = options => {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `pages`,
-          path: options.contentPath || `content/pages`,
+          path: themeOptions.contentPath || `content/pages`,
         },
       },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `images`,
-          path: options.assetPath || `content/assets`,
+          path: themeOptions.assetPath || `content/assets`,
         },
       },
       {
         resolve: `gatsby-plugin-page-creator`,
         options: {
-          path: options.contentPath || `content/pages`,
+          path: themeOptions.contentPath || `content/pages`,
         },
       },
       {

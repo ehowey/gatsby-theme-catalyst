@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-theme-catalyst-sanity",
+  "description": "Sibling theme for gatsby-theme-catalyst-core to add SANITY.io",
+  "version": "0.0.1",
+  "author": "Eric Howey <eric@erichowey.dev>",
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
+    "gatsby-source-sanity": "^5.0.6"
+  },
+  "devDependencies": {
+    "gatsby": "^2.20.10",
+    "prettier": "^2.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.20.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.0"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
+  }
+}
