@@ -1,6 +1,6 @@
 # Gatsby Starter Catalyst Sanity
 
-**WIP-Not ready for use**
+This is a base theme for integrating SANITY.io with other Catalyst themes. For an example of this in practice see `gatsby-theme-catalyst-hydrogen`.
 
 **Documentation**
 
@@ -17,7 +17,7 @@ gatsby new catalyst-sanity https://github.com/ehowey/gatsby-starter-catalyst-san
 
 **Demo**
 
-[https://gatsby-starter-catalyst-sanity.netlify.com/](https://gatsby-starter-catalyst-basic.netlify.com/)
+[https://gatsby-starter-catalyst-sanity.netlify.com/](https://gatsby-starter-catalyst-sanity.netlify.com/)
 
 ## About Gatsby Theme Catalyst
 

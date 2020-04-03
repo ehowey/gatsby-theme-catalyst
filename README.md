@@ -49,14 +49,15 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 ## List of all themes
 
-| Theme                               | Demo                                                                                  | Description                                                                                                                                                                                                  |
-| ----------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `gatsby-theme-catalyst-core`        | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)     | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
-| `gatsby-theme-catalyst-header-top`  | [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)               | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
-| `gatsby-theme-catalyst-header-side` | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | This adds a sidebar style header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo is stacked on top, then title, then nav.                                |
-| `gatsby-theme-catalyst-footer`      | [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)               | This adds a very basic footer to the core theme.                                                                                                                                                             |
-| `gatsby-theme-catalyst-blog`        | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)     | This provides a basic plug-and-play blog for any Catalyst based site.                                                                                                                                        |
-| `gatsby-theme-catalyst-writer`      | [gatsby-starter-catalyst-writer](https://gatsby-starter-catalyst-writer.netlify.com/) | This is the first complete site using the catalyst set of themes. Designed to be used by a freelance writer as their portfolio. Sanity is used as a CMS.                                                     |
+| Theme                               | Demo                                                                                      | Description                                                                                                                                                                                                  |
+| ----------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `gatsby-theme-catalyst-core`        | [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)         | This acts as the core theme on which all other themes are based. It houses a basic site architecture and components along with most commonly needed dependencies. Think of this as the foundation of a home. |
+| `gatsby-theme-catalyst-header-top`  | [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)                   | This adds a simple header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo on the left, nav on the right.                                                 |
+| `gatsby-theme-catalyst-header-side` | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)         | This adds a sidebar style header to the core theme which includes support for anchor links and smooth scrolling out of the box. Logo is stacked on top, then title, then nav.                                |
+| `gatsby-theme-catalyst-footer`      | [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)                   | This adds a very basic footer to the core theme.                                                                                                                                                             |
+| `gatsby-theme-catalyst-blog`        | [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)         | This provides a basic plug-and-play blog for any Catalyst based site.                                                                                                                                        |
+| `gatsby-theme-catalyst-sanity`      | [gatsby-starter-catalyst-sanity](https://gatsby-starter-catalyst-sanity.netlify.com/)     | This is a base theme for SANITY.io integration with catalyst themes and starters.                                                                                                                            |
+| `gatsby-theme-catalyst-hydrogen`    | [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.com/) | This is a complete site using the catalyst set of themes. Designed to be used by a freelance writer as their portfolio. SANITY.io is used as a CMS.                                                          |
 
 ## Accessibility
 
@@ -77,7 +78,7 @@ This set of themes is developer focused and I assume you have a basic knowledge 
 
 ### Using a gatsby-starter to implement the themes
 
-All of these themes are available on NPM but the easiest way to get started is via a gatsby-starter that includes the theme(s) already. Currently the following starters are available:
+All of these themes are available on NPM but the best way to get started is via a gatsby-starter that includes the theme(s) already. Currently the following starters are available:
 
 **gatsby-starter-catalyst-core**:
 
@@ -90,10 +91,6 @@ All of these themes are available on NPM but the easiest way to get started is v
 **gatsby-starter-catalyst-blog**:
 
 `gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog`
-
-**gatsby-starter-catalyst-writer**:
-
-`gatsby new catalyst-writer https://github.com/ehowey/gatsby-starter-catalyst-writer`
 
 ## Customizing the themes
 
@@ -220,12 +217,12 @@ The file you should modify to set design tokens is always located in the followi
 
     .
     ├── src
-      ├── gatsby-theme-catalyst-core
-        ├── theme.js
+      ├── gatsby-plugin-theme-ui
+        ├── index.js
 
 Try changing some colors in the file and see what happens!
 
-Most major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file. The following variants are available to use:
+Most major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file. The following are some of the variants are available to use:
 
 - `variants.siteContainer`: Targets the container <div> for the entire site content
 - `variants.main`: Targets the <main> component in the site, useful for changing spacing between <header>, <footer>, and <main> areas.
@@ -234,7 +231,7 @@ Most major areas of the site are preconfigured to use [variants](https://theme-u
 - `variants.footer`: Targets the root <footer> component
 - `variants.siteLogo`: Targets the logo component
 - `variants.siteTitle`: Targets the root site title component, useful to change font size of the site title.
-- `variants.navLinkStyles`: Targets the container styles for the nav links in the header, useful to change the nav styles
+- `variants.navLink`: Targets the styles for the nav links in the header, useful to change the nav styles
 
 Here is an example of changing the size of the site title using variants.
 
@@ -376,19 +373,28 @@ By default Gatsby provides excellent SEO out of the box. I have extended this wi
 
 ## Migrating
 
-The first place to start is by checking the changelog file. Beginning at release v0.20.0 I have started tracking major changes in there. Other major breaking changes will be commented on here.
+The first place to start is by checking the changelog file.
+
+**v1.0.0**
+
+- Move your theme-ui file from `src/gatsby-theme-catalyst-core/theme.js` -> `src/gatsby-plugin-theme-ui/index.js`. No other change should be needed. This was done to be more in line with recommended best practice. There is now a 'base theme' for Theme-UI which is exported from `gatsby-theme-catalyst-core`. You can use this to write smaller and more condensed themes in the starters using the following syntax:
+
+```
+import { merge } from "theme-ui"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+
+export default merge(BaseTheme, {
+  // Modifications to the base theme go here. This is an example changing colors and using variants to change your navigation links. Uncomment the code below to see what happens.
+})
+```
+
+- Depreciated `gatsby-theme-catalyst-writer` in favor of `gatsby-theme-catalyst-hydrogen`. If you were using the writer theme it will continue to work, and should work for a long time to come. If you want to migrate to hydrogen then it should be possible with a little effort as the expected data structures from SANITY were mainly unchanged.
+
+- This is technically not a breaking change but it could noticeably change your sites appearance. Base navigation styles were simplified in the structural themes and then added back in for the presentational themes using variants in the theme-ui file. You can see an example of this is `gatsby-theme-catalyst-hydrogen` if you would like to see how to do it on your site, look in `gatsby-theme-catalyst-hydrogen/src/gatsby-plugin-theme-ui/index.js`.
 
 **Removal of isMobile Context and mobileMenuBreakpoint**
 
 These are depreciated and will stop working post v1.0. There was a perfomance issue with SSR and javascript that was causing a flash of unstyled content. I have reverted back to using normal media queries for changing to the mobile menu at the second breakpoint, 768px by default.
-
-**gatsby-theme-catalyst-header-basic -> gatsby-theme-catalyst-header-top**
-
-I renamed this theme to better reflect what it is. The only change you should need to make is in your gatsby-config.js file and package.json.
-
-**gatsby-theme-catalyst-footer-basic -> gatsby-theme-catalyst-footer**
-
-I renamed this theme to better reflect what it is. The only change you should need to make is in your gatsby-config.js file and package.json.
 
 ## Philosophy - Less is More
 
