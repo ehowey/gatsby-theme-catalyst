@@ -17,7 +17,7 @@ gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-h
 
 **Demo**
 
-[https://gatsby-starter-catalyst-writer.netlify.com/](https://gatsby-starter-catalyst-hydrogen.netlify.com/)
+[https://gatsby-starter-catalyst-hydrogen.netlify.com/](https://gatsby-starter-catalyst-hydrogen.netlify.com/)
 
 ## About Gatsby Theme Catalyst
 
