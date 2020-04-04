@@ -98,7 +98,7 @@ All of these themes are available on NPM but the best way to get started is via 
 
 There are a number of options for the core theme, blog theme, and writer theme that act as flags to control various aspects of the site appearance and function. Try experimenting with some of these to get a feel for how it changes the site.
 
-**Core theme:**
+**gatsby-theme-catalyst-core:**
 
 | Option                   | Values                                    | Description                                                                             |
 | ------------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------- |
@@ -114,7 +114,7 @@ There are a number of options for the core theme, blog theme, and writer theme t
 | `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                   |
 | `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                      |
 
-**Blog theme:**
+**gatsby-theme-catalyst-blog:**
 
 | Option          | Values | Description                                                                             |
 | --------------- | ------ | --------------------------------------------------------------------------------------- |
@@ -123,12 +123,34 @@ There are a number of options for the core theme, blog theme, and writer theme t
 | `basePath`      | String | Defaults to "/blog", determines the page location for the post list.                    |
 | `excerptLength` | String | Defaults to "140", determines the length of the excerpt use for post summaries.         |
 
-**Writer theme:**
+**gatsby-theme-catalyst-sanity:**
 
-| Option          | Values | Description                                                                          |
-| --------------- | ------ | ------------------------------------------------------------------------------------ |
-| sanityDataset   | String | Defaults to "production", change to reflect the dataset name you are using in Sanity |
-| sanityProjectID | String | Required, Sanity project ID                                                          |
+| Option                   | Values  | Description                                                                                                                                |
+| ------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| sanityProjectId          | String  | Required, Sanity project ID                                                                                                                |
+| sanityDataset            | String  | Defaults to "production", change to reflect the dataset name you are using in Sanity                                                       |
+| sanityToken              | String  | Defaults to null, should only be used with env variables for security purposes.                                                            |
+| sanityWatchMode          | Boolean | Defaults to true, toggle for watch mode                                                                                                    |
+| sanityOverlayDrafts      | Boolean | Defaults to false, toggle for live previews, a token and private dataset is required.                                                      |
+| sanityCreatePages        | Boolean | Defaults to true, toggle to turn on/off page generation from SANITY.io.                                                                    |
+| sanityCreatePosts        | Boolean | Defaults to true, toggle to turn on/off blog post page generation from SANITY.io.                                                          |
+| sanityCreatePostsList    | Boolean | Defaults to true, toggle to turn on/off blog post list generation from SANITY.io.                                                          |
+| sanityCreateProjects     | Boolean | Defaults to true, toggle to turn on/off project page generation from SANITY.io.                                                            |
+| sanityCreateProjectsList | Boolean | Defaults to true, toggle to turn on/off project list generation from SANITY.io.                                                            |
+| sanityPostPath           | String  | Defaults to "/posts", is the path for the posts index and also before posts, e.g. site.com/posts/post-1.                                   |
+| sanityProjectPath        | String  | Defaults to "/projects", is the path for the projects index and also before projects, e.g. site.com/projects/post-1.                       |
+| useSanityTheme           | Boolean | Experimental. Enables merging the theme-ui theme specification from SANITY.io allowing use of a GUI to change the site theme, e.g. colors. |
+
+**gatsby-theme-catalyst-hydrogen:**
+
+| Option              | Values  | Description                                                                           |
+| ------------------- | ------- | ------------------------------------------------------------------------------------- |
+| sanityProjectId     | String  | Required, Sanity project ID                                                           |
+| sanityDataset       | String  | Defaults to "production", change to reflect the dataset name you are using in Sanity  |
+| sanityToken         | String  | Defaults to null, should only be used with env variables for security purposes.       |
+| sanityWatchMode     | Boolean | Defaults to true, toggle for watch mode                                               |
+| sanityOverlayDrafts | Boolean | Defaults to false, toggle for live previews, a token and private dataset is required. |
+| sanityCreatePages   | Boolean | Defaults to true, toggle to turn on/off page generation from SANITY.io.               |
 
 ### Modifying Gatsby-Config.JS
 

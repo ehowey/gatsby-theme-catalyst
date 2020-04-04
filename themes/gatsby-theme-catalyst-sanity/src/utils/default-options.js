@@ -1,29 +1,29 @@
 module.exports = (themeOptions) => {
-  const createSanityPages =
-    themeOptions.createSanityPages == null ||
-    themeOptions.createSanityPages === true
-  const createSanityPosts =
-    themeOptions.createSanityPosts == null ||
-    themeOptions.createSanityPosts === true
-  const createSanityPostsList =
-    themeOptions.createSanityPostsList == null ||
-    themeOptions.createSanityPostsList === true
-  const createSanityProjects =
-    themeOptions.createSanityProjects == null ||
-    themeOptions.createSanityProjects === true
-  const createSanityProjectsList =
-    themeOptions.createSanityProjectsList == null ||
-    themeOptions.createSanityProjectsList === true
-  const projectPath = themeOptions.projectPath || "/projects"
-  const postPath = themeOptions.postPath || "/posts"
+  const sanityCreatePages =
+    themeOptions.sanityCreatePages == null ||
+    themeOptions.sanityCreatePages === true
+  const sanityCreatePosts =
+    themeOptions.sanityCreatePosts == null ||
+    themeOptions.sanityCreatePosts === true
+  const sanityCreatePostsList =
+    themeOptions.sanityCreatePostsList == null ||
+    themeOptions.sanityCreatePostsList === true
+  const sanityCreateProjects =
+    themeOptions.sanityCreateProjects == null ||
+    themeOptions.sanityCreateProjects === true
+  const sanityCreateProjectsList =
+    themeOptions.sanityCreateProjectsList == null ||
+    themeOptions.sanityCreateProjectsList === true
+  const sanityProjectPath = themeOptions.sanityProjectPath || "/projects"
+  const sanityPostPath = themeOptions.sanityPostPath || "/posts"
 
   return {
-    createSanityPages,
-    createSanityPosts,
-    createSanityPostsList,
-    createSanityProjects,
-    createSanityProjectsList,
-    postPath,
-    projectPath,
+    sanityCreatePages,
+    sanityCreatePosts,
+    sanityCreatePostsList,
+    sanityCreateProjects,
+    sanityCreateProjectsList,
+    sanityPostPath,
+    sanityProjectPath,
   }
 }

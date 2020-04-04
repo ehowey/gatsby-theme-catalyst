@@ -65,13 +65,13 @@ module.exports = {
         // sanityToken: null
         // sanityWatchMode: true
         // sanityOverlayDrafts: false // Token is required for this
-        // createSanityPages: true
-        // createSanityPosts: true
-        // createSanityPostsList: true
-        // createSanityProjects: true
-        // createSanityProjectsList: true
-        // postPath: "/posts"
-        // projectPath: "/projects"
+        // sanityCreatePages: true
+        // sanityCreatePosts: true
+        // sanityCreatePostsList: true
+        // sanityCreateProjects: true
+        // sanityCreateProjectsList: true
+        // sanityPostPath: "/posts"
+        // sanityProjectPath: "/projects"
         // useSanityTheme: false // Experimental right now
         sanityProjectId: "22kiwqsd",
       },

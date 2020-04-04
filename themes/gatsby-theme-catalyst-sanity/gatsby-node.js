@@ -39,8 +39,8 @@ async function createPages(graphql, actions, reporter) {
 // Create Posts
 async function createPosts(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { postPath } = withDefaults(themeOptions)
-  const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityPostPath } = withDefaults(themeOptions)
+  const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   const result = await graphql(`
     {
@@ -77,8 +77,8 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
 // Create Posts List Page
 async function createPostsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { postPath } = withDefaults(themeOptions)
-  const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityPostPath } = withDefaults(themeOptions)
+  const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating posts list page: ${rootPath}`)
 
@@ -92,8 +92,8 @@ async function createPostsList(actions, reporter, themeOptions) {
 // Create Projects
 async function createProjects(graphql, actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { projectPath } = withDefaults(themeOptions)
-  const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityProjectPath } = withDefaults(themeOptions)
+  const rootPath = sanityProjectPath.replace(/\/*$/, `/`) //Ensure trailing slash
   const result = await graphql(`
     {
       allSanityProject(filter: { slug: { current: { ne: null } } }) {
@@ -129,8 +129,8 @@ async function createProjects(graphql, actions, reporter, themeOptions) {
 // Create Projects List Page
 async function createProjectsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { projectPath } = withDefaults(themeOptions)
-  const rootPath = projectPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityProjectPath } = withDefaults(themeOptions)
+  const rootPath = sanityProjectPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating projects list page: ${rootPath}`)
 
@@ -146,26 +146,26 @@ async function createProjectsList(actions, reporter, themeOptions) {
 // Conditionally create all the pages
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const {
-    createSanityPages,
-    createSanityPosts,
-    createSanityPostsList,
-    createSanityProjects,
-    createSanityProjectsList,
+    sanityCreatePages,
+    sanityCreatePosts,
+    sanityCreatePostsList,
+    sanityCreateProjects,
+    sanityCreateProjectsList,
   } = withDefaults(themeOptions)
 
-  if (createSanityPages) {
+  if (sanityCreatePages) {
     await createPages(graphql, actions, reporter)
   }
-  if (createSanityPosts) {
+  if (sanityCreatePosts) {
     await createPosts(graphql, actions, reporter, themeOptions)
   }
-  if (createSanityPostsList) {
+  if (sanityCreatePostsList) {
     await createPostsList(actions, reporter, themeOptions)
   }
-  if (createSanityProjects) {
+  if (sanityCreateProjects) {
     await createProjects(graphql, actions, reporter, themeOptions)
   }
-  if (createSanityProjectsList) {
+  if (sanityCreateProjectsList) {
     await createProjectsList(actions, reporter, themeOptions)
   }
 }
@@ -179,13 +179,13 @@ exports.createSchemaCustomization = ({ actions }) => {
     sanityToken: String
     sanityWatchMode: Boolean!
     sanityOverlayDrafts: Boolean!
-    createSanityPages: Boolean!
-    createSanityPosts: Boolean!
-    createSanityPostsList: Boolean!
-    createSanityProjects: Boolean!
-    createSanityProjectsList: Boolean!
-    postPath: String!
-    projectPath: String!
+    sanityCreatePages: Boolean!
+    sanityCreatePosts: Boolean!
+    sanityCreatePostsList: Boolean!
+    sanityCreateProjects: Boolean!
+    sanityCreateProjectsList: Boolean!
+    sanityPostPath: String!
+    sanityProjectPath: String!
     useSanityTheme: Boolean!
   }`)
 }
@@ -198,13 +198,13 @@ exports.sourceNodes = (
     sanityToken = null,
     sanityWatchMode = true,
     sanityOverlayDrafts = false,
-    createSanityPages = true,
-    createSanityPosts = true,
-    createSanityPostsList = true,
-    createSanityProjects = true,
-    createSanityProjectsList = true,
-    postPath = "/posts",
-    projectPath = "/projects",
+    sanityCreatePages = true,
+    sanityCreatePosts = true,
+    sanityCreatePostsList = true,
+    sanityCreateProjects = true,
+    sanityCreateProjectsList = true,
+    sanityPostPath = "/posts",
+    sanityProjectPath = "/projects",
     useSanityTheme = false,
   }
 ) => {
@@ -215,13 +215,13 @@ exports.sourceNodes = (
     sanityToken,
     sanityWatchMode,
     sanityOverlayDrafts,
-    createSanityPages,
-    createSanityPosts,
-    createSanityPostsList,
-    createSanityProjects,
-    createSanityProjectsList,
-    postPath,
-    projectPath,
+    sanityCreatePages,
+    sanityCreatePosts,
+    sanityCreatePostsList,
+    sanityCreateProjects,
+    sanityCreateProjectsList,
+    sanityPostPath,
+    sanityProjectPath,
     useSanityTheme,
   }
   createNode({

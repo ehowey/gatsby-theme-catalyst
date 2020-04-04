@@ -11,8 +11,8 @@ import {
 
 const PostsTemplate = ({ data }) => {
   const posts = data.allSanityPost.nodes
-  const { postPath } = useSanityConfig()
-  const rootPath = postPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityPostPath } = useSanityConfig()
+  const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   return (
     <SanityThemeProvider>
