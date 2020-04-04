@@ -12,13 +12,13 @@
   "peerDependencies": {
     "gatsby": "^2.20.10",
     "react": "^16.13.1",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "gatsby": "^2.20.10",
     "prettier": "^2.0.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.1"
   },
   "keywords": [
     "gatsby"

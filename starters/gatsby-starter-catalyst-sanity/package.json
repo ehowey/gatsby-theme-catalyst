@@ -12,7 +12,7 @@
     "gatsby-theme-catalyst-header-top": "^1.0.0-alpha.0",
     "gatsby-theme-catalyst-sanity": "^1.0.0-alpha.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "prettier": "^2.0.1"
