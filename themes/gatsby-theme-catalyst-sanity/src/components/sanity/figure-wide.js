@@ -9,7 +9,8 @@ export default ({ node }) => {
     return null
   }
 
-  const sanityConfig = useSanityConfig()
+  const { sanityProjectId, sanityDataset } = useSanityConfig()
+  const sanityConfig = { projectId: sanityProjectId, dataset: sanityDataset }
 
   const fluidProps = getFluidGatsbyImage(
     node.asset._ref,
