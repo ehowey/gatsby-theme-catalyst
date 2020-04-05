@@ -62,15 +62,6 @@ export default () =>
                 .title("Social Links")
                 .icon(MdShare)
                 .child(S.documentTypeList("socialLink").title("Social Links")),
-              S.listItem()
-                .title("Theme-UI")
-                .icon(MdDashboard)
-                .child(
-                  S.document()
-                    .schemaType("theme")
-                    .documentId("theme")
-                    .title("Theme-UI Theme")
-                ),
             ])
         ),
       // Add a visual divider (optional)
@@ -80,17 +71,15 @@ export default () =>
         .icon(MdHome)
         .child(S.editor().schemaType("homePage").documentId("homePage")),
       S.listItem()
+        .title("Work Page")
+        .icon(MdInsertDriveFile)
+        .child(S.editor().schemaType("workPage").documentId("workPage")),
+      S.listItem()
         .title("Work")
         .child(
           S.list()
             .title("Work")
             .items([
-              S.listItem()
-                .title("Work Page")
-                .icon(MdInsertDriveFile)
-                .child(
-                  S.editor().schemaType("workPage").documentId("workPage")
-                ),
               S.listItem()
                 .title("List of Work")
                 .schemaType("work")
@@ -106,14 +95,8 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title("Pages")
+        .title("Other Pages")
         .child(S.documentTypeList("page").title("Pages")),
-      S.listItem()
-        .title("Posts")
-        .child(S.documentTypeList("post").title("Posts")),
-      S.listItem()
-        .title("Projects")
-        .child(S.documentTypeList("project").title("Projects")),
 
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ])

@@ -2,23 +2,24 @@ export default {
   title: "Menu Link",
   name: "menuLink",
   type: "document",
-  description:
-    "This theme automatically generates pages at /work. You should include at least these links.",
   fields: [
     {
-      title: "Link name",
+      title: "Link text",
+      description: "The text displayed for the navigation link.",
       name: "name",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
       title: "Link to",
+      description:
+        "The relative page link, e.g. '/work'. Can also be an anchor link like '#categories'",
       name: "link",
       type: "url",
       validation: (Rule) =>
         Rule.required().uri({
           allowRelative: true,
-          scheme: ["https", "http", "mailto", "tel"],
+          scheme: ["https", "http", "mailto"],
         }),
     },
     {
@@ -26,7 +27,7 @@ export default {
       name: "type",
       type: "string",
       description:
-        "Links within your site should be internal, anchor links are for single page sites.",
+        "Internal links use Gatsby Link to link to other pages, anchor links are for single page sites.",
       options: {
         list: [
           { title: "Internal", value: "internal" },
@@ -39,8 +40,7 @@ export default {
     {
       name: "order",
       title: "Order",
-      description:
-        "Use numbers to specify the order on the nav bar, left to right, top to bottom.",
+      description: "Use numbers to specify the order on the navigation bar.",
       type: "number",
       validation: (Rule) => Rule.required().integer().positive(),
     },
