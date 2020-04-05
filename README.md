@@ -354,13 +354,11 @@ There is also a file called `catalyst-site-icon.png` that provides your icon for
 
 ### Context providers
 
-There are two context providers that are globally available in the themes to manage component function or appearance based on state. These are `isNavOpen` and `isHome`.
+There are two context providers that are globally available in the themes to manage component function or appearance based on state.
 
-isNavOpen: True if the mobile nav menu is open
+`isNavOpen`: True if the mobile nav menu is open
 
-isHome: True if you are on the homepage, this can cause a flash of unstyled content so use with caution.
-
-isMobile is depreciated and will be removed in v1.0. It was depreciated for performance reasons.
+`isHome`: True if you are on the homepage, this can cause a flash of unstyled content so use with caution.
 
 ```js
 // Import useContext and the context
