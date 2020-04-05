@@ -11,8 +11,11 @@ export const query = graphql`
     allSanityProject {
       nodes {
         id
+        slug {
+          current
+        }
         title
-        _rawBody
+        _rawExcerpt
       }
     }
   }

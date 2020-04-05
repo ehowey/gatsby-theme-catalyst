@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import {
   SanityContent,
@@ -21,10 +20,6 @@ const PostsTemplate = ({ data }) => {
         <Styled.h1>Posts</Styled.h1>
         {posts.map((post) => (
           <article sx={{ my: 5 }} key={post.id}>
-            <Img
-              fluid={post.featuredImage.asset.fluid}
-              alt={post.featuredImage.alt}
-            />
             <Link to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}>
               <Styled.h2>{post.title}</Styled.h2>
             </Link>

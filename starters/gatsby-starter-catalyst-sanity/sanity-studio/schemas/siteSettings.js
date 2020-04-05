@@ -6,53 +6,59 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Title",
-      description: "Your website title, likely going to be your name.",
+      title: "Site Title",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "description",
       type: "text",
       rows: "3",
       title: "Description",
-      description:
-        "Describe your portfolio for search engines and social media.",
+      description: "Describe your website for search engines and social media.",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "keywords",
       type: "array",
       title: "Keywords",
       description:
-        "Add keywords for search engines that describes your portfolio.",
+        "Add keywords for search engines that describes your website.",
       of: [{ type: "string" }],
       options: {
         layout: "tags",
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "author",
       type: "string",
       title: "Site Author",
+      description: "Your name, or developers name.",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Logo",
       name: "logo",
       type: "figure",
       description:
-        "By default the logo is not activated in this starter but could easily but used with the flags displaySiteLogo and displaySiteLogoMobile",
+        "Your website logo, whether this is displayed can be controlled by feature flags in gatsby-theme-catalyst-core.",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Default Social Sharing Image",
       name: "seoImage",
       type: "figure",
       description:
-        "Used as a default sharing image for places like Twitter and Facebook when sharing a link to your website, an image of you is likely a good option.",
+        "The default sharing image for places like Twitter and Facebook when sharing a link to your website.",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "siteUrl",
       type: "url",
       title: "Site URL",
       description:
-        "Used for sitemap and robots file, should be the link to your finished website, e.g. https://www.erichowey.dev",
+        "The root url of your website, e.g. https://www.erichowey.dev",
+      validation: (Rule) => Rule.required(),
     },
   ],
 }

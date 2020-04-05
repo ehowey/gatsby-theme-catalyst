@@ -9,17 +9,17 @@ export default {
       description:
         "The name of the social media provider, e.g. Facebook or Instagram, email or e-mail also works.",
       type: "string",
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Link to",
       name: "link",
-      descrption: "The full link to your social media page or profile",
+      description: "The full link to your social media page or profile.",
       type: "url",
-      validation: Rule =>
+      validation: (Rule) =>
         Rule.required().uri({
           allowRelative: true,
-          scheme: ["https", "http", "mailto", "tel"],
+          scheme: ["https", "http", "mailto"],
         }),
     },
     {
@@ -35,7 +35,7 @@ export default {
           { title: "All", value: "all" },
         ], // <-- predefined values
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
   ],
 }

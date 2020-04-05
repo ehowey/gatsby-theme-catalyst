@@ -7,10 +7,7 @@ export const useThemeFromSanity = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allSanityTheme(
-          sort: { fields: _updatedAt, order: DESC }
-          filter: { useSanityThemeUI: { eq: true } }
-        ) {
+        allSanityTheme(sort: { fields: _updatedAt, order: DESC }) {
           nodes {
             colors {
               accent {

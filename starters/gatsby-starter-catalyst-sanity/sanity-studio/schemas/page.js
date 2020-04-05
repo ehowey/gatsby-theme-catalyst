@@ -5,26 +5,31 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Page Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
-      title: "Slug",
+      title: "Page Slug",
       type: "slug",
+      description:
+        "Used for your pages location in the site, e.g. a slug og 'work' ends up at mysite.com/work. While a slug of projects/awesome ends up at mysite.com/projects/awesome.",
       options: {
         source: "title",
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "featuredImage",
       title: "Featured Image",
+      description: "A featured image for your page.",
       type: "figure",
     },
     {
       name: "body",
-      title: "Body",
+      title: "Page Content",
       type: "blockContent",
     },
   ],

@@ -4,12 +4,6 @@ export default {
   type: "document",
   fields: [
     {
-      title: "Use Theme-UI From Sanity",
-      name: "useSanityThemeUI",
-      type: "boolean",
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: "Colors",
       name: "colors",
       description:

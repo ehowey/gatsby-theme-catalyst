@@ -21,14 +21,6 @@ export const query = graphql`
           name
           link
         }
-        featuredImage {
-          alt
-          asset {
-            fluid(maxHeight: 300) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
       }
     }
   }
