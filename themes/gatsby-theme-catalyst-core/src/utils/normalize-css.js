@@ -1,4 +1,4 @@
-//Implemention of normalize.css 8.0.1 for a standard css reset. Added in box-sizing: border-box and overflow-x: hidden.
+//Implemention of normalize.css 8.0.1 for a standard css reset. Added in box-sizing: border-box and overflow-x: hidden. Added in a removal on animations for prefers reduced motion media query.
 import React from "react"
 import { css, Global } from "@emotion/core"
 
@@ -33,6 +33,17 @@ const Normalize = () => {
           height: auto;
           clip: auto;
         }
+
+        /* Remove all animations and transitions for people that prefer not to see them */
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
+
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
         /* Document
@@ -48,6 +59,7 @@ const Normalize = () => {
           -webkit-text-size-adjust: 100%; /* 2 */
           box-sizing: border-box;
           overflow-x: hidden;
+          scroll-behavior: smooth;
         }
 
         *,
@@ -66,6 +78,8 @@ const Normalize = () => {
         body {
           margin: 0;
           padding: 0;
+          min-height: 100vh;
+          text-rendering: optimizeSpeed;
         }
 
         /**
