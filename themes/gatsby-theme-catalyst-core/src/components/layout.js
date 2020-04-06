@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { useEffect } from "react"
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav"
-import Normalize from "../utils/normalize-css"
+import GlobalCSS from "../utils/global-css"
 import SiteContainer from "./site-container"
 import Header from "./header"
 import Main from "./main"
@@ -25,7 +25,7 @@ const SiteLayout = ({ children }) => {
   }, []) // eslint-disable-line
   return (
     <Styled.root>
-      <Normalize />
+      <GlobalCSS />
       <SiteContainer>
         <SkipNavLink />
         <Header />
