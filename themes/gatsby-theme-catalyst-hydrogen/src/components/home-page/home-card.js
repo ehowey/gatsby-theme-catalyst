@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import Img from "gatsby-image"
+import { truncate } from "lodash"
 
 const Card = ({ title, image, publisher, date, link, excerpt }) => {
   return (
@@ -64,7 +65,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
             {title}
           </a>
         </Styled.h3>
-        <p>{excerpt.substring(0, 300) + "..."}</p>
+        <p>{truncate(excerpt, { length: 300, separator: " " })}</p>
         <a
           sx={{
             color: "text",

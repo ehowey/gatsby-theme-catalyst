@@ -5,19 +5,16 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Category Title",
       type: "string",
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "order",
       title: "Order",
       description: "Use numbers to specify the order e.g. 1 is ordered first",
       type: "number",
-      validation: Rule =>
-        Rule.required()
-          .integer()
-          .positive(),
+      validation: (Rule) => Rule.required().integer().positive(),
     },
   ],
   orderings: [
