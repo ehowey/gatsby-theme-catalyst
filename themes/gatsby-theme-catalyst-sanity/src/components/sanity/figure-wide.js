@@ -41,8 +41,9 @@ export default ({ node }) => {
         <figcaption
           sx={{
             color: "grey",
-            fontSize: 2,
+            fontSize: "small",
             textAlign: "center",
+            mt: 1,
           }}
         >
           {node.caption}

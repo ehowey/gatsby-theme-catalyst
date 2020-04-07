@@ -13,6 +13,7 @@ const NavUlDropdown = ({ children }) => {
         m: 0,
         p: 0,
         pt: isNavOpen ? 1 : 3,
+        px: 2,
         listStyle: "none",
         visibility: isNavOpen ? "visible" : "hidden",
         display: isNavOpen ? "block" : "none",

@@ -18,11 +18,12 @@ const ProjectsTemplate = ({ data }) => {
         <SEO title="Projects" />
         {projects.map((project) => (
           <article sx={{ my: 5 }} key={project.id}>
-            <Link
+            <Styled.a
+              as={Link}
               to={rootPath.concat(project.slug.current.replace(/\/*$/, `/`))}
             >
               <Styled.h2>{project.title}</Styled.h2>
-            </Link>
+            </Styled.a>
             <SanityContent data={project._rawExcerpt} />
           </article>
         ))}

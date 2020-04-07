@@ -73,7 +73,7 @@ module.exports = {
         // sanityPostPath: "/posts"
         // sanityProjectPath: "/projects"
         // useSanityTheme: false // Experimental right now
-        sanityProjectId: "22kiwqsd",
+        sanityProjectId: "p9a6h8j1",
       },
     },
 
