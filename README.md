@@ -67,18 +67,7 @@ Accessibility is important to me. I have made every effort to address accessibil
 
 This set of themes is developer focused and I assume you have a basic knowledge of the command line, GatsbyJS, web development, git, etc. If you are brand new check out the [getting started docs](https://www.gatsbyjs.org/docs/) for GatsbyJS.
 
-**Helpful Reading**:
-
-- [An Introduction to Gatsby Theme Catalyst](https://www.erichowey.dev/writing/introduction-to-gatsby-theme-catalyst/)
-- [Gatsby Theme Docs](https://www.gatsbyjs.org/docs/themes/)
-- [Using yarn workspaces with Gatsby themes](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
-- [Theme-UI Docs](https://theme-ui.com/)
-- [MDX Docs](https://mdxjs.com/)
-- [Component Shadowing in Gatsby Themes](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/)
-
-### Using a gatsby-starter to implement the themes
-
-All of these themes are available on NPM but the best way to get started is via a gatsby-starter that includes the theme(s) already. Currently the following starters are available:
+The best way to get started is via a gatsby-starter that includes the theme(s) already. Currently the following starters are available:
 
 **gatsby-starter-catalyst-core**:
 
@@ -91,6 +80,14 @@ All of these themes are available on NPM but the best way to get started is via 
 **gatsby-starter-catalyst-blog**:
 
 `gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog`
+
+**gatsby-starter-catalyst-sanity**:
+
+`gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-sanity`
+
+**gatsby-starter-catalyst-hydrogen**:
+
+`gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-hydrogen`
 
 ## Customizing the themes
 
@@ -408,9 +405,9 @@ export default merge(BaseTheme, {
 })
 ```
 
-- Depreciated `gatsby-theme-catalyst-writer` in favor of `gatsby-theme-catalyst-hydrogen`. If you were using the writer theme it will continue to work, and should work for a long time to come. If you want to migrate to hydrogen then it should be possible with a little effort as the expected data structures from SANITY were mainly unchanged.
+- Depreciated `gatsby-theme-catalyst-writer` in favor of `gatsby-theme-catalyst-hydrogen`. If you were using the writer theme it will continue to work, and should work for a long time to come. If you want to migrate to hydrogen then it will be possible with a little effort as the expected data structures from SANITY were unchanged. The main change you need to make is to ensure you have the same SANITY.io schema files in your site as in the theme as this is where the GraphQL query is generated from. If you are having trouble migrating please get in touch via issues and I will help you out.
 
-- This is technically not a breaking change but it could noticeably change your sites appearance. Base navigation styles were simplified in the structural themes and then added back in for the presentational themes using variants in the theme-ui file. You can see an example of this is `gatsby-theme-catalyst-hydrogen` if you would like to see how to do it on your site, look in `gatsby-theme-catalyst-hydrogen/src/gatsby-plugin-theme-ui/index.js`.
+- This is technically not a breaking change but it could change your sites appearance. Base navigation link styles were simplified in the structural themes and then added back in for the presentational themes using variants in the Theme-UI file. You can see an example of this in `gatsby-theme-catalyst-hydrogen` if you would like to see how to do it on your site, look in `gatsby-theme-catalyst-hydrogen/src/gatsby-plugin-theme-ui/index.js` towards the end of the file.
 
 **Removal of isMobile Context and mobileMenuBreakpoint**
 
