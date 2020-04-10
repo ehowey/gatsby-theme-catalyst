@@ -1,70 +1,74 @@
 import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
+import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 
 export default merge(BaseTheme, {
   // Modifications to the base theme go here. This is an example changing colors and using variants to change your navigation links. Uncomment the code below to see what happens.
-  // colors: {
-  //   background: "pink",
-  //   modes: {
-  //     dark: {
-  //       background: "purple",
-  //     },
-  //   },
-  // },
-  // variants: {
-  //   navLink: {
-  //     "::after": {
-  //       position: "absolute",
-  //       top: "100%",
-  //       left: "0",
-  //       width: "100%",
-  //       height: "1px",
-  //       backgroundColor: "primary",
-  //       content: "''",
-  //       opacity: "0",
-  //       transition: "height 0.3s, opacity 0.3s, transform 0.3s",
-  //       transform: "translateY(-6px)",
-  //     },
-  //     ":hover, :focus, :active": {
-  //       textDecoration: "none",
-  //     },
-  //     ":hover::after, :active::after, :focus::after": {
-  //       height: "4px",
-  //       opacity: "1",
-  //       transform: "translateY(0px)",
-  //     },
-  //   },
-  //   navLinkActive: {
-  //     textDecoration: "none",
-  //     "::after": {
-  //       position: "absolute",
-  //       top: "100%",
-  //       left: "0",
-  //       width: "100%",
-  //       height: "4px",
-  //       backgroundColor: "primary",
-  //       content: "''",
-  //       opacity: "1",
-  //       transform: "translateY(0px)",
-  //     },
-  //   },
-  //   navLinkSub: {
-  //     "::after": {
-  //       content: "none",
-  //     },
-  //     ":hover::after": {
-  //       content: "none",
-  //     },
-  //     ":hover, :focus, :active": {
-  //       color: "primary",
-  //     },
-  //   },
-  //   navLinkSubActive: {
-  //     textDecoration: "none",
-  //     color: "primary",
-  //     "::after": {
-  //       content: "none",
-  //     },
-  //   },
-  // },
+  colors: {
+    ...tailwind.colors,
+    background: baseColors.gray[1], //Try "#954264",
+    text: baseColors.gray[8],
+    primary: baseColors.blue[7],
+    secondary: baseColors.orange[7],
+    accent: baseColors.orange[2],
+    highlight: baseColors.orange[5],
+    muted: baseColors.gray[2],
+    header: {
+      background: baseColors.gray[2],
+      backgroundOpen: baseColors.blue[2],
+      text: baseColors.gray[8],
+      textOpen: baseColors.gray[8],
+      icons: baseColors.gray[6],
+      iconsOpen: baseColors.gray[8],
+    },
+    footer: {
+      background: "transparent",
+      text: baseColors.gray[8],
+      links: baseColors.gray[8],
+      icons: baseColors.gray[8],
+    },
+    // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
+    modes: {
+      dark: {
+        background: baseColors.gray[9],
+        text: baseColors.gray[1],
+        primary: "#458ad2",
+        secondary: baseColors.orange[7],
+        accent: baseColors.gray[8],
+        muted: baseColors.gray[8],
+        header: {
+          text: baseColors.gray[1],
+          textOpen: baseColors.gray[1],
+          background: "#232946",
+          backgroundOpen: baseColors.gray[8],
+          icons: baseColors.gray[1],
+          iconsOpen: baseColors.gray[1],
+        },
+        footer: {
+          background: "transparent",
+          text: baseColors.gray[1],
+          links: baseColors.gray[1],
+          icons: baseColors.gray[1],
+        },
+      },
+    },
+  },
+  sizes: {
+    ...tailwind.sizes,
+    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
+    headerHeight: "auto", // Provides fallback setting to control header height
+    logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
+    logoWidthS: "50px", // Logo width on small screens, 480px - 768px
+    logoWidthM: "50px", // Logo width on medium screens, 768px - 1024px
+    logoWidthL: "50px", // Logo width on large screens, 1024px - 1440px
+    logoWidthXL: "50px", // Logo width on extra large screens, above 1440px
+    logoHeightXS: "40px", // Logo height on extra small screens, up to 480px
+    logoHeightS: "50px", // Logo height on small screens, 480px - 768px
+    logoHeightM: "50px", // Logo height on medium screens, 768px - 1024px
+    logoHeightL: "50px", // Logo height on large screens, 1024px - 1440px
+    logoHeightXL: "50px", // Logo height on extra large screens, above 1440px
+    iconsFooter: "32px", // Sets the icons size for the footer
+    iconsHeader: "20px", // Sets the icons size for the header
+  },
 })

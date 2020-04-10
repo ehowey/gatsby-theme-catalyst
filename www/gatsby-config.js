@@ -37,11 +37,6 @@ module.exports = {
     ],
     socialLinks: [
       {
-        name: `Twitter`,
-        link: `https://twitter.com/erchwy`,
-        location: `all`, //Options are "all", "header", "footer"
-      },
-      {
         name: `Github`,
         link: `https://www.github.com/ehowey/gatsby-theme-catalyst`,
         location: `all`, //Options are "all", "header", "footer"
@@ -58,15 +53,14 @@ module.exports = {
         // displaySiteLogo: true,
         // displaySiteTitle: true,
         // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
+        displaySiteTitleMobile: false,
         // invertLogo: false,
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
-        //footerContentLocation: "left", // "left", "right", "center"
+        footerContentLocation: "right", // "left", "right", "center"
       },
     },
-    `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
     `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -77,7 +71,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#cccccc`,
         display: `minimal-ui`,
-        icon: `content/assets/catalyst-site-icon.png`, // This path is relative to the root of the site.
+        icon: `content/assets/catalyst-site-icon.jpg`, // This path is relative to the root of the site.
       },
     },
   ],
