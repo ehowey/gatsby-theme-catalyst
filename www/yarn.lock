@@ -6525,6 +6525,11 @@ gatsby-theme-catalyst-footer@^1.0.0-alpha.1:
   resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-footer/-/gatsby-theme-catalyst-footer-1.0.0-alpha.1.tgz#b586d834d359742e3bdb174409309f573be29b72"
   integrity sha512-sZ/RGrwCfh5CuHOtne9cF3SJeSPos9zcXpTdMf6wFMKKGI94e/yw/qLR2moDu6pkEqimfGiHE7MS8CmzdBWzUg==
 
+gatsby-theme-catalyst-header-side@^1.0.0-alpha.1:
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-header-side/-/gatsby-theme-catalyst-header-side-1.0.0-alpha.1.tgz#f9b98ffeb0b499ad335454ba30da3ef8ab5c4fe5"
+  integrity sha512-PAozIymN7MelsGdWBCXcGkIzXuNy7Jd5iao1dhJPWm+2dDLCBiXsBs9HTQEGCoY60X+LH1MQ4CKA1iVuqpl3DQ==
+
 gatsby-transformer-json@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.3.1.tgz#1415920c891f6b02a0118d43c6682e9e87f57835"

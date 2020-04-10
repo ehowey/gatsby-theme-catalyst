@@ -9,7 +9,7 @@ import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 const Hero = () => {
   const { logo } = useSiteMetadata()
   return (
-    <section
+    <header
       sx={{
         width: "100vw",
         position: "relative",
@@ -74,7 +74,7 @@ const Hero = () => {
           GitHub
         </Button>
       </div>
-    </section>
+    </header>
   )
 }
 

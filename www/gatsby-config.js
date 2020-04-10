@@ -48,7 +48,7 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
         //Default options are:
-        // contentPath: `content/pages`,
+        contentPath: `content/docs`,
         // assetPath: `content/assets`,
         // displaySiteLogo: true,
         // displaySiteTitle: true,
@@ -62,6 +62,7 @@ module.exports = {
       },
     },
     `gatsby-theme-catalyst-footer`,
+    `gatsby-theme-catalyst-header-side`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
