@@ -15,23 +15,6 @@ module.exports = {
         name: `Page 2`,
         link: `/page-2`,
         type: `internal`, //internal or anchor
-        subMenu: [
-          {
-            name: `Sub-1`,
-            link: `/sub`,
-            type: `internal`,
-          },
-          {
-            name: `Sub-2-Longer`,
-            link: `/sub`,
-            type: `internal`,
-          },
-          {
-            name: `Sub-1-Even-Longer-Still`,
-            link: `/sub`,
-            type: `internal`,
-          },
-        ],
       },
       {
         name: `Blog`,
