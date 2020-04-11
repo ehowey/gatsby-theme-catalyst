@@ -21,17 +21,93 @@ module.exports = {
     menuLinks: [
       {
         name: `Getting Started`,
-        link: `/getting-started`,
+        link: `/docs/getting-started`,
         type: `internal`, //internal or anchor
       },
       {
-        name: `Tutorials`,
-        link: `/tutorials`,
+        name: `Accessibility`,
+        link: `/docs/accessibility`,
         type: `internal`, //internal or anchor
       },
       {
-        name: `Docs`,
-        link: `/docs`,
+        name: `Contribution`,
+        link: `/docs/contribution`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `SEO`,
+        link: `/docs/seo`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Configuring Themes`,
+        link: `/docs/configuring-themes`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Layout Themes`,
+        link: `/docs/layout-themes`,
+        type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `gatsby-theme-catalyst-core`,
+            link: `docs/gatsby-theme-catalyst-core`,
+            type: `internal`,
+          },
+          {
+            name: `gatsby-theme-catalyst-header-top`,
+            link: `docs/gatsby-theme-catalyst-header-top`,
+            type: `internal`,
+          },
+          {
+            name: `gatsby-theme-catalyst-header-side`,
+            link: `docs/gatsby-theme-catalyst-header-side`,
+            type: `internal`,
+          },
+          {
+            name: `gatsby-theme-catalyst-footer`,
+            link: `docs/gatsby-theme-catalyst-footer`,
+            type: `internal`,
+          },
+        ],
+      },
+      {
+        name: `Data Themes`,
+        link: `/docs/data-themes`,
+        type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `gatsby-theme-catalyst-sanity`,
+            link: `docs/gatsby-theme-catalyst-sanity`,
+            type: `internal`,
+          },
+        ],
+      },
+      {
+        name: `Presentation Themes`,
+        link: `/docs/presentation-themes`,
+        type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `gatsby-theme-catalyst-hydrogen`,
+            link: `docs/gatsby-theme-catalyst-hydrogen`,
+            type: `internal`,
+          },
+        ],
+      },
+      {
+        name: `Migrating`,
+        link: `/docs/migrating`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Philosophy`,
+        link: `/docs/philosophy`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Acknowledgements`,
+        link: `/docs/acknowledgements`,
         type: `internal`, //internal or anchor
       },
     ],

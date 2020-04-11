@@ -950,7 +950,7 @@
     "@emotion/utils" "0.11.3"
     "@emotion/weak-memoize" "0.2.5"
 
-"@emotion/core@^10.0.0", "@emotion/core@^10.0.14":
+"@emotion/core@^10.0.0":
   version "10.0.28"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.28.tgz#bb65af7262a234593a9e952c041d0f1c9b9bef3d"
   integrity sha512-pH8UueKYO5jgg0Iq+AmCLxBsvuGtvlmiDCOuv8fGNYn3cowFpLN98L8zO56U0H1PjDIyAlXymgL3Wu7u7v6hbA==
@@ -1429,7 +1429,7 @@
     unist-builder "2.0.3"
     unist-util-visit "2.0.2"
 
-"@mdx-js/react@^1.0.0", "@mdx-js/react@^1.0.21", "@mdx-js/react@^1.5.8":
+"@mdx-js/react@^1.0.0", "@mdx-js/react@^1.5.8":
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.5.8.tgz#fc38fe0eb278ae24666b2df3c751e726e33f5fac"
   integrity sha512-L3rehITVxqDHOPJFGBSHKt3Mv/p3MENYlGIwLNYU89/iVqTLMD/vz8hL9RQtKqRoMbKuWpzzLlKIObqJzthNYg==
@@ -1710,17 +1710,6 @@
   integrity sha512-5M3uH5zShttu5k84OfCIWrFKFTrPdck/m/1iU/9i8CMM899mIu7VsVTgaUTKkOCMoreH2u+d7Y76j4Ur2ZMzEw==
   dependencies:
     prism-react-renderer "^1.0.2"
-
-"@theme-ui/sidenav@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.3.1.tgz#10cf5a2cf1ce76a56d895a200699e5134b2d73e3"
-  integrity sha512-jTgrYMSOXgzIcsFAf8X92rIq39JiHB1qlO4iwz2dHj2SNHKLlSvjFKh6QCTCaylhddz6virK+EswczI4Z0uc+w==
-  dependencies:
-    "@emotion/core" "^10.0.14"
-    "@mdx-js/react" "^1.0.21"
-    deepmerge "^4.0.0"
-    react "^16.8.6"
-    theme-ui "^0.3.1"
 
 "@theme-ui/theme-provider@^0.3.1":
   version "0.3.1"
@@ -6525,10 +6514,10 @@ gatsby-theme-catalyst-footer@^1.0.0-alpha.1:
   resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-footer/-/gatsby-theme-catalyst-footer-1.0.0-alpha.1.tgz#b586d834d359742e3bdb174409309f573be29b72"
   integrity sha512-sZ/RGrwCfh5CuHOtne9cF3SJeSPos9zcXpTdMf6wFMKKGI94e/yw/qLR2moDu6pkEqimfGiHE7MS8CmzdBWzUg==
 
-gatsby-theme-catalyst-header-side@^1.0.0-alpha.1:
-  version "1.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-header-side/-/gatsby-theme-catalyst-header-side-1.0.0-alpha.1.tgz#f9b98ffeb0b499ad335454ba30da3ef8ab5c4fe5"
-  integrity sha512-PAozIymN7MelsGdWBCXcGkIzXuNy7Jd5iao1dhJPWm+2dDLCBiXsBs9HTQEGCoY60X+LH1MQ4CKA1iVuqpl3DQ==
+gatsby-theme-catalyst-header-side@^1.0.0-alpha.2:
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-header-side/-/gatsby-theme-catalyst-header-side-1.0.0-alpha.2.tgz#a77bbad3496532b52b55d2a598703de0a2d516d6"
+  integrity sha512-fy8wF0A21YPFpKFs4t16tcl+YZ59IvXPZJWHBKYCgEFXbXvTknsicGymFQBQsEzuvgNM7Bn4FRJ9C840FSZPAg==
 
 gatsby-transformer-json@^2.3.1:
   version "2.3.1"
@@ -11248,7 +11237,7 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^2.0.1:
+prettier@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.4.tgz#2d1bae173e355996ee355ec9830a7a1ee05457ef"
   integrity sha512-SVJIQ51spzFDvh4fIbCLvciiDMCrRhlN3mbZvv/+ycjvmF5E73bKdGfU8QDLNmjYJf+lsGnDBC4UUnvTe5OO0w==
@@ -11689,7 +11678,7 @@ react-side-effect@^1.1.0:
   dependencies:
     shallowequal "^1.0.1"
 
-react@^16.13.1, react@^16.8.0, react@^16.8.6:
+react@^16.13.1, react@^16.8.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==

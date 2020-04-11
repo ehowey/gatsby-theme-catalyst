@@ -8,12 +8,12 @@
     "gatsby": "^2.20.10",
     "gatsby-theme-catalyst-core": "^1.0.0-alpha.3",
     "gatsby-theme-catalyst-footer": "^1.0.0-alpha.1",
-    "gatsby-theme-catalyst-header-side": "^1.0.0-alpha.1",
+    "gatsby-theme-catalyst-header-side": "^1.0.0-alpha.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "prettier": "^2.0.1"
+    "prettier": "^2.0.4"
   },
   "keywords": [
     "gatsby",

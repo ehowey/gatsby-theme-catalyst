@@ -58,13 +58,13 @@ export default merge(BaseTheme, {
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
     maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
     headerHeight: "auto", // Provides fallback setting to control header height
-    logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
-    logoWidthS: "40px", // Logo width on small screens, 480px - 768px
+    logoWidthXS: "50px", // Logo width on extra small screens, up to 480px
+    logoWidthS: "50px", // Logo width on small screens, 480px - 768px
     logoWidthM: "100px", // Logo width on medium screens, 768px - 1024px
     logoWidthL: "100px", // Logo width on large screens, 1024px - 1440px
     logoWidthXL: "100px", // Logo width on extra large screens, above 1440px
-    logoHeightXS: "40px", // Logo height on extra small screens, up to 480px
-    logoHeightS: "40px", // Logo height on small screens, 480px - 768px
+    logoHeightXS: "50px", // Logo height on extra small screens, up to 480px
+    logoHeightS: "50px", // Logo height on small screens, 480px - 768px
     logoHeightM: "100px", // Logo height on medium screens, 768px - 1024px
     logoHeightL: "100px", // Logo height on large screens, 1024px - 1440px
     logoHeightXL: "100px", // Logo height on extra large screens, above 1440px

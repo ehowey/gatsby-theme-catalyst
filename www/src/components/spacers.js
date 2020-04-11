@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import { MdChangeHistory } from "react-icons/md"
 
 export const TriangleVertical = () => {

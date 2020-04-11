@@ -2,7 +2,6 @@
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { Button } from "theme-ui"
-import { MdChangeHistory } from "react-icons/md"
 import Img from "gatsby-image"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 
@@ -46,34 +45,36 @@ const Hero = () => {
       <Styled.inlineCode sx={{ mb: 4 }}>
         gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
       </Styled.inlineCode>
-      <div
-        sx={{
-          display: "flex",
-          maxWidth: "maxContentWidth",
-        }}
-      >
-        <Button
-          as={Link}
-          to="/getting-started"
-          sx={{ bg: "accent", color: "black", mr: 3 }}
+      <nav>
+        <ul
+          sx={{
+            display: "flex",
+            maxWidth: "maxContentWidth",
+            m: 0,
+            p: 0,
+            listStyle: "none",
+          }}
         >
-          Getting Started
-        </Button>
-        <Button
-          as={Link}
-          to="/docs"
-          sx={{ bg: "accent", color: "black", mr: 3 }}
-        >
-          Docs
-        </Button>
-        <Button
-          as="a"
-          href="https://github.com/ehowey/gatsby-theme-catalyst"
-          sx={{ bg: "accent", color: "black" }}
-        >
-          GitHub
-        </Button>
-      </div>
+          <li>
+            <Button
+              as={Link}
+              to="/docs/getting-started"
+              sx={{ bg: "accent", color: "black", mr: 3 }}
+            >
+              Docs
+            </Button>
+          </li>
+          <li>
+            <Button
+              as="a"
+              href="https://github.com/ehowey/gatsby-theme-catalyst"
+              sx={{ bg: "accent", color: "black" }}
+            >
+              GitHub
+            </Button>
+          </li>
+        </ul>
+      </nav>
     </header>
   )
 }
