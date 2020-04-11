@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-catalyst-blog",
   "description": "Gatsby Starter: A basic implementation of Gatsby-Theme-Catalyst-Blog",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
@@ -9,7 +9,7 @@
     "gatsby-theme-catalyst-blog": "^1.0.0-alpha.1",
     "gatsby-theme-catalyst-core": "^1.0.0-alpha.3",
     "gatsby-theme-catalyst-footer": "^1.0.0-alpha.1",
-    "gatsby-theme-catalyst-header-side": "^1.0.0-alpha.1",
+    "gatsby-theme-catalyst-header-side": "^1.0.0-alpha.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
