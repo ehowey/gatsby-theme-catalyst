@@ -15,6 +15,9 @@ export default merge(BaseTheme, {
     logoHeightXL: "160px", // Logo height on extra large screens, above 1440px
   },
   variants: {
+    siteTitle: {
+      fontSize: [3, 4, null, 5, null],
+    },
     siteLogo: {
       borderRadius: "9999em",
       mb: 4,

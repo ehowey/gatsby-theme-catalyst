@@ -163,5 +163,9 @@ export default {
       padding: 2,
     },
   },
-  variants: {},
+  variants: {
+    siteTitle: {
+      fontSize: [3, 4, null, 5, null],
+    },
+  },
 }
