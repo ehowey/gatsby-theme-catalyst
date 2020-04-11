@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import HomeLayout from "../components/home-layout"
-import Hero from "../components/hero"
 import Features from "../components/features"
 import { TriangleVertical } from "../components/spacers"
 

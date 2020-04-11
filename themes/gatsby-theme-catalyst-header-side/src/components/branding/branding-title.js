@@ -34,7 +34,6 @@ const SiteTitle = () => {
         as="span"
         sx={{
           display: [displayPhone, null, displayLaptop, null, null],
-          fontSize: [4, null, null, 5, null],
           color: isNavOpen ? "header.textOpen" : "header.text",
           whiteSpace: "nowrap",
           flex: "0 0 auto",
