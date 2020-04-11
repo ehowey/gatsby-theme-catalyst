@@ -25,13 +25,13 @@ module.exports = {
         type: `internal`, //internal or anchor
       },
       {
-        name: `Accessibility`,
-        link: `/docs/accessibility`,
+        name: `Starters`,
+        link: `/docs/starters`,
         type: `internal`, //internal or anchor
       },
       {
-        name: `Contribution`,
-        link: `/docs/contribution`,
+        name: `Accessibility`,
+        link: `/docs/accessibility`,
         type: `internal`, //internal or anchor
       },
       {
@@ -43,6 +43,28 @@ module.exports = {
         name: `Configuring Themes`,
         link: `/docs/configuring-themes`,
         type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `Theme Options`,
+            link: `docs/theme-options`,
+            type: `internal`,
+          },
+          {
+            name: `Gatsby-Config.js`,
+            link: `docs/variants`,
+            type: `internal`,
+          },
+          {
+            name: `Theme-UI`,
+            link: `docs/theme-ui`,
+            type: `internal`,
+          },
+          {
+            name: `Component Shadowing`,
+            link: `docs/component-shadowing`,
+            type: `internal`,
+          },
+        ],
       },
       {
         name: `Layout Themes`,
@@ -103,6 +125,11 @@ module.exports = {
       {
         name: `Philosophy`,
         link: `/docs/philosophy`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Contribution`,
+        link: `/docs/contribution`,
         type: `internal`, //internal or anchor
       },
       {

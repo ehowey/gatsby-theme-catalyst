@@ -167,6 +167,7 @@ export default {
       ...prism,
       fontSize: 1,
       p: 3,
+      overflowX: "scroll",
     },
     table: {
       width: "100%",

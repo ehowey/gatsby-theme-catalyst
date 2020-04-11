@@ -1,0 +1,13 @@
+<SEO
+  title="Configuring Themes"
+  description="Gatsby Theme Catalyst was built from the ground up to be highly configurable and extendable. Feature flags and a theme specification are used throughout. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# Configuring Themes
+
+These are the primary ways you would customize your themes.
+
+- [Theme Options](/docs/theme-options): These act as feature flags or ways to communicate information into the themes. An example of a feature flag is `displaySiteLogo` which controls whether the logo is displayed or not. An example of passing data is `sanityDatasetId` which passes data from the theme through to `gatsby-source-sanity` to properly source your data.
+- [Gatsby-Config.js](/docs/gatsby-config): This is where your siteMetadata is located along with arrays like `menuLinks` and `socialLinks` which provide information to the themes.
+- [Theme-UI](docs/theme-ui): Theme UI provides a theme specification file which controls colors, fonts, spacing, design, etc. Variants allow for extendable CSS right in the theme file.
+- [Component Shadowing](docs/component-shadowing): Component shadowing allows you to completely rewrite or redesign an aspect of these themes in your starter. This is a very powerful development tool that is well documented in the main Gatsby docs.
