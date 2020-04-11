@@ -1,0 +1,47 @@
+<SEO
+  title="Branding"
+  description="Site branding including logos, colors, and fonts is easily modified in Gatsby Theme Catalyst. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# Branding
+
+See [Theme-UI](docs/theme-ui) for information on changing colors and fonts.
+
+## Logos
+
+### Changing logos and logo sizes
+
+The logo is found by default in the `src/content/assets` folder under the names `catalyst-site-logo.png`. Change this file to reflect your branding. You can use other file extensions, e.g. .jpg but you cannot change the file name. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-site-logo.jpg` but not with `logo-main.jpg`.
+
+The logo size is managed in the following location: `src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+
+Try this in `src/gatsby-plugin-theme-ui/index.js` for a big logo:
+
+```js
+  sizes: {
+    ...tailwind.sizes,
+    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
+    headerHeight: "auto", // Provides fallback setting to control header height
+    logoWidthXS: "80px", // Logo width on extra small screens, up to 480px
+    logoWidthS: "150px", // Logo width on small screens, 480px - 768px
+    logoWidthM: "150px", // Logo width on medium screens, 768px - 1024px
+    logoWidthL: "260px", // Logo width on large screens, 1024px - 1440px
+    logoWidthXL: "260px", // Logo width on extra large screens, above 1440px
+    logoHeightXS: "80px", // Logo height on extra small screens, up to 480px
+    logoHeightS: "150px", // Logo height on small screens, 480px - 768px
+    logoHeightM: "150px", // Logo height on medium screens, 768px - 1024px
+    logoHeightL: "260px", // Logo height on large screens, 1024px - 1440px
+    logoHeightXL: "260px", // Logo height on extra large screens, above 1440px
+    iconsFooter: "32px", // Sets the icons size for the footer
+    iconsHeader: "20px", // Sets the icons size for the header
+  },
+```
+
+### catalyst-site-social.png
+
+This file is used as the default image in places like Twitter and Facebook. This file is best in a 2:1 aspect ratio, something like 1200x600px. See the [twitter card docs](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image) for more information. You can use alternate image types such as .jpg if you want. It is queried by file name for those that know graphQL, not by relativePath. So it will work with `catalyst-social.jpg` but not with `social-image.jpg`.
+
+### catalyst-site-icon.png
+
+There is also a file called `catalyst-site-icon.png` that provides your icon for use `gatsby-plugin-manifest` to create icons for web, PWA, etc. This file should be square and at least 512x512px in dimensions.

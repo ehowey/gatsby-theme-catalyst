@@ -55,6 +55,11 @@ module.exports = {
             type: `internal`,
           },
           {
+            name: `Branding`,
+            link: `docs/branding`,
+            type: `internal`,
+          },
+          {
             name: `Theme-UI`,
             link: `docs/theme-ui`,
             type: `internal`,

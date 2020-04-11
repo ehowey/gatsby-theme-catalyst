@@ -1,0 +1,118 @@
+<SEO
+  title="Theme UI"
+  description="Theme UI controls most visual aspects of your themes, fonts, colors, spacing, etc. Variants also allow for some direct modifcation of the CSS in components. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# Theme-UI
+
+Theme-UI based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The theme is based on the [tailwind presets](https://github.com/system-ui/theme-ui/tree/master/packages/preset-tailwind) as this provides a good base set of standard spacings, sizings, etc. You will also see a reference to colors like `baseColors.pink[5]` in the theme file, these basecolors can be found on the [TailwindCSS docs](https://tailwindcss.com/docs/customizing-colors/).
+
+The file you should modify to set design tokens is always located in the following location:
+
+    .
+    ├── src
+      ├── gatsby-plugin-theme-ui
+        ├── index.js
+
+Try changing some colors in the file and see what happens!
+
+## Variants
+
+Most major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file. The following are some of the variants are available to use:
+
+- `variants.siteContainer`: Targets the container for the entire site content
+- `variants.main`: Targets the main component in the site, useful for changing spacing between header, footer, and main areas.
+- `variants.contentContainer`: Targets the container for the content, useful for changing site margins/content size.
+- `variants.header`: Targets the header component
+- `variants.footer`: Targets the footer component
+- `variants.siteLogo`: Targets the logo component
+- `variants.siteTitle`: Targets the root site title component, useful to change font size of the site title.
+- `variants.navLink`: Targets the styles for the nav links in the header, useful to change the nav styles
+- `variants.navLinkActive`: Targets the styles for the active nav links.
+
+Here is an example of changing the size of the site title using variants.
+
+```js
+variants: {
+    siteTitle: {
+      fontSize: [4, null, null, 5, null],
+    },
+  },
+```
+
+### Breakpoints
+
+Breakpoints are set using Theme-UI theme file and default to 480px, 768px, 1024px, and 1440px. The mobile menu is enabled at the 2nd breakpoint, 768px, but you can change this by changing the second breakpoint.
+
+```js
+breakpoints: ["480px", "768px", "1024px", "1440px"],
+```
+
+The array notation is used to target different screen sizes based on the breakpoints set in the theme file. You can use `null`, to inherit the previous value.
+
+```jsx
+<h1
+  sx={{
+    // 0-479px: Red
+    // 480px - 767px: Blue
+    // 768px - 1023px: Yellow
+    // 1024px - 1439px: Yellow
+    // 1440px and up: Pink
+    color: ["red", "blue", "yellow", null, "pink"],
+  }}
+>
+  Breakpoints
+</h1>
+```
+
+[Read more about breakpoints in theme-ui](https://theme-ui.com/theming/#breakpoints)
+
+### Typography and changing fonts
+
+To add a custom font you need to first add the font as a dependency in your starter site, for example:
+
+`yarn add typeface-raleway`
+
+Then at the top of `src/gatsby-plugin-theme-ui/index.js` file you will need to import the font and declare it, like this for Raleway:
+
+```jsx
+import { tailwind } from "@theme-ui/preset-tailwind"
+import "typeface-raleway"
+
+export default {
+  ...tailwind,
+  fonts: {
+    ...tailwind.fonts,
+    body: '"Raleway", sans-serif',
+  },
+}
+```
+
+### Changing logo sizes
+
+A common change you will need to make is to the logo size.
+
+The logo size is managed in the following location: `src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
+
+Try this in `src/gatsby-plugin-theme-ui/index.js` for a big logo:
+
+```js
+  sizes: {
+    ...tailwind.sizes,
+    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
+    headerHeight: "auto", // Provides fallback setting to control header height
+    logoWidthXS: "80px", // Logo width on extra small screens, up to 480px
+    logoWidthS: "150px", // Logo width on small screens, 480px - 768px
+    logoWidthM: "150px", // Logo width on medium screens, 768px - 1024px
+    logoWidthL: "260px", // Logo width on large screens, 1024px - 1440px
+    logoWidthXL: "260px", // Logo width on extra large screens, above 1440px
+    logoHeightXS: "80px", // Logo height on extra small screens, up to 480px
+    logoHeightS: "150px", // Logo height on small screens, 480px - 768px
+    logoHeightM: "150px", // Logo height on medium screens, 768px - 1024px
+    logoHeightL: "260px", // Logo height on large screens, 1024px - 1440px
+    logoHeightXL: "260px", // Logo height on extra large screens, above 1440px
+    iconsFooter: "32px", // Sets the icons size for the footer
+    iconsHeader: "20px", // Sets the icons size for the header
+  },
+```
