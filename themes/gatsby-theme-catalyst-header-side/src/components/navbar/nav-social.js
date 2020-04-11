@@ -13,7 +13,7 @@ const SocialWrapper = () => {
   return (
     <div
       sx={{
-        mt: 3,
+        mb: 4,
         display: "flex",
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",

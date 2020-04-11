@@ -11,19 +11,19 @@ const NavLayout = () => {
   return (
     <nav
       sx={{
-        mt: 4,
+        mt: 2,
         gridColumn: ["1 / -1", null, "1 / 1", null, null],
         gridRow: "2 / 3",
         display: isNavOpen ? "flex" : ["none", null, "flex", null, null],
         flexDirection: "column",
         alignItems: "center",
-        textAlign: "center",
+        variant: "variant.nav",
       }}
       role="navigation"
       aria-label="main-navigation"
     >
-      <NavLinks />
       <NavSocialLinks />
+      <NavLinks />
     </nav>
   )
 }

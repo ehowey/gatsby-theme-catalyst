@@ -20,7 +20,7 @@ export default merge(BaseTheme, {
     },
     siteLogo: {
       borderRadius: "9999em",
-      mb: 4,
+      mb: 2,
       boxShadow: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
     },
   },
