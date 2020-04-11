@@ -19,6 +19,7 @@ const Nav = () => {
         mt: isNavOpen ? 2 : 0,
         display: [isNavOpen ? "flex" : "none", null, "flex", null, null],
         flexDirection: ["column", null, "row", null, null],
+        variant: "variant.nav",
       }}
     >
       <NavLinks />
