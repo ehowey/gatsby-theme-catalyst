@@ -1,0 +1,28 @@
+name: Test Docs Site
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "www/**"
+      - ".github/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "starters/**"
+      - "themes/**"
+      - ".github/**"
+jobs:
+  test_docs:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Run Tests on Docs Site
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn workspace gatsby-catalyst-docs develop
+          wait-on: "http://localhost:8000"
+          wait-on-timeout: 120
+          spec: cypress/e2e/smoke.test.js
