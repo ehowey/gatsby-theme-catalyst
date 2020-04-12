@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "starters/*",
-    "themes/*"
+    "themes/*",
+    "www/"
   ],
   "name": "gatsby-theme-catalyst",
   "devDependencies": {
@@ -20,6 +21,7 @@
     "develop:blog": "yarn workspace gatsby-starter-catalyst-blog develop",
     "develop:sanity": "yarn workspace gatsby-starter-catalyst-sanity develop",
     "develop:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen develop",
+    "develop:www": "yarn workspace gatsby-catalyst-docs develop",
     "build:core": "yarn workspace gatsby-starter-catalyst-core build",
     "build:basic": "yarn workspace gatsby-starter-catalyst build",
     "build:blog": "yarn workspace gatsby-starter-catalyst-blog build",
@@ -31,6 +33,7 @@
     "clean:blog": "yarn workspace gatsby-starter-catalyst-blog clean",
     "clean:sanity": "yarn workspace gatsby-starter-catalyst-sanity clean",
     "clean:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen clean",
+    "clean:www": "yarn workspace gatsby-catalyst-docs clean",
     "test:core": "start-server-and-test develop:core http://localhost:8000 cy:open",
     "test:basic": "start-server-and-test develop:basic http://localhost:8000 cy:open",
     "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open",

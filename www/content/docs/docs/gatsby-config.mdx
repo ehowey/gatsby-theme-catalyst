@@ -1,0 +1,81 @@
+<SEO
+  title="Gatsby Config"
+  description="Gatsby Config is where the site metadata is managed and configured, including menu links and social links. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# Gatsby-Config.js
+
+Site metadata is set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options you can modify. Most of these are fairly standard and where possible I have included inline comments in the starters to help explain if needed. The `socialLinks` object and `menuLinks` object are a bit more complicated to support easier theme customization via the config file.
+
+#### Menu Links
+
+The `menuLinks` is fairly standard with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component or an anchor link using `react-scroll`. The options are `internal` or `anchor`.
+
+Example Config:
+
+```js
+menuLinks: [
+  {
+    name: `Page 1`,
+    link: `/page-1`,
+    type: `internal`, //internal or anchor
+  },
+  {
+    name: `Anchor 1`,
+    link: `#anchor-1`,
+    type: `anchor`, //internal or anchor
+  },
+]
+```
+
+You can also have a sub-menu or dropdown menu using `gatsby-theme-catalyst-header-top` and `internal` links only. You can see an example of this with `gatsby-starter-catalyst`. Eventually this feature will be expanded to other themes. At present it is _not_ working with anchor links.
+
+Example Config:
+
+```js
+menuLinks: [
+  {
+    name: `Page 1`,
+    link: `/page-1`,
+    type: `internal`, //internal or anchor
+    subMenu: [
+      {
+        name: `Sub 1`,
+        link: `/sub-1`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Sub 2`,
+        link: `/sub-2`,
+        type: `internal`, //internal or anchor
+      },
+    ],
+  },
+]
+```
+
+#### Social Links
+
+The `socialLinks` in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
+
+Example Config:
+
+```js
+socialLinks: [
+      {
+        name: `Email`,
+        link: `eric@erichowey.dev`,
+        location: `footer`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Github`,
+        link: `https://www.github.com/ehowey`,
+        location: `all`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Twitter`,
+        link: `https://www.twitter.com/erchwy`,
+        location: `header`, //Options are "all", "header", "footer"
+      },
+    ],
+```

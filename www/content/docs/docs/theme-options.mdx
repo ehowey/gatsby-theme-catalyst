@@ -1,0 +1,30 @@
+<SEO
+  title="Theme Options"
+  description="Theme options are used to pass data from gatsby-config.js to the themes and act as feature flags. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# Theme Options
+
+There are a number of options for the themes that act as flags to control various aspects of the site appearance and function. Try experimenting with these to get a feel for how it changes the site. The options for each theme are documented in the respective docs area for the themes. Most options are set via `gatsby-theme-catalyst-core`, however `gatsby-theme-catalyst-sanity` uses theme options extensively to control what pages are created by the theme.
+
+For example:
+
+```js
+{
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        //Default options are:
+        // contentPath: `content/pages`,
+        // assetPath: `content/assets`,
+        // displaySiteLogo: true,
+        // displaySiteTitle: true,
+        // displaySiteLogoMobile: true,
+        // displaySiteTitleMobile: true,
+        // invertLogo: false,
+        // useStickyHeader: false,
+        // useSocialLinks: true,
+        // useColorMode: true,
+        //footerContentLocation: "left", // "left", "right", "center"
+      },
+    },
+```

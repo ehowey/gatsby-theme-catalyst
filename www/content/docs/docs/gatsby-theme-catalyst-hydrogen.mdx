@@ -1,0 +1,41 @@
+<SEO
+  title="Gatsby-Theme-Catalyst-Hydrogen"
+  description="Gatsby Theme Catalyst Hydrogen is a complete theme and site built using Catalyst themes and SANITY.io as the CMS provider. It was designed for use by a freelance writer. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# gatsby-theme-catalyst-hydrogen
+
+This theme is for a complete site using multiple different themes layered together and data from SANITY.io. It is designed for a freelance writer or author. More information is coming.
+
+**Demos:**
+
+- [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.com/)
+
+**Catalyzing Start:**
+
+`gatsby new hydrogen https://github.com/ehowey/gatsby-starter-catalyst-hydrogen`
+
+## Theme Options
+
+| Option              | Values  | Description                                                                           |
+| ------------------- | ------- | ------------------------------------------------------------------------------------- |
+| sanityProjectId     | String  | Required, Sanity project ID                                                           |
+| sanityDataset       | String  | Defaults to "production", change to reflect the dataset name you are using in Sanity  |
+| sanityToken         | String  | Defaults to null, should only be used with env variables for security purposes.       |
+| sanityWatchMode     | Boolean | Defaults to true, toggle for watch mode                                               |
+| sanityOverlayDrafts | Boolean | Defaults to false, toggle for live previews, a token and private dataset is required. |
+| sanityCreatePages   | Boolean | Defaults to true, toggle to turn on/off page generation from SANITY.io.               |
+
+Example Config:
+
+```js
+   {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        displaySiteLogo: true,
+        displaySiteTitle: true,
+        invertLogo: true,
+        useStickyHeader: true,
+      }
+    }
+```
