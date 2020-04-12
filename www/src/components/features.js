@@ -52,15 +52,15 @@ const Features = () => {
         }}
       >
         <div>
-          <Styled.h3 sx={{ mb: 3 }}>Layout Themes</Styled.h3>
+          <Styled.h3 sx={{ mb: 4 }}>Layout Themes</Styled.h3>
           <Img fluid={data.layout.childImageSharp.fluid} />
         </div>
         <div>
-          <Styled.h3 sx={{ mb: 3 }}>Data Themes</Styled.h3>
+          <Styled.h3 sx={{ mb: 4 }}>Data Themes</Styled.h3>
           <Img fluid={data.sanity.childImageSharp.fluid} />
         </div>
         <div>
-          <Styled.h3 sx={{ mb: 3 }}>Presentation Themes</Styled.h3>
+          <Styled.h3 sx={{ mb: 4 }}>Presentation Themes</Styled.h3>
           <Img fluid={data.presentation.childImageSharp.fluid} />
         </div>
         <div>
