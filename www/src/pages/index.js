@@ -5,6 +5,7 @@ import Features from "../components/features"
 import Blocks from "../components/animated-blocks"
 import { TriangleVertical } from "../components/spacers"
 import { Link } from "gatsby"
+import { baseColors } from "@theme-ui/preset-tailwind"
 
 const HomePage = () => {
   return (
@@ -20,7 +21,11 @@ const HomePage = () => {
       <Features />
       <TriangleVertical />
       <div sx={{ display: "grid", placeItems: "center" }}>
-        <Button as={Link} to="/docs/getting-started">
+        <Button
+          as={Link}
+          sx={{ bg: baseColors.red[8], color: "white" }}
+          to="/docs/getting-started"
+        >
           BOOM! Get Started!
         </Button>
       </div>

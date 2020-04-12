@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { lighten } from "@theme-ui/color"
+import { baseColors } from "@theme-ui/preset-tailwind"
 
 const AnimatedBlocks = () => {
   return (
@@ -34,6 +35,7 @@ const AnimatedBlocks = () => {
             display: "grid",
             p: 2,
             mb: 2,
+            color: baseColors.gray[8],
           }}
         >
           <Styled.h4 as="p">Presentation Theme</Styled.h4>
@@ -51,6 +53,7 @@ const AnimatedBlocks = () => {
             display: "grid",
             p: 2,
             mb: 2,
+            color: baseColors.gray[8],
           }}
         >
           <Styled.h4 as="p">Data Theme</Styled.h4>
@@ -67,6 +70,7 @@ const AnimatedBlocks = () => {
             textAlign: "center",
             display: "grid",
             p: 2,
+            color: baseColors.gray[8],
           }}
         >
           <Styled.h4 as="p">Layout Themes</Styled.h4>

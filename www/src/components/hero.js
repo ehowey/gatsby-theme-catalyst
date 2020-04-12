@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { Button } from "theme-ui"
 import Img from "gatsby-image"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
+import { baseColors } from "@theme-ui/preset-tailwind"
 
 const Hero = () => {
   const { logo } = useSiteMetadata()
@@ -28,6 +29,7 @@ const Hero = () => {
         sx={{
           textTransform: "uppercase",
           fontSize: [6, 8, null, null, null],
+          color: baseColors.gray[8],
         }}
       >
         Gatsby Theme Catalyst
@@ -37,6 +39,7 @@ const Hero = () => {
           mt: -3,
           mb: 4,
           fontSize: [3, 4, null, null, null],
+          color: baseColors.gray[8],
         }}
       >
         Gatsby &nbsp;&&&nbsp; Theme-UI &nbsp;&&&nbsp; (&nbsp;MDX ||
