@@ -1,8 +1,10 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Button } from "theme-ui"
 import HomeLayout from "../components/home-layout"
 import Features from "../components/features"
+import Blocks from "../components/animated-blocks"
 import { TriangleVertical } from "../components/spacers"
+import { Link } from "gatsby"
 
 const HomePage = () => {
   return (
@@ -13,7 +15,15 @@ const HomePage = () => {
         <i>accelerate</i> your next Gatsby project.
       </Styled.h2>
       <TriangleVertical />
+      <Blocks />
+      <TriangleVertical />
       <Features />
+      <TriangleVertical />
+      <div sx={{ display: "grid", placeItems: "center" }}>
+        <Button as={Link} to="/docs/getting-started">
+          BOOM! Get Started!
+        </Button>
+      </div>
     </HomeLayout>
   )
 }

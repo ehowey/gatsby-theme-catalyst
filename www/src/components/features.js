@@ -1,7 +1,39 @@
 /** @jsx jsx */
 import { jsx, Styled, Grid } from "theme-ui"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Features = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        layout: file(relativePath: { eq: "gatsby-starter-catalyst.png" }) {
+          childImageSharp {
+            fluid(maxHeight: 512) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        sanity: file(relativePath: { eq: "gatsby-starter-sanity.png" }) {
+          childImageSharp {
+            fluid(maxHeight: 512) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        presentation: file(
+          relativePath: { eq: "gatsby-starter-hydrogen.png" }
+        ) {
+          childImageSharp {
+            fluid(maxHeight: 512) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+
   return (
     <div
       sx={{
@@ -12,7 +44,7 @@ const Features = () => {
       }}
     >
       <Grid
-        columns={[1, 1, 3, null, null]}
+        columns={[1, null, 2, 3, null]}
         gap={4}
         sx={{
           margin: "0 auto",
@@ -20,33 +52,37 @@ const Features = () => {
         }}
       >
         <div>
-          <Styled.h3>Layout Themes</Styled.h3>
+          <Styled.h3 sx={{ mb: 3 }}>Layout Themes</Styled.h3>
+          <Img fluid={data.layout.childImageSharp.fluid} />
+        </div>
+        <div>
+          <Styled.h3 sx={{ mb: 3 }}>Data Themes</Styled.h3>
+          <Img fluid={data.sanity.childImageSharp.fluid} />
+        </div>
+        <div>
+          <Styled.h3 sx={{ mb: 3 }}>Presentation Themes</Styled.h3>
+          <Img fluid={data.presentation.childImageSharp.fluid} />
+        </div>
+        <div>
+          <Styled.h3>Theme-UI</Styled.h3>
           <Styled.p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            porta dolor sed velit ullamcorper, in dignissim augue vulputate.
-            Nulla dolor nisl, lobortis eget ultrices sit amet, malesuada nec
-            dolor. Ut velit sapien, egestas ut lectus in, hendrerit malesuada
-            nulla. Suspendisse potenti.{" "}
+            Theme-UI is used extensively throughout Gatsby Theme Catalyst to
+            control most aspects of the visual design including fonts, colors,
+            spacing, etc.
           </Styled.p>
         </div>
         <div>
-          <Styled.h3>Feature Flags</Styled.h3>
+          <Styled.h3>MDX</Styled.h3>
           <Styled.p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            porta dolor sed velit ullamcorper, in dignissim augue vulputate.
-            Nulla dolor nisl, lobortis eget ultrices sit amet, malesuada nec
-            dolor. Ut velit sapien, egestas ut lectus in, hendrerit malesuada
-            nulla. Suspendisse potenti.{" "}
+            MDX is a first class citizen in Gatsby Theme Catalyst and the
+            default content authoring format.
           </Styled.p>
         </div>
         <div>
-          <Styled.h3>SANITY.io</Styled.h3>
+          <Styled.h3>Theme Options</Styled.h3>
           <Styled.p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            porta dolor sed velit ullamcorper, in dignissim augue vulputate.
-            Nulla dolor nisl, lobortis eget ultrices sit amet, malesuada nec
-            dolor. Ut velit sapien, egestas ut lectus in, hendrerit malesuada
-            nulla. Suspendisse potenti.{" "}
+            Theme options are used to make it easier to customize the themes or
+            pass information to source plugins.
           </Styled.p>
         </div>
       </Grid>
