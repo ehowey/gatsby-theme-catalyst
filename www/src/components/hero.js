@@ -5,6 +5,7 @@ import { Button } from "theme-ui"
 import Img from "gatsby-image"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import { baseColors } from "@theme-ui/preset-tailwind"
+import { darken } from "@theme-ui/color"
 
 const Hero = () => {
   const { logo } = useSiteMetadata()
@@ -65,7 +66,14 @@ const Hero = () => {
             <Button
               as={Link}
               to="/docs/getting-started"
-              sx={{ bg: "accent", color: "black", mr: 3 }}
+              sx={{
+                bg: "accent",
+                color: "black",
+                mr: 3,
+                ":hover": {
+                  bg: darken("accent", 0.03),
+                },
+              }}
             >
               Docs
             </Button>
@@ -74,7 +82,13 @@ const Hero = () => {
             <Button
               as="a"
               href="https://github.com/ehowey/gatsby-theme-catalyst"
-              sx={{ bg: "accent", color: "black" }}
+              sx={{
+                bg: "accent",
+                color: "black",
+                ":hover": {
+                  bg: darken("accent", 0.03),
+                },
+              }}
             >
               GitHub
             </Button>

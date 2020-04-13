@@ -5,9 +5,9 @@
 
 # SEO
 
-By default Gatsby provides excellent SEO out of the box. I have extended this with a custom SEO component based on [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) that provides basic open graph and metadata tags. It also provides a default social sharing image based on `catalyst-site-social.png`. The blog theme has a "featuredImage" field in the frontmatter which replaces the default social image. If a twitter profile is included in the `socialLinks` field in `gatsby-config.js` it automatically generates the correct metadata tags based on your profile.
+By default Gatsby provides excellent SEO out of the box. I have extended this with a custom SEO component based on [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) that provides basic open graph and metadata tags. It also provides a default social sharing image based on `catalyst-site-social.png`. The blog theme has a "featuredImage" field in the frontmatter which replaces the default social image. If a Twitter profile is included in the `socialLinks` field in `gatsby-config.js` it automatically generates the correct metadata tags based on your profile.
 
-MDX pages are automatically provided with an SEO component you can use to customize page metadata like the page title, description, and keywords.
+MDX pages are automatically provided with an SEO component (you don't need to import) to customize page metadata tags like the page title, description, and keywords.
 
 ```js
 <SEO title="SEO" description="Custom SEO page description" />
