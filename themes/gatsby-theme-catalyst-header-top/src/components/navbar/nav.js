@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import NavLinks from "./nav-links"
-import NavSocialLinks from "./nav-social"
+import NavIcons from "./nav-icons"
 
 const Nav = () => {
   const [isNavOpen] = useContext(NavContext)
@@ -23,7 +23,7 @@ const Nav = () => {
       }}
     >
       <NavLinks />
-      <NavSocialLinks />
+      <NavIcons />
     </nav>
   )
 }

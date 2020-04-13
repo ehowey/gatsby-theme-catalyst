@@ -19,9 +19,11 @@ export default merge(BaseTheme, {
 
 - Depreciated `gatsby-theme-catalyst-writer` in favor of `gatsby-theme-catalyst-hydrogen`. If you were using the writer theme it will continue to work, and should work for a long time to come. If you want to migrate to hydrogen then it should be possible with a little effort as the expected data structures from SANITY were mainly unchanged.
 
+**Other notable changes**
+
 - This is technically not a breaking change but it could noticeably change your sites appearance. Base navigation styles were simplified in the structural themes and then added back in for the presentational themes using variants in the theme-ui file. You can see an example of this is `gatsby-theme-catalyst-hydrogen` if you would like to see how to do it on your site, look in `gatsby-theme-catalyst-hydrogen/src/gatsby-plugin-theme-ui/index.js`.
 
-**Other changes**
+- Moved margin on from `contentContainer` to `<main>` to better reflect best practice. Spacing remains the same however is just on another element.
 
 - Added `gatsby-theme-catalyst-sanity` which acts as a "core" theme for additional SANITY.io integrations. This is functioning, with some ongoing improvements needed. Additional documentation will be coming.
 

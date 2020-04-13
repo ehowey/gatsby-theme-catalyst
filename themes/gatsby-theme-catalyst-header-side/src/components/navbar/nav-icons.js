@@ -1,14 +1,16 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import { SocialHeader } from "gatsby-theme-catalyst-core"
-import NavColorButton from "./nav-color-button"
+import { ColorModeButton } from "gatsby-theme-catalyst-core"
+import { IconContext } from "react-icons"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
   const { useColorMode } = useCatalystConfig()
+  const { theme } = useThemeUI()
 
   return (
     <div
@@ -17,7 +19,7 @@ const SocialWrapper = () => {
         display: "flex",
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",
-          mr: 2,
+          mr: isNavOpen ? 3 : 2,
           textDecoration: "none",
           display: "grid",
           placeItems: "center",
@@ -28,10 +30,19 @@ const SocialWrapper = () => {
         "a:hover": {
           color: "primary",
         },
+        button: {
+          color: isNavOpen ? "header.iconsOpen" : "header.icons",
+          ml: isNavOpen ? 3 : 2,
+          ":hover": {
+            color: "primary",
+          },
+        },
       }}
     >
-      <SocialHeader />
-      {useColorMode && <NavColorButton />}
+      <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
+        <SocialHeader />
+        {useColorMode && <ColorModeButton />}
+      </IconContext.Provider>
     </div>
   )
 }

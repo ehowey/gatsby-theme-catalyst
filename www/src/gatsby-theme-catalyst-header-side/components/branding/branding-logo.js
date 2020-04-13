@@ -6,8 +6,23 @@ import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import LinkWrapper from "gatsby-theme-catalyst-header-side/src/components/branding/branding-link-wrapper"
+import { useStaticQuery, graphql } from "gatsby"
 
 const SiteLogo = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        darklogo: file(relativePath: { eq: "catalyst-site-logo-dark.png" }) {
+          childImageSharp {
+            fluid(maxHeight: 512) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+  const darkLogo = data.darklogo.childImageSharp.fluid
   const { title, logo } = useSiteMetadata()
   const [isNavOpen] = useContext(NavContext)
   const { invertSiteLogo } = useCatalystConfig()
@@ -39,10 +54,10 @@ const SiteLogo = () => {
             (theme) => theme.sizes.logoWidthXL,
           ],
           mr: 2,
-          filter: isDark ? "invert(1)" : isNavOpen ? invertLogo : "none",
+          filter: isNavOpen ? invertLogo : "none",
           variant: "variants.siteLogo",
         }}
-        fluid={logo}
+        fluid={isDark ? darkLogo : logo}
         alt={title}
         imgStyle={{ objectFit: "contain" }}
       />
