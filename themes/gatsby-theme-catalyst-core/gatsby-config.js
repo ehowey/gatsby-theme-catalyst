@@ -92,6 +92,7 @@ module.exports = (themeOptions) => {
       `gatsby-transformer-yaml`,
       `gatsby-transformer-json`,
       `gatsby-plugin-sharp`,
+      `gatsby-plugin-catch-links`,
       `gatsby-plugin-theme-ui`,
       `gatsby-plugin-offline`,
     ],
