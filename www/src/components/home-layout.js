@@ -10,6 +10,7 @@ import { useLocation } from "@reach/router"
 import { HomeContext } from "gatsby-theme-catalyst-core"
 import { useContext } from "react"
 import Hero from "./hero"
+import { baseColors } from "@theme-ui/preset-tailwind"
 
 const SiteLayout = ({ children }) => {
   const [isHome, setIsHome] = useContext(HomeContext) // eslint-disable-line
@@ -23,7 +24,7 @@ const SiteLayout = ({ children }) => {
     }
   }, []) // eslint-disable-line
   return (
-    <Styled.root>
+    <Styled.root sx={{ bg: "#ffe4e4", color: baseColors.gray[8] }}>
       <GlobalCSS />
       <div
         sx={{

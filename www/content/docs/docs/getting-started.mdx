@@ -5,11 +5,13 @@
 
 # Getting Started
 
-These themes are developer focused and I assume you have a basic knowledge of the command line, GatsbyJS, web development, git, etc. If you are brand new check out the [getting started docs](https://www.gatsbyjs.org/docs/) for GatsbyJS.
+These themes are developer focused at this time and I assume you have a basic understanding of Gatsby and modern web development. If you are brand new I recommend beginning with the [getting started docs](https://www.gatsbyjs.org/docs/) for Gatsby and coming back here later!
 
-## Install the themes using a basic starter
+## Install the themes using a starter
 
-This uses a basic starter which is designed to be a boilerplate for further development and customization. It intentionally includes a minimal set of styles so that you do not have to "un-do" too much as a developer.
+This uses a barebones starter which is designed to be a boilerplate for further development and customization. It includes a minimal set of styles, utility components and core functionality like a mobile navigation menu. Content is authored in MDX.
+
+The themes included in this starter are [gatsby-theme-catalyst-core](/docs/gatsby-theme-catalyst-core), [gatsby-theme-catalyst-header-top](/docs/gatsby-theme-catalyst-header-top), and [gatsby-theme-catalyst-footer](/docs/gatsby-theme-catalyst-footer).
 
 ```shell
 # create a new Gatsby site using the basic starter
@@ -22,9 +24,37 @@ This uses a basic starter which is designed to be a boilerplate for further deve
 
 ## Update gatsby-config.js
 
-Update `siteMetadata` to include your own details, e.g. the site title. The starter has some preset placeholder data you can change.
+Open `gatsby-config.js` and update the placeholder data. Most fields are common to other Gatsby sites or documented with inline comments. You can read more about specialized fields like `socialLinks` in the [gatsby-config section](/docs/gatsby-config) of the docs.
 
-You will also notice `gatsby-theme-catalyst-core` accepts a number of theme options which are used as feature flags for the theme. Take a look at the plugin array and try toggling some of these feature flags on and off.
+## Change your logo and social image
+
+Replace `content/assets/catalyst-site-logo.png`, `content/assets/catalyst-site-social.png`, and `content/assets/catalyst-site-icon.png`. These files need to have the _same name_ but can have different file types, e.g. they could be `.jpg`.
+
+`catalyst-site-logo` is used as the logo on the actual web pages.
+
+`catalyst-site-icon` is used as the icon for the browser and offline mode.
+
+`catalyst-site-social` is used as a fallback social media image if there is not a featured image in the blog post or on a page.
+
+> You can also do this via component shadowing for a custom approach and future releases of Gatsby will enable a better way of doing this with React suspense.
+
+## Create some content
+
+By default content is authored using [MDX](https://www.gatsbyjs.org/docs/mdx/getting-started/). Go to `content/pages/index.mdx` to modify your home page. Note the SEO component on the top of the page which allows you to customize the metadata for each page.
+
+Try pasting in the following code into `index.mdx`:
+
+```md
+<SEO title="Home" description="My Home Page"/>
+
+# I am awesome
+
+Yes you are!
+```
+
+## Experiment with theme options
+
+You will also notice `gatsby-theme-catalyst-core` accepts a number of theme options which are used as feature flags for the theme. Take a look at the plugin array in `gatsby-config.js` and try changing some of these options.
 
 ```js
 {
@@ -46,19 +76,13 @@ You will also notice `gatsby-theme-catalyst-core` accepts a number of theme opti
     },
 ```
 
-## Update your branding
+## Experiment with Theme-UI
 
-Replace `content/assets/catalyst-site-logo.png`, `content/assets/catalyst-site-social.png`, and `content/assets/catalyst-site-icon.png`. These files need to have the _same name_ but can have different file types, e.g. they could be `.jpg`. Because we cannot currently (this will change) pass query variables in to GraphQL with Gatsby this is a workaround to allow you to easily change icons and logos on the site. If you are comfortable with file shadowing you could also just shadow `useSiteMetadata.js` and replace the image queries with your own.
+Open `src/gatsby-plugin-theme-ui/index.js`.
 
-`catalyst-site-logo` is used as the logo on the actual web pages.
+This is where you modify and change the theming for your site. You can read more about the [integration with Theme-UI](/docs/theme-ui) in the docs.
 
-`catalyst-site-icon` is used as the icon for the browser and offline mode.
-
-`catalyst-site-social` is used as a fallback social media image if there is not a featured image in the blog post or on a page.
-
-## Change the Theme-UI theme
-
-Open `src/gatsby-plugin-theme-ui/index.js`. This is where you modify and change the theming for Theme-UI. There is some commented code in there you can uncomment to see what happens. You will also notice a field called `variants`. Catalyst makes heavy use of [variants](https://theme-ui.com/guides/variants) throughout to allow you to change some aspects of the design and appearance without having to directly modify the file.
+Try copy and pasting the following code into your theme file to see what happens.
 
 ```js
 import { merge } from "theme-ui"
@@ -75,25 +99,29 @@ export default merge(BaseTheme, {
     },
   },
   variants: {
-    siteTitle: {
-      fontSize: [3, 4, null, 5, null],
+    navLinks: {
+      border: "5px solid red",
     },
   },
 })
 ```
 
-## Change the site header by switching themes
+## Experiment with switching headers by switching themes
 
-An integrated set of themes allows the ability to change whole aspects of the design by swapping out themes. Goto `gatsby-config.js` and change your header by changing the plugins array.
+An integrated set of themes enables the power to dramatically change whole aspects of the design by just swapping out themes. This still an emerging area in Gatsby Theme Catalyst but it is interesting to see the opportunities this pattern enables in site design.
+
+Goto `gatsby-config.js` and change your header just by changing the plugins array.
 
 ```js
 plugins: [
     ...
-    `gatsby-theme-catalyst-header-side`, // Changed from header-top
+    `gatsby-theme-catalyst-header-side`, // Remove gatsby-theme-catalyst-header-top
     ...
 ],
 ```
 
 ## Get building
 
-This gives you an idea of what is possible with Gatsby Theme Catalyst and a launching pad for developing your own site. You can read more in the documentation about further customizing your themes and site. For an example of a styled and complete site check out [gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen) which adds a data layer with SANITY.io and finished theming and components.
+This should give you an idea of what is possible with Gatsby Theme Catalyst and the launching pad it can provide when developing your own Gatsby site.
+
+You can read more in the documentation about [further customizing](/docs/configuring-themes) your themes and site. For an example of a styled and complete site check out [gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen) which adds a both a data layer (SANITY.io) and a presentation layer on top of the base starter covered here.

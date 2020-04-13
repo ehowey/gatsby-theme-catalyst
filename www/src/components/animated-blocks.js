@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import { lighten } from "@theme-ui/color"
 import { baseColors } from "@theme-ui/preset-tailwind"
+import { MdArrowUpward } from "react-icons/md"
 
 const AnimatedBlocks = () => {
   return (
@@ -12,16 +12,24 @@ const AnimatedBlocks = () => {
       }}
     >
       <Styled.h3 as="p" sx={{ mb: 0 }}>
+        Production Site
+      </Styled.h3>
+      <Styled.p sx={{ m: 0 }}>
+        <i>Branding, content, customization</i>
+      </Styled.p>
+      <MdArrowUpward sx={{ fontSize: 4, mb: 2 }} />
+      <Styled.h3 as="p" sx={{ m: 0 }}>
         Gatsby Starter
       </Styled.h3>
-      <Styled.p sx={{ mt: 0 }}>
-        <i>Branding, colors, fonts, site metadata</i>
+      <Styled.p sx={{ m: 0 }}>
+        <i>Packages themes together</i>
       </Styled.p>
+      <MdArrowUpward sx={{ fontSize: 4, mb: 2 }} />
       <div
         sx={{
           borderStyle: "dashed",
           borderWidth: "2px",
-          borderColor: "text",
+          borderColor: baseColors.gray[8],
           p: 3,
         }}
       >
@@ -29,7 +37,7 @@ const AnimatedBlocks = () => {
           sx={{
             width: "300px",
             height: "150px",
-            bg: "#fdbf69",
+            bg: "#fb8080",
             placeItems: "center",
             textAlign: "center",
             display: "grid",
@@ -47,7 +55,8 @@ const AnimatedBlocks = () => {
           sx={{
             width: "300px",
             height: "150px",
-            bg: lighten("#fdbf69", 0.1),
+            bg: "#fca473",
+            // bg: lighten("#fdbf69", 0.1),
             placeItems: "center",
             textAlign: "center",
             display: "grid",
@@ -65,7 +74,7 @@ const AnimatedBlocks = () => {
           sx={{
             width: "300px",
             height: "150px",
-            bg: lighten("#fdbf69", 0.2),
+            bg: "#fdba6b",
             placeItems: "center",
             textAlign: "center",
             display: "grid",

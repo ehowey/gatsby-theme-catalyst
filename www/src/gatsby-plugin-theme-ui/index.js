@@ -14,8 +14,8 @@ export default merge(BaseTheme, {
     highlight: baseColors.orange[5],
     muted: baseColors.gray[2],
     header: {
-      background: baseColors.gray[2],
-      backgroundOpen: baseColors.red[1],
+      background: "#ffe4e4",
+      backgroundOpen: baseColors.orange[1],
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
       icons: baseColors.gray[6],
