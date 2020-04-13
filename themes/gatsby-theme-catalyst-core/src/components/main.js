@@ -5,6 +5,7 @@ const SiteMain = ({ children }) => {
   return (
     <main
       sx={{
+        my: 3,
         gridArea: "main",
         variant: "variants.main",
       }}
