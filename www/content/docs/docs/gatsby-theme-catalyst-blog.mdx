@@ -1,0 +1,35 @@
+<SEO
+  title="Gatsby-Theme-Catalyst-Blog"
+  description="Gatsby Theme Catalyst Blog adds an MDX based blog on top of the core theme. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# gatsby-theme-catalyst-blog
+
+This theme adds a minimal blogging interface using MDX, similar to `gatsby-theme-blog-core` with some custom modifications. The theme can be added to any existing Catalyst based site and will add blog functionality. It is intended to be extended and customized via component shadowing.
+
+The main features of the blog theme are:
+
+- MDX based authoring
+- Minimal set of styles that is intended to be extended and customized through component shadowing of presentation components.
+- Support for a featured image on the blog post frontmatter. Improved SEO handling with these images, so when the posts are shared on social media the featured images are used.
+- Drafts flag in frontmatter so you can keep posts in your repo that are drafts and not built in the final site.
+- Ability to control the excerpt length used in post summaries.
+- Reading time support
+
+**Demos:**
+
+- [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)
+- [erichowey.dev](https://www.erichowey.dev/writing)
+
+**Catalyzing Start:**
+
+`gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog`
+
+## Theme Options
+
+| Option          | Values | Description                                                                             |
+| --------------- | ------ | --------------------------------------------------------------------------------------- |
+| `contentPath`   | String | Defaults to "content/posts", determines where the posts are created from.               |
+| `assetPath`     | String | Defaults to "content/assets", determines where the post assets like images are located. |
+| `basePath`      | String | Defaults to "/blog", determines the page location for the post list.                    |
+| `excerptLength` | String | Defaults to "140", determines the length of the excerpt use for post summaries.         |

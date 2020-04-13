@@ -66,23 +66,22 @@ const Features = () => {
         <div>
           <Styled.h3>Theme-UI</Styled.h3>
           <Styled.p>
-            Theme-UI is used extensively throughout Gatsby Theme Catalyst to
-            control most aspects of the visual design including fonts, colors,
-            spacing, etc.
+            Theme-UI gives you dashboard-like control your visual design through
+            key-value pairs including fonts, colors, spacing, etc.
           </Styled.p>
         </div>
         <div>
           <Styled.h3>MDX</Styled.h3>
           <Styled.p>
-            MDX is a first class citizen in Gatsby Theme Catalyst and the
-            default content authoring format.
+            MDX is a foundational part of Gatsby Theme Catalyst and the
+            suggested content authoring format.
           </Styled.p>
         </div>
         <div>
           <Styled.h3>Theme Options</Styled.h3>
           <Styled.p>
-            Theme options are used to make it easier to customize the themes or
-            pass information to source plugins.
+            Theme options are used as feature flags to enable quick changes your
+            design without having to rewrite code.
           </Styled.p>
         </div>
       </Grid>

@@ -45,13 +45,13 @@ module.exports = {
         type: `internal`, //internal or anchor
         subMenu: [
           {
-            name: `Theme Options`,
-            link: `docs/theme-options`,
+            name: `Gatsby-Config.js`,
+            link: `docs/variants`,
             type: `internal`,
           },
           {
-            name: `Gatsby-Config.js`,
-            link: `docs/variants`,
+            name: `Theme Options`,
+            link: `docs/theme-options`,
             type: `internal`,
           },
           {
@@ -103,6 +103,11 @@ module.exports = {
         link: `/docs/data-themes`,
         type: `internal`, //internal or anchor
         subMenu: [
+          {
+            name: `gatsby-theme-catalyst-blog`,
+            link: `docs/gatsby-theme-catalyst-blog`,
+            type: `internal`,
+          },
           {
             name: `gatsby-theme-catalyst-sanity`,
             link: `docs/gatsby-theme-catalyst-sanity`,

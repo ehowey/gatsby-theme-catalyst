@@ -5,11 +5,11 @@
 
 # Gatsby-Config.js
 
-Site metadata is set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options you can modify. Most of these are fairly standard and where possible I have included inline comments in the starters to help explain if needed. The `socialLinks` object and `menuLinks` object are a bit more complicated to support easier theme customization via the config file.
+Site metadata is set via the `gatsby-config.js` file. Specifically the navigation menu, social links menu, author name, site title, etc. The starter sites come with some pre-configured options you can modify. Most of these are fairly standard and where possible I have included inline comments in the starters to help explain.
 
-#### Menu Links
+## Menu Links
 
-The `menuLinks` is fairly standard with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component or an anchor link using `react-scroll`. The options are `internal` or `anchor`.
+The `menuLinks` array is fairly common in Gatsby sites with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component or an anchor link component using [react-scroll](https://github.com/fisshy/react-scroll). The options are `internal` or `anchor`. Submenus are only supported on internal links at this time.
 
 Example Config:
 
@@ -28,7 +28,7 @@ menuLinks: [
 ]
 ```
 
-You can also have a sub-menu or dropdown menu using `gatsby-theme-catalyst-header-top` and `internal` links only. You can see an example of this with `gatsby-starter-catalyst`. Eventually this feature will be expanded to other themes. At present it is _not_ working with anchor links.
+You can also have a sub-menu or dropdown menu. You can see an example of this with `gatsby-starter-catalyst`.
 
 Example Config:
 
@@ -54,9 +54,9 @@ menuLinks: [
 ]
 ```
 
-#### Social Links
+## Social Links
 
-The `socialLinks` in gatsby-config is a bit unique. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't pre-configured.
+The `socialLinks` array is a bit more unique and uncommon. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't found.
 
 Example Config:
 
