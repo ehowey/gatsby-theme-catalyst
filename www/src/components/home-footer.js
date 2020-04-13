@@ -1,15 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import {
   useSiteMetadata,
   useCatalystConfig,
   SocialFooter,
 } from "gatsby-theme-catalyst-core"
+import { IconContext } from "react-icons"
 import { baseColors } from "@theme-ui/preset-tailwind"
 
 const SiteFooter = () => {
   const { title } = useSiteMetadata()
   const { footerContentLocation } = useCatalystConfig()
+  const { theme } = useThemeUI()
   const isLeft = footerContentLocation === "left"
   const isRight = footerContentLocation === "right"
   const isCenter = footerContentLocation === "center"
@@ -45,7 +47,7 @@ const SiteFooter = () => {
         <div
           sx={{
             a: {
-              color: "footer.icons",
+              color: baseColors.gray[8],
               mr: 3,
             },
             "a:last-of-type": {
@@ -56,7 +58,9 @@ const SiteFooter = () => {
             },
           }}
         >
-          <SocialFooter />
+          <IconContext.Provider value={{ size: theme.sizes.iconsFooter }}>
+            <SocialFooter />
+          </IconContext.Provider>
         </div>
         <p sx={{ m: 0 }}>
           © {new Date().getFullYear()} {title}
