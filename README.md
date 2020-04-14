@@ -28,9 +28,9 @@ Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters
 - [www.briannasharpe.com](https://www.briannasharpe.com/) - Based on `gatsby-starter-catalyst-hydrogen`, [Github Repo](https://github.com/ehowey/briannasharpe)
 - [www.gatsbycatalyst.com](https://www.gatsbycatalyst.com) - Based on `gatsby-starter-catalyst` and `gatsby-theme-catalyst-header-side` with a custom index page.
 
-## Docs and Getting Started
+## Getting Started
 
-[Getting Started with Gatsby Theme Catalyst](https://www.gatsbycatalyst.com/docs/getting-started)
+[https://www.gatsbycatalyst.com/docs/getting-started](https://www.gatsbycatalyst.com/docs/getting-started)
 
 ## List of themes
 
