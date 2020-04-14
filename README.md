@@ -5,10 +5,11 @@
   Gatsby Theme Catalyst
 </h1>
 
-<h2 align="center"><i>Accelerate</i> your next Gatsby project</h2>
-<h2 align="center"><a href="https://www.gatsbycatalyst.com">www.gatsbycatalyst.com</a></h2>
-
 ![Cypress Tests](https://github.com/ehowey/gatsby-theme-catalyst/workflows/Test%20Themes/badge.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+
+<h3 align="center"><i>Accelerate</i> your next Gatsby project</h3>
+
+<h3 align="center"><a href="https://www.gatsbycatalyst.com">www.gatsbycatalyst.com</a></h3>
 
 The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) are an opinionated set of integrated themes and starters that can be used as a boilerplate to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
