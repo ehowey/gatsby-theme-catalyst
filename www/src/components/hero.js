@@ -1,14 +1,26 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Button } from "theme-ui"
 import Img from "gatsby-image"
-import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { darken } from "@theme-ui/color"
 
 const Hero = () => {
-  const { logo } = useSiteMetadata()
+  const data = useStaticQuery(
+    graphql`
+      query {
+        logo: file(relativePath: { eq: "catalyst-logo-c.png" }) {
+          childImageSharp {
+            fluid(maxHeight: 512) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+  const logo = data.logo.childImageSharp.fluid
   return (
     <header
       sx={{
