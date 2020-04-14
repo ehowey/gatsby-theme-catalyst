@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Gatsby Theme Catalyst" src="https://www.erichowey.dev/images/catalyst-logo-100.png" width="100" />
+    <img alt="Gatsby Theme Catalyst" src="https://www.gatsbycatalyst.com/images/catalyst-site-icon-100.png" width="100" />
 </p>
 <h1 align="center">
   Gatsby Theme Catalyst
@@ -9,7 +9,7 @@
 
 <h3 align="center"><i>Accelerate</i> your next Gatsby project<br /><a href="https://www.gatsbycatalyst.com">www.gatsbycatalyst.com</a></h3>
 
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) are an opinionated set of integrated themes and starters that can be used as a boilerplate to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
+Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters that can be used as a boilerplate to accelerate your next [Gatsby](https://www.gatsbyjs.org) project. There is a single "core" theme in which most dependencies and utility components are contained followed by progressively more styled and refined child themes and starters. These themes use [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
 **Catalyzing Start:**
 
