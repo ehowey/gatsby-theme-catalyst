@@ -5,7 +5,7 @@
   Gatsby Theme Catalyst
 </h1>
 
-![Cypress Tests](https://github.com/ehowey/gatsby-theme-catalyst/workflows/Test%20Themes/badge.svg) https://img.shields.io/npm/dm/gatsby-theme-catalyst-core [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+![Cypress Tests](https://github.com/ehowey/gatsby-theme-catalyst/workflows/Test%20Themes/badge.svg) ![npm](https://img.shields.io/npm/dm/gatsby-theme-catalyst-core) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 <h3 align="center"><i>Accelerate</i> your next Gatsby project<br /><a href="https://www.gatsbycatalyst.com">www.gatsbycatalyst.com</a></h3>
 
