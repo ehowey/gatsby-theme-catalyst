@@ -77,7 +77,7 @@ export default merge(BaseTheme, {
     },
     header: {
       py: [1, null, 0, 0, 0],
-      maxWidth: ["auto", null, "300px", "350px", "auto"],
+      maxWidth: ["auto", null, "300px", "350px", "400px"],
     },
   },
 })

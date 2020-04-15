@@ -30,8 +30,8 @@ module.exports = {
         type: `internal`, //internal or anchor
         subMenu: [
           {
-            name: `Using Gatsby Theme Catalyst Hydrogen`,
-            link: `docs/tutorials/using-gatsby-theme-catalyst-hydrogen`,
+            name: `Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen`,
+            link: `docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen`,
             type: `internal`,
           },
         ],

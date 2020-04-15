@@ -7,6 +7,10 @@
 
 This theme is for a complete site using multiple different themes layered together and data from SANITY.io. It is designed for a freelance writer or author.
 
+**Tutorial:**
+
+[Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen](/docs/tutorials/Building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen)
+
 **Demos:**
 
 - [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.com/)
@@ -30,12 +34,11 @@ Example Config:
 
 ```js
    {
-      resolve: `gatsby-theme-catalyst-core`,
+      resolve: `gatsby-theme-catalyst-hydrogen`,
       options: {
-        displaySiteLogo: true,
-        displaySiteTitle: true,
-        invertLogo: true,
-        useStickyHeader: true,
+        sanityProjectId: "abcd1234",
+        sanityDataset: "mydata",
+        sanityWatchMode: false,
       }
     }
 ```

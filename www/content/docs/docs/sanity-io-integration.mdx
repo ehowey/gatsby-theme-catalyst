@@ -5,4 +5,34 @@
 
 # SANITY.io Integration
 
-WIP
+Gatsby Theme Catalyst was designed from the ground up with headless CMS providers in mind. MDX is an amazing content authoring format, with one giant caveat, it isn't accessible to non-developers. Business owners and content creators need a Wordpress-like authoring experience with a GUI.
+
+There are a lot of amazing headless CMS products out there right now. SANITY.io was chosen due to the ability to commit their "content studio" to git, generous free pricing tier (and pay as you go afterwards), and preexisting integration with Gatsby Cloud for previews.
+
+This led to the creation of a core "data theme" for SANITY.io which is `gatsby-theme-catalyst-sanity`. This best analogy for this theme is that it is like a multi-tool; it does a lot of stuff well - but ultimately makes compromises in order to do-it-all.
+
+If you want to poke around in a code example and see how this is all done check out [gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen). This is an example of stacking layout themes, with a data theme, and then a final presentation theme.
+
+## What is working
+
+- **Separation of query components and presentation components:** This pattern enables easier shadowing of either the query or the presentation component in the final site to make it more straightforward to build distinct design elements without having to modify the data source. This is similar to the pattern used in `gatsby-theme-blog-core`.
+
+- **Theme options as feature flags:** Theme options like `sanityCreatePosts` act as feature flags in `gatsby-node.js` to control what pages are created by the theme. This allows you conditionally create or not create certain pages from the content studio.
+
+- **Site Settings:** Component shadowing is used to shadow the site metadata hook, `useSiteMetadata.js` to switch the data source of this hook. Instead of looking for the site title in `gatsby-config` it pulls this site title from SANITY.io.
+
+- **SEO:** Component shadowing is used again on the `seo.js` to replace default social sharing images and source relevant of data from SANITY.io
+
+- **Theme-UI Styles:** Styles (colors, fonts, spacing, etc) set in Theme-UI apply to content coming from SANITY.io.
+
+## What is experimental
+
+**Modifying Theme-UI From Sanity:** This is a WIP, there is a basic implementation of this working but there are limitations around dark mode and how multiple ThemeProvider components are merged together by Theme-UI. These challenges will be overcome allowing users to manage and control things like colors, fonts, spacing, etc from their SANITY.io dashboard.
+
+## What isn't working
+
+- **Gatsby-Plugin-Manifest:** This plugin still has to be manually configured in `gatsby-config.js`
+
+- **siteUrl:** This field still has to be completed in `gatsby-config.js` because it is used by other plugins to create `robots.txt` and `sitemap.xml`. Due to how this happens it isn't possible to pull this value from SANITY.io at this time.
+
+- **Fully custom data structure:** Because of the way GraphQL queries are constructed and deployed your are "locked in" to a minimal data structure because otherwise queries will start failing in your build. This is likely not an issue for small-medium sized sites. Larger and more complex sites are still going to want to setup a custom headless CMS backend and queries (and probably wouldn't use themes like this anyways).
