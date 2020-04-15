@@ -25,6 +25,18 @@ module.exports = {
         type: `internal`, //internal or anchor
       },
       {
+        name: `Tutorials`,
+        link: `/docs/tutorials`,
+        type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `Using Gatsby Theme Catalyst Hydrogen`,
+            link: `docs/tutorials/using-gatsby-theme-catalyst-hydrogen`,
+            type: `internal`,
+          },
+        ],
+      },
+      {
         name: `Starters`,
         link: `/docs/starters`,
         type: `internal`, //internal or anchor
@@ -37,6 +49,11 @@ module.exports = {
       {
         name: `SEO`,
         link: `/docs/seo`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `SANITY.io Integration`,
+        link: `/docs/sanity-io-integration`,
         type: `internal`, //internal or anchor
       },
       {

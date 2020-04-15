@@ -1,0 +1,146 @@
+<SEO
+  title="Using Gatsby Theme Catalyst Hydrogen"
+  description="A step-by-step tutorial for setting up Gatsby-Theme-Catalyst-Hydrogen, a theme for freelance writers and authors. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# Using Gatsby Theme Catalyst Hydrogen
+
+This is a theme for freelance writers and journalists who want a fast, easy to maintain, and elegant portfolio. The backend CMS is provided by [SANITY.io](https://www.sanity.io/). This tutorial assumes basic familiarity with Gatsby and web development in general.
+
+Here are two demos of the completed theme in action:
+
+- [https://gatsby-starter-catalyst-hydrogen.netlify.com](https://gatsby-starter-catalyst-hydrogen.netlify.com/) (raw starter)
+- [https://www.briannasharpe.com](https://www.briannasharpe.com/) (customized)
+
+## Install the theme using a starter
+
+```sh
+# create a new Gatsby site using the starter site
+gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-hydrogen
+```
+
+## Install SANITY.io
+
+```sh
+npm install -g @sanity/cli
+```
+
+## Initialize SANITY.io and setup your content studio
+
+```sh
+# Move to the starter directory
+cd catalyst-hydrogen
+# Move to the content studio directory
+cd sanity-studio
+# Initialize SANITY
+sanity init
+# Answer YES to reconfiguring the studio
+? The current folder contains a configured Sanity studio. Would you like to reconfigure it? Y
+# Register or login to SANITY following their prompts
+Good stuff, you are now authenticated. You will need a project to keep your
+datasets and collaborators safe and snug.
+# Create a new SANITY project
+? Select project to use (Use arrow keys)
+❯ Create new project
+# Give your project a name
+? Your project name: Catalyst Hydrogen
+# Use the default dataset configuration
+? Use the default dataset configuration? (Y/n) Y
+# Import starter dataset, select "production" dataset when prompted
+cd data
+sanity dataset import production.tar.gz
+# Deploy the graphql schema
+cd ..
+sanity graphql deploy
+# Start your studio on a localhost
+sanity start
+Content Studio successfully compiled! Go to http://localhost:3333
+```
+
+Congratulations! You should be looking at the new backend for your website! You can update data now or just leave it for later.
+
+## Update sanityProjectId
+
+In order to properly source your data you need to update the theme options for `gatsby-theme-catalyst-hydrogen` to give it the correct project id. The easiest way to do this is to open `sanity-studio/sanity.json` and at the top of the file you should see the project id like this:
+
+```json
+// In sanity.json
+  "api": {
+    "projectId": "c1x70rzt", // This is what you need
+    "dataset": "production"
+  },
+```
+
+Now open `gatsby-config.js` and update the theme option with the correct project id like this:
+
+```js
+    {
+      resolve: `gatsby-theme-catalyst-hydrogen`,
+      options: {
+        sanityProjectId: `c1x70rzt`, // Change this line
+      },
+    },
+```
+
+> You can also do this using [environment variables](https://www.gatsbyjs.org/docs/environment-variables/), if you setup a private dataset with a token you need to use environment variables to ensure it is not committed to your version control.
+
+## Run 'gatsby develop' for the first time
+
+Now that you have the content studio setup you are ready to fire up your site for the first time! Because of how SANITY.io is integrated it is normal for you to see some warnings in your console log about GraphQL queries, these are warnings only and not errors.
+
+```sh
+# Get back to your root directory from /sanity-studio
+cd ..
+# gatsby develop to start your development server
+gatsby develop
+```
+
+Nice work you did it! You can remove the folder `/sanity-studio/data` you don't need it anymore. And committing it to your git repo is unnecessary.
+
+## Deploy the content studio
+
+Right now the content studio is only locally deployed, which means you can change it from your computer however if you run `sanity deploy` inside of `catalyst-writer/sanity-studio` you can deploy it to a `https://studio-name.sanity.studio` domain for free making it accessible remotely.
+
+## Explore the SANITY.io content studio and add your own data
+
+The dataset you imported comes with placeholder data to get you started. Play around with the data and see what happens. You should see live updates on your local site in development mode because of [real time previews with watch mode](https://www.gatsbyjs.org/packages/gatsby-source-sanity/#real-time-content-preview-with-watch-mode). You may occassionally need to restart the Gatsby development server (`gatsby develop`) to see certain changes.
+
+## Push to GitHub and deploy your site
+
+There are a few different ways to do this and publish your website. This is what works best for me:
+
+1. [Push your files to a new GitHub repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
+1. [Build and Deploy with Gatsby Cloud](https://www.gatsbyjs.org/docs/deploying-to-gatsby-cloud/)
+
+## Setup a webhook to automatically redeploy when content updates
+
+Because your content is separate from the git repository you will need a webhook to ensure your site redeploys when the content in SANITY changes. Both Netlify and Gatsby have good information in their docs about using webhooks.
+
+```sh
+# Get back to your sanity folder
+cd sanity-studio
+# Setup the webhook, e.g. is for Netlify
+sanity hook create
+? Hook name: netlify
+? Select dataset hook should apply to: <yourDataset>
+? Hook URL: https://api.netlify.com/build_hooks/<someId>
+```
+
+## Setup siteUrl in gatsby-config.js
+
+Most site metadata is generated from SANITY however generating both `robots.txt` and `sitemap.xml` depend on a properly defined `siteUrl` field found in `gatsby-config.js`. There is also a field for this in your Site Settings within SANITY, you need to fill these both in.
+
+```js
+module.exports = {
+  siteMetadata: {
+    siteUrl: `https://www.example.com`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
+    ],
+  },
+}
+```
+
+## Next steps
+
+You will probably want to customize colors, fonts, and more. Most of these changes will happen in your Theme-UI theme file which is located at `src/gatsby-plugin-theme-ui/index.js`. Check out the [docs on Theme-UI](/docs/theme-ui) which will give you instructions on how to make these changes.
+
+I would love to hear about your results and see what you create!

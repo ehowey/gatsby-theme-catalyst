@@ -7,7 +7,7 @@ const NavUlDropdown = ({ children }) => {
       sx={{
         m: 0,
         p: 0,
-        pl: 2,
+        pl: 3,
         listStyle: "none",
       }}
       aria-label="submenu"

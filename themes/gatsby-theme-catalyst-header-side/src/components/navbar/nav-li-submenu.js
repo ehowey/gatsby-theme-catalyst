@@ -8,7 +8,13 @@ const NavLiDropdown = ({ children }) => {
   return (
     <li
       sx={{
+        lineHeight: "tight",
+        mb: 2,
+        ":last-child": {
+          mb: 0,
+        },
         a: {
+          p: 0,
           fontSize: 1,
           color: isNavOpen ? "header.textOpen" : "header.text",
           ":hover, :focus, :active": {
