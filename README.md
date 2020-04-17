@@ -32,6 +32,10 @@ Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters
 
 [https://www.gatsbycatalyst.com/docs/getting-started](https://www.gatsbycatalyst.com/docs/getting-started)
 
+## Docs
+
+[https://www.gatsbycatalyst.com/docs/](https://www.gatsbycatalyst.com/docs/)
+
 ## List of themes
 
 | Theme                                                                                                       | Demo                                                                                      | Description                                                                                                                                                                                                  |

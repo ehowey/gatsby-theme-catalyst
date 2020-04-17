@@ -36,6 +36,15 @@ const HomePage = () => {
       <TriangleVertical />
       <Features />
       <TriangleVertical />
+      <Styled.p
+        sx={{ fontSize: [3, null, 4, null, null], textAlign: "center" }}
+      >
+        <i>
+          <b>catalyst:</b> an agent that provokes or speeds significant change
+          or action
+        </i>
+      </Styled.p>
+
       <div sx={{ display: "grid", placeItems: "center" }}>
         <Button
           as={Link}

@@ -145,6 +145,11 @@ module.exports = {
         ],
       },
       {
+        name: `Browser Support`,
+        link: `/docs/browser-support`,
+        type: `internal`, //internal or anchor
+      },
+      {
         name: `Migrating`,
         link: `/docs/migrating`,
         type: `internal`, //internal or anchor
