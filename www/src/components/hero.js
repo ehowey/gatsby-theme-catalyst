@@ -1,26 +1,12 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import { Button } from "theme-ui"
-import Img from "gatsby-image"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { darken } from "@theme-ui/color"
+import catalystLogo from "../../content/assets/catalyst-svg-logo.svg"
 
 const Hero = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        logo: file(relativePath: { eq: "catalyst-logo-c.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
-  )
-  const logo = data.logo.childImageSharp.fluid
   return (
     <header
       sx={{
@@ -37,7 +23,11 @@ const Hero = () => {
         placeItems: "center",
       }}
     >
-      <Img sx={{ width: "180px" }} fluid={logo} />
+      <img
+        src={catalystLogo}
+        alt="Gatsby Theme Catalyst Logo"
+        sx={{ width: "180px" }}
+      />
       <Styled.h1
         sx={{
           textTransform: "uppercase",
