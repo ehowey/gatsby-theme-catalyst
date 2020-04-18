@@ -73,7 +73,7 @@ const Features = () => {
         }}
       >
         <div>
-          <Img fluid={data.layout.childImageSharp.fluid} />
+          <Img fluid={data.layout.childImageSharp.fluid} alt="Layout theme" />
           <Styled.h3 sx={{ mb: 4 }}>Layout Themes</Styled.h3>
           <Styled.p>
             Minimally styled themes that focus on layout, function, and utility
@@ -82,7 +82,10 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img fluid={data.sanity.childImageSharp.fluid} />
+          <Img
+            fluid={data.sanity.childImageSharp.fluid}
+            alt="Sanity Studio Dashboard"
+          />
           <Styled.h3 sx={{ mb: 4 }}>Data Themes</Styled.h3>
           <Styled.p>
             Adds an optional data structure on top of the layout themes to
@@ -91,7 +94,10 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img fluid={data.presentation.childImageSharp.fluid} />
+          <Img
+            fluid={data.presentation.childImageSharp.fluid}
+            alt="Presentation Theme"
+          />
           <Styled.h3 sx={{ mb: 4 }}>Presentation Themes</Styled.h3>
           <Styled.p>
             Adds visual components and specialized layouts like a custom home
@@ -100,7 +106,7 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img fluid={data.themeui.childImageSharp.fluid} />
+          <Img fluid={data.themeui.childImageSharp.fluid} alt="Theme UI Logo" />
           <Styled.h3>Theme-UI</Styled.h3>
           <Styled.p>
             Theme UI enables you to quickly customize the visual design of your
@@ -109,7 +115,7 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img fluid={data.mdx.childImageSharp.fluid} />
+          <Img fluid={data.mdx.childImageSharp.fluid} alt="MDX Logo" />
           <Styled.h3>MDX</Styled.h3>
           <Styled.p>
             MDX lets you seamlessly write JSX in your Markdown documents. It is
@@ -117,7 +123,10 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img fluid={data.themeoptions.childImageSharp.fluid} />
+          <Img
+            fluid={data.themeoptions.childImageSharp.fluid}
+            alt="Example of theme options"
+          />
           <Styled.h3>Theme Options</Styled.h3>
           <Styled.p>
             Theme options are used as feature flags to toggle small changes to

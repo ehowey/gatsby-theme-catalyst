@@ -31,7 +31,7 @@ module.exports = {
         subMenu: [
           {
             name: `Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen`,
-            link: `docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen`,
+            link: `/docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen`,
             type: `internal`,
           },
         ],
@@ -63,27 +63,27 @@ module.exports = {
         subMenu: [
           {
             name: `Gatsby-Config.js`,
-            link: `docs/variants`,
+            link: `/docs/variants`,
             type: `internal`,
           },
           {
             name: `Theme Options`,
-            link: `docs/theme-options`,
+            link: `/docs/theme-options`,
             type: `internal`,
           },
           {
             name: `Branding`,
-            link: `docs/branding`,
+            link: `/docs/branding`,
             type: `internal`,
           },
           {
             name: `Theme-UI`,
-            link: `docs/theme-ui`,
+            link: `/docs/theme-ui`,
             type: `internal`,
           },
           {
             name: `Component Shadowing`,
-            link: `docs/component-shadowing`,
+            link: `/docs/component-shadowing`,
             type: `internal`,
           },
         ],
@@ -95,22 +95,22 @@ module.exports = {
         subMenu: [
           {
             name: `gatsby-theme-catalyst-core`,
-            link: `docs/gatsby-theme-catalyst-core`,
+            link: `/docs/gatsby-theme-catalyst-core`,
             type: `internal`,
           },
           {
             name: `gatsby-theme-catalyst-header-top`,
-            link: `docs/gatsby-theme-catalyst-header-top`,
+            link: `/docs/gatsby-theme-catalyst-header-top`,
             type: `internal`,
           },
           {
             name: `gatsby-theme-catalyst-header-side`,
-            link: `docs/gatsby-theme-catalyst-header-side`,
+            link: `/docs/gatsby-theme-catalyst-header-side`,
             type: `internal`,
           },
           {
             name: `gatsby-theme-catalyst-footer`,
-            link: `docs/gatsby-theme-catalyst-footer`,
+            link: `/docs/gatsby-theme-catalyst-footer`,
             type: `internal`,
           },
         ],
@@ -122,12 +122,12 @@ module.exports = {
         subMenu: [
           {
             name: `gatsby-theme-catalyst-blog`,
-            link: `docs/gatsby-theme-catalyst-blog`,
+            link: `/docs/gatsby-theme-catalyst-blog`,
             type: `internal`,
           },
           {
             name: `gatsby-theme-catalyst-sanity`,
-            link: `docs/gatsby-theme-catalyst-sanity`,
+            link: `/docs/gatsby-theme-catalyst-sanity`,
             type: `internal`,
           },
         ],
@@ -139,7 +139,7 @@ module.exports = {
         subMenu: [
           {
             name: `gatsby-theme-catalyst-hydrogen`,
-            link: `docs/gatsby-theme-catalyst-hydrogen`,
+            link: `/docs/gatsby-theme-catalyst-hydrogen`,
             type: `internal`,
           },
         ],
