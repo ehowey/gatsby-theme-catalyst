@@ -17,7 +17,7 @@ gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog
 
 **Demo**
 
-[https://gatsby-starter-catalyst-blog.netlify.com/](https://gatsby-starter-catalyst-blog.netlify.com/)
+[https://gatsby-starter-catalyst-blog.netlify.app/](https://gatsby-starter-catalyst-blog.netlify.app/)
 
 ## Blog theme options
 

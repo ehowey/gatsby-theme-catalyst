@@ -1,10 +1,10 @@
 # Gatsby Theme Catalyst Core
 
-This acts as a core theme on which all other themes are based. It houses a basic site architecture, as much logic as possible, along with most dependencies. Imagine this as the foundation of a house. There are some latent components which are used to enable easy shadowing in child themes. There are minimal styles applied at this stage. For an example of what this can look like when finished with styles and other themes check out - [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.com/).
+This acts as a core theme on which all other themes are based. It houses a basic site architecture, as much logic as possible, along with most dependencies. Imagine this as the foundation of a house. There are some latent components which are used to enable easy shadowing in child themes. There are minimal styles applied at this stage. For an example of what this can look like when finished with styles and other themes check out - [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.app/).
 
 **Demos:**
 
-- [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.com/)
+- [gatsby-starter-catalyst-core](https://gatsby-starter-catalyst-core.netlify.app/)
 
 ## Theme Options
 

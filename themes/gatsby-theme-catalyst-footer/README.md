@@ -10,7 +10,7 @@ Control the content location using the `footerContentLocation` option in `gatsby
 
 **Demos:**
 
-- [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.com/)
+- [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.app/)
 - [https://www.erichowey.dev/](https://www.erichowey.dev/)
 
 ## About Gatsby Theme Catalyst

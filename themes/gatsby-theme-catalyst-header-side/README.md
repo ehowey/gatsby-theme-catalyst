@@ -8,7 +8,7 @@ Sibling theme for `gatsby-theme-catalyst-core` which adds a sidebar header using
 
 **Demos:**
 
-- [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.com/)
+- [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.app/)
 
 ## About Gatsby Theme Catalyst
 

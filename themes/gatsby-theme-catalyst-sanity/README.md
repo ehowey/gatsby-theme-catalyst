@@ -10,7 +10,7 @@ Sibling theme for `gatsby-theme-catalyst-core` which adds a SANITY.io.
 
 **Demos:**
 
-- [gatsby-starter-catalyst-sanity](https://gatsby-starter-catalyst-sanity.netlify.com/)
+- [gatsby-starter-catalyst-sanity](https://gatsby-starter-catalyst-sanity.netlify.app/)
 
 ## About Gatsby Theme Catalyst
 

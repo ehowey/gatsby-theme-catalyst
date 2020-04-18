@@ -8,7 +8,7 @@ This is a full-featured theme that ties together the core theme, header and foot
 
 **Demos:**
 
-- [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.com/)
+- [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.app/)
 - [www.briannasharpe.com](https://www.briannasharpe.com)
 
 **Catalyzing Start**

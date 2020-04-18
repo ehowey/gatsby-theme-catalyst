@@ -17,7 +17,7 @@ gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
 
 **Demo**
 
-[https://gatsby-starter-catalyst.netlify.com/](https://gatsby-starter-catalyst.netlify.com/)
+[https://gatsby-starter-catalyst.netlify.app/](https://gatsby-starter-catalyst.netlify.app/)
 
 ## About Gatsby Theme Catalyst
 

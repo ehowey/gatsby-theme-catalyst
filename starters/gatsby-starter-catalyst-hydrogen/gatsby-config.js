@@ -6,7 +6,7 @@ module.exports = {
     description: `Placeholder description`, // Sourced from SANITY
     keywords: [`keyword 1`, `keyword 2`, `keyword 3`], // Sourced from SANITY
     author: `Placeholder author`, // Sourced from SANITY
-    siteUrl: `https://gatsby-starter-catalyst-hydrogen.netlify.com`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
+    siteUrl: `https://gatsby-starter-catalyst-hydrogen.netlify.app`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
       // Sourced from SANITY
       {
