@@ -21,7 +21,7 @@ const ColorModeButton = () => {
         setColorMode(next)
       }}
     >
-      {colorMode === "light" ? <FiMoon /> : <FiSun />}
+      {colorMode === "dark" ? <FiSun /> : <FiMoon />}
     </IconButton>
   )
 }
