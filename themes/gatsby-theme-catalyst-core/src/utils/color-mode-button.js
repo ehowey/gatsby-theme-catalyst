@@ -4,7 +4,7 @@ import { FiSun, FiMoon } from "react-icons/fi"
 
 const ColorModeButton = () => {
   const [colorMode, setColorMode] = useColorMode()
-
+  console.log(colorMode)
   return (
     <IconButton
       sx={{
@@ -17,7 +17,8 @@ const ColorModeButton = () => {
       }}
       aria-label="Toggle dark mode"
       onClick={(e) => {
-        setColorMode(colorMode === "light" ? "dark" : "light")
+        const next = colorMode === "dark" ? "light" : "dark"
+        setColorMode(next)
       }}
     >
       {colorMode === "light" ? <FiMoon /> : <FiSun />}
