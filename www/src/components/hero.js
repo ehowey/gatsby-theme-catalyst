@@ -67,7 +67,7 @@ const Hero = () => {
           <li>
             <Button
               as={Link}
-              to="/docs/getting-started"
+              to="/docs/"
               sx={{
                 bg: "accent",
                 color: "black",

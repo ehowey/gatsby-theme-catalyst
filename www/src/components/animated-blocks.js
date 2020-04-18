@@ -48,7 +48,7 @@ const AnimatedBlocks = () => {
         >
           <Styled.h4 as="p">Presentation Theme</Styled.h4>
           <Styled.p>
-            <i>Visual components, custom layouts and pages functions</i>
+            <i>Visual design, custom layouts and components</i>
           </Styled.p>
         </div>
         <div
@@ -56,7 +56,6 @@ const AnimatedBlocks = () => {
             width: "300px",
             height: "150px",
             bg: "#fca473",
-            // bg: lighten("#fdbf69", 0.1),
             placeItems: "center",
             textAlign: "center",
             display: "grid",
@@ -67,7 +66,7 @@ const AnimatedBlocks = () => {
         >
           <Styled.h4 as="p">Data Theme</Styled.h4>
           <Styled.p>
-            <i>Optional, add SANITY.io as a backend or just use MDX</i>
+            <i>Optional, add a backend data source or just use MDX</i>
           </Styled.p>
         </div>
         <div
