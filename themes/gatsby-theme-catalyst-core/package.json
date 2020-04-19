@@ -24,7 +24,7 @@
     "gatsby-plugin-sitemap": "^2.3.4",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-remark-copy-linked-files": "^2.2.1",
-    "gatsby-remark-images": "^3.2.1",
+    "gatsby-remark-images": "^3.2.4",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-smartypants": "^2.2.1",
     "gatsby-source-filesystem": "^2.2.4",
