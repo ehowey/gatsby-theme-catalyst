@@ -7,7 +7,7 @@
     "@mdx-js/mdx": "^1.5.8",
     "@mdx-js/react": "^1.5.8",
     "@pauliescanlon/gatsby-mdx-embed": "^0.0.17",
-    "@reach/skip-nav": "^0.9.0",
+    "@reach/skip-nav": "^0.10.0",
     "@theme-ui/color": "^0.3.1",
     "@theme-ui/preset-tailwind": "^0.3.0",
     "@theme-ui/prism": "^0.3.0",
