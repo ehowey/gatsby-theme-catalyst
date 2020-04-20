@@ -34,6 +34,11 @@ module.exports = {
             link: `/docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen`,
             type: `internal`,
           },
+          {
+            name: `Setting up gatsby-theme-catalyst-sanity`,
+            link: `/docs/tutorials/setting-up-gatsby-theme-catalyst-sanity`,
+            type: `internal`,
+          },
         ],
       },
       {
