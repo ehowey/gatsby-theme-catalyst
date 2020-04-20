@@ -1,6 +1,31 @@
 const remarkSlug = require("remark-slug")
 
 module.exports = (themeOptions) => {
+  const configGatsbyRemarkPlugins = [
+    { resolve: `gatsby-remark-relative-images` },
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 1440,
+        linkImagesToOriginal: false,
+        withWebp: true,
+        backgroundColor: `transparent`,
+      },
+    },
+    {
+      resolve: `gatsby-remark-copy-linked-files`,
+      options: {
+        destinationDir: themeOptions.assetPath || `content/assets`,
+      },
+    },
+    { resolve: `gatsby-remark-smartypants` },
+    { resolve: `gatsby-remark-reading-time` },
+  ]
+  if (themeOptions.useGatsbyPluginNormalizePaths === true) {
+    configGatsbyRemarkPlugins.push({
+      resolve: `gatsby-plugin-normalize-paths`,
+    })
+  }
   return {
     siteMetadata: {
       title: `Placeholder title`,
@@ -51,25 +76,7 @@ module.exports = (themeOptions) => {
           defaultLayouts: {
             default: require.resolve("./src/components/layout.js"),
           },
-          gatsbyRemarkPlugins: [
-            {
-              resolve: `gatsby-remark-images`,
-              options: {
-                maxWidth: 1440,
-                linkImagesToOriginal: false,
-                withWebp: true,
-                backgroundColor: `transparent`,
-              },
-            },
-            {
-              resolve: `gatsby-remark-copy-linked-files`,
-              options: {
-                destinationDir: `content/assets`,
-              },
-            },
-            { resolve: `gatsby-remark-smartypants` },
-            { resolve: `gatsby-remark-reading-time` },
-          ],
+          gatsbyRemarkPlugins: configGatsbyRemarkPlugins,
           remarkPlugins: [remarkSlug],
           plugins: [
             {
