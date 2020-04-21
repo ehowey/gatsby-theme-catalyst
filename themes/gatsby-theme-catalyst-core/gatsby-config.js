@@ -1,31 +1,11 @@
 const remarkSlug = require("remark-slug")
 
 module.exports = (themeOptions) => {
-  const configGatsbyRemarkPlugins = [
-    { resolve: `gatsby-remark-relative-images` },
-    {
-      resolve: `gatsby-remark-images`,
-      options: {
-        maxWidth: 1440,
-        linkImagesToOriginal: false,
-        withWebp: true,
-        backgroundColor: `transparent`,
-      },
-    },
-    {
-      resolve: `gatsby-remark-copy-linked-files`,
-      options: {
-        destinationDir: themeOptions.assetPath || `content/assets`,
-      },
-    },
-    { resolve: `gatsby-remark-smartypants` },
-    { resolve: `gatsby-remark-reading-time` },
-  ]
-  if (themeOptions.useGatsbyPluginNormalizePaths === true) {
-    configGatsbyRemarkPlugins.push({
-      resolve: `gatsby-plugin-normalize-paths`,
-    })
-  }
+  const remarkImagesWidth =
+    themeOptions.remarkImagesWidth == null
+      ? 1440
+      : parseInt(themeOptions.remarkImagesWidth)
+  console.log(remarkImagesWidth)
   return {
     siteMetadata: {
       title: `Placeholder title`,
@@ -76,13 +56,39 @@ module.exports = (themeOptions) => {
           defaultLayouts: {
             default: require.resolve("./src/components/layout.js"),
           },
-          gatsbyRemarkPlugins: configGatsbyRemarkPlugins,
+          gatsbyRemarkPlugins: [
+            {
+              resolve: `gatsby-remark-relative-images`,
+              options: {
+                name: `images`,
+              },
+            },
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: remarkImagesWidth,
+                linkImagesToOriginal: false,
+                withWebp: true,
+                backgroundColor: `transparent`,
+              },
+            },
+            {
+              resolve: `gatsby-remark-copy-linked-files`,
+              options: {
+                destinationDir: themeOptions.assetPath || `content/assets`,
+              },
+            },
+            { resolve: `gatsby-remark-smartypants` },
+            { resolve: `gatsby-remark-reading-time` },
+            { resolve: `gatsby-remark-responsive-iframe` },
+            { resolve: `gatsby-remark-external-links` },
+          ],
           remarkPlugins: [remarkSlug],
           plugins: [
             {
               resolve: `gatsby-remark-images`,
               options: {
-                maxWidth: 1440,
+                maxWidth: remarkImagesWidth,
                 linkImagesToOriginal: false,
                 withWebp: true,
                 backgroundColor: `transparent`,
@@ -102,6 +108,6 @@ module.exports = (themeOptions) => {
       `gatsby-plugin-catch-links`,
       `gatsby-plugin-theme-ui`,
       `gatsby-plugin-offline`,
-    ],
+    ].filter(Boolean),
   }
 }
