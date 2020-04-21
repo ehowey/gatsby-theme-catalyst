@@ -1,22 +1,19 @@
 <SEO
-  title="Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen"
+  title="Setting Up gatsby-theme-catalyst-sanity"
   description="A step-by-step tutorial for setting up Gatsby-Theme-Catalyst-Hydrogen, a theme for freelance writers and authors. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
 />
 
-# Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen
+# Setting up gatsby-theme-catalyst-sanity
 
-[gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen) is a theme for freelance writers and journalists who want a fast, easy to maintain, and elegant portfolio. The backend CMS is provided by [SANITY.io](https://www.sanity.io/). This tutorial assumes basic familiarity with Gatsby and web development in general.
+[gatsby-theme-catalyst-sanity](/docs/gatsby-theme-catalyst-sanity) is a "core" theme for integrating [SANITY.io](https://www.sanity.io) into Catalyst. This means it focuses on function and utility with minimal visual styles. It is designed as a jumping off point for further customization and development work before being deployed. SANITY.io is a headless CMS that provides a GUI for content authoring and data entry - meaning your clients/users are not editing markdown.
 
-Here are two demos of the completed theme in action:
-
-- [https://gatsby-starter-catalyst-hydrogen.netlify.app](https://gatsby-starter-catalyst-hydrogen.netlify.app/) (raw starter)
-- [https://www.briannasharpe.com](https://www.briannasharpe.com/) (customized)
+This tutorial assumes you have basic familiarity with Gatsby and modern web development practices.
 
 ## Install the theme using a starter
 
 ```sh
 # create a new Gatsby site using the starter site
-gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-hydrogen
+gatsby new catalyst-sanity https://github.com/ehowey/gatsby-starter-catalyst-sanity
 ```
 
 ## Install SANITY.io
@@ -29,7 +26,7 @@ npm install -g @sanity/cli
 
 ```sh
 # Move to the starter directory
-cd catalyst-hydrogen
+cd catalyst-sanity
 # Move to the content studio directory
 cd sanity-studio
 # Initialize SANITY
@@ -43,7 +40,7 @@ datasets and collaborators safe and snug.
 ? Select project to use (Use arrow keys)
 ❯ Create new project
 # Give your project a name
-? Your project name: Catalyst Hydrogen
+? Your project name: Catalyst
 # Use the default dataset configuration
 ? Use the default dataset configuration? (Y/n) Y
 # Import starter dataset, select "production" dataset when prompted
@@ -61,7 +58,7 @@ Congratulations! You should be looking at the new backend for your website! You 
 
 ## Update sanityProjectId
 
-In order to properly source your data you need to update the theme options for `gatsby-theme-catalyst-hydrogen` to give it the correct project id. The easiest way to do this is to open `sanity-studio/sanity.json` and at the top of the file you should see the project id like this:
+In order to properly source your data you need to update the theme options for `gatsby-theme-catalyst-sanity` to give it the correct project id. The easiest way to do this is to open `sanity-studio/sanity.json` and at the top of the file you should see the project id like this:
 
 ```json
 // In sanity.json
@@ -75,7 +72,7 @@ Now open `gatsby-config.js` and update the theme option with the correct project
 
 ```js
     {
-      resolve: `gatsby-theme-catalyst-hydrogen`,
+      resolve: `gatsby-theme-catalyst-sanity`,
       options: {
         sanityProjectId: `c1x70rzt`, // Change this line
       },
@@ -96,6 +93,54 @@ gatsby develop
 ```
 
 Nice work you did it! You can remove the folder `/sanity-studio/data` you don't need it anymore. And committing it to your git repo is unnecessary.
+
+## Experiment with theme options to control building pages
+
+`gatsby-theme-catalyst-sanity` was designed as a "core" theme with a number of different theme options to control the [createPages API](https://www.gatsbyjs.org/docs/creating-and-modifying-pages/). This means that you can enable/disable certain functionality for your end user without having to create a custom content studio.
+
+For example - if you want to disable and turn off the blog you would do the following. In `gatsby-config.js`:
+
+```js
+{
+      resolve: `gatsby-theme-catalyst-sanity`,
+      options: {
+        // Example for an env variable
+        // sanityProjectId: process.env.SANITY_PROJECT_ID,
+        // sanityDataset: process.env.SANITY_DATASET,
+        // sanityToken: process.env.SANITY_TOKEN,
+        //
+        // Default options are:
+        // sanityProjectId: "abc123" // Required
+        // sanityDataset: "production"
+        // sanityToken: null
+        // sanityWatchMode: true
+        // sanityOverlayDrafts: false // Token is required for this
+        // sanityCreatePages: true
+        sanityCreatePosts: false,
+        sanityCreatePostsList: false,
+        // sanityCreateProjects: true
+        // sanityCreateProjectsList: true
+        // sanityPostPath: "/posts"
+        // sanityProjectPath: "/projects"
+        // useSanityTheme: false // Experimental right now
+        sanityProjectId: "p9a6h8j1",
+      },
+    },
+```
+
+In `sanity-studio/structure/deskStructure.js` remove these lines to hide the posts GUI:
+
+```js
+S.listItem()
+  .title("Posts")
+  .child(S.documentTypeList("post").title("Posts")),
+```
+
+Remove any links or references to the post pages and presto - no more blog.
+
+> If you see an error when you try to navigate to the posts index or a post page you need to run `gatsby clean` - because of the cached pages it can throw this error: `Error: EnsureResources was not able to find resources for path: "/posts"`
+
+Try playing around with a few of the different theme options to see what you can make happen.
 
 ## Deploy the content studio
 
@@ -141,6 +186,6 @@ module.exports = {
 
 ## Next steps
 
-You will probably want to customize colors, fonts, and more. Most of these changes will happen in your Theme-UI theme file which is located at `src/gatsby-plugin-theme-ui/index.js`. Check out the [docs on Theme-UI](/docs/theme-ui) which will give you instructions on how to make these changes.
+You can use this theme as a starting point for creating your own custom SANITY.io and Gatsby site. To see an example of how this is done you can look at the source code for [gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen) as this will show you an example of layering a presentation theme on top of the data theme.
 
 I would love to hear about your results and see what you create!
