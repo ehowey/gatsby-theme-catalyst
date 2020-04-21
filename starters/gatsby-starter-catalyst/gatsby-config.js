@@ -67,7 +67,8 @@ module.exports = {
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
-        //footerContentLocation: "left", // "left", "right", "center"
+        // footerContentLocation: "left", // "left", "right", "center"
+        // remarkImagesWidth: 1440,
       },
     },
     `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`

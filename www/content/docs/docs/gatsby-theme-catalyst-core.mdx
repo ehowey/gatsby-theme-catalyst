@@ -17,19 +17,20 @@ This acts as a core theme on which all other themes are based. It houses a basic
 
 ## Theme Options
 
-| Option                   | Values                                    | Description                                                                             |
-| ------------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------- |
-| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.               |
-| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located. |
-| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                |
-| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint       |
-| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                          |
-| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint |
-| `invertLogo`             | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open   |
-| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                      |
-| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                |
-| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                   |
-| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                      |
+| Option                   | Values                                    | Description                                                                                 |
+| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                   |
+| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.     |
+| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                    |
+| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint           |
+| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                              |
+| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint     |
+| `invertLogo`             | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open       |
+| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                          |
+| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                    |
+| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                       |
+| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                          |
+| `remarkImagesWidth`      | Integer value                             | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
 
 Example Config:
 
@@ -44,3 +45,19 @@ Example Config:
       }
     }
 ```
+
+## Remark Plugins
+
+[gatsby-plugin-mdx](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/) uses standard Gatsby remark plugins to help manage the markdown content. The following plugins are installed and configured:
+
+- gatsby-remark-relative-images
+- gatsby-remark-images
+- gatsby-remark-copy-linked-files
+- gatsby-remark-smartypants
+- gatsby-remark-reading-time
+- gatsby-remark-external-links
+- gatsby-remark-responsive-iframe
+
+One notable omission is `gatsby-remark-autolink-headers` - this is handled through Theme-UI and headers are currently receiving an automatic ID which can be linked to.
+
+You can customize the max image width generated by `gatsby-remark-images` via the theme option `remarkImagesWidth`, default max width is 1440px.

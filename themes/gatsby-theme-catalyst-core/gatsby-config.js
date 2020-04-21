@@ -5,7 +5,6 @@ module.exports = (themeOptions) => {
     themeOptions.remarkImagesWidth == null
       ? 1440
       : parseInt(themeOptions.remarkImagesWidth)
-  console.log(remarkImagesWidth)
   return {
     siteMetadata: {
       title: `Placeholder title`,
