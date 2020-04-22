@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
 
 - Move your theme-ui file from `src/gatsby-theme-catalyst-core/theme.js` -> `src/gatsby-plugin-theme-ui/index.js`. No other change should be needed. This was done to be more in line with recommended best practice. There is now a 'base theme' for Theme-UI which is exported from `gatsby-theme-catalyst-core`. You can use this to write smaller and more condensed themes in the starters using the following syntax:
 
-```
+```js
 import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 
