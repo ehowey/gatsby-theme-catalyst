@@ -4,7 +4,6 @@ import { FiSun, FiMoon } from "react-icons/fi"
 
 const ColorModeButton = () => {
   const [colorMode, setColorMode] = useColorMode()
-  console.log(colorMode)
   return (
     <IconButton
       sx={{
