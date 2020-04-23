@@ -45,7 +45,8 @@ module.exports = {
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true, // Dark mode is not supported when configuring the theme from SANITY.io dashboard
-        //footerContentLocation: "left", // "left", "right", "center"
+        // footerContentLocation: "left", // "left", "right", "center"
+        // remarkImagesWidth: 1440,
         useColorMode: false, // Dark mode is not supported by SANITY when configuring the theme spec from SANITY.io
       },
     },
