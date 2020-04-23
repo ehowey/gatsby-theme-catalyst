@@ -55,7 +55,8 @@ module.exports = {
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
-        //footerContentLocation: "left", // "left", "right", "center"
+        // footerContentLocation: "left", // "left", "right", "center"
+        // remarkImagesWidth: 1440,
       },
     },
     {
