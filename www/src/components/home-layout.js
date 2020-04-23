@@ -40,7 +40,6 @@ const SiteLayout = ({ children }) => {
           variant: "variants.siteContainer",
         }}
       >
-        {" "}
         <SkipNavLink />
         <Hero />
         <Main>

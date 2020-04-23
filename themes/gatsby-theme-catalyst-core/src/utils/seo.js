@@ -2,11 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "./use-site-metadata"
+import { useLocation } from "@reach/router"
 
 const SEO = ({
   description: propDescription,
   lang,
   meta,
+  location: propLocation,
   keywords: propKeywords,
   title: propTitle,
   image: propImage,
@@ -20,12 +22,13 @@ const SEO = ({
     siteUrl,
     seoImage,
   } = useSiteMetadata()
+  const location = useLocation()
   const seoTitle = propTitle || title
   const seoDescription = propDescription || description
   const seoKeywords = propKeywords || keywords
   const seoImg = propImage || seoImage
   const seoImgSrc = `${siteUrl}${seoImg.src}`
-
+  const seoCanononical = propLocation || location.pathname
   return (
     <Helmet
       htmlAttributes={{
@@ -106,7 +109,9 @@ const SEO = ({
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link rel="canonical" href={`${siteUrl}${seoCanononical}`} />
+    </Helmet>
   )
 }
 
