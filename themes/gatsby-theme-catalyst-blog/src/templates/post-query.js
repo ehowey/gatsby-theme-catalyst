@@ -27,11 +27,8 @@ export const query = graphql`
       keywords
       timeToRead
       date(formatString: "MMMM DD, YYYY")
-      featuredImage {
+      seoImage {
         childImageSharp {
-          fluid(maxWidth: 1440) {
-            ...GatsbyImageSharpFluid
-          }
           seo: resize(width: 1024) {
             src
             width

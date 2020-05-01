@@ -4,7 +4,6 @@ import { Layout, SEO } from "gatsby-theme-catalyst-core"
 import PostListContainer from "./post-list/post-list-container"
 import PostListWrapper from "./post-list/post-list-wrapper"
 import PostListTitle from "./post-list/post-list-title"
-import PostListImage from "./post-list/post-list-image"
 import PostListMeta from "./post-list/post-list-meta"
 import PostListExcerpt from "./post-list/post-list-excerpt"
 import PostListReadmore from "./post-list/post-list-readmore"
@@ -15,15 +14,10 @@ const PostsList = ({ posts }) => {
     <Layout>
       <PostListContainer>
         <SEO title="Blog" />
-        {posts.map(post => {
+        {posts.map((post) => {
           const title = post.title || post.slug
           return (
             <PostListWrapper key={post.slug}>
-              <PostListImage
-                link={post.slug}
-                image={post.featuredImage.childImageSharp.fluid}
-                altText={post.title}
-              />
               <PostListMeta>
                 <a
                   href={post.authorLink}

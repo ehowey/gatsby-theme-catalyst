@@ -1,7 +1,6 @@
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
-const crypto = require(`crypto`)
 const Debug = require(`debug`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const { urlResolve, createContentDigest } = require(`gatsby-core-utils`)
@@ -73,7 +72,8 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       keywords: [String]!
       excerpt: String!
       draft: Boolean! @defaultFalse
-      featuredImage: File! @fileByRelativePath
+      featuredImage: File @fileByRelativePath
+      seoImage: File! @fileByRelativePath
       timeToRead: Int
   }`)
 
@@ -102,6 +102,10 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         tags: { type: `[String]!` },
         keywords: { type: `[String]!` },
         featuredImage: {
+          type: `File`,
+          extensions: { fileByRelativePath: {} },
+        },
+        seoImage: {
           type: `File!`,
           extensions: { fileByRelativePath: {} },
         },
@@ -178,6 +182,7 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
       featuredImage: node.frontmatter.featuredImage,
+      seoImage: node.frontmatter.seoImage,
       draft: node.frontmatter.draft,
     }
 
