@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostList from "../components/post-list"
+import PostList from "../templates/post-list-template"
 
 export default ({ data }) => {
   const { allCatalystPost } = data

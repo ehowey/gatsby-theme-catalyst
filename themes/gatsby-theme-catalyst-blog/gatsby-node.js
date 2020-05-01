@@ -79,6 +79,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
 
   createTypes(`type CatalystBlogConfig implements Node {
     postListTitle: String
+    displayPostListTitle: Boolean
   }`)
 
   createTypes(
@@ -209,8 +210,8 @@ exports.onCreateNode = async (
 }
 
 // These templates are simply data-fetching wrappers that import components
-const PostTemplate = require.resolve(`./src/templates/post-query`)
-const PostsTemplate = require.resolve(`./src/templates/posts-query`)
+const PostQuery = require.resolve(`./src/components/queries/post-query`)
+const PostsQuery = require.resolve(`./src/components/queries/posts-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
@@ -249,7 +250,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     const { slug } = post
     createPage({
       path: slug,
-      component: PostTemplate,
+      component: PostQuery,
       context: {
         id: post.id,
         previousId: previous ? previous.node.id : undefined,
@@ -261,18 +262,19 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   // // Create the Posts page
   createPage({
     path: basePath,
-    component: PostsTemplate,
+    component: PostsQuery,
     context: {},
   })
 }
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { postListTitle = "Posts" }
+  { postListTitle = "Posts", displayPostListTitle = true }
 ) => {
   // create garden data from plugin config
   const catalystBlogConfigFieldData = {
     postListTitle,
+    displayPostListTitle,
   }
   createNode({
     ...catalystBlogConfigFieldData,

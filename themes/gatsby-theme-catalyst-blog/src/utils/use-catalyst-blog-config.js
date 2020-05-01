@@ -5,6 +5,7 @@ export const useCatalystBlogConfig = () => {
       query {
         catalystBlogConfig {
           postListTitle
+          displayPostListTitle
         }
       }
     `
