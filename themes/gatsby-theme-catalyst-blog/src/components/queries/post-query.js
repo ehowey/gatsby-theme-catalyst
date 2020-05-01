@@ -25,6 +25,7 @@ export const query = graphql`
       authorLink
       tags
       keywords
+      postType
       timeToRead
       date(formatString: "MMMM DD, YYYY")
       seoImage {

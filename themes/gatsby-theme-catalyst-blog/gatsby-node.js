@@ -75,6 +75,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       featuredImage: File @fileByRelativePath
       seoImage: File! @fileByRelativePath
       timeToRead: Int
+      postType: String
   }`)
 
   createTypes(`type CatalystBlogConfig implements Node {
@@ -102,6 +103,9 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         },
         slug: {
           type: `String!`,
+        },
+        postType: {
+          type: `String`,
         },
         date: { type: `Date!`, extensions: { dateformat: {} } },
         tags: { type: `[String]!` },
@@ -189,6 +193,7 @@ exports.onCreateNode = async (
       featuredImage: node.frontmatter.featuredImage,
       seoImage: node.frontmatter.seoImage,
       draft: node.frontmatter.draft,
+      postType: node.frontmatter.postType || "article",
     }
 
     const mdxCatalystPostId = createNodeId(`${node.id} >>> MdxCatalystPost`)
