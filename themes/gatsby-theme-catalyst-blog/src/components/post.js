@@ -1,39 +1,21 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import PostContainer from "./post/post-container"
-import PostTitle from "./post/post-title"
-import PostMeta from "./post/post-meta"
-import PostFooter from "./post/post-footer"
-import { FaRegClock } from "react-icons/fa"
+import PostFooter from "./post-footer"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
-    <PostContainer>
-      <SEO
-        title={post.title}
-        description={post.excerpt}
-        image={post.seoImage.childImageSharp.seo}
-        keywords={post.keywords}
-      />
-      <PostMeta>
-        <a href={post.authorLink} target="_blank" rel="noopener noreferrer">
-          {post.author}
-        </a>{" "}
-        &bull; {post.date} &bull;{" "}
-        <FaRegClock
-          sx={{
-            position: "relative",
-            top: "0.125em",
-          }}
-        />{" "}
-        {post.timeToRead} Min
-      </PostMeta>
-      <PostTitle>{post.title}</PostTitle>
-      <MDXRenderer>{post.body}</MDXRenderer>
-      <PostFooter {...{ previous, next }} />
-    </PostContainer>
+    <SEO
+      title={post.title}
+      description={post.excerpt}
+      image={post.seoImage.childImageSharp.seo}
+      keywords={post.keywords}
+    />
+    <Styled.h1>{post.title}</Styled.h1>
+    <Styled.p>{post.date}</Styled.p>
+    <MDXRenderer>{post.body}</MDXRenderer>
+    <PostFooter {...{ previous, next }} />
   </Layout>
 )
 

@@ -63,7 +63,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   createTypes(`interface CatalystPost @nodeInterface {
       id: ID!
       title: String!
-      author: String!
+      author: String
       authorLink: String
       body: String!
       slug: String!
@@ -77,6 +77,10 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       timeToRead: Int
   }`)
 
+  createTypes(`type CatalystBlogConfig implements Node {
+    postListTitle: String
+  }`)
+
   createTypes(
     schema.buildObjectType({
       name: `MdxCatalystPost`,
@@ -86,7 +90,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           type: `String!`,
         },
         author: {
-          type: `String!`,
+          type: `String`,
         },
         authorLink: {
           type: `String`,
@@ -259,5 +263,27 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     path: basePath,
     component: PostsTemplate,
     context: {},
+  })
+}
+
+exports.sourceNodes = (
+  { actions: { createNode }, schema },
+  { postListTitle = "Posts" }
+) => {
+  // create garden data from plugin config
+  const catalystBlogConfigFieldData = {
+    postListTitle,
+  }
+  createNode({
+    ...catalystBlogConfigFieldData,
+    id: `gatsby-theme-catalyst-blog-config`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `CatalystBlogConfig`,
+      contentDigest: createContentDigest(catalystBlogConfigFieldData),
+      content: JSON.stringify(catalystBlogConfigFieldData),
+      description: `Catalyst Blog Config`,
+    },
   })
 }

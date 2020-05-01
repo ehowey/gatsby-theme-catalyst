@@ -1,47 +1,29 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
+import { Link } from "gatsby"
 import { Layout, SEO } from "gatsby-theme-catalyst-core"
-import PostListContainer from "./post-list/post-list-container"
-import PostListWrapper from "./post-list/post-list-wrapper"
-import PostListTitle from "./post-list/post-list-title"
-import PostListMeta from "./post-list/post-list-meta"
-import PostListExcerpt from "./post-list/post-list-excerpt"
-import PostListReadmore from "./post-list/post-list-readmore"
-import { FaRegClock } from "react-icons/fa"
+import { useCatalystBlogConfig } from "../utils/use-catalyst-blog-config"
 
 const PostsList = ({ posts }) => {
+  const { postListTitle } = useCatalystBlogConfig()
   return (
     <Layout>
-      <PostListContainer>
-        <SEO title="Blog" />
+      <div>
+        <SEO title={postListTitle} />
+        <Styled.h1>{postListTitle}</Styled.h1>
         {posts.map((post) => {
           const title = post.title || post.slug
           return (
-            <PostListWrapper key={post.slug}>
-              <PostListMeta>
-                <a
-                  href={post.authorLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {post.author}
-                </a>{" "}
-                &bull; {post.date} &bull;{" "}
-                <FaRegClock
-                  sx={{
-                    position: "relative",
-                    top: "0.125em",
-                  }}
-                />{" "}
-                {post.timeToRead} Min
-              </PostListMeta>
-              <PostListTitle link={post.slug}>{title}</PostListTitle>
-              <PostListExcerpt>{post.excerpt}</PostListExcerpt>
-              <PostListReadmore link={post.slug}>Read more</PostListReadmore>
-            </PostListWrapper>
+            <div key={post.slug}>
+              <Styled.a as={Link} to={post.slug}>
+                <Styled.h2>{title}</Styled.h2>
+              </Styled.a>
+              <Styled.p>{post.date}</Styled.p>
+              <Styled.p>{post.excerpt}</Styled.p>
+            </div>
           )
         })}
-      </PostListContainer>
+      </div>
     </Layout>
   )
 }
