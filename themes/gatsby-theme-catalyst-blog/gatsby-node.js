@@ -73,7 +73,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       excerpt: String!
       draft: Boolean! @defaultFalse
       featuredImage: File @fileByRelativePath
-      seoImage: File! @fileByRelativePath
+      socialImage: File! @fileByRelativePath
       timeToRead: Int
       postType: String
   }`)
@@ -114,7 +114,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           type: `File`,
           extensions: { fileByRelativePath: {} },
         },
-        seoImage: {
+        socialImage: {
           type: `File!`,
           extensions: { fileByRelativePath: {} },
         },
@@ -191,7 +191,7 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
       featuredImage: node.frontmatter.featuredImage,
-      seoImage: node.frontmatter.seoImage,
+      socialImage: node.frontmatter.socialImage,
       draft: node.frontmatter.draft,
       postType: node.frontmatter.postType || "article",
     }
@@ -216,7 +216,7 @@ exports.onCreateNode = async (
 
 // These templates are simply data-fetching wrappers that import components
 const PostQuery = require.resolve(`./src/components/queries/post-query`)
-const PostsQuery = require.resolve(`./src/components/queries/posts-query`)
+const PostsQuery = require.resolve(`./src/components/queries/post-list-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
