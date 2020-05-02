@@ -14,7 +14,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query HeliumPostQuery($id: String!, $previousId: String, $nextId: String) {
+  query($id: String!, $previousId: String, $nextId: String) {
     catalystPost(id: { eq: $id }) {
       id
       excerpt

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Post from "../templates/post-template"
+import Post from "../../../components/post"
 
 export default ({ data }) => {
   const { catalystPost, previous, next } = data
@@ -14,7 +14,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query PostPageQuery($id: String!, $previousId: String, $nextId: String) {
+  query($id: String!, $previousId: String, $nextId: String) {
     catalystPost(id: { eq: $id }) {
       id
       excerpt
@@ -25,9 +25,20 @@ export const query = graphql`
       authorLink
       tags
       keywords
-      postType
       timeToRead
       date(formatString: "MMMM DD, YYYY")
+      featuredImage {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+          seo: resize(width: 1024) {
+            src
+            width
+            height
+          }
+        }
+      }
     }
     previous: catalystPost(id: { eq: $previousId }) {
       id
