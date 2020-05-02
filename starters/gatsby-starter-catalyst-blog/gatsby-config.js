@@ -17,9 +17,26 @@ module.exports = {
         type: `internal`, //internal or anchor
       },
       {
+        name: `Anchor 1`,
+        link: `anchor-1`,
+        type: `anchor`, //internal or anchor
+      },
+      {
         name: `Page 2`,
         link: `/page-2`,
         type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `Sub 1`,
+            link: `/sub-1`,
+            type: `internal`, //internal or anchor
+          },
+          {
+            name: `Sub 2`,
+            link: `/sub-2`,
+            type: `internal`, //internal or anchor
+          },
+        ],
       },
     ],
     socialLinks: [
