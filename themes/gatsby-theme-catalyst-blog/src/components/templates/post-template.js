@@ -15,35 +15,16 @@ const Post = ({ data: { post }, previous, next }) => (
     <Styled.h1>{post.title}</Styled.h1>
     <Styled.p>{post.date}</Styled.p>
     <MDXRenderer>{post.body}</MDXRenderer>
-    <div>
-      <Styled.hr />
-      {(previous || next) && (
-        <Flex
-          sx={{
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-            padding: 0,
-          }}
-          as="ul"
-        >
-          <li>
-            {previous && (
-              <Styled.a as={Link} to={previous.slug} rel="prev">
-                ← {previous.title}
-              </Styled.a>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Styled.a as={Link} to={next.slug} rel="next">
-                {next.title} →
-              </Styled.a>
-            )}
-          </li>
-        </Flex>
-      )}
-    </div>
+    {previous && (
+      <Styled.a as={Link} to={previous.slug} rel="prev">
+        ← {previous.title}
+      </Styled.a>
+    )}
+    {next && (
+      <Styled.a as={Link} to={next.slug} rel="next">
+        {next.title} →
+      </Styled.a>
+    )}
   </Layout>
 )
 
