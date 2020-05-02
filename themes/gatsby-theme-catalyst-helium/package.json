@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-theme-catalyst-helium",
+  "description": "Gatsby theme for a simple personal blog. MDX and git as the CMS.",
+  "version": "0.0.1",
+  "author": "Eric Howey <eric@erichowey.dev>",
+  "dependencies": {
+    "gatsby-theme-catalyst-core": "^1.1.0",
+    "gatsby-theme-catalyst-footer": "^1.0.0",
+    "gatsby-theme-catalyst-header-side": "^1.0.0",
+    "gatsby-theme-catalyst-blog": "^1.0.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.20.25",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "gatsby": "^2.20.25",
+    "prettier": "^2.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
+  }
+}

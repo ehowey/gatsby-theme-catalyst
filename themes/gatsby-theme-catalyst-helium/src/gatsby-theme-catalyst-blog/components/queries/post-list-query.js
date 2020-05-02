@@ -8,7 +8,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query HeliumPostsQuery {
+  query PostsQuery {
     allCatalystPost(
       sort: { fields: [date, title], order: DESC }
       limit: 1000
