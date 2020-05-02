@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostList from "../components/post-list"
+import PostList from "../templates/post-list-template"
 
 export default ({ data }) => {
   const { allCatalystPost } = data
@@ -24,13 +24,7 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
         timeToRead
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 1440) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        postType
       }
     }
   }

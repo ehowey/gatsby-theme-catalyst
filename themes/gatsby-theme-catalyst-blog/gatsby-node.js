@@ -1,7 +1,6 @@
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
-const crypto = require(`crypto`)
 const Debug = require(`debug`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const { urlResolve, createContentDigest } = require(`gatsby-core-utils`)
@@ -64,7 +63,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   createTypes(`interface CatalystPost @nodeInterface {
       id: ID!
       title: String!
-      author: String!
+      author: String
       authorLink: String
       body: String!
       slug: String!
@@ -73,8 +72,15 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       keywords: [String]!
       excerpt: String!
       draft: Boolean! @defaultFalse
-      featuredImage: File! @fileByRelativePath
+      featuredImage: File @fileByRelativePath
+      socialImage: File @fileByRelativePath
       timeToRead: Int
+      postType: String
+  }`)
+
+  createTypes(`type CatalystBlogConfig implements Node {
+    postListTitle: String
+    displayPostListTitle: Boolean
   }`)
 
   createTypes(
@@ -86,7 +92,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           type: `String!`,
         },
         author: {
-          type: `String!`,
+          type: `String`,
         },
         authorLink: {
           type: `String`,
@@ -98,11 +104,18 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         slug: {
           type: `String!`,
         },
+        postType: {
+          type: `String`,
+        },
         date: { type: `Date!`, extensions: { dateformat: {} } },
         tags: { type: `[String]!` },
         keywords: { type: `[String]!` },
         featuredImage: {
-          type: `File!`,
+          type: `File`,
+          extensions: { fileByRelativePath: {} },
+        },
+        socialImage: {
+          type: `File`,
           extensions: { fileByRelativePath: {} },
         },
         excerpt: {
@@ -178,7 +191,9 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
       featuredImage: node.frontmatter.featuredImage,
+      socialImage: node.frontmatter.socialImage,
       draft: node.frontmatter.draft,
+      postType: node.frontmatter.postType || "article",
     }
 
     const mdxCatalystPostId = createNodeId(`${node.id} >>> MdxCatalystPost`)
@@ -200,8 +215,8 @@ exports.onCreateNode = async (
 }
 
 // These templates are simply data-fetching wrappers that import components
-const PostTemplate = require.resolve(`./src/templates/post-query`)
-const PostsTemplate = require.resolve(`./src/templates/posts-query`)
+const PostQuery = require.resolve(`./src/components/queries/post-query`)
+const PostsQuery = require.resolve(`./src/components/queries/post-list-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
@@ -240,7 +255,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     const { slug } = post
     createPage({
       path: slug,
-      component: PostTemplate,
+      component: PostQuery,
       context: {
         id: post.id,
         previousId: previous ? previous.node.id : undefined,
@@ -252,7 +267,30 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   // // Create the Posts page
   createPage({
     path: basePath,
-    component: PostsTemplate,
+    component: PostsQuery,
     context: {},
+  })
+}
+
+exports.sourceNodes = (
+  { actions: { createNode }, schema },
+  { postListTitle = "Posts", displayPostListTitle = true }
+) => {
+  // create garden data from plugin config
+  const catalystBlogConfigFieldData = {
+    postListTitle,
+    displayPostListTitle,
+  }
+  createNode({
+    ...catalystBlogConfigFieldData,
+    id: `gatsby-theme-catalyst-blog-config`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `CatalystBlogConfig`,
+      contentDigest: createContentDigest(catalystBlogConfigFieldData),
+      content: JSON.stringify(catalystBlogConfigFieldData),
+      description: `Catalyst Blog Config`,
+    },
   })
 }

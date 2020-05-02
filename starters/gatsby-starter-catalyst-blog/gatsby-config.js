@@ -7,19 +7,36 @@ module.exports = {
     siteUrl: `https://gatsby-starter-catalyst-blog.netlify.app`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
       {
+        name: `Blog`,
+        link: `/posts`,
+        type: `internal`, //internal or anchor
+      },
+      {
         name: `Page 1`,
         link: `/page-1`,
         type: `internal`, //internal or anchor
       },
       {
+        name: `Anchor 1`,
+        link: `anchor-1`,
+        type: `anchor`, //internal or anchor
+      },
+      {
         name: `Page 2`,
         link: `/page-2`,
         type: `internal`, //internal or anchor
-      },
-      {
-        name: `Blog`,
-        link: `/blog`,
-        type: `internal`, //internal or anchor
+        subMenu: [
+          {
+            name: `Sub 1`,
+            link: `/sub-1`,
+            type: `internal`, //internal or anchor
+          },
+          {
+            name: `Sub 2`,
+            link: `/sub-2`,
+            type: `internal`, //internal or anchor
+          },
+        ],
       },
     ],
     socialLinks: [
@@ -57,16 +74,13 @@ module.exports = {
         // useColorMode: true,
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
-        useStickyHeader: true,
-        footerContentLocation: "center",
-        displaySiteLogoMobile: false,
       },
     },
     {
       resolve: `gatsby-theme-catalyst-blog`,
       options: {
         // Default options are:
-        // basePath: `/blog`,
+        // basePath: `/posts`,
         // contentPath: `content/posts`,
         // assetPath: `content/assets`,
         // excerptLength: `140`,

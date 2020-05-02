@@ -1,11 +1,12 @@
 # Gatsby Theme Catalyst Blog
 
-This adds a blogging interface using MDX, similar to `gatsby-theme-blog-core` with some custom modifications. The theme can be added to any existing Catalyst-based site and will add blog functionality.
+This adds a blogging interface using MDX, similar to `gatsby-theme-blog-core` with some custom modifications. The theme can be added to any existing Catalyst-based site and will add blog functionality. This is a minimal implementation that is not designed to be used in a production site, but rather as a jumping off point for a production site.
 
 The main features added to this blog theme are:
 
 - Support for a featured image on the blog posts
-- Improved SEO handling with these images, so when the posts are shared on social media the featured images are used
+- Support for a social image on the blog posts
+- Support for different post types in the frontmatter to allow for conditional styling of posts
 - Drafts flag in frontmatter so you can keep posts in your repo that are drafts and not built in the final site
 - Ability to control the excerpt length used in post summaries
 
@@ -20,12 +21,14 @@ The main features added to this blog theme are:
 
 ## Theme options
 
-| Option          | Values | Description                                                                             |
-| --------------- | ------ | --------------------------------------------------------------------------------------- |
-| `contentPath`   | String | Defaults to "content/posts", determines where the posts are created from.               |
-| `assetPath`     | String | Defaults to "content/assets", determines where the post assets like images are located. |
-| `basePath`      | String | Defaults to "/blog", determines the page location for the post list.                    |
-| `excerptLength` | String | Defaults to "140", determines the length of the excerpt use for post summaries.         |
+| Option                 | Values  | Description                                                                                                             |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `contentPath`          | String  | Defaults to "content/posts", determines where the posts are created from.                                               |
+| `assetPath`            | String  | Defaults to "content/assets", determines where the post assets like images are located.                                 |
+| `basePath`             | String  | Defaults to "/blog", determines the page location for the post list.                                                    |
+| `excerptLength`        | String  | Defaults to "140", determines the length of the excerpt use for post summaries.                                         |
+| `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
+| `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
 
 Example Config:
 
@@ -49,8 +52,9 @@ The following fields are available in front matter.
 | ------------- | --------- | ------- | -------------------------------------------------------- |
 | title         | Yes       | String  | Title of the post                                        |
 | date          | Yes       | Date    | Publication date, e.g. 2019-04-15                        |
-| author        | Yes       | String  | Author of the post                                       |
-| featuredImage | Yes       | String  | Featured image to be used for the post                   |
+| author        | No        | String  | Author of the post                                       |
+| featuredImage | No        | String  | Featured image to be used for the post                   |
+| socialImage   | No        | String  | Social image to be used for the post                     |
 | slug          | No        | String  | Optionally used to specify the link slug for the post    |
 | authorLink    | No        | String  | Used as a link for the author name in the post summaries |
 | tags          | No        | Array   | Tags for the post, ["tag1", "tag2", "tag3"]              |

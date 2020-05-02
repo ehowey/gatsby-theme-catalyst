@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-blog v2.0.0
+
+The difference between v1.0 and v2.0 is that v2.0 takes a simplified approach and provides much more barebones blog components for easier shadowing and customization. Basically there is less you need to undo in order to customize this for yourself. This required some breaking changes to implement hence the version bump from v1.0 to v2.0. There will eventually be a new theme which provides more styled and production ready visual design.
+
+- Added socialImage field to frontmatter which allows you to specify the social image used in places like Twitter.
+- Added a postType field to frontmatter which allows you to define custom post types, e.g. "featured" or "photo" and conditionally give them a different layout
+- Reduced the required frontmatter fields to title and date. This gives greater flexibility in what frontmatter fields you are using. Previously it required a featuredImage which was not good developer experience
+
 ## catalyst-core v1.1.0
 
 - Added additional remark plugins and documentation about these plugins in the docs for the core theme. No breaking changes. Now supports relative image paths, and external links from markdown target "\_blank"
