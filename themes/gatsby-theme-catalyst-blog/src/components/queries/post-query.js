@@ -28,15 +28,6 @@ export const query = graphql`
       postType
       timeToRead
       date(formatString: "MMMM DD, YYYY")
-      seoImage {
-        childImageSharp {
-          seo: resize(width: 1024) {
-            src
-            width
-            height
-          }
-        }
-      }
     }
     previous: catalystPost(id: { eq: $previousId }) {
       id

@@ -6,12 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
-    <SEO
-      title={post.title}
-      description={post.excerpt}
-      image={post.seoImage.childImageSharp.seo}
-      keywords={post.keywords}
-    />
+    <SEO title={post.title} description={post.excerpt} />
     <Styled.h1>{post.title}</Styled.h1>
     <Styled.p>{post.date}</Styled.p>
     <MDXRenderer>{post.body}</MDXRenderer>

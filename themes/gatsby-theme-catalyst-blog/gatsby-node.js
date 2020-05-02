@@ -73,7 +73,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       excerpt: String!
       draft: Boolean! @defaultFalse
       featuredImage: File @fileByRelativePath
-      socialImage: File! @fileByRelativePath
+      socialImage: File @fileByRelativePath
       timeToRead: Int
       postType: String
   }`)
@@ -115,7 +115,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           extensions: { fileByRelativePath: {} },
         },
         socialImage: {
-          type: `File!`,
+          type: `File`,
           extensions: { fileByRelativePath: {} },
         },
         excerpt: {
