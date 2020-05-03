@@ -11,7 +11,7 @@ The difference between v1.0 and v2.0 is that v2.0 takes a simplified approach an
 - Add subTitle field which gives you an option for a "deck" or subtitle via frontmatter.
 - Reduced the required frontmatter fields to title and date. This gives greater flexibility in what frontmatter fields you are using. Previously it required a featuredImage which was not good developer experience
 
-If you are wanting to implement styles on your blog but retain full control, look at how `gatsby-theme-catalyst-helium` handles this through component shadowing.
+If you are wanting to implement styles on your blog but retain full control, look at how `gatsby-theme-catalyst-helium` handles this through component shadowing. You can also see an example in my personal site if you look at the component shadowing in there, [https://github.com/ehowey/erichoweydev](https://github.com/ehowey/erichoweydev).
 
 ## catalyst-core v1.1.0
 
