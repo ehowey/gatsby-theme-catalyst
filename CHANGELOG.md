@@ -8,7 +8,10 @@ The difference between v1.0 and v2.0 is that v2.0 takes a simplified approach an
 
 - Added socialImage field to frontmatter which allows you to specify the social image used in places like Twitter.
 - Added a postType field to frontmatter which allows you to define custom post types, e.g. "featured" or "photo" and conditionally give them a different layout
+- Add subTitle field which gives you an option for a "deck" or subtitle via frontmatter.
 - Reduced the required frontmatter fields to title and date. This gives greater flexibility in what frontmatter fields you are using. Previously it required a featuredImage which was not good developer experience
+
+If you are wanting to implement styles on your blog but retain full control, look at how `gatsby-theme-catalyst-helium` handles this through component shadowing.
 
 ## catalyst-core v1.1.0
 
