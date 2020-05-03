@@ -32,6 +32,10 @@ export const query = graphql`
           fluid(maxWidth: 1440) {
             ...GatsbyImageSharpFluid
           }
+        }
+      }
+      socialImage {
+        childImageSharp {
           seo: resize(width: 1024) {
             src
             width
