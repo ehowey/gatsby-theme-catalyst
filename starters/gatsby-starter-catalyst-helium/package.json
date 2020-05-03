@@ -1,0 +1,38 @@
+{
+  "name": "gatsby-starter-catalyst-helium",
+  "description": "Gatsby starter for gatsby-theme-catalyst-helium",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Eric Howey <eric@erichowey.dev>",
+  "dependencies": {
+    "gatsby": "^2.20.25",
+    "gatsby-theme-catalyst-helium": "*",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-starter",
+    "gatsby-plugin"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-starter-catalyst-blog"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-starter-catalyst-blog/issues"
+  }
+}

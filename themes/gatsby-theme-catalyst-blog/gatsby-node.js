@@ -63,6 +63,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   createTypes(`interface CatalystPost @nodeInterface {
       id: ID!
       title: String!
+      subTitle: String
       author: String
       authorLink: String
       body: String!
@@ -90,6 +91,9 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         id: { type: `ID!` },
         title: {
           type: `String!`,
+        },
+        subTitle: {
+          type: `String`,
         },
         author: {
           type: `String`,
@@ -184,6 +188,7 @@ exports.onCreateNode = async (
     slug = slug.replace(/\/*$/, `/`)
     const fieldData = {
       title: node.frontmatter.title,
+      subTitle: node.frontmatter.subTitle,
       author: node.frontmatter.author,
       authorLink: node.frontmatter.authorLink,
       tags: node.frontmatter.tags || [],

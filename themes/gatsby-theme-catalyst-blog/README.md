@@ -52,6 +52,7 @@ The following fields are available in front matter.
 | ------------- | --------- | ------- | -------------------------------------------------------- |
 | title         | Yes       | String  | Title of the post                                        |
 | date          | Yes       | Date    | Publication date, e.g. 2019-04-15                        |
+| subTitle      | No        | String  | Sub title or deck for blog posts                         |
 | author        | No        | String  | Author of the post                                       |
 | featuredImage | No        | String  | Featured image to be used for the post                   |
 | socialImage   | No        | String  | Social image to be used for the post                     |
@@ -63,7 +64,7 @@ The following fields are available in front matter.
 
 Example frontmatter:
 
-```
+```md
 ---
 title: Hey, a draft post
 date: 2019-04-15

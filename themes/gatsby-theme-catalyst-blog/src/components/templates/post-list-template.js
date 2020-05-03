@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { Layout, SEO } from "gatsby-theme-catalyst-core"
-import { useCatalystBlogConfig } from "../../utils/use-catalyst-blog-config"
+import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
 
 const PostsList = ({ posts }) => {
   const { postListTitle, displayPostListTitle } = useCatalystBlogConfig()

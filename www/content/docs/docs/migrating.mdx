@@ -7,6 +7,12 @@
 
 You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/master/CHANGELOG.md) on GitHub for more detailed list of changes.
 
+## catalyst-blog v2.0.0
+
+- This was a breaking change to allow for better component architecture, remove the need for a `featuredImage` and add in a number of additional frontmatter fields, like `socialImage`.
+- Rewrite of the core blog theme to be more basic and act as as "data" theme with fewer presentational components. Less you have to undo as a developer, however if you were using version 1.0 or earlier alot of the styles you would have had are gone. The good news however is that these styles can be easily added back in via component shadowing. You can look at `gatsby-theme-catalyst-helium` to see how this is done and copy those files and tweak to your liking.
+- If you have trouble migrating let me know and I will help out. v1.0 of this theme should work for a long time to come, so no rush.
+
 ## v1.0.0
 
 - Move your theme-ui file from `src/gatsby-theme-catalyst-core/theme.js` -> `src/gatsby-plugin-theme-ui/index.js`. No other change should be needed. This was done to be more in line with recommended best practice. There is now a 'base theme' for Theme-UI which is exported from `gatsby-theme-catalyst-core`. You can use this to write smaller and more condensed themes in the starters using the following syntax:
