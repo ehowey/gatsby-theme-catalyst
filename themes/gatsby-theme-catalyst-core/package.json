@@ -33,7 +33,7 @@
     "gatsby-source-filesystem": "^2.2.4",
     "gatsby-transformer-json": "^2.3.3",
     "gatsby-transformer-sharp": "^2.4.6",
-    "gatsby-transformer-yaml": "^2.3.3",
+    "gatsby-transformer-yaml": "^2.4.0",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.9.0",
