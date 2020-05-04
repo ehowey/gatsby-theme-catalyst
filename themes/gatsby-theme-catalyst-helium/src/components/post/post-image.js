@@ -6,8 +6,11 @@ const PostImage = ({ image, altText }) => {
   return (
     <Img
       sx={{
-        height: "200px",
-        mb: 3,
+        my: 4,
+        maxHeight: "400px",
+        width: "100vw",
+        position: "relative",
+        left: "calc(-50vw + 50%)",
         variant: "variants.postImage",
       }}
       fluid={image}

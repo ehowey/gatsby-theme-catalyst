@@ -21,6 +21,7 @@ export const query = graphql`
       body
       slug
       title
+      subTitle
       author
       authorLink
       tags

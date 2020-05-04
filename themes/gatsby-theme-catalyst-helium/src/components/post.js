@@ -4,6 +4,7 @@ import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import PostContainer from "./post/post-container"
 import PostTitle from "./post/post-title"
+import PostSubTitle from "./post/post-subtitle"
 import PostMeta from "./post/post-meta"
 import PostImage from "./post/post-image"
 import PostFooter from "./post/post-footer"
@@ -18,15 +19,23 @@ const Post = ({ data: { post }, previous, next }) => (
         image={post.socialImage.childImageSharp.seo}
         keywords={post.keywords}
       />
+      <PostTitle>{post.title}</PostTitle>
+      <PostSubTitle>{post.subTitle}</PostSubTitle>
+      <PostMeta>{post.date}</PostMeta>
+      <hr
+        sx={{
+          width: "33%",
+          height: "6px",
+          color: "primary",
+          bg: "primary",
+          borderWidth: 0,
+        }}
+      />
       <PostImage
         image={post.featuredImage.childImageSharp.fluid}
         altText={post.title}
       />
-      <PostMeta>
-        <a href={post.authorLink} target="_blank" rel="noopener noreferrer">
-          {post.author}
-        </a>{" "}
-        &bull; {post.date} &bull;{" "}
+      <span sx={{ color: "grey", fontSize: 1, mb: -3, display: "block" }}>
         <FaRegClock
           sx={{
             position: "relative",
@@ -34,8 +43,7 @@ const Post = ({ data: { post }, previous, next }) => (
           }}
         />{" "}
         {post.timeToRead} Min
-      </PostMeta>
-      <PostTitle>{post.title}</PostTitle>
+      </span>
       <MDXRenderer>{post.body}</MDXRenderer>
       <PostFooter {...{ previous, next }} />
     </PostContainer>

@@ -5,13 +5,12 @@ const PostMeta = ({ children }) => {
   return (
     <Styled.p
       sx={{
-        color: "darkgrey",
-        fontSize: 1,
-        textTransform: "uppercase",
+        color: "grey",
+        fontFamily: "serif",
         letterSpacing: "wider",
-        m: 0,
+        textAlign: "center",
         a: {
-          color: "darkgrey",
+          color: "grey",
           textDecoration: "none",
           ":hover": {
             textDecoration: "underline",
