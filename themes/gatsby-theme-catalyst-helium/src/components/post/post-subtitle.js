@@ -6,6 +6,7 @@ const PostSubTitle = ({ children }) => {
     <Styled.h2
       sx={{
         fontFamily: "serif",
+        fontStyle: "italic",
         fontSize: 4,
         fontWeight: "normal",
         my: 0,

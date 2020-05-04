@@ -36,6 +36,7 @@ const Post = ({ data: { post }, previous, next }) => (
         altText={post.title}
       />
       <span sx={{ color: "grey", fontSize: 1, mb: -3, display: "block" }}>
+        {post.author} &mdash;{" "}
         <FaRegClock
           sx={{
             position: "relative",

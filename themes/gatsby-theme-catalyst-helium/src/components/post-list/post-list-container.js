@@ -6,6 +6,9 @@ const PostListContainer = ({ children }) => {
     <div
       sx={{
         my: 5,
+        width: "100%",
+        position: "relative",
+        left: "calc(-50% + 50%)",
         variant: "variants.postListContainer",
       }}
     >

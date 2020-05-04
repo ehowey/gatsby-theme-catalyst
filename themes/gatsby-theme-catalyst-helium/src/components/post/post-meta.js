@@ -7,7 +7,7 @@ const PostMeta = ({ children }) => {
       sx={{
         color: "grey",
         fontFamily: "serif",
-        letterSpacing: "wider",
+        lineHeight: "1.15em",
         textAlign: "center",
         a: {
           color: "grey",
