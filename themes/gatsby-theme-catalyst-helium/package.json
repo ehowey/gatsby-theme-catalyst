@@ -7,7 +7,7 @@
     "gatsby-theme-catalyst-blog": "^2.0.1",
     "gatsby-theme-catalyst-core": "^1.1.0",
     "gatsby-theme-catalyst-footer": "^1.0.0",
-    "gatsby-theme-catalyst-header-side": "^1.0.1"
+    "gatsby-theme-catalyst-header-bigtop": "*"
   },
   "peerDependencies": {
     "gatsby": "^2.20.25",

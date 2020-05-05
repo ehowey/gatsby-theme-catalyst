@@ -8,8 +8,11 @@ const PostListImage = ({ link, image, altText }) => {
     <Link to={link}>
       <Img
         sx={{
-          height: "200px",
-          mb: 3,
+          overflow: "hidden",
+          maxHeight: "100%",
+          maxWidth: "100%",
+          height: "100%",
+          width: "100%",
           variant: "variants.postListImage",
         }}
         fluid={image}

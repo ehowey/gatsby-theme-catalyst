@@ -6,11 +6,13 @@ const PostListTitle = ({ link, children }) => {
   return (
     <Styled.h2
       sx={{
-        mt: 0,
+        my: 1,
+        fontFamily: "serif",
+        fontSize: 4,
         variant: "variants.postListTitle",
       }}
     >
-      <Styled.a as={Link} to={link}>
+      <Styled.a sx={{ color: "text" }} as={Link} to={link}>
         {children}
       </Styled.a>
     </Styled.h2>

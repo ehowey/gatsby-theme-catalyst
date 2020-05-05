@@ -5,10 +5,14 @@ const PostListContainer = ({ children }) => {
   return (
     <div
       sx={{
-        my: 5,
-        width: "100%",
+        p: 3,
+        width: "100vw",
         position: "relative",
-        left: "calc(-50% + 50%)",
+        left: "calc(-50vw + 50%)",
+        display: "grid",
+        gridGap: 3,
+        gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+        gridAutoRows: "350px",
         variant: "variants.postListContainer",
       }}
     >

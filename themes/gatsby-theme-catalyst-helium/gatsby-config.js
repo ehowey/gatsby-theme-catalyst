@@ -22,7 +22,7 @@ module.exports = (themeOptions) => {
           useStickyHeader: true,
         },
       },
-      `gatsby-theme-catalyst-header-side`,
+      `gatsby-theme-catalyst-header-bigtop`,
       `gatsby-theme-catalyst-footer`,
       {
         resolve: `gatsby-theme-catalyst-blog`,

@@ -3,13 +3,13 @@ import { jsx } from "theme-ui"
 
 const PostContainer = ({ children }) => {
   return (
-    <div
+    <article
       sx={{
         variant: "variants.postContainer",
       }}
     >
       {children}
-    </div>
+    </article>
   )
 }
 
