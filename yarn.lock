@@ -878,10 +878,10 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
-  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
+  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -7875,12 +7875,12 @@ gatsby-core-utils@^1.1.3:
     configstore "^5.0.1"
     node-object-hash "^2.0.0"
 
-gatsby-cypress@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.3.3.tgz#d16894d520fcbddeb883f79f909efa36af9d3c9a"
-  integrity sha512-OP9JM0x4zGuBgrwlivwAK0VvcR3qxUU9zhbRDdvZR8RH8Mv+ljQ6n8lGIOFqgg5H3Xl3gZghgc+GlfVniwAe5Q==
+gatsby-cypress@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.4.1.tgz#0be6245389075fd234c247c5863843ec9e249825"
+  integrity sha512-YM2vaeGY08CPfGRN5l4vkZLyas8FpHtDqjV/0rx4qaGELZVYP1DDLuiTfN+iEWL241DGdFtkvn7LQjBE0Y+xiQ==
   dependencies:
-    "@babel/runtime" "^7.8.7"
+    "@babel/runtime" "^7.9.6"
 
 gatsby-graphiql-explorer@^0.3.3:
   version "0.3.3"
