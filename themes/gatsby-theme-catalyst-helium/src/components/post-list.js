@@ -16,12 +16,14 @@ const PostsList = ({ posts }) => {
           width: "100vw",
           position: "relative",
           left: "calc(-50vw + 50%)",
-          display: "grid",
+          display: ["flex", null, "grid", null, null],
+          flexDirection: "column",
           gridTemplateColumns: "repeat(auto-fit, minmax(460px, 1fr))",
         }}
       >
         {displayPostListTitle ? <Styled.h1>{postListTitle}</Styled.h1> : null}
-        {posts.map((post) => {
+        {posts.map((post, index) => {
+          const firstPost = index === 0
           const title = post.title || post.slug
           return (
             <article
@@ -30,22 +32,39 @@ const PostsList = ({ posts }) => {
                 my: [4, null, 3, 4, null],
                 display: "grid",
                 gridTemplateColumns: "32px 1fr 32px",
-                gridTemplateRows: "200px 100px 1fr",
+                gridTemplateRows: [
+                  "100px 200px 1fr",
+                  "150px 150px 1fr",
+                  "200px 100px 1fr",
+                  null,
+                  null,
+                ],
                 ":nth-child(1)": {
                   gridColumn: "1 / -1",
-                  display: "grid",
-                  gridTemplateColumns: "32px 1fr 1fr",
-                  gridTemplateRows: "32px 1fr 1fr",
-                  height: ["60vh", "70vh", "80vh", null, null],
-                  width: ["100%", null, "90vw", "80vw", null],
-                  margin: "0 auto",
+                  gridTemplateColumns: [
+                    "32px 1fr 32px",
+                    null,
+                    "32px 1fr 1fr 32px",
+                    null,
+                    null,
+                  ],
+                  gridTemplateRows: [
+                    "100px 200px 1fr",
+                    "150px 150px 1fr",
+                    "32px auto 1fr",
+                    null,
+                    null,
+                  ],
+                  width: ["auto", null, null, "80vw", null],
+                  mx: [0, null, 3, "auto", null],
                   ".postImage": {
-                    gridColumn: "2 / 4",
-                    gridRow: "2 / 4",
+                    gridColumn: "2 / -1",
+                    gridRow: ["1 / 3", null, "1 / -1", null, null],
+                    maxHeight: ["auto", null, null, "85vh", "80vh"],
                   },
                   ".postContent": {
-                    gridColumn: "1 / 3",
-                    gridRow: "1 / 3",
+                    gridColumn: ["1 / 3", null, "1 / 3", null, null],
+                    gridRow: ["2 / -1", null, "2 / 3", null, null],
                   },
                 },
               }}
@@ -61,7 +80,12 @@ const PostsList = ({ posts }) => {
               >
                 <Link to={post.slug}>
                   <Img
-                    sx={{ maxWidth: "100%", maxHeight: "100%" }}
+                    sx={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      height: "100%",
+                      width: "100%",
+                    }}
                     fluid={post.featuredImage.childImageSharp.fluid}
                     alt={post.title}
                   />
@@ -98,11 +122,19 @@ const PostsList = ({ posts }) => {
                     fontFamily: "serif",
                   }}
                 >
-                  {post.date}
+                  {post.date} &mdash;{" "}
+                  <FaRegClock
+                    sx={{
+                      position: "relative",
+                      top: "0.125em",
+                    }}
+                  />{" "}
+                  {post.timeToRead} Min
                 </Styled.p>
                 <Styled.p sx={{ fontStyle: "italic", mt: 1 }}>
                   {post.subTitle}
                 </Styled.p>
+                {firstPost ? <Styled.p>{post.excerpt}</Styled.p> : null}
                 <Button
                   sx={{
                     color: "primary",
