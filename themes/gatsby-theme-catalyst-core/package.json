@@ -14,7 +14,7 @@
     "gatsby-background-image": "^1.1.1",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-catch-links": "^2.2.3",
-    "gatsby-plugin-manifest": "^2.3.5",
+    "gatsby-plugin-manifest": "^2.4.2",
     "gatsby-plugin-mdx": "^1.1.9",
     "gatsby-plugin-offline": "^3.1.4",
     "gatsby-plugin-page-creator": "^2.2.3",
