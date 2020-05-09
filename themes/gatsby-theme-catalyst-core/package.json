@@ -36,7 +36,7 @@
     "gatsby-transformer-yaml": "^2.3.3",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.0.0",
-    "react-icons": "^3.9.0",
+    "react-icons": "^3.10.0",
     "react-scroll": "^1.7.16",
     "remark-slug": "^6.0.0",
     "theme-ui": "^0.3.1"
