@@ -121,7 +121,7 @@ const PostsList = ({ posts }) => {
                   sx={{
                     my: 0,
                     fontSize: 1,
-                    color: "meta",
+                    color: "textGray",
                     variant: "variants.postListMeta",
                   }}
                 >

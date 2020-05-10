@@ -2,14 +2,6 @@ import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 
 export default merge(BaseTheme, {
-  colors: {
-    meta: "#737373",
-    modes: {
-      dark: {
-        meta: "#878787",
-      },
-    },
-  },
   sizes: {
     logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
     logoWidthS: "40px", // Logo width on small screens, 480px - 768px

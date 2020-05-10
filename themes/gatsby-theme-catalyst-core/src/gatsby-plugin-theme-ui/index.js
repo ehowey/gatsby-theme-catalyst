@@ -20,6 +20,7 @@ export default {
     ...tailwind.colors,
     background: baseColors.gray[1], //Try "#954264",
     text: baseColors.gray[8],
+    textGray: "#6e6e6e",
     primary: baseColors.blue[7],
     secondary: baseColors.orange[7],
     accent: baseColors.orange[2],
@@ -44,6 +45,7 @@ export default {
       dark: {
         background: baseColors.gray[9],
         text: baseColors.gray[1],
+        textGray: "#9f9f9f",
         primary: "#458ad2",
         secondary: baseColors.orange[7],
         accent: baseColors.gray[8],
