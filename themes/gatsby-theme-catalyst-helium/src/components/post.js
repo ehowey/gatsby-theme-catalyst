@@ -69,7 +69,7 @@ const Post = ({ data: { post }, previous, next }) => (
         </Styled.p>
         <hr
           sx={{
-            width: "20%",
+            width: ["40%", "30%", "20%", null, "10%"],
             height: "6px",
             color: "primary",
             bg: "primary",
