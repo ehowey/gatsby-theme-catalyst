@@ -9,9 +9,9 @@
   "devDependencies": {
     "@testing-library/cypress": "^6.0.0",
     "axe-core": "^3.5.3",
-    "cypress": "^4.4.0",
+    "cypress": "^4.5.0",
     "cypress-axe": "^0.8.1",
-    "gatsby-cypress": "^0.3.3",
+    "gatsby-cypress": "^0.4.1",
     "lerna": "^3.20.2",
     "start-server-and-test": "^1.11.0"
   },
