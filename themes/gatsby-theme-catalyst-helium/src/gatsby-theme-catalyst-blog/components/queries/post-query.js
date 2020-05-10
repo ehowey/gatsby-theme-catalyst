@@ -21,12 +21,13 @@ export const query = graphql`
       body
       slug
       title
+      subTitle
       author
       authorLink
       tags
       keywords
       timeToRead
-      date(formatString: "MMMM DD, YYYY")
+      date(formatString: "MMMM D, YYYY")
       featuredImage {
         childImageSharp {
           fluid(maxWidth: 1440) {

@@ -1,32 +1,93 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import PostContainer from "./post/post-container"
-import PostTitle from "./post/post-title"
-import PostMeta from "./post/post-meta"
-import PostImage from "./post/post-image"
-import PostFooter from "./post/post-footer"
+import Img from "gatsby-image"
+import PostFooter from "./post-footer"
 import { FaRegClock } from "react-icons/fa"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
-    <PostContainer>
-      <SEO
-        title={post.title}
-        description={post.excerpt}
-        image={post.socialImage.childImageSharp.seo}
-        keywords={post.keywords}
-      />
-      <PostImage
-        image={post.featuredImage.childImageSharp.fluid}
-        altText={post.title}
-      />
-      <PostMeta>
-        <a href={post.authorLink} target="_blank" rel="noopener noreferrer">
-          {post.author}
-        </a>{" "}
-        &bull; {post.date} &bull;{" "}
+    <SEO
+      title={post.title}
+      description={post.excerpt}
+      image={post.socialImage.childImageSharp.seo}
+    />
+    <article
+      sx={{
+        variant: "variants.postContainer",
+      }}
+    >
+      <div
+        sx={{ width: "100vw", position: "relative", left: "calc(-50vw + 50%)" }}
+      >
+        <Styled.h1
+          sx={{
+            fontSize: [6, 7, 8, null, null],
+            textAlign: "center",
+            maxWidth: ["100%", null, null, "90%", "80%"],
+            my: 2,
+            mx: "auto",
+            px: 3,
+            variant: "variants.postTitle",
+          }}
+        >
+          {post.title}
+        </Styled.h1>
+        <Styled.h2
+          sx={{
+            fontStyle: "italic",
+            fontSize: [3, 4, null, null, null],
+            fontWeight: "normal",
+            my: 2,
+            mx: "auto",
+            px: 3,
+            textAlign: "center",
+            maxWidth: ["100%", null, "80%", "70%", "60%"],
+            lineHeight: "1.15em",
+            variant: "variants.postSubTitle",
+          }}
+        >
+          {post.subTitle}
+        </Styled.h2>
+        <Styled.p
+          sx={{
+            color: "textGray",
+            lineHeight: "1.15em",
+            textAlign: "center",
+            a: {
+              color: "textGray",
+              textDecoration: "none",
+              ":hover": {
+                textDecoration: "underline",
+              },
+            },
+            variant: "variants.postMeta",
+          }}
+        >
+          {post.date}
+        </Styled.p>
+        <hr
+          sx={{
+            width: ["40%", "30%", "20%", null, "10%"],
+            height: "6px",
+            color: "primary",
+            bg: "primary",
+            borderWidth: 0,
+          }}
+        />
+        <Img
+          sx={{
+            my: 4,
+            maxHeight: "400px",
+            variant: "variants.postImage",
+          }}
+          fluid={post.featuredImage.childImageSharp.fluid}
+          alt={post.title}
+        />
+      </div>
+      <span sx={{ color: "textGray", fontSize: 1, mb: -3, display: "block" }}>
+        {post.author} &mdash;{" "}
         <FaRegClock
           sx={{
             position: "relative",
@@ -34,11 +95,10 @@ const Post = ({ data: { post }, previous, next }) => (
           }}
         />{" "}
         {post.timeToRead} Min
-      </PostMeta>
-      <PostTitle>{post.title}</PostTitle>
+      </span>
       <MDXRenderer>{post.body}</MDXRenderer>
-      <PostFooter {...{ previous, next }} />
-    </PostContainer>
+    </article>
+    <PostFooter {...{ previous, next }} />
   </Layout>
 )
 
