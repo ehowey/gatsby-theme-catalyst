@@ -13,6 +13,7 @@ const SiteBranding = () => {
         flexDirection: ["row", null, "column", null, null],
         alignItems: "center",
         justifyContent: "center",
+        variant: "variants.branding",
       }}
     >
       <Logo />
