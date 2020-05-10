@@ -52,11 +52,11 @@ const Post = ({ data: { post }, previous, next }) => (
         </Styled.h2>
         <Styled.p
           sx={{
-            color: "grey",
+            color: "meta",
             lineHeight: "1.15em",
             textAlign: "center",
             a: {
-              color: "grey",
+              color: "meta",
               textDecoration: "none",
               ":hover": {
                 textDecoration: "underline",
@@ -86,7 +86,7 @@ const Post = ({ data: { post }, previous, next }) => (
           alt={post.title}
         />
       </div>
-      <span sx={{ color: "grey", fontSize: 1, mb: -3, display: "block" }}>
+      <span sx={{ color: "meta", fontSize: 1, mb: -3, display: "block" }}>
         {post.author} &mdash;{" "}
         <FaRegClock
           sx={{

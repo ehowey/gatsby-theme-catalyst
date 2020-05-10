@@ -19,6 +19,7 @@ const PostsList = ({ posts }) => {
           display: ["flex", null, "grid", null, null],
           flexDirection: "column",
           gridTemplateColumns: "repeat(auto-fit, minmax(460px, 1fr))",
+          variant: "variants.postListContainer",
         }}
       >
         {displayPostListTitle ? <Styled.h1>{postListTitle}</Styled.h1> : null}
@@ -67,6 +68,7 @@ const PostsList = ({ posts }) => {
                     gridRow: ["2 / -1", null, "2 / 3", null, null],
                   },
                 },
+                variant: "variants.postListWrapper",
               }}
               key={post.slug}
             >
@@ -85,6 +87,7 @@ const PostsList = ({ posts }) => {
                       maxHeight: "100%",
                       height: "100%",
                       width: "100%",
+                      variant: "variants.postListImage",
                     }}
                     fluid={post.featuredImage.childImageSharp.fluid}
                     alt={post.title}
@@ -107,6 +110,7 @@ const PostsList = ({ posts }) => {
                     mt: 0,
                     mb: 1,
                     fontSize: 4,
+                    variant: "variants.postListTitle",
                   }}
                 >
                   <Styled.a sx={{ color: "text" }} as={Link} to={post.slug}>
@@ -117,7 +121,8 @@ const PostsList = ({ posts }) => {
                   sx={{
                     my: 0,
                     fontSize: 1,
-                    color: "grey",
+                    color: "meta",
+                    variant: "variants.postListMeta",
                   }}
                 >
                   {post.date} &mdash;{" "}
@@ -129,10 +134,20 @@ const PostsList = ({ posts }) => {
                   />{" "}
                   {post.timeToRead} Min
                 </Styled.p>
-                <Styled.p sx={{ fontStyle: "italic", mt: 1 }}>
+                <Styled.p
+                  sx={{
+                    fontStyle: "italic",
+                    mt: 1,
+                    variant: "variants.postListSubtitle",
+                  }}
+                >
                   {post.subTitle}
                 </Styled.p>
-                {firstPost ? <Styled.p>{post.excerpt}</Styled.p> : null}
+                {firstPost ? (
+                  <Styled.p sx={{ variant: "variants.postListExcerpt" }}>
+                    {post.excerpt}
+                  </Styled.p>
+                ) : null}
                 <Button
                   sx={{
                     color: "primary",
@@ -149,6 +164,7 @@ const PostsList = ({ posts }) => {
                       bg: "transparent",
                       border: "none",
                     },
+                    variant: "variants.postListReadmore",
                   }}
                   as={Link}
                   to={post.slug}

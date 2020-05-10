@@ -22,7 +22,7 @@ export const query = graphql`
         subTitle
         author
         authorLink
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM D, YYYY")
         tags
         timeToRead
         featuredImage {
