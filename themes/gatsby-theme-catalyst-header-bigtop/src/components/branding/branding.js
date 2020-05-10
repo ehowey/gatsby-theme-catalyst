@@ -7,10 +7,11 @@ const SiteBranding = () => {
   return (
     <div
       sx={{
-        display: "grid",
+        display: ["flex", null, "grid", null, null],
         placeItems: "center",
-        my: [2, null, 4, null, null],
+        justifyContent: "center",
         gridArea: "branding",
+        variant: "variants.branding",
       }}
     >
       <Logo />

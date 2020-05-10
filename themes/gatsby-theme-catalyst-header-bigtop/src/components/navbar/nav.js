@@ -10,7 +10,7 @@ const Nav = () => {
   return (
     <nav
       sx={{
-        my: 3,
+        m: 0,
         display: [isNavOpen ? "flex" : "none", null, "flex", null, null],
         justifyContent: "center",
         flexDirection: ["column", null, "row", null, null],

@@ -16,10 +16,6 @@ module.exports = (themeOptions) => {
           // useSocialLinks: true,
           // useColorMode: true,
           //footerContentLocation: "left", // "left", "right", "center"
-          displaySiteLogo: false,
-          displaySiteLogoMobile: false,
-          footerContentLocation: "right", // "left", "right", "center"
-          useStickyHeader: true,
         },
       },
       `gatsby-theme-catalyst-header-bigtop`,
