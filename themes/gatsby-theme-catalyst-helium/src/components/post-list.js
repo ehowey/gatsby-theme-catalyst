@@ -106,7 +106,6 @@ const PostsList = ({ posts }) => {
                   sx={{
                     mt: 0,
                     mb: 1,
-                    fontFamily: "serif",
                     fontSize: 4,
                   }}
                 >
@@ -119,7 +118,6 @@ const PostsList = ({ posts }) => {
                     my: 0,
                     fontSize: 1,
                     color: "grey",
-                    fontFamily: "serif",
                   }}
                 >
                   {post.date} &mdash;{" "}

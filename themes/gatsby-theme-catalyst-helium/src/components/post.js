@@ -18,71 +18,74 @@ const Post = ({ data: { post }, previous, next }) => (
         variant: "variants.postContainer",
       }}
     >
-      <Styled.h1
-        sx={{
-          fontFamily: "serif",
-          fontSize: 8,
-          textAlign: "center",
-          variant: "variants.postTitle",
-        }}
+      <div
+        sx={{ width: "100vw", position: "relative", left: "calc(-50vw + 50%)" }}
       >
-        {post.title}
-      </Styled.h1>
-      <Styled.h2
-        sx={{
-          fontFamily: "serif",
-          fontStyle: "italic",
-          fontSize: 4,
-          fontWeight: "normal",
-          my: 0,
-          mx: "auto",
-          textAlign: "center",
-          maxWidth: ["100%", "70%", "50%", null, null],
-          lineHeight: "1.15em",
-          variant: "variants.postSubTitle",
-        }}
-      >
-        {post.subTitle}
-      </Styled.h2>
-      <Styled.p
-        sx={{
-          color: "grey",
-          fontFamily: "serif",
-          lineHeight: "1.15em",
-          textAlign: "center",
-          a: {
+        <Styled.h1
+          sx={{
+            fontSize: [6, 7, 8, null, null],
+            textAlign: "center",
+            maxWidth: ["100%", null, null, "90%", "80%"],
+            my: 2,
+            mx: "auto",
+            px: 3,
+            variant: "variants.postTitle",
+          }}
+        >
+          {post.title}
+        </Styled.h1>
+        <Styled.h2
+          sx={{
+            fontStyle: "italic",
+            fontSize: [3, 4, null, null, null],
+            fontWeight: "normal",
+            my: 2,
+            mx: "auto",
+            px: 3,
+            textAlign: "center",
+            maxWidth: ["100%", null, "80%", "70%", "60%"],
+            lineHeight: "1.15em",
+            variant: "variants.postSubTitle",
+          }}
+        >
+          {post.subTitle}
+        </Styled.h2>
+        <Styled.p
+          sx={{
             color: "grey",
-            textDecoration: "none",
-            ":hover": {
-              textDecoration: "underline",
+            lineHeight: "1.15em",
+            textAlign: "center",
+            a: {
+              color: "grey",
+              textDecoration: "none",
+              ":hover": {
+                textDecoration: "underline",
+              },
             },
-          },
-          variant: "variants.postMeta",
-        }}
-      >
-        {post.date}
-      </Styled.p>
-      <hr
-        sx={{
-          width: "33%",
-          height: "6px",
-          color: "primary",
-          bg: "primary",
-          borderWidth: 0,
-        }}
-      />
-      <Img
-        sx={{
-          my: 4,
-          maxHeight: "400px",
-          width: "100vw",
-          position: "relative",
-          left: "calc(-50vw + 50%)",
-          variant: "variants.postImage",
-        }}
-        fluid={post.featuredImage.childImageSharp.fluid}
-        alt={post.title}
-      />
+            variant: "variants.postMeta",
+          }}
+        >
+          {post.date}
+        </Styled.p>
+        <hr
+          sx={{
+            width: "20%",
+            height: "6px",
+            color: "primary",
+            bg: "primary",
+            borderWidth: 0,
+          }}
+        />
+        <Img
+          sx={{
+            my: 4,
+            maxHeight: "400px",
+            variant: "variants.postImage",
+          }}
+          fluid={post.featuredImage.childImageSharp.fluid}
+          alt={post.title}
+        />
+      </div>
       <span sx={{ color: "grey", fontSize: 1, mb: -3, display: "block" }}>
         {post.author} &mdash;{" "}
         <FaRegClock
