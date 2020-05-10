@@ -4,18 +4,17 @@ module.exports = (themeOptions) => {
       {
         resolve: `gatsby-theme-catalyst-core`,
         options: {
-          //Default options are:
-          // contentPath: `content/pages`,
-          // assetPath: `content/assets`,
-          // displaySiteLogo: true,
-          // displaySiteTitle: true,
-          // displaySiteLogoMobile: true,
-          // displaySiteTitleMobile: true,
-          // invertLogo: false,
-          // useStickyHeader: false,
-          // useSocialLinks: true,
-          // useColorMode: true,
-          //footerContentLocation: "left", // "left", "right", "center"
+          contentPath: themeOptions.contentPath,
+          assetPath: themeOptions.assetPath,
+          displaySiteLogo: themeOptions.displaySiteLogo,
+          displaySiteTitle: themeOptions.displaySiteTitle,
+          displaySiteLogoMobile: themeOptions.displaySiteLogoMobile,
+          displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
+          invertLogo: themeOptions.invertLogo,
+          useStickyHeader: themeOptions.useStickyHeader,
+          useSocialLinks: themeOptions.useSocialLinks,
+          useColorMode: themeOptions.useColorMode,
+          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
         },
       },
       `gatsby-theme-catalyst-header-bigtop`,
@@ -24,8 +23,8 @@ module.exports = (themeOptions) => {
         resolve: `gatsby-theme-catalyst-blog`,
         options: {
           basePath: themeOptions.basePath || "/",
-          contentPath: themeOptions.contentPath,
-          assetPath: themeOptions.assetPath,
+          contentPath: themeOptions.blogContentPath,
+          assetPath: themeOptions.blogAssetPath,
           excerptLength: themeOptions.excerptLength,
           postListTitle: themeOptions.postListTitle || "Home",
           displayPostListTitle: themeOptions.displayPostListTitle || false,
