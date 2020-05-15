@@ -15,7 +15,7 @@ const Nav = () => {
         justifyContent: "center",
         flexDirection: ["column", null, "row", null, null],
         gridArea: "nav",
-        variant: "variant.nav",
+        variant: "variants.nav",
       }}
     >
       <NavLinks />

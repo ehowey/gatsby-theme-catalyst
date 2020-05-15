@@ -43,7 +43,11 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-catalyst-helium`,
-      options: {},
+      options: {
+        displaySiteLogo: false,
+        displaySiteLogoMobile: false,
+        footerContentLocation: "right",
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

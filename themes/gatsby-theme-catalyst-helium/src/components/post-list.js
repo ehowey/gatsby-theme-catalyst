@@ -40,7 +40,7 @@ const PostsList = ({ posts }) => {
                   null,
                   null,
                 ],
-                ":nth-child(1)": {
+                ":nth-of-type(1)": {
                   gridColumn: "1 / -1",
                   gridTemplateColumns: [
                     "32px 1fr 32px",
@@ -61,7 +61,7 @@ const PostsList = ({ posts }) => {
                   ".postImage": {
                     gridColumn: "2 / -1",
                     gridRow: ["1 / 3", null, "1 / -1", null, null],
-                    maxHeight: ["auto", null, null, "85vh", "80vh"],
+                    maxHeight: ["auto", null, null, "80vh", "70vh"],
                   },
                   ".postContent": {
                     gridColumn: ["1 / 3", null, "1 / 3", null, null],

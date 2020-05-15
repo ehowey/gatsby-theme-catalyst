@@ -42,7 +42,7 @@ const SiteHeader = () => {
           maxWidth: "maxPageWidth",
           width: "100%",
           display: "grid",
-          gridTemplateColumns: ["40px 1fr auto", null, "1fr", null, null],
+          gridTemplateColumns: ["50px 1fr 50px", null, "1fr", null, null],
           gridTemplateAreas: [
             `
           ". branding mobileButton" 
