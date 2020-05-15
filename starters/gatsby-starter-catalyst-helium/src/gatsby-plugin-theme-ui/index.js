@@ -6,7 +6,7 @@ import { darken } from "@theme-ui/color"
 export default merge(BaseTheme, {
   colors: {
     primary: "#d0009c",
-    secondary: "#ffd803",
+    secondary: "#e6da00",
     muted: "#ecf3f8",
     header: {
       background: "transparent",
@@ -26,7 +26,7 @@ export default merge(BaseTheme, {
     modes: {
       dark: {
         primary: "#f200f2", //"#458ad2"
-        secondary: "#ffd803",
+        secondary: "#e6da00",
         muted: "#1a2431",
         header: {
           background: "transparent",
@@ -106,18 +106,19 @@ export default merge(BaseTheme, {
     },
     navLink: {
       bg: "secondary",
+      color: baseColors.gray[8],
       px: 3,
       borderRadius: "0.25rem",
       transition: "all 0.3s ease-in-out",
       ":hover": {
         textDecoration: "none",
-        color: "text",
+        color: baseColors.gray[9],
         bg: darken("secondary", 0.08),
       },
     },
     navLinkActive: {
       textDecoration: "none",
-      color: "text",
+      color: baseColors.gray[9],
       bg: darken("secondary", 0.08),
     },
     navLi: {
