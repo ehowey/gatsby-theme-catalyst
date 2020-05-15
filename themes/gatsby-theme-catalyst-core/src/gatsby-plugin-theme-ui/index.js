@@ -49,6 +49,7 @@ export default {
         primary: "#458ad2",
         secondary: baseColors.orange[7],
         accent: baseColors.gray[8],
+        highlight: baseColors.orange[5],
         muted: baseColors.gray[8],
         header: {
           text: baseColors.gray[1],
