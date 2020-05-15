@@ -43,6 +43,7 @@ const NavLi = ({ children, hasSubmenu }) => {
           color: "primary",
           variant: "variants.navLinkActive",
         },
+        variant: "variants.navLi",
       }}
       aria-haspopup={hasSubmenu}
     >

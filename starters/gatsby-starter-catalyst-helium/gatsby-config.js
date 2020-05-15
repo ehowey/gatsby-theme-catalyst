@@ -47,6 +47,7 @@ module.exports = {
         displaySiteLogo: false,
         displaySiteLogoMobile: false,
         footerContentLocation: "right",
+        useStickyHeader: true,
       },
     },
     {

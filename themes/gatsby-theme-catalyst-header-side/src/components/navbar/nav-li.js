@@ -33,6 +33,7 @@ const NavLi = ({ children }) => {
           color: "primary",
           variant: "variants.navLinkActive",
         },
+        variant: "variants.navLi",
       }}
     >
       {children}

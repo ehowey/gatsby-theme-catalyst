@@ -1,5 +1,7 @@
 # Gatsby Theme Catalyst Helium
 
+**WIP**
+
 This is a minimalist MDX based personal blog theme that ties together the core theme, blog theme, header and footer themes and then uses this as a basis to create a complete website. Git is used as the CMS.
 
 **Additional Documentation**

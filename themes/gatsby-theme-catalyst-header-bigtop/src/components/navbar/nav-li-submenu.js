@@ -30,6 +30,7 @@ const NavLiDropdown = ({ children }) => {
           color: "primary",
           variant: "variants.navLinkSubActive",
         },
+        variant: "variants.navLiSub",
       }}
     >
       {children}

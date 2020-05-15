@@ -29,6 +29,7 @@ const NavUlDropdown = ({ children }) => {
           opacity: "1",
           display: "block",
         },
+        variant: "variants.navUlSub",
       }}
       aria-label="submenu"
     >

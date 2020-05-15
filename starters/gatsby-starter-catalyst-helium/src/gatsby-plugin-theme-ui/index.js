@@ -116,7 +116,7 @@ export default merge(BaseTheme, {
       color: "text",
       bg: darken("secondary", 0.08),
     },
-    navLinkLi: {
+    navLi: {
       mb: [3, null, 0, null, null],
     },
   },
