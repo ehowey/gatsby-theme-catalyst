@@ -91,7 +91,9 @@ export default merge(BaseTheme, {
     },
     header: {
       bg: ["background", null, "transparent", null, null],
-      boxShadow: ["0 4px 2px -2px #cccccc", null, "none", null, null],
+      borderBottomStyle: ["solid", null, "none", null, null],
+      borderBottomWidth: "2px",
+      borderBottomColor: "secondary",
     },
     siteTitle: {
       fontSize: [3, null, 7, 8, null],
@@ -103,6 +105,24 @@ export default merge(BaseTheme, {
     },
     nav: {
       my: 3,
+      "::before": {
+        content: ["none", null, '""', null, null],
+        flex: "1",
+        height: "4px",
+        backgroundColor: "secondary",
+        mr: 3,
+        mt: 3,
+        display: "inline",
+      },
+      "::after": {
+        content: ["none", null, '""', null, null],
+        flex: "1",
+        height: "4px",
+        backgroundColor: "secondary",
+        ml: 3,
+        mt: 3,
+        display: "inline",
+      },
     },
     navLink: {
       bg: "secondary",
