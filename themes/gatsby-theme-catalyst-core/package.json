@@ -29,7 +29,7 @@
     "gatsby-remark-images": "^3.3.5",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-relative-images": "^0.3.0",
-    "gatsby-remark-responsive-iframe": "^2.4.2",
+    "gatsby-remark-responsive-iframe": "^2.4.3",
     "gatsby-remark-smartypants": "^2.3.1",
     "gatsby-source-filesystem": "^2.3.7",
     "gatsby-transformer-json": "^2.4.3",
