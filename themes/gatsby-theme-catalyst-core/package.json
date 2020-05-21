@@ -33,7 +33,7 @@
     "gatsby-remark-smartypants": "^2.3.1",
     "gatsby-source-filesystem": "^2.3.7",
     "gatsby-transformer-json": "^2.4.3",
-    "gatsby-transformer-sharp": "^2.5.2",
+    "gatsby-transformer-sharp": "^2.5.3",
     "gatsby-transformer-yaml": "^2.4.2",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.0.0",
