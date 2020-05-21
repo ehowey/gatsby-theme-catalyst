@@ -21,7 +21,7 @@
     "gatsby-plugin-page-creator": "^2.3.4",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-robots-txt": "^1.5.0",
-    "gatsby-plugin-sharp": "^2.6.3",
+    "gatsby-plugin-sharp": "^2.6.8",
     "gatsby-plugin-sitemap": "^2.4.3",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-remark-copy-linked-files": "^2.3.3",
