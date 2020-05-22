@@ -64,12 +64,12 @@ const PostsList = ({ posts }) => {
                   mx: [0, null, 3, "auto", null],
                   ".postImage": {
                     gridColumn: "2 / -1",
-                    gridRow: ["1 / 3", null, "1 / -1", null, null],
+                    gridRow: ["1 / 3", null, "2 / -1", null, null],
                     maxHeight: ["auto", null, null, "80vh", "70vh"],
                   },
                   ".postContent": {
                     gridColumn: ["1 / 3", null, "1 / 3", null, null],
-                    gridRow: ["2 / -1", null, "2 / 3", null, null],
+                    gridRow: ["2 / -1", null, "1 / 3", null, null],
                   },
                 },
                 variant: "variants.postListWrapper",
