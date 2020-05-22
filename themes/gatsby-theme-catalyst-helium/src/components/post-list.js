@@ -5,14 +5,16 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { FaRegClock } from "react-icons/fa"
 import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
+import { useHeliumConfig } from "gatsby-theme-catalyst-helium"
 import Hero from "./hero"
 
 const PostsList = ({ posts }) => {
   const { postListTitle, displayPostListTitle } = useCatalystBlogConfig()
+  const { useHero } = useHeliumConfig()
   return (
     <Layout>
       <SEO title={postListTitle} />
-      <Hero />
+      {useHero && <Hero />}
       <div
         sx={{
           width: "100vw",
