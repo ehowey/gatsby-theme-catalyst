@@ -11,7 +11,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { useHero = true }
+  { useHero = false }
 ) => {
   // create garden data from plugin config
   const heliumConfigFieldData = {

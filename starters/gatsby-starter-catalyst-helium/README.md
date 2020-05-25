@@ -1,8 +1,6 @@
 # Gatsby Starter Catalyst Helium
 
-WIP
-
-This is a starter provides a minimalist blog that ties together the core theme, blog theme, header and footer themes to ceate a complete website. Git is used as the CMS, posts are authored in MDX.
+This is a starter provides a blog that ties together the core theme, blog theme, header and footer themes to ceate a complete website. Git is used as the CMS, posts are authored in MDX. This starter demonstrates using variants and Theme-UI to style underlying themes.
 
 **Documentation**
 

@@ -70,3 +70,14 @@ jobs:
           start: yarn workspace gatsby-starter-catalyst-hydrogen develop
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
+  test_helium:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Run Tests on Helium
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn workspace gatsby-starter-catalyst-helium develop
+          wait-on: "http://localhost:8000"
+          wait-on-timeout: 120

@@ -44,10 +44,15 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-helium`,
       options: {
+        // Core theme
         displaySiteLogo: false,
         displaySiteLogoMobile: false,
         footerContentLocation: "right",
         useStickyHeader: true,
+        // Blog theme
+        excerptLength: 200,
+        // Helium
+        useHero: true,
       },
     },
     {
