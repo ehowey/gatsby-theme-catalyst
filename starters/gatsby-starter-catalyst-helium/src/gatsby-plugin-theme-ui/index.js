@@ -5,9 +5,11 @@ import { darken } from "@theme-ui/color"
 
 export default merge(BaseTheme, {
   colors: {
-    primary: "#d0009c",
-    secondary: "#e6da00",
+    primary: "#e6da00",
+    secondary: "#9933CC",
     muted: "#ecf3f8",
+    accent: "#fffdd0",
+    link: "#9933CC",
     header: {
       background: "transparent",
       backgroundOpen: baseColors.gray[2],
@@ -25,9 +27,9 @@ export default merge(BaseTheme, {
     // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
     modes: {
       dark: {
-        primary: "#f200f2", //"#458ad2"
-        secondary: "#e6da00",
         muted: "#1a2431",
+        accent: "#363636",
+        link: "#e6da00",
         header: {
           background: "transparent",
           text: baseColors.gray[1],
@@ -58,6 +60,13 @@ export default merge(BaseTheme, {
     logoHeightXL: "140px", // Logo height on extra large screens, above 1440px
   },
   styles: {
+    a: {
+      color: "link",
+      textDecoration: "none",
+      ":hover": {
+        textDecoration: "underline",
+      },
+    },
     h1: {
       fontFamily: "heading",
       fontWeight: "heading",
@@ -72,7 +81,7 @@ export default merge(BaseTheme, {
         content: '""',
         flex: "1",
         height: "4px",
-        backgroundColor: "primary",
+        backgroundColor: "text",
         ml: 3,
         mt: "8px",
         display: "inline",
@@ -93,7 +102,7 @@ export default merge(BaseTheme, {
       bg: ["background", null, "transparent", null, null],
       borderBottomStyle: ["solid", null, "none", null, null],
       borderBottomWidth: "2px",
-      borderBottomColor: "secondary",
+      borderBottomColor: "primary",
     },
     siteTitle: {
       fontSize: [3, null, 7, 8, null],
@@ -109,7 +118,7 @@ export default merge(BaseTheme, {
         content: ["none", null, '""', null, null],
         flex: "1",
         height: "4px",
-        backgroundColor: "secondary",
+        backgroundColor: "primary",
         mr: 3,
         mt: 3,
         display: "inline",
@@ -118,14 +127,14 @@ export default merge(BaseTheme, {
         content: ["none", null, '""', null, null],
         flex: "1",
         height: "4px",
-        backgroundColor: "secondary",
+        backgroundColor: "primary",
         ml: 3,
         mt: 3,
         display: "inline",
       },
     },
     navLink: {
-      bg: "secondary",
+      bg: "primary",
       color: baseColors.gray[8],
       px: 3,
       borderRadius: "0.25rem",
@@ -133,13 +142,13 @@ export default merge(BaseTheme, {
       ":hover": {
         textDecoration: "none",
         color: baseColors.gray[9],
-        bg: darken("secondary", 0.08),
+        bg: darken("primary", 0.08),
       },
     },
     navLinkActive: {
       textDecoration: "none",
       color: baseColors.gray[9],
-      bg: darken("secondary", 0.08),
+      bg: darken("primary", 0.08),
     },
     navLi: {
       mb: [3, null, 0, null, null],

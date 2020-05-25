@@ -29,8 +29,8 @@ const Hero = () => {
     >
       <div
         sx={{
-          width: ["auto", null, "90vw", "80vw", null],
-          mx: [3, null, "auto", null, null],
+          width: ["auto", null, "90vw", "80vw", "1280px"],
+          mx: [0, 3, "auto", null, null],
           display: "grid",
           gridTemplateColumns: "1fr auto 1fr",
           gridTemplateRows: ["180px auto", null, "230px auto", null, null],
@@ -45,7 +45,7 @@ const Hero = () => {
             height: ["250px", null, "300px", null, null],
             width: ["250px", null, "300px", null, null],
             borderRadius: "9999em",
-            borderColor: "secondary",
+            borderColor: "primary",
             borderWidth: "4px",
             borderStyle: "solid",
           }}
@@ -56,8 +56,8 @@ const Hero = () => {
             gridColumn: "1 / -1",
             gridRow: "2 / 3",
             zIndex: 2,
-            bg: "secondary",
-            px: [1, 2, 4, null, null],
+            bg: "primary",
+            px: [2, 3, 4, null, null],
             pb: 4,
             textAlign: "center",
             borderRadius: "0.25rem",
@@ -68,6 +68,7 @@ const Hero = () => {
               fontSize: [4, 5, 6, null, null],
               fontWeight: "bold",
               lineHeight: "snug",
+              my: 4,
               color: baseColors.gray[8],
             }}
           >
@@ -81,14 +82,14 @@ const Hero = () => {
               fontSize: 3,
               fontWeight: "bold",
               color: baseColors.gray[8],
-              bg: lighten("secondary", 0.15),
+              bg: lighten("primary", 0.15),
               transition: "all 0.3s ease-in-out",
               borderColor: baseColors.gray[8],
               borderStyle: "solid",
               borderWidth: "4px",
               borderRadius: "9999em",
               ":hover": {
-                bg: darken("secondary", 0.03),
+                bg: darken("primary", 0.08),
               },
             }}
           >
