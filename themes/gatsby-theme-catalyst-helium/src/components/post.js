@@ -94,6 +94,8 @@ const Post = ({ data: { post }, previous, next }) => (
         <Img
           sx={{
             maxHeight: "400px",
+            maxWidth: "maxPageWidth",
+            mx: "auto",
             mb: 4,
             variant: "variants.postImage",
           }}

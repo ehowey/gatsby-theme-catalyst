@@ -8,7 +8,7 @@ export default merge(BaseTheme, {
     primary: "#e6da00",
     secondary: "#9933CC",
     muted: "#ecf3f8",
-    accent: "#fffdd0",
+    accent: "#fffee4",
     link: "#9933CC",
     header: {
       background: "transparent",
@@ -27,6 +27,8 @@ export default merge(BaseTheme, {
     // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
     modes: {
       dark: {
+        primary: "#e6da00",
+        secondary: "#9933CC",
         muted: "#1a2431",
         accent: "#363636",
         link: "#e6da00",

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 const PostFooter = ({ previous, next }) => (
   <div>
-    <Styled.hr />
+    <Styled.hr sx={{ bg: "textGray" }} />
     {(previous || next) && (
       <Flex
         sx={{

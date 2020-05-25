@@ -79,7 +79,7 @@ const Hero = () => {
             as={Link}
             to="/contact"
             sx={{
-              fontSize: 3,
+              fontSize: [2, 3, null, null, null],
               fontWeight: "bold",
               color: baseColors.gray[8],
               bg: lighten("primary", 0.15),
