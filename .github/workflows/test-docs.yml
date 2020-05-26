@@ -15,7 +15,7 @@ on:
       - ".github/**"
 jobs:
   test_docs:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1

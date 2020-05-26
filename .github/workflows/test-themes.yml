@@ -16,7 +16,7 @@ on:
       - ".github/**"
 jobs:
   test_core:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -27,7 +27,7 @@ jobs:
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
   test_basic:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -38,7 +38,7 @@ jobs:
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
   test_blog:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -49,7 +49,7 @@ jobs:
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
   test_sanity:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -60,7 +60,7 @@ jobs:
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
   test_hydrogen:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -71,7 +71,7 @@ jobs:
           wait-on: "http://localhost:8000"
           wait-on-timeout: 120
   test_helium:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
