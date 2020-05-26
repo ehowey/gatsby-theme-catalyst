@@ -71,12 +71,15 @@ export default merge(BaseTheme, {
     },
     h1: {
       fontFamily: "heading",
-      fontWeight: "heading",
+      fontWeight: "normal",
       lineHeight: "heading",
       m: 0,
       mb: 1,
-      fontSize: 6,
+      fontSize: [5, null, 6, null, null],
       mt: 2,
+      textAlign: "center",
+      textTransform: "uppercase",
+      letterSpacing: "wide",
       display: "flex",
       alignItems: "center",
       "::after": {
@@ -85,6 +88,15 @@ export default merge(BaseTheme, {
         height: "4px",
         backgroundColor: "text",
         ml: 3,
+        mt: "8px",
+        display: "inline",
+      },
+      "::before": {
+        content: '""',
+        flex: "1",
+        height: "4px",
+        backgroundColor: "text",
+        mr: 3,
         mt: "8px",
         display: "inline",
       },
@@ -109,10 +121,21 @@ export default merge(BaseTheme, {
     siteTitle: {
       fontSize: [3, null, 7, 8, null],
       letterSpacing: "widest",
+      fontWeight: "bold",
       textTransform: "uppercase",
+      bg: "transparent",
       ":after": {
         content: "none",
       },
+      ":before": {
+        content: "none",
+      },
+    },
+    postListTitle: {
+      textAlign: "center",
+      maxWidth: "maxPageWidth",
+      mx: "auto",
+      px: 3,
     },
     nav: {
       my: 3,

@@ -41,6 +41,8 @@
     "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open",
     "test:sanity": "start-server-and-test develop:sanity http://localhost:8000 cy:open",
     "test:hydrogen": "start-server-and-test develop:hydrogen http://localhost:8000 cy:open",
+    "test:helium": "start-server-and-test develop:helium http://localhost:8000 cy:open",
+    "test:www": "start-server-and-test develop:www http://localhost:8000 cy:open",
     "cy:open": "cypress open"
   }
 }

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Button } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Layout, SEO } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
@@ -22,6 +22,18 @@ const PostsList = ({ posts }) => {
           left: "calc(-50vw + 50%)",
         }}
       >
+        {displayPostListTitle ? (
+          <Styled.h1
+            sx={{
+              maxWidth: "maxContentWidth",
+              mx: "auto",
+              textAlign: "center",
+              variant: "variants.postListTitle",
+            }}
+          >
+            {postListTitle}
+          </Styled.h1>
+        ) : null}
         <div
           sx={{
             display: ["flex", null, "grid", null, null],
@@ -32,7 +44,6 @@ const PostsList = ({ posts }) => {
             mx: "auto",
           }}
         >
-          {displayPostListTitle ? <Styled.h1>{postListTitle}</Styled.h1> : null}
           {posts.map((post, index) => {
             const firstPost = index === 0
             const title = post.title || post.slug
