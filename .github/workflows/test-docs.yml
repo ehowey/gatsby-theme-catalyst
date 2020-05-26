@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Tests on Docs Site
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-catalyst-docs develop
           wait-on: "http://localhost:8000"

@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Tests on Core
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-core develop
           wait-on: "http://localhost:8000"
@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Tests on Basic
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst develop
           wait-on: "http://localhost:8000"
@@ -43,7 +43,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Tests on Blog
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-blog develop
           wait-on: "http://localhost:8000"
@@ -54,7 +54,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Tests on Sanity
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-sanity develop
           wait-on: "http://localhost:8000"
@@ -65,7 +65,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Tests on Hydrogen
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-hydrogen develop
           wait-on: "http://localhost:8000"
@@ -76,7 +76,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Tests on Helium
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-helium develop
           wait-on: "http://localhost:8000"
