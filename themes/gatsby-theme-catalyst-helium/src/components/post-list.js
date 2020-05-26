@@ -131,7 +131,7 @@ const PostsList = ({ posts }) => {
                       mt: 0,
                       mb: 1,
                       fontSize: 4,
-                      variant: "variants.postListTitle",
+                      variant: "variants.postTitleList",
                     }}
                   >
                     <Styled.a sx={{ color: "text" }} as={Link} to={post.slug}>
