@@ -24,8 +24,6 @@ jobs:
         uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-core develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
   test_basic:
     runs-on: ubuntu-latest
     steps:
@@ -35,8 +33,6 @@ jobs:
         uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
   test_blog:
     runs-on: ubuntu-latest
     steps:
@@ -46,8 +42,6 @@ jobs:
         uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-blog develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
   test_sanity:
     runs-on: ubuntu-latest
     steps:
@@ -57,8 +51,6 @@ jobs:
         uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-sanity develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
   test_hydrogen:
     runs-on: ubuntu-latest
     steps:
@@ -68,8 +60,6 @@ jobs:
         uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-hydrogen develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
   test_helium:
     runs-on: ubuntu-latest
     steps:
@@ -79,5 +69,3 @@ jobs:
         uses: cypress-io/github-action@master
         with:
           start: yarn workspace gatsby-starter-catalyst-helium develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
