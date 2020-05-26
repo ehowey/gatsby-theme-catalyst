@@ -34,7 +34,7 @@ const Post = ({ data: { post }, previous, next }) => (
           <h1
             sx={{
               fontFamily: "heading",
-              fontWeight: "heading",
+              fontWeight: "normal",
               lineHeight: "heading",
               fontSize: [6, 7, 8, null, null],
               textAlign: "center",
