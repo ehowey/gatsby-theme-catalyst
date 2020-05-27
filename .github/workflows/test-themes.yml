@@ -24,7 +24,7 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build:basic
-      - name: Run Tests on Core
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:basic
@@ -38,7 +38,7 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build:blog
-      - name: Run Tests on Core
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:blog
@@ -52,7 +52,7 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build:sanity
-      - name: Run Tests on Core
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:sanity
@@ -66,7 +66,7 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build:hydrogen
-      - name: Run Tests on Core
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:hydrogen
