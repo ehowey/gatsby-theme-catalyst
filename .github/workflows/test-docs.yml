@@ -10,19 +10,18 @@ on:
     branches:
       - master
     paths:
-      - "starters/**"
-      - "themes/**"
+      - "www/**"
       - ".github/**"
 jobs:
   test_docs:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Docs Site
+        uses: actions/checkout@v2
+      - name: Run Tests on Docs
         uses: cypress-io/github-action@v1
         with:
-          start: yarn workspace gatsby-catalyst-docs develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
-          spec: cypress/e2e/smoke.test.js
+          build: yarn build:www
+          start: yarn serve:www
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/docs.test.js

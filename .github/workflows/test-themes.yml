@@ -15,58 +15,51 @@ on:
       - "themes/**"
       - ".github/**"
 jobs:
-  test_core:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Core
-        uses: cypress-io/github-action@v1
-        with:
-          start: yarn workspace gatsby-starter-catalyst-core develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
   test_basic:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Basic
+        uses: actions/checkout@v2
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
-          start: yarn workspace gatsby-starter-catalyst develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
+          build: yarn build:basic
+          start: yarn serve:basic
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/themes.test.js
   test_blog:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Blog
+        uses: actions/checkout@v2
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
-          start: yarn workspace gatsby-starter-catalyst-blog develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
+          build: yarn build:blog
+          start: yarn serve:blog
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/themes.test.js
   test_sanity:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Sanity
+        uses: actions/checkout@v2
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
-          start: yarn workspace gatsby-starter-catalyst-sanity develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
+          build: yarn build:sanity
+          start: yarn serve:sanity
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/themes.test.js
   test_hydrogen:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Hydrogen
+        uses: actions/checkout@v2
+      - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
-          start: yarn workspace gatsby-starter-catalyst-hydrogen develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
+          build: yarn build:hydrogen
+          start: yarn serve:hydrogen
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/themes.test.js
