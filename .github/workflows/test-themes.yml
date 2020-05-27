@@ -20,13 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:basic
       - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
+          build: yarn build:basic
           start: yarn serve:basic
           spec: cypress/e2e/themes.test.js
   test_blog:
@@ -34,13 +31,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:blog
       - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
+          build: yarn build:blog
           start: yarn serve:blog
           spec: cypress/e2e/themes.test.js
   test_sanity:
@@ -48,13 +42,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:sanity
       - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
+          build: yarn build:sanity
           start: yarn serve:sanity
           spec: cypress/e2e/themes.test.js
   test_hydrogen:
@@ -62,12 +53,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:hydrogen
       - name: Run Tests
         uses: cypress-io/github-action@v1
         with:
+          build: yarn build:hydrogen
           start: yarn serve:hydrogen
           spec: cypress/e2e/themes.test.js
