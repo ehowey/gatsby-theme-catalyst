@@ -9,7 +9,6 @@ describe("Smoke test", () => {
 })
 describe("Navigation Menu Tests", () => {
   it("Navigation Works", () => {
-    cy.visit(`/`)
     cy.viewport(1440, 900)
     cy.get("header").then(($header) => {
       if ($header.find("nav").length) {
