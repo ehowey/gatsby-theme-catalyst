@@ -20,53 +20,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Build
+        run: yarn develop:core
       - name: Run Tests on Core
         uses: cypress-io/github-action@v1
-        with:
-          start: yarn workspace gatsby-starter-catalyst-core develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
-  test_basic:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Basic
-        uses: cypress-io/github-action@v1
-        with:
-          start: yarn workspace gatsby-starter-catalyst develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
-  test_blog:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Blog
-        uses: cypress-io/github-action@v1
-        with:
-          start: yarn workspace gatsby-starter-catalyst-blog develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
-  test_sanity:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Sanity
-        uses: cypress-io/github-action@v1
-        with:
-          start: yarn workspace gatsby-starter-catalyst-sanity develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
-  test_hydrogen:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run Tests on Hydrogen
-        uses: cypress-io/github-action@v1
-        with:
-          start: yarn workspace gatsby-starter-catalyst-hydrogen develop
-          wait-on: "http://localhost:8000"
-          wait-on-timeout: 120
