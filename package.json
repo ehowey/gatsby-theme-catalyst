@@ -9,9 +9,9 @@
   "devDependencies": {
     "@testing-library/cypress": "^6.0.0",
     "axe-core": "^3.5.3",
-    "cypress": "^4.5.0",
+    "cypress": "^4.7.0",
     "cypress-axe": "^0.8.1",
-    "gatsby-cypress": "^0.4.1",
+    "gatsby-cypress": "^0.4.2",
     "lerna": "^3.21.0",
     "start-server-and-test": "^1.11.0"
   },
@@ -26,9 +26,15 @@
     "build:core": "yarn workspace gatsby-starter-catalyst-core build",
     "build:basic": "yarn workspace gatsby-starter-catalyst build",
     "build:blog": "yarn workspace gatsby-starter-catalyst-blog build",
+    "build:sanity": "yarn workspace gatsby-starter-catalyst-sanity build",
+    "build:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen build",
+    "build:www": "yarn workspace gatsby-catalyst-docs build",
     "serve:core": "yarn workspace gatsby-starter-catalyst-core serve",
     "serve:basic": "yarn workspace gatsby-starter-catalyst serve",
     "serve:blog": "yarn workspace gatsby-starter-catalyst-blog serve",
+    "serve:sanity": "yarn workspace gatsby-starter-catalyst-sanity serve",
+    "serve:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen serve",
+    "serve:www": "yarn workspace gatsby-catalyst-docs serve",
     "clean:core": "yarn workspace gatsby-starter-catalyst-core clean",
     "clean:basic": "yarn workspace gatsby-starter-catalyst clean",
     "clean:blog": "yarn workspace gatsby-starter-catalyst-blog clean",
@@ -41,8 +47,8 @@
     "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open",
     "test:sanity": "start-server-and-test develop:sanity http://localhost:8000 cy:open",
     "test:hydrogen": "start-server-and-test develop:hydrogen http://localhost:8000 cy:open",
-    "test:helium": "start-server-and-test develop:helium http://localhost:8000 cy:open",
     "test:www": "start-server-and-test develop:www http://localhost:8000 cy:open",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   }
 }
