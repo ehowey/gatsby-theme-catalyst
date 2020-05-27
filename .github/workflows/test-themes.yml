@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn install
       - name: Build
         run: yarn develop:core
       - name: Run Tests on Core
