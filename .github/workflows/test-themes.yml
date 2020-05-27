@@ -23,6 +23,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build
-        run: yarn develop:core
+        run: yarn build:core
       - name: Run Tests on Core
         uses: cypress-io/github-action@v1
+        with:
+          start: yarn serve:core
