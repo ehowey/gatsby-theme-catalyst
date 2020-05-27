@@ -8236,7 +8236,7 @@ gatsby-remark-responsive-iframe@^2.4.3:
     lodash "^4.17.15"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-smartypants@^2.3.1:
+gatsby-remark-smartypants@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-2.3.2.tgz#3e8e437466e7a812e4167acfca04e603888c112e"
   integrity sha512-nZoLBeuld+kHeRfvQUNFTHBVc4e7qRqyU/k60QNvpJhjAPoZj9OrF7sAJk8VdQR0Kzp5OkFnreAiwggoiCqYpQ==
