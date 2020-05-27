@@ -23,4 +23,5 @@ jobs:
         with:
           build: yarn build:www
           start: yarn serve:www
+          config-file: cypress/cypress-github-actions.json
           spec: cypress/e2e/docs.test.js
