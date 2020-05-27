@@ -33,7 +33,7 @@
     "serve:basic": "yarn workspace gatsby-starter-catalyst serve",
     "serve:blog": "yarn workspace gatsby-starter-catalyst-blog serve",
     "serve:sanity": "yarn workspace gatsby-starter-catalyst-sanity serve",
-    "serve:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen develop",
+    "serve:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen serve",
     "serve:www": "yarn workspace gatsby-catalyst-docs serve",
     "clean:core": "yarn workspace gatsby-starter-catalyst-core clean",
     "clean:basic": "yarn workspace gatsby-starter-catalyst clean",
@@ -42,11 +42,13 @@
     "clean:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen clean",
     "clean:helium": "yarn workspace gatsby-starter-catalyst-helium clean",
     "clean:www": "yarn workspace gatsby-catalyst-docs clean",
-    "test:core": "start-server-and-test develop:core http://localhost:8000 cy:open",
-    "test:basic": "start-server-and-test develop:basic http://localhost:8000 cy:open",
-    "test:blog": "start-server-and-test develop:blog http://localhost:8000 cy:open",
-    "test:sanity": "start-server-and-test develop:sanity http://localhost:8000 cy:open",
-    "test:hydrogen": "start-server-and-test develop:hydrogen http://localhost:8000 cy:open",
-    "cy:open": "cypress open"
+    "test:core": "start-server-and-test serve:core http://localhost:9000 cy:open",
+    "test:basic": "start-server-and-test serve:basic http://localhost:9000 cy:open",
+    "test:blog": "start-server-and-test serve:blog http://localhost:9000 cy:open",
+    "test:sanity": "start-server-and-test serve:sanity http://localhost:9000 cy:open",
+    "test:hydrogen": "start-server-and-test serve:hydrogen http://localhost:9000 cy:open",
+    "test:www": "start-server-and-test serve:www http://localhost:9000 cy:open",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   }
 }
