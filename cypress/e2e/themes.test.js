@@ -24,11 +24,3 @@ describe("Navigation Menu Tests", () => {
     })
   })
 })
-describe("a11Y test", () => {
-  it("Has no detectable a11y violations on light theme", () => {
-    cy.visit(`/`)
-    cy.viewport(1440, 900)
-    cy.injectAxe()
-    cy.checkA11y()
-  })
-})
