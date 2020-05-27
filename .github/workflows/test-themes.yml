@@ -28,3 +28,55 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:core
+  test_basic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build:basic
+      - name: Run Tests on Core
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn serve:basic
+  test_blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build:blog
+      - name: Run Tests on Core
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn serve:blog
+  test_sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build:sanity
+      - name: Run Tests on Core
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn serve:sanity
+  test_hydrogen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build:hydrogen
+      - name: Run Tests on Core
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn serve:hydrogen
