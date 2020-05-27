@@ -23,7 +23,7 @@ jobs:
       - name: Run Tests on Core
         uses: cypress-io/github-action@master
         with:
-          start: yarn test:core
+          command: yarn test:core
   test_basic:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +32,7 @@ jobs:
       - name: Run Tests on Basic
         uses: cypress-io/github-action@master
         with:
-          start: yarn test:basic
+          command: yarn test:basic
   test_blog:
     runs-on: ubuntu-latest
     steps:
@@ -50,7 +50,7 @@ jobs:
       - name: Run Tests on Sanity
         uses: cypress-io/github-action@master
         with:
-          start: yarn test:sanity
+          command: yarn test:sanity
   test_hydrogen:
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +59,7 @@ jobs:
       - name: Run Tests on Hydrogen
         uses: cypress-io/github-action@master
         with:
-          start: yarn test:hydrogen
+          command: yarn test:hydrogen
   test_helium:
     runs-on: ubuntu-latest
     steps:
@@ -68,4 +68,4 @@ jobs:
       - name: Run Tests on Helium
         uses: cypress-io/github-action@master
         with:
-          start: yarn test:helium
+          command: yarn test:helium
