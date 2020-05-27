@@ -26,4 +26,4 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:www
-          spec: cypress/e2e/smoke.test.js
+          spec: cypress/e2e/docs.test.js

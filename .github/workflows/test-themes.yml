@@ -15,19 +15,6 @@ on:
       - "themes/**"
       - ".github/**"
 jobs:
-  test_core:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:core
-      - name: Run Tests on Core
-        uses: cypress-io/github-action@v1
-        with:
-          start: yarn serve:core
   test_basic:
     runs-on: ubuntu-latest
     steps:
@@ -41,6 +28,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:basic
+          spec: cypress/e2e/themes.test.js
   test_blog:
     runs-on: ubuntu-latest
     steps:
@@ -54,6 +42,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:blog
+          spec: cypress/e2e/themes.test.js
   test_sanity:
     runs-on: ubuntu-latest
     steps:
@@ -67,6 +56,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:sanity
+          spec: cypress/e2e/themes.test.js
   test_hydrogen:
     runs-on: ubuntu-latest
     steps:
@@ -80,3 +70,4 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn serve:hydrogen
+          spec: cypress/e2e/themes.test.js
