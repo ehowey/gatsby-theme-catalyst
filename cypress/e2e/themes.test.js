@@ -1,6 +1,6 @@
 describe("Smoke test", () => {
   it("Site loads", () => {
-    cy.visit(`http://localhost:9000/`).assertRoute(`http://localhost:9000/`)
+    cy.visit(`/`).assertRoute(`/`)
     cy.viewport(1440, 900)
     cy.get("header").should("be.visible")
     cy.get("main").should("be.visible")
@@ -9,7 +9,7 @@ describe("Smoke test", () => {
 })
 describe("Navigation Menu Tests", () => {
   it("Navigation Works", () => {
-    cy.visit(`http://localhost:9000/`)
+    cy.visit(`/`)
     cy.viewport(1440, 900)
     cy.get("header").then(($header) => {
       if ($header.find("nav").length) {
@@ -26,7 +26,7 @@ describe("Navigation Menu Tests", () => {
 })
 describe("a11Y test", () => {
   it("Has no detectable a11y violations on light theme", () => {
-    cy.visit(`http://localhost:9000/`)
+    cy.visit(`/`)
     cy.viewport(1440, 900)
     cy.injectAxe()
     cy.checkA11y()
