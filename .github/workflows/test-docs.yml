@@ -18,12 +18,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:www
-      - name: Run Tests on Core
+      - name: Run Tests on Docs
         uses: cypress-io/github-action@v1
         with:
+          build: yarn build:www
           start: yarn serve:www
           spec: cypress/e2e/docs.test.js
