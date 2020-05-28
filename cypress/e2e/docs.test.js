@@ -7,15 +7,11 @@ describe("Smoke test", () => {
   })
 })
 describe("Check Docs", () => {
-  it("Docs work", () => {
+  it("Docs works", () => {
     cy.get("nav").within(() => {
       cy.get('a[href*="/docs"]').click()
     })
-  })
-})
-describe("Check Link Color", () => {
-  it("Link Color Correct", () => {
-    cy.visit(`/docs/`)
+    cy.get("h1").contains("Docs")
     cy.get("main").within(() => {
       cy.get("a").should("have.css", "color", "rgb(197, 48, 48)")
     })
