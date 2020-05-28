@@ -5,9 +5,11 @@ import { darken } from "@theme-ui/color"
 
 export default merge(BaseTheme, {
   colors: {
-    primary: "#d0009c",
-    secondary: "#e6da00",
+    primary: "#e6da00",
+    secondary: "#9933CC",
     muted: "#ecf3f8",
+    accent: "#fffee4",
+    link: "#9933CC",
     header: {
       background: "transparent",
       backgroundOpen: baseColors.gray[2],
@@ -25,9 +27,11 @@ export default merge(BaseTheme, {
     // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
     modes: {
       dark: {
-        primary: "#f200f2", //"#458ad2"
-        secondary: "#e6da00",
+        primary: "#e6da00",
+        secondary: "#9933CC",
         muted: "#1a2431",
+        accent: "#363636",
+        link: "#e6da00",
         header: {
           background: "transparent",
           text: baseColors.gray[1],
@@ -58,22 +62,41 @@ export default merge(BaseTheme, {
     logoHeightXL: "140px", // Logo height on extra large screens, above 1440px
   },
   styles: {
+    a: {
+      color: "link",
+      textDecoration: "none",
+      ":hover": {
+        textDecoration: "underline",
+      },
+    },
     h1: {
       fontFamily: "heading",
-      fontWeight: "heading",
+      fontWeight: "normal",
       lineHeight: "heading",
       m: 0,
       mb: 1,
-      fontSize: 6,
+      fontSize: [5, null, 6, null, null],
       mt: 2,
+      textAlign: "center",
+      textTransform: "uppercase",
+      letterSpacing: "wide",
       display: "flex",
       alignItems: "center",
       "::after": {
         content: '""',
         flex: "1",
         height: "4px",
-        backgroundColor: "primary",
+        backgroundColor: "text",
         ml: 3,
+        mt: "8px",
+        display: "inline",
+      },
+      "::before": {
+        content: '""',
+        flex: "1",
+        height: "4px",
+        backgroundColor: "text",
+        mr: 3,
         mt: "8px",
         display: "inline",
       },
@@ -91,21 +114,58 @@ export default merge(BaseTheme, {
     },
     header: {
       bg: ["background", null, "transparent", null, null],
-      boxShadow: ["0 4px 2px -2px #cccccc", null, "none", null, null],
+      borderBottomStyle: ["solid", null, "none", null, null],
+      borderBottomWidth: "2px",
+      borderBottomColor: "primary",
     },
     siteTitle: {
       fontSize: [3, null, 7, 8, null],
       letterSpacing: "widest",
+      fontWeight: "bold",
       textTransform: "uppercase",
+      bg: "transparent",
       ":after": {
         content: "none",
       },
+      ":before": {
+        content: "none",
+      },
+    },
+    postListTitle: {
+      textAlign: "center",
+      maxWidth: "maxPageWidth",
+      mx: "auto",
+      px: 3,
+    },
+    postListContent: {
+      borderRadius: "0.25rem",
+    },
+    postListImage: {
+      borderRadius: "0.25rem",
     },
     nav: {
       my: 3,
+      "::before": {
+        content: ["none", null, '""', null, null],
+        flex: "1",
+        height: "4px",
+        backgroundColor: "primary",
+        mr: 3,
+        mt: 3,
+        display: "inline",
+      },
+      "::after": {
+        content: ["none", null, '""', null, null],
+        flex: "1",
+        height: "4px",
+        backgroundColor: "primary",
+        ml: 3,
+        mt: 3,
+        display: "inline",
+      },
     },
     navLink: {
-      bg: "secondary",
+      bg: "primary",
       color: baseColors.gray[8],
       px: 3,
       borderRadius: "0.25rem",
@@ -113,13 +173,13 @@ export default merge(BaseTheme, {
       ":hover": {
         textDecoration: "none",
         color: baseColors.gray[9],
-        bg: darken("secondary", 0.08),
+        bg: darken("primary", 0.08),
       },
     },
     navLinkActive: {
       textDecoration: "none",
       color: baseColors.gray[9],
-      bg: darken("secondary", 0.08),
+      bg: darken("primary", 0.08),
     },
     navLi: {
       mb: [3, null, 0, null, null],

@@ -2,6 +2,8 @@
 
 Sibling theme for `gatsby-theme-catalyst-core` which adds a "big" site header and navbar using latent component shadowing. Branding/Logo on top, large. Navigation underneath the logo. Social links in the top right corner. Theme options are set set via `gatsby-theme-catalyst-core`, for example setting `displaySiteTitle: false` and `displaySiteTitleMobile: false` will only show the logo for branding.
 
+You can see a styled implementation of this in [gatsby-theme-catalyst-helium](https://gatsby-starter-catalyst-helium.netlify.app).
+
 **Additional Documentation**
 
 [Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
