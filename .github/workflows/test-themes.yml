@@ -7,6 +7,7 @@ on:
       - "starters/**"
       - "themes/**"
       - ".github/**"
+      - "cypress/**"
   pull_request:
     branches:
       - master
@@ -14,6 +15,7 @@ on:
       - "starters/**"
       - "themes/**"
       - ".github/**"
+      - "cypress/**"
 jobs:
   test_basic:
     runs-on: ubuntu-latest

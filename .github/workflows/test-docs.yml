@@ -6,12 +6,14 @@ on:
     paths:
       - "www/**"
       - ".github/**"
+      - "cypress/**"
   pull_request:
     branches:
       - master
     paths:
       - "www/**"
       - ".github/**"
+      - "cypress/**"
 jobs:
   test_docs:
     runs-on: ubuntu-latest
