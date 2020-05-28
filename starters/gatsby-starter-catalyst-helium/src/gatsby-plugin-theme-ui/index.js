@@ -137,6 +137,12 @@ export default merge(BaseTheme, {
       mx: "auto",
       px: 3,
     },
+    postListContent: {
+      borderRadius: "0.25rem",
+    },
+    postListImage: {
+      borderRadius: "0.25rem",
+    },
     nav: {
       my: 3,
       "::before": {

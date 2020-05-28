@@ -79,12 +79,12 @@ const PostsList = ({ posts }) => {
                     ],
                     width: ["auto", null, null, "80vw", "1280px"],
                     mx: [0, null, 3, "auto", null],
-                    ".postImage": {
+                    ".postListImage": {
                       gridColumn: "2 / -1",
                       gridRow: ["1 / 3", null, "2 / -1", null, null],
                       maxHeight: ["auto", null, null, "75vh", "65vh"],
                     },
-                    ".postContent": {
+                    ".postListContent": {
                       gridColumn: ["1 / 3", null, "1 / 3", null, null],
                       gridRow: ["2 / -1", null, "1 / 3", null, null],
                     },
@@ -99,7 +99,7 @@ const PostsList = ({ posts }) => {
                     gridRow: "1 / 3",
                     zIndex: "1",
                   }}
-                  className="postImage"
+                  className="postListImage"
                 >
                   <Link to={post.slug}>
                     <Img
@@ -123,15 +123,16 @@ const PostsList = ({ posts }) => {
                     bg: "accent",
                     px: 3,
                     py: 4,
+                    variant: "variants.postListContent",
                   }}
-                  className="postContent"
+                  className="postListContent"
                 >
                   <Styled.h2
                     sx={{
                       mt: 0,
                       mb: 1,
                       fontSize: 4,
-                      variant: "variants.postTitleList",
+                      variant: "variants.postListSingleTitle",
                     }}
                   >
                     <Styled.a sx={{ color: "text" }} as={Link} to={post.slug}>
