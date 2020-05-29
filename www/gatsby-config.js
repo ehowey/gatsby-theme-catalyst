@@ -109,6 +109,11 @@ module.exports = {
             type: `internal`,
           },
           {
+            name: `gatsby-theme-catalyst-header-bigtop`,
+            link: `/docs/gatsby-theme-catalyst-header-bigtop`,
+            type: `internal`,
+          },
+          {
             name: `gatsby-theme-catalyst-header-side`,
             link: `/docs/gatsby-theme-catalyst-header-side`,
             type: `internal`,
@@ -145,6 +150,11 @@ module.exports = {
           {
             name: `gatsby-theme-catalyst-hydrogen`,
             link: `/docs/gatsby-theme-catalyst-hydrogen`,
+            type: `internal`,
+          },
+          {
+            name: `gatsby-theme-catalyst-helium`,
+            link: `/docs/gatsby-theme-catalyst-helium`,
             type: `internal`,
           },
         ],
