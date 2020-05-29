@@ -15,6 +15,8 @@ const Nav = () => {
         justifyContent: "center",
         flexDirection: ["column", null, "row", null, null],
         gridArea: "nav",
+        transition: "all 3s ease-in-out",
+        // height: isNavOpen ? "auto" : "0",
         variant: "variants.nav",
       }}
     >
