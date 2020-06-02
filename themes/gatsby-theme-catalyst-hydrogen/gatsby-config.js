@@ -4,21 +4,17 @@ module.exports = (themeOptions) => {
       {
         resolve: `gatsby-theme-catalyst-core`,
         options: {
-          //Default options are:
-          // contentPath: `content/pages`,
-          // assetPath: `content/assets`,
-          // displaySiteLogo: true,
-          // displaySiteTitle: true,
-          // displaySiteLogoMobile: true,
-          // displaySiteTitleMobile: true,
-          // invertLogo: false,
-          // useStickyHeader: false,
-          // useSocialLinks: true,
-          // useColorMode: true,
-          //footerContentLocation: "left", // "left", "right", "center"
-          displaySiteLogo: false,
-          displaySiteLogoMobile: false,
-          useColorMode: false,
+          contentPath: themeOptions.contentPath,
+          assetPath: themeOptions.assetPath,
+          displaySiteLogo: themeOptions.displaySiteLogo || false,
+          displaySiteTitle: themeOptions.displaySiteTitle,
+          displaySiteLogoMobile: themeOptions.displaySiteLogoMobile || false,
+          displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
+          invertLogo: themeOptions.invertLogo,
+          useStickyHeader: themeOptions.useStickyHeader,
+          useSocialLinks: themeOptions.useSocialLinks,
+          useColorMode: themeOptions.useColorMode || false,
+          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
         },
       },
       `gatsby-theme-catalyst-header-top`,
