@@ -35,5 +35,8 @@
   },
   "bugs": {
     "url": "https://github.com/ehowey/gatsby-theme-catalyst-blog/issues"
+  },
+  "dependencies": {
+    "gatsby-plugin-feed": "^2.5.3"
   }
 }
