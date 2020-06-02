@@ -35,7 +35,7 @@ module.exports = (themeOptions) => {
           feeds: [
             {
               output: `/rss.xml`,
-              title: `RSS Feed`,
+              title: themeOptions.rssTitle || `RSS Feed`,
               query: `
                 {
                   allCatalystPost(
