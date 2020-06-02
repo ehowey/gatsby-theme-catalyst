@@ -84,7 +84,7 @@ module.exports = {
         // contentPath: `content/posts`,
         // assetPath: `content/assets`,
         // excerptLength: `140`,
-        rssTitle: "Test Of Config Title",
+        // rssTitle: `RSS Feed`,
       },
     },
     `gatsby-theme-catalyst-header-side`,
