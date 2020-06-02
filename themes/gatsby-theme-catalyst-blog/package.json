@@ -31,12 +31,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ehowey/gatsby-theme-catalyst-blog"
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
   },
   "bugs": {
-    "url": "https://github.com/ehowey/gatsby-theme-catalyst-blog/issues"
-  },
-  "dependencies": {
-    "gatsby-plugin-feed": "^2.5.3"
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
   }
 }
