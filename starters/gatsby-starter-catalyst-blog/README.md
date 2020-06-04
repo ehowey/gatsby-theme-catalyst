@@ -2,10 +2,6 @@
 
 This implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`. This provides a basic starting point for developing your own personal blog and portfolio site.
 
-**Documentation**
-
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
-
 **Catalyzing Start**
 
 ```sh
@@ -19,14 +15,17 @@ gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog
 
 [https://gatsby-starter-catalyst-blog.netlify.app/](https://gatsby-starter-catalyst-blog.netlify.app/)
 
-## Blog theme options
+## Theme options
 
-| Option          | Values | Description                                                                             |
-| --------------- | ------ | --------------------------------------------------------------------------------------- |
-| `contentPath`   | String | Defaults to "content/posts", determines where the posts are created from.               |
-| `assetPath`     | String | Defaults to "content/assets", determines where the post assets like images are located. |
-| `basePath`      | String | Defaults to "/blog", determines the page location for the post list.                    |
-| `excerptLength` | String | Defaults to "140", determines the length of the excerpt use for post summaries.         |
+| Option                 | Values  | Description                                                                                                             |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `contentPath`          | String  | Defaults to "content/posts", determines where the posts are created from.                                               |
+| `assetPath`            | String  | Defaults to "content/assets", determines where the post assets like images are located.                                 |
+| `basePath`             | String  | Defaults to "/blog", determines the page location for the post list.                                                    |
+| `excerptLength`        | String  | Defaults to "140", determines the length of the excerpt use for post summaries.                                         |
+| `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
+| `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
+| `rssTitle`             | String  | Defaults to "RSS Feed", used as the title for your sites RSS feed.                                                      |
 
 Example Config:
 

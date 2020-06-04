@@ -84,6 +84,7 @@ module.exports = {
         // contentPath: `content/posts`,
         // assetPath: `content/assets`,
         // excerptLength: `140`,
+        // rssTitle: `RSS Feed`,
       },
     },
     `gatsby-theme-catalyst-header-side`,

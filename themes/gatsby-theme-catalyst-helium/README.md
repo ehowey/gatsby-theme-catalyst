@@ -2,10 +2,6 @@
 
 This is an MDX based personal blog theme that ties together the core theme, blog theme, header and footer themes and then uses this as a basis to create a complete website. Git is used as the CMS. Styling is intentionally basic and is intended to be customized in the starter via variants and Theme-UI.
 
-**Additional Documentation**
-
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
-
 **Demos:**
 
 - [gatsby-starter-catalyst-helium](https://gatsby-starter-catalyst-helium.netlify.app/)
@@ -16,6 +12,24 @@ This is an MDX based personal blog theme that ties together the core theme, blog
 # create a new Gatsby site using the catalyst writer starter site
 gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-hydrogen
 ```
+
+## Frontmatter Fields
+
+The following fields are available in front matter.
+
+| Field         | Required? | Values  | Description                                              |
+| ------------- | --------- | ------- | -------------------------------------------------------- |
+| title         | Yes       | String  | Title of the post                                        |
+| date          | Yes       | Date    | Publication date, e.g. 2019-04-15                        |
+| subTitle      | Yes       | String  | Sub title or deck for blog posts                         |
+| author        | Yes       | String  | Author of the post                                       |
+| featuredImage | Yes       | String  | Featured image to be used for the post                   |
+| socialImage   | Yes       | String  | Social image to be used for the post                     |
+| slug          | No        | String  | Optionally used to specify the link slug for the post    |
+| authorLink    | Yes       | String  | Used as a link for the author name in the post summaries |
+| tags          | No        | Array   | Tags for the post, ["tag1", "tag2", "tag3"]              |
+| keywords      | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]          |
+| draft         | No        | Boolean | Defaults to false, set to true if a post is a draft      |
 
 ## Theme options
 
