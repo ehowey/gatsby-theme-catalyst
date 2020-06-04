@@ -1,12 +1,12 @@
 {
   "name": "gatsby-catalyst-docs",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Core, Gatsby-Theme-Catalyst-header-top, Gatsby-Theme-Catalyst-footer",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.21.21",
-    "gatsby-theme-catalyst-core": "^1.2.4",
+    "gatsby-theme-catalyst-core": "^1.2.5",
     "gatsby-theme-catalyst-footer": "^1.1.1",
     "gatsby-theme-catalyst-header-side": "^1.1.2",
     "react": "^16.13.1",
