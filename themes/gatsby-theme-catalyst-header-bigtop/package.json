@@ -4,7 +4,7 @@
   "version": "0.1.2",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
-    "gatsby": "^2.20.25",
+    "gatsby": "2.21.15",
     "prettier": "^2.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

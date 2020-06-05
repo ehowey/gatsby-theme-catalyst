@@ -10,12 +10,12 @@
     "gatsby-theme-catalyst-sanity": "^1.2.3"
   },
   "peerDependencies": {
-    "gatsby": "^2.21.21",
+    "gatsby": "2.21.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "gatsby": "^2.21.21",
+    "gatsby": "2.21.15",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
