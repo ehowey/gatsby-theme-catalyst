@@ -28,6 +28,7 @@ module.exports = (themeOptions) => {
                   title
                   description
                   siteUrl
+                  site_url: siteUrl
                 }
               }
             }
