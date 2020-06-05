@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-blog v2.2.0
+
+- Added in rss feed to the blog which is built automatically
+- Added in config option, `rssTitle` to specify the feed title
+
 ## catalyst-core v1.2.0 and accompanying minor versions for other themes
 
 - Updated all relevant dependencies
