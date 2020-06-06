@@ -6,6 +6,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const { urlResolve, createContentDigest } = require(`gatsby-core-utils`)
 const debug = Debug(`gatsby-theme-blog-core`)
 const withDefaults = require(`./src/utils/default-options`)
+const _ = require("lodash")
 
 // Ensure that content directories exist at site-level
 exports.onPreBootstrap = ({ store }, themeOptions) => {
@@ -222,6 +223,7 @@ exports.onCreateNode = async (
 // These templates are simply data-fetching wrappers that import components
 const PostQuery = require.resolve(`./src/components/queries/post-query`)
 const PostsQuery = require.resolve(`./src/components/queries/post-list-query`)
+const TagQuery = require.resolve(`./src/components/queries/tag-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
@@ -229,16 +231,19 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const result = await graphql(`
     {
-      allCatalystPost(
+      blogPosts: allCatalystPost(
         sort: { fields: [date, title], order: DESC }
         limit: 1000
+        filter: { draft: { eq: false } }
       ) {
-        edges {
-          node {
-            id
-            slug
-            draft
-          }
+        nodes {
+          id
+          slug
+        }
+      }
+      tagList: allCatalystPost(filter: { draft: { eq: false } }) {
+        group(field: tags) {
+          fieldValue
         }
       }
     }
@@ -248,13 +253,11 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     reporter.panic(result.errors)
   }
 
-  // Create Posts and Post pages.
-  const { allCatalystPost } = result.data
-  const allPosts = allCatalystPost.edges
-  const posts = allPosts.filter((posts) => posts.node.draft != true)
+  const posts = result.data.blogPosts.nodes
+  const tags = result.data.tagList.group
 
   // Create a page for each Post
-  posts.forEach(({ node: post }, index) => {
+  posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1]
     const next = index === 0 ? null : posts[index - 1]
     const { slug } = post
@@ -263,17 +266,28 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       component: PostQuery,
       context: {
         id: post.id,
-        previousId: previous ? previous.node.id : undefined,
-        nextId: next ? next.node.id : undefined,
+        previousId: previous ? previous.id : undefined,
+        nextId: next ? next.id : undefined,
       },
     })
   })
 
-  // // Create the Posts page
+  // Create the Posts page
   createPage({
     path: basePath,
     component: PostsQuery,
     context: {},
+  })
+
+  // Create the Tags page
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: TagQuery,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
   })
 }
 
