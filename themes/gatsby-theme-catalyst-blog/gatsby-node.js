@@ -307,11 +307,13 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   })
 
   // Create the tag list page
-  createPage({
-    path: `/tags/`,
-    component: TagListQuery,
-    context: {},
-  })
+  if (tags.length > 0) {
+    createPage({
+      path: `/tags/`,
+      component: TagListQuery,
+      context: {},
+    })
+  }
 
   // Create the category pages
   categories.forEach((category) => {
@@ -325,11 +327,13 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   })
 
   // Create the category list page
-  createPage({
-    path: `/categories/`,
-    component: CategoryListQuery,
-    context: {},
-  })
+  if (categories.length > 0) {
+    createPage({
+      path: `/categories/`,
+      component: CategoryListQuery,
+      context: {},
+    })
+  }
 }
 
 exports.sourceNodes = (
