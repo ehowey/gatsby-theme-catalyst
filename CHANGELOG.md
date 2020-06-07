@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-blog v2.3.0
+
+- Added in support for categories and tags in frontmatter
+
 ## catalyst-blog v2.2.0
 
 - Added in rss feed to the blog which is built automatically
