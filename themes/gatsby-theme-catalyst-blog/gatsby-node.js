@@ -6,6 +6,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const { urlResolve, createContentDigest } = require(`gatsby-core-utils`)
 const debug = Debug(`gatsby-theme-blog-core`)
 const withDefaults = require(`./src/utils/default-options`)
+const _ = require("lodash")
 
 // Ensure that content directories exist at site-level
 exports.onPreBootstrap = ({ store }, themeOptions) => {
@@ -70,6 +71,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       slug: String!
       date: Date! @dateformat
       tags: [String]!
+      categories: [String]!
       keywords: [String]!
       excerpt: String!
       draft: Boolean! @defaultFalse
@@ -113,6 +115,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         },
         date: { type: `Date!`, extensions: { dateformat: {} } },
         tags: { type: `[String]!` },
+        categories: { type: `[String]!` },
         keywords: { type: `[String]!` },
         featuredImage: {
           type: `File`,
@@ -192,6 +195,7 @@ exports.onCreateNode = async (
       author: node.frontmatter.author,
       authorLink: node.frontmatter.authorLink,
       tags: node.frontmatter.tags || [],
+      categories: node.frontmatter.categories || [],
       slug,
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
@@ -221,7 +225,15 @@ exports.onCreateNode = async (
 
 // These templates are simply data-fetching wrappers that import components
 const PostQuery = require.resolve(`./src/components/queries/post-query`)
-const PostsQuery = require.resolve(`./src/components/queries/post-list-query`)
+const PostListQuery = require.resolve(
+  `./src/components/queries/post-list-query`
+)
+const TagListQuery = require.resolve(`./src/components/queries/tag-list-query`)
+const TagQuery = require.resolve(`./src/components/queries/tag-query`)
+const CategoryListQuery = require.resolve(
+  `./src/components/queries/category-list-query`
+)
+const CategoryQuery = require.resolve(`./src/components/queries/category-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
@@ -229,16 +241,24 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const result = await graphql(`
     {
-      allCatalystPost(
+      blogPosts: allCatalystPost(
         sort: { fields: [date, title], order: DESC }
         limit: 1000
+        filter: { draft: { eq: false } }
       ) {
-        edges {
-          node {
-            id
-            slug
-            draft
-          }
+        nodes {
+          id
+          slug
+        }
+      }
+      tagList: allCatalystPost(filter: { draft: { eq: false } }) {
+        group(field: tags) {
+          fieldValue
+        }
+      }
+      categoryList: allCatalystPost(filter: { draft: { eq: false } }) {
+        group(field: categories) {
+          fieldValue
         }
       }
     }
@@ -248,13 +268,12 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     reporter.panic(result.errors)
   }
 
-  // Create Posts and Post pages.
-  const { allCatalystPost } = result.data
-  const allPosts = allCatalystPost.edges
-  const posts = allPosts.filter((posts) => posts.node.draft != true)
+  const posts = result.data.blogPosts.nodes
+  const tags = result.data.tagList.group
+  const categories = result.data.categoryList.group
 
   // Create a page for each Post
-  posts.forEach(({ node: post }, index) => {
+  posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1]
     const next = index === 0 ? null : posts[index - 1]
     const { slug } = post
@@ -263,18 +282,58 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       component: PostQuery,
       context: {
         id: post.id,
-        previousId: previous ? previous.node.id : undefined,
-        nextId: next ? next.node.id : undefined,
+        previousId: previous ? previous.id : undefined,
+        nextId: next ? next.id : undefined,
       },
     })
   })
 
-  // // Create the Posts page
+  // Create the Posts page
   createPage({
     path: basePath,
-    component: PostsQuery,
+    component: PostListQuery,
     context: {},
   })
+
+  // Create the tag pages
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: TagQuery,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
+
+  // Create the tag list page
+  if (tags.length > 0) {
+    createPage({
+      path: `/tags/`,
+      component: TagListQuery,
+      context: {},
+    })
+  }
+
+  // Create the category pages
+  categories.forEach((category) => {
+    createPage({
+      path: `/categories/${_.kebabCase(category.fieldValue)}/`,
+      component: CategoryQuery,
+      context: {
+        category: category.fieldValue,
+      },
+    })
+  })
+
+  // Create the category list page
+  if (categories.length > 0) {
+    createPage({
+      path: `/categories/`,
+      component: CategoryListQuery,
+      context: {},
+    })
+  }
 }
 
 exports.sourceNodes = (

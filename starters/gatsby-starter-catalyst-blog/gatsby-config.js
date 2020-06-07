@@ -74,6 +74,7 @@ module.exports = {
         // useColorMode: true,
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
+        footerContentLocation: "right", // "left", "right", "center"
       },
     },
     {
