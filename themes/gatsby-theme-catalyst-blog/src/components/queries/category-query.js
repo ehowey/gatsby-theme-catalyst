@@ -1,19 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Tag from "../templates/tag-template"
+import Category from "../templates/category-template"
 
 export default ({ data, pageContext }) => {
   const { allCatalystPost } = data
-  const tag = pageContext.tag
-  return <Tag posts={allCatalystPost.nodes} tag={tag} />
+  const category = pageContext.category
+  return <Category posts={allCatalystPost.nodes} category={category} />
 }
 
 export const query = graphql`
-  query($tag: String) {
+  query($category: String) {
     allCatalystPost(
       sort: { fields: [date, title], order: DESC }
       limit: 1000
-      filter: { draft: { eq: false }, tags: { in: [$tag] } }
+      filter: { draft: { eq: false }, categories: { in: [$category] } }
     ) {
       nodes {
         id

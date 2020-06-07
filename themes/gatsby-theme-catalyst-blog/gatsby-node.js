@@ -71,6 +71,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       slug: String!
       date: Date! @dateformat
       tags: [String]!
+      categories: [String]!
       keywords: [String]!
       excerpt: String!
       draft: Boolean! @defaultFalse
@@ -114,6 +115,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         },
         date: { type: `Date!`, extensions: { dateformat: {} } },
         tags: { type: `[String]!` },
+        categories: { type: `[String]!` },
         keywords: { type: `[String]!` },
         featuredImage: {
           type: `File`,
@@ -193,6 +195,7 @@ exports.onCreateNode = async (
       author: node.frontmatter.author,
       authorLink: node.frontmatter.authorLink,
       tags: node.frontmatter.tags || [],
+      categories: node.frontmatter.categories || [],
       slug,
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
@@ -222,8 +225,15 @@ exports.onCreateNode = async (
 
 // These templates are simply data-fetching wrappers that import components
 const PostQuery = require.resolve(`./src/components/queries/post-query`)
-const PostsQuery = require.resolve(`./src/components/queries/post-list-query`)
+const PostListQuery = require.resolve(
+  `./src/components/queries/post-list-query`
+)
+const TagListQuery = require.resolve(`./src/components/queries/tag-list-query`)
 const TagQuery = require.resolve(`./src/components/queries/tag-query`)
+const CategoryListQuery = require.resolve(
+  `./src/components/queries/category-list-query`
+)
+const CategoryQuery = require.resolve(`./src/components/queries/category-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
@@ -246,6 +256,11 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
           fieldValue
         }
       }
+      categoryList: allCatalystPost(filter: { draft: { eq: false } }) {
+        group(field: categories) {
+          fieldValue
+        }
+      }
     }
   `)
 
@@ -255,6 +270,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const posts = result.data.blogPosts.nodes
   const tags = result.data.tagList.group
+  const categories = result.data.categoryList.group
 
   // Create a page for each Post
   posts.forEach((post, index) => {
@@ -275,11 +291,11 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   // Create the Posts page
   createPage({
     path: basePath,
-    component: PostsQuery,
+    component: PostListQuery,
     context: {},
   })
 
-  // Create the Tags page
+  // Create the tag pages
   tags.forEach((tag) => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
@@ -288,6 +304,31 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
         tag: tag.fieldValue,
       },
     })
+  })
+
+  // Create the tag list page
+  createPage({
+    path: `/tags/`,
+    component: TagListQuery,
+    context: {},
+  })
+
+  // Create the category pages
+  categories.forEach((category) => {
+    createPage({
+      path: `/categories/${_.kebabCase(category.fieldValue)}/`,
+      component: CategoryQuery,
+      context: {
+        category: category.fieldValue,
+      },
+    })
+  })
+
+  // Create the category list page
+  createPage({
+    path: `/categories/`,
+    component: CategoryListQuery,
+    context: {},
   })
 }
 

@@ -3,11 +3,11 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 
-const TagPage = ({ posts, tag }) => {
+const CategoryPage = ({ posts, category }) => {
   return (
     <Layout>
-      <SEO title={tag} />
-      <Styled.h1>{tag}</Styled.h1>
+      <SEO title={category} />
+      <Styled.h1>{category}</Styled.h1>
       <Styled.ul>
         {posts.map((post) => (
           <Styled.li key={post.slug}>
@@ -25,4 +25,4 @@ const TagPage = ({ posts, tag }) => {
   )
 }
 
-export default TagPage
+export default CategoryPage
