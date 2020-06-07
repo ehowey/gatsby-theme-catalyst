@@ -15,6 +15,14 @@
     "lerna": "^3.21.0",
     "start-server-and-test": "^1.11.0"
   },
+  "resolutions": {
+    "theme-ui": "0.3.1",
+    "@theme-ui/color": "0.3.1",
+    "@theme-ui/match-media": "0.3.1",
+    "@theme-ui/preset-tailwind": "0.3.0",
+    "@theme-ui/prism": "0.3.0",
+    "gatsby-plugin-theme-ui": "0.3.0"
+  },
   "scripts": {
     "develop:core": "yarn workspace gatsby-starter-catalyst-core develop",
     "develop:basic": "yarn workspace gatsby-starter-catalyst develop",

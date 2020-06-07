@@ -43,14 +43,22 @@
     "remark-slug": "^6.0.0",
     "theme-ui": "^0.3.1"
   },
+  "resolutions": {
+    "theme-ui": "0.3.1",
+    "@theme-ui/color": "0.3.1",
+    "@theme-ui/match-media": "0.3.1",
+    "@theme-ui/preset-tailwind": "0.3.0",
+    "@theme-ui/prism": "0.3.0",
+    "gatsby-plugin-theme-ui": "0.3.0"
+  },
   "devDependencies": {
-    "gatsby": "2.21.15",
+    "gatsby": "^2.23.1",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "peerDependencies": {
-    "gatsby": "2.21.15",
+    "gatsby": "^2.23.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
