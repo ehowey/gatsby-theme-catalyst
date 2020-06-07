@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         name: `Anchor 1`,
-        link: `anchor-1`,
+        link: `#anchor-1`,
         type: `anchor`, //internal or anchor
       },
       {
