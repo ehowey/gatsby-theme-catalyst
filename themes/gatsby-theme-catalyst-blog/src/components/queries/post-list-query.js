@@ -17,15 +17,18 @@ export const query = graphql`
       nodes {
         id
         excerpt
+        body
         slug
         title
         subTitle
         author
         authorLink
-        date(formatString: "MMMM DD, YYYY")
         tags
-        timeToRead
+        categories
+        keywords
         postType
+        timeToRead
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

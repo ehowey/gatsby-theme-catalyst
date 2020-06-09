@@ -25,6 +25,7 @@ export const query = graphql`
       author
       authorLink
       tags
+      categories
       keywords
       postType
       timeToRead
