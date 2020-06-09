@@ -1,6 +1,8 @@
 const remarkSlug = require("remark-slug")
+const withDefaults = require(`./src/utils/default-options`)
 
 module.exports = (themeOptions) => {
+  const options = withDefaults(themeOptions)
   const remarkImagesWidth =
     themeOptions.remarkImagesWidth == null
       ? 1440
@@ -32,20 +34,20 @@ module.exports = (themeOptions) => {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `pages`,
-          path: themeOptions.contentPath || `content/pages`,
+          path: options.contentPath || `content/pages`,
         },
       },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `images`,
-          path: themeOptions.assetPath || `content/assets`,
+          path: options.assetPath || `content/assets`,
         },
       },
       {
         resolve: `gatsby-plugin-page-creator`,
         options: {
-          path: themeOptions.contentPath || `content/pages`,
+          path: options.contentPath || `content/pages`,
         },
       },
       {
