@@ -1,5 +1,29 @@
 const { createContentDigest } = require(`gatsby-core-utils`)
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
+const fs = require(`fs`)
+const path = require(`path`)
+const mkdirp = require(`mkdirp`)
+const withDefaults = require(`./src/utils/default-options`)
+const Debug = require(`debug`)
+const debug = Debug(`gatsby-theme-blog-core`)
+
+// Ensure that content directories exist at site-level
+exports.onPreBootstrap = ({ store }, themeOptions) => {
+  const { program } = store.getState()
+  const { contentPath, assetPath } = withDefaults(themeOptions)
+
+  const dirs = [
+    path.join(program.directory, contentPath),
+    path.join(program.directory, assetPath),
+  ]
+
+  dirs.forEach((dir) => {
+    debug(`Initializing ${dir} directory`)
+    if (!fs.existsSync(dir)) {
+      mkdirp.sync(dir)
+    }
+  })
+}
 
 // Setup for gatsby-remark-relative-images
 exports.onCreateNode = ({ node }) => {
