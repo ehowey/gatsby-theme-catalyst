@@ -28,7 +28,7 @@ const PostsList = ({ posts }) => {
               maxWidth: "maxContentWidth",
               mx: "auto",
               textAlign: "center",
-              variant: "variants.postListTitle",
+              variant: "variants.postListPageTitle",
             }}
           >
             {postListTitle}
@@ -132,7 +132,7 @@ const PostsList = ({ posts }) => {
                       mt: 0,
                       mb: 1,
                       fontSize: 4,
-                      variant: "variants.postListSingleTitle",
+                      variant: "variants.postListTitle",
                     }}
                   >
                     <Styled.a sx={{ color: "text" }} as={Link} to={post.slug}>

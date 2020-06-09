@@ -131,7 +131,7 @@ export default merge(BaseTheme, {
         content: "none",
       },
     },
-    postListTitle: {
+    postListPageTitle: {
       textAlign: "center",
       maxWidth: "maxPageWidth",
       mx: "auto",

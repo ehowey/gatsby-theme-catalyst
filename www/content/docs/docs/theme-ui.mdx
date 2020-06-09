@@ -3,9 +3,9 @@
   description="Theme UI controls most visual aspects of your themes, fonts, colors, spacing, etc. Variants also allow for some direct modifcation of the CSS in components. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
 />
 
-# Theme-UI
+# Theme UI
 
-[Theme-UI](https://theme-ui.com/) based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The theme is based on the [tailwind presets](https://github.com/system-ui/theme-ui/tree/master/packages/preset-tailwind) as this provides a good base set of standard spacings, sizings, etc. You will also see a reference to colors like `baseColors.pink[5]` in the theme file, these basecolors can be found on the [TailwindCSS docs](https://tailwindcss.com/docs/customizing-colors/).
+[Theme UI](https://theme-ui.com/) based design tokens are used throughout the Catalyst series of themes and starters as this is the suggested best practice when building Gatsby themes. The theme is based on the [tailwind presets](https://github.com/system-ui/theme-ui/tree/master/packages/preset-tailwind) as this provides a good base set of standard spacings, sizings, etc. You will also see a reference to colors like `baseColors.pink[5]` in the theme file, these basecolors can be found on the [TailwindCSS docs](https://tailwindcss.com/docs/customizing-colors/).
 
 The file you should modify to set design tokens is always located in the following location:
 
@@ -58,33 +58,9 @@ export default {
 }
 ```
 
-## Variants
-
-Most major areas of the site are preconfigured to use [variants](https://theme-ui.com/guides/variants). This allows you to more easily change css styles without having to shadow a whole file. The following are some of the variants are available to use:
-
-- `variants.siteContainer`: Targets the container for the entire site content
-- `variants.main`: Targets the main component in the site, useful for changing spacing between header, footer, and main areas.
-- `variants.contentContainer`: Targets the container for the content, useful for changing site margins/content size.
-- `variants.header`: Targets the header component
-- `variants.footer`: Targets the footer component
-- `variants.siteLogo`: Targets the logo component
-- `variants.siteTitle`: Targets the root site title component, useful to change font size of the site title.
-- `variants.navLink`: Targets the styles for the nav links in the header, useful to change the nav styles
-- `variants.navLinkActive`: Targets the styles for the active nav links.
-
-Here is an example of changing the size of the site title using variants.
-
-```js
-variants: {
-    siteTitle: {
-      fontSize: [4, null, null, 5, null],
-    },
-  },
-```
-
 ### Breakpoints
 
-Breakpoints are set using Theme-UI theme file and default to 480px, 768px, 1024px, and 1440px. The mobile menu is enabled at the 2nd breakpoint, 768px, but you can change this by changing the second breakpoint.
+Breakpoints are set using Theme UI theme file and default to 480px, 768px, 1024px, and 1440px. The mobile menu is enabled at the 2nd breakpoint, 768px, but you can change this by changing the second breakpoint.
 
 ```js
 breakpoints: ["480px", "768px", "1024px", "1440px"],
@@ -138,9 +114,43 @@ Try this in `src/gatsby-plugin-theme-ui/index.js` for a big logo:
   },
 ```
 
+## Variants
+
+Variants are a [feature of Theme UI](https://theme-ui.com/guides/variants) that allow for easier customization of visual style through the use of predefined variants that can be customized in the theme specification file. Most major areas of the catalyst themes are preconfigured to use variants. This lets you change css styles without having to shadow a whole component.
+
+The following is a list of variants available to use with layout themes. Other themes may have additional variants documented in their respective docs.
+
+- `variants.siteContainer`: Targets the container for the entire site content
+- `variants.contentContainer`: Targets the container for the content, useful for changing site margins/content size
+- `variants.main`: Targets the main component in the site, useful for changing spacing between header, footer, and main areas
+- `variants.header`: Targets the header component
+- `variants.branding`: Targets the branding container div which contains the logo and site title
+- `variants.siteLogo`: Targets the logo component
+- `variants.siteTitle`: Targets the root site title component, useful to change font size of the site title.
+- `variants.nav`: Targets the main nav element
+- `variants.navUl`: Targets the ul element containing the nav menu
+- `variants.navUlSub`: Targets the ul element containing the sub menu
+- `variants.navLi`: Targets the li element containing nav menu items
+- `variants.navLiSub`: Targets the li element containing sub menu items
+- `variants.navLink`: Targets the styles for the nav links in the header, useful to change the nav styles
+- `variants.navLinkActive`: Targets the styles for the active nav link
+- `variants.navLinkSub`: Targets the styles for the submenu links
+- `variants.navLinkSubActive`: Targets the styles for the active submenu link
+- `variants.footer`: Targets the footer component
+
+Here is an example of changing the size of the site title using variants.
+
+```js
+variants: {
+    siteTitle: {
+      fontSize: [4, null, null, 5, null],
+    },
+  },
+```
+
 ## Base theme
 
-The following "base theme" is used through Gatsby Theme Catalyst. It provides a consistent starting point for your themes and is based on Tailwind defaults.
+The following "base theme" is used through Gatsby Theme Catalyst. It provides a consistent starting point for your themes and is based on the Tailwind defaults.
 
 ```js
 // See https://theme-ui.com/ for more info and also https://www.gatsbyjs.org/docs/theme-ui/

@@ -15,6 +15,25 @@ This theme is for a personal blog using multiple different themes layered togeth
 
 `gatsby new helium https://github.com/ehowey/gatsby-starter-catalyst-helium`
 
+## Frontmatter fields
+
+The following fields are available in front matter.
+
+| Field         | Required? | Values  | Description                                              |
+| ------------- | --------- | ------- | -------------------------------------------------------- |
+| title         | Yes       | String  | Title of the post                                        |
+| date          | Yes       | Date    | Publication date, e.g. 2019-04-15                        |
+| subTitle      | No        | String  | Sub title or deck for blog posts                         |
+| author        | No        | String  | Author of the post                                       |
+| featuredImage | No        | String  | Featured image to be used for the post                   |
+| socialImage   | No        | String  | Social image to be used for the post                     |
+| slug          | No        | String  | Optionally used to specify the link slug for the post    |
+| authorLink    | No        | String  | Used as a link for the author name in the post summaries |
+| tags          | No        | Array   | Tags for the post, ["tag1", "tag2", "tag3"]              |
+| categories    | No        | Array   | Categories for the post, ["cats", "dogs", "snakes"]      |
+| keywords      | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]          |
+| draft         | No        | Boolean | Defaults to false, set to true if a post is a draft      |
+
 ## Theme options
 
 Helium accepts all options from the core theme and blog theme directly, e.g. you can set `useColorMode` via `gatsby-theme-catalyst-helium` and it is passed down to the correct theme appropriately.
@@ -57,25 +76,6 @@ For example the following config is valid:
 | `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
 | `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
 
-#### Frontmatter Fields
-
-The following fields are available in front matter.
-
-| Field         | Required? | Values  | Description                                              |
-| ------------- | --------- | ------- | -------------------------------------------------------- |
-| title         | Yes       | String  | Title of the post                                        |
-| date          | Yes       | Date    | Publication date, e.g. 2019-04-15                        |
-| subTitle      | No        | String  | Sub title or deck for blog posts                         |
-| author        | No        | String  | Author of the post                                       |
-| featuredImage | No        | String  | Featured image to be used for the post                   |
-| socialImage   | No        | String  | Social image to be used for the post                     |
-| slug          | No        | String  | Optionally used to specify the link slug for the post    |
-| authorLink    | No        | String  | Used as a link for the author name in the post summaries |
-| tags          | No        | Array   | Tags for the post, ["tag1", "tag2", "tag3"]              |
-| categories    | No        | Array   | Categories for the post, ["cats", "dogs", "snakes"]      |
-| keywords      | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]          |
-| draft         | No        | Boolean | Defaults to false, set to true if a post is a draft      |
-
 ### Core Theme Options
 
 | Option             | Values        | Description                                                                             |
@@ -88,3 +88,23 @@ The following fields are available in front matter.
 | `useStickyHeader`  | true or false | Defaults to false, controls whether the header is sticky or static                      |
 | `useSocialLinks`   | true or false | Defaults to true, controls whether the social links are displayed or not                |
 | `useColorMode`     | true or false | Defaults to true, controls whether the dark mode toggle is available.                   |
+
+## Variants
+
+`gatsby-theme-catalyst-helium` includes additional [variants](/docs/theme-ui/#variants) to allow for easier customization of the theme.
+
+- `variants.postContainer`: Targets the container div for individual posts
+- `variants.postTitle`: Targets the title for individual posts
+- `variants.postSubTitle`: Targets the sub title for individual posts
+- `variants.postMeta`: Targets the meta for individual posts
+- `variants.postImage`: Targets the image for individual posts
+- `variants.postListPageTitle`: Targets the page title for post lists
+- `variants.postListContainer`: Targets the container div for the post list
+- `variants.postListWrapper`: Targets the wrapper div for individual posts within the post list
+- `variants.postListImage`: Targets the image for individual posts within the post list
+- `variants.postListContent`: Targets the container div for content of an individual posts within the post list, e.g. Title, sub title, etc.
+- `variants.postListTitle`: Targets the title for individual posts within the post list
+- `variants.postListSubTitle`: Targets the sub title for individual posts within the post list
+- `variants.postListMeta`: Targets the meta for individual posts within the post list
+- `variants.postListExcerpt`: Targets the excerpt for individual posts within the post list
+- `variants.postListReadmore`: Targets the read more link for individual posts within the post list
