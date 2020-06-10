@@ -19,7 +19,7 @@
     "gatsby-plugin-manifest": "^2.4.9",
     "gatsby-plugin-mdx": "^1.2.14",
     "gatsby-plugin-offline": "^3.2.7",
-    "gatsby-plugin-page-creator": "^2.3.7",
+    "gatsby-plugin-page-creator": "^2.3.9",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "^2.6.11",
