@@ -6,8 +6,8 @@ import { SEO, Layout } from "gatsby-theme-catalyst-core"
 const TagPage = ({ posts, tag }) => {
   return (
     <Layout>
-      <SEO title={tag} />
-      <Styled.h1>{tag}</Styled.h1>
+      <SEO title={"Tag: " + tag} />
+      <Styled.h1>Tag: {tag}</Styled.h1>
       <Styled.ul>
         {posts.map((post) => (
           <Styled.li key={post.slug}>
