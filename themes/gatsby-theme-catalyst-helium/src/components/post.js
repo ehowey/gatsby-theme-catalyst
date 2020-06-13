@@ -2,9 +2,11 @@
 import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 import PostFooter from "./post-footer"
 import { FaRegClock } from "react-icons/fa"
+import kebabCase from "lodash/kebabCase"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
@@ -31,6 +33,40 @@ const Post = ({ data: { post }, previous, next }) => (
             bg: "muted",
           }}
         >
+          <Styled.ul
+            aria-label="Categories"
+            sx={{
+              display: "flex",
+              listStyle: "none",
+              justifyContent: "center",
+              p: 0,
+              m: 0,
+            }}
+          >
+            {post.categories.map((category) => (
+              <Styled.li
+                sx={{
+                  textTransform: "uppercase",
+                  fontWeight: "bold",
+                  letterSpacing: "wide",
+                  color: "primary",
+                  "::after": {
+                    content: `"\\2022"`,
+                    px: 2,
+                  },
+                  ":last-of-type": {
+                    "::after": {
+                      content: "none",
+                    },
+                  },
+                }}
+              >
+                <Styled.a as={Link} to={`/categories/${kebabCase(category)}/`}>
+                  {category}
+                </Styled.a>
+              </Styled.li>
+            ))}
+          </Styled.ul>
           <h1
             sx={{
               fontFamily: "heading",
