@@ -1,11 +1,11 @@
 {
   "name": "gatsby-theme-catalyst-helium",
   "description": "Gatsby theme for a simple personal blog. MDX and git as the CMS.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby-theme-catalyst-blog": "^2.3.1",
-    "gatsby-theme-catalyst-core": "^1.2.8",
+    "gatsby-theme-catalyst-blog": "^2.3.2",
+    "gatsby-theme-catalyst-core": "^1.2.9",
     "gatsby-theme-catalyst-footer": "^1.1.3",
     "gatsby-theme-catalyst-header-bigtop": "^0.1.3"
   },
