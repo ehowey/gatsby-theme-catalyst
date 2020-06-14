@@ -7,6 +7,7 @@ import { FaRegClock } from "react-icons/fa"
 import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
 import { useHeliumConfig } from "gatsby-theme-catalyst-helium"
 import Hero from "./hero"
+import kebabCase from "lodash/kebabCase"
 
 const PostsList = ({ posts }) => {
   const { postListTitle, displayPostListTitle } = useCatalystBlogConfig()
@@ -27,6 +28,7 @@ const PostsList = ({ posts }) => {
             sx={{
               maxWidth: "maxContentWidth",
               mx: "auto",
+              my: 5,
               textAlign: "center",
               variant: "variants.postListPageTitle",
             }}
@@ -38,10 +40,13 @@ const PostsList = ({ posts }) => {
           sx={{
             display: ["flex", null, "grid", null, null],
             flexDirection: "column",
-            gridTemplateColumns: "repeat(auto-fit, minmax(460px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+            gridColumnGap: 4,
+            gridRowGap: 5,
             variant: "variants.postListContainer",
             maxWidth: "maxPageWidth",
-            mx: "auto",
+            mx: [0, 3, null, null, "auto"],
+            my: 5,
           }}
         >
           {posts.map((post, index) => {
@@ -50,23 +55,26 @@ const PostsList = ({ posts }) => {
             return (
               <article
                 sx={{
-                  mx: [0, null, 3, 4, null],
-                  my: [4, null, 3, 4, null],
                   display: "grid",
                   gridTemplateColumns: "32px 1fr 32px",
                   gridTemplateRows: [
                     "100px 200px 1fr",
-                    "150px 150px 1fr",
+                    "150px 100px 1fr",
+                    "180px 100px 1fr",
                     "200px 100px 1fr",
-                    null,
-                    null,
+                    "220px 100px 1fr",
                   ],
+                  mb: [5, null, 0, null, null],
+                  ":last-of-type": {
+                    mb: 0,
+                  },
                   ":nth-of-type(1)": {
-                    gridColumn: "1 / -1",
+                    gridColumn: "1 / span 2",
+                    gridRow: "1 / span 1",
                     gridTemplateColumns: [
                       "32px 1fr 32px",
                       null,
-                      "32px 1fr 1fr 32px",
+                      "32px 1fr 1fr 1fr 1fr 32px",
                       null,
                       null,
                     ],
@@ -77,15 +85,12 @@ const PostsList = ({ posts }) => {
                       null,
                       null,
                     ],
-                    width: ["auto", null, null, "80vw", "1280px"],
-                    mx: [0, null, 3, "auto", null],
                     ".postListImage": {
                       gridColumn: "2 / -1",
                       gridRow: ["1 / 3", null, "2 / -1", null, null],
-                      maxHeight: ["auto", null, null, "75vh", "65vh"],
                     },
                     ".postListContent": {
-                      gridColumn: ["1 / 3", null, "1 / 3", null, null],
+                      gridColumn: ["1 / 3", null, "1 / 5", null, null],
                       gridRow: ["2 / -1", null, "1 / 3", null, null],
                     },
                   },
@@ -105,10 +110,12 @@ const PostsList = ({ posts }) => {
                     <Img
                       sx={{
                         maxWidth: "100%",
-                        maxHeight: "100%",
                         height: "100%",
                         width: "100%",
+                        boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
                         variant: "variants.postListImage",
+                        maxHeight: ["70vh", null, "70vh", null, null],
+                        minHeight: ["auto", null, "500px", null, null],
                       }}
                       fluid={post.featuredImage.childImageSharp.fluid}
                       alt={post.title}
@@ -119,78 +126,119 @@ const PostsList = ({ posts }) => {
                   sx={{
                     gridColumn: "2 / 4",
                     gridRow: "2 / 4",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
                     zIndex: "2",
                     bg: "accent",
                     px: 3,
                     py: 4,
+                    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
                     variant: "variants.postListContent",
                   }}
                   className="postListContent"
                 >
-                  <Styled.h2
-                    sx={{
-                      mt: 0,
-                      mb: 1,
-                      fontSize: 4,
-                      variant: "variants.postListTitle",
-                    }}
-                  >
-                    <Styled.a sx={{ color: "text" }} as={Link} to={post.slug}>
-                      {title}
-                    </Styled.a>
-                  </Styled.h2>
-                  <Styled.p
-                    sx={{
-                      my: 0,
-                      fontSize: 1,
-                      color: "textGray",
-                      variant: "variants.postListMeta",
-                    }}
-                  >
-                    {post.date} &mdash;{" "}
-                    <FaRegClock
+                  <div>
+                    <Styled.ul
+                      aria-label="Categories"
+                      sx={{ listStyle: "none", m: 0, p: 0, display: "flex" }}
+                    >
+                      {post.categories.map((category) => (
+                        <Styled.li
+                          sx={{
+                            my: 0,
+                            fontSize: 1,
+                            textTransform: "uppercase",
+                            letterSpacing: "wide",
+                            color: "link",
+                            "::after": {
+                              content: `"\\2022"`,
+                              px: 2,
+                            },
+                            ":last-of-type": {
+                              "::after": {
+                                content: "none",
+                              },
+                            },
+                            variant: "variants.postListCategory",
+                          }}
+                        >
+                          <Styled.a
+                            as={Link}
+                            to={`/categories/${kebabCase(category)}/`}
+                          >
+                            {category}
+                          </Styled.a>
+                        </Styled.li>
+                      ))}
+                    </Styled.ul>
+                    <Styled.h2
                       sx={{
-                        position: "relative",
-                        top: "0.125em",
+                        mt: 0,
+                        mb: 1,
+                        fontSize: 4,
+                        variant: "variants.postListTitle",
                       }}
-                    />{" "}
-                    {post.timeToRead} Min
-                  </Styled.p>
-                  <Styled.p
-                    sx={{
-                      fontStyle: "italic",
-                      mt: 1,
-                      variant: "variants.postListSubtitle",
-                    }}
-                  >
-                    {post.subTitle}
-                  </Styled.p>
-                  {firstPost ? (
-                    <Styled.p sx={{ variant: "variants.postListExcerpt" }}>
-                      {post.excerpt}
+                    >
+                      <Styled.a sx={{ color: "text" }} as={Link} to={post.slug}>
+                        {title}
+                      </Styled.a>
+                    </Styled.h2>
+                    <Styled.p
+                      sx={{
+                        my: 0,
+                        fontSize: 1,
+                        color: "textGray",
+                        variant: "variants.postListMeta",
+                      }}
+                    >
+                      {post.date} &mdash;{" "}
+                      <FaRegClock
+                        sx={{
+                          position: "relative",
+                          top: "0.125em",
+                        }}
+                      />{" "}
+                      {post.timeToRead} Min
                     </Styled.p>
-                  ) : null}
-                  <Styled.a
-                    sx={{
-                      fontWeight: "bold",
-                      letterSpacing: "wide",
-                      px: 0,
-                      py: 0,
-                      "::after": {
-                        content: '"\\00A0 \\2192"',
-                      },
-                      ":hover": {
-                        textDecoration: "underline",
-                        bg: "transparent",
-                        border: "none",
-                      },
-                      variant: "variants.postListReadmore",
-                    }}
-                    as={Link}
-                    to={post.slug}
-                  >
-                    Read
-                  </Styled.a>
+                    <Styled.p
+                      sx={{
+                        fontStyle: "italic",
+                        mt: 1,
+                        variant: "variants.postListSubtitle",
+                      }}
+                    >
+                      {post.subTitle}
+                    </Styled.p>
+                    {firstPost ? (
+                      <Styled.p sx={{ variant: "variants.postListExcerpt" }}>
+                        {post.excerpt}
+                      </Styled.p>
+                    ) : null}
+                  </div>
+                  <div>
+                    <Styled.a
+                      sx={{
+                        fontWeight: "bold",
+                        letterSpacing: "wide",
+                        px: 0,
+                        py: 0,
+                        "::after": {
+                          content: '"\\00A0 \\2192"',
+                        },
+                        ":hover": {
+                          textDecoration: "underline",
+                          bg: "transparent",
+                          border: "none",
+                        },
+                        variant: "variants.postListReadmore",
+                      }}
+                      as={Link}
+                      to={post.slug}
+                    >
+                      Read
+                    </Styled.a>
+                  </div>
                 </div>
               </article>
             )
@@ -202,59 +250,3 @@ const PostsList = ({ posts }) => {
 }
 
 export default PostsList
-
-// /** @jsx jsx */
-// import { jsx } from "theme-ui"
-// import { Layout, SEO } from "gatsby-theme-catalyst-core"
-// import PostListContainer from "./post-list/post-list-container"
-// import PostListWrapper from "./post-list/post-list-wrapper"
-// import PostListTitle from "./post-list/post-list-title"
-// import PostListImage from "./post-list/post-list-image"
-// import PostListMeta from "./post-list/post-list-meta"
-// import PostListExcerpt from "./post-list/post-list-excerpt"
-// import PostListReadmore from "./post-list/post-list-readmore"
-// import { FaRegClock } from "react-icons/fa"
-
-// const PostsList = ({ posts }) => {
-//   return (
-//     <Layout>
-//       <PostListContainer>
-//         <SEO title="Blog" />
-//         {posts.map((post) => {
-//           const title = post.title || post.slug
-//           return (
-//             <PostListWrapper key={post.slug}>
-//               <PostListImage
-//                 link={post.slug}
-//                 image={post.featuredImage.childImageSharp.fluid}
-//                 altText={post.title}
-//               />
-//               <PostListMeta>
-//                 <a
-//                   href={post.authorLink}
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                 >
-//                   {post.author}
-//                 </a>{" "}
-//                 &bull; {post.date} &bull;{" "}
-//                 <FaRegClock
-//                   sx={{
-//                     position: "relative",
-//                     top: "0.125em",
-//                   }}
-//                 />{" "}
-//                 {post.timeToRead} Min
-//               </PostListMeta>
-//               <PostListTitle link={post.slug}>{title}</PostListTitle>
-//               <PostListExcerpt>{post.excerpt}</PostListExcerpt>
-//               <PostListReadmore link={post.slug}>Read more</PostListReadmore>
-//             </PostListWrapper>
-//           )
-//         })}
-//       </PostListContainer>
-//     </Layout>
-//   )
-// }
-
-// export default PostsList

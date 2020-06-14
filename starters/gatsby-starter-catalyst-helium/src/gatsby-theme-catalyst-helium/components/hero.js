@@ -60,7 +60,7 @@ const Hero = () => {
             px: [2, 3, 4, null, null],
             pb: 4,
             textAlign: "center",
-            borderRadius: "0.25rem",
+            borderRadius: ["0", "0.25rem", null, null, null],
           }}
         >
           <Styled.p

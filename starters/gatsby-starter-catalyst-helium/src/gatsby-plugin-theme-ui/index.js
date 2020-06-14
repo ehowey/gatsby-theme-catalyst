@@ -8,7 +8,7 @@ export default merge(BaseTheme, {
     primary: "#e6da00",
     secondary: "#9933CC",
     muted: "#ecf3f8",
-    accent: "#fffee4",
+    accent: "#ffffff",
     link: "#9933CC",
     header: {
       background: "transparent",
@@ -138,10 +138,10 @@ export default merge(BaseTheme, {
       px: 3,
     },
     postListContent: {
-      borderRadius: "0.25rem",
+      borderRadius: ["0", "0.25rem", null, null, null],
     },
     postListImage: {
-      borderRadius: "0.25rem",
+      borderRadius: ["0", "0.25rem", null, null, null],
     },
     nav: {
       my: 3,
