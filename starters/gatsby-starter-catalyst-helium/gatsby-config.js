@@ -48,7 +48,6 @@ module.exports = {
         displaySiteLogo: false,
         displaySiteLogoMobile: false,
         footerContentLocation: "right",
-        useStickyHeader: true,
         // Blog theme
         excerptLength: 200,
         // Helium
