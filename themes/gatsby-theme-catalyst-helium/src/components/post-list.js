@@ -58,8 +58,8 @@ const PostsList = ({ posts }) => {
                   display: "grid",
                   gridTemplateColumns: "24px 1fr 24px",
                   gridTemplateRows: [
-                    "100px 100px minmax(24px, auto)",
-                    "150px 150px minmax(24px, auto)",
+                    "100px 200px minmax(24px, auto)",
+                    "150px 200px minmax(24px, auto)",
                     "180px 180px minmax(24px, auto)",
                     "200px 200px minmax(24px, auto)",
                     "220px 220px minmax(24px, auto)",
