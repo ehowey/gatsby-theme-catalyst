@@ -56,13 +56,13 @@ const PostsList = ({ posts }) => {
               <article
                 sx={{
                   display: "grid",
-                  gridTemplateColumns: "32px 1fr 32px",
+                  gridTemplateColumns: "24px 1fr 24px",
                   gridTemplateRows: [
-                    "100px 200px 1fr",
-                    "150px 100px 1fr",
-                    "180px 100px 1fr",
-                    "200px 100px 1fr",
-                    "220px 100px 1fr",
+                    "100px 200px minmax(24px, auto)",
+                    "150px 200px minmax(24px, auto)",
+                    "180px 180px minmax(24px, auto)",
+                    "200px 200px minmax(24px, auto)",
+                    "220px 220px minmax(24px, auto)",
                   ],
                   mb: [5, null, 0, null, null],
                   ":last-of-type": {
@@ -72,22 +72,24 @@ const PostsList = ({ posts }) => {
                     gridColumn: "1 / span 2",
                     gridRow: "1 / span 1",
                     gridTemplateColumns: [
-                      "32px 1fr 32px",
+                      "24px 1fr 24px",
                       null,
-                      "32px 1fr 1fr 1fr 1fr 32px",
+                      "24px 1fr 1fr 1fr 1fr 24px",
                       null,
                       null,
                     ],
                     gridTemplateRows: [
-                      "100px 200px 1fr",
-                      "150px 150px 1fr",
-                      "32px auto 1fr",
+                      "100px 300px 1fr",
+                      "150px 350px 1fr",
+                      "24px auto 1fr",
                       null,
                       null,
                     ],
                     ".postListImage": {
                       gridColumn: "2 / -1",
                       gridRow: ["1 / 3", null, "2 / -1", null, null],
+                      maxHeight: ["70vh", null, "70vh", null, null],
+                      minHeight: ["auto", null, "500px", null, null],
                     },
                     ".postListContent": {
                       gridColumn: ["1 / 3", null, "1 / 5", null, null],
@@ -110,12 +112,11 @@ const PostsList = ({ posts }) => {
                     <Img
                       sx={{
                         maxWidth: "100%",
+                        maxHeight: "100%",
                         height: "100%",
                         width: "100%",
                         boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
                         variant: "variants.postListImage",
-                        maxHeight: ["70vh", null, "70vh", null, null],
-                        minHeight: ["auto", null, "500px", null, null],
                       }}
                       fluid={post.featuredImage.childImageSharp.fluid}
                       alt={post.title}
