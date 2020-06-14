@@ -7,6 +7,7 @@ import { FaRegClock } from "react-icons/fa"
 import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
 import { useHeliumConfig } from "gatsby-theme-catalyst-helium"
 import Hero from "./hero"
+import kebabCase from "lodash/kebabCase"
 
 const PostsList = ({ posts }) => {
   const { postListTitle, displayPostListTitle } = useCatalystBlogConfig()
@@ -27,6 +28,7 @@ const PostsList = ({ posts }) => {
             sx={{
               maxWidth: "maxContentWidth",
               mx: "auto",
+              my: 5,
               textAlign: "center",
               variant: "variants.postListPageTitle",
             }}
@@ -38,10 +40,13 @@ const PostsList = ({ posts }) => {
           sx={{
             display: ["flex", null, "grid", null, null],
             flexDirection: "column",
-            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+            gridColumnGap: 4,
+            gridRowGap: 5,
             variant: "variants.postListContainer",
             maxWidth: "maxPageWidth",
-            mx: "auto",
+            mx: [0, 3, null, null, "auto"],
+            my: 5,
           }}
         >
           {posts.map((post, index) => {
@@ -50,17 +55,19 @@ const PostsList = ({ posts }) => {
             return (
               <article
                 sx={{
-                  mx: [0, null, 3, 4, null],
-                  my: [4, null, 3, 4, null],
                   display: "grid",
                   gridTemplateColumns: "32px 1fr 32px",
                   gridTemplateRows: [
                     "100px 200px 1fr",
-                    "150px 80px 1fr",
                     "150px 100px 1fr",
+                    "180px 100px 1fr",
                     "200px 100px 1fr",
-                    null,
+                    "220px 100px 1fr",
                   ],
+                  mb: [5, null, 0, null, null],
+                  ":last-of-type": {
+                    mb: 0,
+                  },
                   ":nth-of-type(1)": {
                     gridColumn: "1 / span 2",
                     gridRow: "1 / span 1",
@@ -78,7 +85,6 @@ const PostsList = ({ posts }) => {
                       null,
                       null,
                     ],
-                    mx: [0, null, 3, 4, null],
                     ".postListImage": {
                       gridColumn: "2 / -1",
                       gridRow: ["1 / 3", null, "2 / -1", null, null],
@@ -104,7 +110,7 @@ const PostsList = ({ posts }) => {
                     <Img
                       sx={{
                         maxWidth: "100%",
-                        maxHeight: "100%",
+                        maxHeight: "70vh",
                         height: "100%",
                         width: "100%",
                         boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
@@ -133,16 +139,17 @@ const PostsList = ({ posts }) => {
                 >
                   <div>
                     <Styled.ul
+                      aria-label="Categories"
                       sx={{ listStyle: "none", m: 0, p: 0, display: "flex" }}
                     >
                       {post.categories.map((category) => (
                         <Styled.li
                           sx={{
                             my: 0,
-                            color: "primary",
                             fontSize: 1,
                             textTransform: "uppercase",
                             letterSpacing: "wide",
+                            color: "link",
                             "::after": {
                               content: `"\\2022"`,
                               px: 2,
@@ -152,9 +159,15 @@ const PostsList = ({ posts }) => {
                                 content: "none",
                               },
                             },
+                            variant: "variants.postListCategory",
                           }}
                         >
-                          {category}
+                          <Styled.a
+                            as={Link}
+                            to={`/categories/${kebabCase(category)}/`}
+                          >
+                            {category}
+                          </Styled.a>
                         </Styled.li>
                       ))}
                     </Styled.ul>

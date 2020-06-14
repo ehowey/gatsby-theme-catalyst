@@ -49,7 +49,7 @@ const Post = ({ data: { post }, previous, next }) => (
                   textTransform: "uppercase",
                   fontWeight: "bold",
                   letterSpacing: "wide",
-                  color: "primary",
+                  color: "link",
                   "::after": {
                     content: `"\\2022"`,
                     px: 2,
@@ -59,6 +59,7 @@ const Post = ({ data: { post }, previous, next }) => (
                       content: "none",
                     },
                   },
+                  variant: "variants.postCategory",
                 }}
               >
                 <Styled.a as={Link} to={`/categories/${kebabCase(category)}/`}>
@@ -121,8 +122,8 @@ const Post = ({ data: { post }, previous, next }) => (
             sx={{
               width: ["40%", "30%", "20%", null, "10%"],
               height: "6px",
-              color: "primary",
-              bg: "primary",
+              color: "link",
+              bg: "link",
               borderWidth: 0,
             }}
           />
