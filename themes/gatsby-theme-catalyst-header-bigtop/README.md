@@ -2,6 +2,8 @@
 
 Sibling theme for `gatsby-theme-catalyst-core` which adds a "big" site header and navbar using latent component shadowing. Branding/Logo on top, large. Navigation underneath the logo. Social links in the top right corner. Theme options are set set via `gatsby-theme-catalyst-core`, for example setting `displaySiteTitle: false` and `displaySiteTitleMobile: false` will only show the logo for branding.
 
+_Note this header does not support the `useStickyHeader` theme option_. The header is static when in "desktop" view and "sticky" when in mobile view. This behaviour could be changed via variants if needed.
+
 You can see a styled implementation of this in [gatsby-theme-catalyst-helium](https://gatsby-starter-catalyst-helium.netlify.app).
 
 **Additional Documentation**

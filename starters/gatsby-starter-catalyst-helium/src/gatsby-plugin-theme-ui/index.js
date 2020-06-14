@@ -117,6 +117,7 @@ export default merge(BaseTheme, {
       borderBottomStyle: ["solid", null, "none", null, null],
       borderBottomWidth: "2px",
       borderBottomColor: "primary",
+      position: ["sticky", null, "static", null, null],
     },
     siteTitle: {
       fontSize: [3, null, 7, 8, null],
