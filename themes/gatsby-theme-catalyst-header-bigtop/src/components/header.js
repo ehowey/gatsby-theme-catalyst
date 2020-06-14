@@ -6,19 +6,14 @@ import Nav from "./navbar/nav"
 import NavIcons from "./navbar/nav-icons"
 import MobileButton from "./navbar/nav-mobile-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { useBreakpointIndex } from "@theme-ui/match-media"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useStickyHeader } = useCatalystConfig()
-  const index = useBreakpointIndex()
-  const isMobile = index <= 1
   return (
     <header
       sx={{
+        position: ["sticky", null, "static", null, null],
         display: "grid",
-        position: isMobile ? (useStickyHeader ? "sticky" : null) : "static",
         top: 0,
         width: "100%",
         color: isNavOpen ? "header.textOpen" : "header.text",
