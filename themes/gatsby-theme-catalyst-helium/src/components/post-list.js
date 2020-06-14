@@ -110,11 +110,12 @@ const PostsList = ({ posts }) => {
                     <Img
                       sx={{
                         maxWidth: "100%",
-                        maxHeight: "70vh",
                         height: "100%",
                         width: "100%",
                         boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
                         variant: "variants.postListImage",
+                        maxHeight: ["70vh", null, "70vh", null, null],
+                        minHeight: ["auto", null, "500px", null, null],
                       }}
                       fluid={post.featuredImage.childImageSharp.fluid}
                       alt={post.title}
