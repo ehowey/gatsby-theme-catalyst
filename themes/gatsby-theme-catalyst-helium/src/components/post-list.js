@@ -79,8 +79,8 @@ const PostsList = ({ posts }) => {
                       null,
                     ],
                     gridTemplateRows: [
-                      "100px 200px 1fr",
-                      "150px 150px 1fr",
+                      "100px 300px 1fr",
+                      "150px 350px 1fr",
                       "24px auto 1fr",
                       null,
                       null,
