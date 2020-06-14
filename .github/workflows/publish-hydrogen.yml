@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - "starters/**"
+      - "starters/gatsby-starter-catalyst-hydrogen/**"
 jobs:
   master:
     runs-on: ubuntu-latest
@@ -20,4 +20,4 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: starters ehowey
+          args: starters/gatsby-starter-catalyst-hydrogen ehowey
