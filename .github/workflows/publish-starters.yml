@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "starters/**"
+      - ".github/publish-starters.yml"
 jobs:
   master:
     runs-on: ubuntu-latest
