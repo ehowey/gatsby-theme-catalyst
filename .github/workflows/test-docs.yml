@@ -2,14 +2,14 @@ name: Test Docs Site
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - "www/**"
       - ".github/**"
       - "cypress/**"
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - "www/**"
       - ".github/**"

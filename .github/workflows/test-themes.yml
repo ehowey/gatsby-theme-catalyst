@@ -2,7 +2,7 @@ name: Test Themes
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - "starters/**"
       - "themes/**"
@@ -10,7 +10,7 @@ on:
       - "cypress/**"
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - "starters/**"
       - "themes/**"
