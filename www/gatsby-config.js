@@ -68,7 +68,7 @@ module.exports = {
         subMenu: [
           {
             name: `Gatsby-Config.js`,
-            link: `/docs/variants`,
+            link: `/docs/gatsby-config`,
             type: `internal`,
           },
           {
