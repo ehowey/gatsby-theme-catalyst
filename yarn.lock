@@ -2721,21 +2721,21 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
-"@reach/skip-nav@^0.10.2":
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/@reach/skip-nav/-/skip-nav-0.10.3.tgz#569a127e7b0d7ad58f3eee05f02aeeda2d56f443"
-  integrity sha512-aY9pJEU3wc0bP9oluAlRYRuDr8Rf9QPrqC7D0EqXdV23V1op2W0PPqVbswODGWrhoWIC+9+H5oX40Fn4GHCsEg==
+"@reach/skip-nav@^0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@reach/skip-nav/-/skip-nav-0.10.4.tgz#f7e1b9c1c73f91b7a5df21096b7f9aed0c22be75"
+  integrity sha512-YKGRlsrgx7aW5b8MY1tFpwdpJv1gpVszNhJDNF38pan9BsnOlRm8zmYNmNG04D9niPVoqSzL/8hUH/K5wTCyLA==
   dependencies:
-    "@reach/utils" "^0.10.3"
-    tslib "^1.11.2"
+    "@reach/utils" "0.10.4"
+    tslib "^2.0.0"
 
-"@reach/utils@^0.10.3":
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.10.3.tgz#e30f9b172d131161953df7dd01553c57ca4e78f8"
-  integrity sha512-LoIZSfVAJMA+DnzAMCMfc/wAM39iKT8BQQ9gI1FODpxd8nPFP4cKisMuRXImh2/iVtG2Z6NzzCNgceJSrywqFQ==
+"@reach/utils@0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.10.4.tgz#164ea50910db2d1015505a10fac6a48e7b3c54e7"
+  integrity sha512-eQ7T/5yPE5VMThBOst+7bDQvsa+4z8IH+CMBnT06jUithLCed70pxS0YJVV/4rqV7/PmYwUgSrQOKQLmW6CMcg==
   dependencies:
     "@types/warning" "^3.0.0"
-    tslib "^1.11.2"
+    tslib "^2.0.0"
     warning "^4.0.3"
 
 "@rexxars/eventsource-polyfill@^1.0.0":
@@ -17359,12 +17359,12 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tslib@^1.10.0, tslib@^1.11.2, tslib@^1.6.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.10.0, tslib@^1.6.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 
-tslib@~2.0.0:
+tslib@^2.0.0, tslib@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
   integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
