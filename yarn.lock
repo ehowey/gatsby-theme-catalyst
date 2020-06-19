@@ -8355,10 +8355,10 @@ gatsby-core-utils@^1.2.1, gatsby-core-utils@^1.3.4, gatsby-core-utils@^1.3.5:
     proper-lockfile "^4.1.1"
     xdg-basedir "^4.0.0"
 
-gatsby-cypress@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.4.3.tgz#fdf258f8519c97f6c384c3386673c891c145674f"
-  integrity sha512-WTTU+plLhrD3zBBj7VVwzV/2wCZBfcj3lvw/hdEejKaYiHh8TfDD4Wx3oBHGdnpueNrx/qVI6QZBEcfB2ua+aA==
+gatsby-cypress@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.4.4.tgz#3046af8870187939117edb75b78b8d8cf5bc4abc"
+  integrity sha512-/+PWavfoRFmrsB+5pkAYuNsn3r/mVMOOabXuDzRcSMxKSSP1TxrY+5CdK2o4opbBLK8taUA9um9xm0Ruh36hyg==
   dependencies:
     "@babel/runtime" "^7.10.2"
 
