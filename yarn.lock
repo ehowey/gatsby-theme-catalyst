@@ -8387,16 +8387,16 @@ gatsby-link@^2.4.1:
     "@types/reach__router" "^1.3.3"
     prop-types "^15.7.2"
 
-gatsby-page-utils@^0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.2.9.tgz#567eb9b446d27a2cbcc99ca8bb6a321e2cfd1a65"
-  integrity sha512-Mh3QbDdKKrvbJRHtMsBvo+sDTaGfcTiXCFGTkFu2VbL3P6mZySFJ8fDLb9SbQvwvMVw/vD5IZT1KJerfmgfvGQ==
+gatsby-page-utils@^0.2.10:
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.2.10.tgz#8f02fdffd4df0ac82db5cd9825425f4c7e4f1ddb"
+  integrity sha512-1U/av/vZt0wXagx1t1zrHdM396nuV32PvOSQO2yEKhX0Zm+EWYFYoqIQVa9IAxYtG0biepCwOvSPT9bavRg7Lg==
   dependencies:
     "@babel/runtime" "^7.10.2"
     bluebird "^3.7.2"
     chokidar "3.4.0"
     fs-exists-cached "^1.0.0"
-    gatsby-core-utils "^1.3.5"
+    gatsby-core-utils "^1.3.6"
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
@@ -8484,15 +8484,15 @@ gatsby-plugin-offline@^3.2.10:
     lodash "^4.17.15"
     workbox-build "^4.3.1"
 
-gatsby-plugin-page-creator@^2.3.1, gatsby-plugin-page-creator@^2.3.9:
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.3.9.tgz#b0793cf1340dc903560791fea4948c28b2d302ad"
-  integrity sha512-ZNfjSoJ3AyACP5FWo0rwoeuIoZdD58le7oCmcVHVks/KOS/pJVGn8GwcrHE6xxCNM4KzqdfNBGZVyM+7RUASyA==
+gatsby-plugin-page-creator@^2.3.1, gatsby-plugin-page-creator@^2.3.10:
+  version "2.3.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.3.10.tgz#05e1b26def37610d40907cda8c84059f775bbe8b"
+  integrity sha512-f8cUwihIsAquS3CsxJc/Fbqkim2sRnCJiqAUirpeu6XpLeDoJk9IsF+F4+hZpyWaZy2NpDZnpsnaJhCP36VnBA==
   dependencies:
     "@babel/runtime" "^7.10.2"
     bluebird "^3.7.2"
     fs-exists-cached "^1.0.0"
-    gatsby-page-utils "^0.2.9"
+    gatsby-page-utils "^0.2.10"
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
