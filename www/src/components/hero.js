@@ -67,13 +67,33 @@ const Hero = () => {
           <li>
             <Button
               as={Link}
-              to="/docs/"
+              to="/docs/getting-started/"
               sx={{
-                bg: "accent",
-                color: "black",
+                bg: "#e91c21",
+                color: "white",
+                boxShadow:
+                  "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
                 mr: 3,
                 ":hover": {
-                  bg: darken("accent", 0.03),
+                  bg: darken("#e91c21", 0.03),
+                },
+              }}
+            >
+              Get Started
+            </Button>
+          </li>
+          <li>
+            <Button
+              as={Link}
+              to="/docs/"
+              sx={{
+                bg: "#ffd7d7",
+                color: "black",
+                mr: 3,
+                boxShadow:
+                  "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
+                ":hover": {
+                  bg: darken("#ffd7d7", 0.03),
                 },
               }}
             >
@@ -85,10 +105,12 @@ const Hero = () => {
               as="a"
               href="https://github.com/ehowey/gatsby-theme-catalyst"
               sx={{
-                bg: "accent",
+                bg: "#ffd7d7",
                 color: "black",
+                boxShadow:
+                  "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
                 ":hover": {
-                  bg: darken("accent", 0.03),
+                  bg: darken("#ffd7d7", 0.03),
                 },
               }}
             >
