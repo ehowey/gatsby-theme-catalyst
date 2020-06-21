@@ -13,6 +13,7 @@ const NavMenuLinkInternal = ({ link, hasSubmenu, children }) => {
       to={link}
       activeClassName="active"
       onClick={() => setIsNavOpen(false)}
+      role="menuitem"
     >
       {children}
       {hasSubmenu && <MdKeyboardArrowDown sx={{ mb: -1 }} />}
