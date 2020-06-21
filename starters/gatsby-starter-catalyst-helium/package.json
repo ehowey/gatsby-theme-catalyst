@@ -1,12 +1,12 @@
 {
   "name": "gatsby-starter-catalyst-helium",
   "description": "Gatsby starter for gatsby-theme-catalyst-helium",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.23.7",
-    "gatsby-theme-catalyst-helium": "^0.3.3",
+    "gatsby-theme-catalyst-helium": "^0.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
