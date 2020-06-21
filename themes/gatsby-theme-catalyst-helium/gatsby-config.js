@@ -15,6 +15,7 @@ module.exports = (themeOptions) => {
           useSocialLinks: themeOptions.useSocialLinks,
           useColorMode: themeOptions.useColorMode,
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
+          remarkImagesWidth: themeOptions.remarkImagesWidth,
         },
       },
       `gatsby-theme-catalyst-header-bigtop`,
