@@ -32,6 +32,7 @@ const NavLiDropdown = ({ children }) => {
         },
         variant: "variants.navLiSub",
       }}
+      role="none"
     >
       {children}
     </li>

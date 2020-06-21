@@ -48,7 +48,7 @@ const NavLi = ({ children, hasSubmenu }) => {
         },
         variant: "variants.navLi",
       }}
-      aria-haspopup={hasSubmenu}
+      role="none"
     >
       {children}
     </li>
