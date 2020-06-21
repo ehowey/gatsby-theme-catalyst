@@ -48,6 +48,7 @@ module.exports = {
         displaySiteLogo: false,
         displaySiteLogoMobile: false,
         footerContentLocation: "right",
+        remarkImagesWidth: 1920,
         // Blog theme
         excerptLength: 200,
         // Helium
