@@ -5,14 +5,18 @@
 
 # Getting Started
 
-This guide assumes the following:
+Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerateyour next Gatsby project. The vision is one "core" theme which is progressively built on top of until you have a complete site. This allows for easier maintainability, choice about whether you want to start with a barebones starter or a more complete site, and a happy path for extendability using component shadowing.
+
+This tutorial assumes the following:
 
 - That you understand [Gatsby fundamentals](https://www.gatsbyjs.org/tutorial/#gatsby-fundamentals)
 - That you understand [Gatsby themes](https://www.gatsbyjs.org/tutorial/using-a-theme/)
 
+This tutorial will get you up and running with a barebones starter with content authored in MDX which has minimal styles so it is easier to customize and make your own. If you want to test a more complete site you should check out [gatsby-theme-catalyst-helium](/docs/gatsby-theme-catalyst-helium).
+
 ## Install the themes using a starter
 
-This guide uses a barebones starter which is designed as a boilerplate for further development and customization. It includes a minimal set of styles, utility components and core functionality like a mobile navigation menu. Content is authored in MDX.
+This easiest way to get started is with a starter. This tutorial will use `gatsby-starter-catalyst` which is intended as a solid starting point for further customization.
 
 The themes included in this starter are:
 
@@ -43,11 +47,11 @@ Replace `content/assets/catalyst-site-logo.png`, `content/assets/catalyst-site-s
 
 `catalyst-site-social` is used as a fallback social media image if there is not a featured image in the blog post or on a page.
 
-> You can also do this via component shadowing for a custom approach and future releases of Gatsby will enable a better way of doing this with React suspense.
+> You can also do this via component shadowing for a custom approach and future releases of Gatsby will enable a happier path for doing this with React suspense and graphQL variables.
 
 ## Create some content
 
-By default content is authored using [MDX](https://www.gatsbyjs.org/docs/mdx/getting-started/). Go to `content/pages/index.mdx` to modify your home page. Note the SEO component on the top of the page which allows you to customize the metadata for each page.
+By default in this starter content is authored using [MDX](https://www.gatsbyjs.org/docs/mdx/getting-started/). Go to `content/pages/index.mdx` to modify your home page. Note the SEO component on the top of the page which allows you to customize the metadata for each page.
 
 Try pasting in the following code into `index.mdx`:
 
@@ -78,6 +82,7 @@ Yes you are!
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
+        // remarkImagesWidth: 1440,
         //footerContentLocation: "left", // "left", "right", "center"
       },
     },
@@ -129,7 +134,7 @@ plugins: [
 
 ## Get building
 
-This should give you an idea of what is possible with Gatsby Theme Catalyst and the launching pad it provides for developing your own Gatsby site.
+This should begin to give you an idea of what is possible with Gatsby Theme Catalyst and the launching pad it provides for developing your own Gatsby site.
 
 For an example of a complete site check out [gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen) which adds a both a data layer (SANITY.io) and a presentation layer on top of the base starter covered here.
 
