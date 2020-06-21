@@ -29,6 +29,7 @@ export const query = graphql`
       keywords
       timeToRead
       date(formatString: "MMMM D, YYYY")
+      featuredImageCaption
       featuredImage {
         childImageSharp {
           fluid(maxWidth: 1440) {

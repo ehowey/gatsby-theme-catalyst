@@ -106,6 +106,7 @@ const Post = ({ data: { post }, previous, next }) => (
               color: "textGray",
               lineHeight: "1.15em",
               textAlign: "center",
+              fontSize: [1, null, 2, null, null],
               a: {
                 color: "textGray",
                 textDecoration: "none",
@@ -116,7 +117,7 @@ const Post = ({ data: { post }, previous, next }) => (
               variant: "variants.postMeta",
             }}
           >
-            {post.date}
+            {post.author} &bull; {post.date}
           </Styled.p>
           <hr
             sx={{
@@ -128,20 +129,28 @@ const Post = ({ data: { post }, previous, next }) => (
             }}
           />
         </div>
-        <Img
-          sx={{
-            maxHeight: "400px",
-            maxWidth: "maxPageWidth",
-            mx: "auto",
-            mb: 4,
-            variant: "variants.postImage",
-          }}
-          fluid={post.featuredImage.childImageSharp.fluid}
-          alt={post.title}
-        />
+        <div sx={{ mb: 4 }}>
+          <Img
+            sx={{
+              maxHeight: "400px",
+              variant: "variants.postImage",
+            }}
+            fluid={post.featuredImage.childImageSharp.fluid}
+            alt={post.title}
+          />
+          <span sx={{ ml: 1, color: "textGray", fontSize: 1 }}>
+            {post.featuredImageCaption}
+          </span>
+        </div>
       </div>
-      <span sx={{ color: "textGray", fontSize: 1, mb: -3, display: "block" }}>
-        {post.author} &mdash;{" "}
+      <span
+        sx={{
+          color: "textGray",
+          fontSize: 1,
+          mb: -3,
+          display: "block",
+        }}
+      >
         <FaRegClock
           sx={{
             position: "relative",

@@ -77,19 +77,19 @@ For example the following config is valid:
 
 The following fields are available in front matter.
 
-| Field         | Required? | Values  | Description                                              |
-| ------------- | --------- | ------- | -------------------------------------------------------- |
-| title         | Yes       | String  | Title of the post                                        |
-| date          | Yes       | Date    | Publication date, e.g. 2019-04-15                        |
-| subTitle      | No        | String  | Sub title or deck for blog posts                         |
-| author        | No        | String  | Author of the post                                       |
-| featuredImage | No        | String  | Featured image to be used for the post                   |
-| socialImage   | No        | String  | Social image to be used for the post                     |
-| slug          | No        | String  | Optionally used to specify the link slug for the post    |
-| authorLink    | No        | String  | Used as a link for the author name in the post summaries |
-| tags          | No        | Array   | Tags for the post, ["tag1", "tag2", "tag3"]              |
-| keywords      | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]          |
-| draft         | No        | Boolean | Defaults to false, set to true if a post is a draft      |
+| Field                | Required? | Values  | Description                                           |
+| -------------------- | --------- | ------- | ----------------------------------------------------- |
+| title                | Yes       | String  | Title of the post                                     |
+| date                 | Yes       | Date    | Publication date, e.g. 2019-04-15                     |
+| subTitle             | Yes       | String  | Sub title or deck for blog posts                      |
+| author               | Yes       | String  | Author of the post                                    |
+| featuredImage        | Yes       | String  | Featured image to be used for the post                |
+| featuredImageCaption | Yes       | String  | Caption for the featured image                        |
+| socialImage          | Yes       | String  | Social image to be used for the post                  |
+| slug                 | No        | String  | Optionally used to specify the link slug for the post |
+| categories           | Yes       | Array   | Categories for the post, ["cats", "dogs", "snakes"]   |
+| keywords             | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]       |
+| draft                | No        | Boolean | Defaults to false, set to true if a post is a draft   |
 
 ### Core Theme Options
 
