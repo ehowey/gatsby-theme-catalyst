@@ -76,6 +76,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       excerpt: String!
       draft: Boolean! @defaultFalse
       featuredImage: File @fileByRelativePath
+      featuredImageCaption: String
       socialImage: File @fileByRelativePath
       timeToRead: Int
       postType: String
@@ -120,6 +121,9 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         featuredImage: {
           type: `File`,
           extensions: { fileByRelativePath: {} },
+        },
+        featuredImageCaption: {
+          type: `String`,
         },
         socialImage: {
           type: `File`,
@@ -200,6 +204,7 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
       featuredImage: node.frontmatter.featuredImage,
+      featuredImageCaption: node.frontmatter.featuredImageCaption,
       socialImage: node.frontmatter.socialImage,
       draft: node.frontmatter.draft,
       postType: node.frontmatter.postType || "article",
