@@ -10,7 +10,7 @@ describe("Check Color Regression", () => {
   it("Colors good", () => {
     cy.wait(1000)
     cy.get("nav").within(() => {
-      cy.get('a[href*="/docs"]').click()
+      cy.get('a[href="/docs/"]').click()
     })
     cy.wait(2000)
     cy.get("h1").contains("Docs")
