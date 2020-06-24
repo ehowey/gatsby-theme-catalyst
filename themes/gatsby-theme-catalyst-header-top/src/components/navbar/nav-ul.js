@@ -14,8 +14,6 @@ const NavUl = ({ children }) => {
         p: 0,
         variant: "variants.navUl",
       }}
-      role="menubar" // eslint-disable-line
-      aria-label="Main navigation menu"
     >
       {children}
     </ul>

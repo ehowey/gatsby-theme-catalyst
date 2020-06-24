@@ -19,8 +19,7 @@ const NavLayout = () => {
         alignItems: "center",
         variant: "variant.nav",
       }}
-      role="navigation"
-      aria-label="main-navigation"
+      aria-label="Primary menu"
     >
       <NavIcons />
       <NavLinks />

@@ -31,7 +31,6 @@ const NavUlDropdown = ({ children }) => {
         },
         variant: "variants.navUlSub",
       }}
-      role="menu" // eslint-disable-line
       aria-label="Submenu"
     >
       {children}

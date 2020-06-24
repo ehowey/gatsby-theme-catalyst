@@ -19,6 +19,7 @@ const Nav = () => {
         // height: isNavOpen ? "auto" : "0",
         variant: "variants.nav",
       }}
+      aria-label="Primary menu"
     >
       <NavLinks />
     </nav>

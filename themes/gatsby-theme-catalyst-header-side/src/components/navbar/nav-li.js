@@ -35,7 +35,6 @@ const NavLi = ({ children }) => {
         },
         variant: "variants.navLi",
       }}
-      role="none"
     >
       {children}
     </li>
