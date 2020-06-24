@@ -45,7 +45,6 @@ const NavLi = ({ children, hasSubmenu }) => {
         },
         variant: "variants.navLi",
       }}
-      role="none"
     >
       {children}
     </li>

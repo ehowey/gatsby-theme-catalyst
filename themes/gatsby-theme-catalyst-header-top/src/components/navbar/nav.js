@@ -21,6 +21,7 @@ const Nav = () => {
         flexDirection: ["column", null, "row", null, null],
         variant: "variant.nav",
       }}
+      aria-label="Primary menu"
     >
       <NavLinks />
       <NavIcons />

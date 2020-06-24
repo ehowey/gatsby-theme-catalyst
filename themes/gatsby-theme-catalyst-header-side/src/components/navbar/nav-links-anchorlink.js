@@ -17,7 +17,6 @@ const NavMenuAnchorLink = ({ link, children }) => {
       duration={500}
       offset={-20}
       tabIndex="0"
-      role="menuitem"
     >
       {children}
     </AnchorLink>
