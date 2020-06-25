@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-blog v2.4.0
+
+- Added in support for categories and tags in `featuredImageCaption` to the blog frontmatter to be used as a caption for the featured images if desired, optional.
+
 ## catalyst-blog v2.3.0
 
 - Added in support for categories and tags in frontmatter
@@ -49,7 +53,7 @@ export default merge(BaseTheme, {
 
 - Depreciated `gatsby-theme-catalyst-writer` in favor of `gatsby-theme-catalyst-hydrogen`. If you were using the writer theme it will continue to work, and should work for a long time to come. If you want to migrate to hydrogen then it should be possible with a little effort as the expected data structures from SANITY were mainly unchanged.
 
-**Other notable changes**
+### Other notable changes
 
 - This is technically not a breaking change but it could noticeably change your sites appearance. Base navigation styles were simplified in the structural themes and then added back in for the presentational themes using variants in the theme-ui file. You can see an example of this is `gatsby-theme-catalyst-hydrogen` if you would like to see how to do it on your site, look in `gatsby-theme-catalyst-hydrogen/src/gatsby-plugin-theme-ui/index.js`.
 
