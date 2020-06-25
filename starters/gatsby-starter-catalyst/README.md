@@ -2,11 +2,11 @@
 
 Basic starter that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-top`, and `gatsby-theme-catalyst-footer`.
 
-**Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Catalyzing Start**
+## Catalyzing Start
 
 ```sh
 # create a new Gatsby site using the catalyst basic starter site
@@ -15,7 +15,7 @@ gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
-**Demo**
+## Demo
 
 [https://gatsby-starter-catalyst.netlify.app/](https://gatsby-starter-catalyst.netlify.app/)
 

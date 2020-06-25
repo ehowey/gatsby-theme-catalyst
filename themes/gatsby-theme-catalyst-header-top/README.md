@@ -2,11 +2,11 @@
 
 Sibling theme for `gatsby-theme-catalyst-core` which adds a traditional site header and navbar using latent component shadowing. Branding on the left, navigation on the right. Theme options are set set via `gatsby-theme-catalyst-core`, for example setting `displaySiteTitle: false` and `displaySiteTitleMobile: false` will only show the logo for branding.
 
-**Additional Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Demos:**
+## Demos
 
 - [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.app/)
 - [https://www.erichowey.dev/](https://www.erichowey.dev/)

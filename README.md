@@ -11,7 +11,7 @@
 
 Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters that can be used as a boilerplate to accelerate your next [Gatsby](https://www.gatsbyjs.org) project. There is a single "core" theme in which most dependencies and utility components are contained followed by progressively more styled and refined child themes and starters. These themes use [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
 
-**Catalyzing Start:**
+## Catalyzing Start
 
 ```shell
    # create a new Gatsby site using the basic starter
@@ -52,17 +52,17 @@ Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters
 
 ## Philosophy
 
-<i>Less is more</i>
+_Less is more_
 
-**Simple Core Theme**
+### Simple Core Theme
 
 `gatsby-theme-catalyst-core` was designed and built to be as simple and unstyled as possible. A barebones starting point which can be easily maintained in the future to manage dependencies on client sites.
 
-**Child themes to extend the core theme**
+### Child themes to extend the core theme
 
 These child-themes are focused on extending function and remain as design-agnostic as possible. Again this makes longterm maintenance easier for client sites. It is my preference to begin new projects without too much styling that has to be undone.
 
-**Starter sites to extend and style the themes**
+### Starter sites to extend and style the themes
 
 The starter sites provide a "quick start" for site development using the themes as dependencies. Currently the starter sites only provide basic implementation of the themes. It is my vision however that in time there could be more styled and complex starters released which do not need as much customization and include more rigid styling.
 

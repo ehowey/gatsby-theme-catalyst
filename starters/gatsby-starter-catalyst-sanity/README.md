@@ -2,11 +2,11 @@
 
 This is a base theme for integrating SANITY.io with other Catalyst themes. For an example of this in practice see `gatsby-theme-catalyst-hydrogen`.
 
-**Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Catalyzing Start**
+## Catalyzing Start
 
 ```sh
 # create a new Gatsby site using the catalyst basic starter site
@@ -15,7 +15,7 @@ gatsby new catalyst-sanity https://github.com/ehowey/gatsby-starter-catalyst-san
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
-**Demo**
+## Demo
 
 [https://gatsby-starter-catalyst-sanity.netlify.app/](https://gatsby-starter-catalyst-sanity.netlify.app/)
 

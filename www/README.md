@@ -1,23 +1,6 @@
-# Gatsby Starter Catalyst
+# Documentation site for Gatsby Theme Catalyst
 
-Basic starter that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-top`, and `gatsby-theme-catalyst-footer`.
-
-**Documentation**
-
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
-
-**Catalyzing Start**
-
-```sh
-# create a new Gatsby site using the catalyst basic starter site
-gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
-```
-
-[Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
-
-**Demo**
-
-[https://gatsby-starter-catalyst.netlify.app/](https://gatsby-starter-catalyst.netlify.app/)
+This serves as the documentation site for Gatsby Theme Catalyst and is live at [https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com/). Deployed with Netlify.
 
 ## About Gatsby Theme Catalyst
 

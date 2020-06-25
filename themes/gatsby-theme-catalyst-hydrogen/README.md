@@ -2,16 +2,16 @@
 
 This is a full-featured theme that ties together the core theme, header and footer themes and then uses this as a basis to create a complete website. The theme relies on data from [SANITY.io](https://www.sanity.io/) and includes a customized content studio for the CMS.
 
-**Additional Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Demos:**
+## Demos
 
 - [gatsby-starter-catalyst-hydrogen](https://gatsby-starter-catalyst-hydrogen.netlify.app/)
 - [www.briannasharpe.com](https://www.briannasharpe.com)
 
-**Catalyzing Start**
+## Catalyzing Start
 
 ```sh
 # create a new Gatsby site using the catalyst writer starter site
@@ -80,15 +80,15 @@ Then in your site you can create a `.env` file in your main site directory with 
 
 Example .env:
 
-```
+```env
 SANITY_PROJECT_ID = utcr8kb1
 SANITY_DATASET = production
 SANITY_TOKEN = skRE6nh0PRCFP4juyGzMC7gvlop (actual token is much longer)
 ```
 
-Example config:
+Example Config:
 
-```
+```js
 {
   resolve: `gatsby-theme-catalyst-hydrogen`,
   options: {

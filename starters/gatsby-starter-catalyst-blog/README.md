@@ -2,7 +2,11 @@
 
 This implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`. This provides a basic starting point for developing your own personal blog and portfolio site.
 
-**Catalyzing Start**
+## Documentation
+
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+
+## Catalyzing Start
 
 ```sh
 # create a new Gatsby site using the catalyst blog starter site
@@ -11,7 +15,7 @@ gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
-**Demo**
+## Demo
 
 [https://gatsby-starter-catalyst-blog.netlify.app/](https://gatsby-starter-catalyst-blog.netlify.app/)
 
@@ -29,7 +33,7 @@ gatsby new catalyst-blog https://github.com/ehowey/gatsby-starter-catalyst-blog
 
 Example Config:
 
-```
+```js
    {
       resolve: `gatsby-theme-catalyst-blog`,
       options: {
@@ -59,7 +63,7 @@ The following fields are available in front matter.
 
 Example frontmatter:
 
-```
+```md
 ---
 title: Hey, a draft post
 date: 2019-04-15

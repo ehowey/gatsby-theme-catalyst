@@ -4,11 +4,11 @@ Sibling theme for `gatsby-theme-catalyst-core` which adds a basic site footer us
 
 Control the content location using the `footerContentLocation` option in `gatsby-theme-catalyst-core`. Defaults to left.
 
-**Additional Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Demos:**
+## Demos
 
 - [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.app/)
 - [https://www.erichowey.dev/](https://www.erichowey.dev/)

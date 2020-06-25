@@ -2,11 +2,11 @@
 
 Sibling theme for `gatsby-theme-catalyst-core` which adds a sidebar header using latent component shadowing. Header is on the left.
 
-**Additional Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Demos:**
+## Demos
 
 - [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.app/)
 

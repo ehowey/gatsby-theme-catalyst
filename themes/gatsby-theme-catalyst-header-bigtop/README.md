@@ -6,11 +6,11 @@ _Note this header does not support the `useStickyHeader` theme option_. The head
 
 You can see a styled implementation of this in [gatsby-theme-catalyst-helium](https://gatsby-starter-catalyst-helium.netlify.app).
 
-**Additional Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Demos:**
+## Demos
 
 - [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.app/)
 - [https://www.erichowey.dev/](https://www.erichowey.dev/)

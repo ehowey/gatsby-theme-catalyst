@@ -2,22 +2,22 @@
 
 This is a starter provides a blog that ties together the core theme, blog theme, header and footer themes to ceate a complete website. Git is used as the CMS, posts are authored in MDX. This starter demonstrates using variants and Theme-UI to style underlying themes.
 
-**Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Catalyzing Start**
+## Catalyzing Start
 
 ```sh
 # create a new Gatsby site using the catalyst writer starter site
-gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-helium
+gatsby new catalyst-lithium https://github.com/ehowey/gatsby-starter-catalyst-helium
 ```
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
-**Demo**
+## Demo
 
-[https://gatsby-starter-catalyst-hydrogen.netlify.app/](https://gatsby-starter-catalyst-helium.netlify.app/)
+[https://gatsby-starter-catalyst-helium.netlify.app/](https://gatsby-starter-catalyst-helium.netlify.app/)
 
 ## About Gatsby Theme Catalyst
 

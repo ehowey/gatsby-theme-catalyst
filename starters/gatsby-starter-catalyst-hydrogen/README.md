@@ -2,11 +2,11 @@
 
 This is a full-featured starter that ties together the core theme, header and footer themes and the hydrogen theme to ceate a complete website. The theme relies on data from [SANITY.io](https://www.sanity.io/) and includes a customized content studio for the CMS.
 
-**Documentation**
+## Documentation
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-**Catalyzing Start**
+## Catalyzing Start
 
 ```sh
 # create a new Gatsby site using the catalyst writer starter site
@@ -15,7 +15,7 @@ gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-h
 
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
 
-**Demo**
+## Demo
 
 [https://gatsby-starter-catalyst-hydrogen.netlify.app/](https://gatsby-starter-catalyst-hydrogen.netlify.app/)
 

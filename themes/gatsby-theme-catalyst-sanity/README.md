@@ -1,14 +1,12 @@
 # Gatsby Theme Catalyst Sanity
 
-**WIP DO NOT USE**
+Sibling theme for `gatsby-theme-catalyst-core` which adds a SANITY.io as a data source and sets up the createPages API.
 
-Sibling theme for `gatsby-theme-catalyst-core` which adds a SANITY.io.
+## Documentation
 
-**Additional Documentation**
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
 
-[Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
-
-**Demos:**
+## Demos
 
 - [gatsby-starter-catalyst-sanity](https://gatsby-starter-catalyst-sanity.netlify.app/)
 

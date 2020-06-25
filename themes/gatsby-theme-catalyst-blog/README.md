@@ -11,7 +11,11 @@ The main features added to this blog theme are:
 - Drafts flag in frontmatter so you can keep posts in your repo that are drafts and not built in the final site
 - Ability to control the excerpt length used in post summaries
 
-**Demos:**
+## Documentation
+
+[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+
+## Demos
 
 - [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.app/)
 - [https://www.erichowey.dev/](https://www.erichowey.dev/)
@@ -29,7 +33,7 @@ The main features added to this blog theme are:
 
 Example Config:
 
-```
+```js
    {
       resolve: `gatsby-theme-catalyst-blog`,
       options: {
