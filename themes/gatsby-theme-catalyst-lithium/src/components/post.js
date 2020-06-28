@@ -31,6 +31,7 @@ const Post = ({ data: { post }, previous, next }) => (
         width: "100vw",
         position: "relative",
         left: "calc(-50vw + 50%)",
+        mt: -3,
         variant: "variants.postContainer",
       }}
     >
@@ -100,7 +101,7 @@ const Post = ({ data: { post }, previous, next }) => (
             "::after": {
               display: "block",
               content: '""',
-              width: "80px",
+              width: "100px",
               pt: 3,
               borderBottomStyle: "solid",
               borderBottomWidth: "4px",
