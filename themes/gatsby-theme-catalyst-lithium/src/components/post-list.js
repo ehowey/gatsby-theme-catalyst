@@ -5,19 +5,22 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { FaRegClock } from "react-icons/fa"
 import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
+import { useLithiumConfig } from "gatsby-theme-catalyst-lithium"
+import Hero from "./hero"
 
 const PostsList = ({ posts }) => {
   const { postListTitle, displayPostListTitle } = useCatalystBlogConfig()
+  const { useHero } = useLithiumConfig()
   return (
     <Layout>
       <SEO title={postListTitle} />
+      {useHero && <Hero />}
       <div
         sx={{
           width: "100vw",
           position: "relative",
           left: "calc(-50vw + 50%)",
           mb: 5,
-          variant: "variants.postListContainer",
         }}
       >
         <div
@@ -41,6 +44,7 @@ const PostsList = ({ posts }) => {
               gridTemplateRows: "auto",
               gridGap: 4,
               justifyContent: "center",
+              variant: "variants.postListContainer",
             }}
           >
             {displayPostListTitle ? (
@@ -129,6 +133,7 @@ const PostsList = ({ posts }) => {
                                   content: "none",
                                 },
                               },
+                              variant: "variants.postListCategory",
                             }}
                           >
                             {category}

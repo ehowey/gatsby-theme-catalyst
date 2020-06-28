@@ -48,6 +48,8 @@ module.exports = {
         remarkImagesWidth: 1920,
         // Blog theme
         excerptLength: 140,
+        // Lithium theme
+        useHero: true,
       },
     },
     {
