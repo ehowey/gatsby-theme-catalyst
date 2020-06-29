@@ -1,0 +1,115 @@
+<SEO
+  title="Gatsby-Theme-Catalyst-Lithium"
+  description="Gatsby Theme Catalyst Lithium is a complete theme and site built using Catalyst themes and git as the CMS provider. It was designed for use as a personal blog. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# gatsby-theme-catalyst-lithium
+
+This theme is for a personal blog using multiple different themes layered together. Content is authored in MDX and git is used as the CMS. It was designed to be easily customized and extended via component shadowing and variants in the final site. Styling in the theme is intentionally minimalist so that it can be customized for the final site.
+
+## Demos
+
+- [gatsby-starter-catalyst-lithium](https://gatsby-starter-catalyst-lithium.netlify.app/)
+
+## Catalyzing Start
+
+`gatsby new lithium https://github.com/ehowey/gatsby-starter-catalyst-lithium`
+
+## Frontmatter fields
+
+The following fields are available in front matter.
+
+| Field                | Required? | Values  | Description                                           |
+| -------------------- | --------- | ------- | ----------------------------------------------------- |
+| title                | Yes       | String  | Title of the post                                     |
+| date                 | Yes       | Date    | Publication date, e.g. 2019-04-15                     |
+| subTitle             | Yes       | String  | Sub title or deck for blog posts                      |
+| author               | Yes       | String  | Author of the post                                    |
+| featuredImage        | Yes       | String  | Featured image to be used for the post                |
+| featuredImageCaption | Yes       | String  | Caption for the featured image                        |
+| socialImage          | Yes       | String  | Social image to be used for the post                  |
+| slug                 | No        | String  | Optionally used to specify the link slug for the post |
+| categories           | Yes       | Array   | Categories for the post, ["cats", "dogs", "snakes"]   |
+| keywords             | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]       |
+| draft                | No        | Boolean | Defaults to false, set to true if a post is a draft   |
+
+## Theme options
+
+Lithium accepts all options from the core theme and blog theme directly, e.g. you can set `useColorMode` via `gatsby-theme-catalyst-lithium` and it is passed down to the correct theme appropriately.
+
+The one custom option is `useHero` which conditionally inserts a hero section which is designed to be shadowed and customized. You can see an example of this in `gatsby-starter-catalyst-lithium`.
+
+For example the following config is valid:
+
+```js
+{
+      resolve: `gatsby-theme-catalyst-lithium`,
+      options: {
+        // Core theme
+        displaySiteLogo: false,
+        displaySiteLogoMobile: false,
+        footerContentLocation: "right",
+        useStickyHeader: true,
+        // Blog theme
+        excerptLength: 200,
+        // Lithium theme
+        useHero: true,
+      },
+    },
+```
+
+### Lithium Options
+
+| Option    | Values  | Description                                                             |
+| --------- | ------- | ----------------------------------------------------------------------- |
+| `useHero` | Boolean | Defaults to false, controls whether the hero section is enabled or not. |
+
+### Blog Theme Options
+
+| Option                 | Values  | Description                                                                                                             |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `contentPath`          | String  | Defaults to "content/posts", determines where the posts are created from.                                               |
+| `assetPath`            | String  | Defaults to "content/assets", determines where the post assets like images are located.                                 |
+| `basePath`             | String  | Defaults to "/blog", determines the page location for the post list.                                                    |
+| `excerptLength`        | String  | Defaults to "140", determines the length of the excerpt use for post summaries.                                         |
+| `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
+| `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
+
+### Core Theme Options
+
+| Option                   | Values                                    | Description                                                                                 |
+| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                   |
+| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.     |
+| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                    |
+| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint           |
+| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                              |
+| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint     |
+| `invertLogo`             | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open       |
+| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                          |
+| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                    |
+| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                       |
+| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                          |
+| `remarkImagesWidth`      | Integer value                             | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
+
+## Variants
+
+`gatsby-theme-catalyst-lithium` includes additional [variants](/docs/theme-ui/#variants) to allow for easier customization of the theme.
+
+- `variants.postContainer`: Targets the container div for individual posts
+- `variants.postTitle`: Targets the title for individual posts
+- `variants.postSubTitle`: Targets the sub title for individual posts
+- `variants.postMeta`: Targets the meta for individual posts
+- `variants.postImage`: Targets the image for individual posts
+- `variants.postCategory`: Targets the categories for individual posts
+- `variants.postListPageTitle`: Targets the page title for post lists
+- `variants.postListContainer`: Targets the container div for the post list
+- `variants.postListWrapper`: Targets the wrapper div for individual posts within the post list
+- `variants.postListImage`: Targets the image for individual posts within the post list
+- `variants.postListContent`: Targets the container div for content of an individual posts within the post list, e.g. Title, sub title, etc.
+- `variants.postListTitle`: Targets the title for individual posts within the post list
+- `variants.postListSubTitle`: Targets the sub title for individual posts within the post list
+- `variants.postListMeta`: Targets the meta for individual posts within the post list
+- `variants.postListExcerpt`: Targets the excerpt for individual posts within the post list
+- `variants.postListReadmore`: Targets the read more link for individual posts within the post list
+- `variants.postListCategory`: Targets the categories for the post list
