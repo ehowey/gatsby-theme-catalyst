@@ -66,14 +66,13 @@ const Hero = () => {
           <Styled.p
             sx={{
               fontSize: [4, 5, 6, null, null],
-              fontWeight: "bold",
               lineHeight: "snug",
               my: 4,
               color: baseColors.gray[8],
             }}
           >
-            Hello there! My name is Charlie and I am a web developer, excellent
-            human being, and bold writer.
+            Hello there! My name is <b>Charlie Rose</b> and I am a web
+            developer, excellent human being, and <b>bold</b> writer.
           </Styled.p>
           <Button
             as={Link}
