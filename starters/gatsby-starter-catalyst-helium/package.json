@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-catalyst-helium",
   "description": "Gatsby starter for gatsby-theme-catalyst-helium",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
