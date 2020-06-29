@@ -2,11 +2,15 @@
 
 This is an MDX based personal blog theme that ties together the core theme, blog theme, header and footer themes and then uses this as a basis to create a complete website. Git is used as the CMS. Styling is intentionally basic and is intended to be customized in the starter via variants and Theme-UI.
 
-**Demos:**
+## Documentation
+
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
+
+## Demos:
 
 - [gatsby-starter-catalyst-lithium](https://gatsby-starter-catalyst-lithium.netlify.app/)
 
-**Catalyzing Start**
+## Catalyzing Start
 
 ```sh
 # create a new Gatsby site using the catalyst writer starter site

@@ -4,7 +4,7 @@ This is an MDX based personal blog theme that ties together the core theme, blog
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Demos
 
