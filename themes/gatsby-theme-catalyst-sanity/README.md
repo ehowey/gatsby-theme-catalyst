@@ -4,7 +4,7 @@ Sibling theme for `gatsby-theme-catalyst-core` which adds a SANITY.io as a data 
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Demos
 
