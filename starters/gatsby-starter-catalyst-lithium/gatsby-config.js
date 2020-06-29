@@ -29,8 +29,8 @@ module.exports = {
         location: `footer`, //Options are "all", "header", "footer"
       },
       {
-        name: `Github`,
-        link: `https://www.github.com/ehowey`,
+        name: `Instagram`,
+        link: `https://www.instagram.com`,
         location: `all`, //Options are "all", "header", "footer"
       },
       {

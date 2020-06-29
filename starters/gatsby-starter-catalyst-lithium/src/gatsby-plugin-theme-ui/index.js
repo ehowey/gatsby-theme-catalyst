@@ -13,11 +13,16 @@ export default merge(BaseTheme, {
     monospace:
       'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },
+  fontWeights: {
+    body: 400,
+    heading: 400,
+    bold: 700,
+  },
   colors: {
     ...tailwind.colors,
     background: baseColors.gray[1], //Try "#954264",
     text: baseColors.gray[8],
-    textGray: "#6e6e6e",
+    textGray: "#6b6b6b",
     primary: baseColors.blue[7],
     secondary: baseColors.orange[7],
     accent: baseColors.orange[2],
@@ -43,7 +48,7 @@ export default merge(BaseTheme, {
         background: baseColors.gray[9],
         text: baseColors.gray[1],
         textGray: "#9f9f9f",
-        primary: "#458ad2",
+        primary: "#6da3dc",
         secondary: baseColors.orange[7],
         accent: baseColors.gray[8],
         highlight: baseColors.orange[5],
@@ -94,6 +99,7 @@ export default merge(BaseTheme, {
     },
     navLink: {
       fontFamily: "heading",
+      fontWeight: "400",
       "::after": {
         position: "absolute",
         top: "100%",
