@@ -8,6 +8,11 @@ updates:
     schedule:
       interval: "daily"
     versioning-strategy: increase
+    open-pull-requests-limit: 20
+    labels:
+      - "dependencies"
+      # Add default Kodiak `merge.automerge_label`
+      - "automerge"
     ignore:
       # Ignore updates to package
       - dependency-name: "gatsby"
