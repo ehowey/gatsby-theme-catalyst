@@ -4,6 +4,8 @@ import { darken } from "@theme-ui/color"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { RoughNotation } from "react-rough-notation"
+import { useHasMounted } from "gatsby-theme-catalyst-core"
+import { Fragment } from "react"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -18,6 +20,7 @@ const Hero = () => {
     }
   `)
   const heroImage = data.heroImage.childImageSharp.fluid
+  const hasMounted = useHasMounted()
   return (
     <div
       sx={{
@@ -54,13 +57,19 @@ const Hero = () => {
           <Styled.p sx={{ fontSize: [3, null, null, null, 4] }}>
             I grow vegetables, flowers and community. I build remarkable online
             experiences focused on{" "}
-            <RoughNotation type="underline" show={true} strokeWidth={2}>
-              connection
-            </RoughNotation>{" "}
-            and{" "}
-            <RoughNotation type="underline" show={true} strokeWidth={2}>
-              belonging.
-            </RoughNotation>
+            {hasMounted ? (
+              <Fragment>
+                <RoughNotation type="underline" show={true} strokeWidth={2}>
+                  connection
+                </RoughNotation>
+                <span> and </span>
+                <RoughNotation type="underline" show={true} strokeWidth={2}>
+                  belonging.
+                </RoughNotation>
+              </Fragment>
+            ) : (
+              "connection and belonging."
+            )}
           </Styled.p>
           <Button
             as={Link}
