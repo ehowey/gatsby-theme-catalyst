@@ -14635,6 +14635,13 @@ react-refresh@^0.7.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.7.2.tgz#f30978d21eb8cac6e2f2fde056a7d04f6844dd50"
   integrity sha512-u5l7fhAJXecWUJzVxzMRU2Zvw8m4QmDNHlTrT5uo3KBlYBhmChd7syAakBoay1yIiVhx/8Fi7a6v6kQZfsw81Q==
 
+react-rough-notation@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-rough-notation/-/react-rough-notation-0.1.0.tgz#322be54d7073a398688fcbd38281dc8961a96308"
+  integrity sha512-WbwPaLwgKfSkkX8koLmcedezRBH0iq6b8RAyhdWcFjdA3OmDqzh39tNMxWHGwln/K4gQe6nH2hlhHpC0p2p2GQ==
+  dependencies:
+    rough-notation "^0.4.0"
+
 react-scroll@^1.7.16:
   version "1.7.16"
   resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.7.16.tgz#814f0b97ed171aad1f27e45dad16a8444817fec8"
@@ -15468,6 +15475,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rough-notation@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/rough-notation/-/rough-notation-0.4.0.tgz#6f97324cb50fc91ec8064219253aa2528a69210f"
+  integrity sha512-hDgn9qMIxWnfY+WWjt30aLMtDHR13H8r/NI3EQNdJiEFAzpklH5nKg4eH/thpxCWTYzyg8ueMsKIfz9MzOBQ4Q==
 
 rss@^1.2.2:
   version "1.2.2"

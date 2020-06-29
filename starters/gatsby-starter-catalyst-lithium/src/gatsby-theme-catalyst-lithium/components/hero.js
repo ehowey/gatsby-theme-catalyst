@@ -3,6 +3,7 @@ import { jsx, Styled, Button } from "theme-ui"
 import { darken } from "@theme-ui/color"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { RoughNotation } from "react-rough-notation"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -52,7 +53,14 @@ const Hero = () => {
         >
           <Styled.p sx={{ fontSize: [3, null, null, null, 4] }}>
             I grow vegetables, flowers and community. I build remarkable online
-            experiences focused on <b>connection</b> and <b>belonging</b>.
+            experiences focused on{" "}
+            <RoughNotation type="underline" show="true" strokeWidth={2}>
+              connection
+            </RoughNotation>{" "}
+            and{" "}
+            <RoughNotation type="underline" show={true} strokeWidth={2}>
+              belonging.
+            </RoughNotation>
           </Styled.p>
           <Button
             as={Link}
