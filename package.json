@@ -46,7 +46,7 @@
     "clean:sanity": "yarn workspace gatsby-starter-catalyst-sanity clean",
     "clean:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen clean",
     "clean:helium": "yarn workspace gatsby-starter-catalyst-helium clean",
-    "clean:lithium": "yarn workspace gatsby-starter-catalyst-lithium develop",
+    "clean:lithium": "yarn workspace gatsby-starter-catalyst-lithium clean",
     "clean:www": "yarn workspace gatsby-catalyst-docs clean",
     "test:core": "start-server-and-test develop:core http://localhost:8000 cy:open",
     "test:basic": "start-server-and-test develop:basic http://localhost:8000 cy:open",

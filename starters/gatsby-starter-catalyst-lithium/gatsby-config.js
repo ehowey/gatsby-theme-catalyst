@@ -29,8 +29,8 @@ module.exports = {
         location: `footer`, //Options are "all", "header", "footer"
       },
       {
-        name: `Github`,
-        link: `https://www.github.com/ehowey`,
+        name: `Instagram`,
+        link: `https://www.instagram.com`,
         location: `all`, //Options are "all", "header", "footer"
       },
       {
@@ -48,6 +48,8 @@ module.exports = {
         remarkImagesWidth: 1920,
         // Blog theme
         excerptLength: 140,
+        // Lithium theme
+        useHero: true,
       },
     },
     {

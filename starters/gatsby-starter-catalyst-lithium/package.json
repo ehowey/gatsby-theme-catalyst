@@ -8,7 +8,8 @@
     "gatsby": "^2.23.7",
     "gatsby-theme-catalyst-lithium": "^0.0.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "typeface-quando": "^0.0.72"
   },
   "devDependencies": {
     "prettier": "^2.0.5"

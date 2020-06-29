@@ -18,7 +18,6 @@ const Post = ({ data: { post }, previous, next }) => (
     />
     <div
       sx={{
-        variant: "variants.postContainer",
         display: "grid",
         gridTemplateRows: [
           "150px auto",
@@ -32,6 +31,8 @@ const Post = ({ data: { post }, previous, next }) => (
         width: "100vw",
         position: "relative",
         left: "calc(-50vw + 50%)",
+        mt: -3,
+        variant: "variants.postContainer",
       }}
     >
       <Img
@@ -82,6 +83,7 @@ const Post = ({ data: { post }, previous, next }) => (
                     content: "none",
                   },
                 },
+                variant: "variants.postCategories",
               }}
             >
               <Styled.a as={Link} to={`/categories/${kebabCase(category)}/`}>
@@ -99,7 +101,7 @@ const Post = ({ data: { post }, previous, next }) => (
             "::after": {
               display: "block",
               content: '""',
-              width: "80px",
+              width: "100px",
               pt: 3,
               borderBottomStyle: "solid",
               borderBottomWidth: "4px",
