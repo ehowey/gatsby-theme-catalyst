@@ -54,7 +54,7 @@ const Hero = () => {
           <Styled.p sx={{ fontSize: [3, null, null, null, 4] }}>
             I grow vegetables, flowers and community. I build remarkable online
             experiences focused on{" "}
-            <RoughNotation type="underline" show="true" strokeWidth={2}>
+            <RoughNotation type="underline" show={true} strokeWidth={2}>
               connection
             </RoughNotation>{" "}
             and{" "}
