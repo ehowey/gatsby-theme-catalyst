@@ -52,18 +52,10 @@ module.exports = (themeOptions) => {
                       excerpt
                       date(formatString: "ddd, DD MMM YYYY HH:mm:ss ZZ")
                       socialImage {
-                        childImageSharp {
-                          resized:resize(width: 1024) {
-                            src
-                          }
-                        }
+                        publicURL
                       }
                       featuredImage {
-                        childImageSharp {
-                          resized:resize(width: 1024) {
-                            src
-                          }
-                        }
+                        publicURL
                       }
                     }
                   }
@@ -81,9 +73,9 @@ module.exports = (themeOptions) => {
                   const hasSocial = node.socialImage !== null
                   const hasFeatured = node.featuredImage !== null
                   const rssImage = hasSocial
-                    ? `${siteUrl}${node.socialImage.childImageSharp.resized.src}`
+                    ? `${siteUrl}${node.socialImage.publicURL}`
                     : hasFeatured
-                    ? `${siteUrl}${node.featuredImage.childImageSharp.resized.src}`
+                    ? `${siteUrl}${node.featuredImage.publicURL}`
                     : null
                   const serialized = {
                     guid: `${siteUrl}${node.slug}`,
