@@ -157,6 +157,11 @@ module.exports = {
             link: `/docs/gatsby-theme-catalyst-helium`,
             type: `internal`,
           },
+          {
+            name: `gatsby-theme-catalyst-lithium`,
+            link: `/docs/gatsby-theme-catalyst-lithium`,
+            type: `internal`,
+          },
         ],
       },
       {
@@ -167,6 +172,11 @@ module.exports = {
       {
         name: `Migrating`,
         link: `/docs/migrating`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Versioning`,
+        link: `/docs/versioning`,
         type: `internal`, //internal or anchor
       },
       {
