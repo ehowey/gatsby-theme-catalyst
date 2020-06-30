@@ -13,7 +13,7 @@ The main features added to this blog theme are:
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Demos
 

@@ -4,7 +4,7 @@ This implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-core`, `gat
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Catalyzing Start
 

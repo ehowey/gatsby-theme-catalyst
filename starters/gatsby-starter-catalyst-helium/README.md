@@ -4,7 +4,7 @@ This is a starter provides a blog that ties together the core theme, blog theme,
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Catalyzing Start
 

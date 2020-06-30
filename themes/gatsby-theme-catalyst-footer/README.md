@@ -6,7 +6,7 @@ Control the content location using the `footerContentLocation` option in `gatsby
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Demos
 

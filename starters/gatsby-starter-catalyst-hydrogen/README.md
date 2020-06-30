@@ -4,7 +4,7 @@ This is a full-featured starter that ties together the core theme, header and fo
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Catalyzing Start
 

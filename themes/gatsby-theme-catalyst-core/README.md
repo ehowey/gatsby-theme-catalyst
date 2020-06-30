@@ -4,7 +4,7 @@ This acts as a core theme on which all other themes are based. It houses a basic
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Demos
 

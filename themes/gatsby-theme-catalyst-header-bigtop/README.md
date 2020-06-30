@@ -8,7 +8,7 @@ You can see a styled implementation of this in [gatsby-theme-catalyst-helium](ht
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Demos
 

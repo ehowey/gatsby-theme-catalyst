@@ -4,7 +4,7 @@ Sibling theme for `gatsby-theme-catalyst-core` which adds a traditional site hea
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Demos
 

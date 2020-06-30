@@ -4,7 +4,7 @@ Basic starter that could be used as a barebones starting point for building a fi
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Catalyzing Start
 

@@ -4,7 +4,7 @@ This is a base theme for integrating SANITY.io with other Catalyst themes. For a
 
 ## Documentation
 
-[https://www.gatsbycatalyst.com/](www.gatsbycatalyst.com)
+[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
 ## Catalyzing Start
 
