@@ -10,10 +10,12 @@ describe("Smoke Test", () => {
 describe("Navigation Menu Test", () => {
   it("Navigation Works", () => {
     cy.viewport(1440, 900)
+    cy.wait(500)
     cy.get("header").then(($header) => {
       if ($header.find("nav").length) {
         cy.get("nav").should("be.visible")
         cy.viewport(375, 812)
+        cy.wait(500)
         cy.get("nav").should("not.be.visible")
         cy.get('button[aria-label*="Toggle Menu"]').should("be.visible").click()
         cy.get("nav").find("a").should("be.visible")
@@ -27,6 +29,7 @@ describe("Navigation Menu Test", () => {
 describe("Color Mode Toggle Test", () => {
   it("Toggle works", () => {
     cy.viewport(1440, 900)
+    cy.wait(500)
     cy.get("header").then(($nav) => {
       if ($nav.find('button[aria-label*="Toggle dark mode"]').length) {
         cy.get('button[aria-label*="Toggle dark mode"]').click()
