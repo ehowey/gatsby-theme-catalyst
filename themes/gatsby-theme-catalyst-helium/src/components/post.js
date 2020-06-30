@@ -14,6 +14,7 @@ const Post = ({ data: { post }, previous, next }) => (
       title={post.title}
       description={post.excerpt}
       image={post.socialImage.childImageSharp.seo}
+      keywords={post.keywords}
     />
     <article
       sx={{
