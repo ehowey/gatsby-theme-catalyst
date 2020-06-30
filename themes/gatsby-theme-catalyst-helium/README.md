@@ -76,6 +76,7 @@ For example the following config is valid:
 | `excerptLength`        | String  | Defaults to "140", determines the length of the excerpt use for post summaries.                                         |
 | `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
 | `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
+| `rssTitle`             | String  | Defaults to "RSS Feed", allows you to customize the title of the RSS feed.                                              |
 
 ### Core Theme Options
 

@@ -6,7 +6,7 @@ This is an MDX based personal blog theme that ties together the core theme, blog
 
 [https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
 
-## Demos:
+## Demos
 
 - [gatsby-starter-catalyst-lithium](https://gatsby-starter-catalyst-lithium.netlify.app/)
 
@@ -68,24 +68,7 @@ For example the following config is valid:
 | `excerptLength`        | String  | Defaults to "140", determines the length of the excerpt use for post summaries.                                         |
 | `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
 | `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
-
-#### Frontmatter Fields
-
-The following fields are available in front matter.
-
-| Field                | Required? | Values  | Description                                           |
-| -------------------- | --------- | ------- | ----------------------------------------------------- |
-| title                | Yes       | String  | Title of the post                                     |
-| date                 | Yes       | Date    | Publication date, e.g. 2019-04-15                     |
-| subTitle             | Yes       | String  | Sub title or deck for blog posts                      |
-| author               | Yes       | String  | Author of the post                                    |
-| featuredImage        | Yes       | String  | Featured image to be used for the post                |
-| featuredImageCaption | Yes       | String  | Caption for the featured image                        |
-| socialImage          | Yes       | String  | Social image to be used for the post                  |
-| slug                 | No        | String  | Optionally used to specify the link slug for the post |
-| categories           | Yes       | Array   | Categories for the post, ["cats", "dogs", "snakes"]   |
-| keywords             | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]       |
-| draft                | No        | Boolean | Defaults to false, set to true if a post is a draft   |
+| `rssTitle`             | String  | Defaults to "RSS Feed", allows you to customize the title of the RSS feed.                                              |
 
 ### Core Theme Options
 
