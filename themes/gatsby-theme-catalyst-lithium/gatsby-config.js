@@ -29,6 +29,7 @@ module.exports = (themeOptions) => {
           excerptLength: themeOptions.excerptLength,
           postListTitle: themeOptions.postListTitle || "Writing",
           displayPostListTitle: themeOptions.displayPostListTitle || true,
+          rssTitle: themeOptions.rssTitle,
         },
       },
     ].filter(Boolean),
