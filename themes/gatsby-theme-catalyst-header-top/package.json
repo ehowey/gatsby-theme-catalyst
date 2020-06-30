@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-header-top",
   "description": "Sibling theme for gatsby-theme-catalyst-core to add basic header styles.",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
     "gatsby": "^2.23.7",
