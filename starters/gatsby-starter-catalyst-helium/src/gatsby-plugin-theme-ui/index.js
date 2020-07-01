@@ -171,7 +171,7 @@ export default merge(BaseTheme, {
       px: 3,
       borderRadius: "0.25rem",
       transition: "all 0.3s ease-in-out",
-      ":hover": {
+      ":hover, :active, :focus": {
         textDecoration: "none",
         color: baseColors.gray[9],
         bg: darken("primary", 0.08),
