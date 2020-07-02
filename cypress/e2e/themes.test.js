@@ -7,6 +7,7 @@ describe("Smoke Test", () => {
     cy.get("footer").should("be.visible")
   })
 })
+
 describe("Navigation Menu Test", () => {
   it("Navigation Works", () => {
     cy.viewport(1440, 900)
@@ -26,23 +27,21 @@ describe("Navigation Menu Test", () => {
     })
   })
 })
+
 describe("Color Mode Toggle Test", () => {
   it("Toggle works", () => {
     cy.viewport(1440, 900)
-    cy.wait(500)
-    cy.get("header").then(($nav) => {
-      if ($nav.find('button[aria-label*="Toggle dark mode"]').length) {
-        cy.get('button[aria-label*="Toggle dark mode"]').click()
-        cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
-        cy.get('button[aria-label*="Toggle dark mode"]').click()
-        cy.get("body").should(
-          "have.css",
-          "background-color",
-          "rgb(247, 250, 252)"
-        )
-      } else {
-        return "No color mode toggle"
-      }
-    })
+    cy.scrollTo("top")
+    cy.wait(1000)
+    if ('button[aria-label*="Toggle dark mode"]'.length) {
+      cy.get('button[aria-label*="Toggle dark mode"]').click()
+      cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
+      cy.get('button[aria-label*="Toggle dark mode"]').click()
+      cy.get("body").should(
+        "have.css",
+        "background-color",
+        "rgb(247, 250, 252)"
+      )
+    }
   })
 })
