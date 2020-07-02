@@ -7,6 +7,7 @@ describe("Smoke Test", () => {
     cy.get("footer").should("be.visible")
   })
 })
+
 describe("Navigation Menu Test", () => {
   it("Navigation Works", () => {
     cy.viewport(1440, 900)
@@ -26,10 +27,12 @@ describe("Navigation Menu Test", () => {
     })
   })
 })
+
 describe("Color Mode Toggle Test", () => {
   it("Toggle works", () => {
     cy.viewport(1440, 900)
-    cy.wait(500)
+    cy.scrollTo("top")
+    cy.wait(1000)
     cy.get("header").then(($nav) => {
       if ($nav.find('button[aria-label*="Toggle dark mode"]').length) {
         cy.get('button[aria-label*="Toggle dark mode"]').click()
