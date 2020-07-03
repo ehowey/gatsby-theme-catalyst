@@ -2,6 +2,7 @@ describe("Check light theme for a11Y", () => {
   beforeEach(() => {
     cy.visit("/")
     cy.viewport(1440, 900)
+    cy.scrollTo("top")
     cy.wait(1500)
     cy.injectAxe()
   })
@@ -13,8 +14,9 @@ describe("Check dark theme for a11y", () => {
   beforeEach(() => {
     cy.visit("/")
     cy.viewport(1440, 900)
+    cy.scrollTo("top")
     cy.wait(1500)
-    cy.get("header").then($nav => {
+    cy.get("header").then(($nav) => {
       if ($nav.find('button[aria-label*="Toggle dark mode"]').length) {
         return cy.get('button[aria-label*="Toggle dark mode"]').click()
       } else {
