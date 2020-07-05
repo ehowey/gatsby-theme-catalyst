@@ -1,0 +1,267 @@
+<SEO
+  title="Creating a blog with gatsby-theme-catalyst-lithium"
+  description="A step-by-step tutorial for setting up a personal blog using gatsby-theme-catalyst-lithium. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# Creating a blog with gatsby-theme-catalyst-lithium
+
+This tutorial will walk you through setting up a personal blog using `gatsby-theme-catayst-lithium`.
+
+I assume you have some basic familiarity with Gatsby and web development in general. If you are brand new to Gatsby I would suggest beginning with their [excellent tutorial](https://www.gatsbyjs.org/tutorial/) and coming back here later.
+
+> This tutorial could also be followed for `gatsby-theme-catalyst-helium` which is very similar.
+
+## Install the theme using a starter
+
+```sh
+# create a new Gatsby site using the starter site
+gatsby new lithium https://github.com/ehowey/gatsby-starter-catalyst-lithium
+```
+
+## Develop your site for the first time
+
+```sh
+# switch to the lithium directory
+cd lithium
+# run gatsby develop for the first time
+gatsby develop
+```
+
+You should now be viewing a demo site with some placeholder content!
+
+Now let's personalize it and make it your own.
+
+## Update gatsby-config.js
+
+`gatsby-config.js` is the command centre for your website - update the site title, description, keywords, social links, etc. There are inline comments in the file which should be helpful, however the `menuLinks` and `socialLinks` fields are more complex and worth a quick review.
+
+The `menuLinks` array is common in Gatsby sites with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component or an anchor link component using [react-scroll](https://github.com/fisshy/react-scroll). The options are `internal` or `anchor`. Submenus are only supported on internal links at this time.
+
+Example Config:
+
+```js
+menuLinks: [
+  {
+    name: `Page 1`,
+    link: `/page-1`,
+    type: `internal`, //internal or anchor
+  },
+  {
+    name: `Anchor 1`,
+    link: `#anchor-1`,
+    type: `anchor`, //internal or anchor
+  },
+]
+```
+
+You can also have a sub-menu or dropdown menu.
+
+Example Config:
+
+```js
+menuLinks: [
+  {
+    name: `Page 1`,
+    link: `/page-1`,
+    type: `internal`, //internal or anchor
+    subMenu: [
+      {
+        name: `Sub 1`,
+        link: `/sub-1`,
+        type: `internal`, //internal or anchor
+      },
+      {
+        name: `Sub 2`,
+        link: `/sub-2`,
+        type: `internal`, //internal or anchor
+      },
+    ],
+  },
+]
+```
+
+The `socialLinks` array allows you to customize the social media icons displayed on your site. Three different locations are supported, `header`, `footer`, and `all`. It will work automatically with most major social media platforms and has a fallback for displaying text if a logo isn't found. You can also remove this entirely via the theme option, `useSocialLinks`.
+
+Example Config:
+
+```js
+socialLinks: [
+      {
+        name: `Email`,
+        link: `eric@erichowey.dev`,
+        location: `footer`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Github`,
+        link: `https://www.github.com/ehowey`,
+        location: `all`, //Options are "all", "header", "footer"
+      },
+      {
+        name: `Twitter`,
+        link: `https://www.twitter.com/erchwy`,
+        location: `header`, //Options are "all", "header", "footer"
+      },
+    ],
+```
+
+## Customize the Theme-UI theme
+
+[Theme-UI](https://theme-ui.com/) is used to manage all aspects of the visual design, from colors, to fonts, to spacings and more. The theme file is always located at `src/gatsby-plugin-theme-ui/index.js`. Try playing around with some of the colors and values in the file to change the appearance of your site. You can [read more in the docs](/docs/theme-ui) about the use of Theme-UI in Gatsby Theme Catalyst.
+
+## Change the logo and site icon
+
+The logo and icon are found by default in the `src/content/assets` folder under the file names `catalyst-site-logo.png` and `catalyst-site-icon.png`. Overwrite these files to reflect your branding.
+
+The logo is queried by file name, you can use a different file type, e.g. jpg, but the name must be `catalyst-site-logo`. The site icon is referenced in `gatsby-plugin-manifest` and automatically creates all the needed icons for your site and should be at least 512px x 512px.
+
+> A more advanced way to change the logo is through [component shadowing](https://www.gatsbyjs.org/docs/themes/shadowing/) which gives you greater control over the logo and file naming. The file you need to shadow is `gatsby-theme-catalyst-header-top/components/branding/branding-logo.js`.
+
+The logo size is managed via the Theme-UI theme file. You can set appropriate sizes for your logo there.
+
+Try this in `src/gatsby-plugin-theme-ui/index.js` for a bigger logo:
+
+```js
+  sizes: {
+    ...tailwind.sizes,
+    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
+    headerHeight: "auto", // Provides fallback setting to control header height
+    logoWidthXS: "80px", // Logo width on extra small screens, up to 480px
+    logoWidthS: "150px", // Logo width on small screens, 480px - 768px
+    logoWidthM: "150px", // Logo width on medium screens, 768px - 1024px
+    logoWidthL: "260px", // Logo width on large screens, 1024px - 1440px
+    logoWidthXL: "260px", // Logo width on extra large screens, above 1440px
+    logoHeightXS: "80px", // Logo height on extra small screens, up to 480px
+    logoHeightS: "150px", // Logo height on small screens, 480px - 768px
+    logoHeightM: "150px", // Logo height on medium screens, 768px - 1024px
+    logoHeightL: "260px", // Logo height on large screens, 1024px - 1440px
+    logoHeightXL: "260px", // Logo height on extra large screens, above 1440px
+    iconsFooter: "32px", // Sets the icons size for the footer
+    iconsHeader: "20px", // Sets the icons size for the header
+  },
+```
+
+## Adjust theme options
+
+Gatsby Theme Catalyst makes wide use of [theme options](/docs/theme-options/) to manage aspects of your site from design to feature flags. For example there are options to manage whether logos are displayed or not, to set the content paths, and more. You can review all of the available options in the [main docs page](/docs/gatsby-theme-catalyst-lithium) for `gatsby-theme-catalyst-lithium`.
+
+For example let's say you wanted to change the base path for you blog to `www.yourdomain.com/writing`, disable the hero section, and remove the ugly logo entirely.
+
+```js
+{
+  resolve: `gatsby-theme-catalyst-lithium`,
+  options: {
+    // Core theme
+    remarkImagesWidth: 1920,
+    displaySiteLogo: false,
+    displaySiteLogoMobile: false,
+    // Blog theme
+    excerptLength: 140,
+    basePath: "/writing",
+    // Lithium theme
+    useHero: false,
+  },
+},
+```
+
+## Customize the hero component
+
+The hero component is found at `src/gatsby-theme-catalyst-lithium/components/hero.js` and is an example of component shadowing. This component is styled using Theme-UI, and more specifically the [Styled component](https://theme-ui.com/styled) and the [sx prop](https://theme-ui.com/sx-prop).
+
+To customize this hero component you have two options; erase what is there entirely and start from scratch or modify the existing hero component. In this tutorial we will cover modifying the existing hero component.
+
+The image for the hero component is located at `content/assets/hero-image.png`. To change the image you can overwrite this file.
+
+The text content is all contained is this part of the code:
+
+```js
+<Styled.p sx={{ fontSize: [3, null, null, null, 4] }}>
+  I grow vegetables, flowers and community. I build remarkable online
+  experiences focused on{" "}
+  {hasMounted ? (
+    <Fragment>
+      <RoughNotation type="underline" show={true} strokeWidth={2}>
+        connection
+      </RoughNotation>
+      <span> and </span>
+      <RoughNotation type="underline" show={true} strokeWidth={2}>
+        belonging.
+      </RoughNotation>
+    </Fragment>
+  ) : (
+    "connection and belonging."
+  )}
+</Styled.p>
+```
+
+You can erase everything between the `<Styled.p>` tags and write whatever you want here.
+
+There are some special things happening worth mentioning if you want to keep the handwritten underline effect. This effect is created by [Rough Notation](https://roughnotation.com/) and it relies on the document window which means this code has to be conditionally loaded after the component has mounted. There is also fallback text provided that is rendered immediately on browser load to ensure the text remains visible the entire time.
+
+Right below the paragraph tags is the code for the button, you can change the `Grow With Me` text to whatever you want:
+
+```js
+<Button
+  as={Link}
+  to="/contact"
+  sx={{
+    bg: "#2b6cb0",
+    fontSize: [2, null, null, null, 3],
+    transition: "all 0.3s ease-in-out",
+    ":hover": {
+      bg: darken("#2b6cb0", 0.08),
+    },
+  }}
+>
+  Grow With Me
+</Button>
+```
+
+You now have your very own custom hero section.
+
+## Use variants to change the site title
+
+[Variants](https://theme-ui.com/guides/variants/) are used throughout the theme to allow for easier visual customization without having to shadow an entire component. Variants are modified via the Theme-UI theme file and if you scroll to the bottom of the existing file you can see some examples of those variants. There is a full list of available variants in the [theme docs](/docs/gatsby-theme-catalyst-lithium).
+
+Let's use variants to make a simple change to the appearance of the site title:
+
+```js
+variants: {
+    siteTitle: {
+      textTransform: "uppercase",
+      color: "primary", // this is keyed to the 'primary' color in the theme
+      fontSize: [3, 4, null, 5, null],
+      "::after": {
+        content: "none",
+      },
+    },
+// ...more variants
+}
+```
+
+## Add a new blog post
+
+Time to start adding some content! By default posts are located at `content/posts`. The theme is set up so posts are authored in [MDX](https://github.com/mdx-js/mdx) or plain markdown.
+
+Here is an example post with the required frontmatter:
+
+```md
+---
+title: My first post
+date: 2020-07-01
+categories: [Coding]
+featuredImage: ../assets/garden-3.jpg
+socialImage: ../assets/lithium-social.jpg
+featuredImageCaption: Photo by Markus Spiske
+---
+
+# My first post
+
+I am a great writer!
+```
+
+## Launch it
+
+Once you are happy with your final design and have some content it is time to push the big launch button! You can deploy this site to your host of choice and Gatsby, as usual, has some [great docs on deployment and hosting](https://www.gatsbyjs.org/docs/deploying-and-hosting/).
+
+I would love to see what you create! Feel free to send me an [email](mailto:eric@erichowey.dev) or a [tweet](https://twitter.com/erchwy) if you have questions, comments or get stuck!
