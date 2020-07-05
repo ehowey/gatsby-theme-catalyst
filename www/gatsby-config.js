@@ -30,6 +30,11 @@ module.exports = {
         type: `internal`, //internal or anchor
         subMenu: [
           {
+            name: `Creating a blog with gatsby-theme-catalyst-lithium`,
+            link: `/docs/tutorials/creating-a-blog-with-gatsby-theme-catalyst-lithium`,
+            type: `internal`,
+          },
+          {
             name: `Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen`,
             link: `/docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen`,
             type: `internal`,
