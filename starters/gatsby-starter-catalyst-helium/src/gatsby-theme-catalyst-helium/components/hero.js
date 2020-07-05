@@ -71,8 +71,8 @@ const Hero = () => {
               color: baseColors.gray[8],
             }}
           >
-            Hello there! My name is <b>Charlie Rose</b> and I am a web
-            developer, excellent human being, and <b>bold</b> writer.
+            Hello there! My name is <b>Charlie Rose</b> and I am an excellent
+            human being and <b>bold</b> writer.
           </Styled.p>
           <Button
             as={Link}
