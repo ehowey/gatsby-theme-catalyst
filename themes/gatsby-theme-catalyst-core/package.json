@@ -32,7 +32,7 @@
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-remark-responsive-iframe": "^2.4.7",
     "gatsby-remark-smartypants": "^2.3.6",
-    "gatsby-source-filesystem": "^2.3.14",
+    "gatsby-source-filesystem": "^2.3.18",
     "gatsby-transformer-json": "^2.4.7",
     "gatsby-transformer-sharp": "^2.5.7",
     "gatsby-transformer-yaml": "^2.4.6",
