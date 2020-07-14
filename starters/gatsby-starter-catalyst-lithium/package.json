@@ -9,7 +9,7 @@
     "gatsby-theme-catalyst-lithium": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-rough-notation": "^0.1.0",
+    "react-rough-notation": "^0.1.1",
     "typeface-quando": "^0.0.72"
   },
   "devDependencies": {
