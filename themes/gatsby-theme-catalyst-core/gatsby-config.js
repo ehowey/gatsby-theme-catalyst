@@ -1,4 +1,6 @@
 const remarkSlug = require("remark-slug")
+const remarkMath = require("remark-math")
+const rehypeKatex = require("rehype-katex")
 const withDefaults = require(`./src/utils/default-options`)
 
 module.exports = (themeOptions) => {
@@ -7,6 +9,44 @@ module.exports = (themeOptions) => {
     themeOptions.remarkImagesWidth == null
       ? 1440
       : parseInt(themeOptions.remarkImagesWidth)
+  const gatsbyRemarkPlugins = [
+    {
+      resolve: `gatsby-remark-relative-images`,
+      options: {
+        name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: remarkImagesWidth,
+        linkImagesToOriginal: false,
+        withWebp: true,
+        backgroundColor: `transparent`,
+      },
+    },
+    {
+      resolve: `gatsby-remark-copy-linked-files`,
+      options: {
+        destinationDir: themeOptions.assetPath || `content/assets`,
+      },
+    },
+
+    { resolve: `gatsby-remark-smartypants` },
+    { resolve: `gatsby-remark-reading-time` },
+    { resolve: `gatsby-remark-responsive-iframe` },
+    { resolve: `gatsby-remark-external-links` },
+  ]
+  const remarkPlugins = [remarkSlug]
+  const rehypePlugins = []
+
+  if (themeOptions.useKatex) {
+    gatsbyRemarkPlugins.push({
+      resolve: `gatsby-remark-katex`,
+    })
+    remarkPlugins.push(remarkMath)
+    rehypePlugins.push(rehypeKatex)
+  }
   return {
     siteMetadata: {
       title: `Placeholder title`,
@@ -57,34 +97,9 @@ module.exports = (themeOptions) => {
           defaultLayouts: {
             default: require.resolve("./src/components/layout.js"),
           },
-          gatsbyRemarkPlugins: [
-            {
-              resolve: `gatsby-remark-relative-images`,
-              options: {
-                name: `images`,
-              },
-            },
-            {
-              resolve: `gatsby-remark-images`,
-              options: {
-                maxWidth: remarkImagesWidth,
-                linkImagesToOriginal: false,
-                withWebp: true,
-                backgroundColor: `transparent`,
-              },
-            },
-            {
-              resolve: `gatsby-remark-copy-linked-files`,
-              options: {
-                destinationDir: themeOptions.assetPath || `content/assets`,
-              },
-            },
-            { resolve: `gatsby-remark-smartypants` },
-            { resolve: `gatsby-remark-reading-time` },
-            { resolve: `gatsby-remark-responsive-iframe` },
-            { resolve: `gatsby-remark-external-links` },
-          ],
-          remarkPlugins: [remarkSlug],
+          gatsbyRemarkPlugins: gatsbyRemarkPlugins,
+          remarkPlugins: remarkPlugins,
+          rehypePlugins: rehypePlugins,
           plugins: [
             {
               resolve: `gatsby-remark-images`,
