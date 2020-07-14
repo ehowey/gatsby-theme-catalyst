@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "./use-site-metadata"
+import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import { useLocation } from "@reach/router"
 
 const SEO = ({
@@ -22,6 +23,7 @@ const SEO = ({
     seoImage,
     siteUrl,
   } = useSiteMetadata()
+  const { useKatex } = useCatalystConfig()
   const location = useLocation()
   const seoTitle = propTitle || title
   const seoDescription = propDescription || description
@@ -111,6 +113,14 @@ const SEO = ({
         .concat(meta)}
     >
       <link rel="canonical" href={`${siteUrl}${seoCanononical}`} />
+      {useKatex && (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+          integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+          crossorigin="anonymous"
+        />
+      )}
     </Helmet>
   )
 }
