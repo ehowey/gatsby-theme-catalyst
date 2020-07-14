@@ -223,6 +223,7 @@ module.exports = {
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
+        // useKatex: false,
         footerContentLocation: "right", // "left", "right", "center"
       },
     },
