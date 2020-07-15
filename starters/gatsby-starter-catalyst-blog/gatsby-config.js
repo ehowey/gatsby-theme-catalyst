@@ -72,6 +72,7 @@ module.exports = {
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
+        // useKatex: false,
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
         footerContentLocation: "right", // "left", "right", "center"

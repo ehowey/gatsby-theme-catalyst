@@ -16,6 +16,7 @@ export const useCatalystConfig = () => {
           useSocialLinks
           useColorMode
           footerContentLocation
+          useKatex
         }
       }
     `

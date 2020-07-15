@@ -47,6 +47,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     useSocialLinks: Boolean!
     useColorMode: Boolean!
     footerContentLocation: String!
+    useKatex: Boolean!
   }`)
 }
 
@@ -65,6 +66,7 @@ exports.sourceNodes = (
     useSocialLinks = true,
     useColorMode = true,
     footerContentLocation = "left",
+    useKatex = false,
   }
 ) => {
   // create garden data from plugin config
@@ -81,6 +83,7 @@ exports.sourceNodes = (
     useSocialLinks,
     useColorMode,
     footerContentLocation,
+    useKatex,
   }
   createNode({
     ...catalystConfigFieldData,
