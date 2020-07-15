@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-core v1.3.0
+
+- Added `useKatex` theme option to allow enabling `gatsby-remark-katex` in the themes for prettier math equations. Katex has specific CSS that it needs loaded. This CSS is loaded conditionally in the SEO component (which is really `react-helmet`), so you need to be calling the SEO component in the template/page you are using for the math equations to render properly. This would only be an issue in more custom work with complex component shadowing - you would have the SEO component on every page of your site in most cases.
+
+- This trigged minor version bumps for all other affected themes and starters, e.g. `gatsby-theme-catalyst-helium` includes this as of v1.1.0
+
 ## catalyst-blog v2.4.0
 
 - Added in support for categories and tags in `featuredImageCaption` to the blog frontmatter to be used as a caption for the featured images if desired, optional.
