@@ -5,7 +5,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
-    "gatsby-source-sanity": "^5.0.6"
+    "gatsby-source-sanity": "^6.0.2"
   },
   "devDependencies": {
     "gatsby": "^2.23.7",
