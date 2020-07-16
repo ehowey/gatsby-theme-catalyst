@@ -5,7 +5,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.6",
-    "@mdx-js/react": "^1.6.6",
+    "@mdx-js/react": "^1.6.7",
     "@pauliescanlon/gatsby-mdx-embed": "^0.0.21",
     "@reach/skip-nav": "^0.10.5",
     "@theme-ui/color": "^0.3.1",
