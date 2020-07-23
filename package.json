@@ -23,6 +23,7 @@
     "develop:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen develop",
     "develop:helium": "yarn workspace gatsby-starter-catalyst-helium develop",
     "develop:lithium": "yarn workspace gatsby-starter-catalyst-lithium develop",
+    "develop:bery": "yarn workspace gatsby-starter-catalyst-bery develop",
     "develop:www": "yarn workspace gatsby-catalyst-docs develop",
     "build:core": "yarn workspace gatsby-starter-catalyst-core build",
     "build:basic": "yarn workspace gatsby-starter-catalyst build",

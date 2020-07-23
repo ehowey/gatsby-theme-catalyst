@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-theme-catalyst-bery",
+  "description": "Gatsby theme for a basic business marketing website. SANITY.io as the CMS.",
+  "version": "0.0.1",
+  "author": "Eric Howey <eric@erichowey.dev>",
+  "dependencies": {
+    "gatsby-theme-catalyst-core": "^1.3.0",
+    "gatsby-theme-catalyst-footer": "^1.1.6",
+    "gatsby-theme-catalyst-header-top": "^1.1.8",
+    "gatsby-theme-catalyst-sanity": "^1.3.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.24.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "gatsby": "^2.24.4",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
+  }
+}
