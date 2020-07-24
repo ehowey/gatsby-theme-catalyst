@@ -63,7 +63,7 @@ const serializers = {
     },
   },
   marks: {
-    // code: ({ children }) => <Styled.inlineCode>{children}</Styled.inlineCode>,
+    code: ({ children }) => <Styled.inlineCode>{children}</Styled.inlineCode>,
     link: ({ children, mark }) =>
       mark.blank ? (
         <Styled.a href={mark.href} target="_blank" rel="noopener noreferer">
