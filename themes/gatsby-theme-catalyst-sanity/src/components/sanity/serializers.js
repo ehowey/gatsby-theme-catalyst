@@ -2,6 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import Figure from "./figure"
 import FigureWide from "./figure-wide"
+import Code from "./code"
 
 const headerId = (id) => {
   return id
@@ -13,6 +14,7 @@ const headerId = (id) => {
 
 const serializers = {
   types: {
+    code: Code,
     figure: Figure,
     figureWide: FigureWide,
     block(props) {
@@ -61,7 +63,7 @@ const serializers = {
     },
   },
   marks: {
-    code: ({ children }) => <Styled.inlineCode>{children}</Styled.inlineCode>,
+    // code: ({ children }) => <Styled.inlineCode>{children}</Styled.inlineCode>,
     link: ({ children, mark }) =>
       mark.blank ? (
         <Styled.a href={mark.href} target="_blank" rel="noopener noreferer">

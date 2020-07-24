@@ -39,7 +39,7 @@ export default {
         decorators: [
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
-          { title: "Code", value: "code" },
+          { title: "Inline Code", value: "code" },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -52,7 +52,7 @@ export default {
                 title: "URL",
                 name: "href",
                 type: "url",
-                validation: Rule =>
+                validation: (Rule) =>
                   Rule.uri({
                     allowRelative: true,
                     scheme: ["https", "http", "mailto", "tel"],
@@ -72,6 +72,10 @@ export default {
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
+    {
+      type: "code",
+      title: "Code Block",
+    },
     {
       type: "figure",
     },
