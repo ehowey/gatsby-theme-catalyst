@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import Figure from "./figure"
 import FigureWide from "./figure-wide"
 
-const headerId = id => {
+const headerId = (id) => {
   return id
     .toString()
     .toLowerCase()
@@ -61,6 +61,7 @@ const serializers = {
     },
   },
   marks: {
+    code: ({ children }) => <Styled.inlineCode>{children}</Styled.inlineCode>,
     link: ({ children, mark }) =>
       mark.blank ? (
         <Styled.a href={mark.href} target="_blank" rel="noopener noreferer">

@@ -22,20 +22,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "featuredImage",
-      title: "Featured Image",
-      description: "A featured image for your project.",
-      type: "figure",
-    },
-    {
-      name: "excerpt",
-      title: "Project Excerpt",
-      description:
-        "Used to show a summary of your project in the projects index page.",
-      type: "excerptBlockContent",
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: "body",
       title: "Project Content",
       type: "blockContent",

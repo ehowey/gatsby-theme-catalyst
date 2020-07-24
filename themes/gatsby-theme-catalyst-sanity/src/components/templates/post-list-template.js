@@ -3,7 +3,6 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import {
-  SanityContent,
   useSanityConfig,
   SanityThemeProvider,
 } from "gatsby-theme-catalyst-sanity"
@@ -26,23 +25,8 @@ const PostsTemplate = ({ data }) => {
             >
               <Styled.h2>{post.title}</Styled.h2>
             </Styled.a>
-            <Styled.p>
-              <Styled.a
-                href={post.author.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {post.author.name}
-              </Styled.a>{" "}
-              &bull; {post.date}
-            </Styled.p>
-            <SanityContent data={post._rawExcerpt} />
-            <Styled.a
-              as={Link}
-              to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
-            >
-              Read More
-            </Styled.a>
+            <Styled.p>{post.date}</Styled.p>
+            <Styled.p>{post.excerpt}</Styled.p>
           </article>
         ))}
       </Layout>
