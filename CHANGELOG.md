@@ -1,6 +1,51 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file
+
+## catalyst-core v2.0.0 and others
+
+- **Breaking**: This is a visually breaking change affecting dark mode. The `baseTheme` which is exported from `gatsby-theme-catalyst-core` included a colors object which defined a dark mode by default. The problem with this is that it meant dark mode would be used on all sites that merged this theme regardless of whether they wanted dark mode or not. Basically it made it tricky to turn off dark mode. The colors object in the base theme was modified so that there is no dark mode by default and then the colors objects in the starters were updated to include the color mode properly. See the [migrating](https://www.gatsbycatalyst.com/docs/migrating) docs for more detail and examples.
+
+- This will particularly affect `gatsby-theme-catalyst-helium` as your dark mode was being merged in. Ensure that your dark mode colors object located at `src/gatsby-plugin-theme-ui/index.js` looks similar to this:
+
+```js
+dark: {
+  background: baseColors.gray[9],
+  text: baseColors.gray[1],
+  textGray: "#9f9f9f",
+  primary: "#e6da00",
+  secondary: "#9933CC",
+  muted: "#1a2431",
+  accent: "#363636",
+  link: "#e6da00",
+  header: {
+    background: "transparent",
+    text: baseColors.gray[1],
+    textOpen: baseColors.gray[1],
+    backgroundOpen: baseColors.gray[8],
+    icons: baseColors.gray[1],
+    iconsOpen: baseColors.gray[1],
+  },
+  footer: {
+    background: "transparent",
+    text: baseColors.gray[1],
+    links: baseColors.gray[1],
+    icons: baseColors.gray[1],
+  },
+},
+```
+
+- This required bumping most other theme versions to v2.0.0 as well, no other breaking changes were introduced.
+
+## catalyst-sanity v2.0.0
+
+- **Breaking**: Removed and simplified the base queries and base studio setup. Removed the "featuredImage" field (which were never being queried anyways). If you were relying on these base queries you will likely need to update the queries, for example `_rawExcerpt` is not just `excerpt`. This is a quick fix but is technically a breaking change which requires the version bump.
+
+- Added @sanity/code-input. Syntax highlighting is handled by Prism with a default theme passed in via code.js serializer. This does pick up style changes from Theme-UI but not the prism theme. The theme for syntax highlighting would need to be set using component shadowing.
+
+- Excerpts are now generated automatically for blog posts and for projects which removes the need for an "excerpt" field.
+
+- Reading time is now generated automatically for blog posts and projects
 
 ## catalyst-core v1.3.0
 

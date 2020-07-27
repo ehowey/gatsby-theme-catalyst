@@ -16,11 +16,7 @@ export const query = graphql`
         }
         title
         date(formatString: "MMMM D, YYYY")
-        _rawExcerpt
-        author {
-          name
-          link
-        }
+        excerpt(limit: 200)
       }
     }
   }

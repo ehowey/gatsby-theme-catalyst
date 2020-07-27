@@ -7,6 +7,116 @@
 
 This reviews any breaking changes. You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/CHANGELOG.md) on GitHub for more detailed list of non-breaking changes.
 
+## catalyst-core v2.0.0 and other v2.0.0 themes
+
+- This was a visually breaking change to make it easier to remove dark mode from your site. `gatsby-theme-catalyst-core` exports a "base theme" which is used in the starters to merge with any theme customizations. By default it was including a dark mode meaning that it was difficult to remove dark mode without overriding all of the key value pairs in your site. If you were relying on the core theme for your site colors then you will now need to explicitly define those in `src/gatsby-plugin-theme-ui/index.js`.
+
+- This required a version bump for most other themes as they rely on the core theme. No other breaking changes were introduced.
+
+- This will particularly affect `gatsby-theme-catalyst-helium` as your dark mode was being merged in. Ensure that your dark mode colors object located at `src/gatsby-plugin-theme-ui/index.js` looks similar to this:
+
+```js
+dark: {
+  background: baseColors.gray[9],
+  text: baseColors.gray[1],
+  textGray: "#9f9f9f",
+  primary: "#e6da00",
+  secondary: "#9933CC",
+  muted: "#1a2431",
+  accent: "#363636",
+  link: "#e6da00",
+  header: {
+    background: "transparent",
+    text: baseColors.gray[1],
+    textOpen: baseColors.gray[1],
+    backgroundOpen: baseColors.gray[8],
+    icons: baseColors.gray[1],
+    iconsOpen: baseColors.gray[1],
+  },
+  footer: {
+    background: "transparent",
+    text: baseColors.gray[1],
+    links: baseColors.gray[1],
+    icons: baseColors.gray[1],
+  },
+},
+```
+
+- Here is another example from `gatsby-starter-catalyst` and you can see the full colors are now defined in the starter whereas before they were being merged from the `baseTheme`.
+
+```js
+import { merge } from "theme-ui"
+import { BaseTheme } from "gatsby-theme-catalyst-core"
+import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
+
+export default merge(BaseTheme, {
+  // Modifications to the base theme go here. This is an example changing colors and using variants to change your navigation links. Uncomment the code below to see what happens.
+  colors: {
+    ...tailwind.colors,
+    background: baseColors.gray[1], //Try "#954264",
+    text: baseColors.gray[8],
+    textGray: "#6e6e6e",
+    primary: baseColors.blue[7],
+    secondary: baseColors.orange[7],
+    accent: baseColors.orange[2],
+    highlight: baseColors.orange[5],
+    muted: baseColors.gray[2],
+    header: {
+      background: baseColors.gray[2],
+      backgroundOpen: baseColors.blue[2],
+      text: baseColors.gray[8],
+      textOpen: baseColors.gray[8],
+      icons: baseColors.gray[6],
+      iconsOpen: baseColors.gray[8],
+    },
+    footer: {
+      background: baseColors.gray[2],
+      text: baseColors.gray[8],
+      links: baseColors.gray[8],
+      icons: baseColors.gray[8],
+    },
+    // You can delete dark mode by removing the "modes" object and setting useColorMode to false in gatsby-theme-catalyst-core
+    modes: {
+      dark: {
+        background: baseColors.gray[9],
+        text: baseColors.gray[1],
+        textGray: "#9f9f9f",
+        primary: "#458ad2",
+        secondary: baseColors.orange[7],
+        accent: baseColors.gray[8],
+        highlight: baseColors.orange[5],
+        muted: baseColors.gray[8],
+        header: {
+          text: baseColors.gray[1],
+          textOpen: baseColors.gray[1],
+          background: "#232946",
+          backgroundOpen: baseColors.gray[8],
+          icons: baseColors.gray[1],
+          iconsOpen: baseColors.gray[1],
+        },
+        footer: {
+          background: "#232946",
+          text: baseColors.gray[1],
+          links: baseColors.gray[1],
+          icons: baseColors.gray[1],
+        },
+      },
+    },
+  },
+  variants: {
+    siteTitle: {
+      fontSize: [3, 4, null, 5, null],
+    },
+  },
+})
+```
+
+## catalyst-sanity v2.0.0
+
+- The default queries and templates were updated to rely on `excerpt` instead of `_rawExcerpt`. Going forward though this allows for an easier authoring experience and simpler sanity studio as the post and project excerpts are automatically generated based on the post content. If you are migrating from an older version of `gatsby-theme-catalyst-sanity` it should work without any changes however your "excerpts" are now sourced directly from the post content rather than being sourced from the excerpt field in sanity studio.
+
+You can see examples of the changes in the `src/components/queries` folder and `src/components/templates` folder.
+
 ## catalyst-blog v2.0.0
 
 - This was a breaking change to allow for better component architecture, remove the need for a `featuredImage` and add in a number of additional frontmatter fields, like `socialImage`.

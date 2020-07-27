@@ -3,7 +3,6 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import {
-  SanityContent,
   useSanityConfig,
   SanityThemeProvider,
 } from "gatsby-theme-catalyst-sanity"
@@ -24,7 +23,7 @@ const ProjectsTemplate = ({ data }) => {
             >
               <Styled.h2>{project.title}</Styled.h2>
             </Styled.a>
-            <SanityContent data={project._rawExcerpt} />
+            <Styled.p>{project.excerpt}</Styled.p>
           </article>
         ))}
       </Layout>
