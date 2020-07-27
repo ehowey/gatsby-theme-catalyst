@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## catalyst-sanity v1.4.0
+## catalyst-sanity v2.0.0
+
+- **Breaking**: Removed and simplified the base queries and base studio setup. Removed the "featuredImage" field (which were never being queried anyways). If you were relying on these base queries you will likely need to update the queries, for example `_rawExcerpt` is not just `excerpt`. This is a quick fix but is technically a breaking change which requires the version bump.
 
 - Added @sanity/code-input. Syntax highlighting is handled by Prism with a default theme passed in via code.js serializer. This does pick up style changes from Theme-UI but not the prism theme. The theme for syntax highlighting would need to be set using component shadowing.
-
-- Removed and simplified the base queries and base studio setup. Removed the "featuredImage" field (which were never being queried anyways).
 
 - Excerpts are now generated automatically for blog posts and for projects which removes the need for an "excerpt" field.
 
