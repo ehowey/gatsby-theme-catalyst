@@ -22,12 +22,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "featuredImage",
-      title: "Featured Image",
-      description: "A featured image for your page.",
-      type: "figure",
-    },
-    {
       name: "body",
       title: "Page Content",
       type: "blockContent",

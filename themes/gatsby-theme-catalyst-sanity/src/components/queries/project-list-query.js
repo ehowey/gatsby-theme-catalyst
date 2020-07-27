@@ -15,7 +15,7 @@ export const query = graphql`
           current
         }
         title
-        _rawExcerpt
+        excerpt(limit: 200)
       }
     }
   }

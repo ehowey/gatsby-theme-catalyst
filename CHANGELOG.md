@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## catalyst-sanity v1.4.0
+
+- Added @sanity/code-input. Syntax highlighting is handled by Prism with a default theme passed in via code.js serializer. This does pick up style changes from Theme-UI but not the prism theme. The theme for syntax highlighting would need to be set using component shadowing.
+
+- Removed and simplified the base queries and base studio setup. Removed the "featuredImage" field (which were never being queried anyways).
+
+- Excerpts are now generated automatically for blog posts and for projects which removes the need for an "excerpt" field.
+
+- Reading time is now generated automatically for blog posts and projects
+
 ## catalyst-core v1.3.0
 
 - Added `useKatex` theme option to allow enabling `gatsby-remark-katex` in the themes for prettier math equations. Katex has specific CSS that it needs loaded. This CSS is loaded conditionally in the SEO component (which is really `react-helmet`), so you need to be calling the SEO component in the template/page you are using for the math equations to render properly. This would only be an issue in more custom work with complex component shadowing - you would have the SEO component on every page of your site in most cases.

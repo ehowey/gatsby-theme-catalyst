@@ -1,5 +1,114 @@
 const { createContentDigest } = require(`gatsby-core-utils`)
 const withDefaults = require(`./src/utils/default-options`)
+const {
+  GraphQLInt,
+  GraphQLString,
+  TypeNameMetaFieldDef,
+} = require("gatsby/graphql")
+const memoize = require("lodash.memoize")
+
+// Create excerpts and create reading time for posts, based on gatsby-transformer-portable-text
+
+// Convert portable text to plain text
+const toPlainText = memoize((blocks = []) =>
+  blocks
+    // loop through each block
+    .map((block) => {
+      // if it's not a text block with children,
+      // return nothing
+      if (block._type !== "block" || !block.children) {
+        return ""
+      }
+      // loop through the children spans, and join the
+      // text strings
+      return block.children.map((child) => child.text).join("")
+    })
+    .join(" ")
+    .replace(/\s\s+/g, " ")
+)
+
+// Reading time function calculation
+function readingTime(text, wordsPerMinute = 200) {
+  const noOfWords = text.split(/\s/g).length
+  const minutes = noOfWords / wordsPerMinute
+
+  return Math.ceil(minutes)
+}
+
+exports.setFieldsOnGraphQLNodeType = ({ type }) => {
+  if (type.name === "SanityPost" || type.name === "SanityProject") {
+    return {
+      excerpt: {
+        type: GraphQLString,
+        args: {
+          limit: {
+            type: GraphQLInt,
+            defaultValue: 100,
+            description: `The max number of characters that should be displayed. The excerpt doesn't crop words. If all the characters of a word don't fit the limit then the word is not included.`,
+          },
+        },
+      },
+      readingTimeInMinutes: {
+        type: GraphQLInt,
+        args: {
+          wordsPerMinute: {
+            type: GraphQLInt,
+            defaultValue: 200,
+            description:
+              "The number of words a person can read on average in a minute",
+          },
+        },
+      },
+    }
+  }
+  // by default return empty object
+  return {}
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const postResolvers = {
+    SanityPost: {
+      readingTimeInMinutes: {
+        resolve: (source, args = {}) => {
+          const { wordsPerMinute } = args
+          return readingTime(toPlainText(source.body), wordsPerMinute)
+        },
+      },
+      excerpt: {
+        resolve: (source, args = {}) => {
+          const { limit } = args
+          const text = toPlainText(source.body)
+
+          return text.length > limit
+            ? text.substr(0, text.lastIndexOf(" ", limit)) + "..."
+            : text
+        },
+      },
+    },
+  }
+  const projectResolvers = {
+    SanityProject: {
+      readingTimeInMinutes: {
+        resolve: (source, args = {}) => {
+          const { wordsPerMinute } = args
+          return readingTime(toPlainText(source.body), wordsPerMinute)
+        },
+      },
+      excerpt: {
+        resolve: (source, args = {}) => {
+          const { limit } = args
+          const text = toPlainText(source.body)
+
+          return text.length > limit
+            ? text.substr(0, text.lastIndexOf(" ", limit)) + "..."
+            : text
+        },
+      },
+    },
+  }
+  createResolvers(postResolvers)
+  createResolvers(projectResolvers)
+}
 
 // Create Pages
 async function createPages(graphql, actions, reporter) {
