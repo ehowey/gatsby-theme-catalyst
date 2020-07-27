@@ -1,6 +1,10 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file
+
+## catalyst-core v2.0.0
+
+- **Breaking**: This is a visually breaking change affecting dark mode. The `baseTheme` which is exported from `gatsby-theme-catalyst-core` included a colors object which defined a dark mode by default. The problem with this is that it meant dark mode would be used on all sites that merged this theme regardless of whether they wanted dark mode or not. Basically it made it tricky to turn off dark mode. The colors object in the base theme was modified so that there is no dark mode by default and then the colors objects in the starters were updated to include the color mode properly. See the [migrating](https://www.gatsbycatalyst.com/docs/migrating) docs for more detail and examples.
 
 ## catalyst-sanity v2.0.0
 
