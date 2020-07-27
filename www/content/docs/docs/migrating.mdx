@@ -7,11 +7,42 @@
 
 This reviews any breaking changes. You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/CHANGELOG.md) on GitHub for more detailed list of non-breaking changes.
 
-## catalyst-core v2.0.0
+## catalyst-core v2.0.0 and other v2.0.0 themes
 
-- This was a visually breaking change to make it easier to remove dark mode from your site. `gatsby-theme-catalyst-core` exports a "base theme" which is used in the starters to merge with any theme customizations. By default it was including a dark mode meaning that it was difficult to remove dark mode without overriding all of the key value pairs in your site. If you were relying on the core theme for your site colors then you will now need to explicitly define those in `src/gatsby-plugin-theme-ui/index.js`
+- This was a visually breaking change to make it easier to remove dark mode from your site. `gatsby-theme-catalyst-core` exports a "base theme" which is used in the starters to merge with any theme customizations. By default it was including a dark mode meaning that it was difficult to remove dark mode without overriding all of the key value pairs in your site. If you were relying on the core theme for your site colors then you will now need to explicitly define those in `src/gatsby-plugin-theme-ui/index.js`.
 
-Here is an example from `gatsby-starter-catalyst` and you can see the full colors are now defined in the starter whereas before they were just merged from the `baseTheme`.
+- This required a version bump for most other themes as they rely on the core theme. No other breaking changes were introduced.
+
+- This will particularly affect `gatsby-theme-catalyst-helium` as your dark mode was being merged in. Ensure that your dark mode colors object located at `src/gatsby-plugin-theme-ui/index.js` looks similar to this:
+
+```js
+dark: {
+  background: baseColors.gray[9],
+  text: baseColors.gray[1],
+  textGray: "#9f9f9f",
+  primary: "#e6da00",
+  secondary: "#9933CC",
+  muted: "#1a2431",
+  accent: "#363636",
+  link: "#e6da00",
+  header: {
+    background: "transparent",
+    text: baseColors.gray[1],
+    textOpen: baseColors.gray[1],
+    backgroundOpen: baseColors.gray[8],
+    icons: baseColors.gray[1],
+    iconsOpen: baseColors.gray[1],
+  },
+  footer: {
+    background: "transparent",
+    text: baseColors.gray[1],
+    links: baseColors.gray[1],
+    icons: baseColors.gray[1],
+  },
+},
+```
+
+- Here is another example from `gatsby-starter-catalyst` and you can see the full colors are now defined in the starter whereas before they were being merged from the `baseTheme`.
 
 ```js
 import { merge } from "theme-ui"
