@@ -44,6 +44,7 @@
     "clean:core": "yarn workspace gatsby-starter-catalyst-core clean",
     "clean:basic": "yarn workspace gatsby-starter-catalyst clean",
     "clean:blog": "yarn workspace gatsby-starter-catalyst-blog clean",
+    "clean:bery": "yarn workspace gatsby-starter-catalyst-bery clean",
     "clean:sanity": "yarn workspace gatsby-starter-catalyst-sanity clean",
     "clean:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen clean",
     "clean:helium": "yarn workspace gatsby-starter-catalyst-helium clean",

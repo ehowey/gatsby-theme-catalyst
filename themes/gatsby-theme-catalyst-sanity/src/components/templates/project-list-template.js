@@ -9,12 +9,19 @@ import {
 
 const ProjectsTemplate = ({ data }) => {
   const projects = data.allSanityProject.nodes
-  const { sanityProjectPath } = useSanityConfig()
+  const {
+    sanityProjectPath,
+    sanityProjectListTitle,
+    sanityDisplayProjectListTitle,
+  } = useSanityConfig()
   const rootPath = sanityProjectPath.replace(/\/*$/, `/`) //Ensure trailing slash
   return (
     <SanityThemeProvider>
       <Layout>
-        <SEO title="Projects" />
+        <SEO title={sanityProjectListTitle} />
+        {sanityDisplayProjectListTitle && (
+          <Styled.h1>{sanityProjectListTitle}</Styled.h1>
+        )}
         {projects.map((project) => (
           <article sx={{ my: 5 }} key={project.id}>
             <Styled.a

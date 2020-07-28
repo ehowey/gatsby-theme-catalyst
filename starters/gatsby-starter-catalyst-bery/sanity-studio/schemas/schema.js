@@ -6,7 +6,6 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 
 // We import object and document schemas
 import blockContent from "./blockContent"
-import excerptBlockContent from "./excerptBlockContent"
 import figure from "./figure"
 import figureWide from "./figureWide"
 import siteSettings from "./siteSettings"
@@ -40,7 +39,6 @@ export default createSchema({
     page,
     post,
     project,
-    excerptBlockContent,
     author,
     subMenu,
     theme,

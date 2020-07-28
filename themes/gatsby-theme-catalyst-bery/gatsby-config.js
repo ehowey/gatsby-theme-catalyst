@@ -18,7 +18,6 @@ module.exports = (themeOptions) => {
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
         },
       },
-      `gatsby-theme-catalyst-header-top`,
       `gatsby-theme-catalyst-footer`,
       {
         resolve: `gatsby-theme-catalyst-sanity`,
@@ -29,14 +28,18 @@ module.exports = (themeOptions) => {
           sanityWatchMode: themeOptions.sanityWatchMode,
           sanityOverlayDrafts: themeOptions.sanityOverlayDrafts,
           sanityCreatePages: themeOptions.sanityCreatePages,
-          sanityCreatePosts: themeOptions.sanityCreatePosts || false,
-          sanityCreatePostsList: themeOptions.sanityCreatePostsList || false,
-          sanityCreateProjects: themeOptions.sanityCreateProjects || false,
-          sanityCreateProjectsList:
-            themeOptions.sanityCreateProjectsList || false,
+          sanityCreatePosts: themeOptions.sanityCreatePosts,
+          sanityCreatePostsList: themeOptions.sanityCreatePostsList,
+          sanityCreateProjects: themeOptions.sanityCreateProjects,
+          sanityCreateProjectsList: themeOptions.sanityCreateProjectsList,
           pagePath: themeOptions.pagePath,
           sanityPostPath: themeOptions.sanityPostPath,
           sanityProjectPath: themeOptions.sanityProjectPath,
+          sanityPostListTitle: themeOptions.sanityPostListTitle,
+          sanityDisplayPostListTitle: themeOptions.sanityDisplayPostListTitle,
+          sanityProjectListTitle: themeOptions.sanityProjectListTitle,
+          sanityDisplayProjectListTitle:
+            themeOptions.sanityDisplayProjectListTitle,
         },
       },
     ].filter(Boolean),

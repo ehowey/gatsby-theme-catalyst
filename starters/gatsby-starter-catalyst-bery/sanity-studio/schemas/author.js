@@ -18,7 +18,6 @@ export default {
       type: "url",
       validation: (Rule) =>
         Rule.required().uri({
-          allowRelative: true,
           scheme: ["https", "http", "mailto"],
         }),
     },
@@ -26,10 +25,16 @@ export default {
       name: "image",
       title: "Image",
       type: "image",
-      description: "Optional, not used in every theme or site.",
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "bio",
+      title: "Bio",
+      type: "text",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

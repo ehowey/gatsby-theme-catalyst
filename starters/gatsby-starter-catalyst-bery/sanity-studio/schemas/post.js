@@ -38,24 +38,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "featuredImage",
-      title: "Featured Image",
-      description: "A featured image for your post.",
-      type: "figure",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "excerpt",
-      title: "Post Excerpt",
-      description:
-        "Used to show a summary of your post in the posts index page.",
-      type: "excerptBlockContent",
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: "body",
       title: "Post Content",
       type: "blockContent",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "date",
+    },
+  },
 }

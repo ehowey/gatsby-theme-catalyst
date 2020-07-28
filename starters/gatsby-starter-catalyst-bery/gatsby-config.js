@@ -28,8 +28,11 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-bery`,
       options: {
-        useSocialLinks: false,
         sanityProjectId: `4w5ygwpy`, // Required
+        useSocialLinks: false,
+        sanityPostPath: `/`,
+        footerContentLocation: "center",
+        sanityPostListTitle: "Digital Garden",
       },
     },
     {
