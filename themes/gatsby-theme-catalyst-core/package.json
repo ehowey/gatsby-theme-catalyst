@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.14",
+    "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.14",
     "@pauliescanlon/gatsby-mdx-embed": "^0.0.21",
     "@reach/skip-nav": "^0.10.5",
