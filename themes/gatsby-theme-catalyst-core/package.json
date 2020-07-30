@@ -27,7 +27,7 @@
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-remark-copy-linked-files": "^2.3.12",
     "gatsby-remark-external-links": "^0.0.4",
-    "gatsby-remark-images": "^3.3.20",
+    "gatsby-remark-images": "^3.3.22",
     "gatsby-remark-katex": "^3.3.10",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-relative-images": "^0.3.0",
