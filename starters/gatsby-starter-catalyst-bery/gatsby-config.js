@@ -29,10 +29,9 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-bery`,
       options: {
         sanityProjectId: `4w5ygwpy`, // Required
-        useSocialLinks: false,
         sanityPostPath: `/`,
         footerContentLocation: "center",
-        sanityPostListTitle: "Digital Garden",
+        sanityPostListTitle: "Writing",
       },
     },
     {

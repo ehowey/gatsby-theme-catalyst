@@ -6,14 +6,14 @@ module.exports = (themeOptions) => {
         options: {
           contentPath: themeOptions.contentPath,
           assetPath: themeOptions.assetPath,
-          displaySiteLogo: themeOptions.displaySiteLogo || false,
+          displaySiteLogo: themeOptions.displaySiteLogo,
           displaySiteTitle: themeOptions.displaySiteTitle,
-          displaySiteLogoMobile: themeOptions.displaySiteLogoMobile || false,
+          displaySiteLogoMobile: themeOptions.displaySiteLogoMobile,
           displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
           invertLogo: themeOptions.invertLogo,
           useStickyHeader: themeOptions.useStickyHeader,
           useSocialLinks: themeOptions.useSocialLinks,
-          useColorMode: themeOptions.useColorMode || false,
+          useColorMode: themeOptions.useColorMode,
           useKatex: themeOptions.useKatex,
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
         },
