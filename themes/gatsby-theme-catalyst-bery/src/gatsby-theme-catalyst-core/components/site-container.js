@@ -15,15 +15,15 @@ const SiteContainer = ({ children }) => {
           "minmax(0, 1fr)",
           null,
           null,
-          null,
           "minmax(0, 1fr) auto auto minmax(0, 1fr)",
+          null,
         ],
         gridTemplateRows: [
           "auto minmax(0, 1fr) auto",
           null,
           null,
-          null,
           "minmax(0, 1fr)",
+          null,
         ],
         gridTemplateAreas: [
           `
@@ -33,11 +33,11 @@ const SiteContainer = ({ children }) => {
         `,
           null,
           null,
-          null,
           `
         ". header main . "
         "footer footer footer footer"
         `,
+          null,
         ],
         variant: "variants.siteContainer",
       }}
