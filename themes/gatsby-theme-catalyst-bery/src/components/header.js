@@ -1,19 +1,20 @@
 // This is a placeholder for latent shadowing in sibling themes
 /** @jsx jsx */
 import { jsx, Styled, useThemeUI } from "theme-ui"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import {
   SocialHeader,
   ColorModeButton,
   useCatalystConfig,
+  useSiteMetadata,
 } from "gatsby-theme-catalyst-core"
 import { IconContext } from "react-icons"
-import NavLinks from "./nav/nav-links"
 
 const SiteHeader = () => {
   const { theme } = useThemeUI()
   const { useColorMode } = useCatalystConfig()
+  const { menuLinks } = useSiteMetadata()
   const data = useStaticQuery(graphql`
     {
       sanityAuthor {
@@ -51,14 +52,14 @@ const SiteHeader = () => {
           pt: 3,
           display: "grid",
           gridTemplateColumns: "auto 1fr",
-          gridTemplateRows: ["1fr 1fr auto", null, null, "auto", null],
+          gridTemplateRows: "auto",
           gridColumnGap: 3,
         }}
       >
         <div
           sx={{
             gridColumn: "1 / 2",
-            gridRow: ["1 / 2", "1 / -1", null, "1 / 2", null],
+            gridRow: ["1 / 2", "1 / 3", null, "1 / 2", null],
             alignSelf: "center",
           }}
         >
@@ -99,6 +100,7 @@ const SiteHeader = () => {
                 display: "grid",
                 placeItems: "center",
               },
+
               "a:last-of-type": {
                 mr: 0,
               },
@@ -138,15 +140,66 @@ const SiteHeader = () => {
         </div>
         <nav
           sx={{
+            mt: 3,
             display: "flex",
-            gridColumn: ["1 / -1", "2 / -1", null, "1 / -1", null],
-            gridRow: ["3 / 4", "3 / 4", null, "4 / 5", null],
-            mt: 2,
+            gridColumn: ["1 / -1", null, "2 / -1", "1 / -1", null],
+            gridRow: ["3 / 4", null, "3 / 4", "4 / 5", null],
             variant: "variant.nav",
           }}
           aria-label="Primary menu"
         >
-          <NavLinks />
+          <ul
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              listStyle: "none",
+              m: 0,
+              p: 0,
+              variant: "variants.navUl",
+            }}
+          >
+            {menuLinks.map((link) => (
+              <li
+                sx={{
+                  cursor: "pointer",
+                  mr: 2,
+                  a: {
+                    py: 2,
+                    px: 1,
+                    color: "primary",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                    letterSpacing: "1px",
+                    zIndex: 2,
+                    ":hover, :focus, :active": {
+                      textDecoration: "underline",
+                      textDecorationThickness: "0.125em",
+                      color: "primary",
+                    },
+                    ":first-of-type": {
+                      pl: 0,
+                    },
+                    variant: "variants.navLink",
+                  },
+                  ":last-of-type": {
+                    mr: 0,
+                  },
+                  ".active": {
+                    textDecoration: "underline",
+                    textDecorationThickness: "0.125em",
+                    color: "primary",
+                    variant: "variants.navLinkActive",
+                  },
+                  variant: "variants.navLi",
+                }}
+                key={link.name}
+              >
+                <Link to={link.link} activeClassName="active">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
     </header>
