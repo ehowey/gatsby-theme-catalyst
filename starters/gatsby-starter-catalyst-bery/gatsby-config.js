@@ -31,7 +31,8 @@ module.exports = {
         sanityProjectId: `4w5ygwpy`, // Required
         sanityPostPath: `/`,
         footerContentLocation: "center",
-        sanityPostListTitle: "Writing",
+        sanityPostListTitle: "Blog",
+        sanityDisplayPostListTitle: false,
       },
     },
     {

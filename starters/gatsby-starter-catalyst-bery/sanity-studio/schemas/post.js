@@ -38,6 +38,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "featuredImage",
+      title: "Featured Image",
+      description: "A featured image for your post.",
+      type: "figure",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "body",
       title: "Post Content",
       type: "blockContent",
@@ -47,6 +54,7 @@ export default {
     select: {
       title: "title",
       subtitle: "date",
+      media: "featuredImage",
     },
   },
 }

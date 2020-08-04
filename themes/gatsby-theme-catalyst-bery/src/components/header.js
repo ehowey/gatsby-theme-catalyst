@@ -140,7 +140,7 @@ const SiteHeader = () => {
         </div>
         <nav
           sx={{
-            mt: 3,
+            mt: [3, 4, 2, 4, null],
             display: "flex",
             gridColumn: ["1 / -1", null, "2 / -1", "1 / -1", null],
             gridRow: ["3 / 4", null, "3 / 4", "4 / 5", null],
@@ -162,22 +162,22 @@ const SiteHeader = () => {
               <li
                 sx={{
                   cursor: "pointer",
-                  mr: 2,
+                  mr: 3,
+                  mb: 3,
                   a: {
-                    py: 2,
-                    px: 1,
-                    color: "primary",
+                    py: 1,
+                    px: 2,
+                    borderColor: "primary",
+                    borderWidth: "2px",
+                    borderStyle: "solid",
+                    borderRadius: "4px",
+                    color: "text",
                     textDecoration: "none",
-                    fontWeight: "bold",
                     letterSpacing: "1px",
                     zIndex: 2,
+                    transition: "all 0.3s ease",
                     ":hover, :focus, :active": {
-                      textDecoration: "underline",
-                      textDecorationThickness: "0.125em",
-                      color: "primary",
-                    },
-                    ":first-of-type": {
-                      pl: 0,
+                      bg: "primary",
                     },
                     variant: "variants.navLink",
                   },
@@ -185,9 +185,7 @@ const SiteHeader = () => {
                     mr: 0,
                   },
                   ".active": {
-                    textDecoration: "underline",
-                    textDecorationThickness: "0.125em",
-                    color: "primary",
+                    bg: "primary",
                     variant: "variants.navLinkActive",
                   },
                   variant: "variants.navLi",
