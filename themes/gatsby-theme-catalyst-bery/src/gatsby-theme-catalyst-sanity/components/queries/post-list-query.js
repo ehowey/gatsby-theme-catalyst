@@ -17,6 +17,15 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
         excerpt(limit: 200)
+        readingTimeInMinutes
+        featuredImage {
+          caption
+          asset {
+            fluid(maxWidth: 1440) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
       }
     }
   }
