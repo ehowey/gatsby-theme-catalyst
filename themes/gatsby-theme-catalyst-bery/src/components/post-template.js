@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import { alpha } from "@theme-ui/color"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import BackgroundImg from "gatsby-background-image"
+import Img from "gatsby-image"
 import {
   SanityContent,
   SanityThemeProvider,
@@ -15,25 +14,35 @@ const PostTemplate = ({ data }) => {
     <SanityThemeProvider>
       <Layout>
         <SEO title={post.title} />
-        <BackgroundImg
+        <Img
           fluid={post.featuredImage.asset.fluid}
-          sx={{ display: "grid", placeItems: "center", minHeight: "250px" }}
+          sx={{
+            maxHeight: ["250px", "250px", "250px", "350px", "350px"],
+            minWidth: "100%",
+            borderRadius: "5px",
+          }}
+        />
+        <Styled.h1
+          sx={{
+            m: 0,
+            pt: 4,
+            pb: 2,
+            textAlign: "center",
+            fontSize: ["2rem", "2rem", "2rem", "3rem", "3rem"],
+          }}
         >
-          <Styled.h1 sx={{ m: 0, p: 4, textAlign: "center" }}>
-            <div sx={{ bg: alpha("primary", 0.8), borderRadius: "4px", px: 3 }}>
-              {post.title}
-            </div>
-          </Styled.h1>
-        </BackgroundImg>
-        <Styled.p sx={{ color: "textGray", fontSize: 1 }}>
-          {post.date} &bull;{" "}
+          <div sx={{ borderRadius: "4px" }}>{post.title}</div>
+        </Styled.h1>
+        <Styled.p
+          sx={{ color: "textGray", fontSize: 1, textAlign: "center", mt: 0 }}
+        >
           <FaRegClock
             sx={{
               position: "relative",
               top: "0.125em",
             }}
           />{" "}
-          {post.readingTimeInMinutes} Min
+          {post.readingTimeInMinutes} Min Read &bull; {post.date}
         </Styled.p>
         <SanityContent data={post._rawBody} />
       </Layout>

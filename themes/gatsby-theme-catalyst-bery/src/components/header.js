@@ -83,6 +83,7 @@ const SiteHeader = () => {
           <Styled.h2
             sx={{
               m: 0,
+              mt: [null, null, null, 4, 4],
               fontSize: [3, null, 4, null, null],
             }}
           >
