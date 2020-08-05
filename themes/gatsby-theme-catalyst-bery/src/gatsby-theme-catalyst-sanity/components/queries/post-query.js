@@ -12,6 +12,7 @@ export const query = graphql`
       id
       title
       date(formatString: "MMMM D, YYYY")
+      readingTimeInMinutes
       featuredImage {
         caption
         asset {
