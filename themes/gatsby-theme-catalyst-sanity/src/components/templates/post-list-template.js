@@ -9,14 +9,20 @@ import {
 
 const PostsTemplate = ({ data }) => {
   const posts = data.allSanityPost.nodes
-  const { sanityPostPath } = useSanityConfig()
+  const {
+    sanityPostPath,
+    sanityPostListTitle,
+    sanityDisplayPostListTitle,
+  } = useSanityConfig()
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   return (
     <SanityThemeProvider>
       <Layout>
-        <SEO title="Posts" />
-        <Styled.h1>Posts</Styled.h1>
+        <SEO title={sanityPostListTitle} />
+        {sanityDisplayPostListTitle && (
+          <Styled.h1>{sanityPostListTitle}</Styled.h1>
+        )}
         {posts.map((post) => (
           <article sx={{ mb: 5 }} key={post.id}>
             <Styled.a

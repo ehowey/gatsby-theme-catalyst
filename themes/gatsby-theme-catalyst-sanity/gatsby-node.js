@@ -296,6 +296,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     sanityPostPath: String!
     sanityProjectPath: String!
     useSanityTheme: Boolean!
+    sanityPostListTitle: String!
+    sanityDisplayPostListTitle: Boolean!
+    sanityProjectListTitle: String!
+    sanityDisplayProjectListTitle: Boolean!
   }`)
 }
 
@@ -315,6 +319,10 @@ exports.sourceNodes = (
     sanityPostPath = "/posts",
     sanityProjectPath = "/projects",
     useSanityTheme = false,
+    sanityPostListTitle = "Posts",
+    sanityDisplayPostListTitle = true,
+    sanityProjectListTitle = "Projects",
+    sanityDisplayProjectListTitle = true,
   }
 ) => {
   // create garden data from plugin config
@@ -332,6 +340,10 @@ exports.sourceNodes = (
     sanityPostPath,
     sanityProjectPath,
     useSanityTheme,
+    sanityPostListTitle,
+    sanityDisplayPostListTitle,
+    sanityProjectListTitle,
+    sanityDisplayProjectListTitle,
   }
   createNode({
     ...catalystSanityConfigFieldData,
