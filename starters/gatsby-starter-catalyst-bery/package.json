@@ -5,6 +5,7 @@
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
+    "fontsource-sen": "^3.0.3",
     "gatsby": "^2.24.4",
     "gatsby-theme-catalyst-bery": "^0.0.1",
     "react": "^16.13.1",
