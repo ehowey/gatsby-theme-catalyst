@@ -8020,6 +8020,11 @@ follow-redirects@^1.0.0, follow-redirects@^1.2.4:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.12.1.tgz#de54a6205311b93d60398ebc01cf7015682312b6"
   integrity sha512-tmRv0AVuR7ZyouUHLeNSiO6pqulF7dYa3s19c6t+wz9LD69/uSzdMxJ2S91nTI9U3rt/IldxpzMOFejp6f0hjg==
 
+fontsource-sen@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/fontsource-sen/-/fontsource-sen-3.0.3.tgz#3abc6711c207e094a286725de4d4de444e574469"
+  integrity sha512-idr03CUMU6SHReDiN+K4XoSYibczcqOoooGijNjNMCyAyIN9lylltl4lu8jATFYVW2fPO0b5vhwHKaTa5DjMUQ==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"

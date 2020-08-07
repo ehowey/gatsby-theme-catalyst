@@ -28,7 +28,7 @@ const PostTemplate = ({ data }) => {
             pt: 4,
             pb: 2,
             textAlign: "center",
-            fontSize: ["2rem", "2rem", "2rem", "3rem", "3rem"],
+            fontSize: [5, null, null, 6, null],
           }}
         >
           <div sx={{ borderRadius: "4px" }}>{post.title}</div>
