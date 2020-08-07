@@ -145,6 +145,7 @@ const SiteHeader = () => {
             display: "flex",
             gridColumn: ["1 / -1", null, "2 / -1", "1 / -1", null],
             gridRow: ["3 / 4", null, "3 / 4", "4 / 5", null],
+            placeContent: ["center", "start", null, null, null],
             variant: "variant.nav",
           }}
           aria-label="Primary menu"
