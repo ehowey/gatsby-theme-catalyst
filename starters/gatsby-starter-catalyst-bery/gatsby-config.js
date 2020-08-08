@@ -32,7 +32,6 @@ module.exports = {
         sanityPostPath: `/`,
         footerContentLocation: "center",
         sanityPostListTitle: "Blog",
-        sanityDisplayPostListTitle: false,
       },
     },
     {

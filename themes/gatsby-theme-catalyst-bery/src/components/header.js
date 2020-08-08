@@ -1,6 +1,11 @@
 // This is a placeholder for latent shadowing in sibling themes
 /** @jsx jsx */
-import { jsx, Styled, useThemeUI } from "theme-ui"
+import {
+  jsx,
+  Styled,
+  useThemeUI,
+  useColorMode as useThemeUIColorMode,
+} from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import {
@@ -10,9 +15,12 @@ import {
   useSiteMetadata,
 } from "gatsby-theme-catalyst-core"
 import { IconContext } from "react-icons"
+import { lightness } from "@theme-ui/color"
 
 const SiteHeader = () => {
   const { theme } = useThemeUI()
+  const [mode] = useThemeUIColorMode()
+  const isDark = mode === "dark"
   const { useColorMode } = useCatalystConfig()
   const { menuLinks } = useSiteMetadata()
   const data = useStaticQuery(graphql`
@@ -46,6 +54,7 @@ const SiteHeader = () => {
     >
       <div
         sx={{
+          width: "100%",
           maxWidth: ["maxContentWidth", null, null, "400px", null],
           ml: [0, null, null, "auto", null],
           px: 3,
@@ -65,8 +74,8 @@ const SiteHeader = () => {
         >
           <Img
             sx={{
-              height: ["125px", "150px", "175px", "200px", null],
-              width: ["125px", "150px", "175px", "200px", null],
+              height: ["80px", "150px", "175px", "200px", null],
+              width: ["80px", "150px", "175px", "200px", null],
               borderRadius: "9999em",
             }}
             fluid={author.image.asset.fluid}
@@ -83,7 +92,7 @@ const SiteHeader = () => {
           <Styled.h2
             sx={{
               m: 0,
-              mt: [null, null, null, 4, 4],
+              mt: [null, null, null, 4, null],
               fontSize: [3, null, 4, null, null],
             }}
           >
@@ -134,6 +143,7 @@ const SiteHeader = () => {
               m: 0,
               mt: 2,
               fontSize: 1,
+              display: ["none", "block", null, null, null],
             }}
           >
             {author.bio}
@@ -156,6 +166,7 @@ const SiteHeader = () => {
               listStyle: "none",
               m: 0,
               p: 0,
+
               variant: "variants.navUl",
             }}
           >
@@ -179,6 +190,9 @@ const SiteHeader = () => {
                     transition: "all 0.3s ease",
                     ":hover, :focus, :active": {
                       bg: "primary",
+                      color: isDark
+                        ? lightness("text", 0)
+                        : lightness("text", 1),
                     },
                     variant: "variants.navLink",
                   },
@@ -187,6 +201,7 @@ const SiteHeader = () => {
                   },
                   ".active": {
                     bg: "primary",
+                    color: isDark ? lightness("text", 0) : lightness("text", 1),
                     variant: "variants.navLinkActive",
                   },
                   variant: "variants.navLi",
