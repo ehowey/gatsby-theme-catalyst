@@ -142,8 +142,7 @@ const SiteHeader = () => {
             sx={{
               m: 0,
               mt: 2,
-              fontSize: 1,
-              display: ["none", "block", null, null, null],
+              fontSize: [0, 1, null, null, null],
             }}
           >
             {author.bio}
