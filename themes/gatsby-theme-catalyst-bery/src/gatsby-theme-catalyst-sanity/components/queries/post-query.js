@@ -12,6 +12,12 @@ export const query = graphql`
       id
       title
       date(formatString: "MMMM D, YYYY")
+      categories {
+        title
+        slug {
+          current
+        }
+      }
       readingTimeInMinutes
       featuredImage {
         caption

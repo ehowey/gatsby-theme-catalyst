@@ -1,3 +1,5 @@
+import { format } from "date-fns"
+
 export default {
   name: "post",
   title: "Post",
@@ -51,6 +53,7 @@ export default {
           ],
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "featuredImage",

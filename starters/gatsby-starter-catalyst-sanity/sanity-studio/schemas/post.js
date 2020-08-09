@@ -1,4 +1,5 @@
 import { format } from "date-fns"
+
 export default {
   name: "post",
   title: "Post",
