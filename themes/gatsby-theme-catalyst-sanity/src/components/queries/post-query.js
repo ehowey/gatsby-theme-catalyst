@@ -11,6 +11,13 @@ export const query = graphql`
     sanityPost(id: { eq: $id }) {
       id
       title
+      date(formatString: "MMMM D, YYYY")
+      categories {
+        title
+        slug {
+          current
+        }
+      }
       _rawBody
     }
   }
