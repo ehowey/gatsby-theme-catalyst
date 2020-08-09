@@ -57,6 +57,7 @@ const PostsTemplate = ({ data }) => {
                   sx={{
                     mt: 2,
                     mb: 0,
+                    color: "primary",
                     fontSize: [4, null, null, 5, null],
                     transition: "color 0.2s ease",
                     ":hover, :focus, :active": {
@@ -82,6 +83,7 @@ const PostsTemplate = ({ data }) => {
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
                 sx={{
+                  color: "primary",
                   transition: "color 0.2s ease",
                   ":hover, :focus, :active": {
                     color: "secondary",

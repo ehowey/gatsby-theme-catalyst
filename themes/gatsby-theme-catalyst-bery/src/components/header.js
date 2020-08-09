@@ -25,7 +25,7 @@ const SiteHeader = () => {
   const { menuLinks } = useSiteMetadata()
   const data = useStaticQuery(graphql`
     {
-      sanityAuthor {
+      sanitySiteHeader {
         name
         bio
         image {
@@ -39,7 +39,7 @@ const SiteHeader = () => {
     }
   `)
 
-  const author = data.sanityAuthor
+  const author = data.sanitySiteHeader
   return (
     <header
       sx={{

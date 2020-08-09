@@ -57,4 +57,11 @@ export default {
       media: "featuredImage",
     },
   },
+  orderings: [
+    {
+      title: "Publish Date",
+      name: "dateDesc",
+      by: [{ field: "date", direction: "desc" }],
+    },
+  ],
 }

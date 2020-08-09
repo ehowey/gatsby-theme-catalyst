@@ -5,8 +5,8 @@ import {
   MdList,
   MdInfo,
   MdPerson,
-  MdDashboard,
 } from "react-icons/lib/md"
+import { RiLayoutTopLine } from "react-icons/ri"
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -20,6 +20,7 @@ const hiddenDocTypes = (listItem) =>
     "theme",
     "themeLmColor",
     "themeDmColor",
+    "siteHeader",
   ].includes(listItem.getId())
 
 export default () =>
@@ -56,27 +57,19 @@ export default () =>
                 .title("Social Links")
                 .icon(MdShare)
                 .child(S.documentTypeList("socialLink").title("Social Links")),
-              S.listItem()
-                .title("Theme-UI")
-                .icon(MdDashboard)
-                .child(
-                  S.document()
-                    .schemaType("theme")
-                    .documentId("theme")
-                    .title("Theme-UI Theme")
-                ),
             ])
         ),
       // Add a visual divider (optional)
       S.divider(),
+      S.listItem()
+        .title("Header")
+        .icon(RiLayoutTopLine)
+        .child(S.editor().schemaType("siteHeader").documentId("siteHeader")),
       S.listItem()
         .title("Pages")
         .child(S.documentTypeList("page").title("Pages")),
       S.listItem()
         .title("Posts")
         .child(S.documentTypeList("post").title("Posts")),
-      S.listItem()
-        .title("Projects")
-        .child(S.documentTypeList("project").title("Projects")),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ])

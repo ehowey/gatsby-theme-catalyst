@@ -20,6 +20,7 @@ export default merge(BaseTheme, {
     textGray: "#6e6e6e",
     primary: "#257e86",
     secondary: "#464eae",
+    link: "#464eae",
     accent: baseColors.blue[2],
     highlight: baseColors.blue[5],
     muted: baseColors.gray[2],
@@ -44,7 +45,8 @@ export default merge(BaseTheme, {
         text: baseColors.gray[1],
         textGray: "#9f9f9f",
         primary: "#28b49e",
-        secondary: "#464eae",
+        secondary: "#7c82ca",
+        link: "#7c82ca",
         accent: baseColors.gray[8],
         highlight: baseColors.orange[5],
         muted: baseColors.gray[8],
@@ -66,6 +68,13 @@ export default merge(BaseTheme, {
     },
   },
   styles: {
+    a: {
+      color: "link",
+      textDecoration: "underline",
+      ":hover": {
+        textDecoration: "none",
+      },
+    },
     h1: {
       fontFamily: "heading",
       fontWeight: "heading",
