@@ -48,7 +48,8 @@ const PostTemplate = ({ data }) => {
                 },
               }}
             >
-              <Link
+              <Styled.a
+                as={Link}
                 to={`/categories/${category.slug.current}`}
                 sx={{
                   textDecoration: "none",
@@ -61,7 +62,7 @@ const PostTemplate = ({ data }) => {
                 }}
               >
                 {category.title}
-              </Link>
+              </Styled.a>
             </Styled.li>
           ))}
         </Styled.ul>
