@@ -35,9 +35,9 @@ module.exports = (themeOptions) => {
           sanityCreateProjectsList:
             themeOptions.sanityCreateProjectsList || false,
           sanityPostPath: themeOptions.sanityPostPath || "/posts",
-          sanityPostsListPath: themeOptions.sanityPostsListPath || "/",
+          sanityPostListPath: themeOptions.sanityPostListPath || "/",
           sanityProjectPath: themeOptions.sanityProjectPath,
-          sanityProjectsListPath: themeOptions.sanityProjectsListPath,
+          sanityProjectListPath: themeOptions.sanityProjectListPath,
           sanityPostListTitle: themeOptions.sanityPostListTitle || "Blog",
           sanityDisplayPostListTitle: themeOptions.sanityDisplayPostListTitle,
           sanityProjectListTitle: themeOptions.sanityProjectListTitle,

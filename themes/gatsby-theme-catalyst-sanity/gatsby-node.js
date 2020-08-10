@@ -219,8 +219,8 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
 // Create Posts List Page
 async function createPostsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { sanityPostsListPath } = withDefaults(themeOptions)
-  const rootPath = sanityPostsListPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityPostListPath } = withDefaults(themeOptions)
+  const rootPath = sanityPostListPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating posts list page: ${rootPath}`)
 
@@ -271,8 +271,8 @@ async function createProjects(graphql, actions, reporter, themeOptions) {
 // Create Projects List Page
 async function createProjectsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { sanityProjectsListPath } = withDefaults(themeOptions)
-  const rootPath = sanityProjectsListPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityProjectListPath } = withDefaults(themeOptions)
+  const rootPath = sanityProjectListPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating projects list page: ${rootPath}`)
 
@@ -380,9 +380,9 @@ exports.createSchemaCustomization = ({ actions }) => {
     sanityCreateProjectsList: Boolean!
     sanityCreateCategories: Boolean!
     sanityPostPath: String!
-    sanityPostsListPath: String!
+    sanityPostListPath: String!
     sanityProjectPath: String!
-    sanityProjectsListPath: String!
+    sanityProjectListPath: String!
     useSanityTheme: Boolean!
     sanityPostListTitle: String!
     sanityDisplayPostListTitle: Boolean!
@@ -406,9 +406,9 @@ exports.sourceNodes = (
     sanityCreateProjectsList = true,
     sanityCreateCategories = true,
     sanityPostPath = "/posts",
-    sanityPostsListPath = "/posts",
+    sanityPostListPath = "/posts",
     sanityProjectPath = "/projects",
-    sanityProjectsListPath = "/projects",
+    sanityProjectListPath = "/projects",
     useSanityTheme = false,
     sanityPostListTitle = "Posts",
     sanityDisplayPostListTitle = true,
@@ -430,9 +430,9 @@ exports.sourceNodes = (
     sanityCreateProjectsList,
     sanityCreateCategories,
     sanityPostPath,
-    sanityPostsListPath,
+    sanityPostListPath,
     sanityProjectPath,
-    sanityProjectsListPath,
+    sanityProjectListPath,
     useSanityTheme,
     sanityPostListTitle,
     sanityDisplayPostListTitle,
