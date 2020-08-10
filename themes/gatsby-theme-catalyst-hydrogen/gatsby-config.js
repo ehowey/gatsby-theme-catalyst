@@ -34,9 +34,11 @@ module.exports = (themeOptions) => {
           sanityCreateProjects: themeOptions.sanityCreateProjects || false,
           sanityCreateProjectsList:
             themeOptions.sanityCreateProjectsList || false,
-          pagePath: themeOptions.pagePath,
+          sanityCreateCategories: themeOptions.sanityCreateCategories || false,
           sanityPostPath: themeOptions.sanityPostPath,
+          sanityPostsListPath: themeOptions.sanityPostsListPath,
           sanityProjectPath: themeOptions.sanityProjectPath,
+          sanityProjectsListPath: themeOptions.sanityProjectsListPath,
         },
       },
     ].filter(Boolean),

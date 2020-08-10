@@ -29,9 +29,10 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-bery`,
       options: {
         sanityProjectId: `4w5ygwpy`, // Required
-        sanityPostPath: `/`,
+        sanityPostPath: `/posts`,
         footerContentLocation: "center",
         sanityPostListTitle: "Blog",
+        sanityPostsListPath: `/`,
       },
     },
     {

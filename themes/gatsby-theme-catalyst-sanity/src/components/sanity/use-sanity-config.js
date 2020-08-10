@@ -12,8 +12,11 @@ export const useSanityConfig = () => {
           sanityCreatePostsList
           sanityCreateProjects
           sanityCreateProjectsList
+          sanityCreateCategories
           sanityPostPath
+          sanityPostsListPath
           sanityProjectPath
+          sanityProjectsListPath
           useSanityTheme
           sanityPostListTitle
           sanityDisplayPostListTitle
