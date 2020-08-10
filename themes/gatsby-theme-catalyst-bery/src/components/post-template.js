@@ -8,8 +8,9 @@ import {
   SanityThemeProvider,
 } from "gatsby-theme-catalyst-sanity"
 import { FaRegClock } from "react-icons/fa"
+import PostFooter from "./post-footer"
 
-const PostTemplate = ({ data }) => {
+const PostTemplate = ({ data, previous, next }) => {
   const post = data.sanityPost
   return (
     <SanityThemeProvider>
@@ -92,6 +93,7 @@ const PostTemplate = ({ data }) => {
           {post.readingTimeInMinutes} Min Read &bull; {post.date}
         </Styled.p>
         <SanityContent data={post._rawBody} />
+        <PostFooter previous={previous} next={next} />
       </Layout>
     </SanityThemeProvider>
   )
