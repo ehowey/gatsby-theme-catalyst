@@ -3,11 +3,12 @@ import { graphql } from "gatsby"
 import Post from "../templates/post-template"
 
 export default ({ data }) => {
-  return <Post data={{ ...data }} />
+  const { previous, next } = data
+  return <Post data={{ ...data }} previous={previous} next={next} />
 }
 
 export const query = graphql`
-  query SanityPostQuery($id: String!) {
+  query SanityPostQuery($id: String!, $previousId: String, $nextId: String) {
     sanityPost(id: { eq: $id }) {
       id
       title
@@ -19,6 +20,24 @@ export const query = graphql`
         }
       }
       _rawBody
+    }
+    previous: sanityPost(id: { eq: $previousId }) {
+      id
+      excerpt
+      slug {
+        current
+      }
+      title
+      date(formatString: "MMMM DD, YYYY")
+    }
+    next: sanityPost(id: { eq: $nextId }) {
+      id
+      excerpt
+      slug {
+        current
+      }
+      title
+      date(formatString: "MMMM DD, YYYY")
     }
   }
 `

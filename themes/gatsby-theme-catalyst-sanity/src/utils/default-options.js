@@ -14,6 +14,9 @@ module.exports = (themeOptions) => {
   const sanityCreateProjectsList =
     themeOptions.sanityCreateProjectsList == null ||
     themeOptions.sanityCreateProjectsList === true
+  const sanityCreateCategories =
+    themeOptions.sanityCreateCategories == null ||
+    themeOptions.sanityCreateCategories === true
   const sanityProjectPath = themeOptions.sanityProjectPath || "/projects"
   const sanityPostPath = themeOptions.sanityPostPath || "/posts"
 
@@ -25,5 +28,6 @@ module.exports = (themeOptions) => {
     sanityCreateProjectsList,
     sanityPostPath,
     sanityProjectPath,
+    sanityCreateCategories,
   }
 }
