@@ -7,6 +7,8 @@ const {
 } = require("gatsby/graphql")
 const memoize = require("lodash.memoize")
 
+// Create categories
+
 // Create excerpts and create reading time for posts, based on gatsby-transformer-portable-text
 
 // Convert portable text to plain text
@@ -106,6 +108,30 @@ exports.createResolvers = ({ createResolvers }) => {
       },
     },
   }
+  const categoryResolvers = {
+    SanityCategory: {
+      posts: {
+        type: ["SanityPost"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            type: "SanityPost",
+            query: {
+              filter: {
+                categories: {
+                  elemMatch: {
+                    _id: {
+                      eq: source._id,
+                    },
+                  },
+                },
+              },
+            },
+          })
+        },
+      },
+    },
+  }
+  createResolvers(categoryResolvers)
   createResolvers(postResolvers)
   createResolvers(projectResolvers)
 }
@@ -153,7 +179,10 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
 
   const result = await graphql(`
     {
-      allSanityPost(filter: { slug: { current: { ne: null } } }) {
+      allSanityPost(
+        filter: { slug: { current: { ne: null } } }
+        sort: { fields: date, order: DESC }
+      ) {
         nodes {
           id
           slug {
@@ -168,17 +197,21 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
 
   const allPosts = result.data.allSanityPost.nodes || []
 
-  allPosts.forEach((post) => {
+  allPosts.forEach((post, index) => {
     const id = post.id
     const slug = post.slug.current.replace(/\/*$/, `/`) //Ensure trailing slash
     const path = `${rootPath}${slug}`
-
+    const previous = index === post.length - 1 ? null : allPosts[index + 1]
+    const next = index === 0 ? null : allPosts[index - 1]
     reporter.info(`Creating post: ${path}`)
-
     createPage({
       path,
       component: require.resolve("./src/components/queries/post-query.js"),
-      context: { id },
+      context: {
+        id,
+        previousId: previous ? previous.id : undefined,
+        nextId: next ? next.id : undefined,
+      },
     })
   })
 }
@@ -186,8 +219,8 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
 // Create Posts List Page
 async function createPostsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { sanityPostPath } = withDefaults(themeOptions)
-  const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityPostListPath } = withDefaults(themeOptions)
+  const rootPath = sanityPostListPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating posts list page: ${rootPath}`)
 
@@ -238,8 +271,8 @@ async function createProjects(graphql, actions, reporter, themeOptions) {
 // Create Projects List Page
 async function createProjectsList(actions, reporter, themeOptions) {
   const { createPage } = actions
-  const { sanityProjectPath } = withDefaults(themeOptions)
-  const rootPath = sanityProjectPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const { sanityProjectListPath } = withDefaults(themeOptions)
+  const rootPath = sanityProjectListPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   reporter.info(`Creating projects list page: ${rootPath}`)
 
@@ -252,6 +285,54 @@ async function createProjectsList(actions, reporter, themeOptions) {
   })
 }
 
+// Create Category Pages
+
+async function createCategoryPages(graphql, actions) {
+  // Get Gatsby‘s method for creating new pages
+  const { createPage } = actions
+  // Query Gatsby‘s GraphAPI for all the categories that come from Sanity
+  // You can query this API on http://localhost:8000/___graphql
+  const result = await graphql(`
+    {
+      allSanityCategory {
+        nodes {
+          slug {
+            current
+          }
+          id
+        }
+      }
+    }
+  `)
+  // If there are any errors in the query, cancel the build and tell us
+  if (result.errors) throw result.errors
+
+  // Let‘s gracefully handle if allSanityCatgogy is null
+  const categoryNodes = (result.data.allSanityCategory || {}).nodes || []
+
+  categoryNodes
+    // Loop through the category nodes, but don't return anything
+    .forEach((node) => {
+      // Desctructure the id and slug fields for each category
+      const { id, slug = {} } = node
+      // If there isn't a slug, we want to do nothing
+      if (!slug) return
+
+      // Make the URL with the current slug
+      const path = `/categories/${slug.current}`
+
+      // Create the page using the URL path and the template file, and pass down the id
+      // that we can use to query for the right category in the template file
+      createPage({
+        path,
+        component: require.resolve(
+          "./src/components/queries/category-query.js"
+        ),
+        context: { id },
+      })
+    })
+}
+
 // Conditionally create all the pages
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const {
@@ -260,6 +341,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     sanityCreatePostsList,
     sanityCreateProjects,
     sanityCreateProjectsList,
+    sanityCreateCategories,
   } = withDefaults(themeOptions)
 
   if (sanityCreatePages) {
@@ -267,6 +349,9 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   }
   if (sanityCreatePosts) {
     await createPosts(graphql, actions, reporter, themeOptions)
+  }
+  if (sanityCreateCategories) {
+    await createCategoryPages(graphql, actions, reporter, themeOptions)
   }
   if (sanityCreatePostsList) {
     await createPostsList(actions, reporter, themeOptions)
@@ -293,8 +378,11 @@ exports.createSchemaCustomization = ({ actions }) => {
     sanityCreatePostsList: Boolean!
     sanityCreateProjects: Boolean!
     sanityCreateProjectsList: Boolean!
+    sanityCreateCategories: Boolean!
     sanityPostPath: String!
+    sanityPostListPath: String!
     sanityProjectPath: String!
+    sanityProjectListPath: String!
     useSanityTheme: Boolean!
     sanityPostListTitle: String!
     sanityDisplayPostListTitle: Boolean!
@@ -316,8 +404,11 @@ exports.sourceNodes = (
     sanityCreatePostsList = true,
     sanityCreateProjects = true,
     sanityCreateProjectsList = true,
+    sanityCreateCategories = true,
     sanityPostPath = "/posts",
+    sanityPostListPath = "/posts",
     sanityProjectPath = "/projects",
+    sanityProjectListPath = "/projects",
     useSanityTheme = false,
     sanityPostListTitle = "Posts",
     sanityDisplayPostListTitle = true,
@@ -337,8 +428,11 @@ exports.sourceNodes = (
     sanityCreatePostsList,
     sanityCreateProjects,
     sanityCreateProjectsList,
+    sanityCreateCategories,
     sanityPostPath,
+    sanityPostListPath,
     sanityProjectPath,
+    sanityProjectListPath,
     useSanityTheme,
     sanityPostListTitle,
     sanityDisplayPostListTitle,

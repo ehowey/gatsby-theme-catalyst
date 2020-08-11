@@ -14,8 +14,14 @@ module.exports = (themeOptions) => {
   const sanityCreateProjectsList =
     themeOptions.sanityCreateProjectsList == null ||
     themeOptions.sanityCreateProjectsList === true
+  const sanityCreateCategories =
+    themeOptions.sanityCreateCategories == null ||
+    themeOptions.sanityCreateCategories === true
   const sanityProjectPath = themeOptions.sanityProjectPath || "/projects"
+  const sanityProjectListPath =
+    themeOptions.sanityProjectListPath || "/projects"
   const sanityPostPath = themeOptions.sanityPostPath || "/posts"
+  const sanityPostListPath = themeOptions.sanityPostListPath || "/posts"
 
   return {
     sanityCreatePages,
@@ -24,6 +30,9 @@ module.exports = (themeOptions) => {
     sanityCreateProjects,
     sanityCreateProjectsList,
     sanityPostPath,
+    sanityPostListPath,
     sanityProjectPath,
+    sanityProjectListPath,
+    sanityCreateCategories,
   }
 }

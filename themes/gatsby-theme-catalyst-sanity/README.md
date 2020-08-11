@@ -21,11 +21,14 @@ This theme adds a data layer for SANITY.io on top of `gatsby-theme-catalyst-core
 | sanityOverlayDrafts      | Boolean | Defaults to false, toggle for live previews, a token and private dataset is required.                                                      |
 | sanityCreatePages        | Boolean | Defaults to true, toggle to turn on/off page generation from SANITY.io.                                                                    |
 | sanityCreatePosts        | Boolean | Defaults to true, toggle to turn on/off blog post page generation from SANITY.io.                                                          |
+| sanityCreateCategories   | Boolean | Defaults to true, toggle to turn on/off category page generation from SANITY.io.                                                           |
 | sanityCreatePostsList    | Boolean | Defaults to true, toggle to turn on/off blog post list generation from SANITY.io.                                                          |
 | sanityCreateProjects     | Boolean | Defaults to true, toggle to turn on/off project page generation from SANITY.io.                                                            |
 | sanityCreateProjectsList | Boolean | Defaults to true, toggle to turn on/off project list generation from SANITY.io.                                                            |
-| sanityPostPath           | String  | Defaults to "/posts", is the path for the posts index and also before posts, e.g. site.com/posts/post-1.                                   |
-| sanityProjectPath        | String  | Defaults to "/projects", is the path for the projects index and also before projects, e.g. site.com/projects/post-1.                       |
+| sanityPostPath           | String  | Defaults to "/posts", is the path for before posts, e.g. site.com/posts/post-1.                                                            |
+| sanityPostListPath       | String  | Defaults to "/posts", is the path for the posts list, e.g. site.com/posts/.                                                                |
+| sanityProjectPath        | String  | Defaults to "/projects", is the path for before projects, e.g. site.com/projects/post-1.                                                   |
+| sanityProjectListPath    | String  | Defaults to "/projects", is the path for the projects list page, e.g. site.com/projects/.                                                  |
 | useSanityTheme           | Boolean | Experimental. Enables merging the theme-ui theme specification from SANITY.io allowing use of a GUI to change the site theme, e.g. colors. |
 
 ## Sanity Studio

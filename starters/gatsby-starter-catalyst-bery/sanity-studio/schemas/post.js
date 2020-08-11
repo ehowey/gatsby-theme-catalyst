@@ -1,3 +1,5 @@
+import { format } from "date-fns"
+
 export default {
   name: "post",
   title: "Post",
@@ -38,6 +40,22 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "categories",
+      type: "array",
+      title: "Categories",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "category",
+            },
+          ],
+        },
+      ],
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "featuredImage",
       title: "Featured Image",
       description: "A featured image for your post.",
@@ -53,8 +71,26 @@ export default {
   preview: {
     select: {
       title: "title",
-      subtitle: "date",
-      media: "featuredImage",
+      date: "date",
+    },
+    prepare(selection) {
+      const { title, date } = selection
+      return {
+        title: title,
+        subtitle: format(date, "MMMM D, YYYY"), // YYYY-MM-DD --> YYYY
+      }
     },
   },
+  orderings: [
+    {
+      title: "Publish Date Desc",
+      name: "dateDesc",
+      by: [{ field: "date", direction: "desc" }],
+    },
+    {
+      title: "Publish Date Asc",
+      name: "dateAsc",
+      by: [{ field: "date", direction: "asc" }],
+    },
+  ],
 }
