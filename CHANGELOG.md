@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file
 ## catalyst-sanity and catalyst-hydrogen v3.0.0
 
 - **Breaking:** Added the ability to have categories by default in SANITY based themes. This required the addition of a category entry to the GraphQL schema which will cause builds to fail when upgrading without updating your sanity schema.
-  - Add `category.js` to your schema, you can copy the file from `gatsby-starter-catalyst-sanity/sanity-studio/schemas/category.js` to your schemas directory.
+  - Add `category.js` to your schema, you can copy the file from `gatsby-starter-catalyst-sanity/sanity-studio/schemas/category.js` to your schemas directory. Import this and include it in `sanity-studio/schema.js`. More details are in the migrating docs.
   - Run `sanity graphql deploy` to redploy your schema
 - Added the ability to have more granular control over the post path and project path, so the ability to set post path as independent from the post list path. E.g. your posts may be at www.sitename.com/posts/blog-post but your post list might be on your home page at www.sitename.com/. This adds a new set of theme options, `sanityPostListPath` and `sanityProjectListPath`.
 - Added support for next and previous post links
