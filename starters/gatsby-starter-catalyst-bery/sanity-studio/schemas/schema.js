@@ -21,6 +21,7 @@ import themeColors from "./themeColors"
 import footerColors from "./footerColors"
 import headerColors from "./headerColors"
 import siteHeader from "./siteHeader"
+import category from "./category"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -47,5 +48,6 @@ export default createSchema({
     headerColors,
     footerColors,
     siteHeader,
+    category,
   ]),
 })

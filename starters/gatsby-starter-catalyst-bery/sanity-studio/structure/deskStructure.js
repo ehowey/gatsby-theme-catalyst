@@ -21,6 +21,7 @@ const hiddenDocTypes = (listItem) =>
     "themeLmColor",
     "themeDmColor",
     "siteHeader",
+    "category",
   ].includes(listItem.getId())
 
 export default () =>
@@ -70,6 +71,19 @@ export default () =>
         .child(S.documentTypeList("page").title("Pages")),
       S.listItem()
         .title("Posts")
-        .child(S.documentTypeList("post").title("Posts")),
+        .child(
+          S.list()
+            .title("Posts")
+            .items([
+              S.listItem()
+                .title("All Posts")
+                .schemaType("post")
+                .child(S.documentTypeList("post").title("All Posts")),
+              S.listItem()
+                .title("Categories")
+                .schemaType("category")
+                .child(S.documentTypeList("category").title("Categories")),
+            ])
+        ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ])

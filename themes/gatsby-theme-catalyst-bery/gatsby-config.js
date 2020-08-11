@@ -15,7 +15,7 @@ module.exports = (themeOptions) => {
           useSocialLinks: themeOptions.useSocialLinks,
           useColorMode: themeOptions.useColorMode,
           useKatex: themeOptions.useKatex,
-          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
+          footerContentLocation: themeOptions.footerContentLocation || "center", // "left", "right", "center"
         },
       },
       `gatsby-theme-catalyst-footer`,
@@ -30,12 +30,15 @@ module.exports = (themeOptions) => {
           sanityCreatePages: themeOptions.sanityCreatePages,
           sanityCreatePosts: themeOptions.sanityCreatePosts,
           sanityCreatePostsList: themeOptions.sanityCreatePostsList,
-          sanityCreateProjects: themeOptions.sanityCreateProjects,
-          sanityCreateProjectsList: themeOptions.sanityCreateProjectsList,
-          pagePath: themeOptions.pagePath,
-          sanityPostPath: themeOptions.sanityPostPath,
+          sanityCreateCategories: themeOptions.sanityCreateCategories,
+          sanityCreateProjects: themeOptions.sanityCreateProjects || false,
+          sanityCreateProjectsList:
+            themeOptions.sanityCreateProjectsList || false,
+          sanityPostPath: themeOptions.sanityPostPath || "/posts",
+          sanityPostListPath: themeOptions.sanityPostListPath || "/",
           sanityProjectPath: themeOptions.sanityProjectPath,
-          sanityPostListTitle: themeOptions.sanityPostListTitle,
+          sanityProjectListPath: themeOptions.sanityProjectListPath,
+          sanityPostListTitle: themeOptions.sanityPostListTitle || "Blog",
           sanityDisplayPostListTitle: themeOptions.sanityDisplayPostListTitle,
           sanityProjectListTitle: themeOptions.sanityProjectListTitle,
           sanityDisplayProjectListTitle:

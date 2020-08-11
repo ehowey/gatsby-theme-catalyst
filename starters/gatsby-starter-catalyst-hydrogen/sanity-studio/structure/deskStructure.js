@@ -25,6 +25,7 @@ const hiddenDocTypes = (listItem) =>
     "theme",
     "workPage",
     "author",
+    "category",
   ].includes(listItem.getId())
 
 export default () =>
