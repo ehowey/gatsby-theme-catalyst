@@ -17,15 +17,6 @@ const PostTemplate = ({ data, previous, next }) => {
       <Layout>
         <SEO title={post.title} />
         <Styled.h1>{post.title}</Styled.h1>
-        <Styled.ul sx={{ display: "flex", listStyle: "none", p: 0, m: 0 }}>
-          {post.categories.map((category) => (
-            <Styled.li key={category.title} sx={{ mr: 3 }}>
-              <Styled.a as={Link} to={`/categories/${category.slug.current}`}>
-                {category.title}
-              </Styled.a>
-            </Styled.li>
-          ))}
-        </Styled.ul>
         <Styled.p>{post.date}</Styled.p>
         <SanityContent data={post._rawBody} />
         {previous && (

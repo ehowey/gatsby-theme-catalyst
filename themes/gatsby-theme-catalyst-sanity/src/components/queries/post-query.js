@@ -13,12 +13,6 @@ export const query = graphql`
       id
       title
       date(formatString: "MMMM D, YYYY")
-      categories {
-        title
-        slug {
-          current
-        }
-      }
       _rawBody
     }
     previous: sanityPost(id: { eq: $previousId }) {
