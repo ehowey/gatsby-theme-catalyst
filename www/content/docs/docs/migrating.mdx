@@ -7,6 +7,13 @@
 
 This reviews any breaking changes. You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/CHANGELOG.md) on GitHub for more detailed list of non-breaking changes.
 
+## catalyst-sanity v3.0.0 and catalyst-hydrogen v3.0.0
+
+- There was a breaking change in order to enable to support for categories in SANITY based blogs. This required adding a schema for blog categories which needs to be included in older installations of these themes, even if you are not using a blog.
+  - Copy `gatsby-starter-catalyst-sanity/sanity-studio/schemas/category.js` and put it in your own schemas folder in your installation.
+  - Import the category.js schema in `sanity-studio/schemas/schema.js` and make sure it is included in the concatenated set of export schemas
+  - Run `sanity graphql deploy` to redeploy your GraphQL schema
+
 ## catalyst-core v2.0.0 and other v2.0.0 themes
 
 - This was a visually breaking change to make it easier to remove dark mode from your site. `gatsby-theme-catalyst-core` exports a "base theme" which is used in the starters to merge with any theme customizations. By default it was including a dark mode meaning that it was difficult to remove dark mode without overriding all of the key value pairs in your site. If you were relying on the core theme for your site colors then you will now need to explicitly define those in `src/gatsby-plugin-theme-ui/index.js`.
