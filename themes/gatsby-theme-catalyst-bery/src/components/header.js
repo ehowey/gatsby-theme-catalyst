@@ -72,15 +72,18 @@ const SiteHeader = () => {
             alignSelf: "center",
           }}
         >
-          <Img
-            sx={{
-              height: ["80px", "150px", "175px", "200px", null],
-              width: ["80px", "150px", "175px", "200px", null],
-              borderRadius: "9999em",
-            }}
-            fluid={author.image.asset.fluid}
-            alt={author.name}
-          />
+          <Styled.a as={Link} to="/" aria-label="Home">
+            <Img
+              sx={{
+                height: ["80px", "150px", "175px", "200px", null],
+                width: ["80px", "150px", "175px", "200px", null],
+                borderRadius: "9999em",
+                boxShadow: "lg",
+              }}
+              fluid={author.image.asset.fluid}
+              alt={author.name}
+            />
+          </Styled.a>
         </div>
         <div
           sx={{
@@ -89,15 +92,22 @@ const SiteHeader = () => {
             alignSelf: ["center", "end", null, null, null],
           }}
         >
-          <Styled.h2
-            sx={{
-              m: 0,
-              mt: [null, null, null, 4, null],
-              fontSize: [3, null, 4, null, null],
-            }}
+          <Styled.a
+            sx={{ color: "text", textDecoration: "none" }}
+            as={Link}
+            to="/"
+            aria-label="Home"
           >
-            {author.name}
-          </Styled.h2>
+            <Styled.h2
+              sx={{
+                m: 0,
+                mt: [null, null, null, 4, null],
+                fontSize: [3, null, 4, null, null],
+              }}
+            >
+              {author.name}
+            </Styled.h2>
+          </Styled.a>
           <div
             sx={{
               display: "flex",
