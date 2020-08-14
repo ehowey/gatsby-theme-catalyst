@@ -13,6 +13,7 @@ export default {
       name: "image",
       title: "Image",
       type: "image",
+      description: "Used as an avatar image in the header.",
       options: {
         hotspot: true,
       },
@@ -20,8 +21,11 @@ export default {
     },
     {
       name: "bio",
-      title: "Bio",
+      title: "Short Bio",
       type: "text",
+      rows: 3,
+      description:
+        "Suggested characters of between 80 - 200, imagine a Twitter bio length.",
       validation: (Rule) => Rule.required(),
     },
   ],

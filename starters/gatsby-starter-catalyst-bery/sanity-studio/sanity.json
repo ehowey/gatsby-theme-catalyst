@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "gatsby-theme-catalyst-sanity"
+    "name": "gatsby-starter-catalyst-bery"
   },
   "plugins": [
     "@sanity/base",

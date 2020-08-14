@@ -6,7 +6,7 @@ import "fontsource-sen/700.css"
 
 export default merge(BaseTheme, {
   // Modifications to the base theme go here.
-  breakpoints: ["480px", "768px", "1280px", "1440px"],
+  breakpoints: ["480px", "768px", "1200px", "1440px"],
   fonts: {
     body:
       'Sen, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -95,6 +95,9 @@ export default merge(BaseTheme, {
     },
   },
   variants: {
+    main: {
+      mt: 0,
+    },
     siteTitle: {
       fontSize: [3, 4, null, 5, null],
     },
