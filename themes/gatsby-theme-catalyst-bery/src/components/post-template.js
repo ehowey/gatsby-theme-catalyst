@@ -59,7 +59,6 @@ const PostTemplate = ({ data, previous, next }) => {
                     transition: "color 0.2s ease",
                     ":hover, :focus, :active": {
                       color: "secondary",
-                      textDecoration: "underline",
                     },
                   }}
                 >

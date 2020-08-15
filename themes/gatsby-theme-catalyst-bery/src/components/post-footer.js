@@ -9,6 +9,7 @@ const PostFooter = ({ previous, next }) => {
   return (
     <div sx={{ mb: 3 }}>
       <Styled.hr sx={{ bg: "textGrayLight" }} />
+      <Styled.h3>More Recent Posts</Styled.h3>
       {(previous || next) && (
         <Flex
           sx={{
@@ -19,8 +20,8 @@ const PostFooter = ({ previous, next }) => {
           }}
           as="ul"
         >
-          <li sx={{ flex: [null, null, null, 1, null] }}>
-            {previous && (
+          {previous && (
+            <li sx={{ flex: [null, null, null, 1, null] }}>
               <Styled.a
                 as={Link}
                 to={rootPath.concat(previous.slug.current.replace(/\/*$/, `/`))}
@@ -28,12 +29,12 @@ const PostFooter = ({ previous, next }) => {
               >
                 ← {previous.title}
               </Styled.a>
-            )}
-          </li>
+            </li>
+          )}
           <li
             sx={{
               flex: [null, null, null, 1, null],
-              textAlign: "right",
+              textAlign: previous && "right",
               mt: [3, null, null, 0, null],
             }}
           >
