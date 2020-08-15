@@ -18,6 +18,7 @@ export default merge(BaseTheme, {
     background: baseColors.gray[1], //Try "#954264",
     text: baseColors.gray[8],
     textGray: "#6e6e6e",
+    textGrayLight: "#d4d4d4",
     primary: "#257e86",
     secondary: "#464eae",
     link: "#464eae",
@@ -69,9 +70,10 @@ export default merge(BaseTheme, {
   },
   styles: {
     a: {
-      color: "link",
-      textDecoration: "underline",
+      color: "primary",
+      textDecoration: "none",
       ":hover": {
+        color: "secondary",
         textDecoration: "none",
       },
     },
@@ -86,10 +88,10 @@ export default merge(BaseTheme, {
       "::after": {
         display: "block",
         content: '""',
-        width: "40px",
-        pt: 2,
+        width: "50px",
+        borderRadius: "0 5px 5px 0",
         borderBottomStyle: "solid",
-        borderBottomWidth: "4px",
+        borderBottomWidth: "5px",
         borderBottomColor: "primary",
       },
     },

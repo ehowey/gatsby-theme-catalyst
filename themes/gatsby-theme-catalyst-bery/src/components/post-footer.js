@@ -8,7 +8,8 @@ const PostFooter = ({ previous, next }) => {
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
   return (
     <div>
-      <Styled.hr sx={{ bg: "textGray" }} />
+      <Styled.hr sx={{ bg: "textGrayLight" }} />
+      <Styled.h4>More Recent Posts</Styled.h4>
       {(previous || next) && (
         <Flex
           sx={{
@@ -19,7 +20,7 @@ const PostFooter = ({ previous, next }) => {
           }}
           as="ul"
         >
-          <li>
+          <li sx={{ flex: [null, null, null, 1, null] }}>
             {previous && (
               <Styled.a
                 as={Link}
@@ -30,7 +31,13 @@ const PostFooter = ({ previous, next }) => {
               </Styled.a>
             )}
           </li>
-          <li>
+          <li
+            sx={{
+              flex: [null, null, null, 1, null],
+              textAlign: "right",
+              mt: [3, null, null, 0, null],
+            }}
+          >
             {next && (
               <Styled.a
                 as={Link}
