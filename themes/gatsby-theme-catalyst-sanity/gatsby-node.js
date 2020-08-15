@@ -330,6 +330,13 @@ async function createCategoryPages(graphql, actions) {
         ),
         context: { id },
       })
+      createPage({
+        path: `/categories/`,
+        component: require.resolve(
+          "./src/components/queries/category-list-query.js"
+        ),
+        context: {},
+      })
     })
 }
 

@@ -7,9 +7,8 @@ const PostFooter = ({ previous, next }) => {
   const { sanityPostPath } = useSanityConfig()
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
   return (
-    <div>
+    <div sx={{ mb: 3 }}>
       <Styled.hr sx={{ bg: "textGrayLight" }} />
-      <Styled.h4>More Recent Posts</Styled.h4>
       {(previous || next) && (
         <Flex
           sx={{
