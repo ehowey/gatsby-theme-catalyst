@@ -23,7 +23,7 @@ export default merge(BaseTheme, {
     link: "#464eae",
     accent: baseColors.blue[2],
     highlight: baseColors.blue[5],
-    muted: baseColors.gray[2],
+    muted: baseColors.gray[4],
     header: {
       background: baseColors.gray[2],
       backgroundOpen: baseColors.blue[2],
@@ -49,7 +49,7 @@ export default merge(BaseTheme, {
         link: "#7c82ca",
         accent: baseColors.gray[8],
         highlight: baseColors.orange[5],
-        muted: baseColors.gray[8],
+        muted: baseColors.gray[7],
         header: {
           text: baseColors.gray[1],
           textOpen: baseColors.gray[1],
