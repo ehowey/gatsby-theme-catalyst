@@ -8,15 +8,69 @@ import {
   SanityThemeProvider,
 } from "gatsby-theme-catalyst-sanity"
 import { FaRegClock } from "react-icons/fa"
+import { useState, useEffect } from "react"
 
-const PostsTemplate = ({ data }) => {
-  const posts = data.allSanityPost.nodes
+const PostListTemplate = ({ data }) => {
   const {
     sanityPostPath,
     sanityPostListTitle,
     sanityDisplayPostListTitle,
   } = useSanityConfig()
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const posts = data.allSanityPost.nodes
+
+  // Working with categories
+
+  // Create a new array with a slug and a title for data and display
+  const categories = data.allSanityCategory.distinct.map((category) => {
+    return {
+      title: category,
+      slug: category.toLowerCase(),
+    }
+  })
+
+  //Creating object for button state
+
+  const x = { ...categories }
+  console.log(x)
+
+  //Initialize state
+  const [visibleCategories, setVisibleCategories] = useState([])
+  const [displayedPosts, setDisplayedPosts] = useState([...posts])
+  const [enabledButtons, setEnabledButtons] = useState()
+
+  // Handle button click to add and remove categories
+  const handleResults = (category) => {
+    let valueIndex = visibleCategories.indexOf(category)
+    if (valueIndex === -1) {
+      const categoryAdded = [...visibleCategories, category]
+      setVisibleCategories(categoryAdded)
+    } else {
+      const categoryRemoved = visibleCategories.filter(
+        (item) => item !== category
+      )
+      setVisibleCategories(categoryRemoved)
+    }
+  }
+
+  // Handle changing the posts displayed when the categpory changes
+  useEffect(() => {
+    if (visibleCategories.length) {
+      const filteredResult = posts.filter((post) =>
+        post.categories.some(
+          (category) =>
+            visibleCategories.indexOf(category.title.toLowerCase()) >= 0
+        )
+      )
+      setDisplayedPosts(filteredResult)
+    } else {
+      setDisplayedPosts(posts)
+    }
+  }, [visibleCategories, posts])
+
+  const buttons = {
+    water: false,
+  }
 
   return (
     <SanityThemeProvider>
@@ -26,7 +80,28 @@ const PostsTemplate = ({ data }) => {
           <Styled.h1>{sanityPostListTitle}</Styled.h1>
         )}
         <div sx={{ my: 5 }}>
-          {posts.map((post) => (
+          <Styled.ul
+            sx={{ listStyle: "none", display: "flex", m: 0, p: 0, mb: 3 }}
+          >
+            {categories.map((category) => (
+              <Styled.li key={category.slug}>
+                <button
+                  onClick={() => {
+                    handleResults(`${category.slug}`)
+                  }}
+                  sx={{
+                    bg:
+                      visibleCategories.indexOf(category.slug) === -1
+                        ? "blue"
+                        : "yellow",
+                  }}
+                >
+                  {category.title}
+                </button>
+              </Styled.li>
+            ))}
+          </Styled.ul>
+          {displayedPosts.map((post) => (
             <article
               sx={{
                 mb: 5,
@@ -101,4 +176,4 @@ const PostsTemplate = ({ data }) => {
   )
 }
 
-export default PostsTemplate
+export default PostListTemplate

@@ -16,6 +16,9 @@ export const query = graphql`
         }
         title
         date(formatString: "MMMM D, YYYY")
+        categories {
+          title
+        }
         excerpt(limit: 200)
         readingTimeInMinutes
         featuredImage {
@@ -27,6 +30,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    allSanityCategory {
+      distinct(field: title)
     }
   }
 `
