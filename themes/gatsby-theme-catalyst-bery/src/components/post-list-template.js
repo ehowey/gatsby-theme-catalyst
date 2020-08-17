@@ -26,11 +26,11 @@ const PostListTemplate = ({ data }) => {
   // Create a new array with a slug and a title for data and display
   const categories = data.allSanityCategory.distinct.map((category) => {
     let count = 0
-    posts.map((post) => {
-      post.categories.map((postCategory) => {
-        postCategory.title === category && count++
-      })
-    })
+    posts.map((post) =>
+      post.categories.map(
+        (postCategory) => postCategory.title === category && count++
+      )
+    )
     return {
       title: category,
       slug: category.toLowerCase(),
