@@ -18,6 +18,9 @@ export const query = graphql`
         date(formatString: "MMMM D, YYYY")
         categories {
           title
+          slug {
+            current
+          }
         }
         excerpt(limit: 200)
         readingTimeInMinutes
