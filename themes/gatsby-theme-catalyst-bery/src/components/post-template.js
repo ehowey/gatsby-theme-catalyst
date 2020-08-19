@@ -37,6 +37,7 @@ const PostTemplate = ({ data, previous, next }) => {
           >
             {post.categories.map((category) => (
               <Styled.li
+                key={category.slug}
                 sx={{
                   "::after": {
                     content: `"\\2022"`,

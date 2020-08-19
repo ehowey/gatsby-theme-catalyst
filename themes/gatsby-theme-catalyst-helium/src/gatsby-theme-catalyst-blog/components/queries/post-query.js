@@ -53,6 +53,13 @@ export const query = graphql`
       slug
       title
       date(formatString: "MMMM DD, YYYY")
+      featuredImage {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     next: catalystPost(id: { eq: $nextId }) {
       id
@@ -60,6 +67,13 @@ export const query = graphql`
       slug
       title
       date(formatString: "MMMM DD, YYYY")
+      featuredImage {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
 `

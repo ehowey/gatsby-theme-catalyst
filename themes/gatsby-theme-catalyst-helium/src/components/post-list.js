@@ -146,6 +146,7 @@ const PostsList = ({ posts }) => {
                     >
                       {post.categories.map((category) => (
                         <Styled.li
+                          key={kebabCase(category)}
                           sx={{
                             my: 0,
                             fontSize: 1,

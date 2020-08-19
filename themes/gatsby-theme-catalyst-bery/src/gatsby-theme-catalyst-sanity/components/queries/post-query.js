@@ -38,6 +38,14 @@ export const query = graphql`
       }
       title
       date(formatString: "MMMM DD, YYYY")
+      featuredImage {
+        caption
+        asset {
+          fluid(maxWidth: 1440) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
     next: sanityPost(id: { eq: $nextId }) {
       id
@@ -47,6 +55,14 @@ export const query = graphql`
       }
       title
       date(formatString: "MMMM DD, YYYY")
+      featuredImage {
+        caption
+        asset {
+          fluid(maxWidth: 1440) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
   }
 `

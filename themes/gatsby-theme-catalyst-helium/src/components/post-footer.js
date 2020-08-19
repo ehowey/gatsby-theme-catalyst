@@ -1,35 +1,44 @@
 /** @jsx jsx */
-import { jsx, Styled, Flex } from "theme-ui"
+import { jsx, Styled, Grid, Box } from "theme-ui"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 const PostFooter = ({ previous, next }) => (
   <div>
     <Styled.hr sx={{ bg: "textGray" }} />
     {(previous || next) && (
-      <Flex
-        sx={{
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          listStyle: "none",
-          padding: 0,
-        }}
-        as="ul"
+      <Grid
+        columns={[ 2 ]}
       >
-        <li>
+        <Box>
           {previous && (
             <Styled.a as={Link} to={previous.slug} rel="prev">
+                <Img
+                  fluid={previous.featuredImage.childImageSharp.fluid}
+                  sx={{
+                    height: "125px",
+                    borderRadius: "5px",
+                  }}
+                />
               ← {previous.title}
             </Styled.a>
           )}
-        </li>
-        <li>
+        </Box>
+        <Box>
           {next && (
             <Styled.a as={Link} to={next.slug} rel="next">
+                <Img
+                  fluid={next.featuredImage.childImageSharp.fluid}
+                  sx={{
+                    height: "125px",
+                    borderRadius: "5px",
+                  }}
+                />
               {next.title} →
             </Styled.a>
           )}
-        </li>
-      </Flex>
+        </Box>
+      </Grid>
     )}
   </div>
 )

@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled, Flex } from "theme-ui"
+import { jsx, Styled, Grid, Box } from "theme-ui"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
 const PostFooter = ({ previous, next }) => {
@@ -10,38 +11,46 @@ const PostFooter = ({ previous, next }) => {
     <div sx={{ mb: 3 }}>
       <Styled.hr sx={{ bg: "textGray" }} />
       {(previous || next) && (
-        <Flex
-          sx={{
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-            padding: 0,
-          }}
-          as="ul"
+        <Grid
+          columns={[ 2 ]}
         >
-          <li>
+          <Box>
             {previous && (
               <Styled.a
                 as={Link}
                 to={rootPath.concat(previous.slug.current.replace(/\/*$/, `/`))}
                 rel="prev"
               >
+                <Img
+                  fluid={previous.featuredImage.asset.fluid}
+                  sx={{
+                    height: "125px",
+                    borderRadius: "5px",
+                  }}
+                />
                 ← {previous.title}
               </Styled.a>
             )}
-          </li>
-          <li>
+          </Box>
+          <Box>
             {next && (
               <Styled.a
                 as={Link}
                 to={rootPath.concat(next.slug.current.replace(/\/*$/, `/`))}
                 rel="next"
               >
+                <Img
+                  fluid={next.featuredImage.asset.fluid}
+                  sx={{
+                    height: "125px",
+                    borderRadius: "5px",
+                  }}
+                />
                 {next.title} →
               </Styled.a>
             )}
-          </li>
-        </Flex>
+          </Box>
+        </Grid>
       )}
     </div>
   )
