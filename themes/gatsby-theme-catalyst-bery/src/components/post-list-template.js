@@ -19,12 +19,11 @@ const PostListTemplate = ({ data }) => {
   } = useSanityConfig()
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
   const posts = data.allSanityPost.nodes
-  console.log(posts.categories)
 
   // Working with categories
 
-  // Create a new array with a slug and a title for data and display
-  const categories = data.allSanityCategory.distinct.map((category) => {
+  // Create a new array with a title, slug and post count
+  const categoriesRaw = data.allSanityCategory.distinct.map((category) => {
     let count = 0
     posts.map((post) =>
       post.categories.map(
@@ -37,6 +36,11 @@ const PostListTemplate = ({ data }) => {
       postCount: count,
     }
   })
+
+  // Sort the categories array by post count
+  const categoriesSorted = categoriesRaw.sort(
+    (a, b) => b.postCount - a.postCount
+  )
 
   //Initialize state
   const [visibleCategories, setVisibleCategories] = useState([])
@@ -81,7 +85,7 @@ const PostListTemplate = ({ data }) => {
         <Styled.ul
           sx={{ listStyle: "none", display: "flex", m: 0, p: 0, mb: 3 }}
         >
-          {categories.map((category) => {
+          {categoriesSorted.map((category) => {
             const active = visibleCategories.indexOf(category.slug) !== -1
             return (
               <Styled.li
@@ -105,6 +109,7 @@ const PostListTemplate = ({ data }) => {
                     borderRadius: "4px",
                     color: active ? lightness("text", 1) : lightness("text", 0),
                     bg: active ? "secondary" : "muted",
+                    cursor: "pointer",
                   }}
                 >
                   {category.title} ({category.postCount})
