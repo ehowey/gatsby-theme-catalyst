@@ -15,9 +15,10 @@ export const query = graphql`
       title
       description
       posts {
-        _id
+        id
+        excerpt
         title
-        date
+        date(formatString: "MMMM D, YYYY")
         slug {
           current
         }
