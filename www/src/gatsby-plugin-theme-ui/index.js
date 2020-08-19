@@ -7,9 +7,9 @@ export default merge(BaseTheme, {
   colors: {
     ...tailwind.colors,
     background: baseColors.gray[1], //Try "#954264",
-    text: baseColors.gray[8],
+    text: baseColors.gray[9],
     primary: baseColors.red[7],
-    secondary: baseColors.red[3],
+    secondary: baseColors.yellow[7],
     accent: baseColors.red[2],
     highlight: baseColors.orange[5],
     muted: baseColors.gray[2],
@@ -33,7 +33,7 @@ export default merge(BaseTheme, {
         background: baseColors.gray[9],
         text: baseColors.gray[1],
         primary: baseColors.red[5],
-        secondary: baseColors.red[4],
+        secondary: baseColors.yellow[5],
         accent: baseColors.red[2],
         muted: baseColors.gray[8],
         header: {
@@ -70,6 +70,17 @@ export default merge(BaseTheme, {
     logoHeightXL: "140px", // Logo height on extra large screens, above 1440px
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "20px", // Sets the icons size for the header
+  },
+  styles: {
+    a: {
+      color: "primary",
+      textDecoration: "underline",
+      transition: "all 0.3s ease",
+      ":hover": {
+        color: "secondary",
+        textDecoration: "underline",
+      },
+    },
   },
   variants: {
     siteTitle: {
