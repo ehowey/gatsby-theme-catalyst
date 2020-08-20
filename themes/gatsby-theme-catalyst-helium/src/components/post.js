@@ -46,6 +46,7 @@ const Post = ({ data: { post }, previous, next }) => (
           >
             {post.categories.map((category) => (
               <Styled.li
+                key={kebabCase(category)}
                 sx={{
                   textTransform: "uppercase",
                   fontWeight: "bold",

@@ -45,8 +45,9 @@ const PostsList = ({ posts }) => {
             gridRowGap: [0, null, 5, null, null],
             variant: "variants.postListContainer",
             maxWidth: "maxPageWidth",
-            mx: [0, 3, null, null, "auto"],
-            my: 5,
+            mx: "auto",
+            my: [4, null, null, 5, null],
+            px: [3, null, 4, 5, 5],
           }}
         >
           {posts.map((post, index) => {
