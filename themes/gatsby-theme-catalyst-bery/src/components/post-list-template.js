@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Button } from "theme-ui"
+import { jsx, Styled, Button, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import Img from "gatsby-image"
@@ -17,6 +17,8 @@ const PostListTemplate = ({ data }) => {
     sanityPostListTitle,
     sanityDisplayPostListTitle,
   } = useSanityConfig()
+  const [mode] = useColorMode()
+  const isDark = mode === "dark"
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
   const posts = data.allSanityPost.nodes
 
@@ -107,7 +109,13 @@ const PostListTemplate = ({ data }) => {
                     fontSize: 1,
                     transition: "all 0.3s ease",
                     borderRadius: "4px",
-                    color: active ? lightness("text", 1) : lightness("text", 0),
+                    color: isDark
+                      ? active
+                        ? lightness("text", 0)
+                        : lightness("text", 1)
+                      : active
+                      ? lightness("text", 1)
+                      : lightness("text", 0),
                     bg: active ? "secondary" : "muted",
                     cursor: "pointer",
                   }}
@@ -144,7 +152,12 @@ const PostListTemplate = ({ data }) => {
               <Styled.a
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
-                style={{ textDecoration: "none" }}
+                sx={{
+                  textDecoration: "none",
+                  ":hover h2, :focus h2, :active h2": {
+                    color: "secondary",
+                  },
+                }}
               >
                 <Styled.h2
                   sx={{
@@ -176,13 +189,13 @@ const PostListTemplate = ({ data }) => {
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
                 sx={{
+                  textDecoration: "none",
                   color: "primary",
                   transition: "color 0.2s ease",
                   ":hover, :focus, :active": {
                     color: "secondary",
                   },
                 }}
-                style={{ textDecoration: "none" }}
               >
                 Read More &rarr;
               </Styled.a>
