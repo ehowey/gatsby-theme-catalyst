@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, Flex } from "theme-ui"
+import { lighten } from "@theme-ui/color"
 import { Link } from "gatsby"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
@@ -8,8 +9,8 @@ const PostFooter = ({ previous, next }) => {
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
   return (
     <div sx={{ mb: 3 }}>
-      <Styled.hr sx={{ bg: "textGrayLight" }} />
-      <Styled.h3>More Recent Posts</Styled.h3>
+      <Styled.hr sx={{ bg: lighten("textGray", 0.4) }} />
+      <Styled.h4>More Recent Posts</Styled.h4>
       {(previous || next) && (
         <Flex
           sx={{
@@ -26,6 +27,7 @@ const PostFooter = ({ previous, next }) => {
                 as={Link}
                 to={rootPath.concat(previous.slug.current.replace(/\/*$/, `/`))}
                 rel="prev"
+                sx={{ textDecoration: "none" }}
               >
                 ← {previous.title}
               </Styled.a>
@@ -43,6 +45,7 @@ const PostFooter = ({ previous, next }) => {
                 as={Link}
                 to={rootPath.concat(next.slug.current.replace(/\/*$/, `/`))}
                 rel="next"
+                sx={{ textDecoration: "none" }}
               >
                 {next.title} →
               </Styled.a>
