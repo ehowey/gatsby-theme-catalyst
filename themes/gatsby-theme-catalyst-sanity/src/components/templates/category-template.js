@@ -13,7 +13,7 @@ const CategoryPage = ({ posts, category }) => {
       <Styled.h1>Category: {category}</Styled.h1>
       <Styled.ul>
         {posts.map((post) => (
-          <Styled.li key={post.slug}>
+          <Styled.li key={post.id}>
             <Styled.p>
               <Styled.a
                 as={Link}

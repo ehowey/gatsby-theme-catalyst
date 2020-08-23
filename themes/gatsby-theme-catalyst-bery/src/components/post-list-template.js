@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Button, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import Img from "gatsby-image"
@@ -8,15 +8,74 @@ import {
   SanityThemeProvider,
 } from "gatsby-theme-catalyst-sanity"
 import { FaRegClock } from "react-icons/fa"
+import { useState, useEffect } from "react"
+import { lightness } from "@theme-ui/color"
 
-const PostsTemplate = ({ data }) => {
-  const posts = data.allSanityPost.nodes
+const PostListTemplate = ({ data }) => {
   const {
     sanityPostPath,
     sanityPostListTitle,
     sanityDisplayPostListTitle,
   } = useSanityConfig()
+  const [mode] = useColorMode()
+  const isDark = mode === "dark"
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
+  const posts = data.allSanityPost.nodes
+
+  // Working with categories
+
+  // Create a new array with a title, slug and post count
+  const categoriesRaw = data.allSanityCategory.distinct.map((category) => {
+    let count = 0
+    posts.map((post) =>
+      post.categories.map(
+        (postCategory) => postCategory.title === category && count++
+      )
+    )
+    return {
+      title: category,
+      slug: category.toLowerCase(),
+      postCount: count,
+    }
+  })
+
+  // Sort the categories array by post count
+  const categoriesSorted = categoriesRaw.sort(
+    (a, b) => b.postCount - a.postCount
+  )
+
+  //Initialize state
+  const [visibleCategories, setVisibleCategories] = useState([])
+  const [displayedPosts, setDisplayedPosts] = useState([...posts])
+
+  // Handle button click to add and remove categories
+  const handleResults = (category) => {
+    let valueIndex = visibleCategories.indexOf(category)
+    if (valueIndex === -1) {
+      const categoryAdded = [...visibleCategories, category]
+      setVisibleCategories(categoryAdded)
+    } else {
+      const categoryRemoved = visibleCategories.filter(
+        (item) => item !== category
+      )
+      setVisibleCategories(categoryRemoved)
+    }
+  }
+
+  // Handle changing the posts displayed when the categpory changes
+  useEffect(() => {
+    if (visibleCategories.length) {
+      const filteredResult = posts.filter((post) =>
+        post.categories.some(
+          (category) =>
+            visibleCategories.indexOf(category.title.toLowerCase()) >= 0
+        )
+      )
+      setDisplayedPosts(filteredResult)
+    } else {
+      setDisplayedPosts(posts)
+    }
+  }, [visibleCategories, posts])
 
   return (
     <SanityThemeProvider>
@@ -25,8 +84,50 @@ const PostsTemplate = ({ data }) => {
         {sanityDisplayPostListTitle && (
           <Styled.h1>{sanityPostListTitle}</Styled.h1>
         )}
+        <Styled.ul
+          sx={{ listStyle: "none", display: "flex", m: 0, p: 0, mb: 3 }}
+        >
+          {categoriesSorted.map((category) => {
+            const active = visibleCategories.indexOf(category.slug) !== -1
+            return (
+              <Styled.li
+                sx={{
+                  mr: 2,
+                  ":last-of-type": {
+                    mr: 0,
+                  },
+                }}
+                key={category.slug}
+              >
+                <Button
+                  onClick={() => {
+                    handleResults(`${category.slug}`)
+                  }}
+                  sx={{
+                    px: 2,
+                    py: 0,
+                    fontSize: 1,
+                    transition: "all 0.3s ease",
+                    borderRadius: "4px",
+                    color: isDark
+                      ? active
+                        ? lightness("text", 0)
+                        : lightness("text", 1)
+                      : active
+                      ? lightness("text", 1)
+                      : lightness("text", 0),
+                    bg: active ? "secondary" : "muted",
+                    cursor: "pointer",
+                  }}
+                >
+                  {category.title} ({category.postCount})
+                </Button>
+              </Styled.li>
+            )
+          })}
+        </Styled.ul>
         <div sx={{ my: 5 }}>
-          {posts.map((post) => (
+          {displayedPosts.map((post) => (
             <article
               sx={{
                 mb: 5,
@@ -51,7 +152,12 @@ const PostsTemplate = ({ data }) => {
               <Styled.a
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
-                style={{ textDecoration: "none" }}
+                sx={{
+                  textDecoration: "none",
+                  ":hover h2, :focus h2, :active h2": {
+                    color: "secondary",
+                  },
+                }}
               >
                 <Styled.h2
                   sx={{
@@ -83,13 +189,13 @@ const PostsTemplate = ({ data }) => {
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
                 sx={{
+                  textDecoration: "none",
                   color: "primary",
                   transition: "color 0.2s ease",
                   ":hover, :focus, :active": {
                     color: "secondary",
                   },
                 }}
-                style={{ textDecoration: "none" }}
               >
                 Read More &rarr;
               </Styled.a>
@@ -101,4 +207,4 @@ const PostsTemplate = ({ data }) => {
   )
 }
 
-export default PostsTemplate
+export default PostListTemplate

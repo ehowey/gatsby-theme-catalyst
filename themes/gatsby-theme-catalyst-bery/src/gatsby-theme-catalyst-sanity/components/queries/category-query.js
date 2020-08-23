@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Category from "../templates/category-template"
+import Category from "../../../components/category-template"
 
 export default ({ data }) => {
   const { sanityCategory } = data
@@ -10,15 +10,15 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query CategoryQuery($id: String!) {
+  query BeryCategoryQuery($id: String!) {
     sanityCategory(id: { eq: $id }) {
       title
       description
       posts {
         id
-        excerpt
         title
-        date(formatString: "MMMM D, YYYY")
+        date
+        excerpt
         slug {
           current
         }
