@@ -76,8 +76,8 @@ const SiteHeader = () => {
             <Styled.a as={Link} to="/" aria-label="Home">
               <Img
                 sx={{
-                  height: ["70px", "90px", "150px", "200px", null],
-                  width: ["70px", "90px", "150px", "200px", null],
+                  height: ["70px", "120px", "150px", "200px", null],
+                  width: ["70px", "120px", "150px", "200px", null],
                   borderRadius: "9999em",
                   boxShadow: "lg",
                 }}
@@ -93,7 +93,11 @@ const SiteHeader = () => {
               }}
             >
               <Styled.a
-                sx={{ color: "text", textDecoration: "none" }}
+                sx={{
+                  color: "text",
+                  textDecoration: "none",
+                  ":hover": { color: "text" },
+                }}
                 as={Link}
                 to="/"
                 aria-label="Home"
@@ -102,7 +106,7 @@ const SiteHeader = () => {
                   sx={{
                     m: 0,
                     mt: [null, null, null, 4, null],
-                    fontSize: [3, 4, 4, null, null],
+                    fontSize: [3, 3, 4, null, null],
                   }}
                 >
                   {author.name}

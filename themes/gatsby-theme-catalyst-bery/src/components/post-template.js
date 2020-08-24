@@ -19,12 +19,6 @@ const PostTemplate = ({ data, previous, next }) => {
         <article
           sx={{
             my: 3,
-            a: {
-              textDecoration: "underline",
-              ":hover": {
-                textDecoration: "underline",
-              },
-            },
           }}
         >
           <Img

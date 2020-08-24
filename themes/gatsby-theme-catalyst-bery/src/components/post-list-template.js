@@ -84,9 +84,7 @@ const PostListTemplate = ({ data }) => {
         {sanityDisplayPostListTitle && (
           <Styled.h1>{sanityPostListTitle}</Styled.h1>
         )}
-        <Styled.ul
-          sx={{ listStyle: "none", display: "flex", m: 0, p: 0, mb: 3 }}
-        >
+        <Styled.ul sx={{ listStyle: "none", display: "flex", m: 0, p: 0 }}>
           {categoriesSorted.map((category) => {
             const active = visibleCategories.indexOf(category.slug) !== -1
             return (
@@ -168,6 +166,7 @@ const PostListTemplate = ({ data }) => {
                     transition: "color 0.2s ease",
                     ":hover, :focus, :active": {
                       color: "secondary",
+                      textDecoration: "underline",
                     },
                   }}
                 >
@@ -194,6 +193,7 @@ const PostListTemplate = ({ data }) => {
                   transition: "color 0.2s ease",
                   ":hover, :focus, :active": {
                     color: "secondary",
+                    textDecoration: "underline",
                   },
                 }}
               >
