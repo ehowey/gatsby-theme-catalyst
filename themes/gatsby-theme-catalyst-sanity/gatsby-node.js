@@ -201,8 +201,8 @@ async function createPosts(graphql, actions, reporter, themeOptions) {
     const id = post.id
     const slug = post.slug.current.replace(/\/*$/, `/`) //Ensure trailing slash
     const path = `${rootPath}${slug}`
-    const previous = index === post.length - 1 ? null : allPosts[index + 1]
-    const next = index === 0 ? null : allPosts[index - 1]
+    const next = index === post.length - 1 ? null : allPosts[index + 1]
+    const previous = index === 0 ? null : allPosts[index - 1]
     reporter.info(`Creating post: ${path}`)
     createPage({
       path,
