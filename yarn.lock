@@ -15031,10 +15031,10 @@ remark-math@^1.0.6:
   dependencies:
     trim-trailing-lines "^1.1.0"
 
-remark-math@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-2.0.1.tgz#6edc884ba3b40710c2ae31ce93cd88c9959ac8b9"
-  integrity sha512-FokDg5BmlPbKaAdD4IfSVuRgYH6FBPeIn0zxZA6oZ6epc4qOSjoSJPyhsH0H/WKABuaCVMJuF5O2STti6UmBQw==
+remark-math@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/remark-math/-/remark-math-3.0.0.tgz#a1bb496e2d67805df30d8b55ff36f69cdef8e16e"
+  integrity sha512-1ptXVKQaxexoS1pywvbtoRofKenkulyWa7trXUh2LR5NCdzmqfUlM/aA8qyke7h63BGMFXVjPNjOZmD8oWkKDg==
 
 remark-mdx@1.6.16:
   version "1.6.16"
