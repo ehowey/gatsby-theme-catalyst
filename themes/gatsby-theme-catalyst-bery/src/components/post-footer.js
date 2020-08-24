@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Flex } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { lighten } from "@theme-ui/color"
 import { Link } from "gatsby"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
