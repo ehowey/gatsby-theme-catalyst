@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-helium, catalyst-lithium v 2.1.0
+
+- Added a better default post footers
+
+## catalyst-blog v 2.5.0
+
+- Fixed order of next and previous blog posts
+
+## catalyst-sanity v3.1.0
+
+- Fixed the order of next and previous blog posts
+
 ## catalyst-sanity and catalyst-hydrogen v3.0.0
 
 - **Breaking:** Added the ability to have categories by default in SANITY based themes. This required the addition of a category entry to the GraphQL schema which will cause builds to fail when upgrading without updating your sanity schema.
