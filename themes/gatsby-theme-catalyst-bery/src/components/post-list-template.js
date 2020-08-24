@@ -84,7 +84,15 @@ const PostListTemplate = ({ data }) => {
         {sanityDisplayPostListTitle && (
           <Styled.h1>{sanityPostListTitle}</Styled.h1>
         )}
-        <Styled.ul sx={{ listStyle: "none", display: "flex", m: 0, p: 0 }}>
+        <Styled.ul
+          sx={{
+            listStyle: "none",
+            display: "flex",
+            flexWrap: "wrap",
+            m: 0,
+            p: 0,
+          }}
+        >
           {categoriesSorted.map((category) => {
             const active = visibleCategories.indexOf(category.slug) !== -1
             return (
