@@ -59,112 +59,113 @@ const SiteHeader = () => {
           ml: [0, null, null, "auto", null],
           px: 3,
           pt: 3,
-          display: "grid",
-          gridTemplateColumns: "auto 1fr",
-          gridTemplateRows: "auto",
-          gridColumnGap: 3,
         }}
       >
         <div
           sx={{
-            gridColumn: "1 / 2",
-            gridRow: ["1 / 2", null, "1 / 3", "1 / 2", null],
-            alignSelf: "center",
+            display: ["flex", null, null, "block", null],
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <Styled.a as={Link} to="/" aria-label="Home">
-            <Img
-              sx={{
-                height: ["70px", "90px", "150px", "200px", null],
-                width: ["70px", "90px", "150px", "200px", null],
-                borderRadius: "9999em",
-                boxShadow: "lg",
-              }}
-              fluid={author.image.asset.fluid}
-              alt={author.name}
-            />
-          </Styled.a>
-        </div>
-        <div
-          sx={{
-            gridColumn: ["2/ 3", null, null, "1 / 2", null],
-            gridRow: ["1/ 2", null, null, "2 / 3", null],
-            alignSelf: ["center", null, null, null, null],
-          }}
-        >
-          <Styled.a
-            sx={{ color: "text", textDecoration: "none" }}
-            as={Link}
-            to="/"
-            aria-label="Home"
-          >
-            <Styled.h2
-              sx={{
-                m: 0,
-                mt: [null, null, null, 4, null],
-                fontSize: [3, 4, 4, null, null],
-              }}
-            >
-              {author.name}
-            </Styled.h2>
-          </Styled.a>
           <div
             sx={{
-              display: "flex",
-              alignItems: "center",
-              mt: 1,
-              a: {
-                color: "header.icons",
-                mr: 2,
-                textDecoration: "none",
-                display: "grid",
-                placeItems: "center",
-              },
-
-              "a:last-of-type": {
-                mr: 0,
-              },
-              "a:hover": {
-                color: "primary",
-              },
-              button: {
-                color: "header.icons",
-                ml: 2,
-                ":hover": {
-                  color: "primary",
-                },
-              },
+              alignSelf: "center",
             }}
           >
-            <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
-              <SocialHeader />
-              {useColorMode && <ColorModeButton />}
-            </IconContext.Provider>
+            <Styled.a as={Link} to="/" aria-label="Home">
+              <Img
+                sx={{
+                  height: ["70px", "90px", "150px", "200px", null],
+                  width: ["70px", "90px", "150px", "200px", null],
+                  borderRadius: "9999em",
+                  boxShadow: "lg",
+                }}
+                fluid={author.image.asset.fluid}
+                alt={author.name}
+              />
+            </Styled.a>
           </div>
-        </div>
-        <div
-          sx={{
-            gridColumn: [null, "1 / -1", "2 / 3", "1 / -1", null],
-            gridRow: [null, "3 / 4", "2 / 3", "3 / 4", null],
-            display: ["none", "block", null, null, null],
-          }}
-        >
-          <Styled.p
-            sx={{
-              m: 0,
-              mt: 2,
-              fontSize: 1,
-            }}
-          >
-            {author.bio}
-          </Styled.p>
+          <div sx={{ ml: [3, null, null, 0, null] }}>
+            <div
+              sx={{
+                alignSelf: ["center", null, null, null, null],
+              }}
+            >
+              <Styled.a
+                sx={{ color: "text", textDecoration: "none" }}
+                as={Link}
+                to="/"
+                aria-label="Home"
+              >
+                <Styled.h2
+                  sx={{
+                    m: 0,
+                    mt: [null, null, null, 4, null],
+                    fontSize: [3, 4, 4, null, null],
+                  }}
+                >
+                  {author.name}
+                </Styled.h2>
+              </Styled.a>
+              <div
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mt: 1,
+                  a: {
+                    color: "header.icons",
+                    mr: 2,
+                    textDecoration: "none",
+                    display: "grid",
+                    placeItems: "center",
+                  },
+
+                  "a:last-of-type": {
+                    mr: 0,
+                  },
+                  "a:hover": {
+                    color: "primary",
+                  },
+                  button: {
+                    color: "header.icons",
+                    ml: 2,
+                    ":hover": {
+                      color: "primary",
+                    },
+                  },
+                }}
+              >
+                <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
+                  <SocialHeader />
+                  {useColorMode && <ColorModeButton />}
+                </IconContext.Provider>
+              </div>
+            </div>
+            <div
+              sx={{
+                display: ["none", "block", null, null, null],
+              }}
+            >
+              <Styled.p
+                sx={{
+                  m: 0,
+                  mt: 2,
+                  fontSize: 1,
+                }}
+              >
+                {author.bio}
+              </Styled.p>
+            </div>{" "}
+          </div>
         </div>
         <nav
           sx={{
-            mt: [3, null, 4, null, null],
+            mt: [4, null, null, null, null],
             display: "flex",
             gridColumn: "1 / -1",
             gridRow: "4 / 5",
+            placeContent: ["center", "start", null, null, null],
             variant: "variant.nav",
           }}
           aria-label="Primary menu"

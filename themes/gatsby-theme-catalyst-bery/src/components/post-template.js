@@ -16,7 +16,17 @@ const PostTemplate = ({ data, previous, next }) => {
     <SanityThemeProvider>
       <Layout>
         <SEO title={post.title} />
-        <article sx={{ my: 3 }}>
+        <article
+          sx={{
+            my: 3,
+            a: {
+              textDecoration: "underline",
+              ":hover": {
+                textDecoration: "underline",
+              },
+            },
+          }}
+        >
           <Img
             fluid={post.featuredImage.asset.fluid}
             sx={{
