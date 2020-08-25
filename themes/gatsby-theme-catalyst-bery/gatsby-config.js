@@ -45,6 +45,79 @@ module.exports = (themeOptions) => {
             themeOptions.sanityDisplayProjectListTitle,
         },
       },
+      {
+        resolve: `gatsby-plugin-feed`,
+        options: {
+          query: `
+            {
+              site {
+                siteMetadata {
+                  title
+                  description
+                  siteUrl
+                  site_url: siteUrl
+                }
+              }
+            }
+          `,
+          feeds: [
+            {
+              output: `/rss.xml`,
+              title: themeOptions.rssTitle || `RSS Feed`,
+              description: themeOptions.rssDescription || `A great RSS feed`,
+              query: `
+                {
+                  allSanityPost(
+                    sort: { fields: [date, title], order: DESC }
+                    limit: 1000
+                  ) {
+                    nodes {
+                      id
+                      date(formatString: "ddd, DD MMM YYYY HH:mm:ss ZZ")
+                      title
+                      slug {
+                        current
+                      }
+                      author {
+                        name
+                      }
+                      featuredImage {
+                        asset {
+                          url
+                        }
+                      }
+                      excerpt(limit: 280)
+                    }
+                  }
+                }
+              `,
+              serialize: ({
+                query: {
+                  site: {
+                    siteMetadata: { siteUrl },
+                  },
+                  allSanityPost,
+                },
+              }) => {
+                const rssFeed = allSanityPost.nodes.map((node) => {
+                  const rssImage = node.featuredImage.asset.url
+                  const serialized = {
+                    guid: `${siteUrl}${node.slug.current}`,
+                    url: `${siteUrl}${node.slug.current}`,
+                    title: node.title,
+                    author: node.author.name,
+                    description: node.excerpt,
+                    pubDate: node.date,
+                    enclosure: { url: rssImage },
+                  }
+                  return serialized
+                })
+                return rssFeed
+              },
+            },
+          ],
+        },
+      },
     ].filter(Boolean),
   }
 }
