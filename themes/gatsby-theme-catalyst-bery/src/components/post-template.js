@@ -15,7 +15,11 @@ const PostTemplate = ({ data, previous, next }) => {
   return (
     <SanityThemeProvider>
       <Layout>
-        <SEO title={post.title} />
+        <SEO
+          title={post.title}
+          image={post.featuredImage}
+          description={post.excerpt}
+        />
         <article
           sx={{
             my: 3,
@@ -41,6 +45,7 @@ const PostTemplate = ({ data, previous, next }) => {
           >
             {post.categories.map((category) => (
               <Styled.li
+                key={category.slug}
                 sx={{
                   "::after": {
                     content: `"\\2022"`,

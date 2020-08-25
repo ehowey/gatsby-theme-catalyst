@@ -13,6 +13,7 @@ export const query = graphql`
       id
       title
       date(formatString: "MMMM D, YYYY")
+      excerpt
       categories {
         title
         slug {
@@ -23,6 +24,13 @@ export const query = graphql`
       featuredImage {
         caption
         asset {
+          metadata {
+            dimensions {
+              height
+              width
+            }
+          }
+          url
           fluid(maxWidth: 1440) {
             ...GatsbySanityImageFluid
           }

@@ -15,6 +15,7 @@ const SEO = ({
   image: propImage,
   isBlogPost,
 }) => {
+  // Get site metadata
   const {
     title,
     description,
@@ -23,14 +24,24 @@ const SEO = ({
     seoImage,
     siteUrl,
   } = useSiteMetadata()
-  const { useKatex } = useCatalystConfig()
-  const location = useLocation()
+  // Title, description, keywords from site metadata or from prop
   const seoTitle = propTitle || title
   const seoDescription = propDescription || description
   const seoKeywords = propKeywords || keywords
-  const seoImg = propImage || seoImage
-  const seoImgSrc = `${seoImg.src}`
+  // Check image prop, only seek it if it exists
+  const hasPropImage = propImage !== null && propImage !== undefined
+  const seoImgSrc = hasPropImage ? propImage.asset.url : seoImage.src
+  const seoImgWidth = hasPropImage
+    ? propImage.asset.metadata.dimensions.width
+    : seoImage.width
+  const seoImgHeight = hasPropImage
+    ? propImage.asset.metadata.dimensions.height
+    : seoImage.height
+  // Check location to create canonical links
+  const location = useLocation()
   const seoCanononical = propLocation || location.pathname
+  // Check whether Katex is in use and inject the CSS for it if necessary
+  const { useKatex } = useCatalystConfig()
   return (
     <Helmet
       htmlAttributes={{
@@ -69,8 +80,8 @@ const SEO = ({
           property: `og:image:alt`,
           content: seoTitle,
         },
-        { property: `og:image:width`, content: seoImage.width },
-        { property: `og:image:height`, content: seoImage.height },
+        { property: `og:image:width`, content: seoImgWidth },
+        { property: `og:image:height`, content: seoImgHeight },
 
         // Twitter
         {
