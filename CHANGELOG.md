@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-sanity v3.2.0
+
+- Adds support for the image prop to be used in the SEO component with SANITY.io. You can see an example of this in the `post-template.js` component within `gatsby-theme-catalyst-bery`. You pass it the root image node and it will automatically seek out the proper url and sizing. E.g. if your image node was called `socialImage` you would do something like this:
+
+```jsx
+<SEO title={post.title} description={post.excerpt} image={post.socialImage} />
+```
+
 ## catalyst-helium, catalyst-lithium v 2.1.0
 
 - Added a better default post footers
