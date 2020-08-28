@@ -33,6 +33,9 @@ const PostTemplate = ({ data, previous, next }) => {
               borderRadius: "5px",
             }}
           />
+          <span sx={{ fontSize: 1, color: "textGray" }}>
+            {post.featuredImage.caption}
+          </span>
           <Styled.ul
             sx={{
               listStyle: "none",
