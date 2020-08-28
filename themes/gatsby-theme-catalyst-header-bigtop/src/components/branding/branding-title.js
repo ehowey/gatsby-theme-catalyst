@@ -1,18 +1,20 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
+import { Link } from "gatsby"
 import { useContext } from "react"
-import {
-  useSiteMetadata,
-  NavContext,
-  useCatalystConfig,
-} from "gatsby-theme-catalyst-core"
-import LinkWrapper from "./branding-link-wrapper"
+import { NavContext, HomeContext } from "gatsby-theme-catalyst-core"
+import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import { useSiteMetadata } from "gatsby-theme-catalyst-core"
+import { animateScroll as scroll } from "react-scroll"
 
 const SiteTitle = () => {
-  const { title } = useSiteMetadata()
+  // Get all necessary variables
+  const [isHome] = useContext(HomeContext)
+  const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   const { displaySiteTitle, displaySiteTitleMobile } = useCatalystConfig()
-  const [isNavOpen] = useContext(NavContext)
+  const { title } = useSiteMetadata()
 
+  // Set a value for laptop display of title
   const displayLaptop = () => {
     if (displaySiteTitle) {
       return "block"
@@ -20,6 +22,7 @@ const SiteTitle = () => {
       return "none"
     }
   }
+  // Set a value for mobile display of logo
   const displayPhone = () => {
     if (displaySiteTitleMobile) {
       return "block"
@@ -28,22 +31,61 @@ const SiteTitle = () => {
     }
   }
 
-  return (
-    <LinkWrapper>
-      <Styled.h1
-        as="span"
+  if (isHome) {
+    return (
+      <div
         sx={{
           display: [displayPhone, null, displayLaptop, null, null],
-          color: isNavOpen ? "header.textOpen" : "header.text",
-          textDecoration: "none",
-          m: 0,
-          variant: "variants.siteTitle",
+          cursor: "pointer",
         }}
+        onClick={() => {
+          setIsNavOpen(false)
+          scroll.scrollToTop()
+        }}
+        onKeyPress={() => {
+          setIsNavOpen(false)
+          scroll.scrollToTop()
+        }}
+        role="button"
+        tabIndex="0"
+        aria-label="Scroll to top"
       >
-        {title}
-      </Styled.h1>
-    </LinkWrapper>
-  )
+        <Styled.h1
+          as="span"
+          sx={{
+            display: [displayPhone, null, displayLaptop, null, null],
+            color: isNavOpen ? "header.textOpen" : "header.text",
+            textDecoration: "none",
+            m: 0,
+            variant: "variants.siteTitle",
+          }}
+        >
+          {title}
+        </Styled.h1>
+      </div>
+    )
+  } else {
+    return (
+      <Link
+        to="/"
+        onClick={() => setIsNavOpen(false)}
+        sx={{ textDecoration: "none" }}
+      >
+        <Styled.h1
+          as="span"
+          sx={{
+            display: [displayPhone, null, displayLaptop, null, null],
+            color: isNavOpen ? "header.textOpen" : "header.text",
+            textDecoration: "none",
+            m: 0,
+            variant: "variants.siteTitle",
+          }}
+        >
+          {title}
+        </Styled.h1>
+      </Link>
+    )
+  }
 }
 
 export default SiteTitle
