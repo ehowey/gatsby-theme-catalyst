@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-header-bigtop v1.0
+
+- version bump to bring this in-line with other headers as v1.0 due to stability. No breaking changes. This should have been bumped to v1.0 when `gatsby-theme-catalyst-helium` was released however I forgot to bump the version.
+
 ## catalyst-sanity v3.2.0
 
 - Adds support for the image prop to be used in the SEO component with SANITY.io. You can see an example of this in the `post-template.js` component within `gatsby-theme-catalyst-bery`. You pass it the root image node and it will automatically seek out the proper url and sizing. E.g. if your image node was called `socialImage` you would do something like this:
