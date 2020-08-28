@@ -89,6 +89,9 @@ module.exports = (themeOptions) => {
                       excerpt(limit: 280)
                     }
                   }
+                  catalystSanityConfig {
+                    sanityPostPath
+                  }
                 }
               `,
               serialize: ({
@@ -96,14 +99,21 @@ module.exports = (themeOptions) => {
                   site: {
                     siteMetadata: { siteUrl },
                   },
+                  catalystSanityConfig,
                   allSanityPost,
                 },
               }) => {
                 const rssFeed = allSanityPost.nodes.map((node) => {
                   const rssImage = node.featuredImage.asset.url
+                  const rootPath = siteUrl
+                    .concat(catalystSanityConfig.sanityPostPath)
+                    .replace(/\/*$/, `/`)
+                  const rssUrl = rootPath
+                    .concat(node.slug.current)
+                    .replace(/\/*$/, `/`)
                   const serialized = {
-                    guid: `${siteUrl}${node.slug.current}`,
-                    url: `${siteUrl}${node.slug.current}`,
+                    guid: rssUrl,
+                    url: rssUrl,
                     title: node.title,
                     author: node.author.name,
                     description: node.excerpt,
