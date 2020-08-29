@@ -26,7 +26,7 @@ const PostFooter = ({ previous, next }) => {
           >
             {previous && (
               <div>
-                <Styled.h5>&larr; Previous Post</Styled.h5>
+                <Styled.h5 as="p">&larr; Previous Post</Styled.h5>
                 <Styled.a
                   as={Link}
                   to={rootPath.concat(
@@ -51,7 +51,7 @@ const PostFooter = ({ previous, next }) => {
                   textAlign: "right",
                 }}
               >
-                <Styled.h5>Next Post &rarr;</Styled.h5>
+                <Styled.h5 as="p">Next Post &rarr;</Styled.h5>
                 <Styled.a
                   as={Link}
                   to={rootPath.concat(next.slug.current.replace(/\/*$/, `/`))}
