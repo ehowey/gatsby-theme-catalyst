@@ -59,6 +59,7 @@
     "test:hydrogen": "start-server-and-test develop:hydrogen http://localhost:8000 cy:open",
     "test:helium": "start-server-and-test develop:helium http://localhost:8000 cy:open",
     "test:lithium": "start-server-and-test develop:lithium http://localhost:8000 cy:open",
+    "test:bery": "start-server-and-test develop:bery http://localhost:8000 cy:open",
     "test:www": "start-server-and-test develop:www http://localhost:8000 cy:open",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
