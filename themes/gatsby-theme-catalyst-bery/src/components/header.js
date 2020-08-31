@@ -44,16 +44,18 @@ const SiteHeader = () => {
     <header
       sx={{
         gridArea: "header",
-        variant: "variants.header",
         display: "grid",
         width: "100%",
         alignItems: ["center", null, null, "start", null],
         justifyItems: "center",
+        variant: "variants.header",
       }}
       id="header"
     >
       <div
         sx={{
+          position: ["static", null, null, "sticky", null],
+          top: "0",
           width: "100%",
           maxWidth: ["maxContentWidth", null, null, "400px", "480px"],
           ml: [0, null, null, "auto", null],
