@@ -1,0 +1,142 @@
+<SEO
+  title="Gatsby-Theme-Catalyst-Bery"
+  description="Gatsby Theme Catalyst Bery is a complete theme built using Catalyst themes and SANITY.io as the CMS provider. It was designed for use as a personal blog. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+/>
+
+# gatsby-theme-catalyst-bery
+
+This theme is for a personal blog and demonstrates tight integration with [SANITY.io](https://www.sanity.io/) as the CMS. It comes with a preconfigured content schema for SANITY.io and demonstration data you can import for a quick start. It features SEO optimization, social image sharing, RSS feed integration, and a clean design language that focuses on content.
+
+This is also an example of "ejecting" from using a preset header themes and building your own custom header to interact with the other Catalyst themes. The header used here is completely custom for this theme, and not one of the prebuilt options available.
+
+## Demos
+
+- [gatsby-starter-catalyst-bery](https://gatsby-starter-catalyst-bery.netlify.app/)
+
+## Catalyzing Start
+
+Because this theme and starter relies on a SANITY.io backend there are a few additional steps to get up and running.
+
+### Install the theme and starter
+
+```shell
+## Install the theme and starter
+gatsby new bery https://github.com/ehowey/gatsby-starter-catalyst-bery`
+cd bery
+```
+
+### Install SANITY.io
+
+```shell
+## Initiate a new SANITY project using their CLI
+cd sanity-studio
+sanity init
+## Import the placeholder data
+cd data
+sanity dataset import production.tar.gz
+# Deploy the graphql schema
+cd ..
+sanity graphql deploy
+# Start your studio on a localhost
+sanity start
+```
+
+### Update your gatsby-config
+
+You need to update the `projectId` from SANITY.io so that the theme can properly source its data. You can find this in the file `sanity-studio/sanity.json`.
+
+Update your `gatsby-config.js`:
+
+```js
+{
+  resolve: `gatsby-theme-catalyst-bery`,
+  options: {
+    sanityProjectId: `c1x70rzt`, // Change this line
+  },
+},
+```
+
+### Run gatsby develop
+
+You can now run `gatsby develop` and your site will build correctly sourcing data from your CMS!
+
+## Theme options
+
+Bery accepts all options from the core theme and sanity theme directly, e.g. you can set `useColorMode` via `gatsby-theme-catalyst-bery` and it is passed down to the correct theme appropriately. Note that because of the custom header component and the theme design some theme options may not work as expected - e.g. the site title and avatar image are not optional as they are in some of the other themes. This theme was built with a more unified design and could be modified via component shadowing if needed.
+
+For example the following config is valid:
+
+```js
+{
+      resolve: `gatsby-theme-catalyst-bery`,
+      options: {
+        // Core theme
+        displaySiteLogo: false,
+        displaySiteLogoMobile: false,
+        footerContentLocation: "right",
+        useStickyHeader: true,
+        // Blog theme
+        excerptLength: 200,
+        // Bery theme
+        useHero: true,
+      },
+    },
+```
+
+### Bery Options
+
+| Option    | Values  | Description                                                             |
+| --------- | ------- | ----------------------------------------------------------------------- |
+| `useHero` | Boolean | Defaults to false, controls whether the hero section is enabled or not. |
+
+### Blog Theme Options
+
+| Option                 | Values  | Description                                                                                                             |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `contentPath`          | String  | Defaults to "content/posts", determines where the posts are created from.                                               |
+| `assetPath`            | String  | Defaults to "content/assets", determines where the post assets like images are located.                                 |
+| `basePath`             | String  | Defaults to "/blog", determines the page location for the post list.                                                    |
+| `excerptLength`        | String  | Defaults to "140", determines the length of the excerpt use for post summaries.                                         |
+| `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
+| `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
+| `rssTitle`             | String  | Defaults to "RSS Feed", allows you to customize the title of the RSS feed.                                              |
+
+### Core Theme Options
+
+| Option                   | Values                                    | Description                                                                                 |
+| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                   |
+| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.     |
+| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                    |
+| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint           |
+| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                              |
+| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint     |
+| `invertLogo`             | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open       |
+| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                          |
+| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                    |
+| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                       |
+| `useKatex`               | true or false                             | Defaults to false, enables gatsby-remark-katex for displaying math equations.               |
+| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                          |
+| `remarkImagesWidth`      | Integer value                             | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
+
+## Variants
+
+`gatsby-theme-catalyst-bery` includes additional [variants](/docs/theme-ui/#variants) to allow for easier customization of the theme.
+
+- `variants.postContainer`: Targets the container div for individual posts
+- `variants.postTitle`: Targets the title for individual posts
+- `variants.postSubTitle`: Targets the sub title for individual posts
+- `variants.postMeta`: Targets the meta for individual posts
+- `variants.postImage`: Targets the image for individual posts
+- `variants.postCategory`: Targets the categories for individual posts
+- `variants.postListPageTitle`: Targets the page title for post lists
+- `variants.postListContainer`: Targets the container div for the post list
+- `variants.postListWrapper`: Targets the wrapper div for individual posts within the post list
+- `variants.postListImage`: Targets the image for individual posts within the post list
+- `variants.postListContent`: Targets the container div for content of an individual posts within the post list, e.g. Title, sub title, etc.
+- `variants.postListTitle`: Targets the title for individual posts within the post list
+- `variants.postListSubTitle`: Targets the sub title for individual posts within the post list
+- `variants.postListMeta`: Targets the meta for individual posts within the post list
+- `variants.postListExcerpt`: Targets the excerpt for individual posts within the post list
+- `variants.postListReadmore`: Targets the read more link for individual posts within the post list
+- `variants.postListCategory`: Targets the categories for the post list
