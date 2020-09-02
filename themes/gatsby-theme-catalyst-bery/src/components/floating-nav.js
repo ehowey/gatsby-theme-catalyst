@@ -4,25 +4,34 @@ import { jsx, useColorMode as useThemeUIColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import { useSiteMetadata, NavContext } from "gatsby-theme-catalyst-core"
 import { lightness, alpha } from "@theme-ui/color"
-import { useContext } from "react"
+import { useContext, Fragment } from "react"
+import { motion } from "framer-motion"
+import { useThemeUI } from "theme-ui"
 
 const FloatingNav = () => {
   const [mode] = useThemeUIColorMode()
+  const { theme } = useThemeUI()
   const isDark = mode === "dark"
   const { menuLinks } = useSiteMetadata()
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   return (
-    <div
-      sx={{
-        zIndex: "80",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        bg: alpha("background", 0.85),
-      }}
-    >
+    <Fragment>
+      <motion.div
+        animate={{
+          backgroundColor: theme.colors.background,
+          opacity: 0.85,
+        }}
+        transition={{ duration: 0.3 }}
+        sx={{
+          zIndex: "80",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          opacity: 0,
+        }}
+      />
       <nav
         sx={{
           display: ["block", "none", null, null, null],
@@ -85,7 +94,7 @@ const FloatingNav = () => {
           ))}
         </ul>
       </nav>
-    </div>
+    </Fragment>
   )
 }
 
