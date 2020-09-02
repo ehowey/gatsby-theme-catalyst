@@ -7,7 +7,8 @@
     "gatsby-plugin-feed": "^2.5.11",
     "gatsby-theme-catalyst-core": "^2.0.3",
     "gatsby-theme-catalyst-footer": "^1.1.7",
-    "gatsby-theme-catalyst-sanity": "^3.2.0"
+    "gatsby-theme-catalyst-sanity": "^3.2.0",
+    "react-transition-group": "^4.4.1"
   },
   "peerDependencies": {
     "gatsby": "^2.24.4",
