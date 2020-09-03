@@ -42,7 +42,7 @@ const FloatingActionButton = () => {
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   return (
     <button
-      aria-label="Toggle Navigation Menu"
+      aria-label="Toggle Menu"
       onClick={() => setIsNavOpen(!isNavOpen)}
       sx={{
         display: ["block", "none", null, null, null],
