@@ -35,9 +35,9 @@ const FloatingNav = () => {
         sx={{
           display: ["block", "none", null, null, null],
           position: "fixed",
-          bottom: "32px",
-          right: "32px",
-          pb: "64px",
+          bottom: "24px",
+          right: "24px",
+          pb: "74px",
           borderRadius: "4px",
           zIndex: "90",
         }}
