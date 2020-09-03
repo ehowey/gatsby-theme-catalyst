@@ -22,7 +22,8 @@ const PostTemplate = ({ data, previous, next }) => {
         />
         <article
           sx={{
-            my: 3,
+            mt: 4,
+            mb: 3,
           }}
         >
           <Img
