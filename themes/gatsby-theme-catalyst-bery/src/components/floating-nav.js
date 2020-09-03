@@ -3,7 +3,7 @@
 import { jsx, useColorMode as useThemeUIColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import { useSiteMetadata, NavContext } from "gatsby-theme-catalyst-core"
-import { lightness, alpha } from "@theme-ui/color"
+import { lightness } from "@theme-ui/color"
 import { useContext, Fragment } from "react"
 import { motion } from "framer-motion"
 import { useThemeUI } from "theme-ui"
@@ -21,7 +21,6 @@ const FloatingNav = () => {
           backgroundColor: theme.colors.background,
           opacity: 0.85,
         }}
-        transition={{ duration: 0.3 }}
         sx={{
           zIndex: "80",
           position: "fixed",
@@ -56,29 +55,38 @@ const FloatingNav = () => {
           }}
         >
           {menuLinks.map((link) => (
-            <li
+            <motion.li
+              initial={{ y: "100%" }}
+              animate={{
+                y: 0,
+              }}
               sx={{
                 cursor: "pointer",
                 mb: 3,
                 a: {
                   py: 2,
                   px: 2,
-                  color: "text",
+                  color: isDark ? lightness("text", 0) : lightness("text", 1),
                   bg: "primary",
                   borderRadius: "4px",
                   textDecoration: "none",
                   letterSpacing: "1px",
+                  fontSize: 3,
                   zIndex: 2,
                   transition: "all 0.3s ease",
                   ":hover, :focus, :active": {
-                    color: isDark ? lightness("text", 0) : lightness("text", 1),
+                    backgroundColor: isDark
+                      ? lightness("primary", 0.7)
+                      : lightness("primary", 0.2),
                   },
                 },
                 ":last-of-type": {
                   mb: 0,
                 },
                 ".active": {
-                  // color: isDark ? lightness("text", 0) : lightness("text", 1),
+                  backgroundColor: isDark
+                    ? lightness("primary", 0.7)
+                    : lightness("primary", 0.2),
                 },
               }}
               key={link.name}
@@ -90,7 +98,7 @@ const FloatingNav = () => {
               >
                 {link.name}
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </nav>
