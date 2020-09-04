@@ -167,6 +167,11 @@ module.exports = {
             link: `/docs/gatsby-theme-catalyst-lithium`,
             type: `internal`,
           },
+          {
+            name: `gatsby-theme-catalyst-bery`,
+            link: `/docs/gatsby-theme-catalyst-bery`,
+            type: `internal`,
+          },
         ],
       },
       {
