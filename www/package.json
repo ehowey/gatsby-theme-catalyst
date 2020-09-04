@@ -1,7 +1,7 @@
 {
   "name": "gatsby-catalyst-docs",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Core, Gatsby-Theme-Catalyst-header-top, Gatsby-Theme-Catalyst-footer",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
