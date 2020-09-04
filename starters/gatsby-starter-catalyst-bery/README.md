@@ -1,6 +1,8 @@
 # Gatsby Starter Catalyst
 
-Basic starter that could be used as a barebones starting point for building a finished website. Implements `gatsby-theme-catalyst-core`, `gatsby-theme-catalyst-header-top`, and `gatsby-theme-catalyst-footer`.
+This theme is for a personal blog and demonstrates tight integration with [SANITY.io](https://www.sanity.io/) as the CMS and Gatsby as the frontend. It comes with a preconfigured content schema for SANITY.io and demonstration data you can import for a quick start. It features SEO optimization, social image sharing, RSS feed integration, and a clean design language that focuses on your content.
+
+This is also an example of "ejecting" from using a preset header themes and building your own custom header to interact with the other Catalyst themes. The header used here is completely custom for this theme, and not one of the prebuilt options available.
 
 ## Documentation
 
