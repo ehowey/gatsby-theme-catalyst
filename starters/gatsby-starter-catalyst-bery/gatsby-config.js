@@ -29,6 +29,8 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-bery`,
       options: {
         sanityProjectId: `4w5ygwpy`, // Required
+        rssTitle: "My Great Blog",
+        rssDescription: "A little description of who I am and why I am great.",
         // Defaults
         // sanityPostPath: `/posts`,
         // footerContentLocation: "center",

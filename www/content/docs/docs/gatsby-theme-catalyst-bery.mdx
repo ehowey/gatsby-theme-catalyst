@@ -1,11 +1,11 @@
 <SEO
   title="Gatsby-Theme-Catalyst-Bery"
-  description="Gatsby Theme Catalyst Bery is a complete theme built using Catalyst themes and SANITY.io as the CMS provider. It was designed for use as a personal blog. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
+  description="Gatsby Theme Catalyst Bery is a complete theme built using Catalyst themes and SANITY.io as the CMS provider. It was designed for use as a personal blog and features RSS support, social images and more. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
 />
 
 # gatsby-theme-catalyst-bery
 
-This theme is for a personal blog and demonstrates tight integration with [SANITY.io](https://www.sanity.io/) as the CMS. It comes with a preconfigured content schema for SANITY.io and demonstration data you can import for a quick start. It features SEO optimization, social image sharing, RSS feed integration, and a clean design language that focuses on content.
+This theme is for a personal blog and demonstrates tight integration with [SANITY.io](https://www.sanity.io/) as the CMS and Gatsby as the frontend. It comes with a preconfigured content schema for SANITY.io and demonstration data you can import for a quick start. It features SEO optimization, social image sharing, RSS feed integration, and a clean design language that focuses on your content.
 
 This is also an example of "ejecting" from using a preset header themes and building your own custom header to interact with the other Catalyst themes. The header used here is completely custom for this theme, and not one of the prebuilt options available.
 
@@ -58,11 +58,11 @@ Update your `gatsby-config.js`:
 
 ### Run gatsby develop
 
-You can now run `gatsby develop` and your site will build correctly sourcing data from your CMS!
+You can now run `gatsby develop` and your site will build correctly sourcing data from SANITY.io!
 
 ## Theme options
 
-Bery accepts all options from the core theme and sanity theme directly, e.g. you can set `useColorMode` via `gatsby-theme-catalyst-bery` and it is passed down to the correct theme appropriately. Note that because of the custom header component and the theme design some theme options may not work as expected - e.g. the site title and avatar image are not optional as they are in some of the other themes. This theme was built with a more unified design and could be modified via component shadowing if needed.
+Bery accepts all options from the core theme and sanity theme directly, e.g. you can set `useColorMode` via `gatsby-theme-catalyst-bery` and it is passed down to the correct theme appropriately. Note that because of the custom header component and the theme design some theme options may not work as expected - e.g. the site title and avatar image are not optional as they hardcoded into the custom header. This theme was built with a more singluar design and could be modified via component shadowing if needed.
 
 For example the following config is valid:
 
@@ -70,38 +70,44 @@ For example the following config is valid:
 {
       resolve: `gatsby-theme-catalyst-bery`,
       options: {
-        // Core theme
-        displaySiteLogo: false,
-        displaySiteLogoMobile: false,
-        footerContentLocation: "right",
-        useStickyHeader: true,
-        // Blog theme
-        excerptLength: 200,
-        // Bery theme
-        useHero: true,
+        sanityProjectId: `4w5ygwpy`, // Required
+        rssTitle: "My Great Blog",
+        rssDescription: "A little description of who I am and why I am great.",
+        // Defaults
+        // sanityPostPath: `/posts`,
+        // footerContentLocation: "center",
+        // sanityPostListTitle: "Blog",
+        // sanityPostListPath: `/`,
       },
     },
 ```
 
 ### Bery Options
 
-| Option    | Values  | Description                                                             |
-| --------- | ------- | ----------------------------------------------------------------------- |
-| `useHero` | Boolean | Defaults to false, controls whether the hero section is enabled or not. |
+| Option           | Values | Description                      |
+| ---------------- | ------ | -------------------------------- |
+| `rssTitle`       | String | Set the RSS title for your feed. |
+| `rssDescription` | String | Set the RSS title for your feed. |
 
-### Blog Theme Options
+### Sanity Theme Options
 
-| Option                 | Values  | Description                                                                                                             |
-| ---------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `contentPath`          | String  | Defaults to "content/posts", determines where the posts are created from.                                               |
-| `assetPath`            | String  | Defaults to "content/assets", determines where the post assets like images are located.                                 |
-| `basePath`             | String  | Defaults to "/blog", determines the page location for the post list.                                                    |
-| `excerptLength`        | String  | Defaults to "140", determines the length of the excerpt use for post summaries.                                         |
-| `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
-| `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
-| `rssTitle`             | String  | Defaults to "RSS Feed", allows you to customize the title of the RSS feed.                                              |
+| Option                 | Values  | Description                                                                           |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------- |
+| sanityProjectId        | String  | Required, Sanity project ID                                                           |
+| sanityDataset          | String  | Defaults to "production", change to reflect the dataset name you are using in Sanity  |
+| sanityToken            | String  | Defaults to null, should only be used with env variables for security purposes.       |
+| sanityWatchMode        | Boolean | Defaults to true, toggle for watch mode                                               |
+| sanityOverlayDrafts    | Boolean | Defaults to false, toggle for live previews, a token and private dataset is required. |
+| sanityCreatePages      | Boolean | Defaults to true, toggle to turn on/off page generation from SANITY.io.               |
+| sanityCreatePosts      | Boolean | Defaults to true, toggle to turn on/off blog post page generation from SANITY.io.     |
+| sanityCreateCategories | Boolean | Defaults to true, toggle to turn on/off category page generation from SANITY.io.      |
+| sanityCreatePostsList  | Boolean | Defaults to true, toggle to turn on/off blog post list generation from SANITY.io.     |
+| sanityPostPath         | String  | Defaults to "/posts", is the path for before posts, e.g. site.com/posts/post-1.       |
+| sanityPostListPath     | String  | Defaults to "/posts", is the path for the posts list, e.g. site.com/posts/.           |
 
 ### Core Theme Options
+
+_Note that many of these options will not work with catalyst-bery but are still accessible in the theme options config. This is because the theme is more custom and has a unified design._
 
 | Option                   | Values                                    | Description                                                                                 |
 | ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -121,22 +127,4 @@ For example the following config is valid:
 
 ## Variants
 
-`gatsby-theme-catalyst-bery` includes additional [variants](/docs/theme-ui/#variants) to allow for easier customization of the theme.
-
-- `variants.postContainer`: Targets the container div for individual posts
-- `variants.postTitle`: Targets the title for individual posts
-- `variants.postSubTitle`: Targets the sub title for individual posts
-- `variants.postMeta`: Targets the meta for individual posts
-- `variants.postImage`: Targets the image for individual posts
-- `variants.postCategory`: Targets the categories for individual posts
-- `variants.postListPageTitle`: Targets the page title for post lists
-- `variants.postListContainer`: Targets the container div for the post list
-- `variants.postListWrapper`: Targets the wrapper div for individual posts within the post list
-- `variants.postListImage`: Targets the image for individual posts within the post list
-- `variants.postListContent`: Targets the container div for content of an individual posts within the post list, e.g. Title, sub title, etc.
-- `variants.postListTitle`: Targets the title for individual posts within the post list
-- `variants.postListSubTitle`: Targets the sub title for individual posts within the post list
-- `variants.postListMeta`: Targets the meta for individual posts within the post list
-- `variants.postListExcerpt`: Targets the excerpt for individual posts within the post list
-- `variants.postListReadmore`: Targets the read more link for individual posts within the post list
-- `variants.postListCategory`: Targets the categories for the post list
+To implement in a future release.
