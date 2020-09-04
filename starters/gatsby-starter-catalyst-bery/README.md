@@ -25,8 +25,13 @@ cd bery
 ```shell
 ## Initiate a new SANITY project using their CLI
 cd sanity-studio
+sanity install
+## Setup a new SANITY.io dataset
+## Choose Yes to reconfigure the SANITY project
+## Chose Yes to use the default dataset configuration
 sanity init
 ## Import the placeholder data
+## Import to the "production" dataset
 cd data
 sanity dataset import production.tar.gz
 # Deploy the graphql schema
