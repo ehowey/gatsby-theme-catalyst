@@ -22,7 +22,7 @@ const PostTemplate = ({ data, previous, next }) => {
         />
         <article
           sx={{
-            mt: 4,
+            mt: [5, 4, null, 3, null],
             mb: 3,
           }}
         >
