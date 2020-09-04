@@ -22,7 +22,7 @@ export default {
     {
       name: "bio",
       title: "Short Bio",
-      type: "text",
+      type: "headerBioContent",
       rows: 3,
       description:
         "Suggested characters of between 80 - 200, imagine a Twitter bio length.",

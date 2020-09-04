@@ -8,6 +8,7 @@ import {
   ColorModeButton,
   useCatalystConfig,
 } from "gatsby-theme-catalyst-core"
+import { SanityContent } from "gatsby-theme-catalyst-sanity"
 import { IconContext } from "react-icons"
 import Nav from "./nav"
 
@@ -18,7 +19,7 @@ const SiteHeader = () => {
     {
       sanitySiteHeader {
         name
-        bio
+        _rawBio
         image {
           asset {
             fluid(maxWidth: 1080) {
@@ -137,18 +138,16 @@ const SiteHeader = () => {
             </IconContext.Provider>
           </div>
         </div>
-        <Styled.p
+        <div
           sx={{
             gridColumn: ["1 / -1", "2 / 3", null, null, null],
             gridRow: ["2 / 3", "2 / 3", null, null, null],
-            m: 0,
-            mt: 2,
             fontSize: 1,
             lineHeight: "snug",
           }}
         >
-          {author.bio}
-        </Styled.p>
+          <SanityContent data={author._rawBio} />
+        </div>
         <Nav />
       </div>
     </header>
