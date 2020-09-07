@@ -2522,11 +2522,6 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@pauliescanlon/gatsby-mdx-embed@^0.0.28":
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/@pauliescanlon/gatsby-mdx-embed/-/gatsby-mdx-embed-0.0.28.tgz#c7d9f3696c205f0f81b08f65e1f1ac84348afd32"
-  integrity sha512-3UzRnnpv5NKkbNlvrrREVC6wIJpNBDWByBCmSob/GYh718TEBskX7Y5VZuRJte3yweODEA1iOUCBpyTz8zVsSA==
-
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
@@ -8410,6 +8405,11 @@ gatsby-plugin-manifest@^2.4.23:
     semver "^7.3.2"
     sharp "^0.25.1"
 
+gatsby-plugin-mdx-embed@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx-embed/-/gatsby-plugin-mdx-embed-0.0.10.tgz#aa650f9cf9166b92ab663b4fc6bbb7e85dd4d246"
+  integrity sha512-OejD7uxwk61fyRs6bcpk5pTa37pruvY8ofhb84vshQtGgKp9aXAmRj/R8ARfJ5w3DZqhbRwudsNzBCLeucfP6g==
+
 gatsby-plugin-mdx@^1.2.34:
   version "1.2.34"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.2.34.tgz#ad470d66cc488c9f77436f9b7dbc309d5437fb40"
@@ -12003,6 +12003,11 @@ mdurl@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
+
+mdx-embed@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/mdx-embed/-/mdx-embed-0.0.10.tgz#417212dbfe901c0823b1988766438007a8258953"
+  integrity sha512-YbaoJv8Del2vzlP8P2xb6YyJMXQiUwDhvyfJF92IfDd5dY6rFqhVjJetzRnvAF5/0MXgSvKVfwOKgQUxaVBGVg==
 
 meant@^1.0.1:
   version "1.0.2"

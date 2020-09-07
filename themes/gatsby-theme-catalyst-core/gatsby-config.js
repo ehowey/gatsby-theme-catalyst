@@ -113,7 +113,7 @@ module.exports = (themeOptions) => {
           ],
         },
       },
-      `@pauliescanlon/gatsby-mdx-embed`,
+      `gatsby-plugin-mdx-embed`,
       `gatsby-plugin-sitemap`,
       `gatsby-plugin-robots-txt`,
       `gatsby-plugin-react-helmet`,
