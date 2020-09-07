@@ -72,12 +72,14 @@ export default {
     select: {
       title: "title",
       date: "date",
+      featuredImage: "featuredImage",
     },
     prepare(selection) {
-      const { title, date } = selection
+      const { title, date, featuredImage } = selection
       return {
         title: title,
         subtitle: format(date, "MMMM D, YYYY"), // YYYY-MM-DD --> YYYY
+        media: featuredImage,
       }
     },
   },

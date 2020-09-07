@@ -44,7 +44,7 @@ export default merge(BaseTheme, {
         background: baseColors.gray[9],
         text: baseColors.gray[1],
         textGray: "#9f9f9f",
-        primary: "#28b49e",
+        primary: "#2abca5",
         secondary: "#7c82ca",
         link: "#28b49e",
         accent: baseColors.gray[8],
