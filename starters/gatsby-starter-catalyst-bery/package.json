@@ -1,13 +1,13 @@
 {
   "name": "gatsby-starter-catalyst-bery",
   "description": "Gatsby Starter for gatsby-theme-catalyst-bery",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "fontsource-sen": "^3.0.3",
     "gatsby": "^2.24.4",
-    "gatsby-theme-catalyst-bery": "^0.5.1",
+    "gatsby-theme-catalyst-bery": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
