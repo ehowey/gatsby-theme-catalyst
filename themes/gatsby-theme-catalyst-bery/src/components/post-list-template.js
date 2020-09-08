@@ -151,7 +151,7 @@ const PostListTemplate = ({ data }) => {
                   fluid={post.featuredImage.asset.fluid}
                   alt={post.title}
                   sx={{
-                    height: "250px",
+                    height: ["200px", "250px", null, null, null],
                     borderRadius: "5px",
                   }}
                 />
