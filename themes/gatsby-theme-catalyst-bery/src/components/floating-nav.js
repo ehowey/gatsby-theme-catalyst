@@ -17,6 +17,7 @@ const FloatingNav = () => {
   return (
     <Fragment>
       <motion.div
+        onClick={() => setIsNavOpen(!isNavOpen)}
         animate={{
           backgroundColor: theme.colors.background,
           opacity: 0.85,
