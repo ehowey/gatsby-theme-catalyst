@@ -6,7 +6,6 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
-    "@pauliescanlon/gatsby-mdx-embed": "^0.0.28",
     "@reach/skip-nav": "^0.11.2",
     "@theme-ui/color": "^0.3.1",
     "@theme-ui/match-media": "^0.3.1",
@@ -18,6 +17,7 @@
     "gatsby-plugin-feed": "^2.5.11",
     "gatsby-plugin-manifest": "^2.4.28",
     "gatsby-plugin-mdx": "^1.2.39",
+    "gatsby-plugin-mdx-embed": "^0.0.13",
     "gatsby-plugin-offline": "^3.2.27",
     "gatsby-plugin-page-creator": "^2.3.27",
     "gatsby-plugin-react-helmet": "^3.3.10",
@@ -38,6 +38,7 @@
     "gatsby-transformer-sharp": "^2.5.14",
     "gatsby-transformer-yaml": "^2.4.11",
     "katex": "^0.12.0",
+    "mdx-embed": "^0.0.13",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
