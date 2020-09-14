@@ -25,11 +25,6 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   })
 }
 
-// Setup for gatsby-remark-relative-images
-exports.onCreateNode = ({ node }) => {
-  fmImagesToRelative(node)
-}
-
 //Schema generation for Catalust Config
 
 exports.createSchemaCustomization = ({ actions }) => {
