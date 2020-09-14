@@ -2522,10 +2522,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@pauliescanlon/gatsby-mdx-embed@^0.0.28":
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/@pauliescanlon/gatsby-mdx-embed/-/gatsby-mdx-embed-0.0.28.tgz#c7d9f3696c205f0f81b08f65e1f1ac84348afd32"
-  integrity sha512-3UzRnnpv5NKkbNlvrrREVC6wIJpNBDWByBCmSob/GYh718TEBskX7Y5VZuRJte3yweODEA1iOUCBpyTz8zVsSA==
+"@pauliescanlon/gatsby-mdx-embed@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@pauliescanlon/gatsby-mdx-embed/-/gatsby-mdx-embed-0.0.29.tgz#faccd4c8aac066066789af93308e6c9025c3511f"
+  integrity sha512-6qGim24J1pha6ZyjIVI7oH+66hQ5QRwTASKR8aEPnEY+X0FHzlMpzseah1jUktdGBLAtEzYeZtTLytswU77Uxg==
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
