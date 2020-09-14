@@ -1,5 +1,4 @@
 const { createContentDigest } = require(`gatsby-core-utils`)
-const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
