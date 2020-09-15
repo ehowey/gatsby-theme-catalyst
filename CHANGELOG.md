@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-core v2.2.0
+
+- Moved the schema customization from the starters to the core theme, requires gatsby ^2.24.58
+- Removed `gatsby-node.js` from all of the starters
+- Minor package bumps across all packages due to the new required min version of gatsby
+
 ## catalyst-header-bigtop v1.0
 
 - version bump to bring this in-line with other headers as v1.0 due to stability. No breaking changes. This should have been bumped to v1.0 when `gatsby-theme-catalyst-helium` was released however I forgot to bump the version.
