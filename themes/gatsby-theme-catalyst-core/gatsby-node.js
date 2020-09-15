@@ -24,11 +24,48 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   })
 }
 
-//Schema generation for Catalust Config
+//Schema generation for Catalyst Config and Submenu
 
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  createTypes(`type CatalystConfig implements Node {
+  const { createTypes, createFieldExtension } = actions
+  // Create a default empty array
+  createFieldExtension({
+    name: `defaultSubMenu`,
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          if (source[info.fieldName] == null) {
+            return []
+          }
+          return source[info.fieldName]
+        },
+      }
+    },
+  })
+  
+  // Type defination for the submenu to ensure there is always a submenu array to query
+  const subMenuTypeDefs = `
+    type Site implements Node @infer {
+      siteMetadata: SiteMetadata
+    }
+    type SiteMetadata {
+      menuLinks: [MenuLinks]
+    }
+    type MenuLinks {
+      name: String!
+      link: String!
+      type: String!
+      subMenu: [SubMenu] @defaultSubMenu
+    }
+    type SubMenu {
+      name: String
+      link: String
+      type: String
+    }
+  `
+  // Type definition for Catalyst Config
+  const catalystConfigTypeDef = `
+  type CatalystConfig implements Node {
     contentPath: String!
     assetPath: String!
     displaySiteLogo: Boolean!
@@ -42,7 +79,25 @@ exports.createSchemaCustomization = ({ actions }) => {
     useColorMode: Boolean!
     footerContentLocation: String!
     useKatex: Boolean!
-  }`)
+  }
+  `
+  createTypes(subMenuTypeDefs)
+  createTypes(catalystConfigTypeDef)
+  // createTypes(`type CatalystConfig implements Node {
+  //   contentPath: String!
+  //   assetPath: String!
+  //   displaySiteLogo: Boolean!
+  //   displaySiteTitle: Boolean!
+  //   displaySiteLogoMobile: Boolean!
+  //   displaySiteTitleMobile: Boolean!
+  //   invertSiteLogo: Boolean!
+  //   mobileMenuBreakpoint: String!
+  //   useStickyHeader: Boolean!
+  //   useSocialLinks: Boolean!
+  //   useColorMode: Boolean!
+  //   footerContentLocation: String!
+  //   useKatex: Boolean!
+  // }`)
 }
 
 exports.sourceNodes = (
