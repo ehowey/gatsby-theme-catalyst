@@ -12,9 +12,7 @@ module.exports = (themeOptions) => {
   const gatsbyRemarkPlugins = [
     {
       resolve: `gatsby-remark-relative-images`,
-      options: {
-        name: `images`,
-      },
+      options: {},
     },
     {
       resolve: `gatsby-remark-images`,
