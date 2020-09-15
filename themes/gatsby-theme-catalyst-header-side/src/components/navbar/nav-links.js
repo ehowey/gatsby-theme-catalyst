@@ -16,43 +16,44 @@ const NavLinksDefault = () => {
 
   return (
     <NavUL>
-      {menuLinks.map((link) => (
-        <NavLI
-          key={link.name}
-          hasSubmenu={link.subMenu && link.subMenu.length > 0 ? true : false}
-        >
-          {link.type === "internal" && (
-            <Fragment>
-              <NavMenuLink
-                link={link.link}
-                hasSubmenu={
-                  link.subMenu && link.subMenu.length > 0 ? true : false
-                }
-              >
+      {menuLinks.map((link) => {
+        const hasSubmenu = link.subMenu && link.subMenu.length > 0
+
+        return (
+          <NavLI key={link.name} hasSubmenu={hasSubmenu ? true : false}>
+            {link.type === "internal" && (
+              <Fragment>
+                <NavMenuLink
+                  link={link.link}
+                  hasSubmenu={hasSubmenu ? true : false}
+                >
+                  {link.name}
+                </NavMenuLink>
+                {hasSubmenu ? (
+                  <NavUlDropdown>
+                    {link.subMenu.map((subLink) => (
+                      <NavLiDropdown key={subLink.name}>
+                        <NavMenuLink link={subLink.link}>
+                          {subLink.name}
+                        </NavMenuLink>
+                      </NavLiDropdown>
+                    ))}
+                  </NavUlDropdown>
+                ) : null}
+              </Fragment>
+            )}
+            {isHome && link.type === "anchor" ? (
+              <NavMenuAnchorLink link={link.link}>
                 {link.name}
-              </NavMenuLink>
-              {link.subMenu && link.subMenu.length > 0 ? (
-                <NavUlDropdown>
-                  {link.subMenu.map((subLink) => (
-                    <NavLiDropdown key={subLink.name}>
-                      <NavMenuLink link={subLink.link}>
-                        {subLink.name}
-                      </NavMenuLink>
-                    </NavLiDropdown>
-                  ))}
-                </NavUlDropdown>
-              ) : null}
-            </Fragment>
-          )}
-          {isHome && link.type === "anchor" ? (
-            <NavMenuAnchorLink link={link.link}>{link.name}</NavMenuAnchorLink>
-          ) : (
-            link.type === "anchor" && (
-              <NavMenuLink link={"/" + link.link}>{link.name}</NavMenuLink>
-            )
-          )}
-        </NavLI>
-      ))}
+              </NavMenuAnchorLink>
+            ) : (
+              link.type === "anchor" && (
+                <NavMenuLink link={"/" + link.link}>{link.name}</NavMenuLink>
+              )
+            )}
+          </NavLI>
+        )
+      })}
     </NavUL>
   )
 }
