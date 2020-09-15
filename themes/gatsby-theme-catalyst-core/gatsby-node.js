@@ -1,5 +1,4 @@
 const { createContentDigest } = require(`gatsby-core-utils`)
-const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
@@ -23,11 +22,6 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
       mkdirp.sync(dir)
     }
   })
-}
-
-// Setup for gatsby-remark-relative-images
-exports.onCreateNode = ({ node }) => {
-  fmImagesToRelative(node)
 }
 
 //Schema generation for Catalust Config
