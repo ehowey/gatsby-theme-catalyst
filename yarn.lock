@@ -8318,12 +8318,12 @@ gatsby-core-utils@^1.3.19:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-cypress@^0.4.10:
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.4.10.tgz#49e66d7e77d57f2f2aa591c0025031fe54fb3eba"
-  integrity sha512-pV6tJFIPsq6T5swgUb24MwkD9ILtjyetF9+fWPvxZB5Lu4dCprddKS2Kt1WNeLRE63wVRx0ZBW1UbO3nIQQVFQ==
+gatsby-cypress@^0.4.11:
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.4.11.tgz#0e3ce764f8dcd4c921ad0efde4d34aaaf95a0864"
+  integrity sha512-AT0DW0MJatVmcCYBxm3T74o4C62vbnKcqXuGBpZQBVwMKGf8ZmiJePDghKRUUuA3RWB2BXAJO3KygfJ/iKgCjw==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.11.2"
 
 gatsby-design-tokens@^2.0.2:
   version "2.0.11"
