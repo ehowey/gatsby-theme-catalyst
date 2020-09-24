@@ -4,7 +4,7 @@
   "version": "2.2.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.16",
+    "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.16",
     "@reach/skip-nav": "^0.11.2",
     "@theme-ui/color": "^0.3.1",
