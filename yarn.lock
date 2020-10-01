@@ -8838,12 +8838,12 @@ gatsby-transformer-sharp@^2.5.14:
     semver "^7.3.2"
     sharp "^0.25.4"
 
-gatsby-transformer-yaml@^2.4.11:
-  version "2.4.11"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-2.4.11.tgz#9dbf1a20096934826e743e56d4c9eb29e949b907"
-  integrity sha512-ysnT7N+sPV8eXqVavc2cFlqRxL0pJL5sG136Pu47xafGKBXpmmAcNJEpydNvqXPznXJk8YBM9cAdoqFL864low==
+gatsby-transformer-yaml@^2.4.13:
+  version "2.4.13"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-2.4.13.tgz#791e8bed84b91161af5ac2b1368855fd68830158"
+  integrity sha512-j8VErPNSdNyEuH9XUOwZ4m+bAEA1U6eULUZ6IrHfrusmbBi62etfYncJozL0F5XqrxkTWjsS3vw9ZwoOvH3wJg==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.11.2"
     js-yaml "^3.14.0"
     lodash "^4.17.20"
     unist-util-select "^1.5.0"
