@@ -5,7 +5,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "framer-motion": "^2.6.5",
-    "gatsby-plugin-feed": "^2.5.11",
+    "gatsby-plugin-feed": "^2.5.13",
     "gatsby-theme-catalyst-core": "^2.2.1",
     "gatsby-theme-catalyst-footer": "^1.2.2",
     "gatsby-theme-catalyst-sanity": "^3.3.2"
