@@ -10,7 +10,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-rough-notation": "^0.1.1",
-    "typeface-quando": "^0.0.72"
+    "typeface-quando": "^1.1.13"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
