@@ -14,6 +14,7 @@ const SEO = ({
   title: propTitle,
   image: propImage,
   isBlogPost,
+  children,
 }) => {
   const {
     title,
@@ -121,6 +122,7 @@ const SEO = ({
           crossorigin="anonymous"
         />
       )}
+      {children}
     </Helmet>
   )
 }
