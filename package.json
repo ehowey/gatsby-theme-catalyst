@@ -13,7 +13,7 @@
     "cypress-axe": "^0.8.1",
     "gatsby-cypress": "^0.4.12",
     "lerna": "^3.22.1",
-    "start-server-and-test": "^1.11.3"
+    "start-server-and-test": "^1.11.5"
   },
   "scripts": {
     "develop:core": "yarn workspace gatsby-starter-catalyst-core develop",
