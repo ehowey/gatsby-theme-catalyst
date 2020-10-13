@@ -20,7 +20,7 @@
     "gatsby-plugin-mdx-embed": "^0.0.13",
     "gatsby-plugin-offline": "^3.2.30",
     "gatsby-plugin-page-creator": "^2.3.27",
-    "gatsby-plugin-react-helmet": "^3.3.13",
+    "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sharp": "^2.6.38",
     "gatsby-plugin-sitemap": "^2.4.14",
