@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Fragment, useContext } from "react"
-import NavUL from "./nav-ul"
 import NavLI from "./nav-li"
 import NavUlDropdown from "./nav-ul-submenu"
 import NavLiDropdown from "./nav-li-submenu"
