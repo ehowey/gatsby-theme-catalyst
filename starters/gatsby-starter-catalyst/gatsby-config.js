@@ -16,16 +16,19 @@ module.exports = {
         name: `Page 1`,
         link: `/page-1`,
         type: `internal`, //internal or anchor
+        location: `right`,
       },
       {
         name: `Anchor 1`,
         link: `#anchor-1`,
         type: `anchor`, //internal or anchor
+        location: `right`,
       },
       {
         name: `Page 2`,
         link: `/page-2`,
         type: `internal`, //internal or anchor
+        location: `right`,
         subMenu: [
           {
             name: `Sub 1`,
