@@ -7,6 +7,14 @@
 
 This reviews any breaking changes. You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/CHANGELOG.md) on GitHub for more detailed list of non-breaking changes.
 
+## catalyst-sanity v4.0.0, catalyst-bery v2.0.0, catalyst-hydrogen v.4.0.0
+
+- **BREAKING CHANGE:** In order to support split links properly in the header components I needed to update the schema coming from your SANITY studio. Unfortunately this means you also need to update your schema and re-deploy the graphQL schema.
+
+- Copy and paste `sanity-studio/schema/menuLinks.js` from any current SANITY based starter into your existing studio. Update the location field in your studio for the menu links. The default behaviour is to have the links on the right but now it supports handling them on the left as well.
+
+- Redeploy the graphql schema with the command `sanity graphql deploy`
+
 ## catalyst-sanity v3.0.0 and catalyst-hydrogen v3.0.0
 
 - There was a breaking change in order to enable to support for categories in SANITY based blogs. This required adding a schema for blog categories which needs to be included in older installations of these themes, even if you are not using a blog.

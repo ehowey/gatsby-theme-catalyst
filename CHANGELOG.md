@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-sanity v4.0.0, catalyst-bery v2.0.0, catalyst-hydrogen v.4.0.0
+
+- **BREAKING CHANGE:** In order to support split links properly in the header components I needed to update the schema coming from your SANITY studio. Unfortunately this means you also need to update your schema and re-deploy the graphQL schema.
+
+- Copy and paste `sanity-studio/schema/menuLinks.js` from any current SANITY based starter into your existing studio. Update the location field in your studio for the menu links. The default behaviour is to have the links on the right but now it supports handling them on the left as well.
+
+- Redeploy the graphql schema with the command `sanity graphql deploy`
+
+## catalyst-core v2.3.0 and catalyst-header-top v1.4.0
+
+- Adds support for split links with a fallback for displaying the links in their default location on the right. This is a non-breaking change for MDX based themes. Detail above about breaking change for SANITY based themes.
+- You can now add a `location: "left"` or `location: "right"` key value pair in the menuLinks array within `gatsby-config.js` to specify the location of the menu links. Take a look at `gatsby-starter-catalyst` for an example.
+
 ## catalyst-core v2.2.0
 
 - Moved the schema customization from the starters to the core theme, requires gatsby ^2.24.58
