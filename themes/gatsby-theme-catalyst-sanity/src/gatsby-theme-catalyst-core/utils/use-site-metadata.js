@@ -38,6 +38,7 @@ export const useSiteMetadata = () => {
             link
             name
             type
+            location
             subMenu {
               link
               name

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Fragment, useContext } from "react"
-import NavUL from "./nav-ul"
 import NavLI from "./nav-li"
 import NavUlDropdown from "./nav-ul-submenu"
 import NavLiDropdown from "./nav-li-submenu"
@@ -14,10 +13,19 @@ import { HomeContext } from "gatsby-theme-catalyst-core"
 
 const NavLinksDefault = () => {
   const { menuLinks } = useSiteMetadata()
+  const rightLinks = menuLinks.filter((link) => link.location !== "left")
+  console.log(rightLinks)
   const [isHome] = useContext(HomeContext)
   return (
-    <NavUL>
-      {menuLinks.map((link) => {
+    <div
+      sx={{
+        display: "flex",
+        flexDirection: ["column", null, "row", null, null],
+        flexWrap: "wrap",
+        textAlign: ["center", null, "left", null, null],
+      }}
+    >
+      {rightLinks.map((link) => {
         const hasSubmenu = link.subMenu && link.subMenu.length > 0
         return (
           <NavLI key={link.name} hasSubmenu={hasSubmenu ? true : false}>
@@ -54,7 +62,7 @@ const NavLinksDefault = () => {
           </NavLI>
         )
       })}
-    </NavUL>
+    </div>
   )
 }
 

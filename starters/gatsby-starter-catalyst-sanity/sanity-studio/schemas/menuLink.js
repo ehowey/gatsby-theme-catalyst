@@ -23,6 +23,21 @@ export default {
         }),
     },
     {
+      title: "Link location",
+      name: "location",
+      type: "string",
+      description:
+        "Affects the visual location of the links for the top menu bar only. Allows for a 'split' link design. Does not affect some themes.",
+      options: {
+        list: [
+          { title: "Left", value: "left" },
+          { title: "Right", value: "right" },
+        ], // <-- predefined values
+        layout: "radio", // <-- defaults to 'dropdown'
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "Link type",
       name: "type",
       type: "string",

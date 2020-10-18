@@ -23,6 +23,20 @@ export default {
         }),
     },
     {
+      title: "Link location",
+      name: "location",
+      type: "string",
+      description:
+        "Does not apply to this theme, used in other themes and cannot be removed.",
+      options: {
+        list: [
+          { title: "Left", value: "left" },
+          { title: "Right", value: "right" },
+        ], // <-- predefined values
+        layout: "radio", // <-- defaults to 'dropdown'
+      },
+    },
+    {
       title: "Link type",
       name: "type",
       type: "string",

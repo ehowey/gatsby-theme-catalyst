@@ -30,6 +30,7 @@ export const useSiteMetadata = () => {
               name
               link
               type
+              location
               subMenu {
                 link
                 name
@@ -51,8 +52,8 @@ export const useSiteMetadata = () => {
   const seoImage = data.seoImage.childImageSharp.resize
   const metaData = data.site.siteMetadata
   const twitterLink = data.site.siteMetadata.socialLinks
-    .filter(social => social.name.toLowerCase() === "twitter")
-    .map(social => {
+    .filter((social) => social.name.toLowerCase() === "twitter")
+    .map((social) => {
       return social.link
     })
   const twitterUsername = twitterLink.length

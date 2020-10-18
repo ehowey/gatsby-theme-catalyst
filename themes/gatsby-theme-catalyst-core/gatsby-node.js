@@ -42,7 +42,21 @@ exports.createSchemaCustomization = ({ actions }) => {
       }
     },
   })
-  
+
+  createFieldExtension({
+    name: `defaultRightLocation`,
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          if (source[info.fieldName] == null) {
+            return "right"
+          }
+          return source[info.fieldName]
+        },
+      }
+    },
+  })
+
   // Type defination for the submenu to ensure there is always a submenu array to query
   const subMenuTypeDefs = `
     type Site implements Node @infer {
@@ -55,6 +69,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String!
       link: String!
       type: String!
+      location: String! @defaultRightLocation
       subMenu: [SubMenu] @defaultSubMenu
     }
     type SubMenu {
