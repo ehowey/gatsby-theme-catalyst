@@ -7,6 +7,12 @@ module.exports = {
     siteUrl: `https://gatsby-starter-catalyst.netlify.app`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
       {
+        name: `Left Link`,
+        link: `/page-1`,
+        type: `internal`, //internal or anchor
+        location: `left`,
+      },
+      {
         name: `Page 1`,
         link: `/page-1`,
         type: `internal`, //internal or anchor

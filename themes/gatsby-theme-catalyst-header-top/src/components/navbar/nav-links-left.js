@@ -14,10 +14,17 @@ import { HomeContext } from "gatsby-theme-catalyst-core"
 
 const NavLinksDefault = () => {
   const { menuLinks } = useSiteMetadata()
+  const leftLinks = menuLinks.filter((link) => link.location === "left")
   const [isHome] = useContext(HomeContext)
   return (
-    <NavUL>
-      {menuLinks.map((link) => {
+    <div
+      sx={{
+        display: "flex",
+        flexDirection: ["column", null, "row", null, null],
+        flexWrap: "wrap",
+      }}
+    >
+      {leftLinks.map((link) => {
         const hasSubmenu = link.subMenu && link.subMenu.length > 0
         return (
           <NavLI key={link.name} hasSubmenu={hasSubmenu ? true : false}>
@@ -54,7 +61,7 @@ const NavLinksDefault = () => {
           </NavLI>
         )
       })}
-    </NavUL>
+    </div>
   )
 }
 
