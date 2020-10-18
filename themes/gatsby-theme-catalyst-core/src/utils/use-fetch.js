@@ -17,6 +17,6 @@ export const useFetch = (url, options) => {
       }
     }
     fetchData()
-  }, [])
+  }, []) //eslint-disable-line
   return { response, error, isLoading }
 }
