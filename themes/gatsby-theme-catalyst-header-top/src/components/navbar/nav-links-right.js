@@ -14,7 +14,6 @@ import { HomeContext } from "gatsby-theme-catalyst-core"
 const NavLinksDefault = () => {
   const { menuLinks } = useSiteMetadata()
   const rightLinks = menuLinks.filter((link) => link.location !== "left")
-  console.log(rightLinks)
   const [isHome] = useContext(HomeContext)
   return (
     <div
