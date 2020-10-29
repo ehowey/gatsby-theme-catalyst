@@ -16,7 +16,7 @@
     "gatsby-plugin-catch-links": "^2.3.15",
     "gatsby-plugin-feed": "^2.5.14",
     "gatsby-plugin-manifest": "^2.4.33",
-    "gatsby-plugin-mdx": "^1.2.46",
+    "gatsby-plugin-mdx": "^1.2.52",
     "gatsby-plugin-mdx-embed": "^0.0.13",
     "gatsby-plugin-offline": "^3.2.30",
     "gatsby-plugin-page-creator": "^2.3.27",

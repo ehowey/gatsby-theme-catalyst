@@ -8417,10 +8417,10 @@ gatsby-plugin-mdx-embed@^0.0.13:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx-embed/-/gatsby-plugin-mdx-embed-0.0.13.tgz#723779dba46095c1c0b51bee93b02d90faeb0a97"
   integrity sha512-cYlZ0MBfCmalnmmfRMxf4HU+llb76VI9QggUoYgp3mzgCoRIYylj+3FE/JSBVbuqrHo/mrAwhcq5ags2bry8tQ==
 
-gatsby-plugin-mdx@^1.2.46:
-  version "1.2.46"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.2.46.tgz#01b30e44e6b0fafa5461b04c20a58966a1d57188"
-  integrity sha512-2qy7usScn6dk2oIyVL2vb81t/hTtTQdAX4caBBjyMMOjx9XBEBnmEpNUpwv0IIvT34gXcYwDnL+X8iyYjzbkpg==
+gatsby-plugin-mdx@^1.2.52:
+  version "1.2.52"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.2.52.tgz#b41788a4c5fffb168b79de49b5fd7cdc8efaab92"
+  integrity sha512-F4fuKzfnwvYO/6A7dxpYEoOEk0daE7+EAeYeD1s/LH5XmO/1ENTBqq7WWpDYXy+j/W17TcyUKUczspH5P1B+VQ==
   dependencies:
     "@babel/core" "^7.11.6"
     "@babel/generator" "^7.11.6"
