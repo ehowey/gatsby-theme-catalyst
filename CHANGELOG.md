@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-header-top v1.5.0
+
+- Adds support for a clickable dropdown button, requires this button variant in your theme-ui file, which is included by default with `catalyst-core` v2.3.1
+
+```js
+buttons: {
+  dropdown: {
+    backgroundColor: "header.background",
+    text: "header.text",
+    fontWeight: "bold",
+    py: 2,
+    px: 1,
+    ":hover, :focus, :active": {
+      textDecoration: "underline",
+      textDecorationThickness: "0.125em",
+      color: "primary",
+    },
+  },
+},
+```
+
 ## catalyst-sanity v4.0.0, catalyst-bery v2.0.0, catalyst-hydrogen v.4.0.0
 
 - **BREAKING CHANGE:** In order to support split links properly in the header components I needed to update the schema coming from your SANITY studio. Unfortunately this means you also need to update your schema and re-deploy the graphQL schema.
