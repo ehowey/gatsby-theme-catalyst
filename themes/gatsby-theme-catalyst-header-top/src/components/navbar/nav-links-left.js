@@ -1,25 +1,27 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Fragment, useContext } from "react"
+import { Fragment, useContext, useState } from "react"
 import NavLI from "./nav-li"
 import NavUlDropdown from "./nav-ul-submenu"
 import NavLiDropdown from "./nav-li-submenu"
-import NavMenuLink from "./nav-links-gatsbylink"
+import GatsbyLink from "./nav-links-gatsbylink"
 import NavMenuAnchorLink from "./nav-links-anchorlink"
-import { useSiteMetadata } from "gatsby-theme-catalyst-core"
-import { HomeContext } from "gatsby-theme-catalyst-core"
+import DropdownButton from "./nav-links-dropdown-button"
+import { useSiteMetadata, HomeContext } from "gatsby-theme-catalyst-core"
 
 // This component has a lot going on. It is handling the mapping of the menu items, optionally using anchor links, and optionally showing a dropdown menu. It is broken into smaller components for readability here but could be condensed into one mega component if you wanted.
 
-const NavLinksDefault = () => {
+const NavLinksRight = () => {
   const { menuLinks } = useSiteMetadata()
   const leftLinks = menuLinks.filter((link) => link.location === "left")
+  const [activeDropdown, setActiveDropdown] = useState(null)
   const [isHome] = useContext(HomeContext)
   return (
     <div
       sx={{
         display: "flex",
         flexDirection: ["column", null, "row", null, null],
+        alignItems: "center",
         flexWrap: "wrap",
       }}
     >
@@ -29,23 +31,39 @@ const NavLinksDefault = () => {
           <NavLI key={link.name} hasSubmenu={hasSubmenu ? true : false}>
             {link.type === "internal" && (
               <Fragment>
-                <NavMenuLink
-                  link={link.link}
-                  hasSubmenu={hasSubmenu ? true : false}
-                >
-                  {link.name}
-                </NavMenuLink>
                 {hasSubmenu ? (
-                  <NavUlDropdown>
-                    {link.subMenu.map((subLink) => (
-                      <NavLiDropdown key={subLink.name}>
-                        <NavMenuLink link={subLink.link}>
-                          {subLink.name}
-                        </NavMenuLink>
-                      </NavLiDropdown>
-                    ))}
-                  </NavUlDropdown>
-                ) : null}
+                  <Fragment>
+                    <DropdownButton
+                      link={link.link}
+                      activeDropdown={activeDropdown}
+                      setActiveDropdown={setActiveDropdown}
+                    >
+                      {link.name}
+                    </DropdownButton>
+                    {activeDropdown === link.link && (
+                      <NavUlDropdown
+                        setActiveDropdown={setActiveDropdown}
+                        activeDropdown={activeDropdown}
+                        link={link.link}
+                      >
+                        {link.subMenu.map((subLink) => (
+                          <NavLiDropdown key={subLink.name}>
+                            <GatsbyLink link={subLink.link}>
+                              {subLink.name}
+                            </GatsbyLink>
+                          </NavLiDropdown>
+                        ))}
+                      </NavUlDropdown>
+                    )}
+                  </Fragment>
+                ) : (
+                  <GatsbyLink
+                    link={link.link}
+                    hasSubmenu={hasSubmenu ? true : false}
+                  >
+                    {link.name}
+                  </GatsbyLink>
+                )}
               </Fragment>
             )}
             {isHome && link.type === "anchor" ? (
@@ -54,7 +72,7 @@ const NavLinksDefault = () => {
               </NavMenuAnchorLink>
             ) : (
               link.type === "anchor" && (
-                <NavMenuLink link={"/" + link.link}>{link.name}</NavMenuLink>
+                <GatsbyLink link={"/" + link.link}>{link.name}</GatsbyLink>
               )
             )}
           </NavLI>
@@ -64,4 +82,4 @@ const NavLinksDefault = () => {
   )
 }
 
-export default NavLinksDefault
+export default NavLinksRight

@@ -3,9 +3,8 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { MdKeyboardArrowDown } from "react-icons/md"
 
-const NavMenuLinkInternal = ({ link, hasSubmenu, children }) => {
+const NavMenuLinkInternal = ({ link, children }) => {
   const [isNavOpen, setIsNavOpen] = useContext(NavContext) // eslint-disable-line
 
   return (
@@ -13,10 +12,8 @@ const NavMenuLinkInternal = ({ link, hasSubmenu, children }) => {
       to={link}
       activeClassName="active"
       onClick={() => setIsNavOpen(false)}
-      aria-haspopup={hasSubmenu}
     >
       {children}
-      {hasSubmenu && <MdKeyboardArrowDown sx={{ mb: -1 }} />}
     </Link>
   )
 }

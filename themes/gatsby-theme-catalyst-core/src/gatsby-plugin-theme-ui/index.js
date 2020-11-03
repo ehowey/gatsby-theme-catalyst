@@ -169,5 +169,19 @@ export default {
       padding: 2,
     },
   },
+  buttons: {
+    dropdown: {
+      backgroundColor: "header.background",
+      text: "header.text",
+      fontWeight: "bold",
+      py: 2,
+      px: 1,
+      ":hover, :focus, :active": {
+        textDecoration: "underline",
+        textDecorationThickness: "0.125em",
+        color: "primary",
+      },
+    },
+  },
   variants: {},
 }

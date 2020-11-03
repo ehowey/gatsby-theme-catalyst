@@ -11,10 +11,11 @@ const NavLi = ({ children, hasSubmenu }) => {
         my: [2, null, 0, null, null],
         mr: [0, null, 3, null, null],
         cursor: "pointer",
-        ":hover > ul, :focus-within > ul": {
-          visibility: "visible",
-          opacity: "1",
-          display: "block",
+        ".active": {
+          textDecoration: "underline",
+          textDecorationThickness: "0.125em",
+          color: "primary",
+          variant: "variants.navLinkActive",
         },
         a: {
           position: "relative",
@@ -30,19 +31,9 @@ const NavLi = ({ children, hasSubmenu }) => {
             textDecorationThickness: "0.125em",
             color: "primary",
           },
-          ":hover > ul": {
-            visibility: "visible",
-            opacity: "1",
-            display: "block",
-          },
           variant: "variants.navLink",
         },
-        ".active": {
-          textDecoration: "underline",
-          textDecorationThickness: "0.125em",
-          color: "primary",
-          variant: "variants.navLinkActive",
-        },
+
         variant: "variants.navLi",
       }}
     >
