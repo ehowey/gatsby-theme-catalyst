@@ -171,6 +171,7 @@ export default {
   },
   buttons: {
     dropdown: {
+      cursor: "pointer",
       backgroundColor: "header.background",
       text: "header.text",
       fontWeight: "bold",
