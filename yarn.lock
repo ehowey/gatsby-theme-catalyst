@@ -8290,10 +8290,10 @@ gatsby-cli@^2.12.96:
     yargs "^15.3.1"
     yurnalist "^1.1.2"
 
-gatsby-core-utils@^1.3.19, gatsby-core-utils@^1.3.22, gatsby-core-utils@^1.3.23:
-  version "1.3.23"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.23.tgz#5d99e86178b2aa3561f58fde4fdffbebecb0dd0c"
-  integrity sha512-H6n6dDeRZ22HAJaBUIt5YjB/BSaE8Jq+kayMUv/YzL1RL2yFZ5lqcLwIL1OE2vWk1mQjMUBZCRxLODU0q1i3bQ==
+gatsby-core-utils@^1.3.19, gatsby-core-utils@^1.3.22, gatsby-core-utils@^1.3.23, gatsby-core-utils@^1.3.24:
+  version "1.3.24"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.24.tgz#4da8dd3000c25f946bfd6020ee2773f5577a7583"
+  integrity sha512-SlK7rJv/8NBYC8FodYvTINamBHadXNSv//a2uRwh44N1GSSujuCMvtUcpEuAdg9BUQHc54NbbmFuoqf8p85kgA==
   dependencies:
     ci-info "2.0.0"
     configstore "^5.0.1"
@@ -8739,20 +8739,19 @@ gatsby-remark-smartypants@^2.3.13:
     retext-smartypants "^3.0.3"
     unist-util-visit "^1.4.1"
 
-gatsby-source-filesystem@^2.3.32:
-  version "2.3.32"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.32.tgz#a343dbb1562a3b812e4ba8149854428143c95a74"
-  integrity sha512-BzXxz27dNg9fcWbF8abKr9bfZ7ODdd7PeoldmDU+E900iBva/erMS+Ul8pUP4O0npzkaM3z0NWS5t9KAMqRhfg==
+gatsby-source-filesystem@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.4.1.tgz#46e284542c2244ae2a13dcc9d912ef3550dedd64"
+  integrity sha512-JDFgK+873XebNvZreEhDzgRlkZ6jEXuS4A+TuJT3EPfTZ3h15YMGnldR2AWhAWYDFX9i2RfFPDuAo8xYzuFY1Q==
   dependencies:
     "@babel/runtime" "^7.11.2"
     better-queue "^3.8.10"
-    bluebird "^3.7.2"
     chokidar "^3.4.2"
     file-type "^12.4.2"
     fs-extra "^8.1.0"
-    gatsby-core-utils "^1.3.22"
+    gatsby-core-utils "^1.3.24"
     got "^9.6.0"
-    md5-file "^3.2.3"
+    md5-file "^5.0.0"
     mime "^2.4.6"
     pretty-bytes "^5.4.1"
     progress "^2.0.3"
@@ -11957,6 +11956,11 @@ md5-file@^3.2.3:
   integrity sha512-3Tkp1piAHaworfcCgH0jKbTvj1jWWFgbvh2cXaNCgHwyTCBxxvD1Y04rmfpvdPm1P4oXMOpm6+2H7sr7v9v8Fw==
   dependencies:
     buffer-alloc "^1.1.0"
+
+md5-file@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/md5-file/-/md5-file-5.0.0.tgz#e519f631feca9c39e7f9ea1780b63c4745012e20"
+  integrity sha512-xbEFXCYVWrSx/gEKS1VPlg84h/4L20znVIulKw6kMfmBUAZNAnF00eczz9ICMl+/hjQGo5KSXRxbL/47X3rmMw==
 
 md5.js@^1.3.4:
   version "1.3.5"
