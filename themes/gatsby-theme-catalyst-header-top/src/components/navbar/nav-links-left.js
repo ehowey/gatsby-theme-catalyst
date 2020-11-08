@@ -18,12 +18,12 @@ const NavLinksLeft = () => {
   const [isHome] = useContext(HomeContext)
   return (
     <div
-      className="catalyst-nav-left"
       sx={{
         display: "flex",
         flexDirection: ["column", null, "row", null, null],
         alignItems: "center",
         flexWrap: "wrap",
+        variant: "variants.navLeft",
       }}
     >
       {leftLinks.map((link) => {
