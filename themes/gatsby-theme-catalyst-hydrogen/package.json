@@ -1,12 +1,12 @@
 {
   "name": "gatsby-theme-catalyst-hydrogen",
   "description": "Gatsby theme for a writer's portfolio website. SANITY.io as the CMS.",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby-theme-catalyst-core": "^2.3.2",
     "gatsby-theme-catalyst-footer": "^1.2.2",
-    "gatsby-theme-catalyst-header-top": "^1.5.1",
+    "gatsby-theme-catalyst-header-top": "^1.5.2",
     "gatsby-theme-catalyst-sanity": "^4.0.0"
   },
   "peerDependencies": {
