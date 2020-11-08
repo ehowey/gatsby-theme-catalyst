@@ -23,7 +23,7 @@ const NavLinksLeft = () => {
         flexDirection: ["column", null, "row", null, null],
         alignItems: "center",
         flexWrap: "wrap",
-        variant: "variants.navLeft",
+        variant: "variants.navLinksLeft",
       }}
     >
       {leftLinks.map((link) => {
