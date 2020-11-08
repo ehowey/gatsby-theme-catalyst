@@ -11,13 +11,14 @@ import { useSiteMetadata, HomeContext } from "gatsby-theme-catalyst-core"
 
 // This component has a lot going on. It is handling the mapping of the menu items, optionally using anchor links, and optionally showing a dropdown menu. It is broken into smaller components for readability here but could be condensed into one mega component if you wanted.
 
-const NavLinksRight = () => {
+const NavLinksLeft = () => {
   const { menuLinks } = useSiteMetadata()
   const leftLinks = menuLinks.filter((link) => link.location === "left")
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [isHome] = useContext(HomeContext)
   return (
     <div
+      className="catalyst-nav-left"
       sx={{
         display: "flex",
         flexDirection: ["column", null, "row", null, null],
@@ -82,4 +83,4 @@ const NavLinksRight = () => {
   )
 }
 
-export default NavLinksRight
+export default NavLinksLeft

@@ -18,6 +18,7 @@ const NavLinksRight = () => {
   const [isHome] = useContext(HomeContext)
   return (
     <div
+      className="catalyst-nav-right"
       sx={{
         display: "flex",
         flexDirection: ["column", null, "row", null, null],
