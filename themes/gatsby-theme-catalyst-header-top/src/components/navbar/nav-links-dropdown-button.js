@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { MdExpandMore, MdExpandLess } from "react-icons/md"
 
-const NavMenuLinkInternal = ({
+const NavLinkDropDown = ({
   link,
   children,
   activeDropdown,
@@ -28,12 +28,11 @@ const NavMenuLinkInternal = ({
       onClick={handleClick}
       aria-haspopup="true"
       sx={{
-        backgroundColor: isNavOpen
-          ? "header.backgroundOpen"
-          : "header.background",
+        backgroundColor: "transparent",
         textDecoration: isActive ? "underline" : "none",
         textDecorationThickness: "0.125em",
         color: isActive ? "primary" : "header.text",
+        variant: "variants.navLinksDropdown",
       }}
     >
       {children}
@@ -46,4 +45,4 @@ const NavMenuLinkInternal = ({
   )
 }
 
-export default NavMenuLinkInternal
+export default NavLinkDropDown
