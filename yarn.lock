@@ -14779,10 +14779,10 @@ react-remove-scroll@^2.3.0:
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
 
-react-rough-notation@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-rough-notation/-/react-rough-notation-0.1.1.tgz#bf2022f580655e079552f414f8403a60c3dd708c"
-  integrity sha512-Otu5j+anE9R90IaS4UoloPIy9841V51u0CMI+6xG5yZEWYmPHYHVPS5B50iFHIuOPgPDUqA2fVKNvglb4WKLHw==
+react-rough-notation@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-rough-notation/-/react-rough-notation-1.0.0.tgz#f5d9869e5cf1aa0c2d1824f7e8fd87ec6443efe6"
+  integrity sha512-hVEtwyQq7s+m45kXYq16esttphBC5ovdj4toySl6bfWG/MzwIyWAgtTdtV/ObMIjYx8gMkyho7TJLsH720FbTQ==
   dependencies:
     rough-notation "^0.4.0"
 
