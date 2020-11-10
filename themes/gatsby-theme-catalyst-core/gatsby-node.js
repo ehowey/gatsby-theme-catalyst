@@ -58,12 +58,13 @@ exports.createSchemaCustomization = ({ actions }) => {
   })
 
   // Type defination for the submenu to ensure there is always a submenu array to query
-  const subMenuTypeDefs = `
+  const siteMetadataTypeDefs = `
     type Site implements Node @infer {
       siteMetadata: SiteMetadata
     }
     type SiteMetadata {
       menuLinks: [MenuLinks]
+      socialLinks: [SocialLinks]
     }
     type MenuLinks {
       name: String!
@@ -76,6 +77,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
       link: String
       type: String
+    }
+    type SocialLinks {
+      name: String
+      link: String
+      location: String
     }
   `
   // Type definition for Catalyst Config
@@ -96,23 +102,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     useKatex: Boolean!
   }
   `
-  createTypes(subMenuTypeDefs)
+  createTypes(siteMetadataTypeDefs)
   createTypes(catalystConfigTypeDef)
-  // createTypes(`type CatalystConfig implements Node {
-  //   contentPath: String!
-  //   assetPath: String!
-  //   displaySiteLogo: Boolean!
-  //   displaySiteTitle: Boolean!
-  //   displaySiteLogoMobile: Boolean!
-  //   displaySiteTitleMobile: Boolean!
-  //   invertSiteLogo: Boolean!
-  //   mobileMenuBreakpoint: String!
-  //   useStickyHeader: Boolean!
-  //   useSocialLinks: Boolean!
-  //   useColorMode: Boolean!
-  //   footerContentLocation: String!
-  //   useKatex: Boolean!
-  // }`)
 }
 
 exports.sourceNodes = (
