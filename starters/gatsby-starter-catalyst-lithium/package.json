@@ -9,11 +9,11 @@
     "gatsby-theme-catalyst-lithium": "^2.3.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-rough-notation": "^0.1.1",
-    "typeface-quando": "^0.0.72"
+    "react-rough-notation": "^1.0.0",
+    "typeface-quando": "^1.1.13"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.1.2"
   },
   "keywords": [
     "gatsby",
