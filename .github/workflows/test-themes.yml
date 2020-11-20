@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build:basic
           start: yarn serve:basic
@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build:blog
           start: yarn serve:blog
@@ -47,7 +47,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build:sanity
           start: yarn serve:sanity
@@ -59,7 +59,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build:hydrogen
           start: yarn serve:hydrogen
@@ -71,7 +71,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build:helium
           start: yarn serve:helium
@@ -83,7 +83,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build:lithium
           start: yarn serve:lithium
@@ -95,7 +95,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build:bery
           start: yarn serve:bery
