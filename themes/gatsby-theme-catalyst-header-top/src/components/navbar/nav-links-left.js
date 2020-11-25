@@ -17,8 +17,11 @@ const NavLinksLeft = () => {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [isHome] = useContext(HomeContext)
   return (
-    <div
+    <ul
       sx={{
+        listStyle: "none",
+        m: 0,
+        p: 0,
         display: "flex",
         flexDirection: ["column", null, "row", null, null],
         alignItems: "center",
@@ -79,7 +82,7 @@ const NavLinksLeft = () => {
           </NavLI>
         )
       })}
-    </div>
+    </ul>
   )
 }
 
