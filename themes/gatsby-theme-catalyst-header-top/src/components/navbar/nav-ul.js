@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 
 const NavUl = ({ children }) => {
   return (
-    <ul
+    <div
       sx={{
         width: "100%",
         display: "flex",
@@ -11,14 +11,11 @@ const NavUl = ({ children }) => {
         justifyContent: [null, null, "space-between", null, null],
         flexWrap: "wrap",
         textAlign: ["center", null, "left", null, null],
-        listStyle: "none",
-        m: 0,
-        p: 0,
         variant: "variants.navUl",
       }}
     >
       {children}
-    </ul>
+    </div>
   )
 }
 
