@@ -8678,10 +8678,10 @@ gatsby-remark-smartypants@^2.5.0:
     retext-smartypants "^3.0.3"
     unist-util-visit "^1.4.1"
 
-gatsby-source-filesystem@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.6.0.tgz#f681bbb231d785e085546a961135e0971b0a8ed9"
-  integrity sha512-SvA/1eaVxCeZd1QIvuWOUjcX4QtMEQkVOuLd0K2WfMjtgCcRu9Y6R5UT+Fbk7G2Cx9SlwxclYS4Y/b0uRUphpg==
+gatsby-source-filesystem@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.6.1.tgz#28529fadbcbdd61a4257c8561200bfc1a8d5556c"
+  integrity sha512-XQvQewST3uH8bDjyLMv5srqc0Hh1eIzVkPLMXpcWoszlUX/MSCdY8+boZjLAx8YK0O65MLCr66sV9qFDBldjAw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     better-queue "^3.8.10"
