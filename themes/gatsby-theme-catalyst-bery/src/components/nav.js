@@ -15,7 +15,7 @@ const Nav = () => {
         display: ["none", "block", null, null, null],
         gridColumn: "1 / -1",
         mt: 4,
-        variant: "variant.nav",
+        variant: "variants.nav",
       }}
       aria-label="Primary menu"
     >
