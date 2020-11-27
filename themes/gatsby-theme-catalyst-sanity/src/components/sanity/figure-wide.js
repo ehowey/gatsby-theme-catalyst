@@ -33,6 +33,7 @@ export default ({ node }) => {
           right: "50%",
           marginLeft: ["-50vw", null, null, "-42.5vw", "-40vw"],
           marginRight: ["-50vw", null, null, "-42.5vw", "-40vw"],
+          variant: "variants.sanityFigureWide",
         }}
         fluid={fluidProps}
         alt={node.alt}

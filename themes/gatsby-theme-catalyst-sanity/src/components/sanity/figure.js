@@ -27,6 +27,7 @@ export default ({ node }) => {
       <Img
         sx={{
           minHeight: ["300px", "auto", null, null, null],
+          variant: "variants.sanityFigure",
         }}
         fluid={fluidProps}
         alt={node.alt}
