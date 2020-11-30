@@ -37,6 +37,7 @@ const SiteMobileButton = () => {
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
   return (
     <button
+      aria-haspopup={true}
       aria-label="Toggle Menu"
       onClick={() => setIsNavOpen(!isNavOpen)}
       sx={{
