@@ -7,6 +7,10 @@
 
 This reviews any breaking changes. You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/CHANGELOG.md) on GitHub for more detailed list of non-breaking changes.
 
+## catalyst-core v3.0.0 and other packages with a major bump
+
+- **BREAKING CHANGE:** Removed [gatsby-plugin-offline](https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/) from the core theme as there are more considerations and impacts from service workers than should be included in the core theme. This plugin has a lot of power and I would suggest using it on most Gatsby sites but want to leave this as an optional addition versus a forced inclusion in the core theme. If you want to include `gatsby-plugin-offline` in your site you would just add it to your main `gatsby-config.js` file following the instructions at the link above.
+
 ## catalyst-sanity v4.0.0, catalyst-bery v2.0.0, catalyst-hydrogen v.4.0.0
 
 - **BREAKING CHANGE:** In order to support split links properly in the header components I needed to update the schema coming from your SANITY studio. Unfortunately this means you also need to update your schema and re-deploy the graphQL schema.
