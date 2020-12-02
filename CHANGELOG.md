@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-core v3.0.0
+
+- **Breaking Change**: Removed [gatsby-plugin-offline](https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/) from the core theme as there are more considerations and impacts from service workers than should be included in the core theme. This plugin has a lot of power and I would suggest using it on most Gatsby sites but want to leave this as an optional addition versus a forced inclusion in the core theme. If you want to include this in your site you would just add it to your main `gatsby-config.js` file.
+
 ## catalyst-header-top v1.5.0
 
 - Adds support for a clickable dropdown button, requires this button variant in your theme-ui file, which is included by default with `catalyst-core` v2.3.1
