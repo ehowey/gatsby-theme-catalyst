@@ -7990,6 +7990,11 @@ follow-redirects@^1.0.0, follow-redirects@^1.10.0, follow-redirects@^1.2.4:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
+fontsource-quando@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/fontsource-quando/-/fontsource-quando-3.1.5.tgz#fe7983fa854bbe689cf1ac0cd9427f2e7ace3b4a"
+  integrity sha512-V3FWhF0qCSaiTwBql0uelgX+/mHaM/4ZM4m487F108J+60GNPCCXkztPPmq1BdW5lv0ClG/9q9ZqSubTJ8B5+w==
+
 fontsource-sen@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/fontsource-sen/-/fontsource-sen-3.0.3.tgz#3abc6711c207e094a286725de4d4de444e574469"
@@ -17260,11 +17265,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-quando@^1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/typeface-quando/-/typeface-quando-1.1.13.tgz#ae4b3fe09afbccdd998724a1ea68ecf947a2f432"
-  integrity sha512-E7i4b2gXOsSzrC/KXheGskjtq1r2My6E56i1f3YDhzXZbNXGnL+/XoJvyZ4PVcprBFUJOYP77sPZlIqI4ZEA+Q==
 
 uglify-js@^3.1.4:
   version "3.12.1"
