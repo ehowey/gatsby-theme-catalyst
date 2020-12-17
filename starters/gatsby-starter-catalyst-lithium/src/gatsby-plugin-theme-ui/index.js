@@ -1,7 +1,7 @@
 import { merge } from "theme-ui"
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
-import "typeface-quando"
+import "fontsource-quando"
 
 export default merge(BaseTheme, {
   // Modifications to the theme go here.
