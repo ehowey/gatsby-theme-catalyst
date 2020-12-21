@@ -1,0 +1,42 @@
+{
+  "name": "gatsby-starter-catalyst-sanity",
+  "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Core, Gatsby-Theme-Catalyst-Header-Top, Gatsby-Theme-Catalyst-Footer, Gatsby-Theme-Catalyst-Sanity",
+  "version": "5.0.0",
+  "private": true,
+  "author": "Eric Howey <eric@erichowey.dev>",
+  "dependencies": {
+    "gatsby": "^2.24.58",
+    "gatsby-theme-catalyst-core": "^3.0.0",
+    "gatsby-theme-catalyst-footer": "^1.2.3",
+    "gatsby-theme-catalyst-header-side": "^1.3.4",
+    "gatsby-theme-catalyst-header-top": "^1.5.6",
+    "gatsby-theme-catalyst-sanity": "^4.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-starter",
+    "gatsby-plugin"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehowey/gatsby-starter-catalyst-core"
+  },
+  "bugs": {
+    "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
+  }
+}
