@@ -71,11 +71,12 @@ const Hero = () => {
               sx={{
                 bg: "#e91c21",
                 color: "white",
-                boxShadow:
-                  "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
+                boxShadow: "default",
                 mr: 3,
-                ":hover": {
+                transition: "all 0.3s ease",
+                ":hover, :active, :focus": {
                   bg: darken("#e91c21", 0.03),
+                  boxShadow: "lg",
                 },
               }}
             >
@@ -90,10 +91,11 @@ const Hero = () => {
                 bg: "#ffd7d7",
                 color: "black",
                 mr: 3,
-                boxShadow:
-                  "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
-                ":hover": {
+                boxShadow: "default",
+                transition: "all 0.3s ease",
+                ":hover, :active, :focus": {
                   bg: darken("#ffd7d7", 0.03),
+                  boxShadow: "lg",
                 },
               }}
             >
@@ -107,10 +109,11 @@ const Hero = () => {
               sx={{
                 bg: "#ffd7d7",
                 color: "black",
-                boxShadow:
-                  "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
-                ":hover": {
+                boxShadow: "default",
+                transition: "all 0.3s ease",
+                ":hover, :active, :focus": {
                   bg: darken("#ffd7d7", 0.03),
+                  boxShadow: "lg",
                 },
               }}
             >

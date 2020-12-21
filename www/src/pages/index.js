@@ -53,6 +53,13 @@ const HomePage = () => {
               "radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,193,104,1) 0%, rgba(251,128,128,1) 90% )",
             color: baseColors.gray[8],
             fontWeight: "bold",
+            boxShadow: "default",
+            transition: "all 0.3s ease",
+            ":hover, :focus, :active": {
+              boxShadow: "lg",
+              backgroundImage:
+                "radial-gradient( circle farthest-corner at 30% 40%,  rgba(253,193,80,1) 0%, rgba(251,128,100,1) 95% )",
+            },
           }}
           to="/docs/getting-started"
         >
