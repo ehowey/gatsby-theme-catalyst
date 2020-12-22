@@ -27,6 +27,7 @@ const SiteHeader = () => {
         gridArea: "header",
         overflowY: "scroll",
         zIndex: "888", // Ensure the header is always on top
+        minHeight: isNavOpen ? "100vh" : "auto",
         variant: "variants.header",
       }}
       id="header"
