@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "title": "Sanity Template Catalyst",
-  "description": "Minimal and barebones integration of Gatsby-Theme-Catalyst and SANITY.io",
+  "title": "Gatsby Theme Catalyst",
+  "description": "Minimalist integration of Gatsby and SANITY.io. Gatsby Theme Catalyst is a set of themes and starters designed to accelerate your next Gatsby project. More at www.gatsbycatalyst.com.",
   "previewMedia": {
     "type": "image",
     "src": "assets/catalyst-sanity-preview.jpg",
