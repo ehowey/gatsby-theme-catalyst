@@ -25,7 +25,7 @@
       {
         "id": "studio",
         "type": "studio",
-        "title": "Base Catalyst Studio",
+        "title": "Bery Studio",
         "description": "A base studio that is designed to be extended and built on top of.",
         "dir": "./studio",
         "previewMedia": {
@@ -43,7 +43,7 @@
       {
         "id": "web",
         "type": "web",
-        "title": "Base Gatsby Frontend",
+        "title": "Gatsby Frontend",
         "description": "A base frontend that is intentionally bare and unstyled so that it can be easily customized.",
         "dir": "./web",
         "previewMedia": {
