@@ -4,7 +4,7 @@
   "description": "Minimal and barebones integration of Gatsby-Theme-Catalyst and SANITY.io",
   "previewMedia": {
     "type": "image",
-    "src": "assets/catalyst-logo.png",
+    "src": "assets/catalyst-sanity-preview.jpg",
     "alt": "Gatsby Theme Catalyst"
   },
   "technologies": [
