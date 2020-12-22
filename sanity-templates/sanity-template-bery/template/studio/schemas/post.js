@@ -33,6 +33,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Author",
+      name: "author",
+      type: "reference",
+      to: { type: "author" },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "categories",
       type: "array",
       title: "Categories",
@@ -46,6 +53,14 @@ export default {
           ],
         },
       ],
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "featuredImage",
+      title: "Featured Image",
+      description: "A featured image for your post.",
+      type: "figure",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "body",
@@ -57,12 +72,14 @@ export default {
     select: {
       title: "title",
       date: "date",
+      featuredImage: "featuredImage",
     },
     prepare(selection) {
-      const { title, date } = selection
+      const { title, date, featuredImage } = selection
       return {
         title: title,
         subtitle: format(date, "MMMM D, YYYY"), // YYYY-MM-DD --> YYYY
+        media: featuredImage,
       }
     },
   },

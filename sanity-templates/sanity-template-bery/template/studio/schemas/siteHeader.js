@@ -1,8 +1,7 @@
 export default {
-  name: "author",
-  title: "Author",
+  name: "siteHeader",
+  title: "Site Header",
   type: "document",
-  liveEdit: false,
   fields: [
     {
       name: "name",
@@ -11,23 +10,22 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "link",
-      title: "Author Link",
-      description:
-        "Used as a link with your name, commonly would link to your email or social media of choice.",
-      type: "url",
-      validation: (Rule) =>
-        Rule.required().uri({
-          scheme: ["https", "http", "mailto"],
-        }),
-    },
-    {
       name: "image",
       title: "Image",
       type: "image",
+      description: "Used as an avatar image in the header.",
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "bio",
+      title: "Short Bio",
+      type: "headerBioContent",
+      rows: 3,
+      description:
+        "Suggested characters of between 80 - 200, imagine a Twitter bio length.",
       validation: (Rule) => Rule.required(),
     },
   ],
