@@ -1,0 +1,75 @@
+{
+  "version": 2,
+  "title": "Sanity Template Catalyst",
+  "description": "Minimal and barebones integration of Gatsby-Theme-Catalyst and SANITY.io",
+  "previewMedia": {
+    "type": "image",
+    "src": "assets/catalyst-sanity-preview.jpg",
+    "alt": "Gatsby Theme Catalyst"
+  },
+  "technologies": [
+    {
+      "id": "gatsby",
+      "name": "Gatsby",
+      "url": "https://www.gatsbyjs.com/"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "url": "https://www.netlify.com/"
+    }
+  ],
+  "deployment": {
+    "provider": "netlify",
+    "sites": [
+      {
+        "id": "studio",
+        "type": "studio",
+        "title": "Base Catalyst Studio",
+        "description": "A base studio that is designed to be extended and built on top of.",
+        "dir": "./studio",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/sanity-template-catalyst-studio.jpg",
+          "alt": "A preview image of the Sanity Studio."
+        },
+        "buildSettings": {
+          "base": "/",
+          "dir": "/studio/dist",
+          "cmd": "yarn build-studio"
+        },
+        "requirements": ["build-hook"]
+      },
+      {
+        "id": "web",
+        "type": "web",
+        "title": "Base Gatsby Frontend",
+        "description": "A base frontend that is intentionally bare and unstyled so that it can be easily customized.",
+        "dir": "./web",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/sanity-template-catalyst-web.png",
+          "alt": "A preview image of the webpage."
+        },
+        "buildSettings": {
+          "base": "/",
+          "dir": "/web/public",
+          "cmd": "yarn build-web"
+        },
+        "requiredCorsOrigins": [
+          {
+            "origin": "http://localhost:8000",
+            "allowCredentials": false
+          }
+        ],
+        "requiredTokens": [
+          {
+            "role": "deploy-studio",
+            "label": "GraphQL API Deployer"
+          }
+        ],
+        "requirements": ["build-hook"]
+      }
+    ]
+  }
+}
