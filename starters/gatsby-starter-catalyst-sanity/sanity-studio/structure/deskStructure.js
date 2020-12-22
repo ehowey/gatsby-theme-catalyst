@@ -6,7 +6,7 @@ import {
   MdInfo,
   MdPerson,
   MdDashboard,
-} from "react-icons/lib/md"
+} from "react-icons/md"
 
 const hiddenDocTypes = (listItem) =>
   ![

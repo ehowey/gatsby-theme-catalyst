@@ -1,11 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder"
-import {
-  MdSettings,
-  MdShare,
-  MdList,
-  MdInfo,
-  MdPerson,
-} from "react-icons/lib/md"
+import { MdSettings, MdShare, MdList, MdInfo, MdPerson } from "react-icons/md"
 import { RiLayoutTopLine } from "react-icons/ri"
 
 const hiddenDocTypes = (listItem) =>
