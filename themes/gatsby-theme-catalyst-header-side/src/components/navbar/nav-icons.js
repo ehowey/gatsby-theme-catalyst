@@ -15,7 +15,7 @@ const SocialWrapper = () => {
   return (
     <div
       sx={{
-        mb: 4,
+        my: 3,
         display: "flex",
         justifyContent: "center",
         width: "100%",

@@ -16,7 +16,7 @@ const HomePage = () => {
         description="Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project. It uses Theme-UI and MDX under the hood to provide a smooth developer experience. Boilerplate starters to fully designed and production ready sites."
       />
       <TriangleVertical />
-      <Styled.p sx={{ fontSize: [4, null, 5, null, null], fontWeight: "bold" }}>
+      <Styled.p sx={{ fontSize: [4, null, 5, null, null], fontWeight: "500" }}>
         An opinionated set of integrated themes and starters to{" "}
         <span
           sx={{
