@@ -34,9 +34,9 @@
           "alt": "A preview image of the Sanity Studio."
         },
         "buildSettings": {
-          "base": "studio",
-          "dir": "dist",
-          "cmd": "npm run build && cp netlify.toml dist"
+          "base": "/",
+          "dir": "/studio/dist",
+          "cmd": "yarn build-studio"
         },
         "requirements": ["build-hook"]
       },
@@ -52,10 +52,22 @@
           "alt": "A preview image of the webpage."
         },
         "buildSettings": {
-          "base": "web",
-          "dir": "public",
-          "cmd": "yarn install && yarn build"
+          "base": "/",
+          "dir": "/web/public",
+          "cmd": "yarn build-web"
         },
+        "requiredCorsOrigins": [
+          {
+            "origin": "http://localhost:8000",
+            "allowCredentials": false
+          }
+        ],
+        "requiredTokens": [
+          {
+            "role": "deploy-studio",
+            "label": "GraphQL API Deployer"
+          }
+        ],
         "requirements": ["build-hook"]
       }
     ]

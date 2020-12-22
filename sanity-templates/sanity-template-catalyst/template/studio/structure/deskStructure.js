@@ -1,4 +1,4 @@
-import S from "@sanity/desk-tool/structure-builder"
+import S from "@sanity/desk-tool/structure-builder";
 import {
   MdSettings,
   MdShare,
@@ -6,7 +6,7 @@ import {
   MdInfo,
   MdPerson,
   MdDashboard,
-} from "react-icons/lib/md"
+} from "react-icons/md";
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -20,7 +20,7 @@ const hiddenDocTypes = (listItem) =>
     "theme",
     "themeLmColor",
     "themeDmColor",
-  ].includes(listItem.getId())
+  ].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -79,4 +79,4 @@ export default () =>
         .title("Projects")
         .child(S.documentTypeList("project").title("Projects")),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
-    ])
+    ]);
