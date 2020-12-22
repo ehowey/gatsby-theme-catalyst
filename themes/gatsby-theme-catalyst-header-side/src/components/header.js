@@ -37,8 +37,14 @@ const SiteHeader = () => {
           gridColumn: "1 / -1",
           alignSelf: "start",
           display: "grid",
-          gridTemplateColumns: ["60px auto 60px", null, "1fr", null, null],
-          gridTemplateRows: ["auto", null, "auto auto", null, null],
+          gridTemplateColumns: [
+            "minmax(0, 1fr) auto",
+            null,
+            "minmax(0, 1fr)",
+            null,
+            null,
+          ],
+          gridTemplateRows: "auto",
           p: [1, null, 3, null, null],
           pb: isNavOpen ? 4 : 0,
         }}

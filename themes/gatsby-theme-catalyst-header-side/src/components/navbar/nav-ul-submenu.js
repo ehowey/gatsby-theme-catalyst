@@ -7,7 +7,7 @@ const NavUlDropdown = ({ children }) => {
       sx={{
         m: 0,
         p: 0,
-        pl: 3,
+        pl: 1,
         listStyle: "none",
         variant: "variants.navUlSub",
       }}

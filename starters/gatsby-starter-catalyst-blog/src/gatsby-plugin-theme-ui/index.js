@@ -68,6 +68,21 @@ export default merge(BaseTheme, {
     logoHeightL: "130px", // Logo height on large screens, 1024px - 1440px
     logoHeightXL: "140px", // Logo height on extra large screens, above 1440px
   },
+  buttons: {
+    dropdown: {
+      cursor: "pointer",
+      backgroundColor: "header.background",
+      text: "header.text",
+      fontWeight: "bold",
+      py: 0,
+      px: 1,
+      ":hover, :focus, :active": {
+        textDecoration: "underline",
+        textDecorationThickness: "0.125em",
+        color: "primary",
+      },
+    },
+  },
   variants: {
     siteTitle: {
       fontSize: [3, 4, null, 5, null],

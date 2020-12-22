@@ -82,13 +82,48 @@ export default merge(BaseTheme, {
       },
     },
   },
+  buttons: {
+    dropdown: {
+      cursor: "pointer",
+      backgroundColor: "header.background",
+      text: "header.text",
+      py: 0,
+      px: 1,
+      fontWeight: "400",
+      ":hover, :focus, :active": {
+        textDecoration: "underline",
+        textDecorationThickness: "0.125em",
+        color: "primary",
+      },
+    },
+  },
   variants: {
     siteTitle: {
       fontSize: 3,
     },
     header: {
       py: [1, null, 0, 0, 0],
-      maxWidth: ["auto", null, "300px", "350px", "400px"],
+      width: ["auto", null, "300px", "350px", "425px"],
+    },
+    navIcons: {
+      justifyContent: "center",
+    },
+    navLink: {
+      fontWeight: "400",
+    },
+    navLiSub: {
+      pb: 2,
+      ":first-of-type": { pt: 2 },
+      ":last-of-type": { pb: 0 },
+    },
+    navLinkSub: {
+      display: "flex",
+      lineHeight: "tight",
+      ":before": {
+        content: "'\\2192'",
+        display: "block",
+        pr: 2,
+      },
     },
   },
 })

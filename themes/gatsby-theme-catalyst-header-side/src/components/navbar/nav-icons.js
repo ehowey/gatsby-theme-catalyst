@@ -17,6 +17,8 @@ const SocialWrapper = () => {
       sx={{
         mb: 4,
         display: "flex",
+        justifyContent: "center",
+        width: "100%",
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",
           mr: isNavOpen ? 3 : 2,
@@ -37,6 +39,7 @@ const SocialWrapper = () => {
             color: "primary",
           },
         },
+        variant: "variants.navIcons",
       }}
     >
       <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>

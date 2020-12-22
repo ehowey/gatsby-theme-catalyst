@@ -10,6 +10,7 @@ const NavLi = ({ children }) => {
     <li
       sx={{
         mb: 2,
+        ":last-of-type": { mb: 0 },
         a: {
           color: isNavOpen ? "header.textOpen" : "header.text",
           textDecoration: "none",
