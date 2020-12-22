@@ -1,10 +1,6 @@
-# SANITY Template Catalyst
+# Gatsby Theme Catalyst
 
-**WIP AND EXPERIMENTAL RIGHT NOW**
-
-Testing whether this is pushing to the other repo.
-
-This is a base theme for integrating SANITY.io with other Catalyst themes. It is intentionally unstyled and plain.
+This theme adds a data layer for SANITY.io on top of `gatsby-theme-catalyst-core` via component shadowing. This is used as a "core" theme for SANITY.io and is designed to be modified and shadowed itself in the final site. You can see an example of this theme stacked and further customized with [gatsby-theme-catalyst-bery](https://gatsby-starter-catalyst-bery.netlify.app/).
 
 ## Documentation
 

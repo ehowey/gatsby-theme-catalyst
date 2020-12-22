@@ -1,6 +1,6 @@
 # Gatsby-Theme-Catalyst-Sanity
 
-This theme adds a data layer for SANITY.io on top of `gatsby-theme-catalyst-core` via component shadowing. This is used as a "core" theme for SANITY.io and is designed to be modified and shadowed itself in the final site. You can see an example of this theme stacked and further customized with [gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen).
+This theme adds a data layer for SANITY.io on top of `gatsby-theme-catalyst-core` via component shadowing. This is used as a "core" theme for SANITY.io and is designed to be modified and shadowed itself in the final site. You can see an example of this theme stacked and further customized with [gatsby-theme-catalyst-bery](https://gatsby-starter-catalyst-bery.netlify.app/).
 
 ## Demos
 
