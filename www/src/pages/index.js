@@ -29,7 +29,7 @@ const HomePage = () => {
         >
           accelerate
         </span>
-        your next Gatsby project.
+        your next Gatsby project. Build faster.
       </Styled.p>
       <TriangleVertical />
       <Blocks />
