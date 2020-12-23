@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         name: `Tutorials`,
-        link: `/docs/tutorials`,
+        link: `#`,
         type: `internal`, //internal or anchor
         subMenu: [
           {
@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         name: `Configuring Themes`,
-        link: `/docs/configuring-themes`,
+        link: `#`,
         type: `internal`, //internal or anchor
         subMenu: [
           {
@@ -100,7 +100,7 @@ module.exports = {
       },
       {
         name: `Layout Themes`,
-        link: `/docs/layout-themes`,
+        link: `#`,
         type: `internal`, //internal or anchor
         subMenu: [
           {
@@ -132,7 +132,7 @@ module.exports = {
       },
       {
         name: `Data Themes`,
-        link: `/docs/data-themes`,
+        link: `#`,
         type: `internal`, //internal or anchor
         subMenu: [
           {
@@ -149,7 +149,7 @@ module.exports = {
       },
       {
         name: `Presentation Themes`,
-        link: `/docs/presentation-themes`,
+        link: `#`,
         type: `internal`, //internal or anchor
         subMenu: [
           {

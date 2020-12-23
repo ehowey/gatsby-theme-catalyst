@@ -170,6 +170,8 @@ export default merge(BaseTheme, {
       textTransform: "uppercase",
       fontSize: "1.5rem !important",
       textAlign: "center",
+      mt: 3,
+      letterSpacing: "wide",
       "::after": {
         content: "none",
       },
