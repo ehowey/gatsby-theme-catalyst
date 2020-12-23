@@ -5,18 +5,18 @@
 
 # Getting Started
 
-Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerateyour next Gatsby project. The vision is one "core" theme which is progressively built on top of until you have a complete site. This allows for easier maintainability, choice about whether you want to start with a barebones starter or a more complete site, and a happy path for extendability using component shadowing.
+Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project. The vision is for one "core" theme which is progressively built on top of until you have a complete site. This allows for easier maintainability, choice for how you want to start, and a happy path for extendability using component shadowing.
 
 This tutorial assumes the following:
 
 - That you understand [Gatsby fundamentals](https://www.gatsbyjs.org/tutorial/#gatsby-fundamentals)
 - That you understand [Gatsby themes](https://www.gatsbyjs.org/tutorial/using-a-theme/)
 
-This tutorial will get you up and running with a barebones starter with content authored in MDX which has minimal styles so it is easier to customize and make your own. If you want to test a more complete site you should check out [gatsby-theme-catalyst-helium](/docs/gatsby-theme-catalyst-helium).
+This tutorial will get you up and running with a barebones starter with content authored in MDX which has minimal styles so it is easier to customize and make your own. If you want to test a more complete site you should check out [gatsby-theme-catalyst-lithium](/docs/gatsby-theme-catalyst-lithium).
 
 ## Install the themes using a starter
 
-This easiest way to get started is with a starter. This tutorial will use `gatsby-starter-catalyst` which is intended as a solid starting point for further customization.
+This easiest way to get started is with a starter. This tutorial will use `gatsby-starter-catalyst` which is intended as a solid begining point for further customization. A blank canvas if you will.
 
 The themes included in this starter are:
 
@@ -39,19 +39,19 @@ Open `gatsby-config.js` and update the placeholder data. Most fields are common 
 
 ## Change your logo and social image
 
-Replace `content/assets/catalyst-site-logo.png`, `content/assets/catalyst-site-social.png`, and `content/assets/catalyst-site-icon.png`. These files need to have the _same name_ but can have different file types, e.g. they could be `.jpg`.
+Replace `content/assets/catalyst-site-logo.png`, `content/assets/catalyst-site-social.png`, and `content/assets/catalyst-site-icon.png`. These files need to have the _same name_ but can have different file types, e.g. they could be `.jpg` or `.png`.
 
 `catalyst-site-logo` is used as the logo on the actual web pages.
 
-`catalyst-site-icon` is used as the icon for the browser and offline mode.
+`catalyst-site-icon` is used as the icon for the browser and offline mode. If you change this file make sure you update the options for `gatsby-plugin-manifest` as well or your will get an error.
 
-`catalyst-site-social` is used as a fallback social media image if there is not a featured image in the blog post or on a page.
+`catalyst-site-social` is used as a fallback social media image if there is not a featured image in a blog post or on a page.
 
-> You can also do this via component shadowing for a custom approach and future releases of Gatsby will enable a happier path for doing this with React suspense and graphQL variables.
+> You can also do this via component shadowing for a more custom approach and future releases of Gatsby should enable a happier path for doing this with React suspense and GraphQL variables.
 
 ## Create some content
 
-By default in this starter content is authored using [MDX](https://www.gatsbyjs.org/docs/mdx/getting-started/). Go to `content/pages/index.mdx` to modify your home page. Note the SEO component on the top of the page which allows you to customize the metadata for each page.
+By default content is authored using [MDX](https://www.gatsbyjs.org/docs/mdx/getting-started/). Go to `content/pages/index.mdx` to modify your home page. Note the SEO component on the top of the page which allows you to customize the metadata for each page.
 
 Try pasting in the following code into `index.mdx`:
 
@@ -69,24 +69,24 @@ Yes you are!
 
 ```js
 {
-      resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        //Default options are:
-        // contentPath: `content/pages`,
-        // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
-// useKatex: false,
-        // remarkImagesWidth: 1440,
-        //footerContentLocation: "left", // "left", "right", "center"
-      },
-    },
+  resolve: `gatsby-theme-catalyst-core`,
+  options: {
+    //Default options are:
+    // contentPath: `content/pages`,
+    // assetPath: `content/assets`,
+    // displaySiteLogo: true,
+    // displaySiteTitle: true,
+    // displaySiteLogoMobile: true,
+    // displaySiteTitleMobile: true,
+    // invertLogo: false,
+    // useStickyHeader: false,
+    // useSocialLinks: true,
+    // useColorMode: true,
+    // useKatex: false,
+    // remarkImagesWidth: 1440,
+    //footerContentLocation: "left", // "left", "right", "center"
+  },
+},
 ```
 
 ## Experiment with Theme-UI
@@ -135,8 +135,8 @@ plugins: [
 
 ## Get building
 
-This should begin to give you an idea of what is possible with Gatsby Theme Catalyst and the launching pad it provides for developing your own Gatsby site.
+This should begin to give you an idea of what is possible with Gatsby Theme Catalyst and the launching pad it can provide for developing your own Gatsby project.
 
-For an example of a complete site check out [gatsby-theme-catalyst-hydrogen](/docs/gatsby-theme-catalyst-hydrogen) which adds a both a data layer (SANITY.io) and a presentation layer on top of the base starter covered here.
+For an example of a complete site check out [gatsby-theme-catalyst-bery](/docs/gatsby-theme-catalyst-bery) which adds a both a data layer (SANITY.io) and a presentation layer on top of the base starter covered here.
 
 You can read more detail in the documentation about [further customizing](/docs/configuring-themes) your themes and site.
