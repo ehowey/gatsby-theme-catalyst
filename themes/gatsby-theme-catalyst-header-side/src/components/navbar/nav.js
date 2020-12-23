@@ -11,12 +11,11 @@ const NavLayout = () => {
   return (
     <nav
       sx={{
-        mt: 2,
-        gridColumn: ["1 / -1", null, "1 / 1", null, null],
+        gridColumn: "1 / -1",
         gridRow: "2 / 3",
         display: isNavOpen ? "flex" : ["none", null, "flex", null, null],
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: ["center", null, "start", null, null],
         variant: "variant.nav",
       }}
       aria-label="Primary menu"

@@ -31,24 +31,17 @@ const Hero = () => {
       <Styled.h1
         sx={{
           textTransform: "uppercase",
+          textAlign: "center",
           fontSize: [5, 6, 7, 8, null],
           color: baseColors.gray[8],
+          mb: 3,
+          "::after": {
+            content: "none",
+          },
         }}
       >
         Gatsby Theme Catalyst
       </Styled.h1>
-      <Styled.p
-        sx={{
-          mt: [-1, null, -2, -3, null],
-          mb: 4,
-          fontSize: [3, 4, null, null, null],
-          color: baseColors.gray[8],
-          lineHeight: "1.25em",
-        }}
-      >
-        Gatsby &nbsp;&&&nbsp; Theme-UI &nbsp;&&&nbsp; (&nbsp;MDX ||
-        SANITY.io&nbsp;)
-      </Styled.p>
       <Styled.inlineCode
         sx={{ mb: 4, bg: baseColors.gray[8], color: baseColors.gray[1] }}
       >

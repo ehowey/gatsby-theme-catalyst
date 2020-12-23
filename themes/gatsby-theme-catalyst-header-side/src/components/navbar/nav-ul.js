@@ -6,6 +6,7 @@ const NavUl = ({ children }) => {
     <ul
       sx={{
         display: "flex",
+        alignItems: ["center", null, "start", null, null],
         flexDirection: "column",
         listStyle: "none",
         m: 0,

@@ -74,7 +74,23 @@ const Features = () => {
       >
         <div>
           <Img fluid={data.layout.childImageSharp.fluid} alt="Layout theme" />
-          <Styled.h3 sx={{ mb: 4 }}>Layout Themes</Styled.h3>
+          <Styled.h3
+            sx={{
+              fontSize: 4,
+              mb: 3,
+              "::after": {
+                display: "block",
+                content: '""',
+                width: "40px",
+                pt: 1,
+                borderBottomStyle: "solid",
+                borderBottomWidth: "4px",
+                borderBottomColor: "primary",
+              },
+            }}
+          >
+            Layout Themes
+          </Styled.h3>
           <Styled.p>
             Minimally styled themes that focus on layout, function, and utility
             components. These can be used as a solid foundation to build a fully
@@ -86,7 +102,23 @@ const Features = () => {
             fluid={data.sanity.childImageSharp.fluid}
             alt="Sanity Studio Dashboard"
           />
-          <Styled.h3 sx={{ mb: 4 }}>Data Themes</Styled.h3>
+          <Styled.h3
+            sx={{
+              fontSize: 4,
+              mb: 3,
+              "::after": {
+                display: "block",
+                content: '""',
+                width: "40px",
+                pt: 1,
+                borderBottomStyle: "solid",
+                borderBottomWidth: "4px",
+                borderBottomColor: "primary",
+              },
+            }}
+          >
+            Data Themes
+          </Styled.h3>
           <Styled.p>
             Adds an optional data structure on top of the layout themes to
             provide additional content authoring experiences. SANITY.io and an
@@ -98,7 +130,23 @@ const Features = () => {
             fluid={data.presentation.childImageSharp.fluid}
             alt="Presentation Theme"
           />
-          <Styled.h3 sx={{ mb: 4 }}>Presentation Themes</Styled.h3>
+          <Styled.h3
+            sx={{
+              fontSize: 4,
+              mb: 3,
+              "::after": {
+                display: "block",
+                content: '""',
+                width: "40px",
+                pt: 1,
+                borderBottomStyle: "solid",
+                borderBottomWidth: "4px",
+                borderBottomColor: "primary",
+              },
+            }}
+          >
+            Presentation Themes
+          </Styled.h3>
           <Styled.p>
             Adds visual components and specialized layouts like a custom home
             page. These themes are designed to be modified for branding (colors,
@@ -107,7 +155,23 @@ const Features = () => {
         </div>
         <div>
           <Img fluid={data.themeui.childImageSharp.fluid} alt="Theme UI Logo" />
-          <Styled.h3>Theme-UI</Styled.h3>
+          <Styled.h3
+            sx={{
+              fontSize: 4,
+              mb: 3,
+              "::after": {
+                display: "block",
+                content: '""',
+                width: "40px",
+                pt: 1,
+                borderBottomStyle: "solid",
+                borderBottomWidth: "4px",
+                borderBottomColor: "primary",
+              },
+            }}
+          >
+            Theme-UI
+          </Styled.h3>
           <Styled.p>
             Theme UI enables you to quickly customize the visual design of your
             user interfaces using key-value pairs to modify colors, fonts,
@@ -116,7 +180,23 @@ const Features = () => {
         </div>
         <div>
           <Img fluid={data.mdx.childImageSharp.fluid} alt="MDX Logo" />
-          <Styled.h3>MDX</Styled.h3>
+          <Styled.h3
+            sx={{
+              fontSize: 4,
+              mb: 3,
+              "::after": {
+                display: "block",
+                content: '""',
+                width: "40px",
+                pt: 1,
+                borderBottomStyle: "solid",
+                borderBottomWidth: "4px",
+                borderBottomColor: "primary",
+              },
+            }}
+          >
+            MDX
+          </Styled.h3>
           <Styled.p>
             MDX lets you seamlessly write JSX in your Markdown documents. It is
             the default content authoring format in Gatsby Theme Catalyst.
@@ -127,7 +207,23 @@ const Features = () => {
             fluid={data.themeoptions.childImageSharp.fluid}
             alt="Example of theme options"
           />
-          <Styled.h3>Theme Options</Styled.h3>
+          <Styled.h3
+            sx={{
+              fontSize: 4,
+              mb: 3,
+              "::after": {
+                display: "block",
+                content: '""',
+                width: "40px",
+                pt: 1,
+                borderBottomStyle: "solid",
+                borderBottomWidth: "4px",
+                borderBottomColor: "primary",
+              },
+            }}
+          >
+            Theme Options
+          </Styled.h3>
           <Styled.p>
             Theme options are used as feature flags to toggle small changes to
             your design, like displaying social media links, without having to

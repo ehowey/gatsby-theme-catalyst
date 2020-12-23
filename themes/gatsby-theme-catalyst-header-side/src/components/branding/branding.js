@@ -7,12 +7,12 @@ const SiteBranding = () => {
   return (
     <div
       sx={{
-        gridColumn: ["2 / 3", null, "1 / -1", null, null],
+        gridColumn: "1 / -1",
         gridRow: "1 / 2",
         display: "flex",
         flexDirection: ["row", null, "column", null, null],
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: ["center", null, "start", null, null],
         variant: "variants.branding",
       }}
     >
