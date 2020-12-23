@@ -180,9 +180,6 @@ export default merge(BaseTheme, {
       py: [1, null, 0, 0, 0],
       width: ["auto", null, "300px", "350px", "425px"],
     },
-    navIcons: {
-      justifyContent: "center",
-    },
     navLink: {
       fontWeight: "400",
     },

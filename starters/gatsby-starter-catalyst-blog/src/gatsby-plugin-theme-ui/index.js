@@ -87,5 +87,9 @@ export default merge(BaseTheme, {
     siteTitle: {
       fontSize: [3, 4, null, 5, null],
     },
+    navUl: {
+      width: "100%",
+      alignItems: ["center", null, "center", null, null],
+    },
   },
 })

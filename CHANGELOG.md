@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-header-side v2.0.0
+
+- **Breaking Change**: This is a visually breaking change. Added support for dropdowns that function as toggles, instead of the pure CSS on hover behaviour that was there before. I also adjusted the default text alignment to be left as this is more expected. You can nudge it back to the centre using variants.
+
+```js
+variants: {
+    navUl: {
+      width: "100%",
+      alignItems: ["center", null, "center", null, null],
+    },
+  },
+```
+
 ## catalyst-core v3.0.0
 
 - **Breaking Change**: Removed [gatsby-plugin-offline](https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/) from the core theme as there are more considerations and impacts from service workers than should be included in the core theme. This plugin has a lot of power and I would suggest using it on most Gatsby sites but want to leave this as an optional addition versus a forced inclusion in the core theme. If you want to include this in your site you would just add it to your main `gatsby-config.js` file.
