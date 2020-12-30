@@ -180,10 +180,20 @@ export default merge(BaseTheme, {
       py: [1, null, 0, 0, 0],
       width: ["auto", null, "300px", "350px", "425px"],
     },
+    navUl: {
+      textAlign: ["center", null, "left", null, null],
+      alignItems: ["center", null, "start", null, null],
+    },
+    navUlSub: {
+      mb: 3,
+    },
     navLink: {
       fontWeight: "400",
     },
     navLiSub: {
+      "a:hover::before": {
+        textDecoration: "none !important",
+      },
       pb: 2,
       ":first-of-type": { pt: 2 },
       ":last-of-type": { pb: 0 },
@@ -191,6 +201,11 @@ export default merge(BaseTheme, {
     navLinkSub: {
       display: "flex",
       lineHeight: "tight",
+      textAlign: "left",
+      // ":hover": {
+      //   textDecoration: "underline",
+      // },
+
       ":before": {
         content: "'\\2192'",
         display: "block",

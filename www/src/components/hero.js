@@ -7,6 +7,7 @@ import { darken } from "@theme-ui/color"
 import catalystLogo from "../../content/assets/catalyst-svg-logo.svg"
 import { AiOutlineFire } from "react-icons/ai"
 import { FiBookOpen, FiGithub } from "react-icons/fi"
+import GitHubButton from "react-github-btn"
 
 const Hero = () => {
   return (
@@ -25,6 +26,24 @@ const Hero = () => {
         placeItems: "center",
       }}
     >
+      <div
+        sx={{
+          position: "absolute",
+          top: "25px",
+          right: "10px",
+          display: ["none", "block", null, null, null],
+        }}
+      >
+        <GitHubButton
+          href="https://github.com/ehowey/gatsby-theme-catalyst"
+          data-icon="octicon-star"
+          data-show-count="true"
+          aria-label="Star Gatsby Theme Catalyst on GitHub"
+          data-size="large"
+        >
+          Star
+        </GitHubButton>
+      </div>
       <img
         src={catalystLogo}
         alt="Gatsby Theme Catalyst Logo"

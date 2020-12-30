@@ -3,38 +3,24 @@ import { jsx, Styled } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { MdArrowDownward } from "react-icons/md"
 
-const AnimatedBlocks = () => {
+const AnimatedBlocks = ({ isDocs }) => {
   return (
-    <section>
-      <Styled.h2
-        sx={{
-          fontSize: 4,
-          mb: 3,
-          textAlign: "center",
-          "::after": {
-            display: "block",
-            content: '""',
-            width: "40px",
-            pt: 2,
-            borderBottomStyle: "solid",
-            borderBottomWidth: "4px",
-            borderBottomColor: "primary",
-            mx: "auto",
-          },
-        }}
-      >
-        How It Works
-      </Styled.h2>
-      <Styled.p sx={{ textAlign: "center", fontSize: 3 }}>
-        Choose a set of themes, customize the project with component shadowing,
-        style your masterpiece with Theme UI, and then maintain it all with npm
-        package updates.
-      </Styled.p>
+    <div
+      sx={{
+        width: "100vw",
+        position: "relative",
+        left: "calc(-50vw + 50%)",
+      }}
+    >
       <div
         sx={{
-          mt: 4,
-          display: "grid",
-          placeItems: "center",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: isDocs
+            ? "column"
+            : ["column", null, null, "row", null],
+          justifyContent: "center",
+          m: 4,
         }}
       >
         <div
@@ -45,6 +31,9 @@ const AnimatedBlocks = () => {
             p: 3,
           }}
         >
+          <Styled.h3 as="p" sx={{ mb: 2, mt: 0, textAlign: "center" }}>
+            Themes
+          </Styled.h3>
           <div
             sx={{
               minWidth: "240px",
@@ -86,7 +75,7 @@ const AnimatedBlocks = () => {
               Data Theme
             </Styled.h4>
             <Styled.p sx={{ m: 0 }}>
-              <i>Optional, add a backend data source or just use MDX</i>
+              <i>Optional, adds a backend data source or just use MDX</i>
             </Styled.p>
           </div>
           <div
@@ -107,26 +96,79 @@ const AnimatedBlocks = () => {
               Presentation Theme
             </Styled.h4>
             <Styled.p sx={{ m: 0 }}>
-              <i>Visual design, custom layouts and components</i>
+              <i>Visual design, custom layouts and UI components</i>
             </Styled.p>
           </div>
         </div>
-        <MdArrowDownward sx={{ fontSize: 4, my: 3 }} />
-        <Styled.h3 as="p" sx={{ m: 0 }}>
-          Gatsby Starter
-        </Styled.h3>
-        <Styled.p sx={{ m: 0 }}>
-          <i>Packages themes together</i>
-        </Styled.p>
-        <MdArrowDownward sx={{ fontSize: 4, my: 3 }} />
-        <Styled.h3 as="p" sx={{ m: 0 }}>
-          Production Site
-        </Styled.h3>
-        <Styled.p sx={{ m: 0 }}>
-          <i>Branding, content, customization</i>
-        </Styled.p>
+        <div
+          sx={{
+            display: "flex",
+            flexDirection: isDocs
+              ? "column"
+              : ["column", null, null, "row", null],
+            alignItems: isDocs
+              ? "center"
+              : ["center", null, null, "stretch", null],
+            maxWidth: isDocs ? "330px" : ["330px", null, null, "100%", null],
+          }}
+        >
+          <MdArrowDownward
+            sx={{
+              flexShrink: "0",
+              fontSize: 4,
+              m: 4,
+              transform: isDocs
+                ? "none"
+                : ["none", null, null, "rotate(270deg)", null],
+            }}
+          />
+          <div
+            sx={{
+              textAlign: isDocs
+                ? "center"
+                : ["center", null, null, "left", null, null],
+              maxWidth: "330px",
+            }}
+          >
+            <Styled.h3 as="p" sx={{ mt: 0, mb: 1 }}>
+              Gatsby Starter
+            </Styled.h3>
+            <Styled.p sx={{ m: 0 }}>
+              <i>Packages a set themes together for ease of use.</i>
+            </Styled.p>
+          </div>
+          <MdArrowDownward
+            sx={{
+              flexShrink: "0",
+              fontSize: 4,
+              m: 4,
+              transform: isDocs
+                ? "none"
+                : ["none", null, null, "rotate(270deg)", null],
+            }}
+          />
+          <div
+            sx={{
+              textAlign: isDocs
+                ? "center"
+                : ["center", null, null, "left", null, null],
+              maxWidth: "330px",
+            }}
+          >
+            <Styled.h3 as="p" sx={{ mt: 0, mb: 1 }}>
+              Production Site
+            </Styled.h3>
+            <Styled.p sx={{ m: 0 }}>
+              <i>
+                Add branding, content, styles, and customization. Component
+                shadowing and Theme UI give you full control over the finished
+                product.
+              </i>
+            </Styled.p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 

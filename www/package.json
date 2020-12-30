@@ -12,7 +12,8 @@
     "gatsby-theme-catalyst-footer": "^1.2.3",
     "gatsby-theme-catalyst-header-side": "^2.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-github-btn": "^1.2.0"
   },
   "devDependencies": {
     "prettier": "^2.1.2"

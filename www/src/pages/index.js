@@ -32,7 +32,28 @@ const HomePage = () => {
         your next Gatsby project. Build faster.
       </Styled.p>
       <TriangleVertical />
-      <Blocks />
+      <section>
+        <Styled.h2
+          sx={{
+            fontSize: 4,
+            mb: 5,
+            textAlign: "center",
+            "::after": {
+              display: "block",
+              content: '""',
+              width: "40px",
+              pt: 2,
+              borderBottomStyle: "solid",
+              borderBottomWidth: "4px",
+              borderBottomColor: "primary",
+              mx: "auto",
+            },
+          }}
+        >
+          How It Works
+        </Styled.h2>
+        <Blocks />
+      </section>
       <TriangleVertical />
       <Features />
       <TriangleVertical />
