@@ -72,6 +72,11 @@ module.exports = {
         type: `internal`, //internal or anchor
         subMenu: [
           {
+            name: `Overview of configuring themes`,
+            link: `/docs/configuring-themes`,
+            type: `internal`,
+          },
+          {
             name: `Gatsby-Config.js`,
             link: `/docs/gatsby-config`,
             type: `internal`,
