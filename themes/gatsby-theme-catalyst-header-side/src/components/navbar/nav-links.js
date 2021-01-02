@@ -13,7 +13,7 @@ import { HomeContext } from "gatsby-theme-catalyst-core"
 
 const NavLinksDefault = () => {
   const { menuLinks } = useSiteMetadata()
-  const [activeDropdown, setActiveDropdown] = useState(null)
+  const [activeDropdown, setActiveDropdown] = useState([])
   const [isHome] = useContext(HomeContext)
 
   return (
@@ -33,7 +33,7 @@ const NavLinksDefault = () => {
                     >
                       {link.name}
                     </DropdownButton>
-                    {activeDropdown === link.link && (
+                    {activeDropdown.includes(link.link) && (
                       <NavUlDropdown
                         setActiveDropdown={setActiveDropdown}
                         activeDropdown={activeDropdown}

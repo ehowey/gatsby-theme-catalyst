@@ -8,15 +8,18 @@ const NavLinkDropDown = ({
   activeDropdown,
   setActiveDropdown,
 }) => {
-  const isActive = activeDropdown === link
+  const isActive = activeDropdown.includes(link)
 
   const handleClick = () => {
-    if (isActive) {
-      setActiveDropdown(null)
+    const index = activeDropdown.indexOf(link)
+    if (index > -1) {
+      const filtered = activeDropdown.filter((active) => active !== link)
+      setActiveDropdown([...filtered])
     } else {
-      setActiveDropdown(link)
+      setActiveDropdown([...activeDropdown, link])
     }
   }
+
   return (
     <Button
       variant="dropdown"
