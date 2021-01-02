@@ -7242,16 +7242,16 @@ gatsby-telemetry@^1.7.0:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-theme-catalyst-bery@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-bery/-/gatsby-theme-catalyst-bery-3.0.0.tgz#9a82167f6e0195544b5f5690398a1cdf74c1b3c0"
-  integrity sha512-VLJZ23Ax+ZSw7PwD3B4ewAMTPLowyjjnjazfyDDZowwhGya/38pOGw9zyosyfI14RSm/qDWtWBY/OSzkNifvOw==
+gatsby-theme-catalyst-bery@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-bery/-/gatsby-theme-catalyst-bery-3.0.1.tgz#6788f976018238dff3307564216e7b94437d46db"
+  integrity sha512-xJdvORHJTgl2sPyc81i713elHUfjXm60hMcy1uO3kvmp7cUiMajzn6AjpZcIOoz0QwWYh0zRonGG03f07o8yxQ==
   dependencies:
     framer-motion "^2.9.4"
     gatsby-plugin-feed "^2.8.0"
     gatsby-theme-catalyst-core "^3.0.0"
     gatsby-theme-catalyst-footer "^1.2.3"
-    gatsby-theme-catalyst-sanity "^4.0.2"
+    gatsby-theme-catalyst-sanity "^4.0.3"
 
 gatsby-theme-catalyst-core@^3.0.0:
   version "3.0.0"
@@ -7306,10 +7306,10 @@ gatsby-theme-catalyst-footer@^1.2.3:
   resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-footer/-/gatsby-theme-catalyst-footer-1.2.3.tgz#cb6595c1eedfc218a58b574e231c82b84e033ee2"
   integrity sha512-F7VLn2cXpgqdyyEdexRnFIzyl+xyQGONq8LyRsabDASqIcdMVuQAuxgcFbDZYxccHReBfXSHf6wMLlE1xPIwDQ==
 
-gatsby-theme-catalyst-sanity@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-sanity/-/gatsby-theme-catalyst-sanity-4.0.2.tgz#5182095ee665dfa5afe9464d94bac9b130e5f730"
-  integrity sha512-xziXlshXhPWAw5+lQfq5BIJXLJiLQZryKcXNJOOGfmhqlo3A3D+7KbhqNkSwFSPHoIaJnCgHJteA/xWSy9Nu9w==
+gatsby-theme-catalyst-sanity@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-catalyst-sanity/-/gatsby-theme-catalyst-sanity-4.0.3.tgz#5643533da82ca5205dee27ab5176f336bcc3aa81"
+  integrity sha512-2lsQNqXMs9TqE0oOe5y51FuBmIHOo4+6iw609CUnrDzO0f7ko/R2L1sVEzjUwqIRo3zR/4YPCK/hBVJOeWM0Xg==
   dependencies:
     "@sanity/block-content-to-react" "^2.0.7"
     gatsby-source-sanity "^6.0.4"
