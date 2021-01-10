@@ -10,7 +10,7 @@
     "gatsby-theme-catalyst-lithium": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-rough-notation": "^1.0.0"
+    "react-rough-notation": "^1.0.1"
   },
   "devDependencies": {
     "prettier": "^2.1.2"
