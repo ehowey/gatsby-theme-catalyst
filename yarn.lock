@@ -14682,10 +14682,10 @@ react-refresh@^0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-rough-notation@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-rough-notation/-/react-rough-notation-1.0.0.tgz#f5d9869e5cf1aa0c2d1824f7e8fd87ec6443efe6"
-  integrity sha512-hVEtwyQq7s+m45kXYq16esttphBC5ovdj4toySl6bfWG/MzwIyWAgtTdtV/ObMIjYx8gMkyho7TJLsH720FbTQ==
+react-rough-notation@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-rough-notation/-/react-rough-notation-1.0.1.tgz#ac0f3e52734c59e2c7659a3f361e4bca5e637885"
+  integrity sha512-UZQZ09XiZgbDRZFFP0qaFmTzs0rMKO929Npa5fHb2TOzLvKNEamaUtjRwjBx79cFzf+xMl/y8Y4HbYvvcKHQGQ==
   dependencies:
     rough-notation "^0.4.0"
 
