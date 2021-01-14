@@ -2973,10 +2973,10 @@
   resolved "https://registry.yarnpkg.com/@theme-ui/preset-tailwind/-/preset-tailwind-0.3.5.tgz#7f6c855c24e2f70574d8f08c55be2444c7075439"
   integrity sha512-UGNQKGXj47i0OhY1u8StXkEGvbPl1RRMLwqhJ6MNAvMdQX7Du6Eg+En5iuXy+yKAIC+KGxOTy7/5FzEf/1uBwg==
 
-"@theme-ui/prism@^0.3.0":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.3.4.tgz#dffee4fa4e79f8924ce6e46a48d6d05c3d0ccb65"
-  integrity sha512-tBlZ2mfRPuplu6MtGgSkwy+2xoSTSJfIr5x5YhgQb+wmnybMSONhqeeTrBE2/eyJfS1bf+fGEBsBawyJ/ImlHg==
+"@theme-ui/prism@^0.3.5":
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.3.5.tgz#7f17034319d4947ab8cbc2869e1e463b76975fbf"
+  integrity sha512-FyyitvZjjpcMaKv4wQUyzQ+XXtWA3xtpOKEsNICGTIOoxHyP+FSC8+LqrHtxwcGLvl6MADmooh0kkcI1auFwkA==
   dependencies:
     prism-react-renderer "^1.0.2"
 
