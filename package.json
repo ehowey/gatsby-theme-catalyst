@@ -19,6 +19,7 @@
     "develop:core": "yarn workspace gatsby-starter-catalyst-core develop",
     "develop:basic": "yarn workspace gatsby-starter-catalyst develop",
     "develop:blog": "yarn workspace gatsby-starter-catalyst-blog develop",
+    "develop:ecommerce": "yarn workspace gatsby-starter-catalyst-ecommerce develop",
     "develop:sanity": "yarn workspace gatsby-starter-catalyst-sanity develop",
     "develop:hydrogen": "yarn workspace gatsby-starter-catalyst-hydrogen develop",
     "develop:helium": "yarn workspace gatsby-starter-catalyst-helium develop",
