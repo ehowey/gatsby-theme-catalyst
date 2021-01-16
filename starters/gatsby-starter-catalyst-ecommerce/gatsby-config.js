@@ -38,7 +38,8 @@ module.exports = {
         // sanityToken: null,
         // sanityWatchMode: true,
         // sanityOverlayDrafts: false, // Requires a token and private dataset
-        sanityProjectId: `pyvaull7`, // Required
+        sanityProjectId: `5p7hmld1`, // Required
+        stripePublicApi: `789abc`,
       },
     },
     {

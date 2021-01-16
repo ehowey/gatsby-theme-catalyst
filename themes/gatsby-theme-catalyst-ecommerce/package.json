@@ -4,10 +4,12 @@
   "version": "0.0.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
+    "@stripe/stripe-js": "^1.11.0",
     "gatsby-theme-catalyst-core": "^3.0.0",
     "gatsby-theme-catalyst-footer": "^1.2.3",
     "gatsby-theme-catalyst-header-top": "^1.5.6",
-    "gatsby-theme-catalyst-sanity": "^4.0.3"
+    "gatsby-theme-catalyst-sanity": "^4.0.3",
+    "use-shopping-cart": "^2.3.0"
   },
   "peerDependencies": {
     "gatsby": "^2.24.58",
