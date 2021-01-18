@@ -4,18 +4,18 @@ const { createContentDigest } = require(`gatsby-core-utils`)
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`type CatalystEcommerceConfig implements Node {
-    stripePublicApi: String!
+    stripePublicKey: String!
     
   }`)
 }
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { stripePublicApi = "abc123" }
+  { stripePublicKey = "abc123" }
 ) => {
   // create garden data from plugin config
   const catalystEcommerceConfigFieldData = {
-    stripePublicApi,
+    stripePublicKey,
   }
   createNode({
     ...catalystEcommerceConfigFieldData,

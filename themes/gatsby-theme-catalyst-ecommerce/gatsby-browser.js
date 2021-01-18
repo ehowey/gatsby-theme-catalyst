@@ -3,16 +3,17 @@ import { loadStripe } from "@stripe/stripe-js"
 import { CartProvider } from "use-shopping-cart"
 
 export const wrapRootElement = ({ element }, themeOptions) => {
-  const { stripePublicApi } = themeOptions
-  const stripePromise = loadStripe(stripePublicApi)
+  const { stripePublicKey } = themeOptions
+  const stripePromise = loadStripe(stripePublicKey)
 
   return (
     <CartProvider
+      mode="checkout-session"
       stripe={stripePromise}
-      successUrl="stripe.com"
-      cancelUrl="twitter.com/dayhaysoos"
-      currency="USD"
-      allowedCountries={["US", "GB", "CA"]}
+      successUrl="https://www.erichowey.dev"
+      cancelUrl="https://www.google.com"
+      currency="CAD"
+      allowedCountries={["US", "CA"]}
       billingAddressCollection={true}
     >
       {element}

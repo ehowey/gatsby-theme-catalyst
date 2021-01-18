@@ -39,7 +39,7 @@ module.exports = {
         // sanityWatchMode: true,
         // sanityOverlayDrafts: false, // Requires a token and private dataset
         sanityProjectId: `5p7hmld1`, // Required
-        stripePublicApi: `789abc`,
+        stripePublicKey: `pk_test_51I9wsTBd3GPToWTXiLTYb06BDQ2BLbZ9VGYFUxLEjDSZzISHY5Hf7yT7fgWtarYkwhWFJZSCk6aQzKMya0eormeB00gXeZVtrf`,
       },
     },
     {
