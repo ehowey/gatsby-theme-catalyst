@@ -4,6 +4,13 @@
   "version": "0.0.1",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
+  "workspaces": {
+    "nohoist": [
+      "stripe",
+      "*use-shopping-cart",
+      "@stripe/stripe-js"
+    ]
+  },
   "dependencies": {
     "gatsby": "^2.24.58",
     "gatsby-theme-catalyst-ecommerce": "^0.0.1",

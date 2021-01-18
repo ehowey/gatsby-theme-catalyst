@@ -41,23 +41,20 @@ const Store = () => {
   const handleCheckout = async (event) => {
     event.preventDefault()
 
-    const response = await fetch(
-      "/.netlify/starters/gatsby-starter-catalyst-ecommerce/functions/create-session",
-      {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(cartDetails),
-      }
-    )
+    const response = await fetch("/.netlify/functions/create-session", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartDetails),
+    })
       .then((res) => {
-        return res
+        return res.json()
       })
       .catch((error) => console.log(error))
 
-    console.log(response.body)
-    // redirectToCheckout({ sessionId: response.sessionId })
+    console.log(response)
+    redirectToCheckout({ sessionId: response.sessionId })
   }
 
   console.log(cartDetails)
