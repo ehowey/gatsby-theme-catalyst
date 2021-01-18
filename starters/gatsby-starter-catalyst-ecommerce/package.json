@@ -7,6 +7,8 @@
   "dependencies": {
     "gatsby": "^2.24.58",
     "gatsby-theme-catalyst-ecommerce": "^0.0.1",
+    "@stripe/stripe-js": "^1.11.0",
+    "use-shopping-cart": "^2.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
