@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Leaf",
+    "id": "leaf_1",
+    "price": 5.5,
+    "image": "https://i.imgur.com/AUJQtJC.jpg",
+    "currency": "CAD"
+  },
+  {
+    "name": "Pinecones",
+    "id": "pinecone_1",
+    "price": 1.45,
+    "image": "https://i.imgur.com/4rVhatT.jpg",
+    "currency": "CAD"
+  }
+]

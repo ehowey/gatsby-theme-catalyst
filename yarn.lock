@@ -2775,6 +2775,11 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
+"@stripe/stripe-js@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.11.0.tgz#00e812d72a7760dae08237875066d263671478ee"
+  integrity sha512-SDNZKuETBEVkernd1tq8tL6wNfVKrl24Txs3p+4NYxoaIbNaEO7mrln/2Y/WRcQBWjagvhDIM5I6+X1rfK0qhQ==
+
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@styled-system/background/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"
@@ -14700,6 +14705,11 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.1.tgz#66c5701c3e7560ab4822a4ee2742dee215d72eb3"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
+react-storage-hooks@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-storage-hooks/-/react-storage-hooks-4.0.1.tgz#e30ed5cda48c77c431ecc02ec3824bd615f5b7fb"
+  integrity sha512-fetDkT5RDHGruc2NrdD1iqqoLuXgbx6AUpQSQLLkrCiJf8i97EtwJNXNTy3+GRfsATLG8TZgNc9lGRZOaU5yQA==
+
 react@^16.13.1:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
@@ -17882,6 +17892,14 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+use-shopping-cart@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/use-shopping-cart/-/use-shopping-cart-2.3.0.tgz#44bc973a58e401cc6e7349c0dbefddf5c89cd95e"
+  integrity sha512-5xJ1JQAXg5bqoEI1YzyrdLp9z5Ugf+En/YdbK5b5+mbc39yxUg5+y2FDe1cvyf8Anybo+HZfbgwFC4+JuCW3Pw==
+  dependencies:
+    react-storage-hooks "^4.0.0"
+    uuid "^8.3.1"
+
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
@@ -17956,6 +17974,11 @@ uuid@^8.3.0:
   version "8.3.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.1.tgz#2ba2e6ca000da60fce5a196954ab241131e05a31"
   integrity sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
+
+uuid@^8.3.1:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache@^1.1.2:
   version "1.1.2"
