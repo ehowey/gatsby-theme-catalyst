@@ -2,7 +2,7 @@
   base = "www/"
   command = "npm run build"
   publish = "public"
-[context.\(ecommerce\)--initial-work-on-theme-and-starter]
+[context.'(ecommerce)--initial-work-on-theme-and-starter']
   base = "starters/gatsby-starter-catalyst-ecommerce"
   command = "npm run build"
   publish = "public"
