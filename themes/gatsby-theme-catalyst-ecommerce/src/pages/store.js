@@ -72,6 +72,25 @@ const Store = () => {
     redirectToCheckout({ sessionId: response.sessionId })
   }
 
+  const handleBuyNow = async (product) => {
+    console.log(product)
+    // event.preventDefault()
+
+    const response = await fetch("/.netlify/functions/create-session", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ [product.id]: { ...product, quantity: 1 } }),
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .catch((error) => console.log(error))
+
+    redirectToCheckout({ sessionId: response.sessionId })
+  }
+
   return (
     <Layout>
       <SEO title="Store" />
@@ -81,6 +100,12 @@ const Store = () => {
           <h3>{product.name}</h3>
           <Img fluid={product.image} sx={{ width: "200px", height: "200px" }} />
           <p>{product.formattedPrice}</p>
+          <button
+            onClick={() => handleBuyNow(product)}
+            aria-label={`Buy ${product.name} now`}
+          >
+            Buy now
+          </button>
           <button
             onClick={() => addItem(product)}
             aria-label={`Add ${product.name} to your cart`}
