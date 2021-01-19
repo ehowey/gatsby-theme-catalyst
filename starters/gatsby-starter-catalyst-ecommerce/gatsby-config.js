@@ -40,6 +40,11 @@ module.exports = {
         // sanityOverlayDrafts: false, // Requires a token and private dataset
         sanityProjectId: `5p7hmld1`, // Required
         stripePublicKey: `pk_test_51I9wsTBd3GPToWTXiLTYb06BDQ2BLbZ9VGYFUxLEjDSZzISHY5Hf7yT7fgWtarYkwhWFJZSCk6aQzKMya0eormeB00gXeZVtrf`,
+        allowedCountries: ["US", "CA"],
+        billingAddressCollection: true,
+        currency: "CAD",
+        successUrl: "https://www.erichowey.dev",
+        cancelUrl: "https://www.google.com",
       },
     },
     {

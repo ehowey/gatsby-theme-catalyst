@@ -8,13 +8,17 @@
     "nohoist": [
       "stripe",
       "*use-shopping-cart",
-      "@stripe/stripe-js"
+      "@stripe/stripe-js",
+      "@sanity/client",
+      "dollars-to-cents"
     ]
   },
   "dependencies": {
     "gatsby": "^2.24.58",
     "gatsby-theme-catalyst-ecommerce": "^0.0.1",
     "@stripe/stripe-js": "^1.11.0",
+    "@sanity/client": "^2.1.4",
+    "dollars-to-cents": "^1.0.3",
     "stripe": "^8.129.0",
     "use-shopping-cart": "^2.3.0",
     "react": "^16.13.1",

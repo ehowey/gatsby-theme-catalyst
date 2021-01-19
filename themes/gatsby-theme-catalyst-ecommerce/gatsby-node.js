@@ -1,21 +1,62 @@
 const { createContentDigest } = require(`gatsby-core-utils`)
 
+// Theme options validation
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    stripePublicKey: Joi.string()
+      .required()
+      .description(`Please include your Stripe Public Key`),
+    successUrl: Joi.string()
+      .required()
+      .description(`Url for successful transactions`),
+    cancelUrl: Joi.string()
+      .required()
+      .description(`Url for cancelled transactions`),
+    currency: Joi.string()
+      .required()
+      .description(`Currency for your store, e.g. USD`),
+    billingAddressCollection: Joi.boolean()
+      .required()
+      .description(`Toggle collection of billing addresses`),
+    allowedCountries: Joi.array()
+      .items(Joi.string())
+      .required()
+      .description(`An array of allowed countries, e.g. ["US", "CA"]`),
+  })
+}
+
 // Theme Options Customizations
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`type CatalystEcommerceConfig implements Node {
     stripePublicKey: String!
-    
+    successUrl: String!
+    cancelUrl: String!
+    currency: String!
+    allowedCountries: [String!]
+    billingAddressCollection: Boolean!
   }`)
 }
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { stripePublicKey = "abc123" }
+  {
+    stripePublicKey = "abc123",
+    successUrl = "https://useshoppingcart.com/",
+    cancelUrl = "https://useshoppingcart.com/",
+    currency = "USD",
+    allowedCountries = ["US", "CA"],
+    billingAddressCollection = true,
+  }
 ) => {
   // create garden data from plugin config
   const catalystEcommerceConfigFieldData = {
     stripePublicKey,
+    successUrl,
+    cancelUrl,
+    currency,
+    allowedCountries,
+    billingAddressCollection,
   }
   createNode({
     ...catalystEcommerceConfigFieldData,

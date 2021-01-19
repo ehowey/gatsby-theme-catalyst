@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import { useShoppingCart } from "use-shopping-cart"
+import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import dollarsToCents from "dollars-to-cents"
 
 const Store = () => {
   const data = useStaticQuery(graphql`
@@ -13,7 +15,16 @@ const Store = () => {
           id
           price
           currency
-          sanityId
+          image {
+            asset {
+              fluid(maxWidth: 1024) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+          slug {
+            current
+          }
         }
       }
     }
@@ -29,13 +40,18 @@ const Store = () => {
   } = useShoppingCart()
 
   const productData = data.allSanityProduct.nodes.map((product) => {
-    const x = {
+    const formattedProduct = {
       name: product.name,
-      id: product.sanityId,
+      id: product.slug.current,
       currency: product.currency,
-      price: product.price,
+      price: dollarsToCents(product.price),
+      formattedPrice: formatCurrencyString({
+        value: dollarsToCents(product.price),
+        currency: "CAD",
+      }),
+      image: product.image.asset.fluid,
     }
-    return x
+    return formattedProduct
   })
 
   const handleCheckout = async (event) => {
@@ -53,11 +69,8 @@ const Store = () => {
       })
       .catch((error) => console.log(error))
 
-    console.log(response)
     redirectToCheckout({ sessionId: response.sessionId })
   }
-
-  console.log(cartDetails)
 
   return (
     <Layout>
@@ -66,7 +79,8 @@ const Store = () => {
       {productData.map((product) => (
         <div key={product.name}>
           <h3>{product.name}</h3>
-          <p>{product.price.toString()}</p>
+          <Img fluid={product.image} sx={{ width: "200px", height: "200px" }} />
+          <p>{product.formattedPrice}</p>
           <button
             onClick={() => addItem(product)}
             aria-label={`Add ${product.name} to your cart`}
