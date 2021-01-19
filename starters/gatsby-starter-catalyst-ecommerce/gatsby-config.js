@@ -1,4 +1,5 @@
 require("dotenv").config()
+const stripeConfig = require("./stripe-config")
 
 module.exports = {
   siteMetadata: {
@@ -38,13 +39,15 @@ module.exports = {
         // sanityToken: null,
         // sanityWatchMode: true,
         // sanityOverlayDrafts: false, // Requires a token and private dataset
-        sanityProjectId: `5p7hmld1`, // Required
-        stripePublicKey: `pk_test_51I9wsTBd3GPToWTXiLTYb06BDQ2BLbZ9VGYFUxLEjDSZzISHY5Hf7yT7fgWtarYkwhWFJZSCk6aQzKMya0eormeB00gXeZVtrf`,
-        allowedCountries: ["US", "CA"],
-        billingAddressCollection: true,
-        currency: "CAD",
-        successUrl: "https://www.erichowey.dev",
-        cancelUrl: "https://www.google.com",
+        sanityProjectId: process.env.GATSBY_SANITY_PROJECT_ID, // Required
+        sanityDataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
+        sanityToken: process.env.GATSBY_SANITY_TOKEN,
+        stripePublicKey: stripeConfig.stripePublicKey,
+        allowedCountries: stripeConfig.allowedCountries,
+        billingAddressCollection: stripeConfig.billingAddressCollection,
+        currency: stripeConfig.currency,
+        successUrl: stripeConfig.successUrl,
+        cancelUrl: stripeConfig.cancelUrl,
       },
     },
     {

@@ -31,12 +31,12 @@ const Store = () => {
   `)
 
   const {
-    totalPrice,
     redirectToCheckout,
     cartCount,
     addItem,
     clearCart,
     cartDetails,
+    formattedTotalPrice,
   } = useShoppingCart()
 
   const productData = data.allSanityProduct.nodes.map((product) => {
@@ -90,7 +90,7 @@ const Store = () => {
         </div>
       ))}
       <p>Number of Items: {cartCount}</p>
-      <p>Total: {totalPrice}</p>
+      <p>Total: {formattedTotalPrice}</p>
       <button onClick={handleCheckout}>Checkout</button>
       <button onClick={() => clearCart()}>Remove all items</button>
     </Layout>

@@ -8,6 +8,7 @@
 const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
 const sanityClient = require("@sanity/client")
 const dollarsToCents = require("dollars-to-cents")
+const stripeConfig = require("../stripe-config")
 const validateCartItems = require("use-shopping-cart/src/serverUtil")
   .validateCartItems
 
@@ -15,7 +16,7 @@ const validateCartItems = require("use-shopping-cart/src/serverUtil")
 const client = sanityClient({
   projectId: process.env.GATSBY_SANITY_PROJECT_ID,
   dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
-  // token: 'sanity-auth-token', // or leave blank to be anonymous user
+  token: process.env.GATSBY_SANITY_PROJECT_TOKEN,
   useCdn: true, // `false` if you want to ensure fresh data
 })
 const query = '*[_type == "product"]{"image": image.asset->url, ...}'
@@ -30,7 +31,7 @@ exports.handler = async (event) => {
           name: product.name,
           id: product.slug.current,
           price: dollarsToCents(product.price),
-          currency: process.env.GATSBY_STRIPE_CURRENCY,
+          currency: stripeConfig.currency,
           image: product.image,
         }
         return formattedProduct
@@ -40,15 +41,14 @@ exports.handler = async (event) => {
     const line_items = validateCartItems(productsFromSanity, cartItemsFromWeb)
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      billing_address_collection: "auto",
-      allow_promotion_codes: true,
+      payment_method_types: stripeConfig.paymentMethodTypes,
+      billing_address_collection: stripeConfig.billingAddressCollection,
       shipping_address_collection: {
-        allowed_countries: ["US", "CA"],
+        allowed_countries: stripeConfig.allowedCountries,
       },
-      mode: "payment",
-      success_url: `https://www.erichowey.dev`,
-      cancel_url: `https://www.google.com`,
+      mode: stripeConfig.mode,
+      success_url: stripeConfig.successUrl,
+      cancel_url: stripeConfig.cancelUrl,
       line_items,
     })
 

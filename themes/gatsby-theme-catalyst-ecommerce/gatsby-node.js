@@ -15,9 +15,9 @@ exports.pluginOptionsSchema = ({ Joi }) => {
     currency: Joi.string()
       .required()
       .description(`Currency for your store, e.g. USD`),
-    billingAddressCollection: Joi.boolean()
+    billingAddressCollection: Joi.string()
       .required()
-      .description(`Toggle collection of billing addresses`),
+      .description(`"auto" or "required"`),
     allowedCountries: Joi.array()
       .items(Joi.string())
       .required()
@@ -25,52 +25,52 @@ exports.pluginOptionsSchema = ({ Joi }) => {
   })
 }
 
-// Theme Options Customizations
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  createTypes(`type CatalystEcommerceConfig implements Node {
-    stripePublicKey: String!
-    successUrl: String!
-    cancelUrl: String!
-    currency: String!
-    allowedCountries: [String!]
-    billingAddressCollection: Boolean!
-  }`)
-}
+// // Theme Options Customizations
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+//   createTypes(`type CatalystEcommerceConfig implements Node {
+//     stripePublicKey: String!
+//     successUrl: String!
+//     cancelUrl: String!
+//     currency: String!
+//     allowedCountries: [String!]
+//     billingAddressCollection: Boolean!
+//   }`)
+// }
 
-exports.sourceNodes = (
-  { actions: { createNode }, schema },
-  {
-    stripePublicKey = "abc123",
-    successUrl = "https://useshoppingcart.com/",
-    cancelUrl = "https://useshoppingcart.com/",
-    currency = "USD",
-    allowedCountries = ["US", "CA"],
-    billingAddressCollection = true,
-  }
-) => {
-  // create garden data from plugin config
-  const catalystEcommerceConfigFieldData = {
-    stripePublicKey,
-    successUrl,
-    cancelUrl,
-    currency,
-    allowedCountries,
-    billingAddressCollection,
-  }
-  createNode({
-    ...catalystEcommerceConfigFieldData,
-    id: `gatsby-theme-catalyst-ecommerce-config`,
-    parent: null,
-    children: [],
-    internal: {
-      type: `CatalystEcommerceConfig`,
-      contentDigest: createContentDigest(catalystEcommerceConfigFieldData),
-      content: JSON.stringify(catalystEcommerceConfigFieldData),
-      description: `Catalyst Sanity Config`,
-    },
-  })
-}
+// exports.sourceNodes = (
+//   { actions: { createNode }, schema },
+//   {
+//     stripePublicKey = "abc123",
+//     successUrl = "https://useshoppingcart.com/",
+//     cancelUrl = "https://useshoppingcart.com/",
+//     currency = "USD",
+//     allowedCountries = ["US", "CA"],
+//     billingAddressCollection = true,
+//   }
+// ) => {
+//   // create garden data from plugin config
+//   const catalystEcommerceConfigFieldData = {
+//     stripePublicKey,
+//     successUrl,
+//     cancelUrl,
+//     currency,
+//     allowedCountries,
+//     billingAddressCollection,
+//   }
+//   createNode({
+//     ...catalystEcommerceConfigFieldData,
+//     id: `gatsby-theme-catalyst-ecommerce-config`,
+//     parent: null,
+//     children: [],
+//     internal: {
+//       type: `CatalystEcommerceConfig`,
+//       contentDigest: createContentDigest(catalystEcommerceConfigFieldData),
+//       content: JSON.stringify(catalystEcommerceConfigFieldData),
+//       description: `Catalyst Sanity Config`,
+//     },
+//   })
+// }
 
 // const withDefaults = require(`./src/utils/default-options`)
 // const {
