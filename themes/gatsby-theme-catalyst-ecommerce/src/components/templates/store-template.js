@@ -2,34 +2,10 @@
 import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import dollarsToCents from "dollars-to-cents"
 
-const Store = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allSanityProduct {
-        nodes {
-          name
-          id
-          price
-          currency
-          image {
-            asset {
-              fluid(maxWidth: 1024) {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
-          slug {
-            current
-          }
-        }
-      }
-    }
-  `)
-
+const Store = ({ data }) => {
   const {
     redirectToCheckout,
     cartCount,

@@ -5,10 +5,17 @@ export default {
   fields: [
     {
       name: "active",
-      title: "Active",
-      description: "Toggle whether the product is active in your store.",
+      title: "Active?",
+      description:
+        "Toggle whether the product is active in your store. Inactive products are kept in the database but not displayed on the website.",
       type: "boolean",
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "featured",
+      title: "Featured?",
+      description: "Toggle whether a product is featured.",
+      type: "boolean",
     },
     {
       name: "name",
@@ -27,22 +34,39 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "image",
-      title: "Image",
-      description: "An image of your product.",
-      type: "image",
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: "price",
       title: "Price",
       type: "number",
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "currency",
-      title: "Currency",
-      type: "string",
+      name: "categories",
+      type: "array",
+      title: "Categories",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "productCategory",
+            },
+          ],
+        },
+      ],
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Description",
+      name: "description",
+      type: "text",
+      validation: (Rule) => Rule.required(),
+    },
+
+    {
+      name: "image",
+      title: "Image",
+      description: "An image of your product.",
+      type: "image",
       validation: (Rule) => Rule.required(),
     },
   ],

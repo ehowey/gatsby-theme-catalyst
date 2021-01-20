@@ -23,6 +23,7 @@ import footerColors from "./footerColors"
 import headerColors from "./headerColors"
 import category from "./category"
 import product from "./product"
+import productCategory from "./productCategory"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -51,5 +52,6 @@ export default createSchema({
     footerColors,
     category,
     product,
+    productCategory,
   ]),
 })
