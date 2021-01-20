@@ -67,6 +67,7 @@ const serializers = {
     },
   },
   marks: {
+    sup: ({ children }) => <sup>{children}</sup>,
     code: ({ children }) => <Styled.inlineCode>{children}</Styled.inlineCode>,
     link: ({ children, mark }) =>
       mark.blank ? (
