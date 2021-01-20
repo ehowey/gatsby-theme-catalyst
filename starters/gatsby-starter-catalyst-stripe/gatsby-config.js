@@ -7,7 +7,7 @@ module.exports = {
     description: `Placeholder description`, // Sourced from SANITY
     keywords: [`keyword 1`, `keyword 2`, `keyword 3`], // Sourced from SANITY
     author: `Placeholder author`, // Sourced from SANITY
-    siteUrl: `https://gatsby-starter-catalyst-ecommerce.netlify.app`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
+    siteUrl: `https://gatsby-starter-catalyst-stripe.netlify.app`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
     menuLinks: [
       // Sourced from SANITY
       {
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-theme-catalyst-ecommerce`,
+      resolve: `gatsby-theme-catalyst-stripe`,
       options: {
         // Example for an env variable
         // sanityProjectID: process.env.SANITY_PROJECT_ID,

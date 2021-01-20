@@ -254,7 +254,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 //   }
 //   createNode({
 //     ...catalystEcommerceConfigFieldData,
-//     id: `gatsby-theme-catalyst-ecommerce-config`,
+//     id: `gatsby-theme-catalyst-stripe-config`,
 //     parent: null,
 //     children: [],
 //     internal: {

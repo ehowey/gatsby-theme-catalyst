@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "gatsby-theme-catalyst-ecommerce"
+    "name": "gatsby-theme-catalyst-stripe"
   },
   "plugins": [
     "@sanity/base",
