@@ -55,6 +55,10 @@ const serializers = {
               {props.children}
             </Styled.h6>
           )
+        case "small":
+          return <Styled.p sx={{ fontSize: 1 }}>{props.children}</Styled.p>
+        case "smallest":
+          return <Styled.p sx={{ fontSize: 0 }}>{props.children}</Styled.p>
         case "blockquote":
           return <Styled.blockquote>{props.children}</Styled.blockquote>
         default:
@@ -63,6 +67,7 @@ const serializers = {
     },
   },
   marks: {
+    sup: ({ children }) => <sup>{children}</sup>,
     code: ({ children }) => <Styled.inlineCode>{children}</Styled.inlineCode>,
     link: ({ children, mark }) =>
       mark.blank ? (

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-catalyst-ecommerce",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Stripe",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "workspaces": {
@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "gatsby": "^2.24.58",
-    "gatsby-theme-catalyst-ecommerce": "^0.0.1",
     "@stripe/stripe-js": "^1.11.0",
     "@sanity/client": "^2.1.4",
     "dollars-to-cents": "^1.0.3",
     "stripe": "^8.129.0",
     "use-shopping-cart": "^2.3.0",
+    "gatsby-theme-catalyst-ecommerce": "^0.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
