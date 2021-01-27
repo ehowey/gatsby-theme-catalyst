@@ -1,10 +1,5 @@
 const withDefaults = require(`./src/utils/default-options`)
-const {
-  GraphQLInt,
-  GraphQLString,
-  TypeNameMetaFieldDef,
-} = require("gatsby/graphql")
-const memoize = require("lodash.memoize")
+const { GraphQLInt, GraphQLString } = require("gatsby/graphql")
 
 // Theme options validation
 exports.pluginOptionsSchema = ({ Joi }) => {
@@ -69,7 +64,7 @@ exports.createResolvers = ({ createResolvers }) => {
 
   const productCategoryResolvers = {
     SanityProductCategory: {
-      posts: {
+      products: {
         type: ["SanityProduct"],
         resolve(source, args, context, info) {
           return context.nodeModel.runQuery({
@@ -222,7 +217,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 // // Theme Options Customizations
 // exports.createSchemaCustomization = ({ actions }) => {
 //   const { createTypes } = actions
-//   createTypes(`type CatalystEcommerceConfig implements Node {
+//   createTypes(`type CatalystStripeConfig implements Node {
 //     stripePublicKey: String!
 //     successUrl: String!
 //     cancelUrl: String!
@@ -244,7 +239,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 //   }
 // ) => {
 //   // create garden data from plugin config
-//   const catalystEcommerceConfigFieldData = {
+//   const catalystStripeConfigFieldData = {
 //     stripePublicKey,
 //     successUrl,
 //     cancelUrl,
@@ -253,14 +248,14 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 //     billingAddressCollection,
 //   }
 //   createNode({
-//     ...catalystEcommerceConfigFieldData,
+//     ...catalystStripeConfigFieldData,
 //     id: `gatsby-theme-catalyst-stripe-config`,
 //     parent: null,
 //     children: [],
 //     internal: {
-//       type: `CatalystEcommerceConfig`,
-//       contentDigest: createContentDigest(catalystEcommerceConfigFieldData),
-//       content: JSON.stringify(catalystEcommerceConfigFieldData),
+//       type: `CatalystStripeConfig`,
+//       contentDigest: createContentDigest(catalystStripeConfigFieldData),
+//       content: JSON.stringify(catalystStripeConfigFieldData),
 //       description: `Catalyst Sanity Config`,
 //     },
 //   })

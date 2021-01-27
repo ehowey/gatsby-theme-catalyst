@@ -40,6 +40,14 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "stock",
+      title: "Amount of stock",
+      description:
+        "If the stock number is 0 then the product will be shown as out of stock.",
+      type: "number",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "categories",
       type: "array",
       title: "Categories",

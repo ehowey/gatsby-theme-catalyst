@@ -18,14 +18,19 @@ const Store = ({ data }) => {
   const productData = data.allSanityProduct.nodes.map((product) => {
     const formattedProduct = {
       name: product.name,
-      id: product.slug.current,
-      currency: product.currency,
+      id: product._id,
+      currency: "CAD",
       price: dollarsToCents(product.price),
       formattedPrice: formatCurrencyString({
         value: dollarsToCents(product.price),
         currency: "CAD",
       }),
       image: product.image.asset.fluid,
+      product_data: {
+        metadata: {
+          sanityId: product._id,
+        },
+      },
     }
     return formattedProduct
   })

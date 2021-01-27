@@ -29,16 +29,18 @@ exports.handler = async (event) => {
       data.map((product) => {
         const formattedProduct = {
           name: product.name,
-          id: product.slug.current,
+          id: product._id,
           price: dollarsToCents(product.price),
           currency: stripeConfig.currency,
           image: product.image,
+          sanityId: product._id,
         }
         return formattedProduct
       })
     )
     const cartItemsFromWeb = JSON.parse(event.body)
     const line_items = validateCartItems(productsFromSanity, cartItemsFromWeb)
+    console.log(line_items[0].price_data.product_data)
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: stripeConfig.paymentMethodTypes,
