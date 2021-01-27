@@ -8282,10 +8282,10 @@ gatsby-core-utils@^1.9.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-cypress@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.8.0.tgz#7792d07602d4038dbe6c52a22a8b096b03ecad67"
-  integrity sha512-IDKhcNr5sFIr/fJl2cIrzLYFt4evr3sGwABszgiqUs7FZswP04KwXrhCHwB2tgtYwQvPIRBvAgauIK/K147vXA==
+gatsby-cypress@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-cypress/-/gatsby-cypress-0.10.0.tgz#a94e97c1c1ed2e2681296818bdc62dd95577fdff"
+  integrity sha512-9OqGwIhgPWTN9BjAdAgWiI+ldG6dRp/HBVFfSjLjp+2uDMDznPOtS0VRcfr8dzlnhVy3MrDlEnH16Q2lkj6j9A==
   dependencies:
     "@babel/runtime" "^7.12.5"
 
