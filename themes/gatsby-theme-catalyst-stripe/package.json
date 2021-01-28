@@ -1,11 +1,11 @@
 {
   "name": "gatsby-theme-catalyst-stripe",
   "description": "Gatsby theme for e-commerce using Stripe and Use-Shopping-Cart",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@stripe/stripe-js": "^1.11.0",
-    "gatsby-theme-catalyst-core": "^3.0.1",
+    "gatsby-theme-catalyst-core": "^3.1.0",
     "gatsby-theme-catalyst-footer": "^1.2.3",
     "gatsby-theme-catalyst-header-bigtop": "^1.1.3",
     "dollars-to-cents": "^1.0.3",

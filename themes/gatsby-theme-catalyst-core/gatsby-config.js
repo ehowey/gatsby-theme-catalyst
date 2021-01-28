@@ -9,6 +9,8 @@ module.exports = (themeOptions) => {
     themeOptions.remarkImagesWidth == null
       ? 1440
       : parseInt(themeOptions.remarkImagesWidth)
+  const imageQuality =
+    themeOptions.imageQuality == null ? 50 : parseInt(themeOptions.imageQuality)
   const gatsbyRemarkPlugins = [
     {
       resolve: `gatsby-remark-relative-images`,
@@ -21,6 +23,7 @@ module.exports = (themeOptions) => {
         linkImagesToOriginal: false,
         withWebp: true,
         backgroundColor: `transparent`,
+        quality: imageQuality,
       },
     },
     {
@@ -106,6 +109,7 @@ module.exports = (themeOptions) => {
                 linkImagesToOriginal: false,
                 withWebp: true,
                 backgroundColor: `transparent`,
+                quality: imageQuality,
               },
             },
           ],
@@ -118,7 +122,12 @@ module.exports = (themeOptions) => {
       `gatsby-transformer-sharp`,
       `gatsby-transformer-yaml`,
       `gatsby-transformer-json`,
-      `gatsby-plugin-sharp`,
+      {
+        resolve: `gatsby-plugin-sharp`,
+        options: {
+          quality: imageQuality,
+        },
+      },
       `gatsby-plugin-catch-links`,
       `gatsby-plugin-theme-ui`,
     ].filter(Boolean),
