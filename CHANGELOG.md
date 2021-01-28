@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file
 
+## catalyst-core v3.1.0
+
+- Adds in the `imageQuality` theme option which allows you to specify an image quality for your images other than the default `50`. Values between 0 - 100 will work.
+- TO DO: Needs additional documentation updates
+
 ## catalyst-header-side v2.0.0
 
 - **Breaking Change**: This is a visually breaking change. Added support for dropdowns that function as toggles, instead of the pure CSS on hover behaviour that was there before. I also adjusted the default text alignment to be left as this is more expected. You can nudge it back to the centre using variants.
