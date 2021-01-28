@@ -20,7 +20,7 @@
     "dollars-to-cents": "^1.0.3",
     "stripe": "^8.129.0",
     "use-shopping-cart": "^2.3.0",
-    "gatsby-theme-catalyst-stripe": "^0.0.3",
+    "gatsby-theme-catalyst-stripe": "*",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

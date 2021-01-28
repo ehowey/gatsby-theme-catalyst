@@ -17,7 +17,7 @@ exports.handler = async ({ body, headers }) => {
         { limit: 100 },
         function (err, lineItems) {
           console.log(err)
-          console.log(lineItems.data[0].price)
+          console.log(lineItems)
         }
       )
     }

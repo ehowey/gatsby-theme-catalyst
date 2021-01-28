@@ -40,7 +40,6 @@ exports.handler = async (event) => {
     )
     const cartItemsFromWeb = JSON.parse(event.body)
     const line_items = validateCartItems(productsFromSanity, cartItemsFromWeb)
-    console.log(line_items[0].price_data.product_data)
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: stripeConfig.paymentMethodTypes,
@@ -51,6 +50,9 @@ exports.handler = async (event) => {
       mode: stripeConfig.mode,
       success_url: stripeConfig.successUrl,
       cancel_url: stripeConfig.cancelUrl,
+      metadata: {
+        id: "123abc",
+      },
       line_items,
     })
 

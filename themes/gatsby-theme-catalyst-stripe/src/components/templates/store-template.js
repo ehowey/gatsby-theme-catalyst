@@ -54,9 +54,6 @@ const Store = ({ data }) => {
   }
 
   const handleBuyNow = async (product) => {
-    console.log(product)
-    // event.preventDefault()
-
     const response = await fetch("/.netlify/functions/create-session", {
       method: "post",
       headers: {
@@ -75,7 +72,7 @@ const Store = ({ data }) => {
   return (
     <Layout>
       <SEO title="Store" />
-      <Styled.h1>Store</Styled.h1>
+      <Styled.h1>Stores</Styled.h1>
       {productData.map((product) => (
         <div key={product.name}>
           <h3>{product.name}</h3>
