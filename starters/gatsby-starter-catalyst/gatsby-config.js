@@ -72,7 +72,7 @@ module.exports = {
         // displaySiteTitle: true,
         // displaySiteLogoMobile: true,
         // displaySiteTitleMobile: true,
-        // invertLogo: false,
+        // invertSiteLogo: false,
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,

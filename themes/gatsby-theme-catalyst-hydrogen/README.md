@@ -29,7 +29,7 @@ For example the following config is valid:
       resolve: `gatsby-theme-catalyst-hydrogen`,
       options: {
         // Core theme
-        invertLogo: false,
+        invertSiteLogo: false,
         footerContentLocation: "right",
         useStickyHeader: true,
         // Sanity theme
@@ -47,7 +47,7 @@ For example the following config is valid:
 | `assetPath`        | String        | Defaults to "content/assets", determines where the page assets like images are located. |
 | `displaySiteLogo`  | true or false | Defaults to true, controls whether the logo is displayed                                |
 | `displaySiteTitle` | true or false | Defaults to true, controls whether the site title is displayed                          |
-| `invertLogo`       | true or false | Defaults to false, controls whether the logo is inverted when the mobile menu is open   |
+| `invertSiteLogo`   | true or false | Defaults to false, controls whether the logo is inverted when the mobile menu is open   |
 | `useStickyHeader`  | true or false | Defaults to false, controls whether the header is sticky or static                      |
 | `useSocialLinks`   | true or false | Defaults to true, controls whether the social links are displayed or not                |
 | `useColorMode`     | true or false | Defaults to true, controls whether the dark mode toggle is available.                   |
