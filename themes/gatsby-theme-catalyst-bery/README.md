@@ -84,10 +84,10 @@ For example the following config is valid:
 
 ### Bery Options
 
-| Option           | Values | Description                      |
-| ---------------- | ------ | -------------------------------- |
-| `rssTitle`       | String | Set the RSS title for your feed. |
-| `rssDescription` | String | Set the RSS title for your feed. |
+| Option           | Values | Description                            |
+| ---------------- | ------ | -------------------------------------- |
+| `rssTitle`       | String | Set the RSS title for your feed.       |
+| `rssDescription` | String | Set the RSS description for your feed. |
 
 ### Sanity Theme Options
 
