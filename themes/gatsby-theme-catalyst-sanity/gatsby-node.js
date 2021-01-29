@@ -375,11 +375,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`type CatalystSanityConfig implements Node {
-    sanityProjectId: String!
-    sanityDataset: String!
-    sanityToken: String
-    sanityWatchMode: Boolean!
-    sanityOverlayDrafts: Boolean!
     sanityCreatePages: Boolean!
     sanityCreatePosts: Boolean!
     sanityCreatePostsList: Boolean!
@@ -401,11 +396,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.sourceNodes = (
   { actions: { createNode }, schema },
   {
-    sanityProjectId = "abc123",
-    sanityDataset = "production",
-    sanityToken = null,
-    sanityWatchMode = true,
-    sanityOverlayDrafts = false,
     sanityCreatePages = true,
     sanityCreatePosts = true,
     sanityCreatePostsList = true,
@@ -425,11 +415,6 @@ exports.sourceNodes = (
 ) => {
   // create garden data from plugin config
   const catalystSanityConfigFieldData = {
-    sanityProjectId,
-    sanityDataset,
-    sanityToken,
-    sanityWatchMode,
-    sanityOverlayDrafts,
     sanityCreatePages,
     sanityCreatePosts,
     sanityCreatePostsList,
