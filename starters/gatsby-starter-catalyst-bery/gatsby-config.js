@@ -28,14 +28,23 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-bery`,
       options: {
-        sanityProjectId: `4w5ygwpy`, // Required
-        rssTitle: "My Great Blog",
-        rssDescription: "A little description of who I am and why I am great.",
-        // Defaults
+        // Example for an env variable
+        // sanityProjectID: process.env.SANITY_PROJECT_ID,
+        // sanityDataset: process.env.SANITY_DATASET
+        //
+        // Default values
+        // sanityProjectId: REQUIRED,
+        // sanityDataset: "production",
+        // sanityToken: null,
+        // sanityWatchMode: true,
+        // sanityOverlayDrafts: false, // Requires a token and private dataset
         // sanityPostPath: `/posts`,
         // footerContentLocation: "center",
         // sanityPostListTitle: "Blog",
         // sanityPostListPath: `/`,
+        sanityProjectId: `4w5ygwpy`, // Required
+        rssTitle: "My Great Blog",
+        rssDescription: "A little description of who I am and why I am great.",
       },
     },
     {

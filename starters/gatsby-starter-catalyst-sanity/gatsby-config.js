@@ -41,13 +41,14 @@ module.exports = {
         // displaySiteTitle: true,
         // displaySiteLogoMobile: true,
         // displaySiteTitleMobile: true,
-        // invertLogo: false,
+        // invertSiteLogo: false,
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
         // useKatex: false, // Dark mode is not supported when configuring the theme from SANITY.io dashboard
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
+        // imageQuality: 50,
       },
     },
     `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
@@ -73,6 +74,10 @@ module.exports = {
         // sanityCreateProjectsList: true
         // sanityPostPath: "/posts"
         // sanityProjectPath: "/projects"
+        // sanityPostListTitle: "Posts"
+        // sanityDisplayPostListTitle: true
+        // sanityProjectListTitle: "Projects"
+        // sanityDisplayProjectListTitle: true
         // useSanityTheme: false // Experimental right now
         sanityProjectId: "p9a6h8j1",
       },

@@ -51,13 +51,14 @@ module.exports = {
         // displaySiteTitle: true,
         // displaySiteLogoMobile: true,
         // displaySiteTitleMobile: true,
-        // invertLogo: false,
+        // invertSiteLogo: false,
         // useStickyHeader: false,
         // useSocialLinks: true,
         // useColorMode: true,
         // useKatex: false,
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
+        // imageQuality: 50,
       },
     },
     {
