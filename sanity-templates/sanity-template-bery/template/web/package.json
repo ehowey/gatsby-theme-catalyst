@@ -7,7 +7,7 @@
   "dependencies": {
     "fontsource-sen": "^3.0.3",
     "gatsby": "^2.24.58",
-    "gatsby-theme-catalyst-bery": "^3.1.1",
+    "gatsby-theme-catalyst-bery": "^3.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
