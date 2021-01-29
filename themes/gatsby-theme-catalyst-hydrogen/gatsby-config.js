@@ -16,6 +16,8 @@ module.exports = (themeOptions) => {
           useColorMode: themeOptions.useColorMode || false,
           useKatex: themeOptions.useKatex,
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
+          remarkImagesWidth: themeOptions.remarkImagesWidth,
+          imageQuality: themeOptions.imageQuality,
         },
       },
       `gatsby-theme-catalyst-header-top`,

@@ -75,6 +75,7 @@ module.exports = {
         // useKatex: false,
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
+        // imageQuality: 50,
         footerContentLocation: "right", // "left", "right", "center"
       },
     },

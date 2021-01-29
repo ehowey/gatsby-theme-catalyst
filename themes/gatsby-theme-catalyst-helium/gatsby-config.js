@@ -17,6 +17,7 @@ module.exports = (themeOptions) => {
           useKatex: themeOptions.useKatex,
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
           remarkImagesWidth: themeOptions.remarkImagesWidth,
+          imageQuality: themeOptions.imageQuality,
         },
       },
       `gatsby-theme-catalyst-header-bigtop`,
