@@ -48,6 +48,7 @@ module.exports = {
         // useKatex: false, // Dark mode is not supported when configuring the theme from SANITY.io dashboard
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
+        // imageQuality: 50,
       },
     },
     `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
