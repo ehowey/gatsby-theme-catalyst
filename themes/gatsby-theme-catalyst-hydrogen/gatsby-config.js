@@ -10,7 +10,7 @@ module.exports = (themeOptions) => {
           displaySiteTitle: themeOptions.displaySiteTitle,
           displaySiteLogoMobile: themeOptions.displaySiteLogoMobile || false,
           displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
-          invertLogo: themeOptions.invertLogo,
+          invertSiteLogo: themeOptions.invertSiteLogo,
           useStickyHeader: themeOptions.useStickyHeader,
           useSocialLinks: themeOptions.useSocialLinks,
           useColorMode: themeOptions.useColorMode || false,
