@@ -94,7 +94,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     displaySiteLogoMobile: Boolean!
     displaySiteTitleMobile: Boolean!
     invertSiteLogo: Boolean!
-    mobileMenuBreakpoint: String!
     useStickyHeader: Boolean!
     useSocialLinks: Boolean!
     useColorMode: Boolean!
@@ -116,7 +115,6 @@ exports.sourceNodes = (
     displaySiteLogoMobile = true,
     displaySiteTitleMobile = true,
     invertSiteLogo = false,
-    mobileMenuBreakpoint = "768px",
     useStickyHeader = false,
     useSocialLinks = true,
     useColorMode = true,
@@ -133,7 +131,6 @@ exports.sourceNodes = (
     displaySiteLogoMobile,
     displaySiteTitleMobile,
     invertSiteLogo,
-    mobileMenuBreakpoint,
     useStickyHeader,
     useSocialLinks,
     useColorMode,

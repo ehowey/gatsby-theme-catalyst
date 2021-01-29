@@ -4,9 +4,6 @@ export const useSanityConfig = () => {
     graphql`
       query {
         catalystSanityConfig {
-          sanityDataset
-          sanityProjectId
-          sanityToken
           sanityCreatePages
           sanityCreatePosts
           sanityCreatePostsList
@@ -20,6 +17,8 @@ export const useSanityConfig = () => {
           useSanityTheme
           sanityPostListTitle
           sanityDisplayPostListTitle
+          sanityProjectListTitle
+          sanityDisplayProjectListTitle
         }
       }
     `

@@ -73,6 +73,10 @@ module.exports = {
         // sanityCreateProjectsList: true
         // sanityPostPath: "/posts"
         // sanityProjectPath: "/projects"
+        // sanityPostListTitle: "Posts"
+        // sanityDisplayPostListTitle: true
+        // sanityProjectListTitle: "Projects"
+        // sanityDisplayProjectListTitle: true
         // useSanityTheme: false // Experimental right now
         sanityProjectId: "p9a6h8j1",
       },
