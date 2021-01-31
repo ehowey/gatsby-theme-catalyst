@@ -1,4 +1,12 @@
 const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
+const sanityClient = require("@sanity/client")
+// Initialize SANITY client
+const client = sanityClient({
+  projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+  dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
+  token: process.env.GATSBY_SANITY_TOKEN,
+  useCdn: false, // `false` if you want to ensure fresh data
+})
 
 exports.handler = async ({ body, headers }) => {
   try {
@@ -12,14 +20,26 @@ exports.handler = async ({ body, headers }) => {
     // only do stuff if this is a successful Stripe Checkout purchase
     if (stripeEvent.type === "checkout.session.completed") {
       const id = stripeEvent.data.object.id
-      stripe.checkout.sessions.listLineItems(
-        id,
-        { limit: 100 },
-        function (err, lineItems) {
-          console.log(err)
-          console.log(lineItems)
-        }
-      )
+      const session = await stripe.checkout.sessions.retrieve(id, {
+        expand: ["line_items", "line_items.data.price.product"],
+      })
+      const lineItems = session.line_items
+      const sanityId = lineItems.data[0].price.product.metadata.sanityId
+      console.log(lineItems)
+      console.log(sanityId)
+
+      client
+        .patch(sanityId) // Document ID to patch
+        // .set({inStock: false}) // Shallow merge
+        .dec({ stock: 1 }) // Increment field by count
+        .commit() // Perform the patch and return a promise
+        .then((updatedProduct) => {
+          console.log("Hurray, the product is updated! New document:")
+          console.log(updatedProduct)
+        })
+        .catch((err) => {
+          console.error("Oh no, the update failed: ", err.message)
+        })
     }
 
     return {

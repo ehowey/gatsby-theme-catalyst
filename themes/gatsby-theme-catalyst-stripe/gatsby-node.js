@@ -1,30 +1,30 @@
 const withDefaults = require(`./src/utils/default-options`)
 const { GraphQLInt, GraphQLString } = require("gatsby/graphql")
 
-// Theme options validation
-exports.pluginOptionsSchema = ({ Joi }) => {
-  return Joi.object({
-    stripePublicKey: Joi.string()
-      .required()
-      .description(`Please include your Stripe Public Key`),
-    successUrl: Joi.string()
-      .required()
-      .description(`Url for successful transactions`),
-    cancelUrl: Joi.string()
-      .required()
-      .description(`Url for cancelled transactions`),
-    currency: Joi.string()
-      .required()
-      .description(`Currency for your store, e.g. USD`),
-    billingAddressCollection: Joi.string()
-      .required()
-      .description(`"auto" or "required"`),
-    allowedCountries: Joi.array()
-      .items(Joi.string())
-      .required()
-      .description(`An array of allowed countries, e.g. ["US", "CA"]`),
-  })
-}
+// // Theme options validation
+// exports.pluginOptionsSchema = ({ Joi }) => {
+//   return Joi.object({
+//     stripePublicKey: Joi.string()
+//       .required()
+//       .description(`Please include your Stripe Public Key`),
+//     successUrl: Joi.string()
+//       .required()
+//       .description(`Url for successful transactions`),
+//     cancelUrl: Joi.string()
+//       .required()
+//       .description(`Url for cancelled transactions`),
+//     currency: Joi.string()
+//       .required()
+//       .description(`Currency for your store, e.g. USD`),
+//     billingAddressCollection: Joi.string()
+//       .required()
+//       .description(`"auto" or "required"`),
+//     allowedCountries: Joi.array()
+//       .items(Joi.string())
+//       .required()
+//       .description(`An array of allowed countries, e.g. ["US", "CA"]`),
+//   })
+// }
 
 // Create excerpts and create reading time for posts, based on gatsby-transformer-portable-text
 
@@ -135,7 +135,9 @@ async function createProductPages(graphql, actions, reporter, themeOptions) {
     reporter.info(`Creating product: ${path}`)
     createPage({
       path,
-      component: require.resolve("./src/components/queries/product-query.js"),
+      component: require.resolve(
+        "./src/components/queries/productPage-query.js"
+      ),
       context: {
         id,
       },

@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 
-const ProductTemplate = ({ data }) => {
+const ProductPageTemplate = ({ data }) => {
   const product = data.sanityProduct
   return (
     <Layout>
@@ -12,4 +12,4 @@ const ProductTemplate = ({ data }) => {
   )
 }
 
-export default ProductTemplate
+export default ProductPageTemplate

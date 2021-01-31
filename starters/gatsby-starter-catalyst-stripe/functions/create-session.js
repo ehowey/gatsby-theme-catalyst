@@ -16,29 +16,41 @@ const validateCartItems = require("use-shopping-cart/src/serverUtil")
 const client = sanityClient({
   projectId: process.env.GATSBY_SANITY_PROJECT_ID,
   dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
-  token: process.env.GATSBY_SANITY_PROJECT_TOKEN,
-  useCdn: true, // `false` if you want to ensure fresh data
+  token: process.env.GATSBY_SANITY_TOKEN,
+  useCdn: false, // `false` if you want to ensure fresh data
 })
-const query = '*[_type == "product"]{"image": image.asset->url, ...}'
-const params = {}
 
 exports.handler = async (event) => {
   try {
+    const cartItemsFromWeb = JSON.parse(event.body)
+    const productIdsFromWeb = Object.keys(cartItemsFromWeb)
+    const idsForQuery = productIdsFromWeb.map((id) => "'" + id + "'")
+    console.log(idsForQuery)
+    console.log(cartItemsFromWeb)
+
+    const query = `*[_type == "product" && variants[].product_id in [${idsForQuery}]]`
+    console.log(query)
+    const params = {}
     const data = await client.fetch(query, params)
+    console.log(data)
     const productsFromSanity = await Promise.all(
       data.map((product) => {
         const formattedProduct = {
           name: product.name,
-          id: product._id,
+          id: product.product_id,
           price: dollarsToCents(product.price),
           currency: stripeConfig.currency,
           image: product.image,
           sanityId: product._id,
+          product_data: {
+            metadata: {
+              variantId: product.product_id,
+            },
+          },
         }
         return formattedProduct
       })
     )
-    const cartItemsFromWeb = JSON.parse(event.body)
     const line_items = validateCartItems(productsFromSanity, cartItemsFromWeb)
 
     const session = await stripe.checkout.sessions.create({

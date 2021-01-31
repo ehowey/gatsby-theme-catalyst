@@ -8,28 +8,34 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allSanityProduct {
+    allSanityProduct(filter: { active: { eq: true } }) {
       nodes {
-        name
-        id
         _id
-        price
+        id
+        name
+        active
+        featured
         description
+        excerpt(limit: 180)
         categories {
           title
           slug {
             current
           }
         }
-        image {
-          asset {
-            fluid(maxWidth: 1024) {
-              ...GatsbySanityImageFluid
+        variants {
+          name
+          price
+          product_id
+          stock
+          taxable
+          images {
+            asset {
+              fluid(maxWidth: 1024) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
-        }
-        slug {
-          current
         }
       }
     }

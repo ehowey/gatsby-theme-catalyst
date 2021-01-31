@@ -3,6 +3,7 @@ export default {
   title: "Product",
   type: "document",
   fields: [
+    // How to handle sizes/colors/variants of a product.  E.g. red, green and blue glasses? These are all three different products but for a content editor they are also the "same" product.
     {
       name: "active",
       title: "Active?",
@@ -25,7 +26,7 @@ export default {
     },
     {
       name: "slug",
-      title: "Product Id",
+      title: "Slug",
       type: "slug",
       options: {
         source: "name",
@@ -34,18 +35,16 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "price",
-      title: "Price",
-      type: "number",
+      title: "Variants",
+      name: "variants",
+      type: "array",
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "stock",
-      title: "Amount of stock",
-      description:
-        "If the stock number is 0 then the product will be shown as out of stock.",
-      type: "number",
-      validation: (Rule) => Rule.required(),
+      of: [
+        {
+          title: "Variant",
+          type: "productVariant",
+        },
+      ],
     },
     {
       name: "categories",
@@ -67,14 +66,6 @@ export default {
       title: "Description",
       name: "description",
       type: "text",
-      validation: (Rule) => Rule.required(),
-    },
-
-    {
-      name: "image",
-      title: "Image",
-      description: "An image of your product.",
-      type: "image",
       validation: (Rule) => Rule.required(),
     },
   ],
