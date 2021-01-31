@@ -41,8 +41,12 @@ export default {
       validation: (Rule) => Rule.required(),
       of: [
         {
-          title: "Variant",
-          type: "productVariant",
+          type: "reference",
+          to: [
+            {
+              type: "productVariant",
+            },
+          ],
         },
       ],
     },

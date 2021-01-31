@@ -25,14 +25,10 @@ exports.handler = async (event) => {
     const cartItemsFromWeb = JSON.parse(event.body)
     const productIdsFromWeb = Object.keys(cartItemsFromWeb)
     const idsForQuery = productIdsFromWeb.map((id) => "'" + id + "'")
-    console.log(idsForQuery)
-    console.log(cartItemsFromWeb)
 
-    const query = `*[_type == "product" && variants[].product_id in [${idsForQuery}]]`
-    console.log(query)
+    const query = `*[_type == "productVariant" && product_id in [${idsForQuery}]]{"image": images[0].asset->url, ...}`
     const params = {}
     const data = await client.fetch(query, params)
-    console.log(data)
     const productsFromSanity = await Promise.all(
       data.map((product) => {
         const formattedProduct = {
@@ -41,10 +37,10 @@ exports.handler = async (event) => {
           price: dollarsToCents(product.price),
           currency: stripeConfig.currency,
           image: product.image,
-          sanityId: product._id,
           product_data: {
             metadata: {
               variantId: product.product_id,
+              sanityId: product._id,
             },
           },
         }
