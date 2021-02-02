@@ -13,15 +13,12 @@ const Product = ({ product: propProduct }) => {
   const productPrice = product.formattedPrice
   const sanityId = product.sanityId
 
-  // Initialize SANITY client
+  // Initialize SANITY client. Requires a public dataset. Private would have be handled in a Netlify Function.
   const client = sanityClient({
     projectId: process.env.GATSBY_SANITY_PROJECT_ID,
     dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
-    token: process.env.GATSBY_SANITY_TOKEN,
     useCdn: false, // `false` if you want to ensure fresh data
   })
-
-  console.log(product)
 
   const [quantity, setQuantity] = useState(1)
   const [stockStatus, setStockStatus] = useState("Checking stock...")
@@ -66,7 +63,7 @@ const Product = ({ product: propProduct }) => {
   }, [])
 
   return (
-    <div>
+    <div sx={{ border: "1px #aaa solid", p: 3, my: 3 }}>
       <Styled.h3>{productName}</Styled.h3>
       <Img fluid={productImage} sx={{ width: "200px", height: "200px" }} />
       <p>{stockStatus}</p>
