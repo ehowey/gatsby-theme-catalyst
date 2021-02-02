@@ -18,7 +18,7 @@ module.exports = (themeOptions) => {
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
         },
       },
-      `gatsby-theme-catalyst-header-top`,
+      `gatsby-theme-catalyst-header-bigtop`,
       `gatsby-theme-catalyst-footer`,
       {
         resolve: `gatsby-theme-catalyst-sanity`,

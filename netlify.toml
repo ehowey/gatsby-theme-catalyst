@@ -2,3 +2,8 @@
   base = "www/"
   command = "npm run build"
   publish = "public"
+[context."(ecommerce)--initial-work-on-theme-and-starter"]
+  base = "starters/gatsby-starter-catalyst-stripe"
+  command = "npm run build"
+  publish = "public"
+  functions = "functions/"
