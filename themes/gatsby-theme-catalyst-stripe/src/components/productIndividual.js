@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Img from "gatsby-image"
 import { useShoppingCart } from "use-shopping-cart"
+import sanityClient from "@sanity/client"
 
 const Product = ({ product: propProduct }) => {
   const { redirectToCheckout, addItem } = useShoppingCart()
@@ -10,8 +11,20 @@ const Product = ({ product: propProduct }) => {
   const productName = product.productName
   const productImage = product.images[0].asset.fluid
   const productPrice = product.formattedPrice
+  const sanityId = product.sanityId
+
+  // Initialize SANITY client
+  const client = sanityClient({
+    projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+    dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
+    token: process.env.GATSBY_SANITY_TOKEN,
+    useCdn: false, // `false` if you want to ensure fresh data
+  })
+
+  console.log(product)
 
   const [quantity, setQuantity] = useState(1)
+  const [stockStatus, setStockStatus] = useState("Checking stock...")
 
   const handleBuyNow = async (product) => {
     const response = await fetch("/.netlify/functions/create-session", {
@@ -39,10 +52,24 @@ const Product = ({ product: propProduct }) => {
     setQuantity(event.target.value)
   }
 
+  useEffect(() => {
+    const query = `*[_id == "${sanityId}"] {stock}`
+    const params = {}
+    client.fetch(query, params).then((prod) => {
+      if (prod[0].stock !== 0) {
+        setStockStatus("In stock")
+      }
+      if (prod[0].stock === 0) {
+        setStockStatus("Out of stock")
+      }
+    })
+  }, [])
+
   return (
     <div>
       <Styled.h3>{productName}</Styled.h3>
       <Img fluid={productImage} sx={{ width: "200px", height: "200px" }} />
+      <p>{stockStatus}</p>
       <p>{productPrice}</p>
       <p>
         Select Quantity

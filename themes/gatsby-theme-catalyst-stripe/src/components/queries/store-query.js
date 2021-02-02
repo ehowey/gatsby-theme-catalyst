@@ -24,6 +24,7 @@ export const query = graphql`
           }
         }
         variants {
+          _id
           name
           price
           product_id

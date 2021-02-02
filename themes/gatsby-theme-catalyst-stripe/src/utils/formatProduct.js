@@ -4,6 +4,7 @@ import dollarsToCents from "dollars-to-cents"
 export const formatProduct = (product) => {
   const formattedProduct = product.variants.map((variant) => {
     const formattedVariant = {
+      sanityId: variant._id,
       id: variant.product_id,
       productName: product.name,
       variantName: variant.name,
