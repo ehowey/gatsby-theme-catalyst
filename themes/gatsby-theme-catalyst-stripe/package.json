@@ -9,7 +9,8 @@
     "gatsby-theme-catalyst-footer": "^1.2.4",
     "gatsby-theme-catalyst-header-top": "^1.5.7",
     "gatsby-theme-catalyst-sanity": "^4.0.7",
-    "use-shopping-cart": "^2.3.0"
+    "use-shopping-cart": "^2.3.0",
+    "dollars-to-cents": "^1.0.3"
   },
   "peerDependencies": {
     "gatsby": "^2.24.58",

@@ -24,21 +24,24 @@ exports.handler = async ({ body, headers }) => {
         expand: ["line_items", "line_items.data.price.product"],
       })
       const lineItems = session.line_items
-      const sanityIds = lineItems.data.map(
-        (data) => data.price.product.metadata.sanityId
-      )
-      console.log(sanityIds)
+      const sanityData = lineItems.data.map((data) => {
+        const formattedData = {
+          id: data.price.product.metadata.sanityId,
+          quantity: data.quantity,
+        }
+        return formattedData
+      })
 
-      sanityIds.forEach((id) =>
+      sanityData.forEach((data) =>
         client
-          .patch(id) // Document ID to patch
+          .patch(data.id) // Document ID to patch
           // .set({inStock: false}) // Shallow merge
-          .dec({ stock: 1 }) // Increment field by count
+          .dec({ stock: data.quantity }) // Increment field by count
           .commit() // Perform the patch and return a promise
-          .then((updatedProduct) => {
-            console.log("Hurray, the product is updated! New document:")
-            console.log(updatedProduct)
-          })
+          // .then((updatedProduct) => {
+          //   console.log("Hurray, the product is updated! New document:")
+          //   console.log(updatedProduct)
+          // })
           .catch((err) => {
             console.error("Oh no, the update failed: ", err.message)
           })
