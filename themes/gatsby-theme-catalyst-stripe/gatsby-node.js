@@ -119,6 +119,11 @@ async function createProductPages(graphql, actions, reporter, themeOptions) {
           slug {
             current
           }
+          categories {
+            slug {
+              current
+            }
+          }
         }
       }
     }
@@ -131,7 +136,8 @@ async function createProductPages(graphql, actions, reporter, themeOptions) {
   allProducts.forEach((post, index) => {
     const id = post.id
     const slug = post.slug.current.replace(/\/*$/, `/`) //Ensure trailing slash
-    const path = `${rootPath}${slug}`
+    const categorySlug = post.categories[0].slug.current.replace(/\/*$/, `/`) //Ensure trailing slash
+    const path = `${rootPath}${categorySlug}${slug}`
     reporter.info(`Creating product: ${path}`)
     createPage({
       path,

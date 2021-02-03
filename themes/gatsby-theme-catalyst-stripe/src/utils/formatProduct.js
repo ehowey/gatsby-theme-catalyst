@@ -8,6 +8,7 @@ export const formatProduct = (product) => {
       id: variant.product_id,
       productName: product.name,
       variantName: variant.name,
+      variantTitle: product.variantTitle,
       currency: "CAD",
       price: dollarsToCents(variant.price),
       formattedPrice: formatCurrencyString({

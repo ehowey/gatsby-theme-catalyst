@@ -75,7 +75,7 @@ const ProductWithVariant = ({ product }) => {
       <p>{stockStatus}</p>
       <p>{activeProduct.formattedPrice}</p>
       <p>
-        Select Quantity
+        Quantity
         <select onChange={handleQuantity}>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -90,10 +90,12 @@ const ProductWithVariant = ({ product }) => {
         </select>
       </p>
       <p>
-        Select Size
+        {product[0].variantTitle}
         <select onChange={handleVariant}>
           {product.map((variant) => (
-            <option value={variant.id}>{variant.variantName}</option>
+            <option value={variant.id} key={variant.id}>
+              {variant.variantName}
+            </option>
           ))}
         </select>
       </p>

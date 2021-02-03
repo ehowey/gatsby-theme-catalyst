@@ -16,6 +16,7 @@ export const query = graphql`
         active
         featured
         description
+        variantTitle
         excerpt(limit: 180)
         categories {
           title
