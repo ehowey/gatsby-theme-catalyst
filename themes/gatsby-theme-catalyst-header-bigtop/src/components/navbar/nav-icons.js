@@ -9,7 +9,7 @@ import { IconContext } from "react-icons"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useColorMode } = useCatalystConfig()
+  const { useColorMode, displayCart } = useCatalystConfig()
   const { theme } = useThemeUI()
 
   return (
@@ -17,7 +17,9 @@ const SocialWrapper = () => {
       sx={{
         display: [isNavOpen ? "flex" : "none", null, "flex", null, null],
         alignItems: "center",
-        justifyContent: ["center", null, "flex-end", null, null],
+        justifyContent: displayCart
+          ? ["center", null, "flex-start", null, null]
+          : ["center", null, "flex-end", null, null],
         gridArea: "icons",
         pb: [3, null, 0, null, null],
         a: {

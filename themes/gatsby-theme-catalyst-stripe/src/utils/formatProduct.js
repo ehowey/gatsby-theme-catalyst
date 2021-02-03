@@ -7,7 +7,7 @@ export const formatProduct = (product) => {
       sanityId: variant._id,
       id: variant.product_id,
       productName: product.name,
-      variantName: variant.name,
+      variantName: variant.displayedName,
       variantTitle: product.variantTitle,
       currency: "CAD",
       price: dollarsToCents(variant.price),

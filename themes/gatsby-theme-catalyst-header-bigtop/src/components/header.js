@@ -5,10 +5,12 @@ import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
 import NavIcons from "./navbar/nav-icons"
 import MobileButton from "./navbar/nav-mobile-button"
-import { NavContext } from "gatsby-theme-catalyst-core"
+import { NavContext, useCatalystConfig } from "gatsby-theme-catalyst-core"
+import Cart from "./ecommerce/cart"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
+  const { displayCart } = useCatalystConfig()
   return (
     <header
       sx={{
@@ -38,27 +40,44 @@ const SiteHeader = () => {
           width: "100%",
           display: "grid",
           gridTemplateColumns: ["50px 1fr 50px", null, "1fr", null, null],
-          gridTemplateAreas: [
-            `
+          gridTemplateAreas: displayCart
+            ? [
+                `
+          "mobileButton branding cart" 
+          "nav nav nav"
+          "icons icons icons"
+          `,
+                null,
+                `
+          "icons cart" 
+          "branding branding"
+          "nav nav"
+          `,
+                null,
+                null,
+              ]
+            : [
+                `
           ". branding mobileButton" 
           "nav nav nav"
           "icons icons icons"
           `,
-            null,
-            `
+                null,
+                `
           "icons" 
           "branding"
           "nav"
           `,
-            null,
-            null,
-          ],
+                null,
+                null,
+              ],
         }}
       >
         <NavIcons />
         <Branding />
         <Nav />
         <MobileButton />
+        {displayCart && <Cart />}
       </div>
     </header>
   )

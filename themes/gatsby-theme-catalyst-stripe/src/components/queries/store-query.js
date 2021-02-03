@@ -27,6 +27,7 @@ export const query = graphql`
         variants {
           _id
           name
+          displayedName
           price
           product_id
           stock

@@ -93,6 +93,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     displaySiteTitle: Boolean!
     displaySiteLogoMobile: Boolean!
     displaySiteTitleMobile: Boolean!
+    displayCart: Boolean!
     invertSiteLogo: Boolean!
     useStickyHeader: Boolean!
     useSocialLinks: Boolean!
@@ -114,6 +115,7 @@ exports.sourceNodes = (
     displaySiteTitle = true,
     displaySiteLogoMobile = true,
     displaySiteTitleMobile = true,
+    displayCart = false,
     invertSiteLogo = false,
     useStickyHeader = false,
     useSocialLinks = true,
@@ -130,6 +132,7 @@ exports.sourceNodes = (
     displaySiteTitle,
     displaySiteLogoMobile,
     displaySiteTitleMobile,
+    displayCart,
     invertSiteLogo,
     useStickyHeader,
     useSocialLinks,
