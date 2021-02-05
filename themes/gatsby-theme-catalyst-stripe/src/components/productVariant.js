@@ -42,7 +42,7 @@ const ProductWithVariant = ({ product }) => {
   }
 
   const handleQuantity = (event) => {
-    setQuantity(event.target.value)
+    setQuantity(parseInt(event.target.value))
   }
 
   const handleVariant = (event) => {

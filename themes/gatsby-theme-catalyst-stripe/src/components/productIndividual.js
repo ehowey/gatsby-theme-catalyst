@@ -46,7 +46,7 @@ const Product = ({ product: propProduct }) => {
   }
 
   const handleQuantity = (event) => {
-    setQuantity(event.target.value)
+    setQuantity(parseInt(event.target.value))
   }
 
   useEffect(() => {

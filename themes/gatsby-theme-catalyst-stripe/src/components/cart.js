@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
+import { useShoppingCart } from "use-shopping-cart"
 
 const Cart = () => {
   const {
