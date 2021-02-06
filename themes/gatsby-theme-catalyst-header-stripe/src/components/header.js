@@ -1,14 +1,32 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import Branding from "./branding/branding"
 import Nav from "./navbar/nav"
 import NavIcons from "./navbar/nav-icons"
 import MobileButton from "./navbar/nav-mobile-button"
+import CartButton from "./ecommerce/cart-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
+  const [isSmall, setIsSmall] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      let scrollPos = 0
+      window.addEventListener("scroll", () => {
+        scrollPos = document.body.getBoundingClientRect().top
+        const checkSmall = window.pageYOffset > 100
+        const x = document.body.getBoundingClientRect().top > scrollPos
+        console.log(scrollPos)
+        setIsSmall(checkSmall)
+      })
+    }
+  }, [])
+
+  console.log(isSmall)
+
   return (
     <header
       sx={{
@@ -40,15 +58,15 @@ const SiteHeader = () => {
           gridTemplateColumns: ["50px 1fr 50px", null, "1fr", null, null],
           gridTemplateAreas: [
             `
-          ". branding mobileButton" 
+          "mobileButton branding cartButton" 
           "nav nav nav"
           "icons icons icons"
           `,
             null,
             `
-          "icons" 
-          "branding"
-          "nav"
+          "icons cartButton"
+          "branding branding"
+          "nav nav"
           `,
             null,
             null,
@@ -59,6 +77,7 @@ const SiteHeader = () => {
         <Branding />
         <Nav />
         <MobileButton />
+        <CartButton />
       </div>
     </header>
   )

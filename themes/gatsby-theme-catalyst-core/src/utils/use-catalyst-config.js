@@ -10,7 +10,6 @@ export const useCatalystConfig = () => {
           displaySiteTitle
           displaySiteLogoMobile
           displaySiteTitleMobile
-          displayCart
           invertSiteLogo
           useStickyHeader
           useSocialLinks

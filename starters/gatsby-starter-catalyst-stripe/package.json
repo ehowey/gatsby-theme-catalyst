@@ -21,6 +21,8 @@
     "stripe": "^8.129.0",
     "use-shopping-cart": "^2.4.1",
     "gatsby-theme-catalyst-stripe": "*",
+    "gatsby-theme-catalyst-header-stripe": "*",
+    "gatsby-theme-catalyst-footer": "^1.2.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

@@ -10,7 +10,6 @@ module.exports = (themeOptions) => {
           displaySiteTitle: themeOptions.displaySiteTitle,
           displaySiteLogoMobile: themeOptions.displaySiteLogoMobile || false,
           displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
-          displayCart: themeOptions.displayCart || true,
           invertSiteLogo: themeOptions.invertSiteLogo,
           useStickyHeader: themeOptions.useStickyHeader,
           useSocialLinks: themeOptions.useSocialLinks,
@@ -19,8 +18,6 @@ module.exports = (themeOptions) => {
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
         },
       },
-      `gatsby-theme-catalyst-header-bigtop`,
-      `gatsby-theme-catalyst-footer`,
       {
         resolve: `gatsby-theme-catalyst-sanity`,
         options: {

@@ -17,7 +17,7 @@ const SocialWrapper = () => {
       sx={{
         display: [isNavOpen ? "flex" : "none", null, "flex", null, null],
         alignItems: "center",
-        justifyContent: ["center", null, "flex-end", null, null],
+        justifyContent: ["center", null, "flex-start", null, null],
         gridArea: "icons",
         pb: [3, null, 0, null, null],
         a: {

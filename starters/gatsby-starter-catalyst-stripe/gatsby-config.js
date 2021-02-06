@@ -50,6 +50,8 @@ module.exports = {
         cancelUrl: stripeConfig.cancelUrl,
       },
     },
+    `gatsby-theme-catalyst-header-stripe`,
+    `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

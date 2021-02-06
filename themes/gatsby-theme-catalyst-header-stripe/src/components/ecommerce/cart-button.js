@@ -2,12 +2,14 @@
 import { jsx, Button } from "theme-ui"
 import { useShoppingCart } from "use-shopping-cart"
 import Cart from "./cart"
+import { HiOutlineShoppingBag } from "react-icons/hi"
 
 const CartButton = () => {
   const { cartCount, handleCartClick, shouldDisplayCart } = useShoppingCart()
+  const hasItems = cartCount > 0
 
   return (
-    <div sx={{ gridArea: "cart", position: "fixed", top: 10, right: 10 }}>
+    <div sx={{ gridArea: "cartButton", position: "fixed", top: 10, right: 10 }}>
       <Button
         onClick={handleCartClick}
         sx={{
@@ -17,24 +19,30 @@ const CartButton = () => {
           px: 2,
           display: "flex",
           alignItems: "center",
+          cursor: "pointer",
+          position: "relative",
         }}
       >
-        Cart
-        <span
-          sx={{
-            bg: "text",
-            color: "background",
-            borderRadius: "9999em",
-            width: "26px",
-            height: "26px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            ml: 1,
-          }}
-        >
-          {cartCount}
-        </span>
+        <HiOutlineShoppingBag sx={{ fontSize: 4 }} />
+        {hasItems && (
+          <div
+            sx={{
+              fontSize: 0,
+              height: "22px",
+              width: "22px",
+              borderRadius: "9999em",
+              color: "white",
+              bg: "primary",
+              display: "grid",
+              placeItems: "center",
+              position: "absolute",
+              top: "0px",
+              right: "-2px",
+            }}
+          >
+            {cartCount}
+          </div>
+        )}
       </Button>
       {shouldDisplayCart && (
         <div
