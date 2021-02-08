@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import Product from "../product"
+import Product from "../../../components/product"
 
 const Store = ({ data }) => {
   const allProducts = data.allSanityProduct.nodes

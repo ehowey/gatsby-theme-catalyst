@@ -7,25 +7,18 @@ import NavIcons from "./navbar/nav-icons"
 import MobileButton from "./navbar/nav-mobile-button"
 import CartButton from "./ecommerce/cart-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
+import { useViewportScroll } from "framer-motion"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
-  const [isSmall, setIsSmall] = useState(false)
+  const [scrollPos, setScrollPos] = useState(0)
+  const { scrollYProgress } = useViewportScroll()
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      let scrollPos = 0
-      window.addEventListener("scroll", () => {
-        scrollPos = document.body.getBoundingClientRect().top
-        const checkSmall = window.pageYOffset > 100
-        const x = document.body.getBoundingClientRect().top > scrollPos
-        console.log(scrollPos)
-        setIsSmall(checkSmall)
-      })
-    }
-  }, [])
+    scrollYProgress.onChange((value) => setScrollPos(value))
+  }, [scrollYProgress])
 
-  console.log(isSmall)
+  console.log(scrollPos)
 
   return (
     <header

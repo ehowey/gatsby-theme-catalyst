@@ -22,6 +22,17 @@ module.exports = (themeOptions) => {
     themeOptions.sanityProjectListPath || "/projects"
   const sanityPostPath = themeOptions.sanityPostPath || "/posts"
   const sanityPostListPath = themeOptions.sanityPostListPath || "/posts"
+  const sanityCreateProductPages =
+    themeOptions.sanityCreateProductPages == null ||
+    themeOptions.sanityCreatePages === true
+  const sanityCreateProductCategoryPages =
+    themeOptions.sanityCreateProductCategoryPages == null ||
+    themeOptions.sanityCreatePages === true
+  const sanityCreateStore =
+    themeOptions.sanityCreateProductPages == null ||
+    themeOptions.sanityCreatePages === true
+  const sanityProductPath = themeOptions.sanityProductPath || "/products"
+  const sanityStorePath = themeOptions.sanityStorePath || "/store"
 
   return {
     sanityCreatePages,
@@ -34,5 +45,10 @@ module.exports = (themeOptions) => {
     sanityProjectPath,
     sanityProjectListPath,
     sanityCreateCategories,
+    sanityCreateProductPages,
+    sanityCreateProductCategoryPages,
+    sanityCreateStore,
+    sanityProductPath,
+    sanityStorePath,
   }
 }

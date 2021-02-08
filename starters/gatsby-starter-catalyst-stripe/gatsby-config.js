@@ -27,7 +27,51 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {
+        //Default options are:
+        // contentPath: `content/pages`,
+        // assetPath: `content/assets`,
+        // displaySiteLogo: true,
+        // displaySiteTitle: true,
+        // displaySiteLogoMobile: true,
+        // displaySiteTitleMobile: true,
+        // invertSiteLogo: false,
+        // useStickyHeader: false,
+        // useSocialLinks: true,
+        // useColorMode: true,
+        // useKatex: false,
+        // footerContentLocation: "left", // "left", "right", "center"
+        // remarkImagesWidth: 1440,
+        // imageQuality: 50,
+      },
+    },
+    {
       resolve: `gatsby-theme-catalyst-stripe`,
+      options: {
+        // Example for an env variable
+        // sanityProjectID: process.env.SANITY_PROJECT_ID,
+        // sanityDataset: process.env.SANITY_DATASET
+        //
+        // Default values
+        // sanityProjectId: REQUIRED,
+        // sanityDataset: "production",
+        // sanityToken: null,
+        // sanityWatchMode: true,
+        // sanityOverlayDrafts: false, // Requires a token and private dataset
+        // sanityProjectId: process.env.GATSBY_SANITY_PROJECT_ID, // Required
+        // sanityDataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
+        // sanityToken: process.env.GATSBY_SANITY_TOKEN,
+        stripePublicKey: stripeConfig.stripePublicKey,
+        allowedCountries: stripeConfig.allowedCountries,
+        billingAddressCollection: stripeConfig.billingAddressCollection,
+        currency: stripeConfig.currency,
+        successUrl: stripeConfig.successUrl,
+        cancelUrl: stripeConfig.cancelUrl,
+      },
+    },
+    {
+      resolve: `gatsby-theme-catalyst-sanity`,
       options: {
         // Example for an env variable
         // sanityProjectID: process.env.SANITY_PROJECT_ID,
@@ -42,12 +86,12 @@ module.exports = {
         sanityProjectId: process.env.GATSBY_SANITY_PROJECT_ID, // Required
         sanityDataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
         sanityToken: process.env.GATSBY_SANITY_TOKEN,
-        stripePublicKey: stripeConfig.stripePublicKey,
-        allowedCountries: stripeConfig.allowedCountries,
-        billingAddressCollection: stripeConfig.billingAddressCollection,
-        currency: stripeConfig.currency,
-        successUrl: stripeConfig.successUrl,
-        cancelUrl: stripeConfig.cancelUrl,
+        // stripePublicKey: stripeConfig.stripePublicKey,
+        // allowedCountries: stripeConfig.allowedCountries,
+        // billingAddressCollection: stripeConfig.billingAddressCollection,
+        // currency: stripeConfig.currency,
+        // successUrl: stripeConfig.successUrl,
+        // cancelUrl: stripeConfig.cancelUrl,
       },
     },
     `gatsby-theme-catalyst-header-stripe`,
