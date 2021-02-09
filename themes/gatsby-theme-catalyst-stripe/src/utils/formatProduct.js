@@ -2,17 +2,24 @@ import { formatCurrencyString } from "use-shopping-cart"
 import dollarsToCents from "dollars-to-cents"
 
 export const formatProduct = (product) => {
-  const formattedProduct = product.variants.map((variant) => {
-    const formattedVariant = {
+  const formattedVariant = product.variants.map((variant) => {
+    const regularPrice = dollarsToCents(variant.price)
+    const salePrice =
+      product.sale &&
+      product.salePercent &&
+      dollarsToCents(variant.price * ((100 - product.salePercent) / 100))
+    const formatted = {
       sanityId: variant._id,
       id: variant.product_id,
-      productName: product.name,
       variantName: variant.displayedName,
-      variantTitle: product.variantTitle,
       currency: "CAD",
-      price: dollarsToCents(variant.price),
+      price: product.sale && product.salePercent ? salePrice : regularPrice,
       formattedPrice: formatCurrencyString({
-        value: dollarsToCents(variant.price),
+        value: product.sale && product.salePercent ? salePrice : regularPrice,
+        currency: "CAD",
+      }),
+      regularPrice: formatCurrencyString({
+        value: regularPrice,
         currency: "CAD",
       }),
       images: variant.images,
@@ -24,7 +31,16 @@ export const formatProduct = (product) => {
         },
       },
     }
-    return formattedVariant
+    return formatted
   })
+  const formattedProduct = {
+    name: product.name,
+    variantTitle: product.variantTitle,
+    description: product.description,
+    excerpt: product.excerpt,
+    sale: product.sale,
+    salePercent: product.salePercent,
+    variants: formattedVariant,
+  }
   return formattedProduct
 }

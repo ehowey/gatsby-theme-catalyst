@@ -8,6 +8,8 @@ import sanityClient from "@sanity/client"
 const ProductWithVariant = ({ product }) => {
   const { redirectToCheckout, addItem } = useShoppingCart()
 
+  const onSale = product.sale
+
   // Initialize SANITY client. Requires a public dataset. Private would have be handled in a Netlify Function.
   const client = sanityClient({
     projectId: process.env.GATSBY_SANITY_PROJECT_ID,
@@ -17,7 +19,7 @@ const ProductWithVariant = ({ product }) => {
 
   const [quantity, setQuantity] = useState(1)
   const [stockStatus, setStockStatus] = useState("Checking stock...")
-  const [activeProduct, setActiveProduct] = useState(product[0])
+  const [activeVariant, setActiveVariant] = useState(product.variants[0])
 
   const handleBuyNow = async (product) => {
     const response = await fetch("/.netlify/functions/create-session", {
@@ -38,7 +40,7 @@ const ProductWithVariant = ({ product }) => {
   }
 
   const handleAddItem = () => {
-    addItem(activeProduct, quantity)
+    addItem(activeVariant, quantity)
   }
 
   const handleQuantity = (event) => {
@@ -46,14 +48,14 @@ const ProductWithVariant = ({ product }) => {
   }
 
   const handleVariant = (event) => {
-    const filteredProduct = product.filter(
+    const filteredProduct = product.variants.filter(
       (variant) => variant.id === event.target.value
     )
-    setActiveProduct(filteredProduct[0])
+    setActiveVariant(filteredProduct[0])
   }
 
   useEffect(() => {
-    const query = `*[_id == "${activeProduct.sanityId}"] {stock}`
+    const query = `*[_id == "${activeVariant.sanityId}"] {stock}`
     const params = {}
     client.fetch(query, params).then((prod) => {
       if (prod[0].stock !== 0) {
@@ -63,17 +65,25 @@ const ProductWithVariant = ({ product }) => {
         setStockStatus("Out of stock")
       }
     })
-  }, [activeProduct])
+  }, [activeVariant])
 
   return (
     <div sx={{ border: "1px #aaa solid", p: 3, my: 3 }}>
-      <Styled.h3>{activeProduct.productName}</Styled.h3>
+      <Styled.h3>{product.name}</Styled.h3>
       <Img
-        fluid={activeProduct.images[0].asset.fluid}
+        fluid={activeVariant.images[0].asset.fluid}
         sx={{ width: "200px", height: "200px" }}
       />
       <p>{stockStatus}</p>
-      <p>{activeProduct.formattedPrice}</p>
+      {onSale && <p>SALE!</p>}
+      <p>
+        {onSale && (
+          <span sx={{ textDecoration: "line-through", mr: 1 }}>
+            {activeVariant.regularPrice}
+          </span>
+        )}
+        {activeVariant.formattedPrice}
+      </p>
       <p>
         Quantity
         <select onChange={handleQuantity}>
@@ -90,9 +100,9 @@ const ProductWithVariant = ({ product }) => {
         </select>
       </p>
       <p>
-        {product[0].variantTitle}
+        {product.variantTitle}
         <select onChange={handleVariant}>
-          {product.map((variant) => (
+          {product.variants.map((variant) => (
             <option value={variant.id} key={variant.id}>
               {variant.variantName}
             </option>
@@ -101,15 +111,15 @@ const ProductWithVariant = ({ product }) => {
       </p>
       <button
         type="button"
-        onClick={() => handleBuyNow(activeProduct)}
-        aria-label={`Buy ${activeProduct.productName} now`}
+        onClick={() => handleBuyNow(activeVariant)}
+        aria-label={`Buy ${product.name} now`}
       >
         Buy now
       </button>
       <button
         type="submit"
         onClick={handleAddItem}
-        aria-label={`Add ${activeProduct.productName} to your cart`}
+        aria-label={`Add ${product.name} to your cart`}
       >
         Add to cart
       </button>

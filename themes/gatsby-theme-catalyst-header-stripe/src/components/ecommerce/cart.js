@@ -52,7 +52,7 @@ const Cart = () => {
       }}
     >
       <button onClick={handleCloseCart}>Close cart</button>
-      <Styled.h2>Cart</Styled.h2>
+      <Styled.h2>Shopping Cart</Styled.h2>
       <p>Number of Items: {cartCount}</p>
       <p>Total: {formattedTotalPrice}</p>
       <button onClick={handleCheckout}>Checkout</button>

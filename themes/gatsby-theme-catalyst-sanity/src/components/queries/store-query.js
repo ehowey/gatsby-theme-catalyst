@@ -15,6 +15,8 @@ export const query = graphql`
         name
         active
         featured
+        sale
+        salePercent
         description
         variantTitle
         excerpt(limit: 180)

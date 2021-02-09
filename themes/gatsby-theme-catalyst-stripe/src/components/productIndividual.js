@@ -5,13 +5,16 @@ import Img from "gatsby-image"
 import { useShoppingCart } from "use-shopping-cart"
 import sanityClient from "@sanity/client"
 
-const Product = ({ product: propProduct }) => {
+const Product = ({ product }) => {
   const { redirectToCheckout, addItem } = useShoppingCart()
-  const product = propProduct[0]
-  const productName = product.productName
-  const productImage = product.images[0].asset.fluid
-  const productPrice = product.formattedPrice
-  const sanityId = product.sanityId
+  const productName = product.name
+  const productImage = product.variants[0].images[0].asset.fluid
+  const productPrice = product.variants[0].formattedPrice
+  const regularPrice = product.variants[0].regularPrice
+  const sanityId = product.variants[0].sanityId
+  const onSale = product.sale
+
+  console.log(onSale)
 
   // Initialize SANITY client. Requires a public dataset. Private would have be handled in a Netlify Function.
   const client = sanityClient({
@@ -67,7 +70,15 @@ const Product = ({ product: propProduct }) => {
       <Styled.h3>{productName}</Styled.h3>
       <Img fluid={productImage} sx={{ width: "200px", height: "200px" }} />
       <p>{stockStatus}</p>
-      <p>{productPrice}</p>
+      {onSale && <p>SALE!</p>}
+      <p>
+        {onSale && (
+          <span sx={{ textDecoration: "line-through", mr: 1 }}>
+            {regularPrice}
+          </span>
+        )}
+        {productPrice}
+      </p>
       <p>
         Select Quantity
         <select onChange={handleQuantity}>

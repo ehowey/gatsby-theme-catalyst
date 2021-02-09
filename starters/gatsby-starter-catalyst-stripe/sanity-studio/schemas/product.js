@@ -13,6 +13,18 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "sale",
+      title: "On sale?",
+      description:
+        "Toggle whether the product and all of its variants are on sale.",
+      type: "boolean",
+    },
+    {
+      title: "Percent off",
+      name: "salePercent",
+      type: "number",
+    },
+    {
       name: "featured",
       title: "Featured?",
       description: "Toggle whether a product is featured.",
