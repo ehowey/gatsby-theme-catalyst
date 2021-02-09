@@ -45,7 +45,7 @@ const Product = ({ product }) => {
   }
 
   const handleAddItem = () => {
-    addItem(product, quantity)
+    addItem(product.variants[0], quantity)
   }
 
   const handleQuantity = (event) => {
@@ -96,7 +96,7 @@ const Product = ({ product }) => {
       </p>
       <button
         type="button"
-        onClick={() => handleBuyNow(product)}
+        onClick={() => handleBuyNow(product.variants[0])}
         aria-label={`Buy ${productName} now`}
       >
         Buy now

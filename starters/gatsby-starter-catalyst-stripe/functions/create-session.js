@@ -27,8 +27,12 @@ exports.handler = async (event) => {
     const idsForQuery = productIdsFromWeb.map((id) => "'" + id + "'")
 
     const query = `*[_type == "productVariant" && product_id in [${idsForQuery}]]{"image": images[0].asset->url, ...}`
+    const querytest = `*[_type == "product"]`
+
     const params = {}
     const data = await client.fetch(query, params)
+    // const datatest = await client.fetch(querytest, params)
+    // console.log(datatest)
     const productsFromSanity = await Promise.all(
       data.map((product) => {
         const formattedProduct = {
