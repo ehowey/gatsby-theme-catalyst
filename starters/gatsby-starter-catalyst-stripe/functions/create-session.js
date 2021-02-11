@@ -9,6 +9,7 @@ const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
 const sanityClient = require("@sanity/client")
 const dollarsToCents = require("dollars-to-cents")
 const stripeConfig = require("../stripe-config")
+
 const validateCartItems = require("use-shopping-cart/src/serverUtil")
   .validateCartItems
 
@@ -26,31 +27,42 @@ exports.handler = async (event) => {
     const productIdsFromWeb = Object.keys(cartItemsFromWeb)
     const idsForQuery = productIdsFromWeb.map((id) => "'" + id + "'")
 
-    const query = `*[_type == "productVariant" && product_id in [${idsForQuery}]]{"image": images[0].asset->url, ...}`
-    const querytest = `*[_type == "product"]`
-
+    // const query = `*[_type == "productVariant" && product_id in [${idsForQuery}]]{"image": images[0].asset->url, ...}`
+    const query = `*[_type == "product" && references(*[_type=="productVariant" && product_id in [${idsForQuery}]]._id)]{..., "purchasedVariants": *[_type == "productVariant" && product_id in [${idsForQuery}]]}`
     const params = {}
     const data = await client.fetch(query, params)
-    // const datatest = await client.fetch(querytest, params)
-    // console.log(datatest)
+    console.log(data)
     const productsFromSanity = await Promise.all(
-      data.map((product) => {
-        const formattedProduct = {
-          name: product.name,
-          id: product.product_id,
-          price: dollarsToCents(product.price),
-          currency: stripeConfig.currency,
-          image: product.image,
-          product_data: {
-            metadata: {
-              variantId: product.product_id,
-              sanityId: product._id,
-            },
-          },
-        }
-        return formattedProduct
-      })
+      data
+        .map((product) => {
+          const onSale = product.sale
+          const percentOff = product.salePercent
+          const formattedVariants = product.purchasedVariants.map((variant) => {
+            const salePrice =
+              onSale &&
+              percentOff &&
+              dollarsToCents(variant.price * ((100 - percentOff) / 100))
+            const item = {
+              name: variant.name,
+              id: variant.product_id,
+              price: onSale ? salePrice : dollarsToCents(variant.price),
+              currency: stripeConfig.currency,
+              // image: variant.image,
+              product_data: {
+                metadata: {
+                  variantId: variant.product_id,
+                  sanityId: variant._id,
+                },
+              },
+            }
+            return item
+          })
+
+          return formattedVariants
+        })
+        .flat()
     )
+
     const line_items = validateCartItems(productsFromSanity, cartItemsFromWeb)
 
     const session = await stripe.checkout.sessions.create({

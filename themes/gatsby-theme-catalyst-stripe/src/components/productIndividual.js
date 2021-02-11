@@ -14,8 +14,6 @@ const Product = ({ product }) => {
   const sanityId = product.variants[0].sanityId
   const onSale = product.sale
 
-  console.log(onSale)
-
   // Initialize SANITY client. Requires a public dataset. Private would have be handled in a Netlify Function.
   const client = sanityClient({
     projectId: process.env.GATSBY_SANITY_PROJECT_ID,
