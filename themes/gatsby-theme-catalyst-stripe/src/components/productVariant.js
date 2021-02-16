@@ -19,6 +19,8 @@ const ProductWithVariant = ({ product }) => {
 
   const [quantity, setQuantity] = useState(1)
   const [stockStatus, setStockStatus] = useState("Checking stock...")
+  const [stockAmount, setStockAmount] = useState(null)
+  const [quantityError, setQuantityError] = useState(null)
   const [activeVariant, setActiveVariant] = useState(product.variants[0])
 
   const handleBuyNow = async (product) => {
@@ -44,7 +46,16 @@ const ProductWithVariant = ({ product }) => {
   }
 
   const handleQuantity = (event) => {
-    setQuantity(parseInt(event.target.value))
+    const selectedQuantity = parseInt(event.target.value)
+    if (selectedQuantity <= stockAmount) {
+      setQuantity(selectedQuantity)
+      setQuantityError(null)
+    }
+    if (selectedQuantity > stockAmount) {
+      setQuantityError(
+        "Quantity selected must be less than or equal to available stock"
+      )
+    }
   }
 
   const handleVariant = (event) => {
@@ -58,10 +69,17 @@ const ProductWithVariant = ({ product }) => {
     const query = `*[_id == "${activeVariant.sanityId}"] {stock}`
     const params = {}
     client.fetch(query, params).then((prod) => {
-      if (prod[0].stock !== 0) {
-        setStockStatus("In stock")
+      const stockAmount = prod[0].stock
+      setStockAmount(stockAmount)
+      if (stockAmount === null) {
+        setStockStatus("Checking stock...")
       }
-      if (prod[0].stock === 0) {
+
+      if (stockAmount > 0) {
+        setStockStatus(`${stockAmount} in stock`)
+      }
+
+      if (stockAmount === 0) {
         setStockStatus("Out of stock")
       }
     })
@@ -84,6 +102,7 @@ const ProductWithVariant = ({ product }) => {
         )}
         {activeVariant.formattedPrice}
       </p>
+      {quantityError && <p>{quantityError}</p>}
       <p>
         Quantity
         <select onChange={handleQuantity}>

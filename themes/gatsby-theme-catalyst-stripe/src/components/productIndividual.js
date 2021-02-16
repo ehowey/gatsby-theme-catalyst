@@ -23,6 +23,8 @@ const Product = ({ product }) => {
 
   const [quantity, setQuantity] = useState(1)
   const [stockStatus, setStockStatus] = useState("Checking stock...")
+  const [quantityError, setQuantityError] = useState(null)
+  const [stockAmount, setStockAmount] = useState(null)
 
   const handleBuyNow = async (product) => {
     const response = await fetch("/.netlify/functions/create-session", {
@@ -47,21 +49,39 @@ const Product = ({ product }) => {
   }
 
   const handleQuantity = (event) => {
-    setQuantity(parseInt(event.target.value))
+    const selectedQuantity = parseInt(event.target.value)
+    if (selectedQuantity <= stockAmount) {
+      setQuantity(selectedQuantity)
+      setQuantityError(null)
+    }
+    if (selectedQuantity > stockAmount) {
+      setQuantityError(
+        "Quantity selected must be less than or equal to available stock"
+      )
+    }
   }
 
   useEffect(() => {
     const query = `*[_id == "${sanityId}"] {stock}`
     const params = {}
     client.fetch(query, params).then((prod) => {
-      if (prod[0].stock !== 0) {
-        setStockStatus("In stock")
+      const stockAmount = prod[0].stock
+      setStockAmount(stockAmount)
+      if (stockAmount === null) {
+        setStockStatus("Checking stock...")
       }
-      if (prod[0].stock === 0) {
+
+      if (stockAmount > 0) {
+        setStockStatus(`${stockAmount} in stock`)
+      }
+
+      if (stockAmount === 0) {
         setStockStatus("Out of stock")
       }
     })
   }, [])
+
+  console.log(quantityError)
 
   return (
     <div sx={{ border: "1px #aaa solid", p: 3, my: 3 }}>
@@ -77,6 +97,7 @@ const Product = ({ product }) => {
         )}
         {productPrice}
       </p>
+      {quantityError && <p>{quantityError}</p>}
       <p>
         Select Quantity
         <select onChange={handleQuantity}>
