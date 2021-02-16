@@ -16838,10 +16838,10 @@ strip-outer@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
-stripe@^8.129.0:
-  version "8.132.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.132.0.tgz#3c6403dea9699ee112d515388f7cfbadb2375600"
-  integrity sha512-VFKQJWgPt2X0r/jh4wS6Kgx6/VH1IHw1466wIwahgWzgSANme5iNaJ+1AW45hvRUZJ+T15f2hTfQkQGyP73ZCg==
+stripe@^8.135.0:
+  version "8.135.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.135.0.tgz#eea01ecac8c2c91f934cc02d4835c6dc5a665773"
+  integrity sha512-cy2IhKhENtvcwdrqtX4jZK4kgu0crA0YrwMgHovIzMAv/Ebr5LqBQ/nhyBqsssExY1hJjn765vhltNrf0WV+Iw==
   dependencies:
     "@types/node" ">=8.1.0"
     qs "^6.6.0"
