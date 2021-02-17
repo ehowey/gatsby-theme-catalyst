@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Post from "../templates/post-template"
 
-export default ({ data }) => {
+const PostQuery = ({ data }) => {
   const { previous, next } = data
   return <Post data={{ ...data }} previous={previous} next={next} />
 }
@@ -35,3 +35,5 @@ export const query = graphql`
     }
   }
 `
+
+export default PostQuery

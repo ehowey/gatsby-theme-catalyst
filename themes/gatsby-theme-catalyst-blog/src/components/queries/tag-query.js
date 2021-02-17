@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Tag from "../templates/tag-template"
 
-export default ({ data, pageContext }) => {
+const TagQuery = ({ data, pageContext }) => {
   const { allCatalystPost } = data
   const tag = pageContext.tag
   return <Tag posts={allCatalystPost.nodes} tag={tag} />
@@ -32,3 +32,5 @@ export const query = graphql`
     }
   }
 `
+
+export default TagQuery

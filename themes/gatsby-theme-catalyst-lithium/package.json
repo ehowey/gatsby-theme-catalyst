@@ -10,15 +10,15 @@
     "gatsby-theme-catalyst-header-top": "^1.5.7"
   },
   "peerDependencies": {
-    "gatsby": "^2.24.58",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^2.32.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "gatsby": "^2.24.58",
+    "gatsby": "^2.32.3",
     "prettier": "^2.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "keywords": [
     "gatsby"

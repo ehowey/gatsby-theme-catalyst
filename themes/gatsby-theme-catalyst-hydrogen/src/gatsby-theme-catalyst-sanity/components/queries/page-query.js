@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Page from "../templates/page-template"
 
-export default ({ data }) => {
+const HydrogenPageQuery = ({ data }) => {
   return <Page data={{ ...data }} />
 }
 
@@ -23,3 +23,5 @@ export const query = graphql`
     }
   }
 `
+
+export default HydrogenPageQuery

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostList from "../../../components/post-list"
 
-export default ({ data }) => {
+const HeliumPostListQuery = ({ data }) => {
   const { allCatalystPost } = data
   return <PostList posts={allCatalystPost.nodes} />
 }
@@ -37,3 +37,5 @@ export const query = graphql`
     }
   }
 `
+
+export default HeliumPostListQuery

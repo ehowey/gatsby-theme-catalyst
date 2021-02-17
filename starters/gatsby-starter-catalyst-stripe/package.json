@@ -14,15 +14,15 @@
     ]
   },
   "dependencies": {
-    "gatsby": "^2.24.58",
+    "gatsby": "^2.32.3",
     "@stripe/stripe-js": "^1.11.0",
     "@sanity/client": "^2.1.4",
     "dollars-to-cents": "^1.0.3",
     "stripe": "^8.129.0",
     "use-shopping-cart": "^2.3.0",
     "gatsby-theme-catalyst-stripe": "*",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
