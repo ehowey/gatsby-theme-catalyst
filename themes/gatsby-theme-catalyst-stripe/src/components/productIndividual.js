@@ -81,8 +81,6 @@ const Product = ({ product }) => {
     })
   }, [])
 
-  console.log(quantityError)
-
   return (
     <div sx={{ border: "1px #aaa solid", p: 3, my: 3 }}>
       <Styled.h3>{productName}</Styled.h3>
