@@ -125,7 +125,7 @@ module.exports = (themeOptions) => {
       {
         resolve: `gatsby-plugin-sharp`,
         options: {
-          quality: imageQuality,
+          defaultQuality: imageQuality,
         },
       },
       `gatsby-plugin-catch-links`,
