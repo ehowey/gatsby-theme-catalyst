@@ -26,7 +26,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "stripe": "^8.129.0",
-    "use-shopping-cart": "^2.3.0"
+    "use-shopping-cart": "^2.4.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
