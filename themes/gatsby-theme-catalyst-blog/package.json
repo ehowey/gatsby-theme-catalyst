@@ -4,15 +4,15 @@
   "version": "2.6.4",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
-    "gatsby": "^2.32.3",
+    "gatsby": "^2.24.58",
     "prettier": "^2.2.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.32.3",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "gatsby": "^2.24.58",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "keywords": [
     "gatsby",
