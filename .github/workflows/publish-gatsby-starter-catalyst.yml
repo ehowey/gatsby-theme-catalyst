@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: "10.x"
       - name: publish:starters
-        uses: johno/actions-push-subdirectories@master
+        uses: ehowey/actions-push-subdirectories@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: starters ehowey gatsby-starter-catalyst master
+          args: starters/gatsby-starter-catalyst ehowey name master false
