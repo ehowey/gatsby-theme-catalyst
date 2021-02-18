@@ -1,16 +1,16 @@
 {
   "name": "gatsby-catalyst-docs",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Core, Gatsby-Theme-Catalyst-header-top, Gatsby-Theme-Catalyst-footer",
-  "version": "3.2.2",
+  "version": "3.2.4",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.24.58",
     "gatsby-plugin-netlify": "^2.10.0",
     "gatsby-plugin-offline": "^3.8.0",
-    "gatsby-theme-catalyst-core": "^3.1.2",
-    "gatsby-theme-catalyst-footer": "^1.2.4",
-    "gatsby-theme-catalyst-header-side": "^2.0.2",
+    "gatsby-theme-catalyst-core": "^3.1.4",
+    "gatsby-theme-catalyst-footer": "^1.2.6",
+    "gatsby-theme-catalyst-header-side": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-github-btn": "^1.2.0"

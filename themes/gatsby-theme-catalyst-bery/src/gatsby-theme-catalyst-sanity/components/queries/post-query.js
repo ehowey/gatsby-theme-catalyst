@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Post from "../../../components/post-template"
 
-export default ({ data }) => {
+const BeryPostQuery = ({ data }) => {
   const { previous, next } = data
   return <Post data={{ ...data }} previous={previous} next={next} />
 }
@@ -58,3 +58,5 @@ export const query = graphql`
     }
   }
 `
+
+export default BeryPostQuery

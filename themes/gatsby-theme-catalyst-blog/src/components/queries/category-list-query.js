@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import CategoryList from "../templates/category-list-template"
 
-export default ({ data }) => {
+const CategoryListQuery = ({ data }) => {
   return <CategoryList categories={data.categoryList.group} />
 }
 
@@ -19,3 +19,5 @@ export const query = graphql`
     }
   }
 `
+
+export default CategoryListQuery

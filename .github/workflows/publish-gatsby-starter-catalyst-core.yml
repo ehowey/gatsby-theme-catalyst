@@ -1,11 +1,11 @@
-name: Publish Sanity Templates
+name: Publish Gatsby-Starter-Catalyst-Core
 
 on:
   push:
     branches:
       - main
     paths:
-      - "sanity-templates/**"
+      - "starters/gatsby-starter-catalyst-core/**"
       - ".github/**"
 jobs:
   master:
@@ -14,11 +14,15 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
-          node-version: "10.x"
+          node-version: "14.x"
+      - name: Sleep for 120 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "120s"
       - name: publish:starters
-        uses: johno/actions-push-subdirectories@master
+        uses: ehowey/actions-push-subdirectories@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: sanity-templates ehowey
+          args: starters/gatsby-starter-catalyst-core ehowey name main false

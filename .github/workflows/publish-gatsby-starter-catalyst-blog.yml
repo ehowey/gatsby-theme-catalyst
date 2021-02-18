@@ -1,0 +1,28 @@
+name: Publish Gatsby-Starter-Catalyst-Blog
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "starters/gatsby-starter-catalyst-blog/**"
+      - ".github/**"
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Sleep for 120 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "120s"
+      - name: publish:starters
+        uses: ehowey/actions-push-subdirectories@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: starters/gatsby-starter-catalyst-blog ehowey name main false

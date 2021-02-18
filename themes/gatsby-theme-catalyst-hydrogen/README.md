@@ -72,7 +72,7 @@ For example the following config is valid:
 
 ### Environment Variables
 
-You can read the [Gatsby docs about environment variables](https://www.gatsbyjs.org/docs/environment-variables/) which may be helpful.
+You can read the [Gatsby docs about environment variables](https://www.gatsbyjs.com/docs/environment-variables/) which may be helpful.
 
 At the top of your gatsby-config.js file you will want the following, `require("dotenv").config()`
 

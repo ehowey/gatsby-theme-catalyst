@@ -214,7 +214,7 @@ Depreciated `isMobile` and `mobileMenuBreakpoint`. This is a non-breaking change
 
 ## catalyst-core v0.24.0
 
-- Adds skip nav function based on [https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav](https://www.gatsbyjs.org/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav)
+- Adds skip nav function based on [https://www.gatsbyjs.com/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav](https://www.gatsbyjs.com/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav)
 
 ## catalyst-core v0.23.0
 
@@ -235,7 +235,7 @@ Changes to allow support for sub-menus in `gatsby-node.js`
 
 ## catalyst-core v0.22.0
 
-- Added support for [gatsby-mdx-embed](https://www.gatsbyjs.org/packages/@pauliescanlon/gatsby-mdx-embed/)
+- Added support for [gatsby-mdx-embed](https://www.gatsbyjs.com/packages/@pauliescanlon/gatsby-mdx-embed/)
 
 ## catalyst-writer v0.7.0
 

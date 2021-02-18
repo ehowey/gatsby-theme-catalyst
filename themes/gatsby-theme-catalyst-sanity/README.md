@@ -51,7 +51,7 @@ This is a compromised solution, it makes iterating and building a site with SANI
 
 There is quite a bit going on in `gatsby-node.js` to manage the createPages api from Gatsby. Theme options are used to conditionally build pages in the build process - this means that if you want a blog on your site the "infrastructure" is there in gatsby-node to create the pages but can be turned on/off based on whether you need this feature. This results in some warnings in the build process.
 
-`gatsby-node.js` is also used to automatically create excerpts and reading time for both projects and posts, this relies on an extended base studio configuration as it looks for the "body" field to create the excerpts. This implementation is based on [gatsby-transformer-portable-text](https://www.gatsbyjs.org/packages/gatsby-transform-portable-text/).
+`gatsby-node.js` is also used to automatically create excerpts and reading time for both projects and posts, this relies on an extended base studio configuration as it looks for the "body" field to create the excerpts. This implementation is based on [gatsby-transformer-portable-text](https://www.gatsbyjs.com/packages/gatsby-transform-portable-text/).
 
 ## Query components and template components
 
