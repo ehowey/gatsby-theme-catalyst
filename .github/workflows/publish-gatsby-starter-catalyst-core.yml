@@ -21,4 +21,4 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: starters/gatsby-starter-catalyst-core ehowey name master false
+          args: starters/gatsby-starter-catalyst-core ehowey name main false
