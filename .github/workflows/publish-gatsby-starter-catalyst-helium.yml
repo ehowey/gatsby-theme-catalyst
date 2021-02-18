@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "starters/**"
+      - "starters/gatsby-starter-catalyst-helium/**"
       - ".github/**"
 jobs:
   master:
@@ -21,4 +21,4 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: starters ehowey gatsby-starter-catalyst-helium master
+          args: starters/gatsby-starter-catalyst-helium ehowey name master false
