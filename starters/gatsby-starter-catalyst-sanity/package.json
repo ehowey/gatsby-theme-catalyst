@@ -1,5 +1,6 @@
 {
   "name": "gatsby-starter-catalyst-sanity",
+  "starter-name": "gatsby-starter-catalyst-sanity",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Core, Gatsby-Theme-Catalyst-Header-Top, Gatsby-Theme-Catalyst-Footer, Gatsby-Theme-Catalyst-Sanity",
   "version": "5.1.2",
   "private": true,

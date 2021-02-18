@@ -1,5 +1,6 @@
 {
   "name": "gatsby-starter-catalyst-hydrogen",
+  "starter-name": "gatsby-starter-catalyst-hydrogen",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Hydrogen",
   "version": "5.1.2",
   "private": true,
