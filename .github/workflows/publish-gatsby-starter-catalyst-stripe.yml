@@ -1,4 +1,4 @@
-name: Publish Starters
+name: Publish Gatsby-Starter-Catalyst-Stripe
 
 on:
   push:
