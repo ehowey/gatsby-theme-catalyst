@@ -1,0 +1,24 @@
+name: Publish Starters
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "starters/**"
+      - ".github/**"
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+      - name: publish:starters
+        uses: johno/actions-push-subdirectories@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: starters ehowey gatsby-starter-catalyst master

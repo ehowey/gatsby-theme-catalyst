@@ -1,5 +1,6 @@
 {
   "name": "gatsby-starter-catalyst",
+  "starter-name": "gatsby-starter-catalyst",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Core, Gatsby-Theme-Catalyst-header-top, Gatsby-Theme-Catalyst-footer",
   "version": "3.1.2",
   "private": true,
