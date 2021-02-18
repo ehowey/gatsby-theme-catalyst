@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostList from "../templates/post-list-template"
 
-export default ({ data }) => {
+const PostListQuery = ({ data }) => {
   const { allCatalystPost } = data
   return <PostList posts={allCatalystPost.nodes} />
 }
@@ -33,3 +33,5 @@ export const query = graphql`
     }
   }
 `
+
+export default PostListQuery

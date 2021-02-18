@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Page from "../templates/page-template"
 
-export default ({ data }) => {
+const PageQuery = ({ data }) => {
   return <Page data={{ ...data }} />
 }
 
@@ -15,3 +15,5 @@ export const query = graphql`
     }
   }
 `
+
+export default PageQuery

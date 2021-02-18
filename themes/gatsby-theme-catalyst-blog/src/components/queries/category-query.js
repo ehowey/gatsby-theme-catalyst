@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Category from "../templates/category-template"
 
-export default ({ data, pageContext }) => {
+const CategoryQuery = ({ data, pageContext }) => {
   const { allCatalystPost } = data
   const category = pageContext.category
   return <Category posts={allCatalystPost.nodes} category={category} />
@@ -32,3 +32,5 @@ export const query = graphql`
     }
   }
 `
+
+export default CategoryQuery

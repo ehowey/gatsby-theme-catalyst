@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Project from "../templates/project-template"
 
-export default ({ data }) => {
+const ProjectQuery = ({ data }) => {
   return <Project data={{ ...data }} />
 }
 
@@ -15,3 +15,5 @@ export const query = graphql`
     }
   }
 `
+
+export default ProjectQuery

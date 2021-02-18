@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Category from "../templates/category-template"
 
-export default ({ data }) => {
+const CategoryQuery = ({ data }) => {
   const { sanityCategory } = data
   const category = sanityCategory.title
   const posts = sanityCategory.posts
@@ -26,3 +26,5 @@ export const query = graphql`
     }
   }
 `
+
+export default CategoryQuery

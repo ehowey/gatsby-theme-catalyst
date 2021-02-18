@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import ProjectList from "../templates/project-list-template"
 
-export default ({ data }) => {
+const ProjectListQuery = ({ data }) => {
   return <ProjectList data={{ ...data }} />
 }
 
@@ -20,3 +20,5 @@ export const query = graphql`
     }
   }
 `
+
+export default ProjectListQuery
