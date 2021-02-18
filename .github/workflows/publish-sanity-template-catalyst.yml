@@ -25,4 +25,4 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: anity-templates/sanity-template-bery ehowey name main false
+          args: sanity-templates/sanity-template-catalyst ehowey name main false
