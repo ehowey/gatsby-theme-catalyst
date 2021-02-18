@@ -74,7 +74,7 @@ const Hero = () => {
           wordBreak: "break-word",
         }}
       >
-        gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
+        gatsby new catalyst ehowey/gatsby-starter-catalyst
       </Styled.inlineCode>
       <nav sx={{ width: ["100%", "auto", null, null, null] }}>
         <ul

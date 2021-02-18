@@ -1,4 +1,4 @@
-// See https://theme-ui.com/ for more info and also https://www.gatsbyjs.org/docs/theme-ui/
+// See https://theme-ui.com/ for more info and also https://www.gatsbyjs.com/docs/theme-ui/
 // Try changing some of the colors below to see what happens.
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 import prism from "@theme-ui/prism/presets/oceanic-next"

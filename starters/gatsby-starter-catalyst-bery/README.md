@@ -60,7 +60,7 @@ Update your `gatsby-config.js`:
 
 You can now run `gatsby develop` and your site will build correctly sourcing data from SANITY.io!
 
-[Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
+[Read the Gatsby Quick Start Guide](https://www.gatsbyjs.com/docs/quick-start)
 
 ## Demo
 
@@ -68,4 +68,4 @@ You can now run `gatsby develop` and your site will build correctly sourcing dat
 
 ## About Gatsby Theme Catalyst
 
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.org/) were designed to provide an opinionated set of integrated themes and starters that can be used to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
+The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.com/) were designed to provide an opinionated set of integrated themes and starters that can be used to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).

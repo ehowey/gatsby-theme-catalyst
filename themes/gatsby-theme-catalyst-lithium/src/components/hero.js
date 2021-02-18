@@ -7,7 +7,7 @@ const Hero = () => {
       <h1>Hero Section for Shadowing</h1>
       <p>
         Read more on{" "}
-        <a href="https://www.gatsbyjs.org/docs/how-shadowing-works/">
+        <a href="https://www.gatsbyjs.com/docs/how-shadowing-works/">
           component shadowing.
         </a>
       </p>

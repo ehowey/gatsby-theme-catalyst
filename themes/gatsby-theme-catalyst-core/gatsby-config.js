@@ -54,7 +54,7 @@ module.exports = (themeOptions) => {
       description: `Placeholder description`,
       keywords: [`gatsby`],
       author: `Placeholder author`,
-      siteUrl: `https://www.gatsbyjs.org`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
+      siteUrl: `https://www.gatsbyjs.com`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
       menuLinks: [
         {
           name: `Placeholder Menu Link`,
@@ -65,7 +65,7 @@ module.exports = (themeOptions) => {
       socialLinks: [
         {
           name: `Placeholder social link`,
-          link: `https://www.gatsbyjs.org`,
+          link: `https://www.gatsbyjs.com`,
           location: `all`, //Options are "all", "header", "footer"
         },
       ],
