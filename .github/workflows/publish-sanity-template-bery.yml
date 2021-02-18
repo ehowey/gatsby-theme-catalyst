@@ -1,11 +1,11 @@
-name: Publish Sanity Templates
+name: Publish Sanity Template Bery
 
 on:
   push:
     branches:
       - main
     paths:
-      - "sanity-templates/**"
+      - "sanity-templates/sanity-template-bery/**"
       - ".github/**"
 jobs:
   master:
@@ -14,11 +14,15 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
-          node-version: "10.x"
+          node-version: "14.x"
+      - name: Sleep for 120 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "120s"
       - name: publish:starters
         uses: ehowey/actions-push-subdirectories@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: sanity-templates ehowey
+          args: sanity-templates/sanity-template-bery ehowey name main false

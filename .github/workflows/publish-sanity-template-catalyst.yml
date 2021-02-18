@@ -1,11 +1,11 @@
-name: Publish Gatsby-Starter-Catalyst-Core
+name: Publish Sanity Template Catalyst
 
 on:
   push:
     branches:
       - main
     paths:
-      - "starters/gatsby-starter-catalyst-core/**"
+      - "sanity-templates/sanity-template-catalyst/**"
       - ".github/**"
 jobs:
   master:
@@ -25,4 +25,4 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: starters/gatsby-starter-catalyst-core ehowey name main false
+          args: anity-templates/sanity-template-bery ehowey name main false
