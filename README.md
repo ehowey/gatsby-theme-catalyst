@@ -15,7 +15,7 @@ Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters
 
 ```shell
    # create a new Gatsby site using the basic starter
-    gatsby new catalyst https://github.com/ehowey/gatsby-starter-catalyst
+    gatsby new catalyst ehowey/gatsby-starter-catalyst
    # change into your new directory
     cd catalyst
    # launch the site
@@ -25,7 +25,7 @@ Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters
 **Example sites built with Gatsby-Theme-Catalyst:**
 
 - [www.erichowey.dev](https://www.erichowey.dev/) - Based on `gatsby-starter-catalyst-blog`, [Github Repo](https://github.com/ehowey/erichoweydev)
-- [www.briannasharpe.com](https://www.briannasharpe.com/) - Based on `gatsby-starter-catalyst-hydrogen`, [Github Repo](https://github.com/ehowey/briannasharpe)
+- [www.mindmapbc.ca](https://www.mindmapbc.ca/) - Based on `gatsby-starter-catalyst-sanity`, a fully custom website and PWA using gatsby-theme-catalyst as a development base.
 - [www.gatsbycatalyst.com](https://www.gatsbycatalyst.com) - Based on `gatsby-starter-catalyst` and `gatsby-theme-catalyst-header-side` with a custom index page.
 
 ## :rocket: Getting Started
@@ -36,7 +36,23 @@ Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters
 
 [https://www.gatsbycatalyst.com/docs/](https://www.gatsbycatalyst.com/docs/)
 
-## List of themes
+## Philosophy
+
+_Less is more_
+
+### Simple Core Theme
+
+`gatsby-theme-catalyst-core` was designed and built to be as simple and unstyled as possible. A barebones starting point which can be easily maintained in the future to manage dependencies on client sites.
+
+### Child themes to extend the core theme
+
+These child-themes are focused on extending function, data sources or styling. Some themes are intentionally raw and unstyled focusing instead on the data layer or extending specific functionality, e.g. `gatsby-theme-catalyst-sanity`. Some themes focus on adding a specific layout feature, e.g. `gatsby-theme-catalyst-header-top`. Still other themes are more refined and styled focuse on bundling together a set of themes closer to what you might have in a final production website, e.g. `gatsby-theme-catalyst-bery`.
+
+### Starter sites to extend and style the themes
+
+The starter sites provide a "quick start" for project development using the themes as dependencies. Some starters are intentionally a "blank canvas" for a totally custom project while other starters are much more polished requiring fewer changes before being production ready.
+
+## Available themes
 
 | Theme                                                                                                           | Demo                                                                                      | Description                                                                                                                                                                                                                                                                                                       |
 | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,25 +68,11 @@ Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters
 | [gatsby-theme-catalyst-lithium](https://www.gatsbycatalyst.com/docs/gatsby-theme-catalyst-lithium/)             | [gatsby-starter-catalyst-lithium](https://gatsby-starter-catalyst-lithium.netlify.app/)   | This is a structurally similar theme to `helium` but visually distinct. It is also a personal blog starter using the Catalyst set of themes as a base. Features large images, SEO optimization, social sharing support. Content is authored in MDX and git is used as the CMS.                                    |
 | [gatsby-theme-catalyst-bery](https://www.gatsbycatalyst.com/docs/gatsby-theme-catalyst-bery/)                   | [gatsby-starter-catalyst-bery](https://gatsby-starter-catalyst-bery.netlify.app/)         | This is a peronal blog using SANITY.io as a datasource. Features a more minimal design that highlights written content. Features RSS feed, social sharing support, sortable blog categories. This is also an example of escaping from some features of Gatsby Theme Catalyst to create a custom header component. |
 
-## Philosophy
-
-_Less is more_
-
-### Simple Core Theme
-
-`gatsby-theme-catalyst-core` was designed and built to be as simple and unstyled as possible. A barebones starting point which can be easily maintained in the future to manage dependencies on client sites.
-
-### Child themes to extend the core theme
-
-These child-themes are focused on extending function and remain as design-agnostic as possible. Again this makes longterm maintenance easier for client sites. It is my preference to begin new projects without too much styling that has to be undone.
-
-### Starter sites to extend and style the themes
-
-The starter sites provide a "quick start" for site development using the themes as dependencies. Currently the starter sites only provide basic implementation of the themes. It is my vision however that in time there could be more styled and complex starters released which do not need as much customization and include more rigid styling.
-
 ## Contribution
 
 This is a passion project for me that I work on in my spare time. I would love any additional feedback, suggestions and pull requests. Contributions are welcomed and encouraged.
+
+Thank-you to all of the contributors that have already helped to make this project great!
 
 I can be contacted via email at: <eric@erichowey.dev> if you have questions.
 
