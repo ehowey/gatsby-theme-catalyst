@@ -6,11 +6,14 @@ import Nav from "./navbar/nav"
 import MobileButton from "./navbar/nav-mobile-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import CartButton from "./cart/cart-button"
+import Cart from "./cart/cart"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
   const { useStickyHeader } = useCatalystConfig()
   const { theme } = useThemeUI()
+  const useShoppingCart = true
   return (
     <header
       sx={{
@@ -34,7 +37,7 @@ const SiteHeader = () => {
           gridColumn: "1 / -1",
           alignSelf: "start",
           display: "grid",
-          gridTemplateColumns: "auto 1fr",
+          gridTemplateColumns: "auto minmax(0, 1fr) auto",
           gridTemplateRows: [
             theme.sizes.headerHeight + " 1fr",
             null,
@@ -53,6 +56,7 @@ const SiteHeader = () => {
         <Branding />
         <Nav />
         <MobileButton />
+        {useShoppingCart && <CartButton />}
       </div>
     </header>
   )

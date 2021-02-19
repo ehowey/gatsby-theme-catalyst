@@ -35,13 +35,14 @@ const Span = ({ open }) => (
 
 const SiteMobileButton = () => {
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
+  const useShoppingCart = true
   return (
     <button
       aria-haspopup={true}
       aria-label="Toggle Menu"
       onClick={() => setIsNavOpen(!isNavOpen)}
       sx={{
-        gridColumn: "2 / 3",
+        gridColumn: useShoppingCart ? "1 / 2" : "3 / 4",
         gridRow: "1 / 2",
         alignSelf: "center",
         color: isNavOpen ? "header.textOpen" : "header.text",

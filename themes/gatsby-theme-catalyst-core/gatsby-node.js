@@ -99,6 +99,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     useColorMode: Boolean!
     footerContentLocation: String!
     useKatex: Boolean!
+    useShoppingCart: Boolean!
   }
   `
   createTypes(siteMetadataTypeDefs)
@@ -120,6 +121,7 @@ exports.sourceNodes = (
     useColorMode = true,
     footerContentLocation = "left",
     useKatex = false,
+    useShoppingCart = false,
   }
 ) => {
   // create garden data from plugin config
@@ -134,6 +136,7 @@ exports.sourceNodes = (
     useStickyHeader,
     useSocialLinks,
     useColorMode,
+    useShoppingCart,
     footerContentLocation,
     useKatex,
   }

@@ -16,6 +16,7 @@ export const useCatalystConfig = () => {
           useColorMode
           footerContentLocation
           useKatex
+          useShoppingCart
         }
       }
     `
