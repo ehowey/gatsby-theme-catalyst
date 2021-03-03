@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, Button } from "theme-ui"
 import { useShoppingCart } from "use-shopping-cart"
-import { motion } from "framer-motion"
 
 const Cart = () => {
   const {
@@ -11,13 +10,7 @@ const Cart = () => {
     cartDetails,
     formattedTotalPrice,
     handleCloseCart,
-    shouldDisplayCart,
   } = useShoppingCart()
-
-  const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "100%" },
-  }
 
   const handleCheckout = async (event) => {
     event.preventDefault()
@@ -38,26 +31,25 @@ const Cart = () => {
   }
 
   return (
-    <motion.div
-      animate={{ x: -300, opacity: 1 }}
+    <div
       sx={{
         height: "100vh",
         width: "300px",
         position: "fixed",
-        top: "0",
-        right: "-300px",
+        top: 0,
+        right: 0,
         zIndex: "10000",
         bg: "background",
-        opacity: "0",
       }}
     >
-      <button onClick={handleCloseCart}>Close cart</button>
+      <Button onClick={handleCloseCart}>Close cart</Button>
       <Styled.h2>Shopping Cart</Styled.h2>
-      <p>Number of Items: {cartCount}</p>
-      <p>Total: {formattedTotalPrice}</p>
-      <button onClick={handleCheckout}>Checkout</button>
-      <button onClick={() => clearCart()}>Remove all items</button>
-    </motion.div>
+      <Styled.p>Number of Items: {cartCount}</Styled.p>
+
+      <Styled.p>Total: {formattedTotalPrice}</Styled.p>
+      <Button onClick={handleCheckout}>Checkout</Button>
+      <Button onClick={() => clearCart()}>Remove all items</Button>
+    </div>
   )
 }
 
