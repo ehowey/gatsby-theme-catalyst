@@ -8415,7 +8415,7 @@ fs-extra@^8.1.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0.0, fs-extra@^9.0.1:
+fs-extra@^9.0.0, fs-extra@^9.0.1, fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
@@ -8633,16 +8633,16 @@ gatsby-plugin-catch-links@^2.5.0:
     "@babel/runtime" "^7.12.5"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-feed@^2.11.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.12.0.tgz#3013d0919b037f2aa56ae0661a98ab34d2b574c9"
-  integrity sha512-Ag53hbQfs3y5C4aV0EtC7udhB7eyjAvqcGY6NsbtEvjpEMWqgOXO5qIL+jyk9FZz5OacSQsMX2EodITb090RSA==
+gatsby-plugin-feed@^2.13.1:
+  version "2.13.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.13.1.tgz#06000ed99979efaeb2e3afc978c4ccbdaa11b6dc"
+  integrity sha512-/Zl4Sp+eRiMaH5QrOmckSbjvgsVYcuZhNgAi/GAPrdBYLBhsGAEdBsLxRDb6Lhi28gvqpjV8CYXV6kfePMZ7hg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@hapi/joi" "^15.1.1"
     common-tags "^1.8.0"
-    fs-extra "^8.1.0"
-    gatsby-plugin-utils "^0.8.0"
+    fs-extra "^9.1.0"
+    gatsby-plugin-utils "^0.9.0"
     lodash.merge "^4.6.2"
     rss "^1.2.2"
 
