@@ -5,14 +5,14 @@
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby": "^2.24.58",
+    "gatsby": "^3.0.2",
     "gatsby-plugin-netlify": "^2.10.0",
     "gatsby-plugin-offline": "^3.8.0",
     "gatsby-theme-catalyst-core": "^3.1.4",
     "gatsby-theme-catalyst-footer": "^1.2.6",
     "gatsby-theme-catalyst-header-side": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-github-btn": "^1.2.0"
   },
   "devDependencies": {
