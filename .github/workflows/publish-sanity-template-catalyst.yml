@@ -1,9 +1,8 @@
 name: Publish Sanity Template Catalyst
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
     paths:
       - "sanity-templates/sanity-template-catalyst/**"
       - ".github/**"

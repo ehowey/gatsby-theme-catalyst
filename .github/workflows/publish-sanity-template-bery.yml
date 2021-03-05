@@ -1,9 +1,8 @@
 name: Publish Sanity Template Bery
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
     paths:
       - "sanity-templates/sanity-template-bery/**"
       - ".github/**"
