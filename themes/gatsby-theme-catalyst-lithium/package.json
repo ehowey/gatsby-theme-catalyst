@@ -1,13 +1,13 @@
 {
   "name": "gatsby-theme-catalyst-lithium",
   "description": "Gatsby theme for a simple personal blog. MDX and git as the CMS. Support for featured images, social images, RSS Feed and more.",
-  "version": "4.0.0-alpha.0",
+  "version": "4.0.0-alpha.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby-theme-catalyst-blog": "^3.0.0-alpha.0",
-    "gatsby-theme-catalyst-core": "^4.0.0-alpha.0",
-    "gatsby-theme-catalyst-footer": "^2.0.0-alpha.0",
-    "gatsby-theme-catalyst-header-top": "^2.0.0-alpha.0"
+    "gatsby-theme-catalyst-blog": "^3.0.0-alpha.1",
+    "gatsby-theme-catalyst-core": "^4.0.0-alpha.1",
+    "gatsby-theme-catalyst-footer": "^2.0.0-alpha.1",
+    "gatsby-theme-catalyst-header-top": "^2.0.0-alpha.1"
   },
   "peerDependencies": {
     "gatsby": "^3.0.3",
