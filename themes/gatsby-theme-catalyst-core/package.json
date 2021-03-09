@@ -12,9 +12,9 @@
     "@theme-ui/preset-tailwind": "^0.3.5",
     "@theme-ui/prism": "^0.3.5",
     "gatsby-background-image": "^1.4.1",
-    "gatsby-image": "^3.0.0",
     "gatsby-plugin-catch-links": "^3.0.0",
     "gatsby-plugin-feed": "^3.0.0",
+    "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-mdx": "^2.0.0",
     "gatsby-plugin-mdx-embed": "^0.0.19",
@@ -48,13 +48,13 @@
     "theme-ui": "^0.3.5"
   },
   "devDependencies": {
-    "gatsby": "^3.0.2",
+    "gatsby": "^3.0.3",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.2",
+    "gatsby": "^3.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { Layout, SEO } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { FaRegClock } from "react-icons/fa"
 import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
 import { useHeliumConfig } from "gatsby-theme-catalyst-helium"
@@ -110,7 +110,8 @@ const PostsList = ({ posts }) => {
                   className="postListImage"
                 >
                   <Link to={post.slug}>
-                    <Img
+                    <GatsbyImage
+                      image={post.featuredImage.childImageSharp.gatsbyImageData}
                       sx={{
                         maxWidth: "100%",
                         maxHeight: "100%",
@@ -119,9 +120,7 @@ const PostsList = ({ posts }) => {
                         boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
                         variant: "variants.postListImage",
                       }}
-                      fluid={post.featuredImage.childImageSharp.fluid}
-                      alt={post.title}
-                    />
+                      alt={post.title} />
                   </Link>
                 </div>
                 <div
@@ -243,12 +242,12 @@ const PostsList = ({ posts }) => {
                   </div>
                 </div>
               </article>
-            )
+            );
           })}
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default PostsList

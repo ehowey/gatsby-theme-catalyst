@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import PostFooter from "./post-footer"
 import kebabCase from "lodash/kebabCase"
 import { FaRegClock } from "react-icons/fa"
@@ -35,7 +35,8 @@ const Post = ({ data: { post }, previous, next }) => (
         variant: "variants.postContainer",
       }}
     >
-      <Img
+      <GatsbyImage
+        image={post.featuredImage.childImageSharp.gatsbyImageData}
         sx={{
           gridColumn: "1 / -1",
           gridRow: ["1 / 2", null, "1 / 3", null, null],
@@ -45,9 +46,7 @@ const Post = ({ data: { post }, previous, next }) => (
           mx: "auto",
           variant: "variants.postImage",
         }}
-        fluid={post.featuredImage.childImageSharp.fluid}
-        alt={post.title}
-      />
+        alt={post.title} />
       <div
         sx={{
           gridColumn: "2 / 3",
