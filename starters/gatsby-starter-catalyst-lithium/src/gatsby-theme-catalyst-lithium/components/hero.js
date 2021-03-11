@@ -2,24 +2,21 @@
 import { jsx, Styled, Button } from "theme-ui"
 import { darken } from "@theme-ui/color"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { RoughNotation } from "react-rough-notation"
 import { useHasMounted } from "gatsby-theme-catalyst-core"
 import { Fragment } from "react"
 
 const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      heroImage: file(relativePath: { eq: "hero-image.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  heroImage: file(relativePath: {eq: "hero-image.png"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
-  `)
-  const heroImage = data.heroImage.childImageSharp.fluid
+  }
+}
+`)
+  const heroImage = data.heroImage.childImageSharp.gatsbyImageData
   const hasMounted = useHasMounted()
   return (
     <div
@@ -39,15 +36,14 @@ const Hero = () => {
           mx: [3, null, 5, null, null],
         }}
       >
-        <Img
-          fluid={heroImage}
+        <GatsbyImage
+          image={heroImage}
           imgStyle={{ objectFit: "contain" }}
           sx={{
             gridColumn: ["1 / -1", null, "2 / 3", null, null],
             gridRow: "1 / 2",
             maxHeight: ["200px", "300px", "400px", null, "500px"],
-          }}
-        />
+          }} />
         <div
           sx={{
             gridColumn: ["1 / -1", null, "1 / 2", null, null],
@@ -88,7 +84,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Hero

@@ -3,21 +3,18 @@ import { jsx, Styled, Button } from "theme-ui"
 import { darken, lighten } from "@theme-ui/color"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      avatar: file(relativePath: { eq: "avatar.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  avatar: file(relativePath: {eq: "avatar.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 500, layout: CONSTRAINED)
     }
-  `)
-  const avatar = data.avatar.childImageSharp.fluid
+  }
+}
+`)
+  const avatar = data.avatar.childImageSharp.gatsbyImageData
   return (
     <div
       sx={{
@@ -36,8 +33,8 @@ const Hero = () => {
           gridTemplateRows: ["180px auto", null, "230px auto", null, null],
         }}
       >
-        <Img
-          fluid={avatar}
+        <GatsbyImage
+          image={avatar}
           sx={{
             gridColumn: "2 / 3",
             gridRow: "1 / 2",
@@ -49,8 +46,7 @@ const Hero = () => {
             borderWidth: "4px",
             borderStyle: "solid",
           }}
-          alt="Catalyst Helium"
-        />
+          alt="Catalyst Helium" />
         <div
           sx={{
             gridColumn: "1 / -1",
@@ -97,7 +93,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Hero
