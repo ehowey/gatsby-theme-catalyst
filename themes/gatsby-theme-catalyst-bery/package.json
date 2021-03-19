@@ -1,13 +1,13 @@
 {
   "name": "gatsby-theme-catalyst-bery",
   "description": "Gatsby theme for a basic business marketing website. SANITY.io as the CMS.",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.2",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "framer-motion": "^4.0.0",
-    "gatsby-theme-catalyst-core": "^4.0.0-alpha.1",
-    "gatsby-theme-catalyst-footer": "^2.0.0-alpha.1",
-    "gatsby-theme-catalyst-sanity": "^5.0.0-alpha.1"
+    "gatsby-theme-catalyst-core": "^4.0.0-alpha.2",
+    "gatsby-theme-catalyst-footer": "^2.0.0-alpha.2",
+    "gatsby-theme-catalyst-sanity": "^5.0.0-alpha.2"
   },
   "peerDependencies": {
     "gatsby": "^3.1.1",
