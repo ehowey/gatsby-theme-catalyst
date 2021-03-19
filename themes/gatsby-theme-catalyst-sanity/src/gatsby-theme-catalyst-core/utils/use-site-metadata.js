@@ -26,9 +26,7 @@ export const useSiteMetadata = () => {
             }
             logo {
               asset {
-                fluid(maxWidth: 512) {
-                  ...GatsbySanityImageFluid
-                }
+                gatsbyImageData
               }
             }
           }
@@ -57,7 +55,7 @@ export const useSiteMetadata = () => {
     `
   )
   const siteMetadata = data.allSanitySiteSettings.nodes[0]
-  const logo = siteMetadata.logo.asset.fluid
+  const logo = siteMetadata.logo.asset.gatsbyImageData
   const seoImageSrc = siteMetadata.seoImage.asset.url
   const seoImageHeight = siteMetadata.seoImage.asset.metadata.dimensions.height
   const seoImageWidth = siteMetadata.seoImage.asset.metadata.dimensions.width
