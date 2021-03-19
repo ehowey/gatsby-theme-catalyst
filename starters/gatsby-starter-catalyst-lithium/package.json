@@ -6,7 +6,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "fontsource-quando": "^3.1.5",
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.1.1",
     "gatsby-theme-catalyst-lithium": "^4.0.0-alpha.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

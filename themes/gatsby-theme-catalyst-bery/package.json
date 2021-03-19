@@ -4,18 +4,18 @@
   "version": "4.0.0-alpha.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "framer-motion": "^3.10.0",
+    "framer-motion": "^4.0.0",
     "gatsby-theme-catalyst-core": "^4.0.0-alpha.1",
     "gatsby-theme-catalyst-footer": "^2.0.0-alpha.1",
     "gatsby-theme-catalyst-sanity": "^5.0.0-alpha.1"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.1.1",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

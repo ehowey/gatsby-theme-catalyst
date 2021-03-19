@@ -4,13 +4,13 @@
   "version": "2.0.0-alpha.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.1.1",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
