@@ -26,9 +26,7 @@ const FeaturedWork = () => {
           excerpt
           image {
             asset {
-              fluid(maxWidth: 720) {
-                ...GatsbySanityImageFluid
-              }
+              gatsbyImageData
             }
           }
         }
@@ -46,11 +44,11 @@ const FeaturedWork = () => {
           mb: 5,
         }}
       >
-        {writing.map(published => (
+        {writing.map((published) => (
           <Card
             title={published.title}
             link={published.link}
-            image={published.image.asset.fluid}
+            image={published.image.asset.gatsbyImageData}
             publisher={published.publisher}
             date={published.date}
             excerpt={published.excerpt}

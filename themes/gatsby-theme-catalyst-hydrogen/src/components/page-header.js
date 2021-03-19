@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const PageHeader = ({ title, topImage, topImageAlt }) => {
   return (
     <Fragment>
-      <Img
+      <GatsbyImage
+        image={topImage}
         sx={{
           height: ["150px", "200px", null, null, null],
           width: ["100vw", null, "auto", null, null],
@@ -17,12 +18,10 @@ const PageHeader = ({ title, topImage, topImageAlt }) => {
           mr: ["-50vw", null, 0, null, null],
           mt: 5,
         }}
-        fluid={topImage}
-        alt={topImageAlt}
-      />
+        alt={topImageAlt} />
       <Styled.h1>{title}</Styled.h1>
     </Fragment>
-  )
+  );
 }
 
 export default PageHeader

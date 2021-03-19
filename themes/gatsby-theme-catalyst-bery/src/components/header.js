@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx, Styled, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import {
   SocialHeader,
   ColorModeButton,
@@ -22,9 +22,7 @@ const SiteHeader = () => {
         _rawBio
         image {
           asset {
-            fluid(maxWidth: 1080) {
-              ...GatsbySanityImageFluid
-            }
+            gatsbyImageData
           }
         }
       }
@@ -70,14 +68,14 @@ const SiteHeader = () => {
             alignSelf: "center",
           }}
         >
-          <Img
+          <GatsbyImage
+            image={author.image.asset.gatsbyImageData}
             sx={{
               height: ["70px", "120px", "150px", "200px", null],
               width: ["70px", "120px", "150px", "200px", null],
               borderRadius: "9999em",
               boxShadow: "lg",
             }}
-            fluid={author.image.asset.fluid}
             alt={author.name}
           />
         </Styled.a>

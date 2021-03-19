@@ -3,7 +3,7 @@
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 import prism from "@theme-ui/prism/presets/oceanic-next"
 
-export default {
+const sanityBaseTheme = {
   ...tailwind,
   breakpoints: ["480px", "768px", "1024px", "1440px"],
   fonts: {
@@ -165,3 +165,5 @@ export default {
   },
   variants: {},
 }
+
+export default sanityBaseTheme

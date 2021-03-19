@@ -15,7 +15,7 @@ const WorkPage = ({ data }) => {
       <Layout>
         <SEO title={result.title} />
         <PageHeader
-          topImage={result.featuredImage.asset.fluid}
+          topImage={result.featuredImage.asset.gatsbyImageData}
           topImageAlt={result.featuredImage.alt}
           title={result.title}
         />

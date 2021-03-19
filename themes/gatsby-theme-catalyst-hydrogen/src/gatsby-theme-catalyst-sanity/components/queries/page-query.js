@@ -15,9 +15,7 @@ export const query = graphql`
       featuredImage {
         alt
         asset {
-          fluid(maxHeight: 200) {
-            ...GatsbySanityImageFluid
-          }
+          gatsbyImageData
         }
       }
     }

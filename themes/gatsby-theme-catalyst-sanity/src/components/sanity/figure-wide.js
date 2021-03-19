@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import Img from "gatsby-image"
-import { getFluidGatsbyImage } from "gatsby-source-sanity"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { getGatsbyImageData } from "gatsby-source-sanity"
 import { useSanityConfig } from "./use-sanity-config"
 
 export default ({ node }) => {
@@ -12,8 +12,8 @@ export default ({ node }) => {
   const { sanityProjectId, sanityDataset } = useSanityConfig()
   const sanityConfig = { projectId: sanityProjectId, dataset: sanityDataset }
 
-  const fluidProps = getFluidGatsbyImage(
-    node.asset._ref,
+  const fluidProps = getGatsbyImageData(
+    node.asset,
     { maxWidth: 1440 },
     sanityConfig
   )
@@ -24,7 +24,8 @@ export default ({ node }) => {
         mx: 0,
       }}
     >
-      <Img
+      <GatsbyImage
+        image={fluidProps}
         sx={{
           maxHeight: "400px",
           width: ["100vw", null, null, "85vw", "80vw"],
@@ -35,7 +36,6 @@ export default ({ node }) => {
           marginRight: ["-50vw", null, null, "-42.5vw", "-40vw"],
           variant: "variants.sanityFigureWide",
         }}
-        fluid={fluidProps}
         alt={node.alt}
       />
       {node.caption && (

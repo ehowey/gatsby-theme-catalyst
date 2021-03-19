@@ -2,7 +2,7 @@
 import { jsx, Styled, Button, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import {
   useSanityConfig,
   SanityThemeProvider,
@@ -147,8 +147,8 @@ const PostListTemplate = ({ data }) => {
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
               >
-                <Img
-                  fluid={post.featuredImage.asset.fluid}
+                <GatsbyImage
+                  image={post.featuredImage.asset.gatsbyImageData}
                   alt={post.title}
                   sx={{
                     height: ["200px", "250px", null, null, null],

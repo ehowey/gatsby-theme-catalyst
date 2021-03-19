@@ -31,9 +31,7 @@ export const query = graphql`
             }
           }
           url
-          fluid(maxWidth: 1440) {
-            ...GatsbySanityImageFluid
-          }
+          gatsbyImageData
         }
       }
       _rawBody
