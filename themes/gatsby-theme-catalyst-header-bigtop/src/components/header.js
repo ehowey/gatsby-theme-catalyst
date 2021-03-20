@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import Branding from "./branding/branding"
+import Branding from "./branding"
 import Nav from "./navbar/nav"
 import NavIcons from "./navbar/nav-icons"
 import MobileButton from "./navbar/nav-mobile-button"

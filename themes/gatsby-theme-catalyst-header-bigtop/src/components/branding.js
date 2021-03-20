@@ -1,7 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import Logo from "./branding-logo"
-import Title from "./branding-title"
 
 const SiteBranding = () => {
   return (
@@ -14,8 +12,7 @@ const SiteBranding = () => {
         variant: "variants.branding",
       }}
     >
-      <Logo />
-      <Title />
+      Branding
     </div>
   )
 }

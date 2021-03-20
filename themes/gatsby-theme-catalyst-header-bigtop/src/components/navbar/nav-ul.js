@@ -7,6 +7,7 @@ const NavUl = ({ children }) => {
       sx={{
         display: "flex",
         flexDirection: ["column", null, "row", null, null],
+        alignItems: "center",
         flexWrap: "wrap",
         textAlign: ["center", null, "left", null, null],
         listStyle: "none",

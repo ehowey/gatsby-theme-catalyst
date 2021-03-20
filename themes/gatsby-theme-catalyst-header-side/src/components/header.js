@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import Branding from "./branding/branding"
+import Branding from "./branding"
 import Nav from "./navbar/nav"
 import MobileButton from "./navbar/nav-mobile-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
