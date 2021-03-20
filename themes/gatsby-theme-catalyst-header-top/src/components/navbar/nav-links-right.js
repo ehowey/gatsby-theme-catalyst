@@ -4,10 +4,9 @@ import { Fragment, useContext, useState } from "react"
 import NavLI from "./nav-li"
 import NavUlDropdown from "./nav-ul-submenu"
 import NavLiDropdown from "./nav-li-submenu"
-import GatsbyLink from "./nav-links-gatsbylink"
-import NavMenuAnchorLink from "./nav-links-anchorlink"
+import { Link } from "gatsby"
 import DropdownButton from "./nav-links-dropdown-button"
-import { useSiteMetadata, HomeContext } from "gatsby-theme-catalyst-core"
+import { useSiteMetadata, NavContext } from "gatsby-theme-catalyst-core"
 
 // This component has a lot going on. It is handling the mapping of the menu items, optionally using anchor links, and optionally showing a dropdown menu. It is broken into smaller components for readability here but could be condensed into one mega component if you wanted.
 
@@ -15,7 +14,8 @@ const NavLinksRight = () => {
   const { menuLinks } = useSiteMetadata()
   const rightLinks = menuLinks.filter((link) => link.location === "right")
   const [activeDropdown, setActiveDropdown] = useState(null)
-  const [isHome] = useContext(HomeContext)
+  const [isNavOpen, setIsNavOpen] = useContext(NavContext) // eslint-disable-line
+
   return (
     <ul
       sx={{
@@ -33,52 +33,46 @@ const NavLinksRight = () => {
         const hasSubmenu = link.subMenu && link.subMenu.length > 0
         return (
           <NavLI key={link.name} hasSubmenu={hasSubmenu ? true : false}>
-            {link.type === "internal" && (
-              <Fragment>
-                {hasSubmenu ? (
-                  <Fragment>
-                    <DropdownButton
-                      link={link.link}
-                      activeDropdown={activeDropdown}
-                      setActiveDropdown={setActiveDropdown}
-                    >
-                      {link.name}
-                    </DropdownButton>
-                    {activeDropdown === link.link && (
-                      <NavUlDropdown
-                        setActiveDropdown={setActiveDropdown}
-                        activeDropdown={activeDropdown}
-                        link={link.link}
-                      >
-                        {link.subMenu.map((subLink) => (
-                          <NavLiDropdown key={subLink.name}>
-                            <GatsbyLink link={subLink.link}>
-                              {subLink.name}
-                            </GatsbyLink>
-                          </NavLiDropdown>
-                        ))}
-                      </NavUlDropdown>
-                    )}
-                  </Fragment>
-                ) : (
-                  <GatsbyLink
+            <Fragment>
+              {hasSubmenu ? (
+                <Fragment>
+                  <DropdownButton
                     link={link.link}
-                    hasSubmenu={hasSubmenu ? true : false}
+                    activeDropdown={activeDropdown}
+                    setActiveDropdown={setActiveDropdown}
                   >
                     {link.name}
-                  </GatsbyLink>
-                )}
-              </Fragment>
-            )}
-            {isHome && link.type === "anchor" ? (
-              <NavMenuAnchorLink link={link.link}>
-                {link.name}
-              </NavMenuAnchorLink>
-            ) : (
-              link.type === "anchor" && (
-                <GatsbyLink link={"/" + link.link}>{link.name}</GatsbyLink>
-              )
-            )}
+                  </DropdownButton>
+                  {activeDropdown === link.link && (
+                    <NavUlDropdown
+                      setActiveDropdown={setActiveDropdown}
+                      activeDropdown={activeDropdown}
+                      link={link.link}
+                    >
+                      {link.subMenu.map((subLink) => (
+                        <NavLiDropdown key={subLink.name}>
+                          <Link
+                            to={subLink.link}
+                            activeClassName="active"
+                            onClick={() => setIsNavOpen(false)}
+                          >
+                            {subLink.name}
+                          </Link>
+                        </NavLiDropdown>
+                      ))}
+                    </NavUlDropdown>
+                  )}
+                </Fragment>
+              ) : (
+                <Link
+                  to={link.link}
+                  activeClassName="active"
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )}
+            </Fragment>
           </NavLI>
         )
       })}
