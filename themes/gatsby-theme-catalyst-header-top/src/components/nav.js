@@ -2,10 +2,9 @@
 import { jsx } from "theme-ui"
 import { useContext, useEffect, useRef } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import NavUL from "./nav-ul"
-import NavLinksLeft from "./nav-links-left"
-import NavLinksRight from "./nav-links-right"
-import NavIcons from "./nav-icons"
+import NavMenuRight from "./nav-menu-right"
+import NavMenuLeft from "./nav-menu-left"
+import SocialIcons from "./social-icons"
 
 const Nav = () => {
   const [isNavOpen] = useContext(NavContext)
@@ -53,11 +52,21 @@ const Nav = () => {
       }}
       aria-label="Primary menu"
     >
-      <NavUL>
-        <NavLinksLeft />
-        <NavLinksRight />
-      </NavUL>
-      <NavIcons />
+      <div
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: ["column", null, "row", null, null],
+          justifyContent: [null, null, "space-between", null, null],
+          flexWrap: "wrap",
+          textAlign: ["center", null, "left", null, null],
+          variant: "variants.navUl",
+        }}
+      >
+        <NavMenuLeft />
+        <NavMenuRight />
+      </div>
+      <SocialIcons />
     </nav>
   )
 }

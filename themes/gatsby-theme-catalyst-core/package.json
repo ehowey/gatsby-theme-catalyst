@@ -41,7 +41,6 @@
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
-    "react-scroll": "^1.8.2",
     "rehype-katex": "^4.0.0",
     "remark-math": "^4.0.0",
     "remark-slug": "^6.0.0",
