@@ -1,58 +1,43 @@
 /** @jsx jsx */
 import { jsx, Styled, Grid } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Features = () => {
   const data = useStaticQuery(
-    graphql`
-      query {
-        layout: file(relativePath: { eq: "gatsby-starter-catalyst.jpg" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        sanity: file(relativePath: { eq: "sanity-studio.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        presentation: file(
-          relativePath: { eq: "gatsby-starter-hydrogen.jpg" }
-        ) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        themeui: file(relativePath: { eq: "theme-ui.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        themeoptions: file(relativePath: { eq: "theme-options.jpg" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        mdx: file(relativePath: { eq: "mdx-logo.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
+    graphql`{
+  layout: file(relativePath: {eq: "gatsby-starter-catalyst.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(height: 512, layout: FULL_WIDTH)
+    }
+  }
+  sanity: file(relativePath: {eq: "sanity-studio.png"}) {
+    childImageSharp {
+      gatsbyImageData(height: 512, layout: FULL_WIDTH)
+    }
+  }
+  presentation: file(relativePath: {eq: "gatsby-starter-hydrogen.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(height: 512, layout: FULL_WIDTH)
+    }
+  }
+  themeui: file(relativePath: {eq: "theme-ui.png"}) {
+    childImageSharp {
+      gatsbyImageData(height: 512, layout: FULL_WIDTH)
+    }
+  }
+  themeoptions: file(relativePath: {eq: "theme-options.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(height: 512, layout: FULL_WIDTH)
+    }
+  }
+  mdx: file(relativePath: {eq: "mdx-logo.png"}) {
+    childImageSharp {
+      gatsbyImageData(height: 512, layout: FULL_WIDTH)
+    }
+  }
+}
+`
   )
 
   return (
@@ -73,7 +58,7 @@ const Features = () => {
         }}
       >
         <div>
-          <Img fluid={data.layout.childImageSharp.fluid} alt="Layout theme" />
+          <GatsbyImage image={data.layout.childImageSharp.gatsbyImageData} alt="Layout theme" />
           <Styled.h3
             sx={{
               fontSize: 4,
@@ -98,10 +83,9 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img
-            fluid={data.sanity.childImageSharp.fluid}
-            alt="Sanity Studio Dashboard"
-          />
+          <GatsbyImage
+            image={data.sanity.childImageSharp.gatsbyImageData}
+            alt="Sanity Studio Dashboard" />
           <Styled.h3
             sx={{
               fontSize: 4,
@@ -126,10 +110,9 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img
-            fluid={data.presentation.childImageSharp.fluid}
-            alt="Presentation Theme"
-          />
+          <GatsbyImage
+            image={data.presentation.childImageSharp.gatsbyImageData}
+            alt="Presentation Theme" />
           <Styled.h3
             sx={{
               fontSize: 4,
@@ -154,7 +137,7 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img fluid={data.themeui.childImageSharp.fluid} alt="Theme UI Logo" />
+          <GatsbyImage image={data.themeui.childImageSharp.gatsbyImageData} alt="Theme UI Logo" />
           <Styled.h3
             sx={{
               fontSize: 4,
@@ -179,7 +162,7 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img fluid={data.mdx.childImageSharp.fluid} alt="MDX Logo" />
+          <GatsbyImage image={data.mdx.childImageSharp.gatsbyImageData} alt="MDX Logo" />
           <Styled.h3
             sx={{
               fontSize: 4,
@@ -203,10 +186,9 @@ const Features = () => {
           </Styled.p>
         </div>
         <div>
-          <Img
-            fluid={data.themeoptions.childImageSharp.fluid}
-            alt="Example of theme options"
-          />
+          <GatsbyImage
+            image={data.themeoptions.childImageSharp.gatsbyImageData}
+            alt="Example of theme options" />
           <Styled.h3
             sx={{
               fontSize: 4,
@@ -232,7 +214,7 @@ const Features = () => {
         </div>
       </Grid>
     </div>
-  )
+  );
 }
 
 export default Features
