@@ -1,19 +1,20 @@
 /** @jsx jsx */
-import { jsx, Styled, Button } from "theme-ui"
+import { jsx, Themed, Button } from "theme-ui"
 import { darken, lighten } from "@theme-ui/color"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const Hero = () => {
-  const data = useStaticQuery(graphql`{
-  avatar: file(relativePath: {eq: "avatar.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 500, layout: CONSTRAINED)
+  const data = useStaticQuery(graphql`
+    {
+      avatar: file(relativePath: { eq: "avatar.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
+        }
+      }
     }
-  }
-}
-`)
+  `)
   const avatar = data.avatar.childImageSharp.gatsbyImageData
   return (
     <div
@@ -46,7 +47,8 @@ const Hero = () => {
             borderWidth: "4px",
             borderStyle: "solid",
           }}
-          alt="Catalyst Helium" />
+          alt="Catalyst Helium"
+        />
         <div
           sx={{
             gridColumn: "1 / -1",
@@ -59,7 +61,7 @@ const Hero = () => {
             borderRadius: ["0", "0.25rem", null, null, null],
           }}
         >
-          <Styled.p
+          <Themed.p
             sx={{
               fontSize: [4, 5, 6, null, null],
               lineHeight: "snug",
@@ -69,7 +71,7 @@ const Hero = () => {
           >
             Hello there! My name is <b>Charlie Rose</b> and I am an excellent
             human being and <b>bold</b> writer.
-          </Styled.p>
+          </Themed.p>
           <Button
             as={Link}
             to="/contact"
@@ -93,7 +95,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Hero

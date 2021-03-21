@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { jsx, Themed } from "theme-ui"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { truncate } from "lodash"
 
 const Card = ({ title, image, publisher, date, link, excerpt }) => {
@@ -27,7 +27,8 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
           maxHeight: ["250px", null, "100%", null, null],
           flex: "1",
         }}
-        alt={title} />
+        alt={title}
+      />
       <div
         sx={{
           mt: [3, null, 0, null, null],
@@ -44,7 +45,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
         >
           {publisher} &middot; {date}
         </p>
-        <Styled.h3
+        <Themed.h3
           sx={{
             mt: 0,
           }}
@@ -63,7 +64,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
           >
             {title}
           </a>
-        </Styled.h3>
+        </Themed.h3>
         <p>{truncate(excerpt, { length: 300, separator: " " })}</p>
         <a
           sx={{
@@ -86,7 +87,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
         </a>
       </div>
     </div>
-  );
+  )
 }
 
 export default Card

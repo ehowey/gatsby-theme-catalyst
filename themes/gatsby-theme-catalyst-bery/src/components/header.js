@@ -1,6 +1,6 @@
 // This is a placeholder for latent shadowing in sibling themes
 /** @jsx jsx */
-import { jsx, Styled, useThemeUI } from "theme-ui"
+import { jsx, Themed, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { SocialHeader, ColorModeButton } from "gatsby-theme-catalyst-core"
@@ -54,7 +54,7 @@ const SiteHeader = () => {
           pt: 3,
         }}
       >
-        <Styled.a
+        <Themed.a
           as={Link}
           to="/"
           aria-label="Home"
@@ -75,11 +75,11 @@ const SiteHeader = () => {
             }}
             alt={author.name}
           />
-        </Styled.a>
+        </Themed.a>
         <div
           sx={{ gridColumn: "2 / 3", gridRow: "1 / 2", alignSelf: "center" }}
         >
-          <Styled.a
+          <Themed.a
             sx={{
               color: "text",
               textDecoration: "none",
@@ -89,7 +89,7 @@ const SiteHeader = () => {
             to="/"
             aria-label="Home"
           >
-            <Styled.h2
+            <Themed.h2
               sx={{
                 m: 0,
                 mt: [null, null, null, 4, null],
@@ -97,8 +97,8 @@ const SiteHeader = () => {
               }}
             >
               {author.name}
-            </Styled.h2>
-          </Styled.a>
+            </Themed.h2>
+          </Themed.a>
           <div
             sx={{
               display: "flex",

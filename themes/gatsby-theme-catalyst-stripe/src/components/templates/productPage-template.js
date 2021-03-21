@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 
 const ProductPageTemplate = ({ data }) => {
@@ -7,7 +7,7 @@ const ProductPageTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={product.name} />
-      <Styled.h1>{product.name}</Styled.h1>
+      <Themed.h1>{product.name}</Themed.h1>
     </Layout>
   )
 }

@@ -1,6 +1,6 @@
 //Implemention of normalize.css 8.0.1 for a standard css reset. Added in box-sizing: border-box and overflow-x: hidden. Added in a removal on animations for prefers reduced motion media query.
 import React from "react"
-import { css, Global } from "@emotion/core"
+import { css, Global } from "@emotion/react"
 
 const Normalize = () => {
   return (

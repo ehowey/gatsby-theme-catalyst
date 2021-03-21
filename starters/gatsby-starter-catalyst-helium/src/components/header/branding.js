@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
@@ -23,7 +23,7 @@ const SiteBranding = () => {
         onClick={() => setIsNavOpen(false)}
         sx={{ textDecoration: "none" }}
       >
-        <Styled.h1
+        <Themed.h1
           as="span"
           sx={{
             color: isNavOpen ? "header.textOpen" : "header.text",
@@ -33,7 +33,7 @@ const SiteBranding = () => {
           }}
         >
           {title}
-        </Styled.h1>
+        </Themed.h1>
       </Link>
     </div>
   )

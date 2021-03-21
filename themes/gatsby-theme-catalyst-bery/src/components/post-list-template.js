@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Button, useColorMode } from "theme-ui"
+import { jsx, Themed, Button, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -82,9 +82,9 @@ const PostListTemplate = ({ data }) => {
       <Layout>
         <SEO title={sanityPostListTitle} />
         {sanityDisplayPostListTitle && (
-          <Styled.h1>{sanityPostListTitle}</Styled.h1>
+          <Themed.h1>{sanityPostListTitle}</Themed.h1>
         )}
-        <Styled.ul
+        <Themed.ul
           sx={{
             listStyle: "none",
             display: "flex",
@@ -96,7 +96,7 @@ const PostListTemplate = ({ data }) => {
           {categoriesSorted.map((category) => {
             const active = visibleCategories.indexOf(category.slug) !== -1
             return (
-              <Styled.li
+              <Themed.li
                 sx={{
                   mr: 2,
                   ":last-of-type": {
@@ -128,10 +128,10 @@ const PostListTemplate = ({ data }) => {
                 >
                   {category.title} ({category.postCount})
                 </Button>
-              </Styled.li>
+              </Themed.li>
             )
           })}
-        </Styled.ul>
+        </Themed.ul>
         <div sx={{ my: 5 }}>
           {displayedPosts.map((post) => (
             <article
@@ -143,7 +143,7 @@ const PostListTemplate = ({ data }) => {
               }}
               key={post.id}
             >
-              <Styled.a
+              <Themed.a
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
               >
@@ -155,8 +155,8 @@ const PostListTemplate = ({ data }) => {
                     borderRadius: "5px",
                   }}
                 />
-              </Styled.a>
-              <Styled.a
+              </Themed.a>
+              <Themed.a
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
                 sx={{
@@ -166,7 +166,7 @@ const PostListTemplate = ({ data }) => {
                   },
                 }}
               >
-                <Styled.h2
+                <Themed.h2
                   sx={{
                     mt: 2,
                     mb: 0,
@@ -180,9 +180,9 @@ const PostListTemplate = ({ data }) => {
                   }}
                 >
                   {post.title}
-                </Styled.h2>
-              </Styled.a>
-              <Styled.p sx={{ fontSize: 1, color: "textGray", m: 0, mt: 2 }}>
+                </Themed.h2>
+              </Themed.a>
+              <Themed.p sx={{ fontSize: 1, color: "textGray", m: 0, mt: 2 }}>
                 {post.date} &bull;{" "}
                 <FaRegClock
                   sx={{
@@ -191,9 +191,9 @@ const PostListTemplate = ({ data }) => {
                   }}
                 />{" "}
                 {post.readingTimeInMinutes} Min
-              </Styled.p>
-              <Styled.p sx={{ mt: 2, mb: 0 }}>{post.excerpt}</Styled.p>
-              <Styled.a
+              </Themed.p>
+              <Themed.p sx={{ mt: 2, mb: 0 }}>{post.excerpt}</Themed.p>
+              <Themed.a
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
                 sx={{
@@ -207,7 +207,7 @@ const PostListTemplate = ({ data }) => {
                 }}
               >
                 Read More &rarr;
-              </Styled.a>
+              </Themed.a>
             </article>
           ))}
         </div>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import WorkLi from "./work-list-item"
@@ -40,7 +40,7 @@ const SelectedWork = () => {
     <Fragment>
       {categories.map(({ node }) => (
         <div sx={{ mb: 5 }} key={node.id}>
-          <Styled.h3>{node.title}</Styled.h3>
+          <Themed.h3>{node.title}</Themed.h3>
           <ul
             sx={{
               listStyle: "none",
@@ -49,9 +49,9 @@ const SelectedWork = () => {
               mt: 3,
             }}
           >
-            {writing.map(published =>
+            {writing.map((published) =>
               published.categories
-                .filter(category => category.title === node.title)
+                .filter((category) => category.title === node.title)
                 .map(() => (
                   <WorkLi
                     title={published.title}

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import {
@@ -21,18 +21,18 @@ const PostsTemplate = ({ data }) => {
       <Layout>
         <SEO title={sanityPostListTitle} />
         {sanityDisplayPostListTitle && (
-          <Styled.h1>{sanityPostListTitle}</Styled.h1>
+          <Themed.h1>{sanityPostListTitle}</Themed.h1>
         )}
         {posts.map((post) => (
           <article sx={{ mb: 5 }} key={post.id}>
-            <Styled.a
+            <Themed.a
               as={Link}
               to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
             >
-              <Styled.h2>{post.title}</Styled.h2>
-            </Styled.a>
-            <Styled.p>{post.date}</Styled.p>
-            <Styled.p>{post.excerpt}</Styled.p>
+              <Themed.h2>{post.title}</Themed.h2>
+            </Themed.a>
+            <Themed.p>{post.date}</Themed.p>
+            <Themed.p>{post.excerpt}</Themed.p>
           </article>
         ))}
       </Layout>

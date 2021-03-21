@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Fragment } from "react"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const PageHeader = ({ title, topImage, topImageAlt }) => {
   return (
@@ -18,10 +18,11 @@ const PageHeader = ({ title, topImage, topImageAlt }) => {
           mr: ["-50vw", null, 0, null, null],
           mt: 5,
         }}
-        alt={topImageAlt} />
-      <Styled.h1>{title}</Styled.h1>
+        alt={topImageAlt}
+      />
+      <Themed.h1>{title}</Themed.h1>
     </Fragment>
-  );
+  )
 }
 
 export default PageHeader

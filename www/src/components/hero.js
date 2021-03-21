@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { Button } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
@@ -49,7 +49,7 @@ const Hero = () => {
         alt="Gatsby Theme Catalyst Logo"
         sx={{ width: "180px" }}
       />
-      <Styled.h1
+      <Themed.h1
         sx={{
           textTransform: "uppercase",
           textAlign: "center",
@@ -62,8 +62,8 @@ const Hero = () => {
         }}
       >
         Gatsby Theme Catalyst
-      </Styled.h1>
-      <Styled.inlineCode
+      </Themed.h1>
+      <Themed.inlineCode
         sx={{
           mb: 4,
           bg: baseColors.gray[8],
@@ -75,7 +75,7 @@ const Hero = () => {
         }}
       >
         gatsby new catalyst ehowey/gatsby-starter-catalyst
-      </Styled.inlineCode>
+      </Themed.inlineCode>
       <nav sx={{ width: ["100%", "auto", null, null, null] }}>
         <ul
           sx={{

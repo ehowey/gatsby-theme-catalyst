@@ -7,10 +7,10 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@reach/skip-nav": "^0.13.2",
-    "@theme-ui/color": "^0.3.5",
-    "@theme-ui/match-media": "^0.3.5",
-    "@theme-ui/preset-tailwind": "^0.3.5",
-    "@theme-ui/prism": "^0.3.5",
+    "@theme-ui/color": "^0.6.0-alpha.8",
+    "@theme-ui/match-media": "^0.6.0-alpha.8",
+    "@theme-ui/preset-tailwind": "^0.6.0-alpha.8",
+    "@theme-ui/prism": "^0.6.0-alpha.8",
     "framer-motion": "^4.0.0",
     "gatsby-background-image": "^1.5.0",
     "gatsby-plugin-catch-links": "^3.0.0",
@@ -24,7 +24,7 @@
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sharp": "^3.1.1",
     "gatsby-plugin-sitemap": "^3.1.0",
-    "gatsby-plugin-theme-ui": "^0.3.5",
+    "gatsby-plugin-theme-ui": "^0.6.0-alpha.8",
     "gatsby-remark-copy-linked-files": "^3.1.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^4.1.0",
@@ -45,7 +45,7 @@
     "rehype-katex": "^4.0.0",
     "remark-math": "^4.0.0",
     "remark-slug": "^6.0.0",
-    "theme-ui": "^0.3.5"
+    "theme-ui": "^0.6.0-alpha.8"
   },
   "devDependencies": {
     "gatsby": "^3.1.1",

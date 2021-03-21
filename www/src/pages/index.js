@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Button } from "theme-ui"
+import { jsx, Themed, Button } from "theme-ui"
 import HomeLayout from "../components/home-layout"
 import Features from "../components/features"
 import Blocks from "../components/animated-blocks"
@@ -16,7 +16,7 @@ const HomePage = () => {
         description="Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project. It uses Theme-UI and MDX under the hood to provide a smooth developer experience. Boilerplate starters to fully designed and production ready sites."
       />
       <TriangleVertical />
-      <Styled.p sx={{ fontSize: [4, null, 5, null, null], fontWeight: "500" }}>
+      <Themed.p sx={{ fontSize: [4, null, 5, null, null], fontWeight: "500" }}>
         An opinionated set of integrated themes and starters to{" "}
         <span
           sx={{
@@ -30,10 +30,10 @@ const HomePage = () => {
           accelerate
         </span>
         your next Gatsby project. Build faster.
-      </Styled.p>
+      </Themed.p>
       <TriangleVertical />
       <section>
-        <Styled.h2
+        <Themed.h2
           sx={{
             fontSize: 4,
             mb: 5,
@@ -51,20 +51,20 @@ const HomePage = () => {
           }}
         >
           How It Works
-        </Styled.h2>
+        </Themed.h2>
         <Blocks />
       </section>
       <TriangleVertical />
       <Features />
       <TriangleVertical />
-      <Styled.p
+      <Themed.p
         sx={{ fontSize: [3, null, 4, null, null], textAlign: "center" }}
       >
         <i>
           <b>catalyst:</b> an agent that provokes or speeds significant change
           or action
         </i>
-      </Styled.p>
+      </Themed.p>
 
       <div sx={{ display: "grid", placeItems: "center" }}>
         <Button

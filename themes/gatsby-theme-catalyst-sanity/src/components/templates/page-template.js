@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import {
   SanityContent,
@@ -12,7 +12,7 @@ const PageTemplate = ({ data }) => {
     <SanityThemeProvider>
       <Layout>
         <SEO title={page.title} />
-        <Styled.h1>{page.title}</Styled.h1>
+        <Themed.h1>{page.title}</Themed.h1>
         <SanityContent data={page._rawBody} />
       </Layout>
     </SanityThemeProvider>

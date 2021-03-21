@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -37,7 +37,7 @@ const PostTemplate = ({ data, previous, next }) => {
           <span sx={{ fontSize: 1, color: "textGray" }}>
             {post.featuredImage.caption}
           </span>
-          <Styled.ul
+          <Themed.ul
             sx={{
               listStyle: "none",
               m: 0,
@@ -48,7 +48,7 @@ const PostTemplate = ({ data, previous, next }) => {
             }}
           >
             {post.categories.map((category) => (
-              <Styled.li
+              <Themed.li
                 key={category.slug}
                 sx={{
                   "::after": {
@@ -63,7 +63,7 @@ const PostTemplate = ({ data, previous, next }) => {
                   },
                 }}
               >
-                <Styled.a
+                <Themed.a
                   as={Link}
                   to={`/categories/${category.slug.current}`}
                   sx={{
@@ -77,11 +77,11 @@ const PostTemplate = ({ data, previous, next }) => {
                   }}
                 >
                   {category.title}
-                </Styled.a>
-              </Styled.li>
+                </Themed.a>
+              </Themed.li>
             ))}
-          </Styled.ul>
-          <Styled.h1
+          </Themed.ul>
+          <Themed.h1
             sx={{
               m: 0,
               pt: 0,
@@ -94,8 +94,8 @@ const PostTemplate = ({ data, previous, next }) => {
             }}
           >
             <div sx={{ borderRadius: "4px" }}>{post.title}</div>
-          </Styled.h1>
-          <Styled.p
+          </Themed.h1>
+          <Themed.p
             sx={{ color: "textGray", fontSize: 1, textAlign: "center", mt: 0 }}
           >
             <FaRegClock
@@ -105,7 +105,7 @@ const PostTemplate = ({ data, previous, next }) => {
               }}
             />{" "}
             {post.readingTimeInMinutes} Min Read &bull; {post.date}
-          </Styled.p>
+          </Themed.p>
           <SanityContent data={post._rawBody} />
         </article>
         <PostFooter previous={previous} next={next} />

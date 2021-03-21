@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { Layout, SEO } from "gatsby-theme-catalyst-core"
 import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
@@ -9,16 +9,16 @@ const PostsList = ({ posts }) => {
   return (
     <Layout>
       <SEO title={postListTitle} />
-      {displayPostListTitle ? <Styled.h1>{postListTitle}</Styled.h1> : null}
+      {displayPostListTitle ? <Themed.h1>{postListTitle}</Themed.h1> : null}
       {posts.map((post) => {
         const title = post.title || post.slug
         return (
           <div key={post.slug}>
-            <Styled.a as={Link} to={post.slug}>
-              <Styled.h2>{title}</Styled.h2>
-            </Styled.a>
-            <Styled.p>{post.date}</Styled.p>
-            <Styled.p>{post.excerpt}</Styled.p>
+            <Themed.a as={Link} to={post.slug}>
+              <Themed.h2>{title}</Themed.h2>
+            </Themed.a>
+            <Themed.p>{post.date}</Themed.p>
+            <Themed.p>{post.excerpt}</Themed.p>
           </div>
         )
       })}

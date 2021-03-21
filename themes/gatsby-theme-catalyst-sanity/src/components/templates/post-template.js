@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import {
@@ -16,26 +16,26 @@ const PostTemplate = ({ data, previous, next }) => {
     <SanityThemeProvider>
       <Layout>
         <SEO title={post.title} />
-        <Styled.h1>{post.title}</Styled.h1>
-        <Styled.p>{post.date}</Styled.p>
+        <Themed.h1>{post.title}</Themed.h1>
+        <Themed.p>{post.date}</Themed.p>
         <SanityContent data={post._rawBody} />
         {previous && (
-          <Styled.a
+          <Themed.a
             as={Link}
             to={rootPath.concat(previous.slug.current.replace(/\/*$/, `/`))}
             rel="prev"
           >
             ← {previous.title}
-          </Styled.a>
+          </Themed.a>
         )}
         {next && (
-          <Styled.a
+          <Themed.a
             as={Link}
             to={rootPath.concat(next.slug.current.replace(/\/*$/, `/`))}
             rel="next"
           >
             {next.title} →
-          </Styled.a>
+          </Themed.a>
         )}
       </Layout>
     </SanityThemeProvider>

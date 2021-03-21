@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import Highlight, { defaultProps } from "prism-react-renderer"
 
 export default ({ node }) => {
@@ -10,7 +10,7 @@ export default ({ node }) => {
   return (
     <Highlight {...defaultProps} code={code} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <Styled.pre className={className} style={style}>
+        <Themed.pre className={className} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -18,7 +18,7 @@ export default ({ node }) => {
               ))}
             </div>
           ))}
-        </Styled.pre>
+        </Themed.pre>
       )}
     </Highlight>
   )

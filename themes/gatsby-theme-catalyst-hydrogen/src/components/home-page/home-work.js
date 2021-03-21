@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Card from "./home-card"
@@ -37,7 +37,7 @@ const FeaturedWork = () => {
   const result = data.allSanityHomePage.nodes[0]
   return (
     <Fragment>
-      <Styled.h2>{result.workTitle}</Styled.h2>
+      <Themed.h2>{result.workTitle}</Themed.h2>
       <div
         sx={{
           mt: 4,

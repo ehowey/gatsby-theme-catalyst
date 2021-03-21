@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
@@ -18,7 +18,7 @@ const HomeContact = () => {
   const result = data.allSanityHomePage.nodes[0]
   return (
     <Fragment>
-      <Styled.h2>{result.contactTitle}</Styled.h2>
+      <Themed.h2>{result.contactTitle}</Themed.h2>
       <SanityContent data={result._rawContactText} />
     </Fragment>
   )

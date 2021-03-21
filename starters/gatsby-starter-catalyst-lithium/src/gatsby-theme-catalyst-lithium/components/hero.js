@@ -1,21 +1,22 @@
 /** @jsx jsx */
-import { jsx, Styled, Button } from "theme-ui"
+import { jsx, Themed, Button } from "theme-ui"
 import { darken } from "@theme-ui/color"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import { RoughNotation } from "react-rough-notation"
 import { useHasMounted } from "gatsby-theme-catalyst-core"
 import { Fragment } from "react"
 
 const Hero = () => {
-  const data = useStaticQuery(graphql`{
-  heroImage: file(relativePath: {eq: "hero-image.png"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+  const data = useStaticQuery(graphql`
+    {
+      heroImage: file(relativePath: { eq: "hero-image.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+      }
     }
-  }
-}
-`)
+  `)
   const heroImage = data.heroImage.childImageSharp.gatsbyImageData
   const hasMounted = useHasMounted()
   return (
@@ -43,14 +44,15 @@ const Hero = () => {
             gridColumn: ["1 / -1", null, "2 / 3", null, null],
             gridRow: "1 / 2",
             maxHeight: ["200px", "300px", "400px", null, "500px"],
-          }} />
+          }}
+        />
         <div
           sx={{
             gridColumn: ["1 / -1", null, "1 / 2", null, null],
             gridRow: ["2 / 3", null, "1 / 2", null, null],
           }}
         >
-          <Styled.p sx={{ fontSize: [3, null, null, null, 4] }}>
+          <Themed.p sx={{ fontSize: [3, null, null, null, 4] }}>
             I grow vegetables, flowers and community. I build remarkable online
             experiences focused on{" "}
             {hasMounted ? (
@@ -66,7 +68,7 @@ const Hero = () => {
             ) : (
               "connection and belonging."
             )}
-          </Styled.p>
+          </Themed.p>
           <Button
             as={Link}
             to="/contact"
@@ -84,7 +86,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Hero

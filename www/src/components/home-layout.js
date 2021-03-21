@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { useEffect } from "react"
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav"
 import GlobalCSS from "gatsby-theme-catalyst-core/src/utils/global-css"
@@ -24,7 +24,7 @@ const SiteLayout = ({ children }) => {
     }
   }, []) // eslint-disable-line
   return (
-    <Styled.root sx={{ bg: "#ffe4e4", color: baseColors.gray[8] }}>
+    <Themed.root sx={{ bg: "#ffe4e4", color: baseColors.gray[8] }}>
       <GlobalCSS />
       <div
         sx={{
@@ -48,7 +48,7 @@ const SiteLayout = ({ children }) => {
         </Main>
         <Footer />
       </div>
-    </Styled.root>
+    </Themed.root>
   )
 }
 

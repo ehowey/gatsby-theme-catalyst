@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
@@ -10,24 +10,24 @@ const CategoryPage = ({ posts, category }) => {
   return (
     <Layout>
       <SEO title={"Category: " + category} />
-      <Styled.h1>Category: {category}</Styled.h1>
-      <Styled.ul>
+      <Themed.h1>Category: {category}</Themed.h1>
+      <Themed.ul>
         {posts.map((post) => (
-          <Styled.li key={post.id}>
-            <Styled.p>
-              <Styled.a
+          <Themed.li key={post.id}>
+            <Themed.p>
+              <Themed.a
                 as={Link}
                 to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
                 sx={{ fontSize: 3 }}
               >
                 {post.title}
-              </Styled.a>
+              </Themed.a>
               <br />
               {post.excerpt}
-            </Styled.p>
-          </Styled.li>
+            </Themed.p>
+          </Themed.li>
         ))}
-      </Styled.ul>
+      </Themed.ul>
     </Layout>
   )
 }

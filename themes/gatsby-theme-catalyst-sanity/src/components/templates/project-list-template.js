@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import {
@@ -20,17 +20,17 @@ const ProjectsTemplate = ({ data }) => {
       <Layout>
         <SEO title={sanityProjectListTitle} />
         {sanityDisplayProjectListTitle && (
-          <Styled.h1>{sanityProjectListTitle}</Styled.h1>
+          <Themed.h1>{sanityProjectListTitle}</Themed.h1>
         )}
         {projects.map((project) => (
           <article sx={{ my: 5 }} key={project.id}>
-            <Styled.a
+            <Themed.a
               as={Link}
               to={rootPath.concat(project.slug.current.replace(/\/*$/, `/`))}
             >
-              <Styled.h2>{project.title}</Styled.h2>
-            </Styled.a>
-            <Styled.p>{project.excerpt}</Styled.p>
+              <Themed.h2>{project.title}</Themed.h2>
+            </Themed.a>
+            <Themed.p>{project.excerpt}</Themed.p>
           </article>
         ))}
       </Layout>

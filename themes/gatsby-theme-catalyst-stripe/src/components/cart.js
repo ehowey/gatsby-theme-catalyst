@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
 
 const Cart = () => {
@@ -31,7 +31,7 @@ const Cart = () => {
 
   return (
     <div>
-      <Styled.h2>Cart</Styled.h2>
+      <Themed.h2>Cart</Themed.h2>
       <p>Number of Items: {cartCount}</p>
       <p>Total: {formattedTotalPrice}</p>
       <button onClick={handleCheckout}>Checkout</button>

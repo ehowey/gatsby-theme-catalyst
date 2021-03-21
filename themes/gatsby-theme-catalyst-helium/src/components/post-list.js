@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Layout, SEO } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -24,7 +24,7 @@ const PostsList = ({ posts }) => {
         }}
       >
         {displayPostListTitle ? (
-          <Styled.h1
+          <Themed.h1
             sx={{
               maxWidth: "maxContentWidth",
               mx: "auto",
@@ -34,7 +34,7 @@ const PostsList = ({ posts }) => {
             }}
           >
             {postListTitle}
-          </Styled.h1>
+          </Themed.h1>
         ) : null}
         <div
           sx={{
@@ -141,12 +141,12 @@ const PostsList = ({ posts }) => {
                   className="postListContent"
                 >
                   <div>
-                    <Styled.ul
+                    <Themed.ul
                       aria-label="Categories"
                       sx={{ listStyle: "none", m: 0, p: 0, display: "flex" }}
                     >
                       {post.categories.map((category) => (
-                        <Styled.li
+                        <Themed.li
                           key={category}
                           sx={{
                             my: 0,
@@ -166,16 +166,16 @@ const PostsList = ({ posts }) => {
                             variant: "variants.postListCategory",
                           }}
                         >
-                          <Styled.a
+                          <Themed.a
                             as={Link}
                             to={`/categories/${kebabCase(category)}/`}
                           >
                             {category}
-                          </Styled.a>
-                        </Styled.li>
+                          </Themed.a>
+                        </Themed.li>
                       ))}
-                    </Styled.ul>
-                    <Styled.h2
+                    </Themed.ul>
+                    <Themed.h2
                       sx={{
                         mt: 0,
                         mb: 1,
@@ -183,11 +183,11 @@ const PostsList = ({ posts }) => {
                         variant: "variants.postListTitle",
                       }}
                     >
-                      <Styled.a sx={{ color: "text" }} as={Link} to={post.slug}>
+                      <Themed.a sx={{ color: "text" }} as={Link} to={post.slug}>
                         {title}
-                      </Styled.a>
-                    </Styled.h2>
-                    <Styled.p
+                      </Themed.a>
+                    </Themed.h2>
+                    <Themed.p
                       sx={{
                         my: 0,
                         fontSize: 1,
@@ -203,8 +203,8 @@ const PostsList = ({ posts }) => {
                         }}
                       />{" "}
                       {post.timeToRead} Min
-                    </Styled.p>
-                    <Styled.p
+                    </Themed.p>
+                    <Themed.p
                       sx={{
                         fontStyle: "italic",
                         mt: 1,
@@ -212,15 +212,15 @@ const PostsList = ({ posts }) => {
                       }}
                     >
                       {post.subTitle}
-                    </Styled.p>
+                    </Themed.p>
                     {firstPost ? (
-                      <Styled.p sx={{ variant: "variants.postListExcerpt" }}>
+                      <Themed.p sx={{ variant: "variants.postListExcerpt" }}>
                         {post.excerpt}
-                      </Styled.p>
+                      </Themed.p>
                     ) : null}
                   </div>
                   <div>
-                    <Styled.a
+                    <Themed.a
                       sx={{
                         fontWeight: "bold",
                         letterSpacing: "wide",
@@ -240,7 +240,7 @@ const PostsList = ({ posts }) => {
                       to={post.slug}
                     >
                       Read
-                    </Styled.a>
+                    </Themed.a>
                   </div>
                 </div>
               </article>
