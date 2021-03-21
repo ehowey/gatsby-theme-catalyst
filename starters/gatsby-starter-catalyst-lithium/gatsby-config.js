@@ -9,17 +9,14 @@ module.exports = {
       {
         name: `About`,
         link: `/about`,
-        type: `internal`, //internal or anchor
       },
       {
         name: `Work`,
         link: `/work`,
-        type: `internal`, //internal or anchor
       },
       {
         name: `Contact`,
         link: `/contact`,
-        type: `internal`, //internal or anchor
       },
     ],
     socialLinks: [

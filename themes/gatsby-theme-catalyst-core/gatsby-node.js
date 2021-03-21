@@ -69,14 +69,12 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MenuLinks {
       name: String!
       link: String!
-      type: String!
       location: String! @defaultRightLocation
       subMenu: [SubMenu] @defaultSubMenu
     }
     type SubMenu {
       name: String
       link: String
-      type: String
     }
     type SocialLinks {
       name: String

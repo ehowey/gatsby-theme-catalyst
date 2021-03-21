@@ -27,12 +27,10 @@ export const useSiteMetadata = () => {
             menuLinks {
               name
               link
-              type
               location
               subMenu {
                 link
                 name
-                type
               }
             }
             socialLinks {
