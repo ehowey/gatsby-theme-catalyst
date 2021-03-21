@@ -2,8 +2,8 @@
 import { jsx } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import NavLinks from "./nav-links"
-import NavIcons from "./nav-icons"
+import NavMenu from "./nav-menu"
+import SocialIcons from "./social-icons"
 
 const NavLayout = () => {
   const [isNavOpen] = useContext(NavContext)
@@ -20,8 +20,8 @@ const NavLayout = () => {
       }}
       aria-label="Primary menu"
     >
-      <NavIcons />
-      <NavLinks />
+      <SocialIcons />
+      <NavMenu />
     </nav>
   )
 }

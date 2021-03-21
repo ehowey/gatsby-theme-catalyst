@@ -29,8 +29,8 @@ const SiteBranding = () => {
         <GatsbyImage
           image={logo}
           sx={{
-            height: ["40px", "80px", null, "100px", null],
-            width: ["40px", "80px", null, "100px", null],
+            height: ["40px", null, "80px", "100px", null],
+            width: ["40px", null, "80px", "100px", null],
             variant: "variants.siteLogo",
           }}
           alt={title}
