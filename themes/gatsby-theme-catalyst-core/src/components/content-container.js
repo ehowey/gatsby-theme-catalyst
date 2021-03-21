@@ -5,10 +5,11 @@ const ContentContainer = ({ children }) => {
   return (
     <div
       sx={{
-        maxWidth: "maxContentWidth",
-        my: 0,
-        mx: "auto",
-        px: 3,
+        display: "grid",
+        gridTemplateColumns:
+          "minmax(0, 1fr)  min(60ch, calc(100% - 32px)) minmax(0, 1fr)",
+        "> *": { gridColumn: 2 },
+        gridGap: "16px",
         variant: "variants.contentContainer",
       }}
     >
