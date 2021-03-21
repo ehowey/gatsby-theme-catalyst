@@ -61,16 +61,6 @@ const DropdownMenu = ({ activeDropdown, setActiveDropdown, link }) => {
             ":hover": {
               cursor: "pointer",
             },
-            a: {
-              fontSize: isNavOpen ? 1 : 2,
-              color: isNavOpen ? "header.textOpen" : "header.text",
-              ":hover, :focus, :active": {
-                textDecoration: "underline",
-                color: "primary",
-                textDecorationThickness: "0.125em",
-              },
-              variant: "variants.navLinkSub",
-            },
             ".active": {
               textDecoration: "underline",
               textDecorationThickness: "0.125em",
@@ -84,6 +74,17 @@ const DropdownMenu = ({ activeDropdown, setActiveDropdown, link }) => {
             to={subLink.link}
             activeClassName="active"
             onClick={() => setIsNavOpen(false)}
+            sx={{
+              fontSize: isNavOpen ? 1 : 2,
+              textDecoration: "none",
+              color: isNavOpen ? "header.textOpen" : "header.text",
+              ":hover, :focus, :active": {
+                textDecoration: "underline",
+                color: "primary",
+                textDecorationThickness: "0.125em",
+              },
+              variant: "variants.navLinkSub",
+            }}
           >
             {subLink.name}
           </Link>

@@ -42,22 +42,6 @@ const NavLinksRight = () => {
                 color: "primary",
                 variant: "variants.navLinkActive",
               },
-              a: {
-                position: "relative",
-                py: 2,
-                px: 1,
-                color: isNavOpen ? "header.textOpen" : "header.text",
-                textDecoration: "none",
-                fontWeight: "bold",
-                letterSpacing: "1px",
-                zIndex: 2,
-                ":hover, :focus, :active": {
-                  textDecoration: "underline",
-                  textDecorationThickness: "0.125em",
-                  color: "primary",
-                },
-                variant: "variants.navLink",
-              },
               variant: "variants.navLi",
             }}
           >
@@ -66,6 +50,22 @@ const NavLinksRight = () => {
                 to={link.link}
                 activeClassName="active"
                 onClick={() => setIsNavOpen(false)}
+                sx={{
+                  position: "relative",
+                  py: 2,
+                  px: 1,
+                  color: isNavOpen ? "header.textOpen" : "header.text",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  letterSpacing: "1px",
+                  zIndex: 2,
+                  ":hover, :focus, :active": {
+                    textDecoration: "underline",
+                    textDecorationThickness: "0.125em",
+                    color: "primary",
+                  },
+                  variant: "variants.navLink",
+                }}
               >
                 {link.name}
               </Link>

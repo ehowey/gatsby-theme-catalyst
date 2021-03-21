@@ -11,6 +11,7 @@
     "@theme-ui/match-media": "^0.3.5",
     "@theme-ui/preset-tailwind": "^0.3.5",
     "@theme-ui/prism": "^0.3.5",
+    "framer-motion": "^4.0.0",
     "gatsby-background-image": "^1.5.0",
     "gatsby-plugin-catch-links": "^3.0.0",
     "gatsby-plugin-feed": "^3.1.0",
