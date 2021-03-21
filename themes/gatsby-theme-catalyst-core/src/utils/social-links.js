@@ -1,7 +1,6 @@
 /**@jsx jsx */
 import { jsx } from "theme-ui"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import {
   FaRegEnvelope,
   FaTwitter,

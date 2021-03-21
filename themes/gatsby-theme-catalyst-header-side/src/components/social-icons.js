@@ -2,14 +2,14 @@
 import { jsx, useThemeUI } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import { SocialHeader } from "gatsby-theme-catalyst-core"
 import { ColorModeButton } from "gatsby-theme-catalyst-core"
 import { IconContext } from "react-icons"
+import { useHeaderConfig } from "../utils/use-header-config"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useColorMode } = useCatalystConfig()
+  const { useColorMode, useSocialLinks } = useHeaderConfig()
   const { theme } = useThemeUI()
 
   return (
@@ -43,7 +43,7 @@ const SocialWrapper = () => {
       }}
     >
       <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
-        <SocialHeader />
+        {useSocialLinks && <SocialHeader />}
         {useColorMode && <ColorModeButton />}
       </IconContext.Provider>
     </div>

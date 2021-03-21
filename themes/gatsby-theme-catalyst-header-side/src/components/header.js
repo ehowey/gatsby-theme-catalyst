@@ -5,11 +5,11 @@ import Branding from "./branding"
 import Nav from "./nav"
 import HamburgerButton from "./hamburger-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import { useHeaderConfig } from "../utils/use-header-config"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useStickyHeader } = useCatalystConfig()
+  const { useStickyHeader } = useHeaderConfig()
   return (
     <header
       sx={{

@@ -87,15 +87,6 @@ exports.createSchemaCustomization = ({ actions }) => {
   type CatalystConfig implements Node {
     contentPath: String!
     assetPath: String!
-    displaySiteLogo: Boolean!
-    displaySiteTitle: Boolean!
-    displaySiteLogoMobile: Boolean!
-    displaySiteTitleMobile: Boolean!
-    invertSiteLogo: Boolean!
-    useStickyHeader: Boolean!
-    useSocialLinks: Boolean!
-    useColorMode: Boolean!
-    footerContentLocation: String!
     useKatex: Boolean!
   }
   `
@@ -108,15 +99,6 @@ exports.sourceNodes = (
   {
     contentPath = "content/pages",
     assetPath = "content/assets",
-    displaySiteLogo = true,
-    displaySiteTitle = true,
-    displaySiteLogoMobile = true,
-    displaySiteTitleMobile = true,
-    invertSiteLogo = false,
-    useStickyHeader = false,
-    useSocialLinks = true,
-    useColorMode = true,
-    footerContentLocation = "left",
     useKatex = false,
   }
 ) => {
@@ -124,15 +106,6 @@ exports.sourceNodes = (
   const catalystConfigFieldData = {
     contentPath,
     assetPath,
-    displaySiteLogo,
-    displaySiteTitle,
-    displaySiteLogoMobile,
-    displaySiteTitleMobile,
-    invertSiteLogo,
-    useStickyHeader,
-    useSocialLinks,
-    useColorMode,
-    footerContentLocation,
     useKatex,
   }
   createNode({
