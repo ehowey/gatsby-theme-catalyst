@@ -76,7 +76,15 @@ module.exports = {
         // imageQuality: 50,
       },
     },
-    `gatsby-theme-catalyst-header-top`,
+    {
+      resolve: `gatsby-theme-catalyst-header-top`,
+      options: {
+        // Default options are
+        // useStickyHeader: true,
+        // useSocialLinks: true,
+        // useColorMode: true
+      },
+    },
     `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
