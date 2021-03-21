@@ -82,7 +82,7 @@ module.exports = {
         // imageQuality: 50,
       },
     },
-    `gatsby-theme-catalyst-header-top`,
+    `gatsby-theme-catalyst-header-bigtop`,
     `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
