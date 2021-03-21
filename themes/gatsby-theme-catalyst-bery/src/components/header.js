@@ -3,18 +3,15 @@
 import { jsx, Styled, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import {
-  SocialHeader,
-  ColorModeButton,
-  useCatalystConfig,
-} from "gatsby-theme-catalyst-core"
+import { SocialHeader, ColorModeButton } from "gatsby-theme-catalyst-core"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
 import { IconContext } from "react-icons"
+import { useBeryConfig } from "../utils/use-bery-config"
 import Nav from "./nav"
 
 const SiteHeader = () => {
   const { theme } = useThemeUI()
-  const { useColorMode } = useCatalystConfig()
+  const { useColorMode, useSocialLinks } = useBeryConfig()
   const data = useStaticQuery(graphql`
     {
       sanitySiteHeader {
@@ -131,7 +128,7 @@ const SiteHeader = () => {
             }}
           >
             <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
-              <SocialHeader />
+              {useSocialLinks && <SocialHeader />}
               {useColorMode && <ColorModeButton />}
             </IconContext.Provider>
           </div>
