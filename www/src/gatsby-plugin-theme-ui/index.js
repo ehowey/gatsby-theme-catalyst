@@ -59,7 +59,7 @@ export default merge(BaseTheme, {
   sizes: {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
-    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
+    maxContentWidth: "60ch", // Sets the container size on larger screens, e.g. tablets and laptops
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "24px", // Sets the icons size for the header
   },
