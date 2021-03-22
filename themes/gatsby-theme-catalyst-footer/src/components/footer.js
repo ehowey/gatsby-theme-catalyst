@@ -6,7 +6,7 @@ import { useFooterConfig } from "../utils/use-footer-config"
 
 const SiteFooter = () => {
   const { title } = useSiteMetadata()
-  const { footerContentLocation, useSocialLinks } = useFooterConfig()
+  const { footerContentLocation, useFooterSocialLinks } = useFooterConfig()
   const { theme } = useThemeUI()
   const isLeft = footerContentLocation === "left"
   const isRight = footerContentLocation === "right"
@@ -55,7 +55,7 @@ const SiteFooter = () => {
           }}
         >
           <IconContext.Provider value={{ size: theme.sizes.iconsFooter }}>
-            {useSocialLinks && <SocialFooter />}
+            {useFooterSocialLinks && <SocialFooter />}
           </IconContext.Provider>
         </div>
         <p sx={{ m: 0 }}>

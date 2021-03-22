@@ -8,7 +8,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const headerTypeDef = `
   type CatalystHeaderConfig implements Node {
     useStickyHeader: Boolean!
-    useSocialLinks: Boolean!
+    useHeaderSocialLinks: Boolean!
     useColorMode: Boolean!
   }
   `
@@ -17,12 +17,12 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { useStickyHeader = false, useSocialLinks = true, useColorMode = true }
+  { useStickyHeader = false, useHeaderSocialLinks = true, useColorMode = true }
 ) => {
   // create garden data from plugin config
   const catalystHeaderConfigFieldData = {
     useStickyHeader,
-    useSocialLinks,
+    useHeaderSocialLinks,
     useColorMode,
   }
   createNode({

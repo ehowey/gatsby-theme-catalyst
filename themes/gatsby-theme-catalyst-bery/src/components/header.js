@@ -11,7 +11,7 @@ import Nav from "./nav"
 
 const SiteHeader = () => {
   const { theme } = useThemeUI()
-  const { useColorMode, useSocialLinks } = useBeryConfig()
+  const { useColorMode, useHeaderSocialLinks } = useBeryConfig()
   const data = useStaticQuery(graphql`
     {
       sanitySiteHeader {
@@ -128,7 +128,7 @@ const SiteHeader = () => {
             }}
           >
             <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
-              {useSocialLinks && <SocialHeader />}
+              {useHeaderSocialLinks && <SocialHeader />}
               {useColorMode && <ColorModeButton />}
             </IconContext.Provider>
           </div>

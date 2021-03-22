@@ -4,7 +4,7 @@ export const useFooterConfig = () => {
     graphql`
       query {
         catalystFooterConfig {
-          useSocialLinks
+          useFooterSocialLinks
           footerContentLocation
         }
       }

@@ -44,16 +44,7 @@ module.exports = {
         //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
         // useKatex: false,
-        // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
       },

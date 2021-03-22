@@ -58,18 +58,25 @@ module.exports = {
         //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
         // useKatex: false,
-        // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
+      },
+    },
+    {
+      resolve: `gatsby-theme-catalyst-header-side`,
+      options: {
+        // Default options are
+        // useStickyHeader: true,
+        // useHeaderSocialLinks: true,
+        // useColorMode: true
+      },
+    },
+    {
+      resolve: `gatsby-theme-catalyst-footer`,
+      options: {
+        // Default options are
+        // useFooterSocialLinks: true,
         footerContentLocation: "right", // "left", "right", "center"
       },
     },
@@ -84,8 +91,6 @@ module.exports = {
         // rssTitle: `RSS Feed`,
       },
     },
-    `gatsby-theme-catalyst-header-side`,
-    `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

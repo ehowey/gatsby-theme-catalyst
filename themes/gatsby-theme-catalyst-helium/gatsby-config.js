@@ -6,22 +6,26 @@ module.exports = (themeOptions) => {
         options: {
           contentPath: themeOptions.contentPath,
           assetPath: themeOptions.assetPath,
-          displaySiteLogo: themeOptions.displaySiteLogo,
-          displaySiteTitle: themeOptions.displaySiteTitle,
-          displaySiteLogoMobile: themeOptions.displaySiteLogoMobile,
-          displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
-          invertSiteLogo: themeOptions.invertSiteLogo,
-          useStickyHeader: themeOptions.useStickyHeader,
-          useSocialLinks: themeOptions.useSocialLinks,
-          useColorMode: themeOptions.useColorMode,
           useKatex: themeOptions.useKatex,
-          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
           remarkImagesWidth: themeOptions.remarkImagesWidth,
           imageQuality: themeOptions.imageQuality,
         },
       },
-      `gatsby-theme-catalyst-header-bigtop`,
-      `gatsby-theme-catalyst-footer`,
+      {
+        resolve: `gatsby-theme-catalyst-header-bigtop`,
+        options: {
+          useStickyHeader: themeOptions.useStickyHeader,
+          useHeaderSocialLinks: themeOptions.useHeaderSocialLinks,
+          useColorMode: themeOptions.useColorMode,
+        },
+      },
+      {
+        resolve: `gatsby-theme-catalyst-footer`,
+        options: {
+          useFooterSocialLinks: themeOptions.useFooterSocialLinks,
+          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
+        },
+      },
       {
         resolve: `gatsby-theme-catalyst-blog`,
         options: {

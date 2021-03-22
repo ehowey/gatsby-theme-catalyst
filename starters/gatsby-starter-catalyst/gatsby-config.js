@@ -62,16 +62,7 @@ module.exports = {
         //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
         // useKatex: false,
-        // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
       },
@@ -81,11 +72,18 @@ module.exports = {
       options: {
         // Default options are
         // useStickyHeader: true,
-        // useSocialLinks: true,
+        // useHeaderSocialLinks: true,
         // useColorMode: true
       },
     },
-    `gatsby-theme-catalyst-footer`,
+    {
+      resolve: `gatsby-theme-catalyst-footer`,
+      options: {
+        // Default options are
+        // useFooterSocialLinks: true,
+        // footerContentLocation: "left", // "left", "right", "center"
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

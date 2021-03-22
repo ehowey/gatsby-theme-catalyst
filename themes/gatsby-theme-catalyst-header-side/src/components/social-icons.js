@@ -9,7 +9,7 @@ import { useHeaderConfig } from "../utils/use-header-config"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useColorMode, useSocialLinks } = useHeaderConfig()
+  const { useColorMode, useHeaderSocialLinks } = useHeaderConfig()
   const { theme } = useThemeUI()
 
   return (
@@ -43,7 +43,7 @@ const SocialWrapper = () => {
       }}
     >
       <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
-        {useSocialLinks && <SocialHeader />}
+        {useHeaderSocialLinks && <SocialHeader />}
         {useColorMode && <ColorModeButton />}
       </IconContext.Provider>
     </div>

@@ -4,7 +4,7 @@ export const useHeaderConfig = () => {
     graphql`
       query {
         catalystHeaderBigTopConfig {
-          useSocialLinks
+          useHeaderSocialLinks
           useColorMode
         }
       }

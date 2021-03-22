@@ -5,7 +5,7 @@ export const useHeaderConfig = () => {
       query {
         catalystHeaderTopConfig {
           useStickyHeader
-          useSocialLinks
+          useHeaderSocialLinks
           useColorMode
         }
       }

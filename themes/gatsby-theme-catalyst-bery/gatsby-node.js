@@ -7,7 +7,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   // Type definition for Catalyst Config
   const headerTypeDef = `
   type CatalystHeaderConfig implements Node {
-    useSocialLinks: Boolean!
+    useHeaderSocialLinks: Boolean!
     useColorMode: Boolean!
   }
   `
@@ -16,11 +16,11 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { useSocialLinks = true, useColorMode = true }
+  { useHeaderSocialLinks = true, useColorMode = true }
 ) => {
   // create garden data from plugin config
   const catalystHeaderConfigFieldData = {
-    useSocialLinks,
+    useHeaderSocialLinks,
     useColorMode,
   }
   createNode({

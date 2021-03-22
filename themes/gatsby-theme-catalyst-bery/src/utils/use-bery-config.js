@@ -4,7 +4,7 @@ export const useBeryConfig = () => {
     graphql`
       query {
         catalystBeryConfig {
-          useSocialLinks
+          useHeaderSocialLinks
           useColorMode
         }
       }

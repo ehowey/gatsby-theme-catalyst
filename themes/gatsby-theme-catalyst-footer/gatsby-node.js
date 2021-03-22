@@ -7,7 +7,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   // Type definition for Catalyst Config
   const footerTypeDef = `
   type CatalystFooterConfig implements Node {
-    useSocialLinks: Boolean!
+    useFooterSocialLinks: Boolean!
     footerContentLocation: String!
   }
   `
@@ -16,11 +16,11 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.sourceNodes = (
   { actions: { createNode }, schema },
-  { useSocialLinks = true, footerContentLocation = "left" }
+  { useFooterSocialLinks = true, footerContentLocation = "left" }
 ) => {
   // create garden data from plugin config
   const catalystFooterConfigFieldData = {
-    useSocialLinks,
+    useFooterSocialLinks,
     footerContentLocation,
   }
   createNode({
