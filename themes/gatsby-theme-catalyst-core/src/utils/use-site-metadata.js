@@ -5,7 +5,11 @@ export const useSiteMetadata = () => {
       query SiteMetaData {
         logo: file(name: { eq: "catalyst-site-logo" }) {
           childImageSharp {
-            gatsbyImageData(height: 300, layout: CONSTRAINED)
+            gatsbyImageData(
+              height: 300
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
           }
         }
         seoImage: file(name: { eq: "catalyst-site-social" }) {
