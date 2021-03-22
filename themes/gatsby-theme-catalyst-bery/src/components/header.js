@@ -19,7 +19,11 @@ const SiteHeader = () => {
         _rawBio
         image {
           asset {
-            gatsbyImageData
+            gatsbyImageData(
+              width: 400
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
           }
         }
       }
