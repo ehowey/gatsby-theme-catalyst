@@ -1,15 +1,15 @@
 {
   "name": "gatsby-theme-catalyst-stripe",
   "description": "Gatsby theme for e-commerce using Stripe and Use-Shopping-Cart",
-  "version": "1.0.0-alpha.3",
+  "version": "0.1.0-alpha.1",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@stripe/stripe-js": "^1.11.0",
     "dollars-to-cents": "^1.0.3",
-    "gatsby-theme-catalyst-core": "^4.0.0-alpha.3",
-    "gatsby-theme-catalyst-footer": "^2.0.0-alpha.2",
-    "gatsby-theme-catalyst-header-top": "^2.0.0-alpha.2",
-    "gatsby-theme-catalyst-sanity": "^5.0.0-alpha.2",
+    "gatsby-theme-catalyst-core": "^6.0.0-alpha.4",
+    "gatsby-theme-catalyst-footer": "^6.0.0-alpha.4",
+    "gatsby-theme-catalyst-header-top": "^6.0.0-alpha.4",
+    "gatsby-theme-catalyst-sanity": "^6.0.0-alpha.4",
     "use-shopping-cart": "^2.3.0"
   },
   "peerDependencies": {
