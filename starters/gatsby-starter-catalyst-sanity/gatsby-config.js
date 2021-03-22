@@ -50,7 +50,7 @@ module.exports = {
         // imageQuality: 50,
       },
     },
-    `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
+    `gatsby-theme-catalyst-header-top`,
     `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-theme-catalyst-sanity`,
