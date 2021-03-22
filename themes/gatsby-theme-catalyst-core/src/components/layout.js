@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
+import { jsx } from "theme-ui"
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav"
 import GlobalCSS from "../utils/global-css"
 import SiteContainer from "./site-container"
@@ -10,18 +10,16 @@ import Footer from "./footer"
 
 const SiteLayout = ({ children }) => {
   return (
-    <Themed.root>
+    <SiteContainer>
       <GlobalCSS />
-      <SiteContainer>
-        <SkipNavLink />
-        <Header />
-        <Main>
-          <SkipNavContent />
-          <ContentContainer>{children}</ContentContainer>
-        </Main>
-        <Footer />
-      </SiteContainer>
-    </Themed.root>
+      <SkipNavLink />
+      <Header />
+      <Main>
+        <SkipNavContent />
+        <ContentContainer>{children}</ContentContainer>
+      </Main>
+      <Footer />
+    </SiteContainer>
   )
 }
 
