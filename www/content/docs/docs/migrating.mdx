@@ -7,6 +7,24 @@
 
 This reviews any breaking changes. You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/CHANGELOG.md) on GitHub for more detailed list of non-breaking changes.
 
+## v6.0.0
+
+This is a doozy of an update but stay with me and you will get there in the end. Hopefully with minimal pain. If you run into any problems please submit an issue and I will do my best to help.
+
+1. Update all of your gatsby related packages to their latest versions. Gatsby should be v3.x and above. All Gatsby-Theme-Catalyst packages should be v6.x and above.
+
+1. Run `gatsby clean` in your project root, this is going to help prevent any issues down the line for us.
+
+1. Upgrade to `gatsby-plugin-image`, you should be able to follow their [migration guide](https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/) and use the codemod to complete this pretty painlessly. You may need to go back and tweak/adjust after running the codemod but it should get you most of the way there.
+
+1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.6.x](https://theme-ui-git-06-stable-systemui.vercel.app/migrating/).
+
+1. Run `gatsby develop` and check to see if it builds successfully. You are going to notice a few more things that need to be changed but you should be able to build at this point.
+
+1. Branding (logo and site title) is now handled using component shadowing. This simplifies the API and gives you more direct control over this crucial presentational element. Take a look at gatsby-starter-catalyst to see how this is done. Also note the shadowing of the branding component as well from the header theme.
+
+1. Update theme options.
+
 ## catalyst-header-side v2.0.0
 
 - **Breaking Change**: This is a visually breaking change. Added support for dropdowns that function as toggles, instead of the pure CSS on hover behaviour that was there before. I also adjusted the default text alignment to be left as this is more expected. You can nudge it back to the centre using variants.
