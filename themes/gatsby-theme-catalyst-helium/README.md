@@ -37,7 +37,7 @@ The following fields are available in front matter.
 
 ## Theme options
 
-Helium accepts all options from the core theme and blog theme directly, e.g. you can set `useColorMode` via `gatsby-theme-catalyst-helium` and it is passed down to the correct theme appropriately.
+Helium accepts all options from the core theme, header theme, footer theme and blog theme directly, e.g. you can set `useColorMode` via `gatsby-theme-catalyst-helium` and it is passed down to the correct theme appropriately.
 
 The one custom option is `useHero` which conditionally inserts a hero section which is designed to be shadowed and customized. You can see an example of this in `gatsby-starter-catalyst-helium`.
 
@@ -77,21 +77,28 @@ For example the following config is valid:
 | `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
 | `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
 | `rssTitle`             | String  | Defaults to "RSS Feed", allows you to customize the title of the RSS feed.                                              |
+| `rssDescription`       | String  | Defaults to "A great RSS feed", set the RSS description for your feed.                                                  |
 
 ### Core Theme Options
 
-| Option                   | Values                                    | Description                                                                                 |
-| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                   |
-| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.     |
-| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                    |
-| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint           |
-| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                              |
-| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint     |
-| `invertSiteLogo`         | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open       |
-| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                          |
-| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                    |
-| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                       |
-| `useKatex`               | true or false                             | Defaults to false, enables gatsby-remark-katex for displaying math equations.               |
-| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                          |
-| `remarkImagesWidth`      | Integer value                             | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
+| Option              | Values        | Description                                                                                 |
+| ------------------- | ------------- | ------------------------------------------------------------------------------------------- |
+| `contentPath`       | String        | Defaults to "content/pages", determines where the pages are created from.                   |
+| `assetPath`         | String        | Defaults to "content/assets", determines where the page assets like images are located.     |
+| `useKatex`          | true or false | Defaults to false, enables gatsby-remark-katex for displaying math equations.               |
+| `remarkImagesWidth` | Integer value | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
+| `imageQuality`      | Integer value | Defaults to 50, allows you to customize the image quality on a scale of 0 - 100.            |
+
+### Header Theme Options
+
+| Option                 | Values        | Description                                                              |
+| ---------------------- | ------------- | ------------------------------------------------------------------------ |
+| `useHeaderSocialLinks` | true or false | Defaults to true, controls whether the social links are displayed or not |
+| `useColorMode`         | true or false | Defaults to true, controls whether the dark mode toggle is available.    |
+
+### Footer Theme Options
+
+| Option                  | Values                                    | Description                                                              |
+| ----------------------- | ----------------------------------------- | ------------------------------------------------------------------------ |
+| `useFooterSocialLinks`  | true or false                             | Defaults to true, controls whether the social links are displayed or not |
+| `footerContentLocation` | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.       |

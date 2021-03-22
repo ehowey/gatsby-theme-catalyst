@@ -31,6 +31,7 @@ The main features added to this blog theme are:
 | `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
 | `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
 | `rssTitle`             | String  | Defaults to "RSS Feed", allows you to customize the title of the RSS feed.                                              |
+| `rssDescription`       | String  | Defaults to "A great RSS feed", set the RSS description for your feed.                                                  |
 
 Example Config:
 

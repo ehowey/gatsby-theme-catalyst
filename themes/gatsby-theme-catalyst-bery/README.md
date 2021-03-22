@@ -84,46 +84,53 @@ For example the following config is valid:
 
 ### Bery Options
 
-| Option           | Values | Description                            |
-| ---------------- | ------ | -------------------------------------- |
-| `rssTitle`       | String | Set the RSS title for your feed.       |
-| `rssDescription` | String | Set the RSS description for your feed. |
+| Option                 | Values  | Description                                                          |
+| ---------------------- | ------- | -------------------------------------------------------------------- |
+| `rssTitle`             | String  | Set the RSS title for your feed.                                     |
+| `rssDescription`       | String  | Set the RSS description for your feed.                               |
+| `useHeaderSocialLinks` | Boolean | Defaults to true, controls the visibility of social links in header. |
+| `useColorMode`         | Boolean | Defaults to true, controls the visibility of dark mode toggle.       |
 
 ### Sanity Theme Options
 
-| Option                 | Values  | Description                                                                           |
-| ---------------------- | ------- | ------------------------------------------------------------------------------------- |
-| sanityProjectId        | String  | Required, Sanity project ID                                                           |
-| sanityDataset          | String  | Defaults to "production", change to reflect the dataset name you are using in Sanity  |
-| sanityToken            | String  | Defaults to null, should only be used with env variables for security purposes.       |
-| sanityWatchMode        | Boolean | Defaults to true, toggle for watch mode                                               |
-| sanityOverlayDrafts    | Boolean | Defaults to false, toggle for live previews, a token and private dataset is required. |
-| sanityCreatePages      | Boolean | Defaults to true, toggle to turn on/off page generation from SANITY.io.               |
-| sanityCreatePosts      | Boolean | Defaults to true, toggle to turn on/off blog post page generation from SANITY.io.     |
-| sanityCreateCategories | Boolean | Defaults to true, toggle to turn on/off category page generation from SANITY.io.      |
-| sanityCreatePostsList  | Boolean | Defaults to true, toggle to turn on/off blog post list generation from SANITY.io.     |
-| sanityPostPath         | String  | Defaults to "/posts", is the path for before posts, e.g. site.com/posts/post-1.       |
-| sanityPostListPath     | String  | Defaults to "/posts", is the path for the posts list, e.g. site.com/posts/.           |
+| Option                        | Values  | Description                                                                               |
+| ----------------------------- | ------- | ----------------------------------------------------------------------------------------- |
+| sanityProjectId               | String  | Required, Sanity project ID                                                               |
+| sanityDataset                 | String  | Defaults to "production", change to reflect the dataset name you are using in Sanity      |
+| sanityToken                   | String  | Defaults to null, should only be used with env variables for security purposes.           |
+| sanityWatchMode               | Boolean | Defaults to true, toggle for watch mode                                                   |
+| sanityOverlayDrafts           | Boolean | Defaults to false, toggle for live previews, a token and private dataset is required.     |
+| sanityCreatePages             | Boolean | Defaults to true, toggle to turn on/off page generation from SANITY.io.                   |
+| sanityCreatePosts             | Boolean | Defaults to true, toggle to turn on/off blog post page generation from SANITY.io.         |
+| sanityCreateCategories        | Boolean | Defaults to true, toggle to turn on/off category page generation from SANITY.io.          |
+| sanityCreatePostsList         | Boolean | Defaults to true, toggle to turn on/off blog post list generation from SANITY.io.         |
+| sanityCreateProjects          | Boolean | Defaults to true, toggle to turn on/off project page generation from SANITY.io.           |
+| sanityCreateProjectsList      | Boolean | Defaults to true, toggle to turn on/off project list generation from SANITY.io.           |
+| sanityPostPath                | String  | Defaults to "/posts", is the path for before posts, e.g. site.com/posts/post-1.           |
+| sanityPostListPath            | String  | Defaults to "/posts", is the path for the posts list, e.g. site.com/posts/.               |
+| sanityProjectPath             | String  | Defaults to "/projects", is the path for before projects, e.g. site.com/projects/post-1.  |
+| sanityProjectListPath         | String  | Defaults to "/projects", is the path for the projects list page, e.g. site.com/projects/. |
+| sanityPostListTitle           | String  | Defaults to "Posts", is title for the posts list page.                                    |
+| sanityProjectListTitle        | String  | Defaults to "Projects", is title for the projects list page.                              |
+| sanityDisplayPostListTitle    | Boolean | Defaults to true, toggle to turn on/off the post list title.io.                           |
+| sanityDisplayProjectListTitle | Boolean | Defaults to true, toggle to turn on/off the project list title.io.                        |
 
 ### Core Theme Options
 
-_Note that many of these options will not work with catalyst-bery but are still accessible in the theme options config. This is because the theme is more custom and has a unified design._
+| Option              | Values        | Description                                                                                 |
+| ------------------- | ------------- | ------------------------------------------------------------------------------------------- |
+| `contentPath`       | String        | Defaults to "content/pages", determines where the pages are created from.                   |
+| `assetPath`         | String        | Defaults to "content/assets", determines where the page assets like images are located.     |
+| `useKatex`          | true or false | Defaults to false, enables gatsby-remark-katex for displaying math equations.               |
+| `remarkImagesWidth` | Integer value | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
+| `imageQuality`      | Integer value | Defaults to 50, allows you to customize the image quality on a scale of 0 - 100.            |
 
-| Option                   | Values                                    | Description                                                                                 |
-| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                   |
-| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.     |
-| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                    |
-| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint           |
-| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                              |
-| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint     |
-| `invertSiteLogo`         | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open       |
-| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                          |
-| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                    |
-| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                       |
-| `useKatex`               | true or false                             | Defaults to false, enables gatsby-remark-katex for displaying math equations.               |
-| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                          |
-| `remarkImagesWidth`      | Integer value                             | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
+### Footer Theme Options
+
+| Option                  | Values                                    | Description                                                              |
+| ----------------------- | ----------------------------------------- | ------------------------------------------------------------------------ |
+| `useFooterSocialLinks`  | true or false                             | Defaults to true, controls whether the social links are displayed or not |
+| `footerContentLocation` | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.       |
 
 ## Variants
 

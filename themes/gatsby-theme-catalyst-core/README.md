@@ -12,22 +12,13 @@ This acts as a core theme on which all other themes are based. It houses a basic
 
 ## Theme Options
 
-| Option                   | Values                                    | Description                                                                                 |
-| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `contentPath`            | String                                    | Defaults to "content/pages", determines where the pages are created from.                   |
-| `assetPath`              | String                                    | Defaults to "content/assets", determines where the page assets like images are located.     |
-| `displaySiteLogo`        | true or false                             | Defaults to true, controls whether the logo is displayed                                    |
-| `displaySiteLogoMobile`  | true or false                             | Defaults to true, controls whether the logo is displayed at the mobile breakpoint           |
-| `displaySiteTitle`       | true or false                             | Defaults to true, controls whether the site title is displayed                              |
-| `displaySiteTitleMobile` | true or false                             | Defaults to true, controls whether the site title is displayed at the mobile breakpoint     |
-| `invertSiteLogo`         | true or false                             | Defaults to false, controls whether the logo is inverted when the mobile menu is open       |
-| `useStickyHeader`        | true or false                             | Defaults to false, controls whether the header is sticky or static                          |
-| `useSocialLinks`         | true or false                             | Defaults to true, controls whether the social links are displayed or not                    |
-| `useColorMode`           | true or false                             | Defaults to true, controls whether the dark mode toggle is available.                       |
-| `useKatex`               | true or false                             | Defaults to false, enables gatsby-remark-katex for displaying math equations.               |
-| `footerContentLocation`  | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.                          |
-| `remarkImagesWidth`      | Integer value                             | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
-| `imageQuality`           | Integer value                             | Defaults to 50, allows you to customize the image quality on a scale of 0 - 100.            |
+| Option              | Values        | Description                                                                                 |
+| ------------------- | ------------- | ------------------------------------------------------------------------------------------- |
+| `contentPath`       | String        | Defaults to "content/pages", determines where the pages are created from.                   |
+| `assetPath`         | String        | Defaults to "content/assets", determines where the page assets like images are located.     |
+| `useKatex`          | true or false | Defaults to false, enables gatsby-remark-katex for displaying math equations.               |
+| `remarkImagesWidth` | Integer value | Defaults to 1440, allows you to customize the image width option for gatsby-remarks-images. |
+| `imageQuality`      | Integer value | Defaults to 50, allows you to customize the image quality on a scale of 0 - 100.            |
 
 Example Config:
 
@@ -35,10 +26,13 @@ Example Config:
    {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        displaySiteLogo: true,
-        displaySiteTitle: true,
-        invertSiteLogo: true,
-        useStickyHeader: true,
+        remarkImagesWidth: 1920,
+        imageQuality: 90
+        assetPath: "src/images/"
       }
     }
 ```
+
+## About Gatsby Theme Catalyst
+
+The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.com/) were designed to provide an opinionated set of integrated themes and starters that can be used to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
