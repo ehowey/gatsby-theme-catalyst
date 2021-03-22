@@ -2,10 +2,7 @@
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import {
-  useSanityConfig,
-  SanityThemeProvider,
-} from "gatsby-theme-catalyst-sanity"
+import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
 const PostsTemplate = ({ data }) => {
   const posts = data.allSanityPost.nodes
@@ -17,26 +14,24 @@ const PostsTemplate = ({ data }) => {
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
 
   return (
-    <SanityThemeProvider>
-      <Layout>
-        <SEO title={sanityPostListTitle} />
-        {sanityDisplayPostListTitle && (
-          <Themed.h1>{sanityPostListTitle}</Themed.h1>
-        )}
-        {posts.map((post) => (
-          <article sx={{ mb: 5 }} key={post.id}>
-            <Themed.a
-              as={Link}
-              to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
-            >
-              <Themed.h2>{post.title}</Themed.h2>
-            </Themed.a>
-            <Themed.p>{post.date}</Themed.p>
-            <Themed.p>{post.excerpt}</Themed.p>
-          </article>
-        ))}
-      </Layout>
-    </SanityThemeProvider>
+    <Layout>
+      <SEO title={sanityPostListTitle} />
+      {sanityDisplayPostListTitle && (
+        <Themed.h1>{sanityPostListTitle}</Themed.h1>
+      )}
+      {posts.map((post) => (
+        <article sx={{ mb: 5 }} key={post.id}>
+          <Themed.a
+            as={Link}
+            to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
+          >
+            <Themed.h2>{post.title}</Themed.h2>
+          </Themed.a>
+          <Themed.p>{post.date}</Themed.p>
+          <Themed.p>{post.excerpt}</Themed.p>
+        </article>
+      ))}
+    </Layout>
   )
 }
 
