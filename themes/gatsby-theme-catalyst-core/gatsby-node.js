@@ -88,6 +88,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     contentPath: String!
     assetPath: String!
     useKatex: Boolean!
+    useAlertBanner: Boolean!
   }
   `
   createTypes(siteMetadataTypeDefs)
@@ -100,6 +101,7 @@ exports.sourceNodes = (
     contentPath = "content/pages",
     assetPath = "content/assets",
     useKatex = false,
+    useAlertBanner = false,
   }
 ) => {
   // create garden data from plugin config
@@ -107,6 +109,7 @@ exports.sourceNodes = (
     contentPath,
     assetPath,
     useKatex,
+    useAlertBanner,
   }
   createNode({
     ...catalystConfigFieldData,

@@ -65,6 +65,7 @@ module.exports = {
         // useKatex: false,
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
+        useAlertBanner: true,
       },
     },
     {
