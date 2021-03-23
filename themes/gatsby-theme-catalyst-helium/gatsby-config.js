@@ -9,6 +9,7 @@ module.exports = (themeOptions) => {
           useKatex: themeOptions.useKatex,
           remarkImagesWidth: themeOptions.remarkImagesWidth,
           imageQuality: themeOptions.imageQuality,
+          useAlertBanner: themeOptions.useAlertBanner,
         },
       },
       {

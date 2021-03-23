@@ -14,12 +14,23 @@ const SiteContainer = ({ children }) => {
           ? "auto auto minmax(0, 1fr) auto"
           : "auto minmax(0, 1fr) auto",
         gridTemplateAreas: useAlertBanner
-          ? `
+          ? [
+              `
+        "header" 
+        "alert"
+        "main"
+        "footer"
+        `,
+              null,
+              `
         "alert"
         "header" 
         "main"
         "footer"
-        `
+        `,
+              null,
+              null,
+            ]
           : `
         "header" 
         "main"

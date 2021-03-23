@@ -2,12 +2,18 @@
 // Copy and past this component and use theme shadowing in your starter site to customize the alert banner. You can see an example of this in the www folder.
 /** @jsx jsx */
 import { jsx, Themed, Button } from "theme-ui"
-import { useState } from "react"
+import { useContext } from "react"
+import { useCatalystConfig, AlertContext } from "gatsby-theme-catalyst-core"
 
 const AlertBanner = () => {
-  const [hasAlert, setHasAlert] = useState(true)
+  const { useAlertBanner } = useCatalystConfig()
+  const [displayAlert, setDisplayAlert] = useContext(AlertContext)
 
-  if (!hasAlert) {
+  if (!useAlertBanner) {
+    return null
+  }
+
+  if (!displayAlert) {
     return null
   }
 
@@ -15,7 +21,7 @@ const AlertBanner = () => {
     <aside sx={{ gridArea: "alert", width: "100%", bg: "tomato" }}>
       <div sx={{ display: "flex", justifyContent: "space-between" }}>
         <Themed.p sx={{ m: 1 }}>Alert banner</Themed.p>
-        <Button onClick={() => setHasAlert(false)}>Close</Button>
+        <Button onClick={() => setDisplayAlert(false)}>Close</Button>
       </div>
     </aside>
   )

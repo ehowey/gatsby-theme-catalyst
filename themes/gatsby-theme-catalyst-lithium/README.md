@@ -58,7 +58,9 @@ For example the following config is valid:
 
 ### Lithium Options
 
-No custom options for this theme but accepts all options below.
+| Option    | Values  | Description                                                             |
+| --------- | ------- | ----------------------------------------------------------------------- |
+| `useHero` | Boolean | Defaults to false, controls whether the hero section is enabled or not. |
 
 ### Blog Theme Options
 

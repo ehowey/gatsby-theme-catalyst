@@ -24,11 +24,13 @@ const SiteContainer = ({ children }) => {
         gridTemplateAreas: [
           `
         "header"
+        "alert"
         "main"
         "footer"
         `,
           null,
           `
+        "alert alert"
         "header main"
         "header footer"
         `,

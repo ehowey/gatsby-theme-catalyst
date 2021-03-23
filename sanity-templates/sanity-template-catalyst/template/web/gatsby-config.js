@@ -49,6 +49,7 @@ module.exports = {
         // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
+        // useAlertBanner: false,
       },
     },
     `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
