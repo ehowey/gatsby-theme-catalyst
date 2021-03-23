@@ -13,13 +13,13 @@ const PostsList = ({ posts }) => {
       {posts.map((post) => {
         const title = post.title || post.slug
         return (
-          <div key={post.slug}>
+          <article key={post.slug}>
             <Themed.a as={Link} to={post.slug}>
               <Themed.h2>{title}</Themed.h2>
             </Themed.a>
             <Themed.p>{post.date}</Themed.p>
             <Themed.p>{post.excerpt}</Themed.p>
-          </div>
+          </article>
         )
       })}
     </Layout>
