@@ -21,7 +21,7 @@
     "gatsby-theme-catalyst-stripe": "^0.0.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "stripe": "^8.129.0",
+    "stripe": "^8.139.0",
     "use-shopping-cart": "^2.3.0"
   },
   "devDependencies": {
