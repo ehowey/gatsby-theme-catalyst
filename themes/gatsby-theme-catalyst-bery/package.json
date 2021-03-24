@@ -4,7 +4,7 @@
   "version": "3.1.7",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "framer-motion": "^3.2.1",
+    "framer-motion": "^4.0.2",
     "gatsby-plugin-feed": "^2.11.0",
     "gatsby-theme-catalyst-core": "^3.1.6",
     "gatsby-theme-catalyst-footer": "^1.2.8",
