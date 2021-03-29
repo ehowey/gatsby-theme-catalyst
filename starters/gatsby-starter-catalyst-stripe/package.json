@@ -19,8 +19,8 @@
     "dollars-to-cents": "^1.0.3",
     "gatsby": "^3.1.1",
     "gatsby-theme-catalyst-stripe": "^0.1.0-alpha.5",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "stripe": "^8.129.0",
     "use-shopping-cart": "^2.3.0"
   },

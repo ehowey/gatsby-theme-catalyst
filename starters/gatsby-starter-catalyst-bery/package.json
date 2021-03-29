@@ -8,8 +8,8 @@
     "fontsource-sen": "^4.0.0",
     "gatsby": "^3.1.1",
     "gatsby-theme-catalyst-bery": "^6.0.0-alpha.8",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
