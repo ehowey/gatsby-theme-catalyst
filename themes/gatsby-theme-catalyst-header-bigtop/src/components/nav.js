@@ -47,7 +47,7 @@ const Nav = () => {
       sx={{
         m: 0,
         display: [isNavOpen ? "flex" : "none", null, "flex", null, null],
-        justifyContent: "center",
+        justifyContent: ["start", null, "center", null, null],
         flexDirection: ["column", null, "row", null, null],
         gridArea: "nav",
         transition: "all 3s ease-in-out",

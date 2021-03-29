@@ -56,7 +56,7 @@ const Nav = () => {
         mt: isNavOpen ? 2 : 0,
         display: [isNavOpen ? "flex" : "none", null, "flex", null, null],
         flexDirection: ["column", null, "row", null, null],
-        justifyContent: "flex-end",
+        justifyContent: ["start", null, "flex-end", null, null],
         variant: "variant.nav",
       }}
       aria-label="Primary menu"

@@ -8,7 +8,7 @@ import DropdownMenu from "./dropdown-menu"
 
 // This component has a lot going on. It is handling the mapping of the menu items, optionally using anchor links, and optionally showing a dropdown menu. It is broken into smaller components for readability here but could be condensed into one mega component if you wanted.
 
-const NavLinksLeft = () => {
+const NavLinks = () => {
   const { menuLinks } = useSiteMetadata()
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [isNavOpen, setIsNavOpen] = useContext(NavContext) // eslint-disable-line
@@ -98,4 +98,4 @@ const NavLinksLeft = () => {
   )
 }
 
-export default NavLinksLeft
+export default NavLinks

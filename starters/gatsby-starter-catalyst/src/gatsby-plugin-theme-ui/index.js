@@ -20,7 +20,7 @@ export default merge(BaseTheme, {
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
       icons: baseColors.gray[6],
-      iconsOpen: baseColors.gray[8],
+      iconsOpen: baseColors.gray[6],
     },
     footer: {
       background: baseColors.gray[2],
