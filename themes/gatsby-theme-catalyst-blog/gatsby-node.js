@@ -61,7 +61,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
     },
   })
 
-  createTypes(`interface CatalystPost @nodeInterface {
+  createTypes(`interface CatalystPost implements Node {
       id: ID!
       title: String!
       subTitle: String
