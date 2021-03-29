@@ -10,7 +10,7 @@ const Nav = () => {
   const [isNavOpen] = useContext(NavContext)
   const navRef = useRef()
 
-  // Handle moving the focus up to the menu when it is opened
+  // Handle moving the focus up to the menu when it is opened, esc buttong to close menu
   useEffect(() => {
     const focusableModalElements = navRef.current.querySelectorAll(
       'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
@@ -20,18 +20,27 @@ const Nav = () => {
     const handleTab = (e) => {
       e.preventDefault()
       firstElement.focus()
-      document.removeEventListener("keydown", keyListener)
+      document.removeEventListener("keydown", tabListener)
     }
 
-    const keyListener = (e) => {
+    const tabListener = (e) => {
       if (e.keyCode === 9) {
         handleTab(e)
       }
     }
-    if (isNavOpen) {
-      document.addEventListener("keydown", keyListener)
+    const escListener = (e) => {
+      if (e.keyCode === 27) {
+        setIsNavOpen(false)
+      }
     }
-    return () => document.removeEventListener("keydown", keyListener)
+    if (isNavOpen) {
+      document.addEventListener("keydown", tabListener)
+      document.addEventListener("keydown", escListener)
+    }
+    return () => {
+      document.removeEventListener("keydown", tabListener)
+      document.removeEventListener("keydown", escListener)
+    }
   }, [isNavOpen])
 
   return (
