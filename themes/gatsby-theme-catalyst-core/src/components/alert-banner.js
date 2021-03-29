@@ -20,7 +20,9 @@ const AlertBanner = () => {
   return (
     <aside sx={{ gridArea: "alert", width: "100%", bg: "tomato" }}>
       <div sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Themed.p sx={{ m: 1 }}>Alert banner</Themed.p>
+        <Themed.p sx={{ m: 1 }}>
+          Alert banner: update me with component shadowing
+        </Themed.p>
         <Button onClick={() => setDisplayAlert(false)}>Close</Button>
       </div>
     </aside>

@@ -16,7 +16,6 @@ const Hero = () => {
         width: "100vw",
         position: "relative",
         left: "calc(-50vw + 50%)",
-        mt: -3,
         py: 4,
         px: 3,
         mb: 4,
@@ -65,17 +64,50 @@ const Hero = () => {
       </Themed.h1>
       <Themed.inlineCode
         sx={{
-          mb: 4,
+          mb: 0,
+          px: 2,
           bg: baseColors.gray[8],
           color: baseColors.gray[1],
           wordWrap: "break-word",
           textOverflow: "wrap",
           overflowWrap: "break-word",
           wordBreak: "break-word",
+          lineHeight: "tight",
         }}
       >
         gatsby new catalyst ehowey/gatsby-starter-catalyst
       </Themed.inlineCode>
+      <Themed.p
+        sx={{
+          fonmtSize: 3,
+          my: 1,
+          textTransform: "uppercase",
+          fontWeight: "bold",
+        }}
+      >
+        or
+      </Themed.p>
+      <Themed.p
+        sx={{
+          mt: 0,
+          mb: 4,
+          px: 2,
+          bg: baseColors.gray[8],
+          lineHeight: "tight",
+        }}
+      >
+        <Themed.a
+          href="https://www.sanity.io/create?template=ehowey%2Fsanity-template-catalyst"
+          sx={{
+            color: baseColors.gray[1],
+            fontFamily: "monospace",
+            fontSize: 1,
+          }}
+        >
+          sanity.io/create?template=ehowey/sanity-template-catalyst
+        </Themed.a>
+      </Themed.p>
+
       <nav sx={{ width: ["100%", "auto", null, null, null] }}>
         <ul
           sx={{

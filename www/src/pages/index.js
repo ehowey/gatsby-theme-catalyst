@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Themed, Button } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import HomeLayout from "../components/home-layout"
 import Features from "../components/features"
 import Blocks from "../components/animated-blocks"
 import { TriangleVertical } from "../components/spacers"
-import { Link } from "gatsby"
-import { baseColors } from "@theme-ui/preset-tailwind"
 import { SEO } from "gatsby-theme-catalyst-core"
+import Demo from "../components/demo"
+import Why from "../components/why"
 
 const HomePage = () => {
   return (
@@ -31,11 +31,21 @@ const HomePage = () => {
         </span>
         your next Gatsby project. Build faster.
       </Themed.p>
+      <Themed.p
+        sx={{
+          fontSize: [4, null, 5, null, null],
+          fontWeight: "500",
+          textAlign: "center",
+        }}
+      >
+        11 themes
+        <br />8 starters
+      </Themed.p>
       <TriangleVertical />
       <section>
         <Themed.h2
           sx={{
-            fontSize: 4,
+            fontSize: 5,
             mb: 5,
             textAlign: "center",
             "::after": {
@@ -55,38 +65,75 @@ const HomePage = () => {
         <Blocks />
       </section>
       <TriangleVertical />
-      <Features />
-      <TriangleVertical />
-      <Themed.p
-        sx={{ fontSize: [3, null, 4, null, null], textAlign: "center" }}
-      >
-        <i>
-          <b>catalyst:</b> an agent that provokes or speeds significant change
-          or action
-        </i>
-      </Themed.p>
-
-      <div sx={{ display: "grid", placeItems: "center" }}>
-        <Button
-          as={Link}
+      <section>
+        <Themed.h2
           sx={{
-            backgroundImage:
-              "radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,193,104,1) 0%, rgba(251,128,128,1) 90% )",
-            color: baseColors.gray[8],
-            fontWeight: "bold",
-            boxShadow: "default",
-            transition: "all 0.3s ease",
-            ":hover, :focus, :active": {
-              boxShadow: "lg",
-              backgroundImage:
-                "radial-gradient( circle farthest-corner at 30% 40%,  rgba(253,193,80,1) 0%, rgba(251,128,100,1) 95% )",
+            fontSize: 5,
+            mb: 5,
+            textAlign: "center",
+            "::after": {
+              display: "block",
+              content: '""',
+              width: "40px",
+              pt: 2,
+              borderBottomStyle: "solid",
+              borderBottomWidth: "4px",
+              borderBottomColor: "primary",
+              mx: "auto",
             },
           }}
-          to="/docs/getting-started"
         >
-          BOOM! Get Started!
-        </Button>
-      </div>
+          Demo
+        </Themed.h2>
+        <Demo />
+      </section>
+
+      <TriangleVertical />
+      <section>
+        <Themed.h2
+          sx={{
+            fontSize: 5,
+            mb: 5,
+            textAlign: "center",
+            "::after": {
+              display: "block",
+              content: '""',
+              width: "40px",
+              pt: 2,
+              borderBottomStyle: "solid",
+              borderBottomWidth: "4px",
+              borderBottomColor: "primary",
+              mx: "auto",
+            },
+          }}
+        >
+          Tech Choices
+        </Themed.h2>
+        <Features />
+      </section>
+      <TriangleVertical />
+      <section>
+        <Themed.h2
+          sx={{
+            fontSize: 5,
+            mb: 5,
+            textAlign: "center",
+            "::after": {
+              display: "block",
+              content: '""',
+              width: "40px",
+              pt: 2,
+              borderBottomStyle: "solid",
+              borderBottomWidth: "4px",
+              borderBottomColor: "primary",
+              mx: "auto",
+            },
+          }}
+        >
+          Why?
+        </Themed.h2>
+        <Why />
+      </section>
     </HomeLayout>
   )
 }

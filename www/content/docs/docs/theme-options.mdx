@@ -5,27 +5,66 @@
 
 # Theme Options
 
-There are a number of options for the themes that act as flags to control various aspects of the site appearance and function. Try experimenting with these to get a feel for how it changes the site. The options for each theme are documented in the respective docs area for the themes. Most options are set via `gatsby-theme-catalyst-core`, however `gatsby-theme-catalyst-sanity` uses theme options extensively to control what pages are created by the theme.
+There are a number of options for the themes that act as flags to control various aspects of the site appearance and function. Try experimenting with these to get a feel for how it changes the site. The options for each theme are documented in the respective docs.
 
 For example:
 
 ```js
 {
-      resolve: `gatsby-theme-catalyst-core`,
-      options: {
-        //Default options are:
-        // contentPath: `content/pages`,
-        // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
-// useKatex: false,
-        //footerContentLocation: "left", // "left", "right", "center"
-      },
-    },
+  resolve: `gatsby-theme-catalyst-core`,
+  options: {
+    //Default options are:
+    // contentPath: `content/pages`,
+    // assetPath: `content/assets`,
+    // useKatex: false,
+    // remarkImagesWidth: 1440,
+    // imageQuality: 50,
+    // useAlertBanner: false,
+  },
+},
+{
+  resolve: `gatsby-theme-catalyst-sanity`,
+  options: {
+    // Example for an env variable
+    // sanityProjectId: process.env.SANITY_PROJECT_ID,
+    // sanityDataset: process.env.SANITY_DATASET,
+    // sanityToken: process.env.SANITY_TOKEN,
+    //
+    // Default options are:
+    // sanityProjectId: "abc123" // Required
+    // sanityDataset: "production"
+    // sanityToken: null
+    // sanityWatchMode: true
+    // sanityOverlayDrafts: false // Token is required for this
+    // sanityCreatePages: true
+    // sanityCreatePosts: true
+    // sanityCreatePostsList: true
+    // sanityCreateProjects: true
+    // sanityCreateProjectsList: true
+    // sanityPostPath: "/posts"
+    // sanityProjectPath: "/projects"
+    // sanityPostListTitle: "Posts"
+    // sanityDisplayPostListTitle: true
+    // sanityProjectListTitle: "Projects"
+    // sanityDisplayProjectListTitle: true
+    sanityProjectId: "p9a6h8j1",
+  },
+},
+{
+  resolve: `gatsby-theme-catalyst-header-top`,
+  options: {
+    // Default options are
+    // useStickyHeader: true,
+    // useHeaderSocialLinks: true,
+    // useColorMode: true
+  },
+},
+{
+  resolve: `gatsby-theme-catalyst-footer`,
+  options: {
+    // Default options are
+    // useFooterSocialLinks: true,
+    // footerContentLocation: "left", // "left", "right", "center"
+  },
+},
 ```

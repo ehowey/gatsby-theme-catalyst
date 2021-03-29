@@ -222,22 +222,18 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        //Default options are:
         contentPath: `content/docs`,
-        // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        displaySiteTitleMobile: false,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
-        // useKatex: false,
+        useAlertBanner: true,
+      },
+    },
+    {
+      resolve: `gatsby-theme-catalyst-footer`,
+      options: {
+        // Default options are
+        // useFooterSocialLinks: true,
         footerContentLocation: "right", // "left", "right", "center"
       },
     },
-    `gatsby-theme-catalyst-footer`,
     `gatsby-theme-catalyst-header-side`,
     {
       resolve: `gatsby-plugin-manifest`,

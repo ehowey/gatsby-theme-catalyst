@@ -9,7 +9,7 @@ Site metadata is set via the `gatsby-config.js` file. Specifically the navigatio
 
 ## Menu Links
 
-The `menuLinks` array is fairly common in Gatsby sites with the addition of two fields, `type` and `location`. `type` controls whether the menu link is rendered as a Gatsby Link component or an anchor link component using [react-scroll](https://github.com/fisshy/react-scroll). The options are `internal` or `anchor`. `location` controls the location of the links on either the left or the right side. At present the location field is only supported by `gatsby-theme-catalyst-header-top` as this allows you to "split" your links putting some links beside the logo and other links on the far side of the menu as is common in e-commerce sites with carts. If the location field is omitted it defaults to right.
+The `menuLinks` array is fairly common in Gatsby sites with the addition of one field, location`. `location`controls the location of the links on either the left or the right side. At present the location field is only supported by`gatsby-theme-catalyst-header-top` as this allows you to "split" your links putting some links beside the logo and other links on the far side of the menu as is common in e-commerce sites with carts. If the location field is omitted it defaults to right.
 
 Example Config:
 
@@ -18,21 +18,17 @@ menuLinks: [
   {
     name: `Page 1`,
     link: `/page-1`,
-    type: `internal`, //internal or anchor
     location: `left`,
   },
   {
     name: `Anchor 1`,
     link: `#anchor-1`,
-    type: `anchor`, //internal or anchor
     location: `right`,
   },
 ]
 ```
 
-You can also have a sub-menu or dropdown menu. Submenus are only supported on internal links at this time. You can see an example of this with `gatsby-starter-catalyst`.
-
-> I am in the process of updating the dropdowns to function as toggles instead of on hover. This means the dropdowns themselves will not be an active link any more, but they still require some unique text in the link field as this is used in handling the toggle behaviour.
+You can also have a sub-menu or dropdown menu. You can see an example of this with `gatsby-starter-catalyst`.
 
 Example Config:
 
@@ -40,18 +36,15 @@ Example Config:
 menuLinks: [
   {
     name: `Page 1`,
-    link: `/page-1`,
-    type: `internal`, //internal or anchor
+    link: `/page-1`, // Doesn't actually link, uses a toggle
     subMenu: [
       {
         name: `Sub 1`,
         link: `/sub-1`,
-        type: `internal`, //internal or anchor
       },
       {
         name: `Sub 2`,
         link: `/sub-2`,
-        type: `internal`, //internal or anchor
       },
     ],
   },
@@ -60,7 +53,7 @@ menuLinks: [
 
 ## Social Links
 
-The `socialLinks` array is a bit more uncommon. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with most major social platforms and has a fallback for displaying the text if a logo isn't found.
+The `socialLinks` array is a bit more uncommon. You can specify a social media provider such as Twitter and also three different locations in the settings, `header`, `footer`, and `all` which will locate the icons appropriately. It will work with all major social platforms and has a fallback for displaying the text if a logo isn't found.
 
 Example Config:
 

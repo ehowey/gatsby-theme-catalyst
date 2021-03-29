@@ -98,7 +98,7 @@ export default merge(BaseTheme, {
       m: 0,
       mb: 1,
       fontSize: 3,
-      mt: 3,
+      mt: [4, null, 5, null, null],
     },
     h3: {
       fontFamily: "heading",
@@ -108,7 +108,7 @@ export default merge(BaseTheme, {
       m: 0,
       mb: 1,
       fontSize: 2,
-      mt: 3,
+      mt: [3, null, 4, null, null],
     },
     h4: {
       fontFamily: "heading",

@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 
 const SiteContainer = ({ children }) => {
+  const { useAlertBanner } = useCatalystConfig()
   return (
     <div
       sx={{
@@ -21,22 +23,37 @@ const SiteContainer = ({ children }) => {
           null,
           null,
         ],
-        gridTemplateAreas: [
-          `
+        gridTemplateAreas: useAlertBanner
+          ? [
+              `
         "header"
         "alert"
         "main"
         "footer"
         `,
-          null,
-          `
+              null,
+              `
         "alert alert"
         "header main"
         "header footer"
         `,
-          null,
-          null,
-        ],
+              null,
+              null,
+            ]
+          : [
+              `
+        "header"
+        "main"
+        "footer"
+        `,
+              null,
+              `
+        "header main"
+        "header footer"
+        `,
+              null,
+              null,
+            ],
         variant: "variants.siteContainer",
       }}
     >
