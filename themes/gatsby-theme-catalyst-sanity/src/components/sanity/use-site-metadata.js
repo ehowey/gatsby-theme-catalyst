@@ -27,7 +27,11 @@ export const useSiteMetadata = () => {
             }
             logo {
               asset {
-                gatsbyImageData
+                gatsbyImageData(
+                  height: 300
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                )
               }
             }
           }
@@ -36,12 +40,10 @@ export const useSiteMetadata = () => {
           nodes {
             link
             name
-            type
             location
             subMenu {
               link
               name
-              type
             }
           }
         }

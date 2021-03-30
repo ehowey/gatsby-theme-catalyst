@@ -9,7 +9,6 @@ module.exports = {
       {
         name: `Page 1`,
         link: `/page-1`,
-        type: `internal`, //internal or anchor
       },
     ],
     socialLinks: [
@@ -34,26 +33,32 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        // Default options are:
+        //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
-        // useKatex: false, // Dark mode is not supported when configuring the theme from SANITY.io dashboard
-        // footerContentLocation: "left", // "left", "right", "center"
+        // useKatex: false,
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
         // useAlertBanner: false,
       },
     },
-    `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
-    `gatsby-theme-catalyst-footer`,
+    {
+      resolve: `gatsby-theme-catalyst-header-top`,
+      options: {
+        // Default options are
+        // useStickyHeader: true,
+        // useHeaderSocialLinks: true,
+        // useColorMode: true
+      },
+    },
+    {
+      resolve: `gatsby-theme-catalyst-footer`,
+      options: {
+        // Default options are
+        // useFooterSocialLinks: true,
+        // footerContentLocation: "left", // "left", "right", "center"
+      },
+    },
     {
       resolve: `gatsby-theme-catalyst-sanity`,
       options: {
@@ -75,12 +80,13 @@ module.exports = {
         // sanityCreateProjectsList: true
         // sanityPostPath: "/posts"
         // sanityProjectPath: "/projects"
-        // useSanityTheme: false // Experimental right now
-        sanityProjectId: "<#< sanity.projectId >#>",
-        sanityProjectDataset: "<#< sanity.dataset >#>",
+        // sanityPostListTitle: "Posts"
+        // sanityDisplayPostListTitle: true
+        // sanityProjectListTitle: "Projects"
+        // sanityDisplayProjectListTitle: true
+        sanityProjectId: "p9a6h8j1",
       },
     },
-
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
