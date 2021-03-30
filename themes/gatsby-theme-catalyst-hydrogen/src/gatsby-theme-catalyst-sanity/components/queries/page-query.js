@@ -15,7 +15,7 @@ export const query = graphql`
       featuredImage {
         alt
         asset {
-          gatsbyImageData
+          gatsbyImageData(width: 900, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }

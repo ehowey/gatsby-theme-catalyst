@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
 import PageHeader from "../../../components/page-header"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
@@ -12,8 +12,8 @@ const PageTemplate = ({ data }) => {
       <PageHeader
         topImage={result.featuredImage.asset.gatsbyImageData}
         topImageAlt={result.featuredImage.alt}
-        title={result.title}
       />
+      <Themed.h1>{result.title}</Themed.h1>
       <SanityContent data={result._rawBody} />
     </Layout>
   )

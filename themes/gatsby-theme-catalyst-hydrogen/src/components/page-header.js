@@ -1,27 +1,29 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
-import { Fragment } from "react"
+import { jsx } from "theme-ui"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const PageHeader = ({ title, topImage, topImageAlt }) => {
+const PageHeader = ({ topImage, topImageAlt }) => {
   return (
-    <Fragment>
+    <div
+      sx={{
+        width: "100vw",
+        position: ["relative", null, "static", null, null],
+        left: ["calc(-50vw + 50%)", null, "auto", null, null],
+        mx: "auto",
+        maxWidth: "maxContentWidth",
+      }}
+    >
       <GatsbyImage
         image={topImage}
         sx={{
+          mt: 5,
           height: ["150px", "200px", null, null, null],
           width: ["100vw", null, "auto", null, null],
-          position: ["relative", null, "static", null, null],
-          left: ["50%", null, "auto", null, null],
-          right: ["50%", null, "auto", null, null],
-          ml: ["-50vw", null, 0, null, null],
-          mr: ["-50vw", null, 0, null, null],
-          mt: 5,
+          borderRadius: "2px",
         }}
         alt={topImageAlt}
       />
-      <Themed.h1>{title}</Themed.h1>
-    </Fragment>
+    </div>
   )
 }
 

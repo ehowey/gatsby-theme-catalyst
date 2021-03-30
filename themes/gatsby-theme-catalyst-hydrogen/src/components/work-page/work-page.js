@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import PageHeader from "../page-header"
 import WorkList from "./work-list"
 import { SEO, Layout } from "gatsby-theme-catalyst-core"
@@ -13,8 +13,9 @@ const WorkPage = ({ data }) => {
       <PageHeader
         topImage={result.featuredImage.asset.gatsbyImageData}
         topImageAlt={result.featuredImage.alt}
-        title={result.title}
       />
+      <Themed.h1>{result.title}</Themed.h1>
+
       <SanityContent data={result._rawBody} />
       <WorkList />
     </Layout>
