@@ -27,7 +27,7 @@ const ButtonPrimary = ({ to, children }) => {
         "::after": {
           content: '"\\00A0 \\2192"',
         },
-        ":hover": {
+        ":hover, :active, :focus": {
           bg: darken("primary", 0.1),
           borderColor: darken("primary", 0.1),
         },
