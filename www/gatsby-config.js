@@ -57,7 +57,7 @@ module.exports = {
         type: `internal`, //internal or anchor
       },
       {
-        name: `SEO`,
+        name: `Seo`,
         link: `/docs/seo`,
         type: `internal`, //internal or anchor
       },

@@ -5,7 +5,7 @@ import { useSiteMetadata } from "./use-site-metadata"
 import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import { useLocation } from "@reach/router"
 
-const SEO = ({
+const Seo = ({
   description: propDescription,
   lang,
   meta,
@@ -136,13 +136,13 @@ const SEO = ({
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   isBlogPost: false,
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
@@ -151,4 +151,4 @@ SEO.propTypes = {
   isBlogPost: PropTypes.bool,
 }
 
-export default SEO
+export default Seo

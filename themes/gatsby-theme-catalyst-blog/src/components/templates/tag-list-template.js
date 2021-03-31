@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import kebabCase from "lodash/kebabCase"
 
 const TagList = ({ tags }) => {
   return (
     <Layout>
-      <SEO title="Tags" />
+      <Seo title="Tags" />
       <Themed.h1>Tags</Themed.h1>
       <Themed.ul>
         {tags.map((tag) => (

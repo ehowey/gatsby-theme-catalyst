@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
 const ProjectsTemplate = ({ data }) => {
@@ -14,7 +14,7 @@ const ProjectsTemplate = ({ data }) => {
   const rootPath = sanityProjectPath.replace(/\/*$/, `/`) //Ensure trailing slash
   return (
     <Layout>
-      <SEO title={sanityProjectListTitle} />
+      <Seo title={sanityProjectListTitle} />
       {sanityDisplayProjectListTitle && (
         <Themed.h1>{sanityProjectListTitle}</Themed.h1>
       )}

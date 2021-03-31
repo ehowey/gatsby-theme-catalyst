@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { Layout, SEO } from "gatsby-theme-catalyst-core"
+import { Layout, Seo } from "gatsby-theme-catalyst-core"
 import { useCatalystBlogConfig } from "gatsby-theme-catalyst-blog"
 
 const PostsList = ({ posts }) => {
   const { postListTitle, displayPostListTitle } = useCatalystBlogConfig()
   return (
     <Layout>
-      <SEO title={postListTitle} />
+      <Seo title={postListTitle} />
       {displayPostListTitle ? <Themed.h1>{postListTitle}</Themed.h1> : null}
       {posts.map((post) => {
         const title = post.title || post.slug

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed, Button, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 import { FaRegClock } from "react-icons/fa"
@@ -76,7 +76,7 @@ const PostListTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={sanityPostListTitle} />
+      <Seo title={sanityPostListTitle} />
       {sanityDisplayPostListTitle && (
         <Themed.h1>{sanityPostListTitle}</Themed.h1>
       )}

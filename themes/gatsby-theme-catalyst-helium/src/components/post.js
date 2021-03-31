@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -10,7 +10,7 @@ import kebabCase from "lodash/kebabCase"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
-    <SEO
+    <Seo
       title={post.title}
       description={post.excerpt}
       image={post.socialImage.childImageSharp.seo}

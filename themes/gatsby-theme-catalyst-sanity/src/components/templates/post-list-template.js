@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
 const PostsTemplate = ({ data }) => {
@@ -15,7 +15,7 @@ const PostsTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={sanityPostListTitle} />
+      <Seo title={sanityPostListTitle} />
       {sanityDisplayPostListTitle && (
         <Themed.h1>{sanityPostListTitle}</Themed.h1>
       )}

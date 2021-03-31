@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage } from "gatsby-plugin-image"
 import PostFooter from "./post-footer"
@@ -10,7 +10,7 @@ import { FaRegClock } from "react-icons/fa"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
-    <SEO
+    <Seo
       title={post.title}
       description={post.excerpt}
       image={post.socialImage.childImageSharp.seo}

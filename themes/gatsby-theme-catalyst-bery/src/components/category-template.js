@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
 const CategoryPage = ({ posts, category }) => {
@@ -9,7 +9,7 @@ const CategoryPage = ({ posts, category }) => {
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
   return (
     <Layout>
-      <SEO title={"Category: " + category} />
+      <Seo title={"Category: " + category} />
       <Themed.h1>Category: {category}</Themed.h1>
       <Themed.ul>
         {posts.map((post) => (

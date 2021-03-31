@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
@@ -11,7 +11,7 @@ const PostTemplate = ({ data, previous, next }) => {
   const post = data.sanityPost
   return (
     <Layout>
-      <SEO
+      <Seo
         title={post.title}
         image={post.featuredImage}
         description={post.excerpt}

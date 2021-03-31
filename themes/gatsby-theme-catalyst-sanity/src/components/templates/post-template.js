@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { SanityContent, useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
 const PostTemplate = ({ data, previous, next }) => {
@@ -10,7 +10,7 @@ const PostTemplate = ({ data, previous, next }) => {
   const rootPath = sanityPostPath.replace(/\/*$/, `/`) //Ensure trailing slash
   return (
     <Layout>
-      <SEO title={post.title} />
+      <Seo title={post.title} />
       <Themed.h1>{post.title}</Themed.h1>
       <Themed.p>{post.date}</Themed.p>
       <SanityContent data={post._rawBody} />

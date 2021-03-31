@@ -1,3 +1,3 @@
-import SEO from "../../components/sanity/seo"
+import Seo from "../../components/sanity/seo"
 
-export default SEO
+export default Seo

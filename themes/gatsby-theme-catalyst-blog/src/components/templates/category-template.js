@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 
 const CategoryPage = ({ posts, category }) => {
   return (
     <Layout>
-      <SEO title={"Category: " + category} />
+      <Seo title={"Category: " + category} />
       <Themed.h1>Category: {category}</Themed.h1>
       <Themed.ul>
         {posts.map((post) => (

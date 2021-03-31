@@ -32,7 +32,7 @@ The following fields are available in front matter.
 | socialImage          | Yes       | String  | Social image to be used for the post                  |
 | slug                 | No        | String  | Optionally used to specify the link slug for the post |
 | categories           | Yes       | Array   | Categories for the post, ["cats", "dogs", "snakes"]   |
-| keywords             | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]       |
+| keywords             | No        | Array   | Keywords used for Seo, ["key1", "key2", "key3"]       |
 | draft                | No        | Boolean | Defaults to false, set to true if a post is a draft   |
 
 ## Theme options

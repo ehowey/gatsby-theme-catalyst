@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
-import { Layout, SEO } from "gatsby-theme-catalyst-core"
+import { Layout, Seo } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FaRegClock } from "react-icons/fa"
@@ -14,7 +14,7 @@ const PostsList = ({ posts }) => {
   const { useHero } = useHeliumConfig()
   return (
     <Layout>
-      <SEO title={postListTitle} />
+      <Seo title={postListTitle} />
       {useHero && <Hero />}
       <div
         sx={{
