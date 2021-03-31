@@ -3,7 +3,7 @@ import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import "fontsource-quando"
 
-export default merge(BaseTheme, {
+const theme = merge(BaseTheme, {
   // Modifications to the theme go here.
   fonts: {
     ...tailwind.fonts,
@@ -164,3 +164,5 @@ export default merge(BaseTheme, {
     },
   },
 })
+
+export default theme

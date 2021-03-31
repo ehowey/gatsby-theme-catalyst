@@ -3,7 +3,7 @@ import { baseColors, tailwind } from "@theme-ui/preset-tailwind"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import { darken } from "@theme-ui/color"
 
-export default merge(BaseTheme, {
+const theme = merge(BaseTheme, {
   colors: {
     primary: "#e6da00",
     secondary: "#9933CC",
@@ -189,3 +189,5 @@ export default merge(BaseTheme, {
     },
   },
 })
+
+export default theme
