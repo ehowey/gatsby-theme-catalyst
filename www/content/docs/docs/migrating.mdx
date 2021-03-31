@@ -11,6 +11,10 @@ This reviews any breaking changes. You can check the [changelog file](https://gi
 
 This is a doozy of an update but stay with me and you will get there in the end. Hopefully with minimal pain. If you run into any problems please submit an issue and I will do my best to help. You can view an [umbrella issue](https://github.com/ehowey/gatsby-theme-catalyst/issues/1179) of the move to v6.0 as well.
 
+### Unified versioning
+
+The themes and starters are now using unified versioning and are all at v6.0.0 (or above). For some of the packages this is a jump straight from v1.0 to v6.0, the reason for this is that I had one package which was already at v5.x so I had to move everything to v6.x.
+
 ### Part 1: Gatsby and Theme-UI
 
 1. Update all of your Gatsby related packages to their latest versions. Gatsby should be v3.x and above. All Gatsby-Theme-Catalyst packages should be v6.x and above.
@@ -20,6 +24,8 @@ This is a doozy of an update but stay with me and you will get there in the end.
 1. Upgrade to `gatsby-plugin-image`, you should be able to follow their [migration guide](https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/) and use the codemod to complete this pretty painlessly. You may need to go back and tweak/adjust after running the codemod but it should get you most of the way there.
 
 1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.6.x](https://theme-ui.com/migrating).
+
+1. Find and replace `SEO` with `Seo`, double check where this happens in your code base but you should be pretty safe to do this. This has been updated so that you do not get console warnings about using pascal case in components.
 
 1. Run `gatsby develop` and check to see if it builds successfully. You are going to notice a few more things that need to be changed but you should get a successful development build at this point.
 
@@ -45,7 +51,7 @@ In most cases, if you were using default options, this will all "just work". You
 - `footerContentLocation` and `useFooterSocialLinks` are now options for the footer theme
 - Removed options `invertLogo`, `displaySiteTitle`, `displaySiteTitleMobile`, `displaySiteLogo`, `displaySiteLogoMobile`. You can now do this all yourself completely custom in the shadowed components. See above for details.
 
-### Other minor breaking changes
+### Other breaking changes
 
 These should not affect most users, but could if you were doing some advanced stuff.
 
