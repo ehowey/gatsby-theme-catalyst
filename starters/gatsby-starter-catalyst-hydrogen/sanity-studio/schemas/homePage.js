@@ -10,7 +10,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Seo Title",
+      title: "SEO Title",
       description:
         "The title used by search engines in the search results, likely the same as your page title.",
       name: "seoTitle",
