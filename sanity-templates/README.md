@@ -1,3 +1,3 @@
 # SANITY Templates for Gatsby Theme Catalyst
 
-To do - add some info here.
+Repo for SANITY templates used in sanity.io/create. This repo is managed manually due to the complexity of the publish process for these templates.
