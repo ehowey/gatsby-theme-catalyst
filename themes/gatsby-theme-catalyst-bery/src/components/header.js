@@ -74,9 +74,10 @@ const SiteHeader = () => {
             sx={{
               height: ["70px", "120px", "150px", "200px", null],
               width: ["70px", "120px", "150px", "200px", null],
-              borderRadius: "9999em",
+              borderRadius: "50%",
               boxShadow: "lg",
             }}
+            imgStyle={{ borderRadius: "50%" }}
             alt={author.name}
           />
         </Themed.a>

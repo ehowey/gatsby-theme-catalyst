@@ -42,11 +42,12 @@ const Hero = () => {
             zIndex: 1,
             height: ["250px", null, "300px", null, null],
             width: ["250px", null, "300px", null, null],
-            borderRadius: "9999em",
+            borderRadius: "50%",
             borderColor: "primary",
             borderWidth: "4px",
             borderStyle: "solid",
           }}
+          imgStyle={{ borderRadius: "50%" }}
           alt="Catalyst Helium"
         />
         <div
