@@ -5,6 +5,8 @@ import { baseColors } from "@theme-ui/preset-tailwind"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
+// This is a component that is using component shadowing to shadow an empty Hero component from the base theme. Try playing around with this and modifying it to be a hero you like more!
+
 const Hero = () => {
   const data = useStaticQuery(graphql`
     {

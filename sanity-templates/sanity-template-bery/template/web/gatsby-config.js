@@ -41,7 +41,8 @@ module.exports = {
         // footerContentLocation: "center",
         // sanityPostListTitle: "Blog",
         // sanityPostListPath: `/`,
-        sanityProjectId: `4w5ygwpy`, // Required
+        sanityProjectId: "<#< sanity.projectId >#>",
+        sanityProjectDataset: "<#< sanity.dataset >#>",
         rssTitle: "My Great Blog",
         rssDescription: "A little description of who I am and why I am great.",
       },

@@ -84,7 +84,8 @@ module.exports = {
         // sanityDisplayPostListTitle: true
         // sanityProjectListTitle: "Projects"
         // sanityDisplayProjectListTitle: true
-        sanityProjectId: "p9a6h8j1",
+        sanityProjectId: "<#< sanity.projectId >#>",
+        sanityProjectDataset: "<#< sanity.dataset >#>",
       },
     },
     {
