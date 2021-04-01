@@ -31,12 +31,38 @@ module.exports = {
         // sanityProjectID: process.env.SANITY_PROJECT_ID,
         // sanityDataset: process.env.SANITY_DATASET
         //
-        // Default values
-        // sanityProjectId: REQUIRED,
-        // sanityDataset: "production",
-        // sanityToken: null,
-        // sanityWatchMode: true,
-        // sanityOverlayDrafts: false, // Requires a token and private dataset
+        // Default options are:
+        // Sanity Theme
+        // sanityProjectId: "abc123" // Required
+        // sanityDataset: "production"
+        // sanityToken: null
+        // sanityWatchMode: true
+        // sanityOverlayDrafts: false // Token is required for this
+        // sanityCreatePages: true
+        // sanityCreatePosts: true
+        // sanityCreatePostsList: true
+        // sanityCreateProjects: true
+        // sanityCreateProjectsList: true
+        // sanityPostPath: "/posts"
+        // sanityProjectPath: "/projects"
+        // sanityPostListTitle: "Posts"
+        // sanityDisplayPostListTitle: true
+        // sanityProjectListTitle: "Projects"
+        // sanityDisplayProjectListTitle: true
+        // Core Theme
+        // contentPath: `content/pages`,
+        // assetPath: `content/assets`,
+        // useKatex: false,
+        // remarkImagesWidth: 1440,
+        // imageQuality: 50,
+        // useAlertBanner: false,
+        // Footer Theme
+        // useFooterSocialLinks: true,
+        // footerContentLocation: "left", // "left", "right", "center"
+        // Header Theme
+        // useStickyHeader: false,
+        // useHeaderSocialLinks: true,
+        // useColorMode: true
         sanityProjectId: `pyvaull7`, // Required
         useColorMode: false,
       },
