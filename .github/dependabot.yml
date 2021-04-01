@@ -6,11 +6,13 @@ updates:
     directory: "/"
     # Check the npm registry for updates every day (weekdays)
     schedule:
-      interval: "daily"
+      interval: "monthly"
     versioning-strategy: increase
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 100
     labels:
       - "dependencies"
     ignore:
       # Ignore updates to package
       - dependency-name: "gatsby"
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
