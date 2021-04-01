@@ -1,24 +1,24 @@
 {
   "name": "gatsby-theme-catalyst-helium",
   "description": "Gatsby theme for a simple personal blog. MDX and git as the CMS. Support for featured images, social images, RSS Feed and more.",
-  "version": "3.1.7",
+  "version": "6.0.0-beta.0",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby-theme-catalyst-blog": "^2.6.9",
-    "gatsby-theme-catalyst-core": "^3.1.6",
-    "gatsby-theme-catalyst-footer": "^1.2.8",
-    "gatsby-theme-catalyst-header-bigtop": "^1.1.9"
+    "gatsby-theme-catalyst-blog": "^6.0.0-beta.0",
+    "gatsby-theme-catalyst-core": "^6.0.0-beta.0",
+    "gatsby-theme-catalyst-footer": "^6.0.0-beta.0",
+    "gatsby-theme-catalyst-header-bigtop": "^6.0.0-beta.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.24.58",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^3.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "gatsby": "^2.24.58",
+    "gatsby": "^3.2.0",
     "prettier": "^2.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "keywords": [
     "gatsby"
@@ -39,6 +39,5 @@
   },
   "bugs": {
     "url": "https://github.com/ehowey/gatsby-theme-catalyst/issues"
-  },
-  "gitHead": "4de61026e9b637eb5b1a983e83310cffd8268c07"
+  }
 }

@@ -4,7 +4,7 @@ import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 import "fontsource-sen/400.css"
 import "fontsource-sen/700.css"
 
-export default merge(BaseTheme, {
+const theme = merge(BaseTheme, {
   // Modifications to the base theme go here.
   breakpoints: ["480px", "768px", "1200px", "1440px"],
   fonts: {
@@ -104,3 +104,5 @@ export default merge(BaseTheme, {
     },
   },
 })
+
+export default theme

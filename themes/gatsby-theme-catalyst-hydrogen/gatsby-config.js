@@ -6,22 +6,27 @@ module.exports = (themeOptions) => {
         options: {
           contentPath: themeOptions.contentPath,
           assetPath: themeOptions.assetPath,
-          displaySiteLogo: themeOptions.displaySiteLogo || false,
-          displaySiteTitle: themeOptions.displaySiteTitle,
-          displaySiteLogoMobile: themeOptions.displaySiteLogoMobile || false,
-          displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
-          invertSiteLogo: themeOptions.invertSiteLogo,
-          useStickyHeader: themeOptions.useStickyHeader,
-          useSocialLinks: themeOptions.useSocialLinks,
-          useColorMode: themeOptions.useColorMode || false,
           useKatex: themeOptions.useKatex,
-          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
           remarkImagesWidth: themeOptions.remarkImagesWidth,
           imageQuality: themeOptions.imageQuality,
+          useAlertBanner: themeOptions.useAlertBanner,
         },
       },
-      `gatsby-theme-catalyst-header-top`,
-      `gatsby-theme-catalyst-footer`,
+      {
+        resolve: `gatsby-theme-catalyst-header-top`,
+        options: {
+          useStickyHeader: themeOptions.useStickyHeader,
+          useHeaderSocialLinks: themeOptions.useHeaderSocialLinks,
+          useColorMode: themeOptions.useColorMode,
+        },
+      },
+      {
+        resolve: `gatsby-theme-catalyst-footer`,
+        options: {
+          useFooterSocialLinks: themeOptions.useFooterSocialLinks,
+          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
+        },
+      },
       {
         resolve: `gatsby-theme-catalyst-sanity`,
         options: {

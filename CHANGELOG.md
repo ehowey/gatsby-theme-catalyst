@@ -2,6 +2,66 @@
 
 All notable changes to this project will be documented in this file
 
+## v6.0.0
+
+This is a doozy of an update but stay with me and you will get there in the end. Hopefully with minimal pain. If you run into any problems please submit an issue and I will do my best to help. You can view an [umbrella issue](https://github.com/ehowey/gatsby-theme-catalyst/issues/1179) of the move to v6.0 as well.
+
+### Unified versioning
+
+The themes and starters are now using unified versioning and are all at v6.0.0 (or above). For some of the packages this is a jump straight from v1.0 to v6.0, the reason for this is that I had one package which was already at v5.x so I had to move everything to v6.x.
+
+### Part 1: Gatsby and Theme-UI
+
+1. Update all of your Gatsby related packages to their latest versions. Gatsby should be v3.x and above. All Gatsby-Theme-Catalyst packages should be v6.x and above.
+
+1. Run `gatsby clean` in your project root, this is going to help prevent any issues down the line for us with images.
+
+1. Upgrade to `gatsby-plugin-image`, you should be able to follow their [migration guide](https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/) and use the codemod to complete this pretty painlessly. You may need to go back and tweak/adjust after running the codemod but it should get you most of the way there.
+
+1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.6.x](https://theme-ui.com/migrating).
+
+1. Find and replace `SEO` with `Seo`, double check where this happens in your code base but you should be pretty safe to do this. This has been updated so that you do not get console warnings about using pascal case in components.
+
+1. Run `gatsby develop` and check to see if it builds successfully. You are going to notice a few more things that need to be changed but you should get a successful development build at this point.
+
+### Part 2: Branding component
+
+Customizing logo and branding was more of a headache than it needed to be in past versions with too many fancy API options like `displaySiteTitleMobile` to try and give you more flexibility. It wasn't worth it. I refactored this to use component shadowing to put full power back in the hands of the developer for site branding.
+
+1. Copy and paste the `src/components/header/branding.js` file from one of the starters into your site.
+1. Copy and paste the `src/gatsby-theme-catalyst-header-top/branding.js` file from one of the starters into your site. You may need to modify this name to match the shadowed header theme, e.g. header-bigtop instead of header-top if that is the header theme you are using.
+
+A few notes on the changes:
+
+- Logo sizing is now coded directly into this branding component and now longer sourced from Theme-UI, again this gives you more options for customization and direct presentational control.
+- Removed API options `invertLogo`, `displaySiteTitle`, `displaySiteTitleMobile`, `displaySiteLogo`, `displaySiteLogoMobile`. You can now do this all yourself in the shadowed component using plain CSS.
+- Take a look at [gatsby-starter-catalyst](https://github.com/ehowey/gatsby-theme-catalyst/tree/next/starters/gatsby-starter-catalyst/src/components/header) to see how this is done. Also note the [shadowing of the branding component](https://github.com/ehowey/gatsby-theme-catalyst/tree/next/starters/gatsby-starter-catalyst/src/gatsby-theme-catalyst-header-top/components) as well.
+
+### Part 3: API Reorganization
+
+In most cases, if you were using default options, this will all "just work". You will only need to check this if you were specifying some custom options. The main change is that I moved API options to their respective themes, e.g. `footerContentLocation` is now an option for the footer theme and not the core theme. This will give me more flexibility in the future and is more intuitive. The updated theme options are documented in the `Readme.md` files of the respective themes.
+
+- `useSocialLinks` renamed to `useHeaderSocialLinks` and `useFooterSocialLinks`
+- `useColorMode`, `useHeaderSocialLinks`, and `useStickyHeader` are now options for respective header themes. Note that gatsby-theme-catalyst-header-bigtop does not have a sticky option.
+- `footerContentLocation` and `useFooterSocialLinks` are now options for the footer theme
+- Removed options `invertLogo`, `displaySiteTitle`, `displaySiteTitleMobile`, `displaySiteLogo`, `displaySiteLogoMobile`. You can now do this all yourself completely custom in the shadowed components. See above for details.
+
+### Other breaking changes
+
+These should not affect most users, but could if you were doing some advanced stuff.
+
+- Removal of `react-scroll` and reorganization/simplification of the nav components as a result. If you were using anchor links make sure they are linking as `/#anchor-link` including the slash so it works properly with Gatsby Link component. You can also remove the `type` field from your links in gatsby-config. For most users this won't be a breaking change, but if you were doing some advanced component shadowing based on existing theme files in the nav you would need to change a file name.
+- Removal of `HomeContext`, not needed now that react-scroll is gone. If you were using this you can re-implement this yourself using the code that was there previously.
+- Move from normalize.css to modern-normalize.css
+- Removed SanityThemeProvider which was experimental and never got working the way I wanted it to. This might come back again in the future but has always been marked experimental.
+
+### Other notable changes
+
+- Added `rssDescription` theme option that was missing to the blog theme
+- Added `useAlertBanner` theme option for the core theme which inserts a banner overtop of your site that can be customized with component shadowing.
+- Improved a11y for the header themes
+- Added `framer-motion` as a dependency to the core theme as I am using it in multiple places now and will likely use it more in the future for other animations
+
 ## catalyst-core v3.1.0
 
 - Adds in the `imageQuality` theme option which allows you to specify an image quality for your images other than the default `50`. Values between 0 - 100 will work.
@@ -70,10 +130,10 @@ buttons: {
 
 ## catalyst-sanity v3.2.0
 
-- Adds support for the image prop to be used in the SEO component with SANITY.io. You can see an example of this in the `post-template.js` component within `gatsby-theme-catalyst-bery`. You pass it the root image node and it will automatically seek out the proper url and sizing. E.g. if your image node was called `socialImage` you would do something like this:
+- Adds support for the image prop to be used in the Seo component with SANITY.io. You can see an example of this in the `post-template.js` component within `gatsby-theme-catalyst-bery`. You pass it the root image node and it will automatically seek out the proper url and sizing. E.g. if your image node was called `socialImage` you would do something like this:
 
 ```jsx
-<SEO title={post.title} description={post.excerpt} image={post.socialImage} />
+<Seo title={post.title} description={post.excerpt} image={post.socialImage} />
 ```
 
 ## catalyst-helium, catalyst-lithium v 2.1.0
@@ -143,7 +203,7 @@ dark: {
 
 ## catalyst-core v1.3.0
 
-- Added `useKatex` theme option to allow enabling `gatsby-remark-katex` in the themes for prettier math equations. Katex has specific CSS that it needs loaded. This CSS is loaded conditionally in the SEO component (which is really `react-helmet`), so you need to be calling the SEO component in the template/page you are using for the math equations to render properly. This would only be an issue in more custom work with complex component shadowing - you would have the SEO component on every page of your site in most cases.
+- Added `useKatex` theme option to allow enabling `gatsby-remark-katex` in the themes for prettier math equations. Katex has specific CSS that it needs loaded. This CSS is loaded conditionally in the Seo component (which is really `react-helmet`), so you need to be calling the Seo component in the template/page you are using for the math equations to render properly. This would only be an issue in more custom work with complex component shadowing - you would have the Seo component on every page of your site in most cases.
 
 - This trigged minor version bumps for all other affected themes and starters, e.g. `gatsby-theme-catalyst-helium` includes this as of v1.1.0
 
@@ -179,7 +239,7 @@ If you are wanting to implement styles on your blog but retain full control, loo
 
 - Added additional remark plugins and documentation about these plugins in the docs for the core theme. No breaking changes. Now supports relative image paths, and external links from markdown target "\_blank"
 - Added a theme option `remarkImagesWidth` to the core theme to allow for customization of the max width generated by `gatsby-remark-images`. The default value remains 1440px.
-- Added canonical links to the SEO component, these are generated automatically based on the page path - this _assumes_ that you have only one version of a page. For example your blog post is only at www.mysite.com/blog/my-post/. You would need to develop a more complex solution if you have pages at multiple slugs in your site. See [https://joshwcomeau.com/gatsby/seo-friendly-sitemap/](https://joshwcomeau.com/gatsby/seo-friendly-sitemap/) for more details on doing this for more complex sites.
+- Added canonical links to the Seo component, these are generated automatically based on the page path - this _assumes_ that you have only one version of a page. For example your blog post is only at www.mysite.com/blog/my-post/. You would need to develop a more complex solution if you have pages at multiple slugs in your site. See [https://joshwcomeau.com/gatsby/seo-friendly-sitemap/](https://joshwcomeau.com/gatsby/seo-friendly-sitemap/) for more details on doing this for more complex sites.
 
 ## v1.0.0
 

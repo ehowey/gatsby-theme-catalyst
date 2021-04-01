@@ -5,9 +5,11 @@ export const useSiteMetadata = () => {
       query SiteMetaData {
         logo: file(name: { eq: "catalyst-site-logo" }) {
           childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(
+              height: 300
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
           }
         }
         seoImage: file(name: { eq: "catalyst-site-social" }) {
@@ -29,12 +31,10 @@ export const useSiteMetadata = () => {
             menuLinks {
               name
               link
-              type
               location
               subMenu {
                 link
                 name
-                type
               }
             }
             socialLinks {
@@ -48,7 +48,7 @@ export const useSiteMetadata = () => {
     `
   )
 
-  const logo = data.logo.childImageSharp.fluid
+  const logo = data.logo.childImageSharp.gatsbyImageData
   const seoImage = data.seoImage.childImageSharp.resize
   const metaData = data.site.siteMetadata
   const twitterLink = data.site.siteMetadata.socialLinks

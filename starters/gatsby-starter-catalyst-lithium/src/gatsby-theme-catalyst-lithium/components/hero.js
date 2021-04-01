@@ -1,25 +1,23 @@
 /** @jsx jsx */
-import { jsx, Styled, Button } from "theme-ui"
+import { jsx, Themed, Button } from "theme-ui"
 import { darken } from "@theme-ui/color"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { RoughNotation } from "react-rough-notation"
 import { useHasMounted } from "gatsby-theme-catalyst-core"
 import { Fragment } from "react"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       heroImage: file(relativePath: { eq: "hero-image.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
   `)
-  const heroImage = data.heroImage.childImageSharp.fluid
+  const heroImage = data.heroImage.childImageSharp.gatsbyImageData
   const hasMounted = useHasMounted()
   return (
     <div
@@ -39,8 +37,8 @@ const Hero = () => {
           mx: [3, null, 5, null, null],
         }}
       >
-        <Img
-          fluid={heroImage}
+        <GatsbyImage
+          image={heroImage}
           imgStyle={{ objectFit: "contain" }}
           sx={{
             gridColumn: ["1 / -1", null, "2 / 3", null, null],
@@ -54,7 +52,7 @@ const Hero = () => {
             gridRow: ["2 / 3", null, "1 / 2", null, null],
           }}
         >
-          <Styled.p sx={{ fontSize: [3, null, null, null, 4] }}>
+          <Themed.p sx={{ fontSize: [3, null, null, null, 4] }}>
             I grow vegetables, flowers and community. I build remarkable online
             experiences focused on{" "}
             {hasMounted ? (
@@ -70,7 +68,7 @@ const Hero = () => {
             ) : (
               "connection and belonging."
             )}
-          </Styled.p>
+          </Themed.p>
           <Button
             as={Link}
             to="/contact"

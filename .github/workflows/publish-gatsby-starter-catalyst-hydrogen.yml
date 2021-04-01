@@ -1,8 +1,9 @@
 name: Publish Gatsby-Starter-Catalyst-Hydrogen
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
     paths:
       - "starters/gatsby-starter-catalyst-hydrogen/**"
       - ".github/**"

@@ -1,54 +1,41 @@
 /** @jsx jsx */
-import { jsx, Styled, Grid } from "theme-ui"
+import { jsx, Grid, Themed } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import FeatureCard from "./feature-card"
 
 const Features = () => {
   const data = useStaticQuery(
     graphql`
-      query {
-        layout: file(relativePath: { eq: "gatsby-starter-catalyst.jpg" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        sanity: file(relativePath: { eq: "sanity-studio.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        presentation: file(
-          relativePath: { eq: "gatsby-starter-hydrogen.jpg" }
-        ) {
-          childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
+      {
         themeui: file(relativePath: { eq: "theme-ui.png" }) {
           childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(height: 512, layout: CONSTRAINED)
           }
         }
-        themeoptions: file(relativePath: { eq: "theme-options.jpg" }) {
+        sanity: file(relativePath: { eq: "sanity-logo.png" }) {
           childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(height: 512, layout: CONSTRAINED)
           }
         }
         mdx: file(relativePath: { eq: "mdx-logo.png" }) {
           childImageSharp {
-            fluid(maxHeight: 512) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(height: 512, layout: CONSTRAINED)
+          }
+        }
+        framer: file(relativePath: { eq: "framer-logo.png" }) {
+          childImageSharp {
+            gatsbyImageData(height: 512, layout: CONSTRAINED)
+          }
+        }
+        stripe: file(relativePath: { eq: "stripe-logo.png" }) {
+          childImageSharp {
+            gatsbyImageData(height: 512, layout: CONSTRAINED)
+          }
+        }
+        netlify: file(relativePath: { eq: "netlify-logo.png" }) {
+          childImageSharp {
+            gatsbyImageData(height: 512, layout: CONSTRAINED)
           }
         }
       }
@@ -66,45 +53,40 @@ const Features = () => {
     >
       <Grid
         columns={[1, null, 2, 3, null]}
-        gap={4}
+        gap={5}
         sx={{
           margin: "0 auto",
           maxWidth: "maxPageWidth",
         }}
       >
+        <FeatureCard
+          image={data.mdx.childImageSharp.gatsbyImageData}
+          title="MDX"
+          text="MDX lets you seamlessly write JSX in your Markdown documents. It is the default content authoring format in Gatsby Theme Catalyst."
+        />
+        <FeatureCard
+          image={data.sanity.childImageSharp.gatsbyImageData}
+          title="SANITY.io"
+          text="SANITY.io is used as an optional backend adding an extendable and powerful headless CMS and database solution at your fingertips."
+        />
+        <FeatureCard
+          image={data.themeui.childImageSharp.gatsbyImageData}
+          title="Theme-UI"
+          text="Theme UI is used for styling enabling a consistent visual design language through a global context aware theme file."
+        />
+        <FeatureCard
+          image={data.framer.childImageSharp.gatsbyImageData}
+          title="Framer Motion"
+          text="Framer Motion is used as the default animation library due to the intuitive API and excellent documentation."
+        />
         <div>
-          <Img fluid={data.layout.childImageSharp.fluid} alt="Layout theme" />
-          <Styled.h3
-            sx={{
-              fontSize: 4,
-              mb: 3,
-              "::after": {
-                display: "block",
-                content: '""',
-                width: "40px",
-                pt: 1,
-                borderBottomStyle: "solid",
-                borderBottomWidth: "4px",
-                borderBottomColor: "primary",
-              },
-            }}
-          >
-            Layout Themes
-          </Styled.h3>
-          <Styled.p>
-            Minimally styled themes that focus on layout, function, and utility
-            components. These can be used as a solid foundation to build a fully
-            custom site.
-          </Styled.p>
-        </div>
-        <div>
-          <Img
-            fluid={data.sanity.childImageSharp.fluid}
-            alt="Sanity Studio Dashboard"
+          <GatsbyImage
+            image={data.stripe.childImageSharp.gatsbyImageData}
+            alt="Stripe"
           />
-          <Styled.h3
+          <Themed.h3
             sx={{
-              fontSize: 4,
+              fontSize: 3,
               mb: 3,
               "::after": {
                 display: "block",
@@ -112,124 +94,33 @@ const Features = () => {
                 width: "40px",
                 pt: 1,
                 borderBottomStyle: "solid",
-                borderBottomWidth: "4px",
+                borderBottomWidth: "2px",
                 borderBottomColor: "primary",
               },
             }}
           >
-            Data Themes
-          </Styled.h3>
-          <Styled.p>
-            Adds an optional data structure on top of the layout themes to
-            provide additional content authoring experiences. SANITY.io and an
-            MDX blog are currently supported this way.
-          </Styled.p>
+            Stripe
+          </Themed.h3>
+          <Themed.p>
+            Stripe is used with{" "}
+            <Themed.a href="https://useshoppingcart.com/">
+              use-shopping-cart
+            </Themed.a>{" "}
+            to provide basic e-commerce integration for when you just need to
+            make some money!
+          </Themed.p>
         </div>
-        <div>
-          <Img
-            fluid={data.presentation.childImageSharp.fluid}
-            alt="Presentation Theme"
-          />
-          <Styled.h3
-            sx={{
-              fontSize: 4,
-              mb: 3,
-              "::after": {
-                display: "block",
-                content: '""',
-                width: "40px",
-                pt: 1,
-                borderBottomStyle: "solid",
-                borderBottomWidth: "4px",
-                borderBottomColor: "primary",
-              },
-            }}
-          >
-            Presentation Themes
-          </Styled.h3>
-          <Styled.p>
-            Adds visual components and specialized layouts like a custom home
-            page. These themes are designed to be modified for branding (colors,
-            logos, fonts, etc).
-          </Styled.p>
-        </div>
-        <div>
-          <Img fluid={data.themeui.childImageSharp.fluid} alt="Theme UI Logo" />
-          <Styled.h3
-            sx={{
-              fontSize: 4,
-              mb: 3,
-              "::after": {
-                display: "block",
-                content: '""',
-                width: "40px",
-                pt: 1,
-                borderBottomStyle: "solid",
-                borderBottomWidth: "4px",
-                borderBottomColor: "primary",
-              },
-            }}
-          >
-            Theme-UI
-          </Styled.h3>
-          <Styled.p>
-            Theme UI enables you to quickly customize the visual design of your
-            user interfaces using key-value pairs to modify colors, fonts,
-            spacings, and more.
-          </Styled.p>
-        </div>
-        <div>
-          <Img fluid={data.mdx.childImageSharp.fluid} alt="MDX Logo" />
-          <Styled.h3
-            sx={{
-              fontSize: 4,
-              mb: 3,
-              "::after": {
-                display: "block",
-                content: '""',
-                width: "40px",
-                pt: 1,
-                borderBottomStyle: "solid",
-                borderBottomWidth: "4px",
-                borderBottomColor: "primary",
-              },
-            }}
-          >
-            MDX
-          </Styled.h3>
-          <Styled.p>
-            MDX lets you seamlessly write JSX in your Markdown documents. It is
-            the default content authoring format in Gatsby Theme Catalyst.
-          </Styled.p>
-        </div>
-        <div>
-          <Img
-            fluid={data.themeoptions.childImageSharp.fluid}
-            alt="Example of theme options"
-          />
-          <Styled.h3
-            sx={{
-              fontSize: 4,
-              mb: 3,
-              "::after": {
-                display: "block",
-                content: '""',
-                width: "40px",
-                pt: 1,
-                borderBottomStyle: "solid",
-                borderBottomWidth: "4px",
-                borderBottomColor: "primary",
-              },
-            }}
-          >
-            Theme Options
-          </Styled.h3>
-          <Styled.p>
-            Theme options are used as feature flags to toggle small changes to
-            your design, like displaying social media links, without having to
-            rewrite code.
-          </Styled.p>
-        </div>
+        {/* <FeatureCard
+          image={data.stripe.childImageSharp.gatsbyImageData}
+          title="Stripe"
+          text={`Stripe is used with
+          )}to provide a basic e-commerce integration for when you just need to make some money!`}
+        /> */}
+        <FeatureCard
+          image={data.netlify.childImageSharp.gatsbyImageData}
+          title="Netlify"
+          text="Netlify functions are used to provide cart validation and manage purchases when integrating with Stripe."
+        />
       </Grid>
     </div>
   )

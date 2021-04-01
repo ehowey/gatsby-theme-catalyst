@@ -1,28 +1,19 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from "theme-ui"
-import {
-  useSiteMetadata,
-  useCatalystConfig,
-  SocialFooter,
-} from "gatsby-theme-catalyst-core"
+import { useSiteMetadata, SocialFooter } from "gatsby-theme-catalyst-core"
 import { IconContext } from "react-icons"
 import { baseColors } from "@theme-ui/preset-tailwind"
 
 const SiteFooter = () => {
   const { title } = useSiteMetadata()
-  const { footerContentLocation } = useCatalystConfig()
   const { theme } = useThemeUI()
-  const isLeft = footerContentLocation === "left"
-  const isRight = footerContentLocation === "right"
-  const isCenter = footerContentLocation === "center"
 
   return (
     <footer
       sx={{
         color: baseColors.gray[8],
         backgroundColor: "footer.background",
-        textAlign:
-          (isLeft && "left") || (isRight && "right") || (isCenter && "center"),
+        textAlign: "right",
         px: 3,
         py: 3,
         gridArea: "footer",
@@ -36,8 +27,7 @@ const SiteFooter = () => {
         sx={{
           display: "grid",
           alignContent: "center",
-          justifyContent:
-            (isLeft && "start") || (isRight && "end") || (isCenter && "center"),
+          justifyContent: "right",
           width: "100%",
           maxWidth: "maxPageWidth",
           mx: "auto",

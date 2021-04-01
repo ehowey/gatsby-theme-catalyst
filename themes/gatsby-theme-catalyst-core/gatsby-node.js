@@ -69,14 +69,12 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MenuLinks {
       name: String!
       link: String!
-      type: String!
       location: String! @defaultRightLocation
       subMenu: [SubMenu] @defaultSubMenu
     }
     type SubMenu {
       name: String
       link: String
-      type: String
     }
     type SocialLinks {
       name: String
@@ -89,16 +87,8 @@ exports.createSchemaCustomization = ({ actions }) => {
   type CatalystConfig implements Node {
     contentPath: String!
     assetPath: String!
-    displaySiteLogo: Boolean!
-    displaySiteTitle: Boolean!
-    displaySiteLogoMobile: Boolean!
-    displaySiteTitleMobile: Boolean!
-    invertSiteLogo: Boolean!
-    useStickyHeader: Boolean!
-    useSocialLinks: Boolean!
-    useColorMode: Boolean!
-    footerContentLocation: String!
     useKatex: Boolean!
+    useAlertBanner: Boolean!
   }
   `
   createTypes(siteMetadataTypeDefs)
@@ -110,32 +100,16 @@ exports.sourceNodes = (
   {
     contentPath = "content/pages",
     assetPath = "content/assets",
-    displaySiteLogo = true,
-    displaySiteTitle = true,
-    displaySiteLogoMobile = true,
-    displaySiteTitleMobile = true,
-    invertSiteLogo = false,
-    useStickyHeader = false,
-    useSocialLinks = true,
-    useColorMode = true,
-    footerContentLocation = "left",
     useKatex = false,
+    useAlertBanner = false,
   }
 ) => {
   // create garden data from plugin config
   const catalystConfigFieldData = {
     contentPath,
     assetPath,
-    displaySiteLogo,
-    displaySiteTitle,
-    displaySiteLogoMobile,
-    displaySiteTitleMobile,
-    invertSiteLogo,
-    useStickyHeader,
-    useSocialLinks,
-    useColorMode,
-    footerContentLocation,
     useKatex,
+    useAlertBanner,
   }
   createNode({
     ...catalystConfigFieldData,

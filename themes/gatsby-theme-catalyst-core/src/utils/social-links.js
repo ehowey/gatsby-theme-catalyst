@@ -1,7 +1,6 @@
 /**@jsx jsx */
 import { jsx } from "theme-ui"
 import { useSiteMetadata } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import {
   FaRegEnvelope,
   FaTwitter,
@@ -40,10 +39,7 @@ import {
 
 export const SocialHeader = () => {
   const { socialLinks } = useSiteMetadata()
-  const { useSocialLinks } = useCatalystConfig()
-  if (useSocialLinks === false) {
-    return null
-  }
+
   return socialLinks.map((platform) => {
     let socialName = platform.name.toLowerCase()
     let socialLocation = platform.location.toLowerCase()
@@ -562,10 +558,6 @@ export const SocialHeader = () => {
 
 export const SocialFooter = () => {
   const { socialLinks } = useSiteMetadata()
-  const { useSocialLinks } = useCatalystConfig()
-  if (useSocialLinks === false) {
-    return null
-  }
 
   return socialLinks.map((platform) => {
     let socialName = platform.name.toLowerCase()

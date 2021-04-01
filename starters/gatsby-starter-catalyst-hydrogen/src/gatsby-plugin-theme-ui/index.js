@@ -2,7 +2,7 @@ import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import { baseColors } from "@theme-ui/preset-tailwind"
 
-export default merge(BaseTheme, {
+const theme = merge(BaseTheme, {
   colors: {
     primary: baseColors.red[8],
     secondary: baseColors.red[5],
@@ -106,3 +106,5 @@ export default merge(BaseTheme, {
     },
   },
 })
+
+export default theme

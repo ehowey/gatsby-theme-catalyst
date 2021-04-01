@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import ButtonPrimary from "../button-primary"
 import ButtonSecondary from "../button-secondary"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
@@ -15,9 +15,7 @@ const Hero = () => {
           _rawHeroText
           heroImage {
             asset {
-              fluid(maxWidth: 1024) {
-                ...GatsbySanityImageFluid
-              }
+              gatsbyImageData
             }
           }
         }
@@ -54,12 +52,12 @@ const Hero = () => {
             my: 0,
           }}
         >
-          <Img
+          <GatsbyImage
+            image={hero.heroImage.asset.gatsbyImageData}
             sx={{
               width: "100%",
               height: ["300px", null, "auto", null, null],
             }}
-            fluid={hero.heroImage.asset.fluid}
             alt={hero.heroTitle}
           />
           <div

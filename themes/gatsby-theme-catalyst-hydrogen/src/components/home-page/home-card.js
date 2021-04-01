@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import Img from "gatsby-image"
+import { jsx, Themed } from "theme-ui"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { truncate } from "lodash"
 
 const Card = ({ title, image, publisher, date, link, excerpt }) => {
@@ -19,14 +19,14 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
       }}
       key={title}
     >
-      <Img
+      <GatsbyImage
+        image={image}
         sx={{
           mr: [0, null, 3, null, null],
           maxWidth: ["100%", null, "250px", null, null],
           maxHeight: ["250px", null, "100%", null, null],
           flex: "1",
         }}
-        fluid={image}
         alt={title}
       />
       <div
@@ -45,7 +45,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
         >
           {publisher} &middot; {date}
         </p>
-        <Styled.h3
+        <Themed.h3
           sx={{
             mt: 0,
           }}
@@ -64,7 +64,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
           >
             {title}
           </a>
-        </Styled.h3>
+        </Themed.h3>
         <p>{truncate(excerpt, { length: 300, separator: " " })}</p>
         <a
           sx={{

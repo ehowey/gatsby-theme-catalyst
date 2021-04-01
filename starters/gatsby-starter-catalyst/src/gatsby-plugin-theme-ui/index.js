@@ -2,7 +2,7 @@ import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 
-export default merge(BaseTheme, {
+const theme = merge(BaseTheme, {
   // Modifications to the base theme go here. This is an example changing colors and using variants to change your navigation links. Uncomment the code below to see what happens.
   colors: {
     ...tailwind.colors,
@@ -20,7 +20,7 @@ export default merge(BaseTheme, {
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
       icons: baseColors.gray[6],
-      iconsOpen: baseColors.gray[8],
+      iconsOpen: baseColors.gray[6],
     },
     footer: {
       background: baseColors.gray[2],
@@ -62,3 +62,5 @@ export default merge(BaseTheme, {
     },
   },
 })
+
+export default theme

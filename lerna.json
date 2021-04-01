@@ -2,12 +2,5 @@
   "packages": ["themes/*"],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "independent",
-  "command": {
-    "publish": {
-      "conventionalCommits": true,
-      "message": "chore(release): publish",
-      "create-release": "github"
-    }
-  }
+  "version": "independent"
 }

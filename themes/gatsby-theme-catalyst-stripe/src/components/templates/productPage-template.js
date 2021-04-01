@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { jsx, Themed } from "theme-ui"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 
 const ProductPageTemplate = ({ data }) => {
   const product = data.sanityProduct
   return (
     <Layout>
-      <SEO title={product.name} />
-      <Styled.h1>{product.name}</Styled.h1>
+      <Seo title={product.name} />
+      <Themed.h1>{product.name}</Themed.h1>
     </Layout>
   )
 }

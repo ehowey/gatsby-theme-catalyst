@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const FeaturedLogos = () => {
   const data = useStaticQuery(graphql`
@@ -19,9 +19,7 @@ const FeaturedLogos = () => {
           link
           logo {
             asset {
-              fixed(width: 80, height: 80) {
-                ...GatsbySanityImageFixed
-              }
+              gatsbyImageData
             }
           }
         }
@@ -33,7 +31,7 @@ const FeaturedLogos = () => {
 
   return (
     <Fragment>
-      <Styled.h2>{result.logoTitle}</Styled.h2>
+      <Themed.h2>{result.logoTitle}</Themed.h2>
       <div
         sx={{
           mt: 4,
@@ -45,14 +43,15 @@ const FeaturedLogos = () => {
           gridGap: ["1rem", null, "2rem", null, null],
         }}
       >
-        {logos.map(logo => (
+        {logos.map((logo) => (
           <a
             key={logo.id}
             href={logo.link}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <GatsbyImage
+              image={logo.logo.asset.gatsbyImageData}
               sx={{
                 transition: "all 0.3s ease 0s",
                 ":hover": {
@@ -60,7 +59,6 @@ const FeaturedLogos = () => {
                   transform: "translateY(-3px)",
                 },
               }}
-              fixed={logo.logo.asset.fixed}
               alt={logo.altText}
             />
           </a>

@@ -1,8 +1,9 @@
 name: Publish Gatsby-Starter-Catalyst-Sanity
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
     paths:
       - "starters/gatsby-starter-catalyst-sanity/**"
       - ".github/**"

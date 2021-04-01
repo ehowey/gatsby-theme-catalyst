@@ -6,16 +6,8 @@ export const useCatalystConfig = () => {
         catalystConfig {
           contentPath
           assetPath
-          displaySiteLogo
-          displaySiteTitle
-          displaySiteLogoMobile
-          displaySiteTitleMobile
-          invertSiteLogo
-          useStickyHeader
-          useSocialLinks
-          useColorMode
-          footerContentLocation
           useKatex
+          useAlertBanner
         }
       }
     `

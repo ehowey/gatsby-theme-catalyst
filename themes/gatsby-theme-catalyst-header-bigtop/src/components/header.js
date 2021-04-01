@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import Branding from "./branding/branding"
-import Nav from "./navbar/nav"
-import NavIcons from "./navbar/nav-icons"
-import MobileButton from "./navbar/nav-mobile-button"
+import Branding from "./branding"
+import Nav from "./nav"
+import SocialIcons from "./social-icons"
+import HamburgerButton from "./hamburger-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
 
 const SiteHeader = () => {
@@ -55,10 +55,10 @@ const SiteHeader = () => {
           ],
         }}
       >
-        <NavIcons />
+        <SocialIcons />
         <Branding />
         <Nav />
-        <MobileButton />
+        <HamburgerButton />
       </div>
     </header>
   )

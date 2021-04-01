@@ -6,21 +6,19 @@ module.exports = (themeOptions) => {
         options: {
           contentPath: themeOptions.contentPath,
           assetPath: themeOptions.assetPath,
-          displaySiteLogo: themeOptions.displaySiteLogo,
-          displaySiteTitle: themeOptions.displaySiteTitle,
-          displaySiteLogoMobile: themeOptions.displaySiteLogoMobile,
-          displaySiteTitleMobile: themeOptions.displaySiteTitleMobile,
-          invertSiteLogo: themeOptions.invertSiteLogo,
-          useStickyHeader: themeOptions.useStickyHeader,
-          useSocialLinks: themeOptions.useSocialLinks,
-          useColorMode: themeOptions.useColorMode,
           useKatex: themeOptions.useKatex,
-          footerContentLocation: themeOptions.footerContentLocation || "center", // "left", "right", "center"
           remarkImagesWidth: themeOptions.remarkImagesWidth,
           imageQuality: themeOptions.imageQuality,
+          useAlertBanner: themeOptions.useAlertBanner,
         },
       },
-      `gatsby-theme-catalyst-footer`,
+      {
+        resolve: `gatsby-theme-catalyst-footer`,
+        options: {
+          useFooterSocialLinks: themeOptions.useFooterSocialLinks,
+          footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
+        },
+      },
       {
         resolve: `gatsby-theme-catalyst-sanity`,
         options: {

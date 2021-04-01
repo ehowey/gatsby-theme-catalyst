@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { useState, useEffect } from "react"
 import Img from "gatsby-image"
 import { useShoppingCart } from "use-shopping-cart"
@@ -67,7 +67,7 @@ const Product = ({ product: propProduct }) => {
 
   return (
     <div>
-      <Styled.h3>{productName}</Styled.h3>
+      <Themed.h3>{productName}</Themed.h3>
       <Img fluid={productImage} sx={{ width: "200px", height: "200px" }} />
       <p>{stockStatus}</p>
       <p>{productPrice}</p>

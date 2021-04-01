@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
 import { Button } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
@@ -16,7 +16,6 @@ const Hero = () => {
         width: "100vw",
         position: "relative",
         left: "calc(-50vw + 50%)",
-        mt: -3,
         py: 4,
         px: 3,
         mb: 4,
@@ -49,7 +48,7 @@ const Hero = () => {
         alt="Gatsby Theme Catalyst Logo"
         sx={{ width: "180px" }}
       />
-      <Styled.h1
+      <Themed.h1
         sx={{
           textTransform: "uppercase",
           textAlign: "center",
@@ -62,20 +61,53 @@ const Hero = () => {
         }}
       >
         Gatsby Theme Catalyst
-      </Styled.h1>
-      <Styled.inlineCode
+      </Themed.h1>
+      <Themed.inlineCode
         sx={{
-          mb: 4,
+          mb: 0,
+          px: 2,
           bg: baseColors.gray[8],
           color: baseColors.gray[1],
           wordWrap: "break-word",
           textOverflow: "wrap",
           overflowWrap: "break-word",
           wordBreak: "break-word",
+          lineHeight: "tight",
         }}
       >
         gatsby new catalyst ehowey/gatsby-starter-catalyst
-      </Styled.inlineCode>
+      </Themed.inlineCode>
+      <Themed.p
+        sx={{
+          fonmtSize: 3,
+          my: 1,
+          textTransform: "uppercase",
+          fontWeight: "bold",
+        }}
+      >
+        or
+      </Themed.p>
+      <Themed.p
+        sx={{
+          mt: 0,
+          mb: 4,
+          px: 2,
+          bg: baseColors.gray[8],
+          lineHeight: "tight",
+        }}
+      >
+        <Themed.a
+          href="https://www.sanity.io/create?template=ehowey%2Fsanity-template-catalyst"
+          sx={{
+            color: baseColors.gray[1],
+            fontFamily: "monospace",
+            fontSize: 1,
+          }}
+        >
+          sanity.io/create?template=ehowey/sanity-template-catalyst
+        </Themed.a>
+      </Themed.p>
+
       <nav sx={{ width: ["100%", "auto", null, null, null] }}>
         <ul
           sx={{

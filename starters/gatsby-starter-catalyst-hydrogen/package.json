@@ -1,14 +1,14 @@
 {
   "name": "gatsby-starter-catalyst-hydrogen",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Hydrogen",
-  "version": "5.1.7",
+  "version": "6.0.0-beta.0",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby": "^2.24.58",
-    "gatsby-theme-catalyst-hydrogen": "^5.1.7",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^3.2.0",
+    "gatsby-theme-catalyst-hydrogen": "^6.0.0-beta.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1"

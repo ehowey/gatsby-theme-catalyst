@@ -1,16 +1,15 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from "theme-ui"
+import { jsx } from "theme-ui"
 import { useContext } from "react"
-import Branding from "./branding/branding"
-import Nav from "./navbar/nav"
-import MobileButton from "./navbar/nav-mobile-button"
+import Branding from "./branding"
+import Nav from "./nav"
+import HamburgerButton from "./hamburger-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import { useHeaderConfig } from "../utils/use-header-config"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useStickyHeader } = useCatalystConfig()
-  const { theme } = useThemeUI()
+  const { useStickyHeader } = useHeaderConfig()
   return (
     <header
       sx={{
@@ -35,13 +34,7 @@ const SiteHeader = () => {
           alignSelf: "start",
           display: "grid",
           gridTemplateColumns: "auto 1fr",
-          gridTemplateRows: [
-            theme.sizes.headerHeight + " 1fr",
-            null,
-            theme.sizes.headerHeight,
-            null,
-            null,
-          ],
+          gridTemplateRows: ["auto 1fr", null, "auto", null, null],
           maxWidth: "maxPageWidth",
           width: "100%",
           minHeight: isNavOpen ? "100vh" : "50px",
@@ -52,7 +45,7 @@ const SiteHeader = () => {
       >
         <Branding />
         <Nav />
-        <MobileButton />
+        <HamburgerButton />
       </div>
     </header>
   )
