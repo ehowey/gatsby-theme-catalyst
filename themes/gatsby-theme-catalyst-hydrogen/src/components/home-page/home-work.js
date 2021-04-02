@@ -4,6 +4,8 @@ import { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Card from "./home-card"
 import ButtonSecondary from "../button-secondary"
+import { getGatsbyImageData } from "gatsby-source-sanity"
+import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 
 const FeaturedWork = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +28,7 @@ const FeaturedWork = () => {
           excerpt
           image {
             asset {
-              gatsbyImageData
+              id
             }
           }
         }
@@ -35,6 +37,7 @@ const FeaturedWork = () => {
   `)
   const writing = data.allSanityWork.nodes
   const result = data.allSanityHomePage.nodes[0]
+  const { sanityConfig } = useSanityConfig()
   return (
     <Fragment>
       <Themed.h2>{result.workTitle}</Themed.h2>
@@ -44,17 +47,24 @@ const FeaturedWork = () => {
           mb: 5,
         }}
       >
-        {writing.map((published) => (
-          <Card
-            title={published.title}
-            link={published.link}
-            image={published.image.asset.gatsbyImageData}
-            publisher={published.publisher}
-            date={published.date}
-            excerpt={published.excerpt}
-            key={published.id}
-          />
-        ))}
+        {writing.map((published) => {
+          const writingImage = getGatsbyImageData(
+            published.image.asset.id,
+            { maxWidth: 200 },
+            sanityConfig
+          )
+          return (
+            <Card
+              title={published.title}
+              link={published.link}
+              image={writingImage}
+              publisher={published.publisher}
+              date={published.date}
+              excerpt={published.excerpt}
+              key={published.id}
+            />
+          )
+        })}
         <div
           sx={{
             display: "grid",

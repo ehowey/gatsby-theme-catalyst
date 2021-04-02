@@ -5,11 +5,8 @@ import { useSanityConfig } from "./use-sanity-config"
 import serializers from "./serializers"
 
 const SanityContent = ({ data }) => {
-  const { sanityDataset, sanityProjectId } = useSanityConfig()
-  const sanityConfig = {
-    projectId: sanityProjectId,
-    dataset: sanityDataset,
-  }
+  const { sanityConfig } = useSanityConfig()
+
   return (
     <PortableText blocks={data} serializers={serializers} {...sanityConfig} />
   )

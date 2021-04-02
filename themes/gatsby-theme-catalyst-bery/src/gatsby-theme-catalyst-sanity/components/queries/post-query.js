@@ -31,7 +31,7 @@ export const query = graphql`
             }
           }
           url
-          gatsbyImageData
+          id
         }
       }
       _rawBody

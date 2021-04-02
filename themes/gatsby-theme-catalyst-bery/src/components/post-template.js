@@ -3,12 +3,19 @@ import { jsx, Themed } from "theme-ui"
 import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { SanityContent } from "gatsby-theme-catalyst-sanity"
+import { SanityContent, useSanityConfig } from "gatsby-theme-catalyst-sanity"
 import { FaRegClock } from "react-icons/fa"
 import PostFooter from "./post-footer"
+import { getGatsbyImageData } from "gatsby-source-sanity"
 
 const PostTemplate = ({ data, previous, next }) => {
+  const { sanityConfig } = useSanityConfig()
   const post = data.sanityPost
+  const featuredImage = getGatsbyImageData(
+    post.featuredImage.asset.id,
+    { maxWidth: 1440 },
+    sanityConfig
+  )
   return (
     <Layout>
       <Seo
@@ -23,7 +30,7 @@ const PostTemplate = ({ data, previous, next }) => {
         }}
       >
         <GatsbyImage
-          image={post.featuredImage.asset.gatsbyImageData}
+          image={featuredImage}
           sx={{
             maxHeight: ["250px", "250px", "250px", "350px", "350px"],
             minWidth: "100%",

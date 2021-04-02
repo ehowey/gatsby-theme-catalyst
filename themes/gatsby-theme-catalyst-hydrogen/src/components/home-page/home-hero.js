@@ -4,7 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import ButtonPrimary from "../button-primary"
 import ButtonSecondary from "../button-secondary"
-import { SanityContent } from "gatsby-theme-catalyst-sanity"
+import { SanityContent, useSanityConfig } from "gatsby-theme-catalyst-sanity"
+import { getGatsbyImageData } from "gatsby-source-sanity"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -15,14 +16,21 @@ const Hero = () => {
           _rawHeroText
           heroImage {
             asset {
-              gatsbyImageData
+              id
             }
           }
         }
       }
     }
   `)
+  const { sanityConfig } = useSanityConfig()
+
   const hero = data.allSanityHomePage.nodes[0]
+  const heroImage = getGatsbyImageData(
+    hero.heroImage.asset.id,
+    { maxWidth: 1440 },
+    sanityConfig
+  )
   return (
     <section
       sx={{
@@ -53,7 +61,7 @@ const Hero = () => {
           }}
         >
           <GatsbyImage
-            image={hero.heroImage.asset.gatsbyImageData}
+            image={heroImage}
             sx={{
               width: "100%",
               height: ["300px", null, "auto", null, null],
