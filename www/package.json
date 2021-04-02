@@ -8,6 +8,7 @@
     "gatsby": "^3.2.0",
     "gatsby-plugin-netlify": "^3.1.0",
     "gatsby-plugin-offline": "^4.1.0",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-theme-catalyst-core": "^6.0.0-beta.3",
     "gatsby-theme-catalyst-footer": "^6.0.0-beta.3",
     "gatsby-theme-catalyst-header-side": "^6.0.0-beta.3",
