@@ -16413,10 +16413,10 @@ strip-outer@^1.0.0, strip-outer@^1.0.1:
   dependencies:
     escape-string-regexp "^1.0.2"
 
-stripe@^8.129.0:
-  version "8.140.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.140.0.tgz#58ceffdac7bd0ba0abc8f5670f8f79cba0d8d7fc"
-  integrity sha512-p2Ak/ZSQiStR93MmW3VUESP07ZOAtvZxSA34YglKeRyokaj7/ruRzeVxmoD0Yr6Eh2w2uZWp42ps7ZoYxWskPg==
+stripe@^8.141.0:
+  version "8.141.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.141.0.tgz#a0c27f7255e00ebb47af3a0c1849e0c431f0fd30"
+  integrity sha512-CRGmx1WYENj16L37TujJg+KscGn8LbYbXqRCPdaepr7BzHIdAFJfQhNfdFkShW5Z9rbmo6mA2fiAOf1S3FIoSw==
   dependencies:
     "@types/node" ">=8.1.0"
     qs "^6.6.0"
