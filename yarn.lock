@@ -7902,7 +7902,7 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^4.0.0, framer-motion@^4.0.3:
+framer-motion@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-4.0.3.tgz#e20a32c6825dc08c98e130640cb6441ec2920b7d"
   integrity sha512-5p9VPpgPctMJuNW8CqHSk9k/v3xAUpReWzlgKl1a1fsvqzcFgNGENZPfBwHuukanvMmh3trzO5jZNX0Kc8/pAA==
