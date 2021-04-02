@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-sanity",
   "description": "Sibling theme for gatsby-theme-catalyst-core to add SANITY.io",
-  "version": "6.0.0-beta.2",
+  "version": "6.0.0-beta.3",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
