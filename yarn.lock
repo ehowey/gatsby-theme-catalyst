@@ -7813,10 +7813,10 @@ follow-redirects@^1.0.0, follow-redirects@^1.10.0, follow-redirects@^1.2.4:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
   integrity sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
 
-fontsource-quando@^3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/fontsource-quando/-/fontsource-quando-3.1.5.tgz#fe7983fa854bbe689cf1ac0cd9427f2e7ace3b4a"
-  integrity sha512-V3FWhF0qCSaiTwBql0uelgX+/mHaM/4ZM4m487F108J+60GNPCCXkztPPmq1BdW5lv0ClG/9q9ZqSubTJ8B5+w==
+fontsource-quando@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/fontsource-quando/-/fontsource-quando-4.0.0.tgz#6f0653832383e9a4a185201035b83c5fc19f2b73"
+  integrity sha512-XLMj1ekatc9VKqzca5nkmz3eLsTWJxk6HPUm2r2190CyYbs87GWdk9reZ6CQZ9FDSQa9llPVQ4vEN7XipUlM5A==
 
 fontsource-sen@^4.0.0:
   version "4.0.0"
