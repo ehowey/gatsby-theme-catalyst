@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { MdChangeHistory } from "react-icons/md"
 
-export const TriangleVertical = () => {
+const Triangle = () => {
   return (
     <div
       sx={{
@@ -16,3 +16,5 @@ export const TriangleVertical = () => {
     </div>
   )
 }
+
+export default Triangle

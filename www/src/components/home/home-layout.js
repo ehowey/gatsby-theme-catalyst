@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
+import { jsx } from "theme-ui"
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav"
+import { baseColors } from "@theme-ui/preset-tailwind"
+import { useCatalystConfig } from "gatsby-theme-catalyst-core"
 import GlobalCSS from "gatsby-theme-catalyst-core/src/utils/global-css"
 import Main from "gatsby-theme-catalyst-core/src/components/main"
 import ContentContainer from "gatsby-theme-catalyst-core/src/components/content-container"
-import AlertBanner from "./alert-banner"
+import AlertBanner from "../alert-banner"
 import Footer from "./home-footer"
-import Hero from "./hero"
-import { baseColors } from "@theme-ui/preset-tailwind"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import Hero from "./home-hero"
 
 const HomeLayout = ({ children }) => {
   const { useAlertBanner } = useCatalystConfig()

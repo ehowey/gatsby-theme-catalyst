@@ -4,12 +4,12 @@ import { Link } from "gatsby"
 import { Button } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { darken } from "@theme-ui/color"
-import catalystLogo from "../../content/assets/catalyst-svg-logo.svg"
 import { AiOutlineFire } from "react-icons/ai"
 import { FiBookOpen, FiGithub } from "react-icons/fi"
 import GitHubButton from "react-github-btn"
+import catalystLogo from "../../../content/assets/catalyst-svg-logo.svg"
 
-const Hero = () => {
+const HomeHero = () => {
   return (
     <header
       sx={{
@@ -92,6 +92,7 @@ const Hero = () => {
           mt: 0,
           mb: 4,
           px: 2,
+          pb: 1,
           bg: baseColors.gray[8],
           lineHeight: "tight",
         }}
@@ -212,4 +213,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default HomeHero

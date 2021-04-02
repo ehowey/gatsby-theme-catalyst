@@ -1,12 +1,14 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
-import HomeLayout from "../components/home-layout"
-import Features from "../components/features"
-import Blocks from "../components/animated-blocks"
-import { TriangleVertical } from "../components/spacers"
+import { jsx } from "theme-ui"
 import { Seo } from "gatsby-theme-catalyst-core"
-import Demo from "../components/demo"
-import Why from "../components/why"
+import HomeLayout from "../components/home/home-layout"
+import Features from "../components/home/home-features"
+import AnimatedBlocks from "../components/animated-blocks"
+import TriangleVertical from "../components/triangle-spacer"
+import Demo from "../components/home/home-demo"
+import Why from "../components/home/home-why"
+import Intro from "../components/home/home-intro"
+import Heading from "../components/home/home-heading"
 
 const HomePage = () => {
   return (
@@ -16,122 +18,25 @@ const HomePage = () => {
         description="Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project. It uses Theme-UI and MDX under the hood to provide a smooth developer experience. Boilerplate starters to fully designed and production ready sites."
       />
       <TriangleVertical />
-      <Themed.p sx={{ fontSize: [4, null, 5, null, null], fontWeight: "500" }}>
-        An opinionated set of integrated themes and starters to{" "}
-        <span
-          sx={{
-            backgroundImage:
-              "radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,193,104,1) 0%, rgba(251,128,128,1) 90% )",
-            px: 2,
-            mr: 2,
-            fontStyle: "italic",
-          }}
-        >
-          accelerate
-        </span>
-        your next Gatsby project. Build faster.
-      </Themed.p>
-      <Themed.p
-        sx={{
-          fontSize: [4, null, 5, null, null],
-          fontWeight: "500",
-          textAlign: "center",
-        }}
-      >
-        11 themes
-        <br />8 starters
-      </Themed.p>
+      <Intro />
       <TriangleVertical />
       <section>
-        <Themed.h2
-          sx={{
-            fontSize: 5,
-            mb: 5,
-            textAlign: "center",
-            "::after": {
-              display: "block",
-              content: '""',
-              width: "40px",
-              pt: 2,
-              borderBottomStyle: "solid",
-              borderBottomWidth: "4px",
-              borderBottomColor: "primary",
-              mx: "auto",
-            },
-          }}
-        >
-          How It Works
-        </Themed.h2>
-        <Blocks />
+        <Heading> How It Works</Heading>
+        <AnimatedBlocks />
       </section>
       <TriangleVertical />
       <section>
-        <Themed.h2
-          sx={{
-            fontSize: 5,
-            mb: 5,
-            textAlign: "center",
-            "::after": {
-              display: "block",
-              content: '""',
-              width: "40px",
-              pt: 2,
-              borderBottomStyle: "solid",
-              borderBottomWidth: "4px",
-              borderBottomColor: "primary",
-              mx: "auto",
-            },
-          }}
-        >
-          Demo
-        </Themed.h2>
+        <Heading>Demo</Heading>
         <Demo />
       </section>
-
       <TriangleVertical />
       <section>
-        <Themed.h2
-          sx={{
-            fontSize: 5,
-            mb: 5,
-            textAlign: "center",
-            "::after": {
-              display: "block",
-              content: '""',
-              width: "40px",
-              pt: 2,
-              borderBottomStyle: "solid",
-              borderBottomWidth: "4px",
-              borderBottomColor: "primary",
-              mx: "auto",
-            },
-          }}
-        >
-          Tech Choices
-        </Themed.h2>
+        <Heading>Tech Choices</Heading>
         <Features />
       </section>
       <TriangleVertical />
       <section>
-        <Themed.h2
-          sx={{
-            fontSize: 5,
-            mb: 5,
-            textAlign: "center",
-            "::after": {
-              display: "block",
-              content: '""',
-              width: "40px",
-              pt: 2,
-              borderBottomStyle: "solid",
-              borderBottomWidth: "4px",
-              borderBottomColor: "primary",
-              mx: "auto",
-            },
-          }}
-        >
-          Why?
-        </Themed.h2>
+        <Heading>Why?</Heading>
         <Why />
       </section>
     </HomeLayout>

@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { lighten } from "@theme-ui/color"
 
-const Demo = () => {
+const HomeDemo = () => {
   const data = useStaticQuery(
     graphql`
       {
@@ -41,6 +41,8 @@ const Demo = () => {
             null,
           ],
           gridGap: 5,
+          margin: "0 auto",
+          maxWidth: "maxPageWidth",
         }}
       >
         <div>
@@ -71,7 +73,7 @@ const Demo = () => {
               },
             }}
           >
-            Layout theme
+            Layout themes
           </Themed.h3>
           <Themed.p>
             Raw, unstyled, ready to be customized!
@@ -105,7 +107,7 @@ const Demo = () => {
               },
             }}
           >
-            Presentation theme
+            Presentation themes
           </Themed.h3>
           <Themed.p>
             Refined, styled and ready for launch!
@@ -120,4 +122,4 @@ const Demo = () => {
   )
 }
 
-export default Demo
+export default HomeDemo

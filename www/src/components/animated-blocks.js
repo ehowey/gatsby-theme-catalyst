@@ -31,7 +31,10 @@ const AnimatedBlocks = ({ isDocs }) => {
             p: 3,
           }}
         >
-          <Themed.h3 as="p" sx={{ mb: 2, mt: 0, textAlign: "center" }}>
+          <Themed.h3
+            as="p"
+            sx={{ mb: 2, mt: [0, 0, 0, 0, 0], textAlign: "center" }}
+          >
             Themes
           </Themed.h3>
           <div

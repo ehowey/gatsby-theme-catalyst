@@ -34,7 +34,10 @@ const AlertBanner = () => {
     >
       <div sx={{ display: "flex", justifyContent: "space-between" }}>
         <Themed.p sx={{ my: 0, lineHeight: "tight" }}>
-          🎉 &nbsp; v6.0.0 is in beta, including support for Gatsby v3. Read the{" "}
+          <span role="img" aria-label="Celebration Emoji" sx={{ mr: 2 }}>
+            🎉
+          </span>
+          v6.0.0 is in beta, including support for Gatsby v3. Read the{" "}
           <Themed.a
             as={Link}
             to="/docs/migrating/"

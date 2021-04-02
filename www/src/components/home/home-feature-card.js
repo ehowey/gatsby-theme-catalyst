@@ -2,7 +2,7 @@
 import { jsx, Themed } from "theme-ui"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const FeatureCard = ({ image, title, text }, props) => {
+const HomeFeatureCard = ({ image, title, children }, props) => {
   return (
     <div {...props}>
       <GatsbyImage image={image} alt={title} />
@@ -23,9 +23,9 @@ const FeatureCard = ({ image, title, text }, props) => {
       >
         {title}
       </Themed.h3>
-      <Themed.p>{text}</Themed.p>
+      <Themed.p>{children}</Themed.p>
     </div>
   )
 }
 
-export default FeatureCard
+export default HomeFeatureCard
