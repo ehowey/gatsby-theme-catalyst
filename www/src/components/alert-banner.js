@@ -53,6 +53,7 @@ const AlertBanner = () => {
         <Button
           onClick={() => setDisplayAlert(false)}
           sx={{
+            flexShrink: "0",
             bg: "transparent",
             p: 1,
             cursor: "pointer",

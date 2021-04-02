@@ -42,7 +42,11 @@ const SiteBranding = () => {
       <Link
         to="/"
         onClick={() => setIsNavOpen(false)}
-        sx={{ textDecoration: "none" }}
+        sx={{
+          textDecoration: "none",
+          textAlign: "center",
+          display: ["none", null, "block", null, null],
+        }}
       >
         <Themed.h1
           as="span"

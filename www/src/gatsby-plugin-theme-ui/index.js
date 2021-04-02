@@ -17,8 +17,8 @@ const theme = merge(BaseTheme, {
     highlight: baseColors.orange[5],
     muted: baseColors.gray[2],
     header: {
-      background: baseColors.gray[2],
-      backgroundOpen: baseColors.orange[1],
+      background: "#ffdada",
+      backgroundOpen: "#ffdada",
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
       icons: baseColors.gray[6],
@@ -30,7 +30,7 @@ const theme = merge(BaseTheme, {
       links: baseColors.gray[8],
       icons: baseColors.gray[8],
     },
-    // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
+    // You can delete dark mode by removing the "mode" object and setting useColorMode to false in the header theme
     modes: {
       dark: {
         background: baseColors.gray[9],

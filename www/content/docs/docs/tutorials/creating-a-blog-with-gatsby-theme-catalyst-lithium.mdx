@@ -46,21 +46,8 @@ menuLinks: [
     link: `/page-1`,
   },
   {
-    name: `Anchor 1`,
-    link: `#anchor-1`,
-  },
-]
-```
-
-You can also have a sub-menu or dropdown menu.
-
-Example Config:
-
-```js
-menuLinks: [
-  {
-    name: `Page 1`,
-    link: `/page-1`,
+    name: `Page 2`,
+    link: `/page-2`,
     subMenu: [
       {
         name: `Sub 1`,
@@ -71,6 +58,10 @@ menuLinks: [
         link: `/sub-2`,
       },
     ],
+  },
+  {
+    name: `Anchor 1`,
+    link: `/#anchor-1`,
   },
 ]
 ```
@@ -109,7 +100,7 @@ The logo and icon are found by default in the `src/content/assets` folder under 
 
 The logo is queried by file name, you can use a different file type, e.g. jpg, but the name must be `catalyst-site-logo`. The site icon is referenced in `gatsby-plugin-manifest` and automatically creates all the needed icons for your site and should be at least 512px x 512px.
 
-Open up `src/components/header/branding.js` and take a look around, it is well commented and you can modify the logo size, font sizes, etc. all in this file (which is actually using component shadowing](https://www.gatsbyjs.com/docs/themes/shadowing/)).
+Open up `src/components/header/branding.js` and take a look around, it is well commented and you can modify the logo size, font sizes, etc. all in this file which is actually using [component shadowing](https://www.gatsbyjs.com/docs/themes/shadowing/).
 
 ## Adjust theme options
 
