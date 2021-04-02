@@ -2700,7 +2700,7 @@
     "@sanity/block-content-to-hyperscript" "^2.0.10"
     prop-types "^15.6.2"
 
-"@sanity/client@^2.0.1", "@sanity/client@^2.1.4":
+"@sanity/client@^2.1.4", "@sanity/client@^2.7.1":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.7.1.tgz#0163ecad3ad0875dac5a87bfa20a1652dd3e6a80"
   integrity sha512-uKMlB4v8PDQQd2+5MGC2ccE/5lteJoqeH6iPr5ELC/608KonazMrOx7ROS0gxjNlDEq7NkJePaWwiaNu1xdujA==
@@ -8534,12 +8534,12 @@ gatsby-source-filesystem@^3.2.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-sanity@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.0.0.tgz#11b3dd5616534b4b72f9759a54a4fc85f6a2067c"
-  integrity sha512-WHNfr4dKBp9AIe9FznJtdtO+m01pS6GJXF21y5i4CroNSj2nM7RHLcAtBQz3VWBqjD85z5enhH08scOdV9IrqQ==
+gatsby-source-sanity@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.0.2.tgz#05f0cb9a4607b3f2c9d43626745ad07d85cd2acd"
+  integrity sha512-pF5M/M4Pcv0r/xiCJo+9dA9y5zS63Jmy9axRCUV444AP7qmoDWexs+uyQHrGqXtVN01NCz3VpFvXwR8hKsSi9g==
   dependencies:
-    "@sanity/client" "^2.0.1"
+    "@sanity/client" "^2.7.1"
     "@sanity/image-url" "^0.140.19"
     "@sanity/mutator" "^2.0.1"
     "@types/url-parse" "^1.4.3"
