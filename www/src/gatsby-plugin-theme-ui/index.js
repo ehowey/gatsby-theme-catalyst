@@ -2,7 +2,7 @@ import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 
-export default merge(BaseTheme, {
+const theme = merge(BaseTheme, {
   // Modifications to the base theme go here. This is an example changing colors and using variants to change your navigation links. Uncomment the code below to see what happens.
   fontWeights: {
     heading: "500",
@@ -17,8 +17,8 @@ export default merge(BaseTheme, {
     highlight: baseColors.orange[5],
     muted: baseColors.gray[2],
     header: {
-      background: baseColors.gray[2],
-      backgroundOpen: baseColors.orange[1],
+      background: "#ffdada",
+      backgroundOpen: "#ffdada",
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
       icons: baseColors.gray[6],
@@ -30,7 +30,7 @@ export default merge(BaseTheme, {
       links: baseColors.gray[8],
       icons: baseColors.gray[8],
     },
-    // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
+    // You can delete dark mode by removing the "mode" object and setting useColorMode to false in the header theme
     modes: {
       dark: {
         background: baseColors.gray[9],
@@ -59,18 +59,7 @@ export default merge(BaseTheme, {
   sizes: {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
-    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
-    headerHeight: "auto", // Provides fallback setting to control header height
-    logoWidthXS: "50px", // Logo width on extra small screens, up to 480px
-    logoWidthS: "50px", // Logo width on small screens, 480px - 768px
-    logoWidthM: "80px", // Logo width on medium screens, 768px - 1024px
-    logoWidthL: "100px", // Logo width on large screens, 1024px - 1440px
-    logoWidthXL: "100px", // Logo width on extra large screens, above 1440px
-    logoHeightXS: "50px", // Logo height on extra small screens, up to 480px
-    logoHeightS: "50px", // Logo height on small screens, 480px - 768px
-    logoHeightM: "80px", // Logo height on medium screens, 768px - 1024px
-    logoHeightL: "100px", // Logo height on large screens, 1024px - 1440px
-    logoHeightXL: "100px", // Logo height on extra large screens, above 1440px
+    maxContentWidth: "60ch", // Sets the container size on larger screens, e.g. tablets and laptops
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "24px", // Sets the icons size for the header
   },
@@ -109,7 +98,7 @@ export default merge(BaseTheme, {
       m: 0,
       mb: 1,
       fontSize: 3,
-      mt: 4,
+      mt: [4, null, 5, null, null],
     },
     h3: {
       fontFamily: "heading",
@@ -118,8 +107,8 @@ export default merge(BaseTheme, {
       textTransform: "uppercase",
       m: 0,
       mb: 1,
-      fontSize: 3,
-      mt: 3,
+      fontSize: 2,
+      mt: [3, null, 4, null, null],
     },
     h4: {
       fontFamily: "heading",
@@ -128,7 +117,7 @@ export default merge(BaseTheme, {
       textTransform: "uppercase",
       m: 0,
       mb: 1,
-      fontSize: 2,
+      fontSize: 1,
     },
     h5: {
       fontFamily: "heading",
@@ -137,7 +126,7 @@ export default merge(BaseTheme, {
       textTransform: "uppercase",
       m: 0,
       mb: 1,
-      fontSize: 2,
+      fontSize: 0,
     },
     h6: {
       fontFamily: "heading",
@@ -146,7 +135,7 @@ export default merge(BaseTheme, {
       textTransform: "uppercase",
       m: 0,
       mb: 2,
-      fontSize: 1,
+      fontSize: 0,
     },
   },
   buttons: {
@@ -214,3 +203,5 @@ export default merge(BaseTheme, {
     },
   },
 })
+
+export default theme

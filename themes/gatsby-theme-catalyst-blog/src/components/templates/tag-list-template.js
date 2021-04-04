@@ -1,30 +1,30 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import kebabCase from "lodash/kebabCase"
 
 const TagList = ({ tags }) => {
   return (
     <Layout>
-      <SEO title="Tags" />
-      <Styled.h1>Tags</Styled.h1>
-      <Styled.ul>
+      <Seo title="Tags" />
+      <Themed.h1>Tags</Themed.h1>
+      <Themed.ul>
         {tags.map((tag) => (
-          <Styled.li key={tag.fieldValue}>
-            <Styled.p>
-              <Styled.a
+          <Themed.li key={tag.fieldValue}>
+            <Themed.p>
+              <Themed.a
                 as={Link}
                 to={`/tags/${kebabCase(tag.fieldValue)}/`}
                 sx={{ fontSize: 3 }}
               >
                 {tag.fieldValue}
-              </Styled.a>{" "}
+              </Themed.a>{" "}
               &mdash; {tag.totalCount} posts
-            </Styled.p>
-          </Styled.li>
+            </Themed.p>
+          </Themed.li>
         ))}
-      </Styled.ul>
+      </Themed.ul>
     </Layout>
   )
 }

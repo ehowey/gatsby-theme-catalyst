@@ -1,25 +1,20 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
-import Product from "../../../components/product"
+import { jsx, Themed } from "theme-ui"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
+import Product from "../product"
+// import Cart from "../cart"
 
 const Store = ({ data }) => {
   const allProducts = data.allSanityProduct.nodes
 
   return (
     <Layout>
-      <SEO title="Store" />
-      <Styled.h1>Store</Styled.h1>
-      <div
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat( auto-fit, minmax(250px, 1fr) )",
-        }}
-      >
-        {allProducts.map((product) => (
-          <Product key={product.name} product={product} />
-        ))}
-      </div>
+      <Seo title="Store" />
+      <Themed.h1>Store</Themed.h1>
+      {allProducts.map((product) => (
+        <Product key={product.name} product={product} />
+      ))}
+      <Cart />
     </Layout>
   )
 }

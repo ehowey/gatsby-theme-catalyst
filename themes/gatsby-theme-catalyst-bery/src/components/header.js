@@ -1,20 +1,19 @@
 // This is a placeholder for latent shadowing in sibling themes
 /** @jsx jsx */
-import { jsx, Styled, useThemeUI } from "theme-ui"
+import { jsx, Themed, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
-import {
-  SocialHeader,
-  ColorModeButton,
-  useCatalystConfig,
-} from "gatsby-theme-catalyst-core"
-import { SanityContent } from "gatsby-theme-catalyst-sanity"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { SocialHeader, ColorModeButton } from "gatsby-theme-catalyst-core"
+import { SanityContent, useSanityConfig } from "gatsby-theme-catalyst-sanity"
 import { IconContext } from "react-icons"
+import { useBeryConfig } from "../utils/use-bery-config"
+import { getGatsbyImageData } from "gatsby-source-sanity"
 import Nav from "./nav"
 
 const SiteHeader = () => {
   const { theme } = useThemeUI()
-  const { useColorMode } = useCatalystConfig()
+  const { sanityConfig } = useSanityConfig()
+  const { useColorMode, useHeaderSocialLinks } = useBeryConfig()
   const data = useStaticQuery(graphql`
     {
       sanitySiteHeader {
@@ -22,16 +21,18 @@ const SiteHeader = () => {
         _rawBio
         image {
           asset {
-            fluid(maxWidth: 1080) {
-              ...GatsbySanityImageFluid
-            }
+            id
           }
         }
       }
     }
   `)
-
   const author = data.sanitySiteHeader
+  const authorImage = getGatsbyImageData(
+    author.image.asset.id,
+    { maxWidth: 720 },
+    sanityConfig
+  )
   return (
     <header
       sx={{
@@ -59,7 +60,7 @@ const SiteHeader = () => {
           pt: 3,
         }}
       >
-        <Styled.a
+        <Themed.a
           as={Link}
           to="/"
           aria-label="Home"
@@ -70,21 +71,22 @@ const SiteHeader = () => {
             alignSelf: "center",
           }}
         >
-          <Img
+          <GatsbyImage
+            image={authorImage}
             sx={{
               height: ["70px", "120px", "150px", "200px", null],
               width: ["70px", "120px", "150px", "200px", null],
-              borderRadius: "9999em",
+              borderRadius: "50%",
               boxShadow: "lg",
             }}
-            fluid={author.image.asset.fluid}
+            imgStyle={{ borderRadius: "50%" }}
             alt={author.name}
           />
-        </Styled.a>
+        </Themed.a>
         <div
           sx={{ gridColumn: "2 / 3", gridRow: "1 / 2", alignSelf: "center" }}
         >
-          <Styled.a
+          <Themed.a
             sx={{
               color: "text",
               textDecoration: "none",
@@ -94,7 +96,7 @@ const SiteHeader = () => {
             to="/"
             aria-label="Home"
           >
-            <Styled.h2
+            <Themed.h2
               sx={{
                 m: 0,
                 mt: [null, null, null, 4, null],
@@ -102,8 +104,8 @@ const SiteHeader = () => {
               }}
             >
               {author.name}
-            </Styled.h2>
-          </Styled.a>
+            </Themed.h2>
+          </Themed.a>
           <div
             sx={{
               display: "flex",
@@ -133,7 +135,7 @@ const SiteHeader = () => {
             }}
           >
             <IconContext.Provider value={{ size: theme.sizes.iconsHeader }}>
-              <SocialHeader />
+              {useHeaderSocialLinks && <SocialHeader />}
               {useColorMode && <ColorModeButton />}
             </IconContext.Provider>
           </div>

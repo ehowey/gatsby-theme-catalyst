@@ -1,4 +1,4 @@
-<SEO
+<Seo
   title="Creating a blog with gatsby-theme-catalyst-lithium"
   description="A step-by-step tutorial for setting up a personal blog using gatsby-theme-catalyst-lithium. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
 />
@@ -9,7 +9,7 @@ This tutorial will walk you through setting up a personal blog using `gatsby-the
 
 I assume you have some basic familiarity with Gatsby and web development in general. If you are brand new to Gatsby I would suggest beginning with their [excellent tutorial](https://www.gatsbyjs.com/tutorial/) and coming back here later.
 
-> This tutorial could also be followed for `gatsby-theme-catalyst-helium` which is very similar.
+This tutorial could also be followed for `gatsby-theme-catalyst-helium` which is very similar with only minor differences.
 
 ## Install the theme using a starter
 
@@ -44,38 +44,24 @@ menuLinks: [
   {
     name: `Page 1`,
     link: `/page-1`,
-    type: `internal`, //internal or anchor
   },
   {
-    name: `Anchor 1`,
-    link: `#anchor-1`,
-    type: `anchor`, //internal or anchor
-  },
-]
-```
-
-You can also have a sub-menu or dropdown menu.
-
-Example Config:
-
-```js
-menuLinks: [
-  {
-    name: `Page 1`,
-    link: `/page-1`,
-    type: `internal`, //internal or anchor
+    name: `Page 2`,
+    link: `/page-2`,
     subMenu: [
       {
         name: `Sub 1`,
         link: `/sub-1`,
-        type: `internal`, //internal or anchor
       },
       {
         name: `Sub 2`,
         link: `/sub-2`,
-        type: `internal`, //internal or anchor
       },
     ],
+  },
+  {
+    name: `Anchor 1`,
+    link: `/#anchor-1`,
   },
 ]
 ```
@@ -114,32 +100,7 @@ The logo and icon are found by default in the `src/content/assets` folder under 
 
 The logo is queried by file name, you can use a different file type, e.g. jpg, but the name must be `catalyst-site-logo`. The site icon is referenced in `gatsby-plugin-manifest` and automatically creates all the needed icons for your site and should be at least 512px x 512px.
 
-> A more advanced way to change the logo is through [component shadowing](https://www.gatsbyjs.com/docs/themes/shadowing/) which gives you greater control over the logo and file naming. The file you need to shadow is `gatsby-theme-catalyst-header-top/components/branding/branding-logo.js`.
-
-The logo size is managed via the Theme-UI theme file. You can set appropriate sizes for your logo there.
-
-Try this in `src/gatsby-plugin-theme-ui/index.js` for a bigger logo:
-
-```js
-  sizes: {
-    ...tailwind.sizes,
-    maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
-    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
-    headerHeight: "auto", // Provides fallback setting to control header height
-    logoWidthXS: "80px", // Logo width on extra small screens, up to 480px
-    logoWidthS: "150px", // Logo width on small screens, 480px - 768px
-    logoWidthM: "150px", // Logo width on medium screens, 768px - 1024px
-    logoWidthL: "260px", // Logo width on large screens, 1024px - 1440px
-    logoWidthXL: "260px", // Logo width on extra large screens, above 1440px
-    logoHeightXS: "80px", // Logo height on extra small screens, up to 480px
-    logoHeightS: "150px", // Logo height on small screens, 480px - 768px
-    logoHeightM: "150px", // Logo height on medium screens, 768px - 1024px
-    logoHeightL: "260px", // Logo height on large screens, 1024px - 1440px
-    logoHeightXL: "260px", // Logo height on extra large screens, above 1440px
-    iconsFooter: "32px", // Sets the icons size for the footer
-    iconsHeader: "20px", // Sets the icons size for the header
-  },
-```
+Open up `src/components/header/branding.js` and take a look around, it is well commented and you can modify the logo size, font sizes, etc. all in this file which is actually using [component shadowing](https://www.gatsbyjs.com/docs/themes/shadowing/).
 
 ## Adjust theme options
 
@@ -166,7 +127,7 @@ For example let's say you wanted to change the base path for you blog to `www.yo
 
 ## Customize the hero component
 
-The hero component is found at `src/gatsby-theme-catalyst-lithium/components/hero.js` and is an example of component shadowing. This component is styled using Theme-UI, and more specifically the [Styled component](https://theme-ui.com/styled) and the [sx prop](https://theme-ui.com/sx-prop).
+The hero component is found at `src/gatsby-theme-catalyst-lithium/components/hero.js` and is an example of component shadowing. This component is styled using Theme-UI, and more specifically the [Themed component](https://theme-ui.com/themed) and the [sx prop](https://theme-ui.com/sx-prop).
 
 To customize this hero component you have two options; erase what is there entirely and start from scratch or modify the existing hero component. In this tutorial we will cover modifying the existing hero component.
 
@@ -218,26 +179,6 @@ Right below the paragraph tags is the code for the button, you can change the `G
 ```
 
 You now have your very own custom hero section.
-
-## Use variants to change the site title
-
-[Variants](https://theme-ui.com/guides/variants/) are used throughout the theme to allow for easier visual customization without having to shadow an entire component. Variants are modified via the Theme-UI theme file and if you scroll to the bottom of the existing file you can see some examples of those variants. There is a full list of available variants in the [theme docs](/docs/gatsby-theme-catalyst-lithium).
-
-Let's use variants to make a simple change to the appearance of the site title:
-
-```js
-variants: {
-    siteTitle: {
-      textTransform: "uppercase",
-      color: "primary", // this is keyed to the 'primary' color in the theme
-      fontSize: [3, 4, null, 5, null],
-      "::after": {
-        content: "none",
-      },
-    },
-// ...more variants
-}
-```
 
 ## Add a new blog post
 

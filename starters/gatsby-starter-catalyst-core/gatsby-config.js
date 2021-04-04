@@ -9,17 +9,14 @@ module.exports = {
       {
         name: `Page 1`,
         link: `/page-1`,
-        type: `internal`, //internal or anchor
       },
       {
         name: `Anchor 1`,
         link: `#anchor-1`,
-        type: `anchor`, //internal or anchor
       },
       {
         name: `Page 2`,
         link: `/page-2`,
-        type: `internal`, //internal or anchor
       },
     ],
     socialLinks: [
@@ -47,18 +44,10 @@ module.exports = {
         //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
         // useKatex: false,
-        // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
+        // useAlertBanner: false,
       },
     },
     {

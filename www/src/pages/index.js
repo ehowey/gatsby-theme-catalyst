@@ -1,92 +1,44 @@
 /** @jsx jsx */
-import { jsx, Styled, Button } from "theme-ui"
-import HomeLayout from "../components/home-layout"
-import Features from "../components/features"
-import Blocks from "../components/animated-blocks"
-import { TriangleVertical } from "../components/spacers"
-import { Link } from "gatsby"
-import { baseColors } from "@theme-ui/preset-tailwind"
-import { SEO } from "gatsby-theme-catalyst-core"
+import { jsx } from "theme-ui"
+import { Seo } from "gatsby-theme-catalyst-core"
+import HomeLayout from "../components/home/home-layout"
+import Features from "../components/home/home-features"
+import AnimatedBlocks from "../components/animated-blocks"
+import TriangleVertical from "../components/triangle-spacer"
+import Demo from "../components/home/home-demo"
+import Why from "../components/home/home-why"
+import Intro from "../components/home/home-intro"
+import Heading from "../components/home/home-heading"
 
 const HomePage = () => {
   return (
     <HomeLayout>
-      <SEO
+      <Seo
         title="Home"
         description="Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project. It uses Theme-UI and MDX under the hood to provide a smooth developer experience. Boilerplate starters to fully designed and production ready sites."
       />
       <TriangleVertical />
-      <Styled.p sx={{ fontSize: [4, null, 5, null, null], fontWeight: "500" }}>
-        An opinionated set of integrated themes and starters to{" "}
-        <span
-          sx={{
-            backgroundImage:
-              "radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,193,104,1) 0%, rgba(251,128,128,1) 90% )",
-            px: 2,
-            mr: 2,
-            fontStyle: "italic",
-          }}
-        >
-          accelerate
-        </span>
-        your next Gatsby project. Build faster.
-      </Styled.p>
+      <Intro />
       <TriangleVertical />
       <section>
-        <Styled.h2
-          sx={{
-            fontSize: 4,
-            mb: 5,
-            textAlign: "center",
-            "::after": {
-              display: "block",
-              content: '""',
-              width: "40px",
-              pt: 2,
-              borderBottomStyle: "solid",
-              borderBottomWidth: "4px",
-              borderBottomColor: "primary",
-              mx: "auto",
-            },
-          }}
-        >
-          How It Works
-        </Styled.h2>
-        <Blocks />
+        <Heading> How It Works</Heading>
+        <AnimatedBlocks />
       </section>
       <TriangleVertical />
-      <Features />
+      <section>
+        <Heading>Demo</Heading>
+        <Demo />
+      </section>
       <TriangleVertical />
-      <Styled.p
-        sx={{ fontSize: [3, null, 4, null, null], textAlign: "center" }}
-      >
-        <i>
-          <b>catalyst:</b> an agent that provokes or speeds significant change
-          or action
-        </i>
-      </Styled.p>
-
-      <div sx={{ display: "grid", placeItems: "center" }}>
-        <Button
-          as={Link}
-          sx={{
-            backgroundImage:
-              "radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,193,104,1) 0%, rgba(251,128,128,1) 90% )",
-            color: baseColors.gray[8],
-            fontWeight: "bold",
-            boxShadow: "default",
-            transition: "all 0.3s ease",
-            ":hover, :focus, :active": {
-              boxShadow: "lg",
-              backgroundImage:
-                "radial-gradient( circle farthest-corner at 30% 40%,  rgba(253,193,80,1) 0%, rgba(251,128,100,1) 95% )",
-            },
-          }}
-          to="/docs/getting-started"
-        >
-          BOOM! Get Started!
-        </Button>
-      </div>
+      <section>
+        <Heading>Tech Choices</Heading>
+        <Features />
+      </section>
+      <TriangleVertical />
+      <section>
+        <Heading>Why?</Heading>
+        <Why />
+      </section>
     </HomeLayout>
   )
 }

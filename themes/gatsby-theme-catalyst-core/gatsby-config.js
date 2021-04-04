@@ -130,6 +130,7 @@ module.exports = (themeOptions) => {
       },
       `gatsby-plugin-catch-links`,
       `gatsby-plugin-theme-ui`,
+      `gatsby-plugin-image`,
     ].filter(Boolean),
   }
 }

@@ -564,7 +564,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     sanityPostListPath: String!
     sanityProjectPath: String!
     sanityProjectListPath: String!
-    useSanityTheme: Boolean!
     sanityPostListTitle: String!
     sanityDisplayPostListTitle: Boolean!
     sanityProjectListTitle: String!
@@ -587,7 +586,6 @@ exports.sourceNodes = (
     sanityPostListPath = "/posts",
     sanityProjectPath = "/projects",
     sanityProjectListPath = "/projects",
-    useSanityTheme = false,
     sanityPostListTitle = "Posts",
     sanityDisplayPostListTitle = true,
     sanityProjectListTitle = "Projects",
@@ -608,7 +606,6 @@ exports.sourceNodes = (
     sanityPostListPath,
     sanityProjectPath,
     sanityProjectListPath,
-    useSanityTheme,
     sanityPostListTitle,
     sanityDisplayPostListTitle,
     sanityProjectListTitle,

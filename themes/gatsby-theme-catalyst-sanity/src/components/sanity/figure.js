@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import Img from "gatsby-image"
-import { getFluidGatsbyImage } from "gatsby-source-sanity"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { getGatsbyImageData } from "gatsby-source-sanity"
 import { useSanityConfig } from "./use-sanity-config"
 
 export default ({ node }) => {
@@ -9,11 +9,10 @@ export default ({ node }) => {
     return null
   }
 
-  const { sanityProjectId, sanityDataset } = useSanityConfig()
-  const sanityConfig = { projectId: sanityProjectId, dataset: sanityDataset }
+  const { sanityConfig } = useSanityConfig()
 
-  const fluidProps = getFluidGatsbyImage(
-    node.asset._ref,
+  const fluidProps = getGatsbyImageData(
+    node.asset,
     { maxWidth: 1440 },
     sanityConfig
   )
@@ -24,12 +23,12 @@ export default ({ node }) => {
         mx: 0,
       }}
     >
-      <Img
+      <GatsbyImage
+        image={fluidProps}
         sx={{
           minHeight: ["300px", "auto", null, null, null],
           variant: "variants.sanityFigure",
         }}
-        fluid={fluidProps}
         alt={node.alt}
       />
       {node.caption && (

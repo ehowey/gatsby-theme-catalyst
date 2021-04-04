@@ -37,21 +37,6 @@ export default {
       },
     },
     {
-      title: "Link type",
-      name: "type",
-      type: "string",
-      description:
-        "Internal links use Gatsby Link to link to other pages, anchor links are for single page sites.",
-      options: {
-        list: [
-          { title: "Internal", value: "internal" },
-          { title: "Anchor", value: "anchor" },
-        ], // <-- predefined values
-        layout: "radio", // <-- defaults to 'dropdown'
-      },
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: "order",
       title: "Order",
       description: "Use numbers to specify the order on the navigation bar.",

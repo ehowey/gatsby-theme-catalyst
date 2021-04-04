@@ -1,26 +1,26 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 
 const TagPage = ({ posts, tag }) => {
   return (
     <Layout>
-      <SEO title={"Tag: " + tag} />
-      <Styled.h1>Tag: {tag}</Styled.h1>
-      <Styled.ul>
+      <Seo title={"Tag: " + tag} />
+      <Themed.h1>Tag: {tag}</Themed.h1>
+      <Themed.ul>
         {posts.map((post) => (
-          <Styled.li key={post.slug}>
-            <Styled.p>
-              <Styled.a as={Link} to={post.slug} sx={{ fontSize: 3 }}>
+          <Themed.li key={post.slug}>
+            <Themed.p>
+              <Themed.a as={Link} to={post.slug} sx={{ fontSize: 3 }}>
                 {post.title}
-              </Styled.a>
+              </Themed.a>
               <br />
               {post.excerpt}
-            </Styled.p>
-          </Styled.li>
+            </Themed.p>
+          </Themed.li>
         ))}
-      </Styled.ul>
+      </Themed.ul>
     </Layout>
   )
 }

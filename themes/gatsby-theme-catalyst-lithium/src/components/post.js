@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import PostFooter from "./post-footer"
 import kebabCase from "lodash/kebabCase"
 import { FaRegClock } from "react-icons/fa"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
-    <SEO
+    <Seo
       title={post.title}
       description={post.excerpt}
       image={post.socialImage.childImageSharp.seo}
@@ -46,7 +46,8 @@ const Post = ({ data: { post }, previous, next }) => (
           mx: "auto",
           variant: "variants.postImage",
         }}
-        alt={post.title} />
+        alt={post.title}
+      />
       <div
         sx={{
           gridColumn: "2 / 3",
@@ -71,7 +72,7 @@ const Post = ({ data: { post }, previous, next }) => (
             px: [3, null, 4, null, null],
           }}
         >
-          <Styled.ul
+          <Themed.ul
             aria-label="Categories"
             sx={{
               display: "flex",
@@ -82,7 +83,7 @@ const Post = ({ data: { post }, previous, next }) => (
             }}
           >
             {post.categories.map((category) => (
-              <Styled.li
+              <Themed.li
                 key={kebabCase(category)}
                 sx={{
                   textTransform: "uppercase",
@@ -101,13 +102,13 @@ const Post = ({ data: { post }, previous, next }) => (
                   variant: "variants.postCategories",
                 }}
               >
-                <Styled.a as={Link} to={`/categories/${kebabCase(category)}/`}>
+                <Themed.a as={Link} to={`/categories/${kebabCase(category)}/`}>
                   {category}
-                </Styled.a>
-              </Styled.li>
+                </Themed.a>
+              </Themed.li>
             ))}
-          </Styled.ul>
-          <Styled.h1
+          </Themed.ul>
+          <Themed.h1
             sx={{
               textAlign: "center",
               fontSize: [5, 6, null, null, null],
@@ -127,8 +128,8 @@ const Post = ({ data: { post }, previous, next }) => (
             }}
           >
             {post.title}
-          </Styled.h1>
-          <Styled.p
+          </Themed.h1>
+          <Themed.p
             sx={{
               color: "textGray",
               fontSize: 1,
@@ -154,7 +155,7 @@ const Post = ({ data: { post }, previous, next }) => (
               }}
             />{" "}
             {post.timeToRead} Min
-          </Styled.p>
+          </Themed.p>
           <MDXRenderer>{post.body}</MDXRenderer>
           <PostFooter {...{ previous, next }} />
         </div>

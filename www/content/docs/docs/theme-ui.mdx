@@ -1,4 +1,4 @@
-<SEO
+<Seo
   title="Theme UI"
   description="Theme UI controls most visual aspects of your themes, fonts, colors, spacing, etc. Variants also allow for some direct modifcation of the CSS in components. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
 />
@@ -16,7 +16,7 @@ The file you should modify to set design tokens is always located in the followi
 
 ## Colors
 
-By default these themes support a dark and light mode. This can be disabled by setting `useColorMode` to false in theme options for `gatsby-theme-catalyst-core`.
+By default these themes support a dark and light mode. This can be disabled by setting `useColorMode` to false in theme options for `gatsby-theme-catalyst-core` and removing the `color.modes` object inside the Theme-UI config.
 
 Try copying and pasting the following code into your theme file and see what happens:
 
@@ -85,30 +85,15 @@ The array notation is used to target different screen sizes based on the breakpo
 
 [Read more about breakpoints in theme-ui](https://theme-ui.com/theming/#breakpoints)
 
-## Changing logo sizes
+## Changing social icon sizes
 
-A common change you will need to make is to the logo size.
-
-The logo size is managed in the following location: `src/gatsby-plugin-theme-ui/index.js`. In many cases the size of your logo will control the size of your navbar/header. There is also an option in the sizes file which can override the auto height inherited from content and specify a fixed height.
-
-Try this in `src/gatsby-plugin-theme-ui/index.js` for a big logo:
+You can change the size of social icons in the header and footer via the Theme-UI file.
 
 ```js
   sizes: {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer on really large screens
-    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
-    headerHeight: "auto", // Provides fallback setting to control header height
-    logoWidthXS: "80px", // Logo width on extra small screens, up to 480px
-    logoWidthS: "150px", // Logo width on small screens, 480px - 768px
-    logoWidthM: "150px", // Logo width on medium screens, 768px - 1024px
-    logoWidthL: "260px", // Logo width on large screens, 1024px - 1440px
-    logoWidthXL: "260px", // Logo width on extra large screens, above 1440px
-    logoHeightXS: "80px", // Logo height on extra small screens, up to 480px
-    logoHeightS: "150px", // Logo height on small screens, 480px - 768px
-    logoHeightM: "150px", // Logo height on medium screens, 768px - 1024px
-    logoHeightL: "260px", // Logo height on large screens, 1024px - 1440px
-    logoHeightXL: "260px", // Logo height on extra large screens, above 1440px
+    maxContentWidth: "60ch", // Sets the container size on larger screens, e.g. tablets and laptops
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "20px", // Sets the icons size for the header
   },
@@ -199,18 +184,7 @@ export default {
   sizes: {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
-    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
-    headerHeight: "auto", // Provides fallback setting to control header height
-    logoWidthXS: "40px", // Logo width on extra small screens, up to 480px
-    logoWidthS: "50px", // Logo width on small screens, 480px - 768px
-    logoWidthM: "50px", // Logo width on medium screens, 768px - 1024px
-    logoWidthL: "60px", // Logo width on large screens, 1024px - 1440px
-    logoWidthXL: "60px", // Logo width on extra large screens, above 1440px
-    logoHeightXS: "40px", // Logo height on extra small screens, up to 480px
-    logoHeightS: "50px", // Logo height on small screens, 480px - 768px
-    logoHeightM: "50px", // Logo height on medium screens, 768px - 1024px
-    logoHeightL: "60px", // Logo height on large screens, 1024px - 1440px
-    logoHeightXL: "60px", // Logo height on extra large screens, above 1440px
+    maxContentWidth: "60ch", // Sets the container size on larger screens, e.g. tablets and laptops
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "20px", // Sets the icons size for the header
   },

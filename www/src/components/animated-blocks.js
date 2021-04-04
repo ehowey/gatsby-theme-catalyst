@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { MdArrowDownward } from "react-icons/md"
 
@@ -31,9 +31,12 @@ const AnimatedBlocks = ({ isDocs }) => {
             p: 3,
           }}
         >
-          <Styled.h3 as="p" sx={{ mb: 2, mt: 0, textAlign: "center" }}>
+          <Themed.h3
+            as="p"
+            sx={{ mb: 2, mt: [0, 0, 0, 0, 0], textAlign: "center" }}
+          >
             Themes
-          </Styled.h3>
+          </Themed.h3>
           <div
             sx={{
               minWidth: "240px",
@@ -49,12 +52,12 @@ const AnimatedBlocks = ({ isDocs }) => {
               color: baseColors.gray[8],
             }}
           >
-            <Styled.h4 as="p" sx={{ mb: 2 }}>
+            <Themed.h4 as="p" sx={{ mb: 2 }}>
               Layout Themes
-            </Styled.h4>
-            <Styled.p sx={{ m: 0 }}>
+            </Themed.h4>
+            <Themed.p sx={{ m: 0 }}>
               <i>Minimal styles, defaults, layout and utility components</i>
-            </Styled.p>
+            </Themed.p>
           </div>
           <div
             sx={{
@@ -71,12 +74,12 @@ const AnimatedBlocks = ({ isDocs }) => {
               color: baseColors.gray[8],
             }}
           >
-            <Styled.h4 as="p" sx={{ mb: 2 }}>
+            <Themed.h4 as="p" sx={{ mb: 2 }}>
               Data Theme
-            </Styled.h4>
-            <Styled.p sx={{ m: 0 }}>
+            </Themed.h4>
+            <Themed.p sx={{ m: 0 }}>
               <i>Optional, adds a backend data source or just use MDX</i>
-            </Styled.p>
+            </Themed.p>
           </div>
           <div
             sx={{
@@ -92,12 +95,12 @@ const AnimatedBlocks = ({ isDocs }) => {
               color: baseColors.gray[8],
             }}
           >
-            <Styled.h4 as="p" sx={{ mb: 2 }}>
+            <Themed.h4 as="p" sx={{ mb: 2 }}>
               Presentation Theme
-            </Styled.h4>
-            <Styled.p sx={{ m: 0 }}>
+            </Themed.h4>
+            <Themed.p sx={{ m: 0 }}>
               <i>Visual design, custom layouts and UI components</i>
-            </Styled.p>
+            </Themed.p>
           </div>
         </div>
         <div
@@ -130,12 +133,12 @@ const AnimatedBlocks = ({ isDocs }) => {
               maxWidth: "330px",
             }}
           >
-            <Styled.h3 as="p" sx={{ mt: 0, mb: 1 }}>
+            <Themed.h3 as="p" sx={{ mt: 0, mb: 1 }}>
               Gatsby Starter
-            </Styled.h3>
-            <Styled.p sx={{ m: 0 }}>
+            </Themed.h3>
+            <Themed.p sx={{ m: 0 }}>
               <i>Packages a set themes together for ease of use.</i>
-            </Styled.p>
+            </Themed.p>
           </div>
           <MdArrowDownward
             sx={{
@@ -155,16 +158,16 @@ const AnimatedBlocks = ({ isDocs }) => {
               maxWidth: "330px",
             }}
           >
-            <Styled.h3 as="p" sx={{ mt: 0, mb: 1 }}>
+            <Themed.h3 as="p" sx={{ mt: 0, mb: 1 }}>
               Production Site
-            </Styled.h3>
-            <Styled.p sx={{ m: 0 }}>
+            </Themed.h3>
+            <Themed.p sx={{ m: 0 }}>
               <i>
                 Add branding, content, styles, and customization. Component
                 shadowing and Theme UI give you full control over the finished
                 product.
               </i>
-            </Styled.p>
+            </Themed.p>
           </div>
         </div>
       </div>

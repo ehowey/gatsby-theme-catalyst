@@ -21,193 +21,161 @@ module.exports = {
     menuLinks: [
       {
         name: `Getting Started`,
-        link: `/docs/getting-started`,
-        type: `internal`, //internal or anchor
+        link: `/docs/getting-started/`,
       },
       {
         name: `Tutorials`,
         link: `tutorials`,
-        type: `internal`, //internal or anchor
         subMenu: [
           {
             name: `Creating a blog with gatsby-theme-catalyst-lithium`,
-            link: `/docs/tutorials/creating-a-blog-with-gatsby-theme-catalyst-lithium`,
-            type: `internal`,
+            link: `/docs/tutorials/creating-a-blog-with-gatsby-theme-catalyst-lithium/`,
           },
           {
             name: `Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen`,
-            link: `/docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen`,
-            type: `internal`,
+            link: `/docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen/`,
           },
           {
             name: `Setting up gatsby-theme-catalyst-sanity`,
-            link: `/docs/tutorials/setting-up-gatsby-theme-catalyst-sanity`,
-            type: `internal`,
+            link: `/docs/tutorials/setting-up-gatsby-theme-catalyst-sanity/`,
           },
         ],
       },
       {
         name: `Starters`,
-        link: `/docs/starters`,
-        type: `internal`, //internal or anchor
+        link: `/docs/starters/`,
       },
       {
         name: `Accessibility`,
-        link: `/docs/accessibility`,
-        type: `internal`, //internal or anchor
+        link: `/docs/accessibility/`,
       },
       {
-        name: `SEO`,
-        link: `/docs/seo`,
-        type: `internal`, //internal or anchor
+        name: `Seo`,
+        link: `/docs/seo/`,
       },
       {
         name: `SANITY.io Integration`,
-        link: `/docs/sanity-io-integration`,
-        type: `internal`, //internal or anchor
+        link: `/docs/sanity-io-integration/`,
       },
       {
         name: `Configuring Themes`,
         link: `configuring-themes`,
-        type: `internal`, //internal or anchor
         subMenu: [
           {
             name: `Overview of configuring themes`,
-            link: `/docs/configuring-themes`,
-            type: `internal`,
+            link: `/docs/configuring-themes/`,
           },
           {
             name: `Gatsby-Config.js`,
-            link: `/docs/gatsby-config`,
-            type: `internal`,
+            link: `/docs/gatsby-config/`,
           },
           {
             name: `Theme Options`,
-            link: `/docs/theme-options`,
-            type: `internal`,
+            link: `/docs/theme-options/`,
           },
           {
             name: `Branding`,
-            link: `/docs/branding`,
-            type: `internal`,
+            link: `/docs/branding/`,
           },
           {
             name: `Theme-UI`,
-            link: `/docs/theme-ui`,
-            type: `internal`,
+            link: `/docs/theme-ui/`,
           },
           {
             name: `Component Shadowing`,
-            link: `/docs/component-shadowing`,
-            type: `internal`,
+            link: `/docs/component-shadowing/`,
           },
         ],
       },
       {
         name: `Layout Themes`,
         link: `layout-themes`,
-        type: `internal`, //internal or anchor
         subMenu: [
           {
             name: `gatsby-theme-catalyst-core`,
-            link: `/docs/gatsby-theme-catalyst-core`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-core/`,
           },
           {
             name: `gatsby-theme-catalyst-header-top`,
-            link: `/docs/gatsby-theme-catalyst-header-top`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-header-top/`,
           },
           {
             name: `gatsby-theme-catalyst-header-bigtop`,
-            link: `/docs/gatsby-theme-catalyst-header-bigtop`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-header-bigtop/`,
           },
           {
             name: `gatsby-theme-catalyst-header-side`,
-            link: `/docs/gatsby-theme-catalyst-header-side`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-header-side/`,
           },
           {
             name: `gatsby-theme-catalyst-footer`,
-            link: `/docs/gatsby-theme-catalyst-footer`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-footer/`,
           },
         ],
       },
       {
         name: `Data Themes`,
         link: `data-themes`,
-        type: `internal`, //internal or anchor
         subMenu: [
           {
             name: `gatsby-theme-catalyst-blog`,
-            link: `/docs/gatsby-theme-catalyst-blog`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-blog/`,
           },
           {
             name: `gatsby-theme-catalyst-sanity`,
-            link: `/docs/gatsby-theme-catalyst-sanity`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-sanity/`,
           },
         ],
       },
       {
         name: `Presentation Themes`,
         link: `presentation-themes`,
-        type: `internal`, //internal or anchor
         subMenu: [
           {
             name: `gatsby-theme-catalyst-hydrogen`,
-            link: `/docs/gatsby-theme-catalyst-hydrogen`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-hydrogen/`,
           },
           {
             name: `gatsby-theme-catalyst-helium`,
-            link: `/docs/gatsby-theme-catalyst-helium`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-helium/`,
           },
           {
             name: `gatsby-theme-catalyst-lithium`,
-            link: `/docs/gatsby-theme-catalyst-lithium`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-lithium/`,
           },
           {
             name: `gatsby-theme-catalyst-bery`,
-            link: `/docs/gatsby-theme-catalyst-bery`,
-            type: `internal`,
+            link: `/docs/gatsby-theme-catalyst-bery/`,
           },
         ],
       },
       {
+        name: `Roadmap`,
+        link: `/docs/roadmap/`,
+      },
+      {
         name: `Browser Support`,
-        link: `/docs/browser-support`,
-        type: `internal`, //internal or anchor
+        link: `/docs/browser-support/`,
       },
       {
         name: `Migrating`,
-        link: `/docs/migrating`,
-        type: `internal`, //internal or anchor
+        link: `/docs/migrating/`,
       },
       {
         name: `Versioning`,
-        link: `/docs/versioning`,
-        type: `internal`, //internal or anchor
+        link: `/docs/versioning/`,
       },
       {
         name: `Philosophy`,
-        link: `/docs/philosophy`,
-        type: `internal`, //internal or anchor
+        link: `/docs/philosophy/`,
       },
       {
         name: `Contribution`,
-        link: `/docs/contribution`,
-        type: `internal`, //internal or anchor
+        link: `/docs/contribution/`,
       },
       {
         name: `Acknowledgements`,
-        link: `/docs/acknowledgements`,
-        type: `internal`, //internal or anchor
+        link: `/docs/acknowledgements/`,
       },
     ],
     socialLinks: [
@@ -222,22 +190,18 @@ module.exports = {
     {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
-        //Default options are:
         contentPath: `content/docs`,
-        // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        displaySiteTitleMobile: false,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
-        // useKatex: false,
+        useAlertBanner: true,
+      },
+    },
+    {
+      resolve: `gatsby-theme-catalyst-footer`,
+      options: {
+        // Default options are
+        // useFooterSocialLinks: true,
         footerContentLocation: "right", // "left", "right", "center"
       },
     },
-    `gatsby-theme-catalyst-footer`,
     `gatsby-theme-catalyst-header-side`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -251,7 +215,7 @@ module.exports = {
         icon: `content/assets/catalyst-site-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-netlify`,
       options: {

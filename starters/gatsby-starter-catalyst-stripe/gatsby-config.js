@@ -13,7 +13,6 @@ module.exports = {
       {
         name: `Page 1`,
         link: `/page-1`,
-        type: `internal`, //internal or anchor
       },
     ],
     socialLinks: [

@@ -27,9 +27,7 @@ export const query = graphql`
         featuredImage {
           caption
           asset {
-            fluid(maxWidth: 1440) {
-              ...GatsbySanityImageFluid
-            }
+            id
           }
         }
       }

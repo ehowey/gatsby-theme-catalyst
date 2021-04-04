@@ -13,25 +13,11 @@ export default {
       title: "Link to",
       name: "link",
       type: "url",
-      validation: Rule =>
+      validation: (Rule) =>
         Rule.uri({
           allowRelative: true,
           scheme: ["https", "http", "mailto", "tel"],
         }),
-    },
-    {
-      title: "Link type",
-      name: "type",
-      type: "string",
-      description:
-        "Links within your site should be internal, anchor links are for single page sites.",
-      options: {
-        list: [
-          { title: "Internal", value: "internal" },
-          { title: "Anchor", value: "anchor" },
-        ], // <-- predefined values
-        layout: "radio", // <-- defaults to 'dropdown'
-      },
     },
   ],
 }

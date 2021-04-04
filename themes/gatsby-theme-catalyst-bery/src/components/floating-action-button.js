@@ -52,7 +52,7 @@ const FloatingActionButton = () => {
         width: "48px",
         height: "48px",
         backgroundColor: "primary",
-        borderRadius: "9999em",
+        borderRadius: "50%",
         boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
         transition: "all 0.1s ease-in-out",
         textAlign: "center",

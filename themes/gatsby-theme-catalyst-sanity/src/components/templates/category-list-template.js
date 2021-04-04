@@ -1,22 +1,22 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { Link } from "gatsby"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 
 const CategoryListPage = ({ categories }) => {
   return (
     <Layout>
-      <SEO title="All Categories" />
-      <Styled.h1>All Categories</Styled.h1>
-      <Styled.ul>
+      <Seo title="All Categories" />
+      <Themed.h1>All Categories</Themed.h1>
+      <Themed.ul>
         {categories.map((category) => (
-          <Styled.li key={category.id}>
-            <Styled.a as={Link} to={`/categories/${category.slug.current}/`}>
+          <Themed.li key={category.id}>
+            <Themed.a as={Link} to={`/categories/${category.slug.current}/`}>
               {category.title}
-            </Styled.a>
-          </Styled.li>
+            </Themed.a>
+          </Themed.li>
         ))}
-      </Styled.ul>
+      </Themed.ul>
     </Layout>
   )
 }

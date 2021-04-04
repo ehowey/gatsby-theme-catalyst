@@ -9,6 +9,15 @@ Sibling theme for `gatsby-theme-catalyst-core` which adds a sidebar header using
 ## Demos
 
 - [gatsby-starter-catalyst-blog](https://gatsby-starter-catalyst-blog.netlify.app/)
+- [Gatsby Catalyst Docs](https://www.gatsbycatalyst.com/docs/)
+
+## Theme Options
+
+| Option                 | Values        | Description                                                              |
+| ---------------------- | ------------- | ------------------------------------------------------------------------ |
+| `useStickyHeader`      | true or false | Defaults to false, controls whether the header is sticky or static       |
+| `useHeaderSocialLinks` | true or false | Defaults to true, controls whether the social links are displayed or not |
+| `useColorMode`         | true or false | Defaults to true, controls whether the dark mode toggle is available.    |
 
 ## About Gatsby Theme Catalyst
 

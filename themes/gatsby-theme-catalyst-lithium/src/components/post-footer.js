@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { lighten } from "@theme-ui/color"
 import { Link } from "gatsby"
 
 const PostFooter = ({ previous, next }) => (
   <div sx={{ mb: 3 }}>
-    <Styled.hr sx={{ bg: lighten("textGray", 0.4) }} />
+    <Themed.hr sx={{ bg: lighten("textGray", 0.4) }} />
     {(previous || next) && (
       <div
         sx={{
@@ -24,10 +24,10 @@ const PostFooter = ({ previous, next }) => (
           {" "}
           {previous && (
             <div>
-              <Styled.h5>&larr; Previous Post</Styled.h5>
-              <Styled.a as={Link} to={previous.slug} rel="prev">
+              <Themed.h5>&larr; Previous Post</Themed.h5>
+              <Themed.a as={Link} to={previous.slug} rel="prev">
                 {previous.title}
-              </Styled.a>
+              </Themed.a>
             </div>
           )}
         </div>
@@ -43,10 +43,10 @@ const PostFooter = ({ previous, next }) => (
                 textAlign: "right",
               }}
             >
-              <Styled.h5>Next Post &rarr;</Styled.h5>
-              <Styled.a as={Link} to={next.slug} rel="next">
+              <Themed.h5>Next Post &rarr;</Themed.h5>
+              <Themed.a as={Link} to={next.slug} rel="next">
                 {next.title}
-              </Styled.a>
+              </Themed.a>
             </div>
           )}
         </div>

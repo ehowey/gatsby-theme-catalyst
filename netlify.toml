@@ -2,8 +2,10 @@
   base = "www/"
   command = "npm run build"
   publish = "public"
-[context."(stripe)--continued-work-on-theme-and-starter"]
+  environment = { NODE_VERSION = "14" }
+[context."(ecommerce)--initial-work-on-theme-and-starter"]
   base = "starters/gatsby-starter-catalyst-stripe"
   command = "npm run build"
   publish = "public"
   functions = "functions/"
+  environment = { NODE_VERSION = "14" }

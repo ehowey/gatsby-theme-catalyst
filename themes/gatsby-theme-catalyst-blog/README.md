@@ -31,6 +31,7 @@ The main features added to this blog theme are:
 | `postListTitle`        | String  | Defaults to "Posts", allows you to control the title of your post page, e.g. "Blog" or "Writing" or "Digital Garden"    |
 | `displayPostListTitle` | Boolean | Defaults to true, allows you to remove the visual title of your post page but keep it in the page title in the browser. |
 | `rssTitle`             | String  | Defaults to "RSS Feed", allows you to customize the title of the RSS feed.                                              |
+| `rssDescription`       | String  | Defaults to "A great RSS feed", set the RSS description for your feed.                                                  |
 
 Example Config:
 
@@ -63,7 +64,7 @@ The following fields are available in front matter.
 | authorLink           | No        | String  | Used as a link for the author name in the post summaries |
 | tags                 | No        | Array   | Tags for the post, ["tag1", "tag2", "tag3"]              |
 | categories           | No        | Array   | Categories for the post, ["cats", "dogs", "snakes"]      |
-| keywords             | No        | Array   | Keywords used for SEO, ["key1", "key2", "key3"]          |
+| keywords             | No        | Array   | Keywords used for Seo, ["key1", "key2", "key3"]          |
 | draft                | No        | Boolean | Defaults to false, set to true if a post is a draft      |
 
 Example frontmatter:

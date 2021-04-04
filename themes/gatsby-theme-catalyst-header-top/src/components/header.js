@@ -1,19 +1,15 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from "theme-ui"
+import { jsx } from "theme-ui"
 import { useContext } from "react"
-import Branding from "./branding/branding"
-import Nav from "./navbar/nav"
-import MobileButton from "./navbar/nav-mobile-button"
+import Branding from "./branding"
+import Nav from "./nav"
+import HamburgerButton from "./hamburger-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
-import CartButton from "./cart/cart-button"
-import Cart from "./cart/cart"
+import { useHeaderConfig } from "../utils/use-header-config"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useStickyHeader } = useCatalystConfig()
-  const { theme } = useThemeUI()
-  const useShoppingCart = true
+  const { useStickyHeader } = useHeaderConfig()
   return (
     <header
       sx={{
@@ -37,14 +33,8 @@ const SiteHeader = () => {
           gridColumn: "1 / -1",
           alignSelf: "start",
           display: "grid",
-          gridTemplateColumns: "auto minmax(0, 1fr) auto",
-          gridTemplateRows: [
-            theme.sizes.headerHeight + " 1fr",
-            null,
-            theme.sizes.headerHeight,
-            null,
-            null,
-          ],
+          gridTemplateColumns: "auto 1fr",
+          gridTemplateRows: ["auto 1fr", null, "auto", null, null],
           maxWidth: "maxPageWidth",
           width: "100%",
           minHeight: isNavOpen ? "100vh" : "50px",
@@ -55,8 +45,7 @@ const SiteHeader = () => {
       >
         <Branding />
         <Nav />
-        <MobileButton />
-        {useShoppingCart && <CartButton />}
+        <HamburgerButton />
       </div>
     </header>
   )

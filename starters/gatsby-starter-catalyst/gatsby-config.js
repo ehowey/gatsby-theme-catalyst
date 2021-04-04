@@ -9,36 +9,30 @@ module.exports = {
       {
         name: `Left Link`,
         link: `/left-link/`,
-        type: `internal`, //internal or anchor
         location: `left`,
       },
       {
         name: `Page 1`,
         link: `/page-1/`,
-        type: `internal`, //internal or anchor
         location: `right`,
       },
       {
         name: `Anchor 1`,
-        link: `#anchor-1`,
-        type: `anchor`, //internal or anchor
+        link: `/#anchor-1`,
         location: `right`,
       },
       {
         name: `Page 2`,
         link: `/page-2/`,
-        type: `internal`, //internal or anchor
         location: `right`,
         subMenu: [
           {
             name: `Sub 1`,
             link: `/sub-1/`,
-            type: `internal`, //internal or anchor
           },
           {
             name: `Sub 2`,
             link: `/sub-2/`,
-            type: `internal`, //internal or anchor
           },
         ],
       },
@@ -68,22 +62,29 @@ module.exports = {
         //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
-        // displaySiteLogo: true,
-        // displaySiteTitle: true,
-        // displaySiteLogoMobile: true,
-        // displaySiteTitleMobile: true,
-        // invertSiteLogo: false,
-        // useStickyHeader: false,
-        // useSocialLinks: true,
-        // useColorMode: true,
         // useKatex: false,
-        // footerContentLocation: "left", // "left", "right", "center"
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
+        // useAlertBanner: false,
       },
     },
-    `gatsby-theme-catalyst-header-top`, // Try `gatsby-theme-catalyst-header-side`
-    `gatsby-theme-catalyst-footer`,
+    {
+      resolve: `gatsby-theme-catalyst-header-top`,
+      options: {
+        // Default options are
+        // useStickyHeader: true,
+        // useHeaderSocialLinks: true,
+        // useColorMode: true
+      },
+    },
+    {
+      resolve: `gatsby-theme-catalyst-footer`,
+      options: {
+        // Default options are
+        // useFooterSocialLinks: true,
+        // footerContentLocation: "left", // "left", "right", "center"
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

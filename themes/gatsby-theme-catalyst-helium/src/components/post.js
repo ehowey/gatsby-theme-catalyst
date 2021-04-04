@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { SEO, Layout } from "gatsby-theme-catalyst-core"
+import { jsx, Themed } from "theme-ui"
+import { Seo, Layout } from "gatsby-theme-catalyst-core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import PostFooter from "./post-footer"
 import { FaRegClock } from "react-icons/fa"
 import kebabCase from "lodash/kebabCase"
 
 const Post = ({ data: { post }, previous, next }) => (
   <Layout>
-    <SEO
+    <Seo
       title={post.title}
       description={post.excerpt}
       image={post.socialImage.childImageSharp.seo}
@@ -34,7 +34,7 @@ const Post = ({ data: { post }, previous, next }) => (
             bg: "muted",
           }}
         >
-          <Styled.ul
+          <Themed.ul
             aria-label="Categories"
             sx={{
               display: "flex",
@@ -45,7 +45,7 @@ const Post = ({ data: { post }, previous, next }) => (
             }}
           >
             {post.categories.map((category) => (
-              <Styled.li
+              <Themed.li
                 key={kebabCase(category)}
                 sx={{
                   textTransform: "uppercase",
@@ -64,12 +64,12 @@ const Post = ({ data: { post }, previous, next }) => (
                   variant: "variants.postCategory",
                 }}
               >
-                <Styled.a as={Link} to={`/categories/${kebabCase(category)}/`}>
+                <Themed.a as={Link} to={`/categories/${kebabCase(category)}/`}>
                   {category}
-                </Styled.a>
-              </Styled.li>
+                </Themed.a>
+              </Themed.li>
             ))}
-          </Styled.ul>
+          </Themed.ul>
           <h1
             sx={{
               fontFamily: "heading",
@@ -103,7 +103,7 @@ const Post = ({ data: { post }, previous, next }) => (
           >
             {post.subTitle}
           </h2>
-          <Styled.p
+          <Themed.p
             sx={{
               color: "textGray",
               lineHeight: "1.15em",
@@ -120,7 +120,7 @@ const Post = ({ data: { post }, previous, next }) => (
             }}
           >
             {post.author} &bull; {post.date}
-          </Styled.p>
+          </Themed.p>
           <hr
             sx={{
               width: ["40%", "30%", "20%", null, "10%"],
@@ -138,7 +138,8 @@ const Post = ({ data: { post }, previous, next }) => (
               maxHeight: "400px",
               variant: "variants.postImage",
             }}
-            alt={post.title} />
+            alt={post.title}
+          />
           <span sx={{ ml: 1, color: "textGray", fontSize: 1 }}>
             {post.featuredImageCaption}
           </span>

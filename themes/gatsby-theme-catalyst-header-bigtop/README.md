@@ -12,8 +12,14 @@ You can see a styled implementation of this in [gatsby-theme-catalyst-helium](ht
 
 ## Demos
 
-- [gatsby-starter-catalyst](https://gatsby-starter-catalyst.netlify.app/)
-- [https://www.erichowey.dev/](https://www.erichowey.dev/)
+- [gatsby-starter-catalyst-helium](https://gatsby-starter-catalyst-helium.netlify.app/)
+
+## Theme Options
+
+| Option                 | Values        | Description                                                              |
+| ---------------------- | ------------- | ------------------------------------------------------------------------ |
+| `useHeaderSocialLinks` | true or false | Defaults to true, controls whether the social links are displayed or not |
+| `useColorMode`         | true or false | Defaults to true, controls whether the dark mode toggle is available.    |
 
 ## About Gatsby Theme Catalyst
 

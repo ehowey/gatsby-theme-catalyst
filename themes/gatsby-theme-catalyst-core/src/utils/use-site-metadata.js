@@ -1,37 +1,48 @@
 import { useStaticQuery, graphql } from "gatsby"
 export const useSiteMetadata = () => {
   const data = useStaticQuery(
-    graphql`query SiteMetaData {
-  logo: file(name: {eq: "catalyst-site-logo"}) {
-    childImageSharp {
-      gatsbyImageData(height: 512, layout: FULL_WIDTH)
-    }
-  }
-  seoImage: file(name: {eq: "catalyst-site-social"}) {
-    childImageSharp {
-      resize(width: 1024) {
-        src
-        width
-        height
-      }
-    }
-  }
-  site {
-    siteMetadata {
-      title
-      description
-      keywords
-      author
-      siteUrl
-      menuLinks {
-        name
-        link
-        type
-        location
-        subMenu {
-          link
-          name
-          type
+    graphql`
+      query SiteMetaData {
+        logo: file(name: { eq: "catalyst-site-logo" }) {
+          childImageSharp {
+            gatsbyImageData(
+              height: 300
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
+          }
+        }
+        seoImage: file(name: { eq: "catalyst-site-social" }) {
+          childImageSharp {
+            resize(width: 1024) {
+              src
+              width
+              height
+            }
+          }
+        }
+        site {
+          siteMetadata {
+            title
+            description
+            keywords
+            author
+            siteUrl
+            menuLinks {
+              name
+              link
+              location
+              subMenu {
+                link
+                name
+              }
+            }
+            socialLinks {
+              name
+              link
+              location
+            }
+          }
         }
       }
       socialLinks {

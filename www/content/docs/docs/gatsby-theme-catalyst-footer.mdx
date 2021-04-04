@@ -1,4 +1,4 @@
-<SEO
+<Seo
   title="Gatsby-Theme-Catalyst-Footer"
   description="Gatsby Theme Catalyst Footer adds a basic site footer using latent component shadowing. Just a simple copyright, branding, and social links at this time. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
 />
@@ -6,8 +6,6 @@
 # gatsby-theme-catalyst-footer
 
 Sibling theme for `gatsby-theme-catalyst-core` which adds a basic site footer using latent component shadowing. Just a simple copyright, branding, and social links at this time. This will be expanded on in the future to support navigation in the footer.
-
-Control the content location using the `footerContentLocation` option in `gatsby-theme-catalyst-core`. Defaults to left.
 
 ## Demos
 
@@ -20,4 +18,7 @@ Control the content location using the `footerContentLocation` option in `gatsby
 
 ## Theme Options
 
-Theme options are set via feature flags in the core theme.
+| Option                  | Values                                    | Description                                                              |
+| ----------------------- | ----------------------------------------- | ------------------------------------------------------------------------ |
+| `useFooterSocialLinks`  | true or false                             | Defaults to true, controls whether the social links are displayed or not |
+| `footerContentLocation` | String value, "left", "right" or "center" | Defaults to "left", determines the location of the footer content.       |

@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useContext } from "react"
-import Branding from "./branding/branding"
-import Nav from "./navbar/nav"
-import MobileButton from "./navbar/nav-mobile-button"
+import Branding from "./branding"
+import Nav from "./nav"
+import HamburgerButton from "./hamburger-button"
 import { NavContext } from "gatsby-theme-catalyst-core"
-import { useCatalystConfig } from "gatsby-theme-catalyst-core"
+import { useHeaderConfig } from "../utils/use-header-config"
 
 const SiteHeader = () => {
   const [isNavOpen] = useContext(NavContext)
-  const { useStickyHeader } = useCatalystConfig()
+  const { useStickyHeader } = useHeaderConfig()
   return (
     <header
       sx={{
@@ -52,7 +52,7 @@ const SiteHeader = () => {
       >
         <Branding />
         <Nav />
-        <MobileButton />
+        <HamburgerButton />
       </div>
     </header>
   )
