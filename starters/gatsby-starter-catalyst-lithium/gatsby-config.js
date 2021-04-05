@@ -47,7 +47,6 @@ module.exports = {
         excerptLength: 140,
         // Lithium theme
         useHero: true,
-        useAlertBanner: true,
       },
     },
     {

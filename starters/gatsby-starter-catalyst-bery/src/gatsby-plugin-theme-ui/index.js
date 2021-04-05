@@ -1,8 +1,8 @@
 import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
-import "fontsource-sen/400.css"
-import "fontsource-sen/700.css"
+import "@fontsource/sen/400.css"
+import "@fontsource/sen/700.css"
 
 const theme = merge(BaseTheme, {
   // Modifications to the base theme go here.
