@@ -1,7 +1,7 @@
 import { merge } from "theme-ui"
 import { tailwind, baseColors } from "@theme-ui/preset-tailwind"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
-import "fontsource-quando"
+import "@fontsource/quando/400.css" // Weight 400.
 
 const theme = merge(BaseTheme, {
   // Modifications to the theme go here.
