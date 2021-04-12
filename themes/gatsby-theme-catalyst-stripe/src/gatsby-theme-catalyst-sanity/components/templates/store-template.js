@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Seo, Layout } from "gatsby-theme-catalyst-core"
-import Product from "../product"
-import Cart from "../cart"
+import Product from "../../../components/product"
+import Cart from "../../../components/cart"
 
 const Store = ({ data }) => {
   const allProducts = data.allSanityProduct.nodes

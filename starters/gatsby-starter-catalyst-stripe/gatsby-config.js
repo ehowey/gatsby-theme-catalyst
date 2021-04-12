@@ -26,21 +26,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-theme-catalyst-core`,
+      options: {},
+    },
+    {
       resolve: `gatsby-theme-catalyst-stripe`,
       options: {
-        // Example for an env variable
-        // sanityProjectID: process.env.SANITY_PROJECT_ID,
-        // sanityDataset: process.env.SANITY_DATASET
-        //
-        // Default values
-        // sanityProjectId: REQUIRED,
-        // sanityDataset: "production",
-        // sanityToken: null,
-        // sanityWatchMode: true,
-        // sanityOverlayDrafts: false, // Requires a token and private dataset
-        sanityProjectId: process.env.GATSBY_SANITY_PROJECT_ID, // Required
-        sanityDataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
-        sanityToken: process.env.GATSBY_SANITY_TOKEN,
         stripePublicKey: stripeConfig.stripePublicKey,
         allowedCountries: stripeConfig.allowedCountries,
         billingAddressCollection: stripeConfig.billingAddressCollection,
@@ -49,6 +40,16 @@ module.exports = {
         cancelUrl: stripeConfig.cancelUrl,
       },
     },
+    {
+      resolve: `gatsby-theme-catalyst-sanity`,
+      options: {
+        sanityProjectId: process.env.GATSBY_SANITY_PROJECT_ID, // Required
+        sanityDataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
+        sanityToken: process.env.GATSBY_SANITY_TOKEN,
+      },
+    },
+    `gatsby-theme-catalyst-header-top`,
+    `gatsby-theme-catalyst-footer`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

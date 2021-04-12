@@ -15,7 +15,10 @@ export const query = graphql`
         name
         active
         featured
+        sale
+        salePercent
         description
+        variantTitle
         excerpt(limit: 180)
         categories {
           title
@@ -26,15 +29,14 @@ export const query = graphql`
         variants {
           _id
           name
+          displayedName
           price
           product_id
           stock
           taxable
           images {
             asset {
-              fluid(maxWidth: 1024) {
-                ...GatsbySanityImageFluid
-              }
+              id
             }
           }
         }

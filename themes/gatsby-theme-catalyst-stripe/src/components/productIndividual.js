@@ -1,30 +1,30 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { useState, useEffect } from "react"
-import Img from "gatsby-image"
 import { useShoppingCart } from "use-shopping-cart"
 import sanityClient from "@sanity/client"
 
-const Product = ({ product: propProduct }) => {
+const Product = ({ product }) => {
   const { redirectToCheckout, addItem } = useShoppingCart()
-  const product = propProduct[0]
-  const productName = product.productName
-  const productImage = product.images[0].asset.fluid
-  const productPrice = product.formattedPrice
-  const sanityId = product.sanityId
+  const productName = product.name
+  // const productImage = product.variants[0].images[0].asset.fluid
+  const productPrice = product.variants[0].formattedPrice
+  const regularPrice = product.variants[0].regularPrice
+  const sanityId = product.variants[0].sanityId
+  const onSale = product.sale
 
-  // Initialize SANITY client
+  // Initialize SANITY client. Requires a public dataset. Private would have be handled in a Netlify Function.
   const client = sanityClient({
     projectId: process.env.GATSBY_SANITY_PROJECT_ID,
     dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
-    token: process.env.GATSBY_SANITY_TOKEN,
+    apiVersion: "2021-04-11",
     useCdn: false, // `false` if you want to ensure fresh data
   })
 
-  console.log(product)
-
   const [quantity, setQuantity] = useState(1)
   const [stockStatus, setStockStatus] = useState("Checking stock...")
+  const [quantityError, setQuantityError] = useState(null)
+  const [stockAmount, setStockAmount] = useState(null)
 
   const handleBuyNow = async (product) => {
     const response = await fetch("/.netlify/functions/create-session", {
@@ -45,21 +45,41 @@ const Product = ({ product: propProduct }) => {
   }
 
   const handleAddItem = () => {
-    addItem(product, quantity)
+    addItem(product.variants[0], {
+      count: quantity,
+      price_metadata: {},
+      product_metadata: {},
+    })
   }
 
   const handleQuantity = (event) => {
-    setQuantity(event.target.value)
+    const selectedQuantity = parseInt(event.target.value)
+    if (selectedQuantity <= stockAmount) {
+      setQuantity(selectedQuantity)
+      setQuantityError(null)
+    }
+    if (selectedQuantity > stockAmount) {
+      setQuantityError(
+        "Quantity selected must be less than or equal to available stock"
+      )
+    }
   }
 
   useEffect(() => {
     const query = `*[_id == "${sanityId}"] {stock}`
     const params = {}
     client.fetch(query, params).then((prod) => {
-      if (prod[0].stock !== 0) {
-        setStockStatus("In stock")
+      const stockAmount = prod[0].stock
+      setStockAmount(stockAmount)
+      if (stockAmount === null) {
+        setStockStatus("Checking stock...")
       }
-      if (prod[0].stock === 0) {
+
+      if (stockAmount > 0) {
+        setStockStatus(`${stockAmount} in stock`)
+      }
+
+      if (stockAmount === 0) {
         setStockStatus("Out of stock")
       }
     })
@@ -68,9 +88,17 @@ const Product = ({ product: propProduct }) => {
   return (
     <div>
       <Themed.h3>{productName}</Themed.h3>
-      <Img fluid={productImage} sx={{ width: "200px", height: "200px" }} />
       <p>{stockStatus}</p>
-      <p>{productPrice}</p>
+      {onSale && <p>SALE!</p>}
+      <p>
+        {onSale && (
+          <span sx={{ textDecoration: "line-through", mr: 1 }}>
+            {regularPrice}
+          </span>
+        )}
+        {productPrice}
+      </p>
+      {quantityError && <p>{quantityError}</p>}
       <p>
         Select Quantity
         <select onChange={handleQuantity}>
@@ -88,7 +116,7 @@ const Product = ({ product: propProduct }) => {
       </p>
       <button
         type="button"
-        onClick={() => handleBuyNow(product)}
+        onClick={() => handleBuyNow(product.variants[0])}
         aria-label={`Buy ${productName} now`}
       >
         Buy now

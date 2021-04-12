@@ -7,7 +7,7 @@ import { formatProduct } from "../utils/formatProduct"
 
 const Product = ({ product }) => {
   const formattedProduct = formatProduct(product)
-  const hasVariants = formattedProduct.length > 1
+  const hasVariants = formattedProduct.variants.length > 1
   return (
     <Fragment>
       {hasVariants ? (

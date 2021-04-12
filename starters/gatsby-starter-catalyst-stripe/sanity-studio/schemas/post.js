@@ -1,5 +1,3 @@
-import { format } from "date-fns"
-
 export default {
   name: "post",
   title: "Post",
@@ -60,9 +58,10 @@ export default {
     },
     prepare(selection) {
       const { title, date } = selection
+      const formattedDate = new Date(date).toDateString()
       return {
         title: title,
-        subtitle: format(date, "MMMM D, YYYY"), // YYYY-MM-DD --> YYYY
+        subtitle: formattedDate,
       }
     },
   },

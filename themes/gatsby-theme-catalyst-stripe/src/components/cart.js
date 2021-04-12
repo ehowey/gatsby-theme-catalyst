@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
-import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
+import { jsx, Themed, Button } from "theme-ui"
+import { useShoppingCart } from "use-shopping-cart"
 
 const Cart = () => {
   const {
@@ -9,6 +9,7 @@ const Cart = () => {
     clearCart,
     cartDetails,
     formattedTotalPrice,
+    handleCloseCart,
   } = useShoppingCart()
 
   const handleCheckout = async (event) => {
@@ -31,11 +32,12 @@ const Cart = () => {
 
   return (
     <div>
-      <Themed.h2>Cart</Themed.h2>
-      <p>Number of Items: {cartCount}</p>
-      <p>Total: {formattedTotalPrice}</p>
-      <button onClick={handleCheckout}>Checkout</button>
-      <button onClick={() => clearCart()}>Remove all items</button>
+      <Button onClick={handleCloseCart}>Close cart</Button>
+      <Themed.h2>Shopping Cart</Themed.h2>
+      <Themed.p>Number of Items: {cartCount}</Themed.p>
+      <Themed.p>Total: {formattedTotalPrice}</Themed.p>
+      <Button onClick={handleCheckout}>Checkout</Button>
+      <Button onClick={() => clearCart()}>Remove all items</Button>
     </div>
   )
 }

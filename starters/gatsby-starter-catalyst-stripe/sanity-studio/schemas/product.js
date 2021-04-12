@@ -13,6 +13,18 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "sale",
+      title: "On sale?",
+      description:
+        "Toggle whether the product and all of its variants are on sale.",
+      type: "boolean",
+    },
+    {
+      title: "Percent off",
+      name: "salePercent",
+      type: "number",
+    },
+    {
       name: "featured",
       title: "Featured?",
       description: "Toggle whether a product is featured.",
@@ -35,7 +47,17 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "variantTitle",
+      title: "Variant title",
+      description:
+        "Used to define what the variants are, e.g. 'size', 'color', etc.",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "Variants",
+      description:
+        "Products with only one variant will not show a variant selector.",
       name: "variants",
       type: "array",
       validation: (Rule) => Rule.required(),
