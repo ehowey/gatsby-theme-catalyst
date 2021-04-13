@@ -10,7 +10,7 @@
     "gatsby-theme-catalyst-footer": "^6.0.0-beta.3",
     "gatsby-theme-catalyst-header-top": "^6.0.0-beta.3",
     "gatsby-theme-catalyst-sanity": "^6.0.0-beta.3",
-    "use-shopping-cart": "^3.0.0-beta.6"
+    "use-shopping-cart": "^3.0.0-beta.8"
   },
   "peerDependencies": {
     "gatsby": "^3.2.0",

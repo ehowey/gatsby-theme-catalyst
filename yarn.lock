@@ -17641,10 +17641,10 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-use-shopping-cart@^3.0.0-beta.6:
-  version "3.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/use-shopping-cart/-/use-shopping-cart-3.0.0-beta.6.tgz#2325c2ff87933163b60c41c72a51ef0fedc28618"
-  integrity sha512-1skFTKGi2ldeUK4Q2D7ZQbvWZi4Cs4ZnIcHZhm62u46YqvfyRv3VuM+BfZJi8mTy0t0Nwiqq75xOQ1NFw3dqUg==
+use-shopping-cart@^3.0.0-beta.8:
+  version "3.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/use-shopping-cart/-/use-shopping-cart-3.0.0-beta.8.tgz#859d0e39e965109e693c55e90e820e08e8eabc39"
+  integrity sha512-RcH3HfYTZSdgenPobxpXsExnFwfpGrbnfgiSePXfuxdY3F9zAvShXkYBbcoHRVl8yqKjf7Ysk5B3L3UWbV3KyA==
   dependencies:
     "@reduxjs/toolkit" "^1.5.0"
     "@stripe/stripe-js" "^1.13.2"

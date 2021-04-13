@@ -3,7 +3,7 @@
   command = "npm run build"
   publish = "public"
   environment = { NODE_VERSION = "14" }
-[context."(ecommerce)--initial-work-on-theme-and-starter"]
+[context."(stripe)--usc-v3"]
   base = "starters/gatsby-starter-catalyst-stripe"
   command = "npm run build"
   publish = "public"
