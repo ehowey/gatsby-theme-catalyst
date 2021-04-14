@@ -38,6 +38,8 @@ const ProductWithVariant = ({ product }) => {
       })
       .catch((error) => console.log(error))
 
+    console.log(response)
+
     redirectToCheckout({ sessionId: response.sessionId })
   }
 

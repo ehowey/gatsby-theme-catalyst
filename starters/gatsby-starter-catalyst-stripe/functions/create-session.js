@@ -5,11 +5,11 @@
  * @see https://stripe.com/docs/payments/checkout/one-time
  */
 
-const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
+const stripe = require("stripe")(`${process.env.GATSBY_STRIPE_SECRET_KEY}`)
 const sanityClient = require("@sanity/client")
 const dollarsToCents = require("dollars-to-cents")
 const stripeConfig = require("../stripe-config")
-const validateCartItems = require("use-shopping-cart/src/serverUtil")
+const validateCartItems = require("use-shopping-cart/utilities")
   .validateCartItems
 
 // Initialize SANITY client
@@ -17,6 +17,7 @@ const client = sanityClient({
   projectId: process.env.GATSBY_SANITY_PROJECT_ID,
   dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
   token: process.env.GATSBY_SANITY_TOKEN,
+  apiVersion: "2021-04-11",
   useCdn: false, // `false` if you want to ensure fresh data
 })
 
@@ -86,6 +87,8 @@ exports.handler = async (event) => {
       )
 
     const line_items = validateCartItems(productsFromSanity, cartItemsFromWeb)
+
+    console.log(line_items)
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: stripeConfig.paymentMethodTypes,

@@ -41,6 +41,8 @@ const Product = ({ product }) => {
       })
       .catch((error) => console.log(error))
 
+    console.log(response)
+
     redirectToCheckout({ sessionId: response.sessionId })
   }
 
