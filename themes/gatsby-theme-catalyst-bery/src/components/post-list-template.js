@@ -7,14 +7,12 @@ import { useSanityConfig } from "gatsby-theme-catalyst-sanity"
 import { FaRegClock } from "react-icons/fa"
 import { useState, useEffect } from "react"
 import { lightness } from "@theme-ui/color"
-import { getGatsbyImageData } from "gatsby-source-sanity"
 
 const PostListTemplate = ({ data }) => {
   const {
     sanityPostPath,
     sanityPostListTitle,
     sanityDisplayPostListTitle,
-    sanityConfig,
   } = useSanityConfig()
   const [mode] = useColorMode()
   const isDark = mode === "dark"
@@ -131,78 +129,45 @@ const PostListTemplate = ({ data }) => {
         })}
       </Themed.ul>
       <div sx={{ my: 5 }}>
-        {displayedPosts.map((post) => {
-          const featuredImage = getGatsbyImageData(
-            post.featuredImage.asset.id,
-            { maxWidth: 1440 },
-            sanityConfig
-          )
-          return (
-            <article
+        {displayedPosts.map((post) => (
+          <article
+            sx={{
+              mb: 5,
+              ":last-of-type": {
+                mb: 0,
+              },
+            }}
+            key={post.id}
+          >
+            <Themed.a
+              as={Link}
+              to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
+            >
+              <GatsbyImage
+                image={post.featuredImage.asset.gatsbyImageData}
+                alt={post.title}
+                sx={{
+                  height: ["200px", "250px", null, null, null],
+                  borderRadius: "5px",
+                }}
+              />
+            </Themed.a>
+            <Themed.a
+              as={Link}
+              to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
               sx={{
-                mb: 5,
-                ":last-of-type": {
-                  mb: 0,
+                textDecoration: "none",
+                ":hover h2, :focus h2, :active h2": {
+                  color: "secondary",
                 },
               }}
-              key={post.id}
             >
-              <Themed.a
-                as={Link}
-                to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
-              >
-                <GatsbyImage
-                  image={featuredImage}
-                  alt={post.title}
-                  sx={{
-                    height: ["200px", "250px", null, null, null],
-                    borderRadius: "5px",
-                  }}
-                />
-              </Themed.a>
-              <Themed.a
-                as={Link}
-                to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
+              <Themed.h2
                 sx={{
-                  textDecoration: "none",
-                  ":hover h2, :focus h2, :active h2": {
-                    color: "secondary",
-                  },
-                }}
-              >
-                <Themed.h2
-                  sx={{
-                    mt: 2,
-                    mb: 0,
-                    color: "primary",
-                    fontSize: [4, null, null, 5, null],
-                    transition: "color 0.2s ease",
-                    ":hover, :focus, :active": {
-                      color: "secondary",
-                      textDecoration: "underline",
-                    },
-                  }}
-                >
-                  {post.title}
-                </Themed.h2>
-              </Themed.a>
-              <Themed.p sx={{ fontSize: 1, color: "textGray", m: 0, mt: 2 }}>
-                {post.date} &bull;{" "}
-                <FaRegClock
-                  sx={{
-                    position: "relative",
-                    top: "0.125em",
-                  }}
-                />{" "}
-                {post.readingTimeInMinutes} Min
-              </Themed.p>
-              <Themed.p sx={{ mt: 2, mb: 0 }}>{post.excerpt}</Themed.p>
-              <Themed.a
-                as={Link}
-                to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
-                sx={{
-                  textDecoration: "none",
+                  mt: 2,
+                  mb: 0,
                   color: "primary",
+                  fontSize: [4, null, null, 5, null],
                   transition: "color 0.2s ease",
                   ":hover, :focus, :active": {
                     color: "secondary",
@@ -210,11 +175,37 @@ const PostListTemplate = ({ data }) => {
                   },
                 }}
               >
-                Read More &rarr;
-              </Themed.a>
-            </article>
-          )
-        })}
+                {post.title}
+              </Themed.h2>
+            </Themed.a>
+            <Themed.p sx={{ fontSize: 1, color: "textGray", m: 0, mt: 2 }}>
+              {post.date} &bull;{" "}
+              <FaRegClock
+                sx={{
+                  position: "relative",
+                  top: "0.125em",
+                }}
+              />{" "}
+              {post.readingTimeInMinutes} Min
+            </Themed.p>
+            <Themed.p sx={{ mt: 2, mb: 0 }}>{post.excerpt}</Themed.p>
+            <Themed.a
+              as={Link}
+              to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
+              sx={{
+                textDecoration: "none",
+                color: "primary",
+                transition: "color 0.2s ease",
+                ":hover, :focus, :active": {
+                  color: "secondary",
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              Read More &rarr;
+            </Themed.a>
+          </article>
+        ))}
       </div>
     </Layout>
   )

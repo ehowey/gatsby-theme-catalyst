@@ -1,10 +1,6 @@
 // Shadows the useSiteMetadata hook from gatsby-theme-catalyst-core to pull the data in from SANITY instead
 import { useStaticQuery, graphql } from "gatsby"
-import { getGatsbyImageData } from "gatsby-source-sanity"
-import { useSanityConfig } from "./use-sanity-config"
-
 export const useSiteMetadata = () => {
-  const { sanityConfig } = useSanityConfig()
   const data = useStaticQuery(
     graphql`
       query SanityMetaData {
@@ -31,7 +27,11 @@ export const useSiteMetadata = () => {
             }
             logo {
               asset {
-                id
+                gatsbyImageData(
+                  height: 300
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                )
               }
             }
           }
@@ -58,11 +58,7 @@ export const useSiteMetadata = () => {
     `
   )
   const siteMetadata = data.allSanitySiteSettings.nodes[0]
-  const logo = getGatsbyImageData(
-    siteMetadata.logo.asset.id,
-    { maxWidth: 1080 },
-    sanityConfig
-  )
+  const logo = siteMetadata.logo.asset.gatsbyImageData
   const seoImageSrc = siteMetadata.seoImage.asset.url
   const seoImageHeight = siteMetadata.seoImage.asset.metadata.dimensions.height
   const seoImageWidth = siteMetadata.seoImage.asset.metadata.dimensions.width

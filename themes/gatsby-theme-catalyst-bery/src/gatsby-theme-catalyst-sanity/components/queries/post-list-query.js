@@ -27,7 +27,7 @@ export const query = graphql`
         featuredImage {
           caption
           asset {
-            id
+            gatsbyImageData
           }
         }
       }

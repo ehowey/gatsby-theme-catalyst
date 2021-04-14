@@ -4,15 +4,13 @@ import { jsx, Themed, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { SocialHeader, ColorModeButton } from "gatsby-theme-catalyst-core"
-import { SanityContent, useSanityConfig } from "gatsby-theme-catalyst-sanity"
+import { SanityContent } from "gatsby-theme-catalyst-sanity"
 import { IconContext } from "react-icons"
 import { useBeryConfig } from "../utils/use-bery-config"
-import { getGatsbyImageData } from "gatsby-source-sanity"
 import Nav from "./nav"
 
 const SiteHeader = () => {
   const { theme } = useThemeUI()
-  const { sanityConfig } = useSanityConfig()
   const { useColorMode, useHeaderSocialLinks } = useBeryConfig()
   const data = useStaticQuery(graphql`
     {
@@ -21,18 +19,18 @@ const SiteHeader = () => {
         _rawBio
         image {
           asset {
-            id
+            gatsbyImageData(
+              width: 400
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
           }
         }
       }
     }
   `)
+
   const author = data.sanitySiteHeader
-  const authorImage = getGatsbyImageData(
-    author.image.asset.id,
-    { maxWidth: 720 },
-    sanityConfig
-  )
   return (
     <header
       sx={{
@@ -72,7 +70,7 @@ const SiteHeader = () => {
           }}
         >
           <GatsbyImage
-            image={authorImage}
+            image={author.image.asset.gatsbyImageData}
             sx={{
               height: ["70px", "120px", "150px", "200px", null],
               width: ["70px", "120px", "150px", "200px", null],
