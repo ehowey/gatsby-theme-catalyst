@@ -15,7 +15,11 @@ const Hero = () => {
           _rawHeroText
           heroImage {
             asset {
-              gatsbyImageData
+              gatsbyImageData(
+                width: 1440
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
             }
           }
         }

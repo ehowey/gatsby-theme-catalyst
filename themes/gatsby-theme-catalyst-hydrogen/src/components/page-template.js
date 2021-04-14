@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed } from "theme-ui"
 import { Seo, Layout } from "gatsby-theme-catalyst-core"
-import PageHeader from "../../../components/page-header"
+import PageHeader from "./page-header"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
 
 const PageTemplate = ({ data }) => {

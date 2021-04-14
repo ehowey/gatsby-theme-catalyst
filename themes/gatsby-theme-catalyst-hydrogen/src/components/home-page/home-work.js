@@ -26,7 +26,11 @@ const FeaturedWork = () => {
           excerpt
           image {
             asset {
-              gatsbyImageData
+              gatsbyImageData(
+                width: 400
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
             }
           }
         }

@@ -19,7 +19,11 @@ const FeaturedLogos = () => {
           link
           logo {
             asset {
-              gatsbyImageData
+              gatsbyImageData(
+                width: 200
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
             }
           }
         }
