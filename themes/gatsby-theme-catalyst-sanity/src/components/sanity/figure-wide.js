@@ -9,11 +9,12 @@ export default ({ node }) => {
     return null
   }
 
-  const { sanityConfig } = useSanityConfig()
+  const { sanityProjectId, sanityDataset } = useSanityConfig()
+  const sanityConfig = { projectId: sanityProjectId, dataset: sanityDataset }
 
   const fluidProps = getGatsbyImageData(
     node.asset,
-    { maxWidth: 2560 },
+    { maxWidth: 1440 },
     sanityConfig
   )
 

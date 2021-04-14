@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Page from "../../../components/page-template"
+import Page from "../templates/page-template"
 
 const HydrogenPageQuery = ({ data }) => {
   return <Page data={{ ...data }} />
@@ -15,7 +15,7 @@ export const query = graphql`
       featuredImage {
         alt
         asset {
-          id
+          gatsbyImageData(width: 900, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
