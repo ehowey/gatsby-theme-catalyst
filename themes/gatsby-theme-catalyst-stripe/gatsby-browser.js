@@ -1,5 +1,4 @@
 import React from "react"
-import { loadStripe } from "@stripe/stripe-js"
 import { CartProvider } from "use-shopping-cart"
 
 export const wrapRootElement = ({ element }, themeOptions) => {
@@ -12,12 +11,10 @@ export const wrapRootElement = ({ element }, themeOptions) => {
     billingAddressCollection,
   } = themeOptions
 
-  const stripePromise = loadStripe(stripePublicKey)
-
   return (
     <CartProvider
       mode="checkout-session"
-      stripe={stripePromise}
+      stripe={stripePublicKey}
       successUrl={successUrl}
       cancelUrl={cancelUrl}
       currency={currency}
