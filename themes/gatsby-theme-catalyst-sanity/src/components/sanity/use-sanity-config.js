@@ -24,10 +24,5 @@ export const useSanityConfig = () => {
       }
     `
   )
-  const sanityConfig = {
-    projectId: catalystSanityConfig.sanityProjectId,
-    dataset: catalystSanityConfig.sanityDataset,
-  }
-
-  return { ...catalystSanityConfig, sanityConfig }
+  return catalystSanityConfig
 }
