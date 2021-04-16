@@ -14,7 +14,6 @@ module.exports = (themeOptions) => {
           useStickyHeader: themeOptions.useStickyHeader,
           useSocialLinks: themeOptions.useSocialLinks,
           useColorMode: themeOptions.useColorMode || false,
-          useKatex: themeOptions.useKatex,
           footerContentLocation: themeOptions.footerContentLocation, // "left", "right", "center"
         },
       },

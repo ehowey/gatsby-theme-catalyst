@@ -6,7 +6,6 @@ export const useCatalystConfig = () => {
         catalystConfig {
           contentPath
           assetPath
-          useKatex
           useAlertBanner
         }
       }
