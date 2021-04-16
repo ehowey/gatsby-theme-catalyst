@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-footer",
   "description": "Sibling theme for gatsby-theme-catalyst-core to add basic footer styles.",
-  "version": "6.0.0-beta.4",
+  "version": "6.0.0-beta.5",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
     "gatsby": "^3.3.0",
