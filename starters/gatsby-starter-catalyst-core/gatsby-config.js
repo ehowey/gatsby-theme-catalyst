@@ -44,7 +44,6 @@ module.exports = {
         //Default options are:
         // contentPath: `content/pages`,
         // assetPath: `content/assets`,
-        // useKatex: false,
         // remarkImagesWidth: 1440,
         // imageQuality: 50,
         // useAlertBanner: false,

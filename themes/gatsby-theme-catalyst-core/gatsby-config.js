@@ -1,6 +1,4 @@
 const remarkSlug = require("remark-slug")
-const remarkMath = require("remark-math")
-const rehypeKatex = require("rehype-katex")
 const withDefaults = require(`./src/utils/default-options`)
 
 module.exports = (themeOptions) => {
@@ -41,13 +39,6 @@ module.exports = (themeOptions) => {
   const remarkPlugins = [remarkSlug]
   const rehypePlugins = []
 
-  if (themeOptions.useKatex) {
-    gatsbyRemarkPlugins.push({
-      resolve: `gatsby-remark-katex`,
-    })
-    remarkPlugins.push(remarkMath)
-    rehypePlugins.push(rehypeKatex)
-  }
   return {
     siteMetadata: {
       title: `Placeholder title`,

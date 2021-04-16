@@ -6,7 +6,6 @@ module.exports = (themeOptions) => {
         options: {
           contentPath: themeOptions.contentPath,
           assetPath: themeOptions.assetPath,
-          useKatex: themeOptions.useKatex,
           remarkImagesWidth: themeOptions.remarkImagesWidth,
           imageQuality: themeOptions.imageQuality,
           useAlertBanner: themeOptions.useAlertBanner,
