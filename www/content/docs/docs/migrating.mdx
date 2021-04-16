@@ -56,6 +56,7 @@ In most cases, if you were using default options, this will all "just work". You
 These should not affect most users, but could if you were doing some advanced stuff.
 
 - Removal of `react-scroll` and reorganization/simplification of the nav components as a result. If you were using anchor links make sure they are linking as `/#anchor-link` including the slash so it works properly with Gatsby Link component. You can also remove the `type` field from your links in gatsby-config. For most users this won't be a breaking change, but if you were doing some advanced component shadowing based on existing theme files in the nav you would need to change a file name.
+- Removal of `remark-katex` due to the difficulties maintaining this package and the bugs it currently has working with MDX content. You should implement this directly yourself, or if needed submit an issue and we can have a discussion about it.
 - Removal of `HomeContext`, not needed now that react-scroll is gone. If you were using this you can re-implement this yourself using the code that was there previously.
 - Move from normalize.css to modern-normalize.css
 - Removed SanityThemeProvider which was experimental and never got working the way I wanted it to. This might come back again in the future but has always been marked experimental.
