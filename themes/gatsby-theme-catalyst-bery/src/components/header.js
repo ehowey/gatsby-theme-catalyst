@@ -3,10 +3,11 @@
 import { jsx, Themed, useThemeUI } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { SocialHeader, ColorModeButton } from "gatsby-theme-catalyst-core"
+import { SocialHeader } from "gatsby-theme-catalyst-core"
 import { SanityContent } from "gatsby-theme-catalyst-sanity"
 import { IconContext } from "react-icons"
 import { useBeryConfig } from "../utils/use-bery-config"
+import ColorModeButton from "./color-mode-button"
 import Nav from "./nav"
 
 const SiteHeader = () => {

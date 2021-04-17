@@ -3,9 +3,9 @@ import { jsx, useThemeUI } from "theme-ui"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
 import { SocialHeader } from "gatsby-theme-catalyst-core"
-import { ColorModeButton } from "gatsby-theme-catalyst-core"
 import { IconContext } from "react-icons"
 import { useHeaderConfig } from "../utils/use-header-config"
+import ColorModeButton from "./color-mode-button"
 
 const SocialWrapper = () => {
   const [isNavOpen] = useContext(NavContext)
