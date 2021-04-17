@@ -63,7 +63,7 @@ describe("Navigation Menu Test", () => {
 
 describe("Markdown test", () => {
   it("Renders h1", () => {
-    cy.get("h1").contains("Gatsby Starter Catalyst Core")
+    cy.get("h1").contains("Gatsby Starter Catalyst")
   })
   it("Renders link", () => {
     cy.get("main").within(() => {
