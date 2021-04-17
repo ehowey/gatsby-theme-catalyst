@@ -28,7 +28,7 @@ jobs:
           build: yarn build:basic
           start: yarn serve:basic
           config-file: cypress/cypress-github-actions.json
-          spec: cypress/e2e/themes.test.js
+          spec: cypress/e2e/basic.test.js
   test_blog:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +40,7 @@ jobs:
           build: yarn build:blog
           start: yarn serve:blog
           config-file: cypress/cypress-github-actions.json
-          spec: cypress/e2e/themes.test.js
+          spec: cypress/e2e/blog.test.js
   test_sanity:
     runs-on: ubuntu-latest
     steps:
@@ -52,7 +52,7 @@ jobs:
           build: yarn build:sanity
           start: yarn serve:sanity
           config-file: cypress/cypress-github-actions.json
-          spec: cypress/e2e/themes.test.js
+          spec: cypress/e2e/sanity.test.js
   test_hydrogen:
     runs-on: ubuntu-latest
     steps:
@@ -64,7 +64,7 @@ jobs:
           build: yarn build:hydrogen
           start: yarn serve:hydrogen
           config-file: cypress/cypress-github-actions.json
-          spec: cypress/e2e/themes.test.js
+          spec: cypress/e2e/hydrogen.test.js
   test_helium:
     runs-on: ubuntu-latest
     steps:
@@ -76,7 +76,7 @@ jobs:
           build: yarn build:helium
           start: yarn serve:helium
           config-file: cypress/cypress-github-actions.json
-          spec: cypress/e2e/themes.test.js
+          spec: cypress/e2e/helium.test.js
   test_lithium:
     runs-on: ubuntu-latest
     steps:
@@ -88,7 +88,7 @@ jobs:
           build: yarn build:lithium
           start: yarn serve:lithium
           config-file: cypress/cypress-github-actions.json
-          spec: cypress/e2e/themes.test.js
+          spec: cypress/e2e/lithium.test.js
   test_bery:
     runs-on: ubuntu-latest
     steps:
@@ -100,4 +100,4 @@ jobs:
           build: yarn build:bery
           start: yarn serve:bery
           config-file: cypress/cypress-github-actions.json
-          spec: cypress/e2e/themes.test.js
+          spec: cypress/e2e/bery.test.js
