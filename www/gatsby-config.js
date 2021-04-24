@@ -28,15 +28,15 @@ module.exports = {
         link: `tutorials`,
         subMenu: [
           {
-            name: `Creating a blog with gatsby-theme-catalyst-lithium`,
+            name: `Creating a blog`,
             link: `/docs/tutorials/creating-a-blog-with-gatsby-theme-catalyst-lithium/`,
           },
           {
-            name: `Building a website for a freelance writer using gatsby-theme-catalyst-hydrogen`,
+            name: `Building a portfolio for a writer`,
             link: `/docs/tutorials/building-a-website-for-a-freelance-writer-using-gatsby-theme-catalyst-hydrogen/`,
           },
           {
-            name: `Setting up gatsby-theme-catalyst-sanity`,
+            name: `Setting up SANITY`,
             link: `/docs/tutorials/setting-up-gatsby-theme-catalyst-sanity/`,
           },
         ],
