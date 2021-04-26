@@ -43,9 +43,11 @@ describe("Color Mode Toggle Test", () => {
           "background-color",
           "rgb(247, 250, 252)"
         )
-      } else if (
-        $nav.find('button[aria-label*="Change to light mode"]').length
-      ) {
+      } else {
+        return "No color mode toggle"
+      }
+
+      if ($nav.find('button[aria-label*="Change to light mode"]').length) {
         cy.get('button[aria-label*="Change to light mode"]').click()
         cy.get("body").should(
           "have.css",
@@ -58,32 +60,5 @@ describe("Color Mode Toggle Test", () => {
         return "No color mode toggle"
       }
     })
-  })
-})
-
-describe("Markdown test", () => {
-  it("Renders h1", () => {
-    cy.get("h1").contains("Gatsby Starter Catalyst")
-  })
-  it("Renders link", () => {
-    cy.get("main").within(() => {
-      cy.get("a").should("have.css", "color", "rgb(43, 108, 176)")
-    })
-  })
-  it("Renders ol", () => {
-    cy.get("main").within(() => {
-      cy.get("ol").contains("li", "Bird")
-    })
-  })
-  it("Renders ul", () => {
-    cy.get("main").within(() => {
-      cy.get("ul").contains("li", "Red")
-    })
-  })
-  it("Renders image", () => {
-    cy.get("main")
-      .find("img")
-      .should("have.attr", "src")
-      .should("include", "image1")
   })
 })
