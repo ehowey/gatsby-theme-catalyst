@@ -46,6 +46,8 @@ describe("Color Mode Toggle Test", () => {
           "rgb(247, 250, 252)"
         )
       }
+    })
+    cy.get("nav").then(($nav) => {
       if ($nav.find('button[aria-label*="Change to light mode"]').length) {
         cy.get('button[aria-label*="Change to light mode"]').click()
         cy.wait(500)
