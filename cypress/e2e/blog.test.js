@@ -26,7 +26,7 @@ describe("Color Mode Toggle Test", () => {
   it("Toggle works", () => {
     cy.viewport(1440, 900)
     cy.scrollTo("top")
-    cy.wait(500)
+    cy.wait(1500)
     cy.get("nav").then(($nav) => {
       if ($nav.find('button[aria-label*="Change to dark mode"]').length) {
         cy.get('button[aria-label*="Change to dark mode"]').click()
