@@ -43,9 +43,11 @@ describe("Color Mode Toggle Test", () => {
           "background-color",
           "rgb(247, 250, 252)"
         )
-      } else if (
-        $nav.find('button[aria-label*="Change to light mode"]').length
-      ) {
+      } else {
+        return "No color mode toggle"
+      }
+
+      if ($nav.find('button[aria-label*="Change to light mode"]').length) {
         cy.get('button[aria-label*="Change to light mode"]').click()
         cy.get("body").should(
           "have.css",
