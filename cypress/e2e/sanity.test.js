@@ -21,6 +21,9 @@ describe("Navigation Menu Test", () => {
         cy.get('button[aria-label*="Toggle Menu"]').should("be.visible").click()
         cy.get("nav").find("a").should("be.visible")
         cy.get('button[aria-label*="Toggle Menu"]').click()
+        cy.get("nav").contains("Left Link")
+        cy.get("nav").contains("Posts")
+        cy.get("nav").contains("Projects")
       } else {
         return "No Nav"
       }
@@ -60,5 +63,33 @@ describe("Color Mode Toggle Test", () => {
         return "No color mode toggle"
       }
     })
+  })
+})
+
+describe("Blog post test", () => {
+  it("Check blog posts", () => {
+    cy.viewport(1440, 900)
+    cy.wait(500)
+    cy.get('a[href*="posts"]').click()
+    cy.wait(500)
+    cy.get("body").contains("Hello Jupiter")
+    cy.get('a[href*="hello-jupiter"]').click()
+    cy.wait(500)
+    cy.get("h1").contains("Hello Jupiter")
+    cy.get("[data-main-image]")
+      .should("have.attr", "src")
+      .should("include", "cdn.sanity.io")
+  })
+})
+
+describe("Dropdown and page test", () => {
+  it("Check blog posts", () => {
+    cy.viewport(1440, 900)
+    cy.wait(500)
+    cy.get('button[class*="DropDown"]').click()
+    cy.wait(200)
+    cy.get('a[href*="attack"]').click()
+    cy.wait(500)
+    cy.get("h1").contains("Attack Ant Hill")
   })
 })
