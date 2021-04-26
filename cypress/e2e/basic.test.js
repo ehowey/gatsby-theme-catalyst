@@ -29,7 +29,7 @@ describe("Navigation Menu Test", () => {
 })
 
 describe("Color Mode Toggle Test", () => {
-  it("Toggle works", () => {
+  it("Light mode toggle test", () => {
     cy.viewport(1440, 900)
     cy.scrollTo("top")
     cy.wait(500)
@@ -47,6 +47,8 @@ describe("Color Mode Toggle Test", () => {
         )
       }
     })
+  })
+  it("Dark mode toggle test", () => {
     cy.get("nav").then(($nav) => {
       if ($nav.find('button[aria-label*="Change to light mode"]').length) {
         cy.get('button[aria-label*="Change to light mode"]').click()
