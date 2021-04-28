@@ -39,8 +39,6 @@ const SiteBranding = () => {
             variant: "variants.siteLogo",
           }}
           alt={title}
-          objectFit="contain"
-          loading="eager"
           imgStyle={{ objectFit: "contain" }}
         />
       </Link>
