@@ -17,6 +17,7 @@
     "start-server-and-test": "^1.12.1"
   },
   "scripts": {
+    "publish-ci": "lerna publish from-package -y --no-verify-access",
     "develop:core": "yarn workspace gatsby-starter-catalyst-core develop",
     "develop:basic": "yarn workspace gatsby-starter-catalyst develop",
     "develop:blog": "yarn workspace gatsby-starter-catalyst-blog develop",

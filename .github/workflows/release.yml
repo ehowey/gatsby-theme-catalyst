@@ -28,3 +28,14 @@ jobs:
         uses: changesets/action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: 14.x
+          registry-url: https://registry.npmjs.org/
+      - run: yarn publish-ci
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
