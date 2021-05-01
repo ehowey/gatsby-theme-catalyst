@@ -1,4 +1,4 @@
-name: Test helium Theme
+name: Test Helium Theme
 on:
   push:
     branches:

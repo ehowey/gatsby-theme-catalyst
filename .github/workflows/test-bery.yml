@@ -1,4 +1,4 @@
-name: Test bery Theme
+name: Test Bery Theme
 on:
   push:
     branches:

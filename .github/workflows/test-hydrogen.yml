@@ -1,4 +1,4 @@
-name: Test hydrogen Theme
+name: Test Hydrogen Theme
 on:
   push:
     branches:

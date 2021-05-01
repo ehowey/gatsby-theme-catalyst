@@ -1,4 +1,4 @@
-name: Test lithium Theme
+name: Test Lithium Theme
 on:
   push:
     branches:
