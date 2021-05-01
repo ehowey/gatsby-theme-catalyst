@@ -15,15 +15,12 @@ jobs:
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@master
         with:
           node-version: 14.x
-
       - name: Install Dependencies
         run: yarn
-
       - name: Create Release Pull Request
         uses: changesets/action@master
         env:
@@ -40,3 +37,13 @@ jobs:
       - run: yarn publish-ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  github-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
