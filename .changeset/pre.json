@@ -26,6 +26,7 @@
     "gatsby-catalyst-docs": "6.0.0-beta.6"
   },
   "changesets": [
-    "big-flies-think"
+    "big-flies-think",
+    "flat-cobras-drop"
   ]
 }

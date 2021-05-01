@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.0.0-beta.8
+
+### Patch Changes
+
+- 1d2e3b90: Update Gatsby to v3.4 and Theme-UI to v0.7.5. Updated additional packages as necessary.
+- Updated dependencies [1d2e3b90]
+  - gatsby-theme-catalyst-core@6.0.0-beta.8
+  - gatsby-theme-catalyst-footer@6.0.0-beta.8
+  - gatsby-theme-catalyst-sanity@6.0.0-beta.8
+
 ## 6.0.0-beta.7
 
 ### Patch Changes
