@@ -48,42 +48,54 @@ describe("Navigation Menu Test", () => {
 //     })
 //   })
 // })
-// describe("Color Mode Toggle Test", () => {
-//   it("Color mode toggle test", () => {
-//     cy.viewport(1440, 900)
-//     cy.scrollTo("top")
-//     cy.wait(1500)
-//     cy.get("nav").then(($nav) => {
-//       if ($nav.find('button[aria-label*="Change to dark mode"]').length) {
-//         cy.get('button[aria-label*="Change to dark mode"]').click()
-//         cy.wait(500)
-//         cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
-//         cy.get('button[aria-label*="Change to light mode"]').click()
-//         cy.wait(500)
-//         cy.get("body").should(
-//           "have.css",
-//           "background-color",
-//           "rgb(247, 250, 252)"
-//         )
-//       } else if (
-//         $nav.find('button[aria-label*="Change to light mode"]').length
-//       ) {
-//         cy.get('button[aria-label*="Change to light mode"]').click()
-//         cy.wait(500)
-//         cy.get("body").should(
-//           "have.css",
-//           "background-color",
-//           "rgb(247, 250, 252)"
-//         )
-//         cy.get('button[aria-label*="Change to dark mode"]').click()
-//         cy.wait(500)
-//         cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
-//       } else {
-//         return "No color mode"
-//       }
-//     })
-//   })
-// })
+describe("Light Mode Toggle Test", () => {
+  it("Color mode toggle test", () => {
+    cy.viewport(1440, 900)
+    cy.scrollTo("top")
+    cy.wait(1500)
+    cy.get("nav").then(($nav) => {
+      if ($nav.find('button[aria-label*="Change to dark mode"]').length) {
+        cy.get('button[aria-label*="Change to dark mode"]').click()
+        cy.wait(500)
+        cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
+        cy.get('button[aria-label*="Change to light mode"]').click()
+        cy.wait(500)
+        cy.get("body").should(
+          "have.css",
+          "background-color",
+          "rgb(247, 250, 252)"
+        )
+      } else {
+        return "No color mode"
+      }
+    })
+  })
+})
+
+describe("Dark Mode Toggle Test", () => {
+  it("Color mode toggle test", () => {
+    cy.viewport(1440, 900)
+    cy.scrollTo("top")
+    cy.wait(1500)
+    cy.get("nav").then(($nav) => {
+      if ($nav.find('button[aria-label*="Change to light mode"]').length) {
+        cy.get('button[aria-label*="Change to light mode"]').click()
+        cy.wait(500)
+        cy.get("body").should(
+          "have.css",
+          "background-color",
+          "rgb(247, 250, 252)"
+        )
+        cy.get('button[aria-label*="Change to dark mode"]').click()
+        cy.wait(500)
+        cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
+      } else {
+        return "No color mode"
+      }
+    })
+  })
+})
+
 //   it("Dark mode toggle test", () => {
 //     cy.viewport(1440, 900)
 //     cy.scrollTo("top")
