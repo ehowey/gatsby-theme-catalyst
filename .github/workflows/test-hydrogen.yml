@@ -1,0 +1,29 @@
+name: Test hydrogen Theme
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "starters/gatsby-starter-catalyst-hydrogen/**"
+      - "themes/gatsby-theme-catalyst-hydrogen/**"
+      - "cypress/e2e/hydrogen.test.js"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "starters/gatsby-starter-catalyst-hydrogen/**"
+      - "themes/gatsby-theme-catalyst-hydrogen/**"
+      - "cypress/e2e/hydrogen.test.js"
+jobs:
+  test_hydrogen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn build:hydrogen
+          start: yarn serve:hydrogen
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/hydrogen.test.js
