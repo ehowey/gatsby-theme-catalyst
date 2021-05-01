@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - "starters/gatsby-starter-catalyst-hydrogen/**"
-      - ".github/**"
 jobs:
   master:
     runs-on: ubuntu-latest

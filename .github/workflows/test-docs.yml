@@ -5,15 +5,11 @@ on:
       - main
     paths:
       - "www/**"
-      - ".github/**"
-      - "cypress/**"
   pull_request:
     branches:
       - main
     paths:
       - "www/**"
-      - ".github/**"
-      - "cypress/**"
 jobs:
   test_docs:
     runs-on: ubuntu-latest
