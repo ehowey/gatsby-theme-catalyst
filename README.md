@@ -7,9 +7,27 @@
 
 <h3 align="center"><i>Accelerate</i> your next Gatsby project<br /><a href="https://www.gatsbycatalyst.com">www.gatsbycatalyst.com</a></h3>
 
-![Test Themes](https://github.com/ehowey/gatsby-theme-catalyst/workflows/Test%20Themes/badge.svg) ![npm](https://img.shields.io/npm/dm/gatsby-theme-catalyst-core) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+![npm](https://img.shields.io/npm/dm/gatsby-theme-catalyst-core) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 Gatsby Theme Catalyst is an an opinionated set of integrated themes and starters that can be used as a boilerplate to accelerate your next [Gatsby](https://www.gatsbyjs.com) project. There is a single "core" theme in which most dependencies and utility components are contained followed by progressively more styled and refined child themes and starters. These themes use [Theme-UI](https://theme-ui.com/) for styling and [MDX](https://mdxjs.com/getting-started/gatsby/) or [SANITY.io](https://www.sanity.io/) for content.
+
+## Tests
+
+[![Test Core Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-core.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-core.yml)
+
+[![Test Basic Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-basic.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-basic.yml)
+
+[![Test Sanity Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-sanity.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-sanity.yml)
+
+[![Test Blog Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-blog.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-blog.yml)
+
+[![Test Bery Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-bery.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-bery.yml)
+
+[![Test Helium Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-helium.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-helium.yml)
+
+[![Test Hydrogen Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-hydrogen.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-hydrogen.yml)
+
+[![Test Lithium Theme](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-lithium.yml/badge.svg)](https://github.com/ehowey/gatsby-theme-catalyst/actions/workflows/test-lithium.yml)
 
 ## Catalyzing Start
 
