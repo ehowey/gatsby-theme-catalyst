@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-header-side",
   "description": "Sibling theme for gatsby-theme-catalyst-core to add a sidebar style header.",
-  "version": "6.0.0-beta.7",
+  "version": "6.0.0-beta.8",
   "author": "Eric Howey <eric@erichowey.dev>",
   "devDependencies": {
     "gatsby": "^3.4.0",

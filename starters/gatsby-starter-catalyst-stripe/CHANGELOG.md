@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.0-beta.8
+
+### Patch Changes
+
+- 1d2e3b90: Update Gatsby to v3.4 and Theme-UI to v0.7.5. Updated additional packages as necessary.
+- Updated dependencies [1d2e3b90]
+  - gatsby-theme-catalyst-stripe@0.1.0-beta.8
+
 ## 0.1.0-beta.7
 
 ### Patch Changes
