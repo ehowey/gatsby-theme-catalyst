@@ -27,3 +27,4 @@ jobs:
           start: yarn serve:basic
           config-file: cypress/cypress-github-actions.json
           spec: cypress/e2e/basic.test.js
+          command: cypress run --headed --browser chrome
