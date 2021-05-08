@@ -46,9 +46,14 @@ const SiteBranding = () => {
           display: ["none", null, "block", null, null],
         }}
       >
-        <Themed.h1
-          as="span"
+        <span
           sx={{
+            fontWeight: "500",
+            textTransform: "uppercase",
+            fontSize: "1.5rem !important",
+            textAlign: "center",
+            mt: 3,
+            letterSpacing: "wide",
             color: isNavOpen ? "header.textOpen" : "header.text",
             textDecoration: "none",
             m: 0,
@@ -56,7 +61,7 @@ const SiteBranding = () => {
           }}
         >
           {title}
-        </Themed.h1>
+        </span>
       </Link>
     </div>
   )

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from "theme-ui"
+import { jsx, useThemeUI, Themed } from "theme-ui"
 import { useSiteMetadata, SocialFooter } from "gatsby-theme-catalyst-core"
 import { IconContext } from "react-icons"
 import { useFooterConfig } from "../utils/use-footer-config"
@@ -58,9 +58,9 @@ const SiteFooter = () => {
             {useFooterSocialLinks && <SocialFooter />}
           </IconContext.Provider>
         </div>
-        <p sx={{ m: 0 }}>
+        <Themed.p sx={{ m: 0 }}>
           © {new Date().getFullYear()} {title}
-        </p>
+        </Themed.p>
       </div>
     </footer>
   )

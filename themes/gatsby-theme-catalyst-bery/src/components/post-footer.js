@@ -33,6 +33,7 @@ const PostFooter = ({ previous, next }) => {
                     previous.slug.current.replace(/\/*$/, `/`)
                   )}
                   rel="prev"
+                  sx={{ fontSize: 2 }}
                 >
                   {previous.title}
                 </Themed.a>
@@ -56,6 +57,7 @@ const PostFooter = ({ previous, next }) => {
                   as={Link}
                   to={rootPath.concat(next.slug.current.replace(/\/*$/, `/`))}
                   rel="next"
+                  sx={{ fontSize: 2 }}
                 >
                   {next.title}
                 </Themed.a>

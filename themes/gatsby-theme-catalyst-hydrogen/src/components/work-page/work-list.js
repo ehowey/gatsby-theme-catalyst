@@ -43,6 +43,7 @@ const SelectedWork = () => {
           <Themed.h3>{node.title}</Themed.h3>
           <ul
             sx={{
+              fontSize: 2,
               listStyle: "none",
               m: 0,
               p: 0,

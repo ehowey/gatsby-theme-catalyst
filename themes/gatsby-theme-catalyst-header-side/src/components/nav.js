@@ -46,6 +46,7 @@ const NavLayout = () => {
     <nav
       ref={navRef}
       sx={{
+        fontSize: 2,
         gridColumn: "1 / -1",
         gridRow: "2 / 3",
         display: isNavOpen ? "flex" : ["none", null, "flex", null, null],

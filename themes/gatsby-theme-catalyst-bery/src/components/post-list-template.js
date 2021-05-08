@@ -193,6 +193,7 @@ const PostListTemplate = ({ data }) => {
               as={Link}
               to={rootPath.concat(post.slug.current.replace(/\/*$/, `/`))}
               sx={{
+                fontSize: 2,
                 textDecoration: "none",
                 color: "primary",
                 transition: "color 0.2s ease",
