@@ -55,7 +55,7 @@ const theme = merge(BaseTheme, {
   sizes: {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
-    maxContentWidth: "60ch", // Sets the container size on larger screens, e.g. tablets and laptops
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "20px", // Sets the icons size for the header
   },
@@ -116,19 +116,6 @@ const theme = merge(BaseTheme, {
       borderBottomWidth: "2px",
       borderBottomColor: "primary",
       position: ["sticky", null, "static", null, null],
-    },
-    siteTitle: {
-      fontSize: [3, null, 7, 8, null],
-      letterSpacing: "widest",
-      fontWeight: "bold",
-      textTransform: "uppercase",
-      bg: "transparent",
-      ":after": {
-        content: "none",
-      },
-      ":before": {
-        content: "none",
-      },
     },
     postListPageTitle: {
       textAlign: "center",

@@ -222,6 +222,7 @@ const PostsList = ({ posts }) => {
                   <div>
                     <Themed.a
                       sx={{
+                        fontSize: 2,
                         fontWeight: "bold",
                         letterSpacing: "wide",
                         px: 0,

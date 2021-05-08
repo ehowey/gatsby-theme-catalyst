@@ -7,7 +7,6 @@ const theme = {
   ...tailwind,
   breakpoints: ["480px", "768px", "1024px", "1440px"],
   fonts: {
-    ...tailwind.fonts,
     body:
       'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
     heading: "inherit",
@@ -42,18 +41,25 @@ const theme = {
   sizes: {
     ...tailwind.sizes,
     maxPageWidth: "1440px", // Sets the max width of elements like the header/footer large screens
-    maxContentWidth: "60ch", // Sets the container size on larger screens, e.g. tablets and laptops
+    maxContentWidth: "720px", // Sets the container size on larger screens, e.g. tablets and laptops
     iconsFooter: "32px", // Sets the icons size for the footer
     iconsHeader: "20px", // Sets the icons size for the header
   },
   styles: {
-    ...tailwind.styles,
     root: {
       backgroundColor: "background",
       color: "text",
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
+    },
+    p: {
+      fontSize: 2,
+    },
+    ul: {
+      fontSize: 2,
+    },
+    ol: {
       fontSize: 2,
     },
     a: {

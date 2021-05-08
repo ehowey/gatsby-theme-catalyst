@@ -48,6 +48,7 @@ const Nav = () => {
       ref={navRef}
       sx={{
         width: "100%",
+        fontSize: 2,
         gridColumn: ["1 / -1", null, "2 / 3", null, null],
         gridRow: ["2 / 3", null, "1 / 2", null, null],
         justifySelf: ["center", null, "end", null, null],

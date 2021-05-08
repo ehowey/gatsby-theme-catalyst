@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
+import { jsx, Themed, useThemeUI } from "theme-ui"
 import { Layout, Seo } from "gatsby-theme-catalyst-core"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -11,6 +11,7 @@ import Hero from "./hero"
 const PostsList = ({ posts }) => {
   const { postListTitle, displayPostListTitle } = useCatalystBlogConfig()
   const { useHero } = useLithiumConfig()
+
   return (
     <Layout>
       <Seo title={postListTitle} />
@@ -35,11 +36,11 @@ const PostsList = ({ posts }) => {
               mx: [3, 4, null, 5, null],
               display: "grid",
               gridTemplateColumns: [
-                "1fr",
+                "minmax(0, 1fr)",
                 null,
-                "1fr 1fr",
-                "1fr 1fr 1fr",
-                "1fr 1fr 1fr 1fr",
+                "repeat(2, minmax(0, 1fr))",
+                "repeat(3, minmax(0, 1fr))",
+                "repeat(4, minmax(0, 1fr))",
               ],
               gridTemplateRows: "auto",
               gridGap: 4,
@@ -111,6 +112,7 @@ const PostsList = ({ posts }) => {
                       <Themed.ul
                         sx={{
                           display: "flex",
+                          flexWrap: "wrap",
                           listStyle: "none",
                           m: 0,
                           p: 0,
@@ -118,6 +120,7 @@ const PostsList = ({ posts }) => {
                       >
                         {post.categories.map((category) => (
                           <Themed.li
+                            key={category}
                             sx={{
                               textTransform: "uppercase",
                               letterSpacing: "wide",
