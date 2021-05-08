@@ -23,7 +23,7 @@ The themes and starters are now using unified versioning and are all at v6.0.0 (
 
 1. Upgrade to `gatsby-plugin-image`, you should be able to follow their [migration guide](https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/) and use the codemod to complete this pretty painlessly. You may need to go back and tweak/adjust after running the codemod but it should get you most of the way there.
 
-1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.6.x](https://theme-ui.com/migrating).
+1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.8.x](https://theme-ui.com/migrating). Double check your font sizes in the website, Theme-UI changed how they are handling root styles with v0.8.x which affected some of the styles on existing Gatsby Catalyst based sites. Likely these are minor changes you may have to make such as adding `p: { fontSize: 2}` to your Theme-UI theme file.
 
 1. Find and replace `SEO` with `Seo`, double check where this happens in your code base but you should be pretty safe to do this. This has been updated so that you do not get console warnings about using pascal case in components.
 
@@ -67,6 +67,7 @@ These should not affect most users, but could if you were doing some advanced st
 - Added `useAlertBanner` theme option for the core theme which inserts a banner overtop of your site that can be customized with component shadowing.
 - Improved a11y for the header themes
 - Added `framer-motion` as a dependency to the core theme as I am using it in multiple places now and will likely use it more in the future for other animations
+- No longer setting `scroll-behaviour: smooth` or `overflow-x: hidden`, you can do this in your Theme-UI file if you want this on your site, but I didn't want to force this on users.
 
 ## catalyst-header-side v2.0.0
 
