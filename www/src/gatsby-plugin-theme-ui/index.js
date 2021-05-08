@@ -154,17 +154,6 @@ const theme = merge(BaseTheme, {
     },
   },
   variants: {
-    siteTitle: {
-      fontWeight: "500",
-      textTransform: "uppercase",
-      fontSize: "1.5rem !important",
-      textAlign: "center",
-      mt: 3,
-      letterSpacing: "wide",
-      "::after": {
-        content: "none",
-      },
-    },
     header: {
       py: [1, null, 0, 0, 0],
       width: ["auto", null, "300px", "350px", "425px"],
