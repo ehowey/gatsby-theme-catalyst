@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.0.0-beta.9
+
+### Patch Changes
+
+- 3f8071db: Updated to Theme-UI v0.8.4 and fixes all necessary styles that were affected by moving the root styles from the body element to the root element. This may affect your text sizing if you are using this in an existing site.
+- Updated dependencies [3f8071db]
+  - gatsby-theme-catalyst-core@6.0.0-beta.9
+  - gatsby-theme-catalyst-footer@6.0.0-beta.9
+  - gatsby-theme-catalyst-header-side@6.0.0-beta.9
+
 ## 6.0.0-beta.8
 
 ### Patch Changes
