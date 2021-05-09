@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-catalyst-stripe",
   "description": "Gatsby Starter: Gatsby-Theme-Catalyst-Stripe",
-  "version": "0.1.0-beta.8",
+  "version": "0.1.0-beta.9",
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "workspaces": {
@@ -18,7 +18,7 @@
     "@stripe/stripe-js": "^1.11.0",
     "dollars-to-cents": "^1.0.3",
     "gatsby": "^3.4.0",
-    "gatsby-theme-catalyst-stripe": "^0.1.0-beta.8",
+    "gatsby-theme-catalyst-stripe": "^0.1.0-beta.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "stripe": "^8.129.0",

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-catalyst-stripe",
   "description": "Gatsby theme for e-commerce using Stripe and Use-Shopping-Cart",
-  "version": "0.1.0-beta.8",
+  "version": "0.1.0-beta.9",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@stripe/stripe-js": "^1.11.0",
