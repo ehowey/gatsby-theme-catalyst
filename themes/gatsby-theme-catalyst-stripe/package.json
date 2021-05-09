@@ -6,10 +6,10 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.11.0",
     "dollars-to-cents": "^1.0.3",
-    "gatsby-theme-catalyst-core": "^6.0.0-beta.8",
-    "gatsby-theme-catalyst-footer": "^6.0.0-beta.8",
-    "gatsby-theme-catalyst-header-top": "^6.0.0-beta.8",
-    "gatsby-theme-catalyst-sanity": "^6.0.0-beta.8",
+    "gatsby-theme-catalyst-core": "^6.0.0-beta.9",
+    "gatsby-theme-catalyst-footer": "^6.0.0-beta.9",
+    "gatsby-theme-catalyst-header-top": "^6.0.0-beta.9",
+    "gatsby-theme-catalyst-sanity": "^6.0.0-beta.9",
     "use-shopping-cart": "^2.3.0"
   },
   "peerDependencies": {
