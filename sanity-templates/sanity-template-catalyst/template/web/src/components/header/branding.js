@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
+import { jsx } from "theme-ui"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { useContext } from "react"
@@ -31,6 +31,7 @@ const SiteBranding = () => {
         sx={{ textDecoration: "none" }}
       >
         <GatsbyImage
+          // Logo
           image={logo}
           sx={{
             // Styling for the logo using the breakpoint syntax from Theme-UI. Imagine something like [xs, sm, md, l, xl] for the breakpoint sizes. Play around with the logo sizes and your screen size to see the effects
@@ -48,10 +49,13 @@ const SiteBranding = () => {
         onClick={() => setIsNavOpen(false)}
         sx={{ textDecoration: "none" }}
       >
-        <Themed.h1
-          as="span"
+        <span
+          // Site title
           sx={{
             // Notice that the isNavOpen boolean is used here to alloow you control over the color of the text for the header when it is opened or closed. This makes it much easier to make a small graphical change across the whole header. header.text and header.textOpen values can be found in the Theme-UI theme file at src/gatsby-plugin-theme-ui/index.js
+            fontSize: [3, 4, null, 5, null],
+            fontFamily: "heading",
+            fontWeight: "heading",
             color: isNavOpen ? "header.textOpen" : "header.text",
             textDecoration: "none",
             m: 0,
@@ -59,7 +63,7 @@ const SiteBranding = () => {
           }}
         >
           {title}
-        </Themed.h1>
+        </span>
       </Link>
     </div>
   )

@@ -56,11 +56,6 @@ const theme = merge(BaseTheme, {
       },
     },
   },
-  variants: {
-    siteTitle: {
-      fontSize: [3, 4, null, 5, null],
-    },
-  },
 })
 
 export default theme
