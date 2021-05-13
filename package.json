@@ -18,6 +18,7 @@
   },
   "scripts": {
     "publish-ci": "lerna publish from-package -y --no-verify-access",
+    "changesets-publish": "changeset publish",
     "develop:core": "yarn workspace gatsby-starter-catalyst-core develop",
     "develop:basic": "yarn workspace gatsby-starter-catalyst develop",
     "develop:blog": "yarn workspace gatsby-starter-catalyst-blog develop",
