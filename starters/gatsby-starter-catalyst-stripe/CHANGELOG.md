@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.0-beta.11
+
+### Patch Changes
+
+- 880d66fa: Update Gatsby to v3.5. Remove Lerna as this is no longer needed with Changesets handling the publishing.
+- Updated dependencies [880d66fa]
+  - gatsby-theme-catalyst-stripe@0.1.0-beta.11
+
 ## 0.1.0-beta.10
 
 ### Patch Changes
