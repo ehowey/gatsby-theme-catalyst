@@ -51,6 +51,12 @@ In most cases, if you were using default options, this will all "just work". You
 - `footerContentLocation` and `useFooterSocialLinks` are now options for the footer theme
 - Removed options `invertLogo`, `displaySiteTitle`, `displaySiteTitleMobile`, `displaySiteLogo`, `displaySiteLogoMobile`. You can now do this all yourself completely custom in the shadowed components. See above for details.
 
+### Part 4: Published boolean
+
+This only affects `gatsby-theme-catalyst-blog` (MDX blog theme).
+
+There is now a boolean flag to publish posts. You will need to add `published: true` to your frontmatter so that the posts publish now. This prevents any accidental publishing of draft posts. If `published` is missing or false then a post will not publish. Also if a post is set to `draft: true` then a post will not publish, even if published is set to true.
+
 ### Other breaking changes
 
 These should not affect most users, but could if you were doing some advanced stuff.

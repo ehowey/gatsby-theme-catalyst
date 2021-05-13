@@ -10,7 +10,7 @@ export const query = graphql`
   query {
     categoryList: allCatalystPost(
       limit: 1000
-      filter: { draft: { eq: false } }
+      filter: { draft: { ne: true }, published: { eq: true } }
     ) {
       group(field: categories) {
         fieldValue
