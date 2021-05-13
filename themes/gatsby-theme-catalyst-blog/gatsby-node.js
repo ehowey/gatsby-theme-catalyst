@@ -80,6 +80,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       socialImage: File @fileByRelativePath
       timeToRead: Int
       postType: String
+      published: Boolean
   }`)
 
   createTypes(`type CatalystBlogConfig implements Node {
@@ -107,6 +108,9 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         draft: {
           type: `Boolean!`,
           extensions: { defaultFalse: {} },
+        },
+        published: {
+          type: `Boolean`,
         },
         slug: {
           type: `String!`,
@@ -207,6 +211,7 @@ exports.onCreateNode = async (
       featuredImageCaption: node.frontmatter.featuredImageCaption,
       socialImage: node.frontmatter.socialImage,
       draft: node.frontmatter.draft,
+      published: node.frontmatter.published,
       postType: node.frontmatter.postType || "article",
     }
 
@@ -249,19 +254,23 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       blogPosts: allCatalystPost(
         sort: { fields: [date, title], order: DESC }
         limit: 1000
-        filter: { draft: { eq: false } }
+        filter: { draft: { ne: true }, published: { eq: true } }
       ) {
         nodes {
           id
           slug
         }
       }
-      tagList: allCatalystPost(filter: { draft: { eq: false } }) {
+      tagList: allCatalystPost(
+        filter: { draft: { ne: true }, published: { eq: true } }
+      ) {
         group(field: tags) {
           fieldValue
         }
       }
-      categoryList: allCatalystPost(filter: { draft: { eq: false } }) {
+      categoryList: allCatalystPost(
+        filter: { draft: { ne: true }, published: { eq: true } }
+      ) {
         group(field: categories) {
           fieldValue
         }
