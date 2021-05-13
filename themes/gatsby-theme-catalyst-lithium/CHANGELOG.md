@@ -1,5 +1,16 @@
 # Change Log
 
+## 6.0.0-beta.10
+
+### Patch Changes
+
+- c76af932: Adds support for `published: true` boolean to MDX frontmatter. This flag is now required for blog posts to be published. Prevents accidentally publishing blog posts.
+- Updated dependencies [c76af932]
+  - gatsby-theme-catalyst-blog@6.0.0-beta.10
+  - gatsby-theme-catalyst-core@6.0.0-beta.10
+  - gatsby-theme-catalyst-footer@6.0.0-beta.10
+  - gatsby-theme-catalyst-header-top@6.0.0-beta.10
+
 ## 6.0.0-beta.9
 
 ### Patch Changes
