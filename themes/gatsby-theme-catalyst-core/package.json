@@ -44,13 +44,13 @@
     "theme-ui": "^0.8.4"
   },
   "devDependencies": {
-    "gatsby": "^3.4.0",
+    "gatsby": "^3.5.0",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "peerDependencies": {
-    "gatsby": "^3.4.0",
+    "gatsby": "^3.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
