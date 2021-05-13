@@ -23,7 +23,7 @@ The themes and starters are now using unified versioning and are all at v6.0.0 (
 
 1. Upgrade to `gatsby-plugin-image`, you should be able to follow their [migration guide](https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/) and use the codemod to complete this pretty painlessly. You may need to go back and tweak/adjust after running the codemod but it should get you most of the way there.
 
-1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.6.x](https://theme-ui.com/migrating).
+1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.8.x](https://theme-ui.com/migrating). Double check your font sizes in the website, Theme-UI changed how they are handling root styles with v0.8.x which affected some of the styles on existing Gatsby Catalyst based sites. Likely these are minor changes you may have to make such as adding `p: { fontSize: 2}` to your Theme-UI theme file.
 
 1. Find and replace `SEO` with `Seo`, double check where this happens in your code base but you should be pretty safe to do this. This has been updated so that you do not get console warnings about using pascal case in components.
 
@@ -51,11 +51,18 @@ In most cases, if you were using default options, this will all "just work". You
 - `footerContentLocation` and `useFooterSocialLinks` are now options for the footer theme
 - Removed options `invertLogo`, `displaySiteTitle`, `displaySiteTitleMobile`, `displaySiteLogo`, `displaySiteLogoMobile`. You can now do this all yourself completely custom in the shadowed components. See above for details.
 
+### Part 4: Published boolean
+
+This only affects `gatsby-theme-catalyst-blog` (MDX blog theme).
+
+There is now a boolean flag to publish posts. You will need to add `published: true` to your frontmatter so that the posts publish now. This prevents any accidental publishing of draft posts. If `published` is missing or false then a post will not publish. Also if a post is set to `draft: true` then a post will not publish, even if published is set to true.
+
 ### Other breaking changes
 
 These should not affect most users, but could if you were doing some advanced stuff.
 
 - Removal of `react-scroll` and reorganization/simplification of the nav components as a result. If you were using anchor links make sure they are linking as `/#anchor-link` including the slash so it works properly with Gatsby Link component. You can also remove the `type` field from your links in gatsby-config. For most users this won't be a breaking change, but if you were doing some advanced component shadowing based on existing theme files in the nav you would need to change a file name.
+- Removal of `remark-katex` due to the difficulties maintaining this package and the bugs it currently has working with MDX content. You should implement this directly yourself, or if needed submit an issue and we can have a discussion about it.
 - Removal of `HomeContext`, not needed now that react-scroll is gone. If you were using this you can re-implement this yourself using the code that was there previously.
 - Move from normalize.css to modern-normalize.css
 - Removed SanityThemeProvider which was experimental and never got working the way I wanted it to. This might come back again in the future but has always been marked experimental.
@@ -66,6 +73,7 @@ These should not affect most users, but could if you were doing some advanced st
 - Added `useAlertBanner` theme option for the core theme which inserts a banner overtop of your site that can be customized with component shadowing.
 - Improved a11y for the header themes
 - Added `framer-motion` as a dependency to the core theme as I am using it in multiple places now and will likely use it more in the future for other animations
+- No longer setting `scroll-behaviour: smooth` or `overflow-x: hidden`, you can do this in your Theme-UI file if you want this on your site, but I didn't want to force this on users.
 
 ## catalyst-header-side v2.0.0
 

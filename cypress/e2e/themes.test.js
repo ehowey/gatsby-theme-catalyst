@@ -34,15 +34,26 @@ describe("Color Mode Toggle Test", () => {
     cy.scrollTo("top")
     cy.wait(1000)
     cy.get("header").then(($nav) => {
-      if ($nav.find('button[aria-label*="Toggle dark mode"]').length) {
-        cy.get('button[aria-label*="Toggle dark mode"]').click()
+      if ($nav.find('button[aria-label*="Change to dark mode"]').length) {
+        cy.get('button[aria-label*="Change to dark mode"]').click()
         cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
-        cy.get('button[aria-label*="Toggle dark mode"]').click()
+        cy.get('button[aria-label*="Change to light mode"]').click()
         cy.get("body").should(
           "have.css",
           "background-color",
           "rgb(247, 250, 252)"
         )
+      } else if (
+        $nav.find('button[aria-label*="Change to light mode"]').length
+      ) {
+        cy.get('button[aria-label*="Change to light mode"]').click()
+        cy.get("body").should(
+          "have.css",
+          "background-color",
+          "rgb(247, 250, 252)"
+        )
+        cy.get('button[aria-label*="Change to dark mode"]').click()
+        cy.get("body").should("have.css", "background-color", "rgb(26, 32, 44)")
       } else {
         return "No color mode toggle"
       }

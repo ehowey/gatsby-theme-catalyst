@@ -75,13 +75,13 @@ const HomeDemo = () => {
           >
             Layout themes
           </Themed.h3>
-          <Themed.p>
-            Raw, unstyled, ready to be customized!
-            <br />
-            <Themed.a href="https://gatsby-starter-catalyst.netlify.app/">
-              Live demo &rarr;
-            </Themed.a>
-          </Themed.p>
+          <Themed.p>Raw, unstyled, ready to be customized!</Themed.p>
+          <Themed.a
+            href="https://gatsby-starter-catalyst.netlify.app/"
+            sx={{ fontSize: 2 }}
+          >
+            Live demo &rarr;
+          </Themed.a>
         </div>
         <div>
           <div sx={{ p: 3, bg: lighten("primary", 0.4), borderRadius: "4px" }}>
@@ -109,13 +109,13 @@ const HomeDemo = () => {
           >
             Presentation themes
           </Themed.h3>
-          <Themed.p>
-            Refined, styled and ready for launch!
-            <br />
-            <Themed.a href="https://gatsby-starter-catalyst-lithium.netlify.app/">
-              Live demo &rarr;
-            </Themed.a>
-          </Themed.p>
+          <Themed.p>Refined, styled and ready for launch!</Themed.p>
+          <Themed.a
+            href="https://gatsby-starter-catalyst-lithium.netlify.app/"
+            sx={{ fontSize: 2 }}
+          >
+            Live demo &rarr;
+          </Themed.a>
         </div>
       </div>
     </div>

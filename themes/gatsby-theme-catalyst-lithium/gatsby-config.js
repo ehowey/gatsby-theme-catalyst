@@ -6,7 +6,6 @@ module.exports = (themeOptions) => {
         options: {
           contentPath: themeOptions.contentPath,
           assetPath: themeOptions.assetPath,
-          useKatex: themeOptions.useKatex,
           remarkImagesWidth: themeOptions.remarkImagesWidth,
           imageQuality: themeOptions.imageQuality,
           useAlertBanner: themeOptions.useAlertBanner,
@@ -63,7 +62,7 @@ module.exports = (themeOptions) => {
                   allCatalystPost(
                     sort: { fields: [date, title], order: DESC }
                     limit: 1000
-                    filter: { draft: { eq: false } }
+                    filter: {draft: {ne: true}, published: {eq: true}}
                   ) {
                     nodes {
                       id

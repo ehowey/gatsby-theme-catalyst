@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
+import { jsx } from "theme-ui"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { useContext } from "react"
@@ -40,8 +40,6 @@ const SiteBranding = () => {
             variant: "variants.siteLogo",
           }}
           alt={title}
-          objectFit="contain"
-          loading="eager"
           imgStyle={{ objectFit: "contain" }}
         />
       </Link>
@@ -51,19 +49,22 @@ const SiteBranding = () => {
         onClick={() => setIsNavOpen(false)}
         sx={{ textDecoration: "none" }}
       >
-        <Themed.h1
+        <span
           // Site title
-          as="span"
+
           sx={{
             // Notice that the isNavOpen boolean is used here to alloow you control over the color of the text for the header when it is opened or closed. This makes it much easier to make a small graphical change across the whole header. header.text and header.textOpen values can be found in the Theme-UI theme file at src/gatsby-plugin-theme-ui/index.js
             color: isNavOpen ? "header.textOpen" : "header.text",
-            textDecoration: "none",
             m: 0,
+            fontFamily: "heading",
+            fontWeight: "heading",
+            fontSize: [3, 4, null, 5, null],
+            textDecoration: "none",
             variant: "variants.siteTitle",
           }}
         >
           {title}
-        </Themed.h1>
+        </span>
       </Link>
     </div>
   )

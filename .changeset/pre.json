@@ -1,0 +1,34 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "gatsby-starter-catalyst": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-bery": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-blog": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-core": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-helium": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-hydrogen": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-lithium": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-sanity": "6.0.0-beta.6",
+    "gatsby-starter-catalyst-stripe": "0.1.0-beta.6",
+    "gatsby-theme-catalyst-bery": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-blog": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-core": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-footer": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-header-bigtop": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-header-side": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-header-top": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-helium": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-hydrogen": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-lithium": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-sanity": "6.0.0-beta.6",
+    "gatsby-theme-catalyst-stripe": "0.1.0-beta.6",
+    "gatsby-catalyst-docs": "6.0.0-beta.6"
+  },
+  "changesets": [
+    "big-flies-think",
+    "flat-cobras-drop",
+    "orange-boats-listen",
+    "shaggy-years-sit"
+  ]
+}

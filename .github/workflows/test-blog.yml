@@ -1,0 +1,29 @@
+name: Test Blog Theme
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "starters/gatsby-starter-catalyst-blog/**"
+      - "themes/gatsby-theme-catalyst-blog/**"
+      - "cypress/e2e/blog.test.js"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "starters/gatsby-starter-catalyst-blog/**"
+      - "themes/gatsby-theme-catalyst-blog/**"
+      - "cypress/e2e/blog.test.js"
+jobs:
+  test_blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn build:blog
+          start: yarn serve:blog
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/blog.test.js

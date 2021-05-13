@@ -48,20 +48,19 @@ const HomeHero = () => {
         alt="Gatsby Theme Catalyst Logo"
         sx={{ width: "180px" }}
       />
-      <Themed.h1
+      <h1
         sx={{
+          fontFamily: "heading",
+          fontWeight: "heading",
           textTransform: "uppercase",
           textAlign: "center",
           fontSize: [5, 6, 7, 8, null],
           color: baseColors.gray[8],
           mb: 3,
-          "::after": {
-            content: "none",
-          },
         }}
       >
         Gatsby Theme Catalyst
-      </Themed.h1>
+      </h1>
       <Themed.inlineCode
         sx={{
           mb: 0,
@@ -138,6 +137,7 @@ const HomeHero = () => {
               as={Link}
               to="/docs/getting-started/"
               sx={{
+                fontSize: 2,
                 bg: "#e91c21",
                 color: "white",
                 boxShadow: "default",
@@ -164,6 +164,7 @@ const HomeHero = () => {
               as={Link}
               to="/docs/"
               sx={{
+                fontSize: 2,
                 bg: "#ffd7d7",
                 color: "black",
                 boxShadow: "default",
@@ -190,6 +191,7 @@ const HomeHero = () => {
               as="a"
               href="https://github.com/ehowey/gatsby-theme-catalyst"
               sx={{
+                fontSize: 2,
                 bg: "#ffd7d7",
                 color: "black",
                 boxShadow: "default",

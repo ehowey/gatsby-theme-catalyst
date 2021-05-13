@@ -87,7 +87,6 @@ exports.createSchemaCustomization = ({ actions }) => {
   type CatalystConfig implements Node {
     contentPath: String!
     assetPath: String!
-    useKatex: Boolean!
     useAlertBanner: Boolean!
   }
   `
@@ -100,7 +99,6 @@ exports.sourceNodes = (
   {
     contentPath = "content/pages",
     assetPath = "content/assets",
-    useKatex = false,
     useAlertBanner = false,
   }
 ) => {
@@ -108,7 +106,6 @@ exports.sourceNodes = (
   const catalystConfigFieldData = {
     contentPath,
     assetPath,
-    useKatex,
     useAlertBanner,
   }
   createNode({

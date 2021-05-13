@@ -45,6 +45,7 @@ const Nav = () => {
     <nav
       ref={navRef}
       sx={{
+        fontSize: 2,
         m: 0,
         display: [isNavOpen ? "flex" : "none", null, "flex", null, null],
         justifyContent: ["start", null, "center", null, null],

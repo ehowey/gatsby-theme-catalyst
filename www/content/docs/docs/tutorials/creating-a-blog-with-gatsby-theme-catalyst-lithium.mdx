@@ -3,7 +3,7 @@
   description="A step-by-step tutorial for setting up a personal blog using gatsby-theme-catalyst-lithium. Gatsby Theme Catalyst is an opinionated set of integrated themes and starters to accelerate your next Gatsby project."
 />
 
-# Creating a blog with gatsby-theme-catalyst-lithium
+# Creating a blog
 
 This tutorial will walk you through setting up a personal blog using `gatsby-theme-catayst-lithium`.
 
@@ -34,8 +34,6 @@ Now let's personalize it and make it your own.
 ## Update gatsby-config.js
 
 `gatsby-config.js` is the command centre for your website - update the site title, description, keywords, social links, etc. There are inline comments in the file which should be helpful, however the `menuLinks` and `socialLinks` fields are more complex and worth a quick review.
-
-The `menuLinks` array is common in Gatsby sites with the addition of one field, `type`, which controls whether the menu link is rendered as a Gatsby Link component or an anchor link component using [react-scroll](https://github.com/fisshy/react-scroll). The options are `internal` or `anchor`. Submenus are only supported on internal links at this time.
 
 Example Config:
 
@@ -114,8 +112,6 @@ For example let's say you wanted to change the base path for you blog to `www.yo
   options: {
     // Core theme
     remarkImagesWidth: 1920,
-    displaySiteLogo: false,
-    displaySiteLogoMobile: false,
     // Blog theme
     excerptLength: 140,
     basePath: "/writing",
@@ -194,6 +190,7 @@ categories: [Coding]
 featuredImage: ../assets/garden-3.jpg
 socialImage: ../assets/lithium-social.jpg
 featuredImageCaption: Photo by Markus Spiske
+published: true
 ---
 
 # My first post

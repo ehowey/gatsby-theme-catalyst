@@ -12,7 +12,7 @@ export const query = graphql`
     allCatalystPost(
       sort: { fields: [date, title], order: DESC }
       limit: 1000
-      filter: { draft: { eq: false } }
+      filter: { draft: { ne: true }, published: { eq: true } }
     ) {
       nodes {
         id

@@ -1,73 +1,31 @@
 # Change Log
 
-All notable changes to this project will be documented in this file
+Gatsby Theme Catalyst is managed as a monorepo using [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) and [changesets](https://github.com/atlassian/changesets).
 
-## v6.0.0
+This means that our CHANGELOG.md files are distributed alongside each theme and starter themselves in the `themes` and `starters` directories respectively.
 
-This is a doozy of an update but stay with me and you will get there in the end. Hopefully with minimal pain. If you run into any problems please submit an issue and I will do my best to help. You can view an [umbrella issue](https://github.com/ehowey/gatsby-theme-catalyst/issues/1179) of the move to v6.0 as well.
+For example, the package `gatsby-theme-catalyst-core` has a CHANGELOG.md in [themes/gatsby-theme-catalyst-core/CHANGELOG.md](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/themes/gatsby-theme-catalyst-core/CHANGELOG.md).
 
-### Unified versioning
+All stable packages are versioned together, e.g. `v6.1.1` so you can be sure you are on the most recent versions of each package. Packages in development are versioned as `v0.x.x` and then once stable are bumped straight to the most recent stable package version.
 
-The themes and starters are now using unified versioning and are all at v6.0.0 (or above). For some of the packages this is a jump straight from v1.0 to v6.0, the reason for this is that I had one package which was already at v5.x so I had to move everything to v6.x.
+## Migration guide
 
-### Part 1: Gatsby and Theme-UI
+You can view the [migration guide](https://www.gatsbycatalyst.com/docs/migrating/) for details on migrating between versions.
 
-1. Update all of your Gatsby related packages to their latest versions. Gatsby should be v3.x and above. All Gatsby-Theme-Catalyst packages should be v6.x and above.
+## A note about v6
 
-1. Run `gatsby clean` in your project root, this is going to help prevent any issues down the line for us with images.
+Please see https://www.gatsbycatalyst.com/docs/migrating/#v600 for details on v6.0.0. Please note that all packages were unified at v6.0.0 so some packages jumpe from v1 or v2 straight to v6. This version includes support for Gatsby v3 and some relocation of API elements along with refactoring of how the branding component is handled to more easily expose direct control over logo and branding elements.
 
-1. Upgrade to `gatsby-plugin-image`, you should be able to follow their [migration guide](https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/) and use the codemod to complete this pretty painlessly. You may need to go back and tweak/adjust after running the codemod but it should get you most of the way there.
+## Older Changelog Notes
 
-1. Find and replace `Styled` with `Themed`, double check where this happens in your code base but you should be pretty safe to do this. You can read more about [migration to Theme-UI v0.6.x](https://theme-ui.com/migrating).
+Old notes from before changesets was used to have a changelog in each package.
 
-1. Find and replace `SEO` with `Seo`, double check where this happens in your code base but you should be pretty safe to do this. This has been updated so that you do not get console warnings about using pascal case in components.
-
-1. Run `gatsby develop` and check to see if it builds successfully. You are going to notice a few more things that need to be changed but you should get a successful development build at this point.
-
-### Part 2: Branding component
-
-Customizing logo and branding was more of a headache than it needed to be in past versions with too many fancy API options like `displaySiteTitleMobile` to try and give you more flexibility. It wasn't worth it. I refactored this to use component shadowing to put full power back in the hands of the developer for site branding.
-
-1. Copy and paste the `src/components/header/branding.js` file from one of the starters into your site.
-1. Copy and paste the `src/gatsby-theme-catalyst-header-top/branding.js` file from one of the starters into your site. You may need to modify this name to match the shadowed header theme, e.g. header-bigtop instead of header-top if that is the header theme you are using.
-
-A few notes on the changes:
-
-- Logo sizing is now coded directly into this branding component and now longer sourced from Theme-UI, again this gives you more options for customization and direct presentational control.
-- Removed API options `invertLogo`, `displaySiteTitle`, `displaySiteTitleMobile`, `displaySiteLogo`, `displaySiteLogoMobile`. You can now do this all yourself in the shadowed component using plain CSS.
-- Take a look at [gatsby-starter-catalyst](https://github.com/ehowey/gatsby-theme-catalyst/tree/next/starters/gatsby-starter-catalyst/src/components/header) to see how this is done. Also note the [shadowing of the branding component](https://github.com/ehowey/gatsby-theme-catalyst/tree/next/starters/gatsby-starter-catalyst/src/gatsby-theme-catalyst-header-top/components) as well.
-
-### Part 3: API Reorganization
-
-In most cases, if you were using default options, this will all "just work". You will only need to check this if you were specifying some custom options. The main change is that I moved API options to their respective themes, e.g. `footerContentLocation` is now an option for the footer theme and not the core theme. This will give me more flexibility in the future and is more intuitive. The updated theme options are documented in the `Readme.md` files of the respective themes.
-
-- `useSocialLinks` renamed to `useHeaderSocialLinks` and `useFooterSocialLinks`
-- `useColorMode`, `useHeaderSocialLinks`, and `useStickyHeader` are now options for respective header themes. Note that gatsby-theme-catalyst-header-bigtop does not have a sticky option.
-- `footerContentLocation` and `useFooterSocialLinks` are now options for the footer theme
-- Removed options `invertLogo`, `displaySiteTitle`, `displaySiteTitleMobile`, `displaySiteLogo`, `displaySiteLogoMobile`. You can now do this all yourself completely custom in the shadowed components. See above for details.
-
-### Other breaking changes
-
-These should not affect most users, but could if you were doing some advanced stuff.
-
-- Removal of `react-scroll` and reorganization/simplification of the nav components as a result. If you were using anchor links make sure they are linking as `/#anchor-link` including the slash so it works properly with Gatsby Link component. You can also remove the `type` field from your links in gatsby-config. For most users this won't be a breaking change, but if you were doing some advanced component shadowing based on existing theme files in the nav you would need to change a file name.
-- Removal of `HomeContext`, not needed now that react-scroll is gone. If you were using this you can re-implement this yourself using the code that was there previously.
-- Move from normalize.css to modern-normalize.css
-- Removed SanityThemeProvider which was experimental and never got working the way I wanted it to. This might come back again in the future but has always been marked experimental.
-
-### Other notable changes
-
-- Added `rssDescription` theme option that was missing to the blog theme
-- Added `useAlertBanner` theme option for the core theme which inserts a banner overtop of your site that can be customized with component shadowing.
-- Improved a11y for the header themes
-- Added `framer-motion` as a dependency to the core theme as I am using it in multiple places now and will likely use it more in the future for other animations
-
-## catalyst-core v3.1.0
+### catalyst-core v3.1.0
 
 - Adds in the `imageQuality` theme option which allows you to specify an image quality for your images other than the default `50`. Values between 0 - 100 will work.
 - TO DO: Needs additional documentation updates
 
-## catalyst-header-side v2.0.0
+### catalyst-header-side v2.0.0
 
 - **Breaking Change**: This is a visually breaking change. Added support for dropdowns that function as toggles, instead of the pure CSS on hover behaviour that was there before. I also adjusted the default text alignment to be left as this is more expected. You can nudge it back to the centre using variants.
 
@@ -80,11 +38,11 @@ variants: {
   },
 ```
 
-## catalyst-core v3.0.0
+### catalyst-core v3.0.0
 
 - **Breaking Change**: Removed [gatsby-plugin-offline](https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/) from the core theme as there are more considerations and impacts from service workers than should be included in the core theme. This plugin has a lot of power and I would suggest using it on most Gatsby sites but want to leave this as an optional addition versus a forced inclusion in the core theme. If you want to include this in your site you would just add it to your main `gatsby-config.js` file.
 
-## catalyst-header-top v1.5.0
+### catalyst-header-top v1.5.0
 
 - Adds support for a clickable dropdown button, requires this button variant in your theme-ui file, which is included by default with `catalyst-core` v2.3.1
 
@@ -105,7 +63,7 @@ buttons: {
 },
 ```
 
-## catalyst-sanity v4.0.0, catalyst-bery v2.0.0, catalyst-hydrogen v.4.0.0
+### catalyst-sanity v4.0.0, catalyst-bery v2.0.0, catalyst-hydrogen v.4.0.0
 
 - **BREAKING CHANGE:** In order to support split links properly in the header components I needed to update the schema coming from your SANITY studio. Unfortunately this means you also need to update your schema and re-deploy the graphQL schema.
 
@@ -113,22 +71,22 @@ buttons: {
 
 - Redeploy the graphql schema with the command `sanity graphql deploy`
 
-## catalyst-core v2.3.0 and catalyst-header-top v1.4.0
+### catalyst-core v2.3.0 and catalyst-header-top v1.4.0
 
 - Adds support for split links with a fallback for displaying the links in their default location on the right. This is a non-breaking change for MDX based themes. Detail above about breaking change for SANITY based themes.
 - You can now add a `location: "left"` or `location: "right"` key value pair in the menuLinks array within `gatsby-config.js` to specify the location of the menu links. Take a look at `gatsby-starter-catalyst` for an example.
 
-## catalyst-core v2.2.0
+### catalyst-core v2.2.0
 
 - Moved the schema customization from the starters to the core theme, requires gatsby ^2.24.58
 - Removed `gatsby-node.js` from all of the starters
 - Minor package bumps across all packages due to the new required min version of gatsby
 
-## catalyst-header-bigtop v1.0
+### catalyst-header-bigtop v1.0
 
 - version bump to bring this in-line with other headers as v1.0 due to stability. No breaking changes. This should have been bumped to v1.0 when `gatsby-theme-catalyst-helium` was released however I forgot to bump the version.
 
-## catalyst-sanity v3.2.0
+### catalyst-sanity v3.2.0
 
 - Adds support for the image prop to be used in the Seo component with SANITY.io. You can see an example of this in the `post-template.js` component within `gatsby-theme-catalyst-bery`. You pass it the root image node and it will automatically seek out the proper url and sizing. E.g. if your image node was called `socialImage` you would do something like this:
 
@@ -136,19 +94,19 @@ buttons: {
 <Seo title={post.title} description={post.excerpt} image={post.socialImage} />
 ```
 
-## catalyst-helium, catalyst-lithium v 2.1.0
+### catalyst-helium, catalyst-lithium v 2.1.0
 
 - Added a better default post footers
 
-## catalyst-blog v 2.5.0
+### catalyst-blog v 2.5.0
 
 - Fixed order of next and previous blog posts
 
-## catalyst-sanity v3.1.0
+### catalyst-sanity v3.1.0
 
 - Fixed the order of next and previous blog posts
 
-## catalyst-sanity and catalyst-hydrogen v3.0.0
+### catalyst-sanity and catalyst-hydrogen v3.0.0
 
 - **Breaking:** Added the ability to have categories by default in SANITY based themes. This required the addition of a category entry to the GraphQL schema which will cause builds to fail when upgrading without updating your sanity schema.
   - Add `category.js` to your schema, you can copy the file from `gatsby-starter-catalyst-sanity/sanity-studio/schemas/category.js` to your schemas directory. Import this and include it in `sanity-studio/schema.js`. More details are in the migrating docs.
@@ -156,7 +114,7 @@ buttons: {
 - Added the ability to have more granular control over the post path and project path, so the ability to set post path as independent from the post list path. E.g. your posts may be at www.sitename.com/posts/blog-post but your post list might be on your home page at www.sitename.com/. This adds a new set of theme options, `sanityPostListPath` and `sanityProjectListPath`.
 - Added support for next and previous post links
 
-## catalyst-core v2.0.0 and others
+### catalyst-core v2.0.0 and others
 
 - **Breaking**: This is a visually breaking change affecting dark mode. The `baseTheme` which is exported from `gatsby-theme-catalyst-core` included a colors object which defined a dark mode by default. The problem with this is that it meant dark mode would be used on all sites that merged this theme regardless of whether they wanted dark mode or not. Basically it made it tricky to turn off dark mode. The colors object in the base theme was modified so that there is no dark mode by default and then the colors objects in the starters were updated to include the color mode properly. See the [migrating](https://www.gatsbycatalyst.com/docs/migrating) docs for more detail and examples.
 
@@ -191,7 +149,7 @@ dark: {
 
 - This required bumping most other theme versions to v2.0.0 as well, no other breaking changes were introduced.
 
-## catalyst-sanity v2.0.0
+### catalyst-sanity v2.0.0
 
 - **Breaking**: Removed and simplified the base queries and base studio setup. Removed the "featuredImage" field (which were never being queried anyways). If you were relying on these base queries you will likely need to update the queries, for example `_rawExcerpt` is not just `excerpt`. This is a quick fix but is technically a breaking change which requires the version bump.
 
@@ -201,30 +159,30 @@ dark: {
 
 - Reading time is now generated automatically for blog posts and projects
 
-## catalyst-core v1.3.0
+### catalyst-core v1.3.0
 
 - Added `useKatex` theme option to allow enabling `gatsby-remark-katex` in the themes for prettier math equations. Katex has specific CSS that it needs loaded. This CSS is loaded conditionally in the Seo component (which is really `react-helmet`), so you need to be calling the Seo component in the template/page you are using for the math equations to render properly. This would only be an issue in more custom work with complex component shadowing - you would have the Seo component on every page of your site in most cases.
 
 - This trigged minor version bumps for all other affected themes and starters, e.g. `gatsby-theme-catalyst-helium` includes this as of v1.1.0
 
-## catalyst-blog v2.4.0
+### catalyst-blog v2.4.0
 
 - Added in support for categories and tags in `featuredImageCaption` to the blog frontmatter to be used as a caption for the featured images if desired, optional.
 
-## catalyst-blog v2.3.0
+### catalyst-blog v2.3.0
 
 - Added in support for categories and tags in frontmatter
 
-## catalyst-blog v2.2.0
+### catalyst-blog v2.2.0
 
 - Added in rss feed to the blog which is built automatically
 - Added in config option, `rssTitle` to specify the feed title
 
-## catalyst-core v1.2.0 and accompanying minor versions for other themes
+### catalyst-core v1.2.0 and accompanying minor versions for other themes
 
 - Updated all relevant dependencies
 
-## catalyst-blog v2.0.0
+### catalyst-blog v2.0.0
 
 The difference between v1.0 and v2.0 is that v2.0 takes a simplified approach and provides much more barebones blog components for easier shadowing and customization. Basically there is less you need to undo in order to customize this for yourself. This required some breaking changes to implement hence the version bump from v1.0 to v2.0. There will eventually be a new theme which provides more styled and production ready visual design.
 
@@ -235,13 +193,13 @@ The difference between v1.0 and v2.0 is that v2.0 takes a simplified approach an
 
 If you are wanting to implement styles on your blog but retain full control, look at how `gatsby-theme-catalyst-helium` handles this through component shadowing. You can also see an example in my personal site if you look at the component shadowing in there, [https://github.com/ehowey/erichoweydev](https://github.com/ehowey/erichoweydev).
 
-## catalyst-core v1.1.0
+### catalyst-core v1.1.0
 
 - Added additional remark plugins and documentation about these plugins in the docs for the core theme. No breaking changes. Now supports relative image paths, and external links from markdown target "\_blank"
 - Added a theme option `remarkImagesWidth` to the core theme to allow for customization of the max width generated by `gatsby-remark-images`. The default value remains 1440px.
 - Added canonical links to the Seo component, these are generated automatically based on the page path - this _assumes_ that you have only one version of a page. For example your blog post is only at www.mysite.com/blog/my-post/. You would need to develop a more complex solution if you have pages at multiple slugs in your site. See [https://joshwcomeau.com/gatsby/seo-friendly-sitemap/](https://joshwcomeau.com/gatsby/seo-friendly-sitemap/) for more details on doing this for more complex sites.
 
-## v1.0.0
+### v1.0.0
 
 **Breaking changes:**
 
@@ -268,49 +226,49 @@ export default merge(BaseTheme, {
 
 - Added `gatsby-theme-catalyst-hydrogen` this is almost identical to the old writer theme but optimized to make use of `gatsby-theme-catalyst-sanity` and better abstract complexity. The way it is set up now this has created a better seperation of data and presentation layers which will enable further improvements and better extendability.
 
-## catalyst-core v0.25.0, header-top v0.4.0, header-side v0.4.0
+### catalyst-core v0.25.0, header-top v0.4.0, header-side v0.4.0
 
 Depreciated `isMobile` and `mobileMenuBreakpoint`. This is a non-breaking change now but will be fully removed come v1.0. The main problem was a flash of unstyled content due to javascript parsing after CSS and pageload. While it was a nice feature the performance hit was not worth it. Now the mobile menu shows on the second breakpoint, 768px by default. Docs were updated as well.
 
-## catalyst-core v0.24.0
+### catalyst-core v0.24.0
 
 - Adds skip nav function based on [https://www.gatsbyjs.com/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav](https://www.gatsbyjs.com/blog/2020-02-10-accessible-client-side-routing-improvements/#reach-skip-nav)
 
-## catalyst-core v0.23.0
+### catalyst-core v0.23.0
 
 Changes to allow support for sub-menus in `gatsby-node.js`
 
-## catalyst-header-top v0.3.0
+### catalyst-header-top v0.3.0
 
 - Adds the ability to use sub-menus (dropdowns) on internal site links, see `gatsby-starter-catalyst` for an example. There is an example config in the docs and in this starter.
 
-## catalyst-writer v0.8.0
+### catalyst-writer v0.8.0
 
 - More robust queries for pages, should prevent an error that was occuring for pages in SANITY if multiples were created by accident
 
-## catalyst-blog v0.8.0
+### catalyst-blog v0.8.0
 
 - Revised posts-list query using `nodes` instead of `edges->node`
 - Added in `timeToRead` as an available query field on posts to display reading time in a blog
 
-## catalyst-core v0.22.0
+### catalyst-core v0.22.0
 
 - Added support for [gatsby-mdx-embed](https://www.gatsbyjs.com/packages/@pauliescanlon/gatsby-mdx-embed/)
 
-## catalyst-writer v0.7.0
+### catalyst-writer v0.7.0
 
 - Added in settings and metadata to SANITY.io schema, this allows all of those fields to be controlled via the SANITY studio instead of gatsby-config.js. For example fields like `title`, `description`, the site logo, default social media image, etc.
 - Shadowed `use-site-metadata.js` from the core theme to implement this, so instead it now draws from SANITY, and not gatsby-config.js
 
-## catalyst-footer v0.2.0
+### catalyst-footer v0.2.0
 
 - Content is now justified based on `footerContentLocation` setting from `gatsby-theme-catalyst-core`, allows for more granular control of the content location in the footer. Default setting is "left", also works with "right" and "center".
 
-## catalyst-core v0.21.0
+### catalyst-core v0.21.0
 
 - Removed `twitter` field from `gatsby-config.js`, this is now automatically retrieved from the `socialLinks` array
 
-## catalyst-core v0.20.0
+### catalyst-core v0.20.0
 
 - Reworked layout components
 - Layout is provided by gatsby-plugin-mdx now instead of wrapPageElemet
@@ -318,16 +276,16 @@ Changes to allow support for sub-menus in `gatsby-node.js`
 - Added displaySiteTitleMobile, displaySiteLogoMobile, isHeaderSideLeft config options, see docs
 - Removed `contentWidth` setting, this was a confusing double setting. Use `maxContentWidth` instead.
 
-## catalyst-footer v0.1.0
+### catalyst-footer v0.1.0
 
 - Renamed from `catalyst-footer-basic`, better naming
 - Footer repositioned to center of page
 
-## catalyst-header-top v0.1.0
+### catalyst-header-top v0.1.0
 
 - Renamed from `catalyst-header-basic`, better naming
 - Removed some unecessary CSS
 
-## catalyst-header-side v0.1.0
+### catalyst-header-side v0.1.0
 
 - New theme entirely, implements a sidebar style header, defaults to left

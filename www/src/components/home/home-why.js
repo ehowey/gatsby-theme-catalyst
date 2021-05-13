@@ -25,6 +25,7 @@ const Why = () => {
         <Button
           as={Link}
           sx={{
+            fontSize: 2,
             backgroundImage:
               "radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,193,104,1) 0%, rgba(251,128,128,1) 90% )",
             color: baseColors.gray[8],

@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - "starters/gatsby-starter-catalyst-bery/**"
-      - ".github/**"
 jobs:
   master:
     runs-on: ubuntu-latest

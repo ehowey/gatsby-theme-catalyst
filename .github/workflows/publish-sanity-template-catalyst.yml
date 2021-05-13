@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - "sanity-templates/sanity-template-catalyst/**"
-      - ".github/**"
 jobs:
   master:
     runs-on: ubuntu-latest

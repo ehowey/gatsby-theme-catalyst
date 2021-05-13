@@ -44,7 +44,7 @@ const Normalize = () => {
           }
         }
 
-        /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+        /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
         /*
 Document
@@ -56,8 +56,8 @@ Use a better box model (opinionated).
 */
 
         *,
-        *::before,
-        *::after {
+        ::before,
+        ::after {
           box-sizing: border-box;
         }
 
@@ -65,7 +65,7 @@ Use a better box model (opinionated).
 Use a more readable tab size (opinionated).
 */
 
-        :root {
+        html {
           -moz-tab-size: 4;
           tab-size: 4;
         }
@@ -75,11 +75,11 @@ Use a more readable tab size (opinionated).
 2. Prevent adjustments of font size after orientation changes in iOS.
 */
 
+        /* Base line height is set in Theme-UI */
+
         html {
-          line-height: 1.15; /* 1 */
+          /* line-height: 1.15; 1 */
           -webkit-text-size-adjust: 100%; /* 2 */
-          overflow-x: hidden;
-          scroll-behavior: smooth;
         }
 
         /*
@@ -99,11 +99,14 @@ Remove the margin in all browsers.
 Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
 
-        body {
-          font-family: system-ui, -apple-system,
-            /* Firefox supports this but not yet system-ui */ "Segoe UI", Roboto,
-            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-        }
+        /* Base fonts are set via Theme-UI */
+
+        /* body {
+          font-family: "system-ui", "-apple-system",
+            /* Firefox supports this but not yet system-ui  "Segoe UI",
+            "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji",
+            "Segoe UI Emoji";
+        } */
 
         /*
 Grouping content

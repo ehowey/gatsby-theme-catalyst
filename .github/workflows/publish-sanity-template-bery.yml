@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - "sanity-templates/sanity-template-bery/**"
-      - ".github/**"
 jobs:
   master:
     runs-on: ubuntu-latest

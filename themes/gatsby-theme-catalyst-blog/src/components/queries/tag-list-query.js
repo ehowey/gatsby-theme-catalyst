@@ -8,7 +8,10 @@ const TagListQuery = ({ data }) => {
 
 export const query = graphql`
   query {
-    tagList: allCatalystPost(limit: 1000, filter: { draft: { eq: false } }) {
+    tagList: allCatalystPost(
+      limit: 1000
+      filter: { draft: { ne: true }, published: { eq: true } }
+    ) {
       group(field: tags) {
         fieldValue
         totalCount

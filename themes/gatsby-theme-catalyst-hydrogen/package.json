@@ -1,21 +1,21 @@
 {
   "name": "gatsby-theme-catalyst-hydrogen",
   "description": "Gatsby theme for a writer's portfolio website. SANITY.io as the CMS.",
-  "version": "6.0.0-beta.4",
+  "version": "6.0.0-beta.10",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby-theme-catalyst-core": "^6.0.0-beta.4",
-    "gatsby-theme-catalyst-footer": "^6.0.0-beta.4",
-    "gatsby-theme-catalyst-header-top": "^6.0.0-beta.4",
-    "gatsby-theme-catalyst-sanity": "^6.0.0-beta.4"
+    "gatsby-theme-catalyst-core": "^6.0.0-beta.10",
+    "gatsby-theme-catalyst-footer": "^6.0.0-beta.10",
+    "gatsby-theme-catalyst-header-top": "^6.0.0-beta.10",
+    "gatsby-theme-catalyst-sanity": "^6.0.0-beta.10"
   },
   "peerDependencies": {
-    "gatsby": "^3.3.0",
+    "gatsby": "^3.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "gatsby": "^3.3.0",
+    "gatsby": "^3.5.0",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

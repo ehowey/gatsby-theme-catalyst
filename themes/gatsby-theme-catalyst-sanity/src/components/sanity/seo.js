@@ -40,8 +40,7 @@ const Seo = ({
   // Check location to create canonical links
   const location = useLocation()
   const seoCanononical = propLocation || location.pathname
-  // Check whether Katex is in use and inject the CSS for it if necessary
-  const { useKatex } = useCatalystConfig()
+
   return (
     <Helmet
       htmlAttributes={{
@@ -124,14 +123,6 @@ const Seo = ({
         .concat(meta)}
     >
       <link rel="canonical" href={`${siteUrl}${seoCanononical}`} />
-      {useKatex && (
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-          integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
-          crossorigin="anonymous"
-        />
-      )}
     </Helmet>
   )
 }
