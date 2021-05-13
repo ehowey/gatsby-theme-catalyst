@@ -80,7 +80,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       socialImage: File @fileByRelativePath
       timeToRead: Int
       postType: String
-      published: Boolean
+      published: Boolean! @defaultFalse
   }`)
 
   createTypes(`type CatalystBlogConfig implements Node {
@@ -110,7 +110,8 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           extensions: { defaultFalse: {} },
         },
         published: {
-          type: `Boolean`,
+          type: `Boolean!`,
+          extensions: { defaultFalse: {} },
         },
         slug: {
           type: `String!`,
