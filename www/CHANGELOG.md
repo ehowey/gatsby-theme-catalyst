@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.0.0-beta.12
+
+### Patch Changes
+
+- 1939ad03: Update internal dependencies
+- Updated dependencies [1939ad03]
+  - gatsby-theme-catalyst-core@6.0.0-beta.12
+  - gatsby-theme-catalyst-footer@6.0.0-beta.12
+  - gatsby-theme-catalyst-header-side@6.0.0-beta.12
+
 ## 6.0.0-beta.11
 
 ### Patch Changes

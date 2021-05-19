@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.0.0-beta.12
+
+### Patch Changes
+
+- 1939ad03: Update internal dependencies
+
 ## 6.0.0-beta.11
 
 ### Patch Changes
