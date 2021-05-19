@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.0-beta.12
+
+### Patch Changes
+
+- 1939ad03: Update internal dependencies
+- Updated dependencies [1939ad03]
+  - gatsby-theme-catalyst-stripe@0.1.0-beta.12
+
 ## 0.1.0-beta.11
 
 ### Patch Changes
