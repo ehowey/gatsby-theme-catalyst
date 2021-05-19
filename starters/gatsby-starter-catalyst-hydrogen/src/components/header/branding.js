@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { useContext } from "react"
 import { NavContext } from "gatsby-theme-catalyst-core"
@@ -9,7 +9,7 @@ import { useSiteMetadata } from "gatsby-theme-catalyst-core"
 const SiteBranding = () => {
   // isNavOpen is a boolean that detects where the mobile navigation is open or closed
   const [isNavOpen, setIsNavOpen] = useContext(NavContext)
-  // Title issourced from the site metadata BUT you could very easily source and add your own raw values here. e.g. const title = "My Awesome Site".
+  // Title is sourced from the site metadata BUT you could very easily source and add your own raw values here. e.g. const title = "My Awesome Site".
   const { title } = useSiteMetadata()
   return (
     <div
