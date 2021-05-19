@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.0.0-beta.13
+
+### Patch Changes
+
+- 74b85ddc: Fix font sizing for cards in gatsby-theme-catalyst-hydrogen, other small visual improvements to the cards
+
 ## 6.0.0-beta.12
 
 ### Patch Changes
