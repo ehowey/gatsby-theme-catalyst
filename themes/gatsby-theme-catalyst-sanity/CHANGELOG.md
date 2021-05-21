@@ -1,5 +1,34 @@
 # Change Log
 
+## 6.0.0
+
+### Patch Changes
+
+- d4969468: Remove loading=eager prop as this is causing issues with blurry images using gatsby-plugin-image
+- 1939ad03: Update internal dependencies
+- 1d2e3b90: Update Gatsby to v3.4 and Theme-UI to v0.7.5. Updated additional packages as necessary.
+- 74b85ddc: Fix font sizing for cards in gatsby-theme-catalyst-hydrogen, other small visual improvements to the cards
+- 880d66fa: Update Gatsby to v3.5. Remove Lerna as this is no longer needed with Changesets handling the publishing.
+- c76af932: Adds support for `published: true` boolean to MDX frontmatter. This flag is now required for blog posts to be published. Prevents accidentally publishing blog posts.
+
+## 6.0.0-beta.13
+
+### Patch Changes
+
+- 74b85ddc: Fix font sizing for cards in gatsby-theme-catalyst-hydrogen, other small visual improvements to the cards
+
+## 6.0.0-beta.12
+
+### Patch Changes
+
+- 1939ad03: Update internal dependencies
+
+## 6.0.0-beta.11
+
+### Patch Changes
+
+- 880d66fa: Update Gatsby to v3.5. Remove Lerna as this is no longer needed with Changesets handling the publishing.
+
 ## 6.0.0-beta.10
 
 ### Patch Changes

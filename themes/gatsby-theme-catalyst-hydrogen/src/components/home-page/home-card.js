@@ -15,7 +15,8 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
         backgroundColor: "accent",
         p: 3,
         mb: 4,
-        borderRadius: 3,
+        borderRadius: ["0px", "4px", null, null, null],
+        boxShadow: "sm",
       }}
       key={title}
     >
@@ -23,6 +24,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
         image={image}
         sx={{
           mr: [0, null, 3, null, null],
+          borderRadius: "4px",
           maxWidth: ["100%", null, "250px", null, null],
           maxHeight: ["250px", null, "100%", null, null],
           flex: "1",
@@ -35,26 +37,29 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
           flex: "2",
         }}
       >
-        <p
+        <Themed.p
           sx={{
-            fontSize: "60%",
+            fontSize: 0,
+            color: "textGray",
             textTransform: "uppercase",
             letterSpacing: "wider",
             m: 0,
           }}
         >
           {publisher} &middot; {date}
-        </p>
+        </Themed.p>
         <Themed.h3
           sx={{
+            fontSize: 3,
             mt: 0,
           }}
         >
-          <a
+          <Themed.a
             sx={{
               color: "text",
               textDecoration: "none",
               ":hover": {
+                color: "text",
                 textDecoration: "underline",
               },
             }}
@@ -63,19 +68,22 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
             rel="noopener noreferrer"
           >
             {title}
-          </a>
+          </Themed.a>
         </Themed.h3>
-        <p>{truncate(excerpt, { length: 300, separator: " " })}</p>
-        <a
+        <Themed.p>
+          {truncate(excerpt, { length: 300, separator: " " })}
+        </Themed.p>
+        <Themed.a
           sx={{
+            fontSize: 2,
             color: "text",
             textDecoration: "none",
             fontWeight: "bold",
-            fontSize: "90%",
             "::after": {
               content: '"\\00A0 \\2192"',
             },
             ":hover": {
+              color: "text",
               textDecoration: "underline",
             },
           }}
@@ -84,7 +92,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
           rel="noopener noreferrer"
         >
           Read it
-        </a>
+        </Themed.a>
       </div>
     </div>
   )
