@@ -50,6 +50,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
         </Themed.p>
         <Themed.h3
           sx={{
+            fontSize: 3,
             mt: 0,
           }}
         >
@@ -58,6 +59,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
               color: "text",
               textDecoration: "none",
               ":hover": {
+                color: "text",
                 textDecoration: "underline",
               },
             }}
@@ -81,6 +83,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
               content: '"\\00A0 \\2192"',
             },
             ":hover": {
+              color: "text",
               textDecoration: "underline",
             },
           }}
