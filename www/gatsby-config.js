@@ -58,6 +58,10 @@ module.exports = {
         link: `/docs/sanity-io-integration/`,
       },
       {
+        name: `Stripe Integration`,
+        link: `/docs/stripe-integration/`,
+      },
+      {
         name: `Configuring Themes`,
         link: `configuring-themes`,
         subMenu: [

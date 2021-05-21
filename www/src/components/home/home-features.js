@@ -110,7 +110,7 @@ const HomeFeatures = () => {
               use-shopping-cart
             </Themed.a>{" "}
             to provide basic e-commerce integration for when you just need to
-            make some money!
+            make some money! Coming soon &trade;.
           </Themed.p>
         </FeatureCard>
         <FeatureCard
