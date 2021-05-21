@@ -1014,7 +1014,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.13.17":
+"@babel/runtime@^7.12.1", "@babel/runtime@^7.13.17":
   version "7.14.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
   integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
@@ -2211,6 +2211,11 @@
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.13.2.tgz#bb2f561085b5dd091355df871d432b8e1fd467f6"
   integrity sha512-fycUk7ECukNc31lD5apcrUgdRC1BfiIacs+CpacoCjOgo3ablolnWCvDQWMmVWtODYa8bBv2dlBla+Edc5OvZg==
+
+"@stripe/stripe-js@^1.14.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.15.0.tgz#86178cfbe66151910b09b03595e60048ab4c698e"
+  integrity sha512-KQsNPc+uVQkc8dewwz1A6uHOWeU2cWoZyNIbsx5mtmperr5TPxw4u8M20WOa22n6zmIOh/zLdzEe8DYK/0IjBw==
 
 "@styled-system/background@^5.1.2":
   version "5.1.2"
@@ -8977,6 +8982,11 @@ immer@8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
   integrity sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==
+
+immer@^8.0.1:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.4.tgz#3a21605a4e2dded852fb2afd208ad50969737b7a"
+  integrity sha512-jMfL18P+/6P6epANRvRk6q8t+3gGhqsJ9EuJ25AXE+9bNTYtssvzeYbEd0mXRYWCmmXSIbnlpz6vd6iJlmGGGQ==
 
 import-fresh@^3.0.0, import-fresh@^3.1.0, import-fresh@^3.2.1:
   version "3.3.0"
@@ -15892,6 +15902,17 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+use-shopping-cart@^3.0.0-beta.16:
+  version "3.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/use-shopping-cart/-/use-shopping-cart-3.0.0-beta.16.tgz#4ebaf5cacdab69cd868d3612472bb01f95a1d96d"
+  integrity sha512-WHEaKomK+XB63erhYBgJHBas0wF0+6XFug/QWXDYmRY9KvO4RamX3N+IcJ4k2dL23kxq5KjD4jmiAoZGJZgp0Q==
+  dependencies:
+    "@reduxjs/toolkit" "^1.5.0"
+    "@stripe/stripe-js" "^1.14.0"
+    react-redux "^7.2.2"
+    redux-persist "^6.0.0"
+    uuid "^8.3.1"
 
 use-shopping-cart@^3.0.0-beta.8:
   version "3.0.0-beta.8"
