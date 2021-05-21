@@ -37,7 +37,7 @@ const AlertBanner = () => {
           <span role="img" aria-label="Celebration Emoji" sx={{ mr: 2 }}>
             🎉
           </span>
-          v6.0.0 is in beta, including support for Gatsby v3. Read the{" "}
+          v6.0.0 is in released, including support for Gatsby v3. Read the{" "}
           <Themed.a
             as={Link}
             to="/docs/migrating/"
