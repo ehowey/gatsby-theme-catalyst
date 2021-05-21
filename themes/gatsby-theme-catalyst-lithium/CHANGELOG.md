@@ -1,5 +1,16 @@
 # Change Log
 
+## 6.0.1
+
+### Patch Changes
+
+- 5575cfec: gatsby-theme-catalyst-hydrogen: explicit hover colors in word card, explicit header size in work card
+- Updated dependencies [5575cfec]
+  - gatsby-theme-catalyst-blog@6.0.1
+  - gatsby-theme-catalyst-core@6.0.1
+  - gatsby-theme-catalyst-footer@6.0.1
+  - gatsby-theme-catalyst-header-top@6.0.1
+
 ## 6.0.0
 
 ### Patch Changes
