@@ -1,4 +1,14 @@
-# Needed config
+# May 2021 Thoughts
+
+- Move as much into the starter as possible
+- Seperate Stripe and SANITY themes
+- SANITY responsible for product data, set a specific product data format, page queries and default page templates
+- Stripe responsible for configuring Stripe and USC, maybe has functions wrapped up in it as well
+- Seperate ecommerce header theme /w cart?? Or put that into the Stripe theme?? Could the cart just be a shadowed component with the actual implementation in the starter??
+
+# Old stuff
+
+## Needed config
 
 - All the sanity configs
 

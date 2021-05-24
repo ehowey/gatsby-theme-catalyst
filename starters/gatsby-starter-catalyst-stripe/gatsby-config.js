@@ -29,17 +29,17 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-core`,
       options: {},
     },
-    {
-      resolve: `gatsby-theme-catalyst-stripe`,
-      options: {
-        stripePublicKey: stripeConfig.stripePublicKey,
-        allowedCountries: stripeConfig.allowedCountries,
-        billingAddressCollection: stripeConfig.billingAddressCollection,
-        currency: stripeConfig.currency,
-        successUrl: stripeConfig.successUrl,
-        cancelUrl: stripeConfig.cancelUrl,
-      },
-    },
+    // {
+    //   resolve: `gatsby-theme-catalyst-stripe`,
+    //   options: {
+    //     stripePublicKey: stripeConfig.stripePublicKey,
+    //     allowedCountries: stripeConfig.allowedCountries,
+    //     billingAddressCollection: stripeConfig.billingAddressCollection,
+    //     currency: stripeConfig.currency,
+    //     successUrl: stripeConfig.successUrl,
+    //     cancelUrl: stripeConfig.cancelUrl,
+    //   },
+    // },
     {
       resolve: `gatsby-theme-catalyst-sanity`,
       options: {
@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-catalyst-hydrogen`,
+        name: `gatsby-starter-catalyst-stripe`,
         short_name: `catalyst`,
         start_url: `/`,
         background_color: `#ffffff`,
