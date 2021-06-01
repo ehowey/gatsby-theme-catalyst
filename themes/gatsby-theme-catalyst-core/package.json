@@ -35,7 +35,7 @@
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-json": "^3.5.0",
     "gatsby-transformer-sharp": "^3.5.0",
-    "gatsby-transformer-yaml": "^3.5.0",
+    "gatsby-transformer-yaml": "^3.6.0",
     "mdx-embed": "^0.0.19",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0",
