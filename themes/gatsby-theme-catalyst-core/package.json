@@ -33,7 +33,7 @@
     "gatsby-remark-responsive-iframe": "^4.2.0",
     "gatsby-remark-smartypants": "^4.2.0",
     "gatsby-source-filesystem": "^3.5.0",
-    "gatsby-transformer-json": "^3.5.0",
+    "gatsby-transformer-json": "^3.6.0",
     "gatsby-transformer-sharp": "^3.5.0",
     "gatsby-transformer-yaml": "^3.5.0",
     "mdx-embed": "^0.0.19",
