@@ -195,7 +195,7 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-core`,
       options: {
         contentPath: `content/docs`,
-        useAlertBanner: true,
+        // useAlertBanner: true,
       },
     },
     {
