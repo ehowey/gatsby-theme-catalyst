@@ -1,5 +1,18 @@
 # Change Log
 
+## 7.0.0
+
+### Major Changes
+
+- b56118b0: **BREAKING: Only affects sanity-based themes and starters**. This adds a more user friendly navigation link and social link structure in the sanity content studio. Due to this change in the content studio the sanity based themes all required some minor breaking changes in the studio schemas to support this improved ux. This is better for users over the long term, sorry for a breaking change!
+
+  **Migrating:** If you are not using SANITY, you can just upgrade. If you are using SANITY please see the [v7 migration guide](https://www.gatsbycatalyst.com/docs/migrating/). Migration will involve copy and pasting some new schemas into your sanity schema folder and then re-entering the navigation links and social links. As a result you will be able to drag/drop the order of navigation links and social links with a cleaner UI for content editors.
+
+### Patch Changes
+
+- Updated dependencies [b56118b0]
+  - gatsby-theme-catalyst-lithium@7.0.0
+
 ## 6.0.0
 
 ### Patch Changes
