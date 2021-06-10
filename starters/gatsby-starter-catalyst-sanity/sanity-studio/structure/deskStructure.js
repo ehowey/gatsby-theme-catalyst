@@ -17,9 +17,7 @@ const hiddenDocTypes = (listItem) =>
     "page",
     "post",
     "project",
-    "theme",
-    "themeLmColor",
-    "themeDmColor",
+    "mainNav",
   ].includes(listItem.getId())
 
 export default () =>
@@ -50,21 +48,15 @@ export default () =>
                 .title("Navigation Links")
                 .icon(MdList)
                 .child(
-                  S.documentTypeList("menuLink").title("Navigation Links")
+                  S.document()
+                    .title("Navigation Links")
+                    .schemaType("mainNav")
+                    .documentId("mainNav")
                 ),
               S.listItem()
                 .title("Social Links")
                 .icon(MdShare)
                 .child(S.documentTypeList("socialLink").title("Social Links")),
-              S.listItem()
-                .title("Theme-UI")
-                .icon(MdDashboard)
-                .child(
-                  S.document()
-                    .schemaType("theme")
-                    .documentId("theme")
-                    .title("Theme-UI Theme")
-                ),
             ])
         ),
       // Add a visual divider (optional)

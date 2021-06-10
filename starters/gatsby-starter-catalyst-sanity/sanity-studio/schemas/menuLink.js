@@ -22,41 +22,27 @@ export default {
           scheme: ["https", "http", "mailto"],
         }),
     },
-    {
-      title: "Link location",
-      name: "location",
-      type: "string",
-      description:
-        "Affects the visual location of the links for the top menu bar only. Allows for a 'split' link design. Does not affect some themes.",
-      options: {
-        list: [
-          { title: "Left", value: "left" },
-          { title: "Right", value: "right" },
-        ], // <-- predefined values
-        layout: "radio", // <-- defaults to 'dropdown'
-      },
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "order",
-      title: "Order",
-      description: "Use numbers to specify the order on the navigation bar.",
-      type: "number",
-      validation: (Rule) => Rule.required().integer().positive(),
-    },
+    // {
+    //   title: "Link location",
+    //   name: "location",
+    //   type: "string",
+    //   description:
+    //     "Affects the visual location of the links for the top menu bar only. Allows for a 'split' link design. Does not affect some themes.",
+    //   options: {
+    //     list: [
+    //       { title: "Left", value: "left" },
+    //       { title: "Right", value: "right" },
+    //     ], // <-- predefined values
+    //     layout: "radio", // <-- defaults to 'dropdown'
+    //   },
+    //   validation: (Rule) => Rule.required(),
+    // },
     {
       title: "Sub Menu (Drop-Down)",
       name: "subMenu",
       description: "Leave blank if you do not want a drop down menu.",
       type: "array",
       of: [{ type: "subMenu" }],
-    },
-  ],
-  orderings: [
-    {
-      title: "Web Order",
-      name: "webOrder",
-      by: [{ field: "order", direction: "asc" }],
     },
   ],
 }

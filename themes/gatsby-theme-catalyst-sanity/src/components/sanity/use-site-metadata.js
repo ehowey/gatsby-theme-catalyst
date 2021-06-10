@@ -36,14 +36,23 @@ export const useSiteMetadata = () => {
             }
           }
         }
-        allSanityMenuLink(sort: { fields: order, order: ASC }) {
+        allSanityMainNav(limit: 1, sort: { fields: _updatedAt, order: DESC }) {
           nodes {
-            link
-            name
-            location
-            subMenu {
-              link
+            mainNavLeft {
               name
+              link
+              subMenu {
+                link
+                name
+              }
+            }
+            mainNavRight {
+              name
+              link
+              subMenu {
+                link
+                name
+              }
             }
           }
         }
@@ -69,7 +78,6 @@ export const useSiteMetadata = () => {
   }
   const metaData = siteMetadata
   const socialLinks = data.allSanitySocialLink.nodes
-  const menuLinks = data.allSanityMenuLink.nodes
   const twitterLink = data.allSanitySocialLink.nodes
     .filter((social) => social.name.toLowerCase() === "twitter")
     .map((social) => {
@@ -81,6 +89,24 @@ export const useSiteMetadata = () => {
         .toLowerCase()
         .replace("https://www.twitter.com/" && "https://twitter.com/", "@")
     : "Unknown"
+
+  const menuLinksLeft = data.allSanityMainNav.nodes[0].mainNavLeft.map(
+    (menuLink) => ({
+      name: menuLink.name,
+      link: menuLink.link,
+      location: "left",
+      subMenu: menuLink.subMenu,
+    })
+  )
+  const menuLinksRight = data.allSanityMainNav.nodes[0].mainNavRight.map(
+    (menuLink) => ({
+      name: menuLink.name,
+      link: menuLink.link,
+      location: "right",
+      subMenu: menuLink.subMenu,
+    })
+  )
+  const menuLinks = [...menuLinksLeft, ...menuLinksRight]
   const allData = {
     ...metaData,
     menuLinks,
