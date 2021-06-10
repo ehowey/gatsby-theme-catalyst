@@ -49,20 +49,23 @@ export default () =>
                     .documentId("siteSettings")
                 ),
               S.listItem()
-                .title("Authors")
-                .icon(MdPerson)
-                .child(S.documentTypeList("author").title("Author")),
-              S.listItem()
                 .title("Navigation Links")
                 .icon(MdList)
                 .child(
-                  S.documentTypeList("menuLink").title("Navigation Links")
+                  S.document()
+                    .title("Navigation Links")
+                    .schemaType("mainNav")
+                    .documentId("mainNav")
                 ),
-
               S.listItem()
                 .title("Social Links")
                 .icon(MdShare)
-                .child(S.documentTypeList("socialLink").title("Social Links")),
+                .child(
+                  S.document()
+                    .title("Social Links")
+                    .schemaType("socialLinks")
+                    .documentId("socialLinks")
+                ),
             ])
         ),
       // Add a visual divider (optional)

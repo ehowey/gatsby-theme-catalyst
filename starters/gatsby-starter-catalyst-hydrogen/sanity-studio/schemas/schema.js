@@ -21,12 +21,10 @@ import homePage from "./homePage"
 import logos from "./logos"
 import workPage from "./workPage"
 import author from "./author"
-import footerColors from "./footerColors"
-import headerColors from "./headerColors"
 import subMenu from "./subMenu"
-import theme from "./theme"
-import themeColors from "./themeColors"
 import category from "./category"
+import mainNav from "./mainNav"
+import socialLinks from "./socialLinks"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -53,11 +51,9 @@ export default createSchema({
     workPage,
     excerptBlockContent,
     author,
-    theme,
-    themeColors,
-    footerColors,
-    headerColors,
     subMenu,
     category,
+    mainNav,
+    socialLinks,
   ]),
 })
