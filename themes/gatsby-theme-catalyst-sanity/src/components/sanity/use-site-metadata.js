@@ -56,18 +56,29 @@ export const useSiteMetadata = () => {
             }
           }
         }
-        allSanitySocialLink {
+        allSanitySocialLinks(
+          limit: 1
+          sort: { fields: _updatedAt, order: DESC }
+        ) {
           nodes {
-            link
-            location
-            name
+            footerSocialLinks {
+              link
+              name
+            }
+            headerSocialLinks {
+              link
+              name
+            }
           }
         }
       }
     `
   )
+  // Site metadata
   const siteMetadata = data.allSanitySiteSettings.nodes[0]
+  // Logo
   const logo = siteMetadata.logo.asset.gatsbyImageData
+  // Default Social/Seo Image
   const seoImageSrc = siteMetadata.seoImage.asset.url
   const seoImageHeight = siteMetadata.seoImage.asset.metadata.dimensions.height
   const seoImageWidth = siteMetadata.seoImage.asset.metadata.dimensions.width
@@ -76,20 +87,40 @@ export const useSiteMetadata = () => {
     width: seoImageWidth,
     height: seoImageHeight,
   }
-  const metaData = siteMetadata
-  const socialLinks = data.allSanitySocialLink.nodes
-  const twitterLink = data.allSanitySocialLink.nodes
+  // Build the social links array
+  const headerSocialLinks =
+    data.allSanitySocialLinks.nodes[0].headerSocialLinks.map((socialLink) => ({
+      name: socialLink.name,
+      link: socialLink.link,
+      location: "header",
+    }))
+  const footerSocialLinks =
+    data.allSanitySocialLinks.nodes[0].footerSocialLinks.map((socialLink) => ({
+      name: socialLink.name,
+      link: socialLink.link,
+      location: "footer",
+    }))
+  const socialLinks = [...headerSocialLinks, ...footerSocialLinks]
+
+  // Pull out the Twitter username if it exists
+  const twitterUsername = socialLinks
     .filter((social) => social.name.toLowerCase() === "twitter")
     .map((social) => {
-      return social.link
+      const userName =
+        social.link !== ""
+          ? social.link
+              .toLowerCase()
+              .replace(
+                "https://www.twitter.com/" && "https://twitter.com/",
+                "@"
+              )
+          : "Unknown"
+      return userName
     })
-  const twitterUsername = twitterLink.length
-    ? twitterLink[0]
-        .toString()
-        .toLowerCase()
-        .replace("https://www.twitter.com/" && "https://twitter.com/", "@")
-    : "Unknown"
+    .shift()
+    .toString()
 
+  // Build the menuLinks array from SANITY data
   const menuLinksLeft = data.allSanityMainNav.nodes[0].mainNavLeft.map(
     (menuLink) => ({
       name: menuLink.name,
@@ -107,13 +138,13 @@ export const useSiteMetadata = () => {
     })
   )
   const menuLinks = [...menuLinksLeft, ...menuLinksRight]
-  const allData = {
-    ...metaData,
+
+  return {
+    ...siteMetadata,
     menuLinks,
     socialLinks,
     logo,
     seoImage,
     twitterUsername,
   }
-  return allData
 }

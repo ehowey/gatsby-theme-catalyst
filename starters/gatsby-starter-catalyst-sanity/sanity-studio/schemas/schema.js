@@ -19,6 +19,7 @@ import author from "./author"
 import subMenu from "./subMenu"
 import category from "./category"
 import mainNav from "./mainNav"
+import socialLinks from "./socialLinks"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,5 +44,6 @@ export default createSchema({
     subMenu,
     category,
     mainNav,
+    socialLinks,
   ]),
 })

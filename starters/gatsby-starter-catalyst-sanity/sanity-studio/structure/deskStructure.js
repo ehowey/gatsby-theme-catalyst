@@ -1,12 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder"
-import {
-  MdSettings,
-  MdShare,
-  MdList,
-  MdInfo,
-  MdPerson,
-  MdDashboard,
-} from "react-icons/md"
+import { MdSettings, MdShare, MdList, MdInfo, MdPerson } from "react-icons/md"
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -18,6 +11,7 @@ const hiddenDocTypes = (listItem) =>
     "post",
     "project",
     "mainNav",
+    "socialLinks",
   ].includes(listItem.getId())
 
 export default () =>
@@ -56,7 +50,12 @@ export default () =>
               S.listItem()
                 .title("Social Links")
                 .icon(MdShare)
-                .child(S.documentTypeList("socialLink").title("Social Links")),
+                .child(
+                  S.document()
+                    .title("Social Links")
+                    .schemaType("socialLinks")
+                    .documentId("socialLinks")
+                ),
             ])
         ),
       // Add a visual divider (optional)
