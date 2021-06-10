@@ -5,12 +5,15 @@ export default {
   description: "Leave these fields blank if you do not want a drop down menu.",
   fields: [
     {
-      title: "Link name",
+      title: "Link text",
+      description: "The text displayed for the navigation link.",
       name: "name",
       type: "string",
     },
     {
       title: "Link to",
+      description:
+        "The relative page link, e.g. '/work'. Can also be an anchor link like '#categories'",
       name: "link",
       type: "url",
       validation: (Rule) =>

@@ -7,6 +7,82 @@
 
 This reviews any breaking changes. You can check the [changelog file](https://github.com/ehowey/gatsby-theme-catalyst/blob/main/CHANGELOG.md) on GitHub for more detailed list of non-breaking changes.
 
+## v7.0.0
+
+**Only a breaking change for SANITY based themes, if you are not using SANITY you can directly upgrade.**
+
+This breaking change was necessary to improve the UX for content editors when updating the navigation and social links via the SANITY content studio. Sorry for this breaking change, but in the long run it will improve the usability and experience for the content studio.
+
+1. Copy and replace the following files in your `/schemas` folder. You can find updated versions of these files in the [GitHub repo](https://github.com/ehowey/gatsby-theme-catalyst/tree/main/starters/gatsby-starter-catalyst-sanity/sanity-studio/schemas).
+
+```
+sanity-studio
+    --schemas
+        --mainNav.js
+        --socialLinks.js
+        --menuLink.js
+        --socialLink.js
+```
+
+2. Update the imports and exports in `/schemas/schema.js`. You will need to add `mainNav` and `socialLinks`.
+
+3. Copy and replace the following code in your `structure/deskStructure.js` so the new editing experience is visible.
+
+Old code, note the removal of Theme-UI configuation, this was experimental and no longer supported. You may not see the Theme-UI list item in there depending on your configuration.
+
+```js
+S.listItem()
+  .title("Navigation Links")
+  .icon(MdList)
+  .child(
+    S.documentTypeList("menuLink").title("Navigation Links")
+  ),
+S.listItem()
+  .title("Social Links")
+  .icon(MdShare)
+  .child(S.documentTypeList("socialLink").title("Social Links")),
+S.listItem()
+  .title("Theme-UI")
+  .icon(MdDashboard)
+  .child(
+    S.document()
+      .schemaType("theme")
+      .documentId("theme")
+      .title("Theme-UI Theme")
+  ),
+```
+
+New code:
+
+```js
+S.listItem()
+  .title("Navigation Links")
+  .icon(MdList)
+  .child(
+    S.document()
+      .title("Navigation Links")
+      .schemaType("mainNav")
+      .documentId("mainNav")
+  ),
+S.listItem()
+  .title("Social Links")
+  .icon(MdShare)
+  .child(
+    S.document()
+      .title("Social Links")
+      .schemaType("socialLinks")
+      .documentId("socialLinks")
+  ),
+```
+
+4. Update your navigation and social links appropriately in the SANITY content studio.
+
+5. Redploy your graphQL schema using the command `sanity graphql deploy`.
+
+6. Redeploy your site, ensure it builds correctly.
+
+If you run into any problems feel free to submit an issue and I will do my best to help you out.
+
 ## v6.0.0
 
 This is a doozy of an update but stay with me and you will get there in the end. Hopefully with minimal pain. If you run into any problems please submit an issue and I will do my best to help. You can view an [umbrella issue](https://github.com/ehowey/gatsby-theme-catalyst/issues/1179) of the move to v6.0 as well.

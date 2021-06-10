@@ -1,12 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder"
-import {
-  MdSettings,
-  MdShare,
-  MdList,
-  MdInfo,
-  MdPerson,
-  MdDashboard,
-} from "react-icons/md"
+import { MdSettings, MdShare, MdList, MdInfo, MdPerson } from "react-icons/md"
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -17,9 +10,8 @@ const hiddenDocTypes = (listItem) =>
     "page",
     "post",
     "project",
-    "theme",
-    "themeLmColor",
-    "themeDmColor",
+    "mainNav",
+    "socialLinks",
   ].includes(listItem.getId())
 
 export default () =>
@@ -50,20 +42,19 @@ export default () =>
                 .title("Navigation Links")
                 .icon(MdList)
                 .child(
-                  S.documentTypeList("menuLink").title("Navigation Links")
+                  S.document()
+                    .title("Navigation Links")
+                    .schemaType("mainNav")
+                    .documentId("mainNav")
                 ),
               S.listItem()
                 .title("Social Links")
                 .icon(MdShare)
-                .child(S.documentTypeList("socialLink").title("Social Links")),
-              S.listItem()
-                .title("Theme-UI")
-                .icon(MdDashboard)
                 .child(
                   S.document()
-                    .schemaType("theme")
-                    .documentId("theme")
-                    .title("Theme-UI Theme")
+                    .title("Social Links")
+                    .schemaType("socialLinks")
+                    .documentId("socialLinks")
                 ),
             ])
         ),

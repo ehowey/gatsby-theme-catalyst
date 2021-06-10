@@ -7,7 +7,7 @@ export default {
       title: "Social Media Provider",
       name: "name",
       description:
-        "The name of the social media provider, e.g. Facebook or Instagram, email or e-mail also works.",
+        "The name of the social media provider, e.g. Facebook or Instagram, email or e-mail also works. Icons are automatically sourced at build time. If an icon doesn't render please submit an issue.",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
@@ -21,21 +21,6 @@ export default {
           allowRelative: true,
           scheme: ["https", "http", "mailto"],
         }),
-    },
-    {
-      title: "Link location",
-      name: "location",
-      type: "string",
-      description:
-        "Social media links are automatically displayed in either the page header, footer, or both locations",
-      options: {
-        list: [
-          { title: "Header", value: "header" },
-          { title: "Footer", value: "footer" },
-          { title: "All", value: "all" },
-        ], // <-- predefined values
-      },
-      validation: (Rule) => Rule.required(),
     },
   ],
 }
