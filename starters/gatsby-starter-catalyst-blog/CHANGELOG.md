@@ -1,5 +1,16 @@
 # Change Log
 
+## 7.0.1
+
+### Patch Changes
+
+- 303bbe8b: Fixes a bug where missing social links data from SANITY, e.g. not including any social links at all would cause a build error.
+- Updated dependencies [303bbe8b]
+  - gatsby-theme-catalyst-blog@7.0.1
+  - gatsby-theme-catalyst-core@7.0.1
+  - gatsby-theme-catalyst-footer@7.0.1
+  - gatsby-theme-catalyst-header-side@7.0.1
+
 ## 7.0.0
 
 ### Major Changes
