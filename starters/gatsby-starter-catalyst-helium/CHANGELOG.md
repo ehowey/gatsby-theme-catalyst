@@ -1,5 +1,16 @@
 # Change Log
 
+## 7.0.2
+
+### Patch Changes
+
+- 5699b9d5: [gatsby-theme-catalyst-header-top]: Tweak default spacing around navigation links, visually remains the same but ensures there isn't extra space when creating a site without social links.
+
+  [gatsby-theme-catalyst-header-bigtop]: Switch last-child to last-of-type
+
+- Updated dependencies [5699b9d5]
+  - gatsby-theme-catalyst-helium@7.0.2
+
 ## 7.0.1
 
 ### Patch Changes
