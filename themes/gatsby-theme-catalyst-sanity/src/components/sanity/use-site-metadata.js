@@ -74,6 +74,12 @@ export const useSiteMetadata = () => {
       }
     `
   )
+  // //Mock data
+  // const mockData = {
+  //   allSanitySocialLinks: {
+  //     nodes: [],
+  //   },
+  // }
   // Site metadata
   const siteMetadata = data.allSanitySiteSettings.nodes[0]
   // Logo
@@ -88,37 +94,63 @@ export const useSiteMetadata = () => {
     height: seoImageHeight,
   }
   // Build the social links array
-  const headerSocialLinks =
-    data.allSanitySocialLinks.nodes[0].headerSocialLinks.map((socialLink) => ({
-      name: socialLink.name,
-      link: socialLink.link,
-      location: "header",
-    }))
-  const footerSocialLinks =
-    data.allSanitySocialLinks.nodes[0].footerSocialLinks.map((socialLink) => ({
-      name: socialLink.name,
-      link: socialLink.link,
-      location: "footer",
-    }))
+  // Check that there are social links so build doesn't fail
+  const hasHeaderSocialLinks =
+    data.allSanitySocialLinks.nodes.length > 0 &&
+    data.allSanitySocialLinks.nodes[0].headerSocialLinks.length > 0
+
+  const hasFooterSocialLinks =
+    data.allSanitySocialLinks.nodes.length > 0 &&
+    data.allSanitySocialLinks.nodes[0].footerSocialLinks.length > 0
+
+  // Rebuild the object formats
+  const headerSocialLinks = hasHeaderSocialLinks
+    ? data.allSanitySocialLinks.nodes[0].headerSocialLinks.map(
+        (socialLink) => ({
+          name: socialLink.name,
+          link: socialLink.link,
+          location: "header",
+        })
+      )
+    : []
+
+  const footerSocialLinks = hasFooterSocialLinks
+    ? data.allSanitySocialLinks.nodes[0].footerSocialLinks.map(
+        (socialLink) => ({
+          name: socialLink.name,
+          link: socialLink.link,
+          location: "footer",
+        })
+      )
+    : []
+
+  // Merge into one socialLinks array
   const socialLinks = [...headerSocialLinks, ...footerSocialLinks]
 
   // Pull out the Twitter username if it exists
-  const twitterUsername = socialLinks
-    .filter((social) => social.name.toLowerCase() === "twitter")
-    .map((social) => {
-      const userName =
-        social.link !== ""
-          ? social.link
-              .toLowerCase()
-              .replace(
-                "https://www.twitter.com/" && "https://twitter.com/",
-                "@"
-              )
-          : "Unknown"
-      return userName
-    })
-    .shift()
-    .toString()
+  const twitterInfo = socialLinks.filter(
+    (social) => social.name.toLowerCase() === "twitter"
+  )
+
+  const hasTwitterInfo = twitterInfo.length > 0
+
+  const twitterUsername = hasTwitterInfo
+    ? twitterInfo
+        .map((social) => {
+          const userName =
+            social.link !== ""
+              ? social.link
+                  .toLowerCase()
+                  .replace(
+                    "https://www.twitter.com/" && "https://twitter.com/",
+                    "@"
+                  )
+              : "Unknown"
+          return userName
+        })
+        .shift()
+        .toString()
+    : "Unknown"
 
   // Build the menuLinks array from SANITY data
   const menuLinksLeft = data.allSanityMainNav.nodes[0].mainNavLeft.map(
