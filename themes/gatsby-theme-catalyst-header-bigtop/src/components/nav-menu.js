@@ -36,14 +36,14 @@ const NavLinks = () => {
               my: [1, null, 0, null, null],
               mr: [0, null, 3, null, null],
               cursor: "pointer",
-              ":last-child": {
-                mr: 0,
-              },
               ".active": {
                 textDecoration: "underline",
                 textDecorationThickness: "0.125em",
                 color: "primary",
                 variant: "variants.navLinkActive",
+              },
+              ":last-of-type": {
+                mr: 0,
               },
               variant: "variants.navLi",
             }}

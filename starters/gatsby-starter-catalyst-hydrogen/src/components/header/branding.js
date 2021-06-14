@@ -17,7 +17,6 @@ const SiteBranding = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        ml: 2,
         mr: 2,
         variant: "variants.branding",
       }}

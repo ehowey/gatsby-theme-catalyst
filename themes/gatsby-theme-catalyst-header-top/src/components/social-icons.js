@@ -17,8 +17,8 @@ const SocialWrapper = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        mr: ["auto", null, 2, null, null],
-        ml: ["auto", null, 2, null, null],
+        mr: ["auto", null, 0, null, null],
+        ml: ["auto", null, 3, null, null],
         mt: [2, null, 0, null, null],
         a: {
           color: isNavOpen ? "header.iconsOpen" : "header.icons",
