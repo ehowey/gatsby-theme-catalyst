@@ -2197,10 +2197,10 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
-"@stripe/stripe-js@^1.11.0":
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.13.2.tgz#bb2f561085b5dd091355df871d432b8e1fd467f6"
-  integrity sha512-fycUk7ECukNc31lD5apcrUgdRC1BfiIacs+CpacoCjOgo3ablolnWCvDQWMmVWtODYa8bBv2dlBla+Edc5OvZg==
+"@stripe/stripe-js@^1.15.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.15.0.tgz#86178cfbe66151910b09b03595e60048ab4c698e"
+  integrity sha512-KQsNPc+uVQkc8dewwz1A6uHOWeU2cWoZyNIbsx5mtmperr5TPxw4u8M20WOa22n6zmIOh/zLdzEe8DYK/0IjBw==
 
 "@styled-system/background@^5.1.2":
   version "5.1.2"
