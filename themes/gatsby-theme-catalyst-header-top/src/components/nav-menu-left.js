@@ -42,6 +42,9 @@ const NavLinksLeft = () => {
                 color: "primary",
                 variant: "variants.navLinkActive",
               },
+              ":last-of-type": {
+                mr: 0,
+              },
               variant: "variants.navLi",
             }}
           >
