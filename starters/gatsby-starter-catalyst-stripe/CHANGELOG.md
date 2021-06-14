@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.2
+
+### Patch Changes
+
+- 303bbe8b: Fixes a bug where missing social links data from SANITY, e.g. not including any social links at all would cause a build error.
+- Updated dependencies [303bbe8b]
+  - gatsby-theme-catalyst-stripe@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

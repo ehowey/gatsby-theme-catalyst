@@ -1,5 +1,11 @@
 # Change Log
 
+## 7.0.1
+
+### Patch Changes
+
+- 303bbe8b: Fixes a bug where missing social links data from SANITY, e.g. not including any social links at all would cause a build error.
+
 ## 7.0.0
 
 ### Major Changes
