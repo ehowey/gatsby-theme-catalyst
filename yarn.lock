@@ -2386,10 +2386,10 @@
     "@emotion/react" "^11.1.1"
     csstype "^3.0.5"
 
-"@theme-ui/match-media@^0.8.4":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@theme-ui/match-media/-/match-media-0.8.4.tgz#6e5f0a42e4646d00a214702a316c8352341caaa9"
-  integrity sha512-+oyFfFp1X8Yhk0QbtzWvblBc3C7iJpRA9GHW3Iv+/Gt5FncEzr0WOwhfLUK8LDVyTXuW1LeIJ782hMJEX2129A==
+"@theme-ui/match-media@^0.10.1":
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/@theme-ui/match-media/-/match-media-0.10.1.tgz#2121f5a68abfdac6d93dfebcafe7210bc0efbb9b"
+  integrity sha512-yN2+h5FQ6KyeCYvV9ZWMzK8jWy8xVghdglpoXC7/GQtKEfjYG4aMdfpcvrD5K4hDrhlDQ2adF5wOJn+QhqznYw==
 
 "@theme-ui/mdx@0.8.4":
   version "0.8.4"
