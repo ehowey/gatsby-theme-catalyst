@@ -30,7 +30,7 @@
     "gatsby-remark-images": "^5.2.0",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-remark-responsive-iframe": "^4.2.0",
+    "gatsby-remark-responsive-iframe": "^4.5.0",
     "gatsby-remark-smartypants": "^4.2.0",
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-json": "^3.5.0",
