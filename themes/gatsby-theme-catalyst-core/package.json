@@ -7,7 +7,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@reach/skip-nav": "^0.15.0",
-    "@theme-ui/color": "^0.8.4",
+    "@theme-ui/color": "^0.10.0",
     "@theme-ui/match-media": "^0.8.4",
     "@theme-ui/preset-tailwind": "^0.8.4",
     "@theme-ui/prism": "^0.8.4",
