@@ -25,7 +25,7 @@
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-plugin-sitemap": "^4.1.0",
     "gatsby-plugin-theme-ui": "^0.8.4",
-    "gatsby-remark-copy-linked-files": "^4.2.0",
+    "gatsby-remark-copy-linked-files": "^4.5.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^5.2.0",
     "gatsby-remark-reading-time": "^1.1.0",
