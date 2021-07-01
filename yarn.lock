@@ -2090,10 +2090,10 @@
     "@sanity/block-content-to-hyperscript" "^3.0.0"
     prop-types "^15.6.2"
 
-"@sanity/client@^2.1.4", "@sanity/client@^2.7.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.7.1.tgz#0163ecad3ad0875dac5a87bfa20a1652dd3e6a80"
-  integrity sha512-uKMlB4v8PDQQd2+5MGC2ccE/5lteJoqeH6iPr5ELC/608KonazMrOx7ROS0gxjNlDEq7NkJePaWwiaNu1xdujA==
+"@sanity/client@^2.11.0", "@sanity/client@^2.7.1":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.11.0.tgz#42bd3451726f9dd5983814c010619112a0ae25ed"
+  integrity sha512-ruP1iUwItXcGrJQo8aLWibeeNbgbkCUosUu9Y/W1ZR4D1qrL+KN459HTh6+f+WJQz/puT2sCzGUX7qg+r187fw==
   dependencies:
     "@sanity/eventsource" "2.2.6"
     "@sanity/generate-help-url" "2.2.6"
