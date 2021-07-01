@@ -13,7 +13,7 @@
     "cypress": "^7.3.0",
     "cypress-axe": "^0.12.2",
     "gatsby-cypress": "^1.5.0",
-    "start-server-and-test": "^1.12.1"
+    "start-server-and-test": "^1.12.5"
   },
   "scripts": {
     "publish-ci": "changeset publish",
