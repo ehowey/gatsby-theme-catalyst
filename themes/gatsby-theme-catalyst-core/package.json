@@ -9,7 +9,7 @@
     "@reach/skip-nav": "^0.15.0",
     "@theme-ui/color": "^0.8.4",
     "@theme-ui/match-media": "^0.8.4",
-    "@theme-ui/preset-tailwind": "^0.8.4",
+    "@theme-ui/preset-tailwind": "^0.10.1",
     "@theme-ui/prism": "^0.8.4",
     "framer-motion": "^4.1.17",
     "gatsby-background-image": "^1.5.3",
