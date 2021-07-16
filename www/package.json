@@ -6,7 +6,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^3.5.0",
-    "gatsby-plugin-netlify": "^3.4.0",
+    "gatsby-plugin-netlify": "^3.9.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-theme-catalyst-core": "^7.0.3",
     "gatsby-theme-catalyst-footer": "^7.0.3",
