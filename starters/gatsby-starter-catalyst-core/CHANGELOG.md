@@ -1,5 +1,13 @@
 # Change Log
 
+## 7.0.3
+
+### Patch Changes
+
+- 852f7486: Added missing serializers to SANITY for `<li>`, `<ul>` and `<ol>`
+- Updated dependencies [852f7486]
+  - gatsby-theme-catalyst-core@7.0.3
+
 ## 7.0.2
 
 ### Patch Changes
