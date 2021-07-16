@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.4
+
+### Patch Changes
+
+- 852f7486: Added missing serializers to SANITY for `<li>`, `<ul>` and `<ol>`
+- Updated dependencies [852f7486]
+  - gatsby-theme-catalyst-stripe@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
