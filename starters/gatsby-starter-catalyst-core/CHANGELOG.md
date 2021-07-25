@@ -1,5 +1,13 @@
 # Change Log
 
+## 7.0.4
+
+### Patch Changes
+
+- 19b03233: Updates all internal dependencies current as of `gatsby v3.10.1`.
+- Updated dependencies [19b03233]
+  - gatsby-theme-catalyst-core@7.0.4
+
 ## 7.0.3
 
 ### Patch Changes
