@@ -5,16 +5,16 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
-    "gatsby-source-sanity": "^7.0.4"
+    "gatsby-source-sanity": "^7.0.7"
   },
   "devDependencies": {
-    "gatsby": "^3.5.0",
-    "prettier": "^2.3.0",
+    "gatsby": "^3.10.1",
+    "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "peerDependencies": {
-    "gatsby": "^3.5.0",
+    "gatsby": "^3.10.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

@@ -5,7 +5,7 @@
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby": "^3.5.0",
+    "gatsby": "^3.10.1",
     "gatsby-theme-catalyst-blog": "^7.0.3",
     "gatsby-theme-catalyst-core": "^7.0.3",
     "gatsby-theme-catalyst-footer": "^7.0.3",
