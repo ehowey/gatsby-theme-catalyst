@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.5
+
+### Patch Changes
+
+- 19b03233: Updates all internal dependencies current as of `gatsby v3.10.1`.
+- Updated dependencies [19b03233]
+  - gatsby-theme-catalyst-stripe@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes
