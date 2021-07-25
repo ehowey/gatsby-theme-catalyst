@@ -13,6 +13,17 @@ const headerId = (id) => {
 }
 
 const serializers = {
+  list: (props) => {
+    const { type } = props
+    const bullet = type === "bullet"
+    if (bullet) {
+      return <Themed.ul>{props.children}</Themed.ul>
+    }
+    return <Themed.ol>{props.children}</Themed.ol>
+  },
+
+  listItem: (props) => <Themed.li>{props.children}</Themed.li>,
+
   types: {
     code: Code,
     figure: Figure,
