@@ -5,7 +5,7 @@
   "private": true,
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "gatsby": "^3.5.0",
+    "gatsby": "^3.10.1",
     "gatsby-theme-catalyst-helium": "^7.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
