@@ -1689,10 +1689,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/quando@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@fontsource/quando/-/quando-4.2.2.tgz#9bad9491f9f9795025df0299c1d8c2283cb9bc73"
-  integrity sha512-GPf5eTsyG59laGQ4LtcwTu5wA3bh1zmLFKqbYSTNm8DClT4I80Wa0FKSVOLJ/qTYrnH8HYFbsPpOiVcxYEMESA==
+"@fontsource/quando@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/quando/-/quando-4.5.0.tgz#d20fbc18b241b67c5bc570db8f93e905c5b4675c"
+  integrity sha512-lnPrN7QEBEZUheEH0/kdPH13fVk0V02MczrgvGQD66kYD4n/IAoKnKPycuAMw2NX/PlwtMwljp3TEgsZlHJEJg==
 
 "@fontsource/sen@^4.2.2":
   version "4.2.2"
@@ -2377,7 +2377,20 @@
     "@sanity/block-content-to-hyperscript" "^3.0.0"
     prop-types "^15.6.2"
 
-"@sanity/client@^2.1.4", "@sanity/client@^2.7.1":
+"@sanity/client@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.13.0.tgz#c69bb9594b5a7de9fe8ebebd3f060474d216abe5"
+  integrity sha512-hp4snNL+VVWNamVkezDxmYM6oCNecB43iOt+tSEJ8VtRbb6yvrqqYUT0WEQEwoF9xWbfJ7Uu/WHwjm8ry93xVQ==
+  dependencies:
+    "@sanity/eventsource" "^2.13.0"
+    "@sanity/generate-help-url" "^2.13.0"
+    "@sanity/observable" "2.0.9"
+    deep-assign "^2.0.0"
+    get-it "^5.0.3"
+    make-error "^1.3.0"
+    object-assign "^4.1.1"
+
+"@sanity/client@^2.7.1":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.7.1.tgz#0163ecad3ad0875dac5a87bfa20a1652dd3e6a80"
   integrity sha512-uKMlB4v8PDQQd2+5MGC2ccE/5lteJoqeH6iPr5ELC/608KonazMrOx7ROS0gxjNlDEq7NkJePaWwiaNu1xdujA==
@@ -2398,6 +2411,14 @@
     "@rexxars/eventsource-polyfill" "^1.0.0"
     eventsource "^1.0.6"
 
+"@sanity/eventsource@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@sanity/eventsource/-/eventsource-2.13.0.tgz#c63078f9dd19003c0f18026ba5a090268562034e"
+  integrity sha512-MpAae07N6olw3y00og50m4HFK2jNKYYH6NKfIvGCd2GNWCPb8D78eG6OkVqXGWf4jWYNQO0m6BhxBRHmFLxm/w==
+  dependencies:
+    "@rexxars/eventsource-polyfill" "^1.0.0"
+    eventsource "^1.0.6"
+
 "@sanity/generate-help-url@2.2.6":
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-2.2.6.tgz#1673872e2747d1e8aa9406486a80ba6d3e36869d"
@@ -2407,6 +2428,11 @@
   version "0.140.0"
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-0.140.0.tgz#f60ab75be5fdc346b9f0d1c2a0858aa3c2870109"
   integrity sha512-H/G/WA9S22TXcXST52CIiTsHx3S2hH0gvK7LnI5w76vfKS0obnDPh8jrPg4xeNRYGPuV9MHYRlyERGpRGoo4Qw==
+
+"@sanity/generate-help-url@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-2.13.0.tgz#e0990a94e5ea386b874d139da733e9664ae531fc"
+  integrity sha512-h+kRqRozLnmFC+ji82og7S60AQaY8Y4x/F1noS08M5T9N7mXCwGYZOHLfSMSNyBCaJwqWpEzzq/qvq9Wxxa7ow==
 
 "@sanity/image-url@^0.140.15", "@sanity/image-url@^0.140.19":
   version "0.140.22"
@@ -2483,11 +2509,6 @@
   dependencies:
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
-
-"@stripe/stripe-js@^1.11.0":
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.13.2.tgz#bb2f561085b5dd091355df871d432b8e1fd467f6"
-  integrity sha512-fycUk7ECukNc31lD5apcrUgdRC1BfiIacs+CpacoCjOgo3ablolnWCvDQWMmVWtODYa8bBv2dlBla+Edc5OvZg==
 
 "@stripe/stripe-js@^1.14.0", "@stripe/stripe-js@^1.16.0":
   version "1.16.0"
@@ -13395,11 +13416,6 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.1.tgz#66c5701c3e7560ab4822a4ee2742dee215d72eb3"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
-react-storage-hooks@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/react-storage-hooks/-/react-storage-hooks-4.0.1.tgz#e30ed5cda48c77c431ecc02ec3824bd615f5b7fb"
-  integrity sha512-fetDkT5RDHGruc2NrdD1iqqoLuXgbx6AUpQSQLLkrCiJf8i97EtwJNXNTy3+GRfsATLG8TZgNc9lGRZOaU5yQA==
-
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
@@ -16221,14 +16237,6 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
-
-use-shopping-cart@^2.3.0:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/use-shopping-cart/-/use-shopping-cart-2.4.3.tgz#c75ade8448bf3919e73b06b73c7a384715af90e9"
-  integrity sha512-paVjQ6fayJ3ZXVCv7cYmhrxpQkWYJ3+YmdPowuKWkRRaJLcvT4TPBSqOdM/XW0vaHNdllZuoYyCfQ7UWmWKdiA==
-  dependencies:
-    react-storage-hooks "^4.0.0"
-    uuid "^8.3.1"
 
 use-shopping-cart@^3.0.0:
   version "3.0.0"
