@@ -6,7 +6,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@reach/skip-nav": "^0.15.3",
+    "@reach/skip-nav": "^0.16.0",
     "@theme-ui/color": "^0.10.0",
     "@theme-ui/match-media": "^0.10.1",
     "@theme-ui/preset-tailwind": "^0.10.1",
