@@ -1,0 +1,25 @@
+name: Test Header BigTop
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "themes/gatsby-theme-catalyst-header-bigtop/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "themes/gatsby-theme-catalyst-header-bigtop/**"
+jobs:
+  test_headers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Big Top Header Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn build:helium
+          start: yarn serve:helium
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/helium.test.js

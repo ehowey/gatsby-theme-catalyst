@@ -38,6 +38,8 @@ const SiteMobileButton = () => {
   return (
     <button
       aria-label="Toggle Menu"
+      aria-haspopup={true}
+      aria-expanded={isNavOpen ? true : false}
       onClick={() => setIsNavOpen(!isNavOpen)}
       sx={{
         gridColumn: "2 / 3",

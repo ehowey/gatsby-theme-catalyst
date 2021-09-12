@@ -1,0 +1,25 @@
+name: Test Header Side
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "themes/gatsby-theme-catalyst-header-side/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "themes/gatsby-theme-catalyst-header-side/**"
+jobs:
+  test_headers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Side Header Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn build:blog
+          start: yarn serve:blog
+          config-file: cypress/cypress-github-actions.json
+          spec: cypress/e2e/blog.test.js
