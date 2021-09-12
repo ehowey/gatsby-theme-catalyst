@@ -1,5 +1,16 @@
 # Change Log
 
+## 7.0.6
+
+### Patch Changes
+
+- 9406eddd: Updates dev dependency for prettier to most recent version
+- Updated dependencies [9406eddd]
+  - gatsby-theme-catalyst-core@7.0.6
+  - gatsby-theme-catalyst-footer@7.0.6
+  - gatsby-theme-catalyst-header-top@7.0.6
+  - gatsby-theme-catalyst-sanity@7.0.6
+
 ## 7.0.5
 
 ### Patch Changes
