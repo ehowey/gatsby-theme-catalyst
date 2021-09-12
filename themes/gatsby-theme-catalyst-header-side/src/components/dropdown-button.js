@@ -24,7 +24,8 @@ const NavLinkDropDown = ({
     <Button
       variant="dropdown"
       onClick={handleClick}
-      aria-haspopup="true"
+      aria-haspopup={true}
+      aria-expanded={isActive ? true : false}
       sx={{
         backgroundColor: "transparent",
         textDecoration: isActive ? "underline" : "none",
