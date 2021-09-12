@@ -1912,10 +1912,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/quando/-/quando-4.5.0.tgz#d20fbc18b241b67c5bc570db8f93e905c5b4675c"
   integrity sha512-lnPrN7QEBEZUheEH0/kdPH13fVk0V02MczrgvGQD66kYD4n/IAoKnKPycuAMw2NX/PlwtMwljp3TEgsZlHJEJg==
 
-"@fontsource/sen@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@fontsource/sen/-/sen-4.2.2.tgz#983fe6c2869b7355a117994d4975c53e2302cbf2"
-  integrity sha512-MhYwJc6wCfBBdSMtzoTTxuAY2aSSaPIROR/G+5yc0WFT4lvqPLR+414nwN+JgiOzOctOgHQBTUfE2EVeZ6ntTA==
+"@fontsource/sen@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/sen/-/sen-4.5.0.tgz#eb75f44997e6f69068df0935ca6aecccf7d151a3"
+  integrity sha512-SHaq6sGjsr2ipk/7mSyuBa47pjV8PBRrp2pkxs054WwHX9sCLyxx1XmXdwXHgGVvPzOD6gnJz8OzXy3Lg36wgQ==
 
 "@gatsbyjs/reach-router@^1.3.6":
   version "1.3.6"
