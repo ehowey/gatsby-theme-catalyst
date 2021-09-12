@@ -7,13 +7,13 @@
   ],
   "name": "gatsby-theme-catalyst",
   "devDependencies": {
-    "@changesets/cli": "^2.16.0",
-    "@testing-library/cypress": "^7.0.6",
-    "axe-core": "^4.2.0",
-    "cypress": "^7.3.0",
-    "cypress-axe": "^0.12.2",
-    "gatsby-cypress": "^1.5.0",
-    "start-server-and-test": "^1.12.1"
+    "@changesets/cli": "^2.17.0",
+    "@testing-library/cypress": "^8.0.1",
+    "axe-core": "^4.3.3",
+    "cypress": "^8.3.1",
+    "cypress-axe": "^0.13.0",
+    "gatsby-cypress": "^1.13.0",
+    "start-server-and-test": "^1.14.0"
   },
   "scripts": {
     "publish-ci": "changeset publish",
