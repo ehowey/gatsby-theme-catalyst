@@ -8,7 +8,7 @@
     "@mdx-js/react": "^1.6.22",
     "@reach/skip-nav": "^0.16.0",
     "@theme-ui/color": "^0.11.2",
-    "@theme-ui/match-media": "^0.11.2",
+    "@theme-ui/match-media": "^0.11.3",
     "@theme-ui/preset-tailwind": "^0.11.2",
     "@theme-ui/prism": "^0.11.2",
     "framer-motion": "^4.1.17",

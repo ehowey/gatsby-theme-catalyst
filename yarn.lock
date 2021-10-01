@@ -2897,10 +2897,10 @@
     "@emotion/react" "^11.1.1"
     csstype "^3.0.5"
 
-"@theme-ui/match-media@^0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@theme-ui/match-media/-/match-media-0.11.2.tgz#d340b4ecfb18a1a504e03fddfca79d3226f742e7"
-  integrity sha512-/3ccaHaZBsJZ/jXEqUy8bc9Sr65b280aWhMEY01DbUT0g8k2qnBEi6Nhd6bRWs/TipcTT+090PuJuReo7AcBCw==
+"@theme-ui/match-media@^0.11.3":
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/@theme-ui/match-media/-/match-media-0.11.3.tgz#86fa82b47eae00e0f9dd5ae995e1fe5c28b4e48f"
+  integrity sha512-UZXJ5DI/Q+3h9JtK0FFxEesfLUEP6JNXukng3SqprYcKcDBQRqVa1+Qc/pPkIklEK9li3/c0MBGGNHqKFMRnig==
 
 "@theme-ui/mdx@0.11.2":
   version "0.11.2"
