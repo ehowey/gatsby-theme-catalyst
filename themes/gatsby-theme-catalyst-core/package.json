@@ -13,7 +13,7 @@
     "@theme-ui/prism": "^0.11.2",
     "framer-motion": "^4.1.17",
     "gatsby-background-image": "^1.5.3",
-    "gatsby-plugin-catch-links": "^3.13.0",
+    "gatsby-plugin-catch-links": "^3.14.0",
     "gatsby-plugin-feed": "^3.13.0",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
