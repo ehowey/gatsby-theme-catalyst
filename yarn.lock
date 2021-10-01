@@ -2708,10 +2708,10 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
-"@stripe/stripe-js@^1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.16.0.tgz#73bce24fb7f47d719caa6b151e58e49b4167d463"
-  integrity sha512-ZSHbiwTrISoaTbpercmYGuY7QTg7HxfFyNgbJBaYbwHWbzMhpEdGTsmMpaBXIU6iiqwEEDaIyD8O6yJ+H5DWCg==
+"@stripe/stripe-js@^1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.18.0.tgz#687268d7cd68b44b92b86300d7c7f2a6e4df0b98"
+  integrity sha512-yBRHAMKHnF3kbzv0tpKB82kSow43wW5qXLK8ofg3V9NaaCyObSTO7wJfktWAtG/NBgkJOdUL+pV8dHBj0qvDkQ==
 
 "@styled-system/background@^5.1.2":
   version "5.1.2"

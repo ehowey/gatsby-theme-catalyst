@@ -4,7 +4,7 @@
   "version": "0.1.7",
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
-    "@stripe/stripe-js": "^1.16.0",
+    "@stripe/stripe-js": "^1.18.0",
     "dollars-to-cents": "^1.0.3",
     "gatsby-theme-catalyst-core": "^7.0.6",
     "gatsby-theme-catalyst-footer": "^7.0.6",
