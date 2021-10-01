@@ -2921,10 +2921,10 @@
     "@emotion/react" "^11.1.1"
     "@theme-ui/css" "0.11.2"
 
-"@theme-ui/preset-tailwind@^0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@theme-ui/preset-tailwind/-/preset-tailwind-0.11.2.tgz#7455dfab519df349c9bf87cb1e8ceecc00ac5f29"
-  integrity sha512-O34X/ZDpsEvrWlud6Ev6Qcg/wunZsT2lvyTZCMJex/sla9MxWTQo1babJXrimBDvA7W70LQ34Sad854Eic7K0w==
+"@theme-ui/preset-tailwind@^0.11.3":
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-tailwind/-/preset-tailwind-0.11.3.tgz#ba4d3e2ef153699921a7dec989c540b3e6ccdaf6"
+  integrity sha512-OvQaJwNy/DC/Oxw6fq+jYhV4W1j60YzXP6R4ilx0bKjd5aXWEzjrlNNdCNvRgQldWAEAskrpZVKu/WKjacFqjQ==
 
 "@theme-ui/prism@^0.11.2":
   version "0.11.2"
