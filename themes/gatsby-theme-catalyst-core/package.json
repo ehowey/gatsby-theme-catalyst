@@ -10,7 +10,7 @@
     "@theme-ui/color": "^0.11.2",
     "@theme-ui/match-media": "^0.11.2",
     "@theme-ui/preset-tailwind": "^0.11.2",
-    "@theme-ui/prism": "^0.11.2",
+    "@theme-ui/prism": "^0.11.3",
     "framer-motion": "^4.1.17",
     "gatsby-background-image": "^1.5.3",
     "gatsby-plugin-catch-links": "^3.13.0",
