@@ -14,7 +14,7 @@
     ]
   },
   "dependencies": {
-    "@sanity/client": "^2.13.0",
+    "@sanity/client": "^2.21.3",
     "@stripe/stripe-js": "^1.16.0",
     "dollars-to-cents": "^1.0.3",
     "gatsby": "^3.14.3",
