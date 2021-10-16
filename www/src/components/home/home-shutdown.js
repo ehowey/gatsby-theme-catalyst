@@ -24,7 +24,7 @@ const HomeShutdown = () => {
       <Themed.p>
         A few quick notes about why I made this decision. TLDR; I don't think
         Gatsby Themes are the best approach for my own freelance work anymore,
-        however I still heavily rely on Gatsby as a framework.
+        however I still rely heavily on Gatsby as a framework.
       </Themed.p>
       <Themed.ul>
         <Themed.li>
@@ -37,15 +37,15 @@ const HomeShutdown = () => {
           <strong>Maintainability:</strong> With all of the dependencies tucked
           away inside the themes coming back to a project after 6 months or a
           year was a daunting task as I didn't have the power to granularly
-          manage updating dependencies.
+          manage updating dependencies as I needed to.
         </Themed.li>
         <Themed.li>
           <strong>Speed:</strong> Themes are great at the start - you can go
           from zero to hero in a matter of minutes but then as projects grew and
-          got more complex I found myself being slowed down by the themes and
-          the hidden files I would have to reference back to inside of the
-          theme. I found it much more efficient to have all of the components,
-          hooks, and files together in one repo; not siloed off into themes.
+          got more complex I found myself being slowed down by having to
+          reference files back inside of the theme. I found it much more
+          efficient to have all of the components, hooks, and files together in
+          single repo and not siloed off into themes.
         </Themed.li>
         <Themed.li>
           <strong>Lack of use:</strong> This one didn't matter as much to me,
