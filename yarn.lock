@@ -2757,11 +2757,6 @@
   resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.20.2.tgz#5bb8deff1ba6cdc83d0bfac58e4d61fe2e4a53e7"
   integrity sha512-gTPpXQgAgKrAAvV2R5WO4NCuozALD4n3xaDLhPv+nAomIdPLtgEwI2xIGY7WMSKp9KfkKmlcjoPO4pkz8f/bpw==
 
-"@stripe/stripe-js@^1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.16.0.tgz#73bce24fb7f47d719caa6b151e58e49b4167d463"
-  integrity sha512-ZSHbiwTrISoaTbpercmYGuY7QTg7HxfFyNgbJBaYbwHWbzMhpEdGTsmMpaBXIU6iiqwEEDaIyD8O6yJ+H5DWCg==
-
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@styled-system/background/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"
