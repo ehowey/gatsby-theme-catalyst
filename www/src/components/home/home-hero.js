@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Themed } from "theme-ui"
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { Button } from "theme-ui"
 import { baseColors } from "@theme-ui/preset-tailwind"
 import { darken } from "@theme-ui/color"
-import { AiOutlineFire } from "react-icons/ai"
+// import { AiOutlineFire } from "react-icons/ai"
 import { FiBookOpen, FiGithub } from "react-icons/fi"
 import GitHubButton from "react-github-btn"
 import catalystLogo from "../../../content/assets/catalyst-svg-logo.svg"
@@ -43,174 +43,103 @@ const HomeHero = () => {
           Star
         </GitHubButton>
       </div>
-      <img
-        src={catalystLogo}
-        alt="Gatsby Theme Catalyst Logo"
-        sx={{ width: "180px" }}
-      />
-      <h1
-        sx={{
-          fontFamily: "heading",
-          fontWeight: "heading",
-          textTransform: "uppercase",
-          textAlign: "center",
-          fontSize: [5, 6, 7, 8, null],
-          color: baseColors.gray[8],
-          mb: 3,
-        }}
-      >
-        Gatsby Theme Catalyst
-      </h1>
-      <Themed.inlineCode
-        sx={{
-          mb: 0,
-          px: 2,
-          bg: baseColors.gray[8],
-          color: baseColors.gray[1],
-          wordWrap: "break-word",
-          textOverflow: "wrap",
-          overflowWrap: "break-word",
-          wordBreak: "break-word",
-          lineHeight: "tight",
-        }}
-      >
-        gatsby new catalyst ehowey/gatsby-starter-catalyst
-      </Themed.inlineCode>
-      <Themed.p
-        sx={{
-          fonmtSize: 3,
-          my: 1,
-          textTransform: "uppercase",
-          fontWeight: "bold",
-        }}
-      >
-        or
-      </Themed.p>
-      <Themed.p
-        sx={{
-          mt: 0,
-          mb: 4,
-          px: 2,
-          pb: 1,
-          bg: baseColors.gray[8],
-          lineHeight: "tight",
-        }}
-      >
-        <Themed.a
-          href="https://www.sanity.io/create?template=ehowey%2Fsanity-template-catalyst"
+      <div sx={{ display: "grid", placeItems: "center" }}>
+        <img
+          src={catalystLogo}
+          alt="Gatsby Theme Catalyst Logo"
+          sx={{ width: "100px" }}
+        />
+        <h1
           sx={{
-            color: baseColors.gray[1],
-            fontFamily: "monospace",
-            fontSize: 1,
+            fontFamily: "heading",
+            fontWeight: "heading",
+            textTransform: "uppercase",
+            textAlign: "center",
+            fontSize: 4,
+            color: baseColors.gray[8],
+            mb: 3,
           }}
         >
-          sanity.io/create?template=ehowey/sanity-template-catalyst
-        </Themed.a>
-      </Themed.p>
+          Gatsby Theme Catalyst
+        </h1>
 
-      <nav sx={{ width: ["100%", "auto", null, null, null] }}>
-        <ul
-          sx={{
-            display: "grid",
-            gridTemplateColumns: [
-              "minmax(0, 1fr) minmax(0, 1fr)",
-              "auto auto auto",
-              null,
-              null,
-              null,
-            ],
-            gridTemplateRows: ["auto auto", "auto", null, null, null],
-            gridGap: 3,
-            maxWidth: "maxContentWidth",
-            m: 0,
-            p: 0,
-            listStyle: "none",
-          }}
-        >
-          <li
+        <nav sx={{ width: ["100%", "auto", null, null, null] }}>
+          <ul
             sx={{
-              gridColumn: ["1 / -1", "1 / 2", null, null, null],
-              grideRow: "1 / 2",
+              display: "grid",
+              gridTemplateColumns: [
+                "minmax(0, 1fr) minmax(0, 1fr)",
+                "auto auto auto",
+                null,
+                null,
+                null,
+              ],
+              gridTemplateRows: ["auto auto", "auto", null, null, null],
+              gridGap: 3,
+              maxWidth: "maxContentWidth",
+              m: 0,
+              p: 0,
+              listStyle: "none",
             }}
           >
-            <Button
-              as={Link}
-              to="/docs/getting-started/"
+            <li
               sx={{
-                fontSize: 2,
-                bg: "#e91c21",
-                color: "white",
-                boxShadow: "default",
-                display: "flex",
-                alignItems: "center",
-                transition: "all 0.3s ease",
-                justifyContent: ["center", "start", null, null, null],
-                ":hover, :active, :focus": {
-                  bg: darken("#e91c21", 0.03),
-                  boxShadow: "lg",
-                },
+                gridColumn: ["1 / 2", "2 / 3", null, null, null],
+                gridRow: ["2 / 3", "1 / 2", null, null, null],
               }}
             >
-              <AiOutlineFire sx={{ mr: 1 }} /> Get Started
-            </Button>
-          </li>
-          <li
-            sx={{
-              gridColumn: ["1 / 2", "2 / 3", null, null, null],
-              gridRow: ["2 / 3", "1 / 2", null, null, null],
-            }}
-          >
-            <Button
-              as={Link}
-              to="/docs/"
+              <Button
+                as={Link}
+                to="/docs/"
+                sx={{
+                  fontSize: 2,
+                  bg: "#ffd7d7",
+                  color: "black",
+                  boxShadow: "default",
+                  transition: "all 0.3s ease",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: ["center", "start", null, null, null],
+                  ":hover, :active, :focus": {
+                    bg: darken("#ffd7d7", 0.03),
+                    boxShadow: "lg",
+                  },
+                }}
+              >
+                <FiBookOpen sx={{ mr: 1 }} /> Docs
+              </Button>
+            </li>
+            <li
               sx={{
-                fontSize: 2,
-                bg: "#ffd7d7",
-                color: "black",
-                boxShadow: "default",
-                transition: "all 0.3s ease",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: ["center", "start", null, null, null],
-                ":hover, :active, :focus": {
-                  bg: darken("#ffd7d7", 0.03),
-                  boxShadow: "lg",
-                },
+                gridColumn: ["2 / 3", "3 / 4", null, null, null],
+                gridRow: ["2 / 3", "1 / 2", null, null, null],
               }}
             >
-              <FiBookOpen sx={{ mr: 1 }} /> Docs
-            </Button>
-          </li>
-          <li
-            sx={{
-              gridColumn: ["2 / 3", "3 / 4", null, null, null],
-              gridRow: ["2 / 3", "1 / 2", null, null, null],
-            }}
-          >
-            <Button
-              as="a"
-              href="https://github.com/ehowey/gatsby-theme-catalyst"
-              sx={{
-                fontSize: 2,
-                bg: "#ffd7d7",
-                color: "black",
-                boxShadow: "default",
-                transition: "all 0.3s ease",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: ["center", "start", null, null, null],
-                ":hover, :active, :focus": {
-                  bg: darken("#ffd7d7", 0.03),
-                  boxShadow: "lg",
-                },
-              }}
-            >
-              <FiGithub sx={{ mr: 1 }} />
-              GitHub
-            </Button>
-          </li>
-        </ul>
-      </nav>
+              <Button
+                as="a"
+                href="https://github.com/ehowey/gatsby-theme-catalyst"
+                sx={{
+                  fontSize: 2,
+                  bg: "#ffd7d7",
+                  color: "black",
+                  boxShadow: "default",
+                  transition: "all 0.3s ease",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: ["center", "start", null, null, null],
+                  ":hover, :active, :focus": {
+                    bg: darken("#ffd7d7", 0.03),
+                    boxShadow: "lg",
+                  },
+                }}
+              >
+                <FiGithub sx={{ mr: 1 }} />
+                GitHub
+              </Button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }

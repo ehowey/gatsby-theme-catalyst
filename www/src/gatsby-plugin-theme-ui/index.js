@@ -73,6 +73,9 @@ const theme = merge(BaseTheme, {
         textDecoration: "underline",
       },
     },
+    li: {
+      marginBottom: 2,
+    },
     h1: {
       fontFamily: "heading",
       fontWeight: "500",
