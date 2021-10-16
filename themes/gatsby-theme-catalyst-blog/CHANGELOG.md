@@ -1,5 +1,11 @@
 # Change Log
 
+## 7.0.7
+
+### Patch Changes
+
+- 71d4a36b: Update all internal dependencies for October 2021
+
 ## 7.0.6
 
 ### Patch Changes
