@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.8
+
+### Patch Changes
+
+- 71d4a36b: Update all internal dependencies for October 2021
+- Updated dependencies [71d4a36b]
+  - gatsby-theme-catalyst-stripe@0.1.8
+
 ## 0.1.7
 
 ### Patch Changes
