@@ -16,9 +16,9 @@ const HomeShutdown = () => {
       </Themed.p>
       <Themed.p>
         Before I talk about why, I want to say thank you to everyone who helped
-        out and contributed to this project it any way. A retweet, a comment, an
+        out and contributed to this project in any way. A retweet, a comment, an
         issue, or a pull request - they were all appreciated. For those of you I
-        collaborated with more closely it was exciting and fun to work with
+        collaborated with more closely it was exciting and fun to work with, and
         learn from you.
       </Themed.p>
       <Themed.p>
