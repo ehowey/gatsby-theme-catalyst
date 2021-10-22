@@ -5,4 +5,4 @@
   Gatsby Theme Catalyst
 </h1>
 
-Gatsby Theme Catalyst is deprecated and will not be updated to Gatsby v4! For a full statement about the reasons why see [www.gatsbycatalyst.com](https://www.gatsbycatalyst.com/). I will continue to respond to issues here as needed.
+Gatsby Theme Catalyst is deprecated and will not be updated to Gatsby v4! For a full statement about the reasons why see [www.gatsbycatalyst.com](https://www.gatsbycatalyst.com/). All docs remain available on the website and I will continue to respond to issues here as needed.
