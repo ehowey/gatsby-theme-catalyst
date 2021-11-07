@@ -1,24 +1,7 @@
 # Gatsby Starter Catalyst Hydrogen
 
-This is a full-featured starter that ties together the core theme, header and footer themes and the hydrogen theme to ceate a complete website. The theme relies on data from [SANITY.io](https://www.sanity.io/) and includes a customized content studio for the CMS.
+Heads up!
 
-## Documentation
+This starter has deen deprecated and will no longer be supported.
 
-[https://www.gatsbycatalyst.com/](https://www.gatsbycatalyst.com)
-
-## Catalyzing Start
-
-```sh
-# create a new Gatsby site using the catalyst writer starter site
-gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-hydrogen
-```
-
-[Read the Gatsby Quick Start Guide](https://www.gatsbyjs.com/docs/quick-start)
-
-## Demo
-
-[https://gatsby-starter-catalyst-hydrogen.netlify.app/](https://gatsby-starter-catalyst-hydrogen.netlify.app/)
-
-## About Gatsby Theme Catalyst
-
-The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.com/) were designed to provide an opinionated set of integrated themes and starters that can be used to accelerate your next Gatsby project. The vision is for one "core" theme in which most dependencies and components are contained followed by progressively more styled and refined child themes and starters. These themes rely heavily on [Theme-UI](https://theme-ui.com/) and [MDX](https://mdxjs.com/getting-started/gatsby/).
+Read more about why here: [www.gatsbycatalyst.com](https://www.gatsbycatalyst.com/)
